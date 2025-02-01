@@ -1,5 +1,11 @@
+import { Banner } from "@/widgets/banner/ui";
+
 const HomePage = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Banner />
+    </div>
+  );
 };
 
 export default HomePage;
