@@ -1,3 +1,5 @@
+import "@/shared/config/reset.css";
+
 const RootLayout = ({
   children,
 }: Readonly<{
