@@ -20,7 +20,7 @@ export const Container = forwardRef<HTMLElement, ContainerProps>(
 		return (
 			<section
 				id={id}
-				className={cx(css.root, className, fullWidth && css.full)}
+				className={cx(css.root, className, { [css.full]: fullWidth })}
 				ref={ref}
 				style={style}
 			>

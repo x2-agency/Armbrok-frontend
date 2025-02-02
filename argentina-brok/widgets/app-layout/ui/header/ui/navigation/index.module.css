@@ -1,0 +1,14 @@
+.root {
+	display: flex;
+	flex-direction: row;
+}
+
+.links {
+	display: flex;
+	flex-direction: row;
+	gap: 2.5rem; /* 40px */
+}
+
+.link {
+	@mixin font-text16;
+}
