@@ -4,13 +4,13 @@ module.exports = {
 	plugins: {
 		autoprefixer: {},
 		'postcss-mixins': {
-			mixinsDir: path.join(__dirname, 'styles/mixins'),
+			mixinsDir: path.resolve(__dirname, 'shared/styles/mixins'),
 		},
 		'postcss-simple-vars': {
 			variables: {},
 		},
 		'postcss-import': {
-			path: ['./styles'],
+			path: [path.resolve(__dirname, 'shared/styles')],
 		},
 	},
 };

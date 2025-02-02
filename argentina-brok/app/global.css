@@ -1,4 +1,4 @@
-@import '../styles/main/reset.css';
+@import '../shared/styles/main/reset.css';
 
 :root {
 	--h1: 4rem; /* 64px */

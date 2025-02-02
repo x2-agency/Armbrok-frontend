@@ -1,13 +1,9 @@
+import { RobotoFonts } from '@/shared/config/utils/localFont';
 import { AppLayout } from '@/widgets/app-layout';
+import { PropsWithChildren } from 'react';
 import './global.css';
 
-import { RobotoFonts } from '@/shared/config/utils/localFont';
-
-const RootLayout = ({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) => {
+const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
 	return (
 		<html lang="en">
 			<body className={RobotoFonts.className}>
