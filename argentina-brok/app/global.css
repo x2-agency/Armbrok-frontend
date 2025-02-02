@@ -71,7 +71,6 @@ h4,
 h5,
 h6 {
 	color: #151515;
-	overflow-x: hidden;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
