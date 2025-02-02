@@ -31,6 +31,7 @@
 }
 
 .percent {
+	line-height: 0.95;
 	font-size: 3rem; /* 48px */
 	color: #34ca2f;
 }
