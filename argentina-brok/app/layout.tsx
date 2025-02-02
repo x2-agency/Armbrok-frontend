@@ -1,4 +1,4 @@
-import { RobotoFonts } from '@/shared/config/utils/localFont';
+import { RobotoFonts } from '@/shared/config/localFont';
 import { AppLayout } from '@/widgets/app-layout';
 import { PropsWithChildren } from 'react';
 import './global.css';
