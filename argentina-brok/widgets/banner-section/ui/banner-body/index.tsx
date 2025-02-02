@@ -1,9 +1,10 @@
 import { Button } from '@/shared/ui/button';
 import type { BannerBodyProps } from '@/widgets/banner-section/banner.types';
 import { BannerPanel } from '@/widgets/banner-section/ui/banner-panel';
-import { BannerAward } from '@/widgets/banner-section/ui/banner-award';
+import { BannerAward } from '../banner-award';
 
 import css from './index.module.css';
+import { Container } from '@/shared/ui/container';
 
 export const BannerBody = ({ awards, panel, button }: BannerBodyProps) => {
 	const defineContent = () => {
@@ -26,5 +27,5 @@ export const BannerBody = ({ awards, panel, button }: BannerBodyProps) => {
 		}
 	};
 
-	return <section className={css.root}>{defineContent()}</section>;
+	return <div className={css.root}>{defineContent()}</div>;
 };

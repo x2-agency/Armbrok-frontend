@@ -1,12 +1,8 @@
-import { Banner } from '@/widgets/banner/ui';
+import { BannerSection } from '@/widgets/banner-section/ui';
 import { MOCK_BANNER_DATA } from '@/shared/model/mock-banner.constants';
 
 const HomePage = () => {
-	return (
-		<div>
-			<Banner banner={MOCK_BANNER_DATA} alignContent="end" />
-		</div>
-	);
+	return <BannerSection banner={MOCK_BANNER_DATA} alignContent="end" />;
 };
 
 export default HomePage;

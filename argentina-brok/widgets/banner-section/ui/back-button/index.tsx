@@ -3,7 +3,7 @@
 import cx from 'clsx';
 import { useRouter } from 'next/navigation';
 
-import type { BackButtonProps } from '@/widgets/banner/banner.types';
+import type { BackButtonProps } from '@/widgets/banner-section/banner.types';
 
 import css from './index.module.css';
 

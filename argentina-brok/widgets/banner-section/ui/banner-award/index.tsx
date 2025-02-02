@@ -1,6 +1,6 @@
 import parser from 'html-react-parser';
 
-import type { BannerAwardsData } from '@/widgets/banner/banner.types';
+import type { BannerAwardsData } from '@/widgets/banner-section/banner.types';
 
 import css from './index.module.css';
 

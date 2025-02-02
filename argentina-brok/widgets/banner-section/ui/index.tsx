@@ -7,7 +7,7 @@ import { BannerHead } from './banner-head';
 import css from './index.module.css';
 import { FormatImage } from '@/shared/ui/format-image';
 
-export const Banner = ({
+export const BannerSection = ({
 	alignContent = 'center',
 	size = 'medium',
 	banner,
