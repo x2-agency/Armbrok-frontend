@@ -1,0 +1,52 @@
+.root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdown {
+	@mixin font-text16;
+}
+
+.wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0.125rem; /* 2px */
+}
+
+.selected {
+	justify-content: center;
+	flex-direction: row;
+	display: flex;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.options {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	border-radius: 0.75rem; /* 12px */
+	z-index: 10;
+}
+
+.option {
+	padding-inline: 1rem; /* 16px */
+	padding-block: 0.5rem; /* 8px */
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.option:hover {
+	background-color: #f0f0f0;
+}
+
+.arrow {
+	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rotated {
+	transform: rotate(180deg);
+}
