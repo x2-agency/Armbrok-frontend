@@ -1,21 +1,20 @@
-import type { ReactNode } from "react";
+import { PropsWithChildren } from 'react';
 
-type BaseButtonProps = {
-  className?: string;
-  children: ReactNode;
-  variant?: "primary" | "secondary" | "default";
-};
+interface BaseButtonProps extends PropsWithChildren {
+	className?: string;
+	variant?: 'primary' | 'secondary' | 'default';
+}
 
 type LinkButtonProps = BaseButtonProps & {
-  href: string;
-  onClick?: never;
-  type?: never;
+	href: string;
+	onClick?: never;
+	type?: never;
 };
 
 type ClickButtonProps = BaseButtonProps & {
-  onClick: () => void;
-  type?: "button" | "submit" | "reset";
-  href?: never;
+	onClick: () => void;
+	type?: 'button' | 'submit' | 'reset';
+	href?: never;
 };
 
 export type ButtonProps = LinkButtonProps | ClickButtonProps;
