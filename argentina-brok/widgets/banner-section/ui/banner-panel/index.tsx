@@ -1,4 +1,5 @@
 import parser from 'html-react-parser';
+import cx from 'clsx';
 
 import { PanelProps } from '../../banner.types';
 
@@ -11,9 +12,10 @@ export const BannerPanel = ({
 	riskLevel,
 	period,
 	button,
+	className,
 }: PanelProps) => {
 	return (
-		<article className={css.root}>
+		<article className={cx(css.root, className)}>
 			<div className={css.content}>
 				{averagePercent && (
 					<p className={css.percentData}>
@@ -32,7 +34,7 @@ export const BannerPanel = ({
 				{riskLevel && (
 					<ul className={css.list}>
 						<li className={css.title}></li>
-						<li className={css.description}>{riskLevel.risk}</li>
+						<li className={css.description}>{riskLevel.text}</li>
 					</ul>
 				)}
 				{period && (
@@ -42,7 +44,11 @@ export const BannerPanel = ({
 					</ul>
 				)}
 			</div>
-			{button && <Button href={button.href}>{button.text}</Button>}
+			{button && (
+				<Button variant="filled" href={button.href} className={css.linkButton}>
+					{button.text}
+				</Button>
+			)}
 		</article>
 	);
 };

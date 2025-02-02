@@ -27,7 +27,7 @@ export const BannerHead = ({
 	return (
 		<section className={cx(css.root, className)}>
 			{withBackButton && (
-				<Button onClick={handleClick} className={css.backButton}>
+				<Button variant="back" onClick={handleClick} className={css.backButton}>
 					Back
 				</Button>
 			)}

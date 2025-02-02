@@ -1,9 +1,10 @@
 .root {
 	@mixin font-text16;
+
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+    cursor: pointer;
 }
 
 .filled,
@@ -60,4 +61,14 @@
 			}
 		}
 	}
+}
+
+.back {
+	background-color: transparent;
+	color: gray;
+	gap: 0.5rem; /* 8px */
+}
+
+.icon {
+	width: 1.5rem;
 }

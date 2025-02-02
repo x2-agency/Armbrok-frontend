@@ -13,4 +13,26 @@ export const MOCK_BANNER_DATA = {
 			mobile: '/assets/images/banner/banner-mob.jpg',
 		},
 	},
+	panel: {
+		averagePercent: {
+			percent: 22,
+			text: 'Average<br /> Annual Return',
+		},
+		amd: {
+			subtext: '20K AMD',
+			description: 'Min. Investment',
+		},
+		riskLevel: {
+			risk: 3,
+			text: 'Risk Level',
+		},
+		period: {
+			title: '3 years and more',
+			description: 'Recommended Investment Period',
+		},
+		button: {
+			href: '',
+			text: 'Invest',
+		},
+	},
 };

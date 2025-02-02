@@ -7,6 +7,10 @@ import css from './index.module.css';
 
 export const BannerBody = ({ awards, panel, button }: BannerBodyProps) => {
 	const defineContent = () => {
+		if (panel) {
+			return <BannerPanel className={css.panel} {...panel} />;
+		}
+
 		if (awards) {
 			return (
 				<section className={css.bannerAwards}>
@@ -17,13 +21,9 @@ export const BannerBody = ({ awards, panel, button }: BannerBodyProps) => {
 			);
 		}
 
-		if (panel) {
-			return <BannerPanel />;
-		}
-
 		if (button) {
 			return (
-				<Button className={css.button} href={button?.href}>
+				<Button variant="filled" className={css.button} href={button?.href}>
 					{button?.text}
 				</Button>
 			);

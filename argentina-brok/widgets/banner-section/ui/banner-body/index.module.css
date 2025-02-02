@@ -7,3 +7,7 @@
 .button {
 	margin-block-start: 2.5rem; /* 40px */
 }
+
+.panel {
+	margin-block-start: 4rem; /* 64px */
+}

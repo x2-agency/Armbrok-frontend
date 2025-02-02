@@ -15,3 +15,43 @@
 .content {
 	gap: 3rem; /* 48px */
 }
+
+.percentData {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem; /* 12px */
+}
+
+.percent {
+	font-size: 3rem; /* 48px */
+	color: #34ca2f;
+}
+
+.percentText {
+	@mixin font-text16;
+
+	color: gray;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem; /* 6px */
+}
+
+.title {
+	@mixin font-text20;
+
+	color: white;
+}
+
+.description {
+	@mixin font-text16;
+
+	color: gray;
+}
+
+.linkButton {
+	width: 8.75rem; /* 140px */
+	height: 3.5rem; /* 56px */
+}

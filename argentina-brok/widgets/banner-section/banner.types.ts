@@ -13,6 +13,7 @@ interface ButtonProps {
 }
 
 export interface PanelProps {
+	className?: string;
 	averagePercent?: {
 		percent: number;
 		text: string;
