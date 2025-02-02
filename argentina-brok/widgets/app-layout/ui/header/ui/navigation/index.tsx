@@ -1,6 +1,6 @@
 import cx from 'clsx';
 
-import Link from 'next/link';
+import { Button } from '@/shared/ui/button';
 import { NavigationProps } from '../../types/nav-types';
 import css from './index.module.css';
 
@@ -11,9 +11,9 @@ export const Navigation = ({ navLinks }: NavigationProps) => {
 				{navLinks.map((link, index) => {
 					return (
 						<li key={index}>
-							<Link href={link.href} className={css.link}>
+							<Button href={link.href} className={css.link} variant="secondary">
 								{link.text}
-							</Link>
+							</Button>
 						</li>
 					);
 				})}

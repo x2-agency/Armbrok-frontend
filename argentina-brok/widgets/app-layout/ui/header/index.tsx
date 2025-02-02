@@ -1,3 +1,4 @@
+import { Button } from '@/shared/ui/button';
 import css from './index.module.css';
 import {
 	HOME_LINK,
@@ -12,6 +13,7 @@ export const Header = () => {
 		<header className={css.root}>
 			<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
 			<Navigation navLinks={NAVIGATION_LINKS} />
+			<Button href="/">Open account</Button>
 		</header>
 	);
 };

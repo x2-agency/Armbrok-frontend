@@ -1,0 +1,43 @@
+.root {
+	@mixin font-text16;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-inline: 1.5rem; /* 24px */
+	padding-block: 0.5rem; /* 8px */
+	border-radius: 0.75rem; /* 12px */
+	color: white;
+	background-color: #df2c29;
+
+	&:not(:disabled) {
+		opacity: 1;
+		cursor: pointer;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: #bf1d29;
+			}
+		}
+	}
+}
+
+.secondary {
+	padding-inline: unset;
+	padding-block: unset;
+	border-radius: unset;
+	background-color: transparent;
+	color: #000000;
+
+	&:not(:disabled) {
+		opacity: 1;
+		cursor: pointer;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: transparent;
+				color: #bf1d29;
+			}
+		}
+	}
+}
