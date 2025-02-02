@@ -6,6 +6,7 @@
 
 .root[data-align='start'] {
 	justify-content: start;
+	padding-block-start: 11.625rem; /* 186px */
 }
 
 .root[data-align='center'] {
@@ -14,6 +15,7 @@
 
 .root[data-align='end'] {
 	justify-content: end;
+	padding-block-end: 6.25rem; /* 100px */
 }
 
 .root.medium {

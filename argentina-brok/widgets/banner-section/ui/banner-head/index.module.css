@@ -1,12 +1,33 @@
 .root {
 	z-index: 10;
+	flex-shrink: 0;
 }
 
 .description,
 .title {
 	color: white;
+
+	@media (max-width: 767px) {
+		br {
+			display: none;
+		}
+	}
 }
 
 .title {
 	@mixin font-h1;
+
+	padding-block-end: 1.5rem; /* 24px */
+
+	&.withBackButton {
+		padding-block-end: 1rem; /* 16px */
+	}
+}
+
+.description {
+	@mixin font-text20;
+}
+
+.backButton {
+	margin-block-end: 2.563rem; /* 41px */
 }

@@ -3,3 +3,7 @@
 	justify-content: start;
 	z-index: 10;
 }
+
+.button {
+	margin-block-start: 2.5rem; /* 40px */
+}

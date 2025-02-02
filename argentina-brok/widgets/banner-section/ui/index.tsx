@@ -16,7 +16,11 @@ export const BannerSection = ({
 	return (
 		<section className={cx(css.root, css[size])} data-align={alignContent}>
 			<Container className={css.content}>
-				<BannerHead title={banner.title} description={banner.description} />
+				<BannerHead
+					title={banner.title}
+					description={banner.description}
+					withBackButton
+				/>
 				<BannerBody
 					awards={banner.awards}
 					panel={banner.panel}

@@ -1,11 +1,14 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import type { BannerHeadProps } from '@/widgets/banner/banner.types';
-import { BackButton } from '../back-button';
 
 import css from './index.module.css';
+import { Button } from '@/shared/ui/button';
+import { useRouter } from 'next/navigation';
 
 export const BannerHead = ({
 	title,
@@ -15,15 +18,27 @@ export const BannerHead = ({
 	className,
 	withBackButton,
 }: BannerHeadProps) => {
+	const router = useRouter();
+
+	const handleClick = () => {
+		router.back();
+	};
+
 	return (
 		<section className={cx(css.root, className)}>
-			{withBackButton && <BackButton>Back</BackButton>}
+			{withBackButton && (
+				<Button onClick={handleClick} className={css.backButton}>
+					Back
+				</Button>
+			)}
 			{established && (
 				<div className={css.established}>{parser(established)}</div>
 			)}
-			<h1 className={css.title}>{parser(title)}</h1>
+			<h1 className={cx(css.title, { [css.withBackButton]: withBackButton })}>
+				{parser(title)}
+			</h1>
 			<p className={css.description}>{parser(description)}</p>
-			{icon && <img src={icon} alt="Icon" />}
+			{icon && <img src={icon} alt="Icon" className={css.icon} />}
 		</section>
 	);
 };

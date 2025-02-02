@@ -4,7 +4,6 @@ import { BannerPanel } from '@/widgets/banner-section/ui/banner-panel';
 import { BannerAward } from '../banner-award';
 
 import css from './index.module.css';
-import { Container } from '@/shared/ui/container';
 
 export const BannerBody = ({ awards, panel, button }: BannerBodyProps) => {
 	const defineContent = () => {
@@ -23,7 +22,11 @@ export const BannerBody = ({ awards, panel, button }: BannerBodyProps) => {
 		}
 
 		if (button) {
-			return <Button href={button?.href}>{button?.text}</Button>;
+			return (
+				<Button className={css.button} href={button?.href}>
+					{button?.text}
+				</Button>
+			);
 		}
 	};
 
