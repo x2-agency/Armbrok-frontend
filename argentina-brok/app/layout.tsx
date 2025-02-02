@@ -1,6 +1,8 @@
 import { AppLayout } from '@/widgets/app-layout';
 import './global.css';
 
+import { RobotoFonts } from '@/shared/config/utils/localFont';
+
 const RootLayout = ({
 	children,
 }: Readonly<{
@@ -8,7 +10,7 @@ const RootLayout = ({
 }>) => {
 	return (
 		<html lang="en">
-			<body>
+			<body className={RobotoFonts.className}>
 				<AppLayout>{children}</AppLayout>
 			</body>
 		</html>
