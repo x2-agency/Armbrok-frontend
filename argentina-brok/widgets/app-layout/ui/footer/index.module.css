@@ -1,0 +1,3 @@
+.text {
+	@mixin font-text14;
+}
