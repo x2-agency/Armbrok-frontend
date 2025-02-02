@@ -11,7 +11,7 @@ export const Navigation = ({ navLinks }: NavigationProps) => {
 				{navLinks.map((link, index) => {
 					return (
 						<li key={index}>
-							<Button href={link.href} className={css.link} variant="secondary">
+							<Button href={link.href} className={css.link} variant="subtle">
 								{link.text}
 							</Button>
 						</li>

@@ -6,7 +6,7 @@ import type { ButtonProps } from './types/button.types';
 export const Button = ({
 	href,
 	className,
-	variant = 'default',
+	variant = 'outline',
 	children,
 	type = 'button',
 	onClick,
