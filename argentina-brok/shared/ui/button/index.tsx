@@ -1,8 +1,9 @@
 import cx from 'clsx';
 
+import BackSVG from '@/public/assets/icon/back.svg';
+
 import css from './index.module.css';
 import type { ButtonProps } from './types/button.types';
-import BackSVG from '@/public/assets/icon/back.svg';
 
 export const Button = ({
 	href,

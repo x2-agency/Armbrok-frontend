@@ -1,12 +1,12 @@
 import cx from 'clsx';
 
+import { Container } from '@/shared/ui/container';
+import { FormatImage } from '@/shared/ui/format-image';
 import type { BannerProps } from '@/widgets/banner-section/banner.types';
 
 import { BannerBody } from './banner-body';
 import { BannerHead } from './banner-head';
 import css from './index.module.css';
-import { FormatImage } from '@/shared/ui/format-image';
-import { Container } from '@/shared/ui/container';
 
 export const BannerSection = ({
 	alignContent = 'center',

@@ -1,4 +1,5 @@
 import { Button } from '@/shared/ui/button';
+
 import css from './index.module.css';
 import {
 	HOME_LINK,

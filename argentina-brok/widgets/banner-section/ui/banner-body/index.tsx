@@ -1,7 +1,7 @@
 import { Button } from '@/shared/ui/button';
 import type { BannerBodyProps } from '@/widgets/banner-section/banner.types';
+import { BannerAward } from '@/widgets/banner-section/ui/banner-award';
 import { BannerPanel } from '@/widgets/banner-section/ui/banner-panel';
-import { BannerAward } from '../banner-award';
 
 import css from './index.module.css';
 

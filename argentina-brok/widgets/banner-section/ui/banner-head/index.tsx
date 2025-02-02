@@ -3,12 +3,12 @@
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useRouter } from 'next/navigation';
 
-import type { BannerHeadProps } from '@/widgets/banner/banner.types';
+import { Button } from '@/shared/ui/button';
+import type { BannerHeadProps } from '@/widgets/banner-section/banner.types';
 
 import css from './index.module.css';
-import { Button } from '@/shared/ui/button';
-import { useRouter } from 'next/navigation';
 
 export const BannerHead = ({
 	title,

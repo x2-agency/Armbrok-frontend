@@ -1,5 +1,5 @@
-import { BannerSection } from '@/widgets/banner-section/ui';
 import { MOCK_BANNER_DATA } from '@/shared/model/mock-banner.constants';
+import { BannerSection } from '@/widgets/banner-section/ui';
 
 const HomePage = () => {
 	return (
