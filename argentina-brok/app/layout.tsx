@@ -1,6 +1,7 @@
+import type { PropsWithChildren } from 'react';
+
 import { RobotoFonts } from '@/shared/config/localFont';
 import { AppLayout } from '@/widgets/app-layout';
-import { PropsWithChildren } from 'react';
 import './global.css';
 
 const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {

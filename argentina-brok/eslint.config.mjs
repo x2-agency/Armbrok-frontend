@@ -4,7 +4,7 @@ import * as mdx from 'eslint-plugin-mdx';
 import react from 'eslint-plugin-react';
 import tseslint from 'typescript-eslint';
 
-import baseConfig from './eslint.base.config.js';
+import baseConfig from './eslint.base.config.mjs';
 
 const compat = new FlatCompat();
 
