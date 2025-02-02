@@ -4,7 +4,7 @@ import { MOCK_BANNER_DATA } from '@/shared/model/mock-banner.constants';
 const HomePage = () => {
 	return (
 		<div>
-			<Banner banner={MOCK_BANNER_DATA} />
+			<Banner banner={MOCK_BANNER_DATA} alignContent="end" />
 		</div>
 	);
 };

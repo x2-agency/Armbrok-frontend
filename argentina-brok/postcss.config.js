@@ -6,6 +6,7 @@ module.exports = {
 		'postcss-mixins': {
 			mixinsDir: path.resolve(__dirname, 'shared/styles/mixins'),
 		},
+		'postcss-nested': {},
 		'postcss-simple-vars': {
 			variables: {},
 		},

@@ -13,11 +13,11 @@ export const BannerHead = ({
 	established,
 	icon,
 	className,
-	size,
+	withBackButton,
 }: BannerHeadProps) => {
 	return (
 		<header className={cx(css.root, className)}>
-			{size === 'small' && <BackButton>Back</BackButton>}
+			{withBackButton && <BackButton>Back</BackButton>}
 			{established && (
 				<div className={css.established}>{parser(established)}</div>
 			)}

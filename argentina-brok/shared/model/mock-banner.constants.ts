@@ -6,4 +6,11 @@ export const MOCK_BANNER_DATA = {
 		text: 'Open account',
 		href: '/account',
 	},
+	poster: {
+		image: {
+			src: '/assets/images/banner/banner-pc.jpg',
+			src2x: '/assets/images/banner/banner-pc.jpg',
+			mobile: '/assets/images/banner/banner-mob.jpg',
+		},
+	},
 };
