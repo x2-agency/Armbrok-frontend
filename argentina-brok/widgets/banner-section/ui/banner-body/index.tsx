@@ -23,7 +23,12 @@ export const BannerBody = ({ awards, panel, button }: BannerBodyProps) => {
 
 		if (button) {
 			return (
-				<Button variant="filled" className={css.button} href={button?.href}>
+				<Button
+					variant="filled"
+					category="big"
+					className={css.button}
+					href={button?.href}
+				>
 					{button?.text}
 				</Button>
 			);

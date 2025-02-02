@@ -10,4 +10,8 @@
 
 .panel {
 	margin-block-start: 4rem; /* 64px */
+
+	@media (max-width: 767px) {
+		margin-block-start: 2rem; /* 32px */
+	}
 }

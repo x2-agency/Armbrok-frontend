@@ -2,6 +2,10 @@
 .content {
 	display: flex;
 	align-items: center;
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+	}
 }
 
 .root {
@@ -14,6 +18,10 @@
 
 .content {
 	gap: 3rem; /* 48px */
+
+	@media (max-width: 767px) {
+		gap: 1.5rem; /* 24px */
+	}
 }
 
 .percentData {
@@ -37,12 +45,18 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.375rem; /* 6px */
+
+	@media (max-width: 767px) {
+		align-items: center;
+	}
 }
 
 .title {
 	@mixin font-text20;
 
+	display: flex;
 	color: white;
+	gap: 0.5rem; /* 8px */
 }
 
 .description {
@@ -54,4 +68,20 @@
 .linkButton {
 	width: 8.75rem; /* 140px */
 	height: 3.5rem; /* 56px */
+
+	@media (max-width: 767px) {
+		margin-block-start: 1.5rem; /* 24px */
+	}
+}
+
+.circle {
+	width: 0.75rem; /* 12px */
+	height: 0.75rem; /* 12px */
+	border-radius: 100%;
+	background-color: gray;
+	margin-block: 0.438rem; /* 7px */
+
+	&.filled {
+		background-color: white;
+	}
 }

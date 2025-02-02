@@ -12,6 +12,7 @@ export const BannerSection = ({
 	alignContent = 'center',
 	size = 'medium',
 	banner,
+	withBackButton,
 }: BannerProps) => {
 	return (
 		<section className={cx(css.root, css[size])} data-align={alignContent}>
@@ -19,7 +20,8 @@ export const BannerSection = ({
 				<BannerHead
 					title={banner.title}
 					description={banner.description}
-					withBackButton
+					icon={banner.icon}
+					withBackButton={withBackButton}
 				/>
 				<BannerBody
 					awards={banner.awards}

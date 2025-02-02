@@ -55,6 +55,7 @@ export interface BannerProps extends BannerSizeProps {
 		established?: string;
 		awards?: Array<BannerAwardsData>;
 	};
+	withBackButton?: boolean;
 }
 
 export interface BannerHeadProps {

@@ -11,11 +11,15 @@ export const Button = ({
 	variant = 'outline',
 	children,
 	type = 'button',
+	category = 'default',
 	onClick,
 }: ButtonProps) => {
 	if (href) {
 		return (
-			<a className={cx(css.root, className, css[variant])} href={href}>
+			<a
+				className={cx(css.root, className, css[variant], css[category])}
+				href={href}
+			>
 				{variant === 'back' && <BackSVG className={css.icon} />}
 				{children}
 			</a>
@@ -24,7 +28,7 @@ export const Button = ({
 
 	return (
 		<button
-			className={cx(css.root, className, css[variant])}
+			className={cx(css.root, className, css[variant], css[category])}
 			type={type}
 			onClick={onClick}
 		>

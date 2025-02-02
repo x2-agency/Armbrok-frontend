@@ -1,4 +1,5 @@
 export const MOCK_BANNER_DATA = {
+	// icon: '/assets/images/banner/circle.png',
 	title: 'Efficient investments in<br /> financial markets',
 	description:
 		'Access to&nbsp;global exchanges and financial instruments&nbsp;&mdash;<br /> with high yields and strong protection',
@@ -23,7 +24,7 @@ export const MOCK_BANNER_DATA = {
 			description: 'Min. Investment',
 		},
 		riskLevel: {
-			risk: 3,
+			risk: 2,
 			text: 'Risk Level',
 		},
 		period: {

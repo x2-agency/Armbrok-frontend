@@ -1,10 +1,10 @@
-import parser from 'html-react-parser';
 import cx from 'clsx';
+import parser from 'html-react-parser';
 
-import { PanelProps } from '../../banner.types';
+import { Button } from '@/shared/ui/button';
+import type { PanelProps } from '@/widgets/banner-section/banner.types';
 
 import css from './index.module.css';
-import { Button } from '@/shared/ui/button';
 
 export const BannerPanel = ({
 	averagePercent,
@@ -33,7 +33,16 @@ export const BannerPanel = ({
 				)}
 				{riskLevel && (
 					<ul className={css.list}>
-						<li className={css.title}></li>
+						<li className={css.title}>
+							{Array.from({ length: 3 }).map((_, key) => (
+								<div
+									key={key}
+									className={cx(css.circle, {
+										[css.filled]: key < riskLevel.risk,
+									})}
+								/>
+							))}
+						</li>
 						<li className={css.description}>{riskLevel.text}</li>
 					</ul>
 				)}
@@ -45,7 +54,12 @@ export const BannerPanel = ({
 				)}
 			</div>
 			{button && (
-				<Button variant="filled" href={button.href} className={css.linkButton}>
+				<Button
+					category="big"
+					variant="filled"
+					href={button.href}
+					className={css.linkButton}
+				>
 					{button.text}
 				</Button>
 			)}
