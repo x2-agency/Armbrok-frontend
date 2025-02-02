@@ -1,4 +1,4 @@
-import { Container } from '@/shared/container';
+import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
