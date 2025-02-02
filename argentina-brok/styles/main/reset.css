@@ -1,0 +1,37 @@
+body {
+	font-size: 17px;
+	line-height: 1.76;
+	font-family: sans-serif;
+}
+
+ol,
+ul {
+	list-style: none;
+	line-height: normal;
+}
+
+a {
+	color: unset;
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	background: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	font: inherit;
+	vertical-align: initial;
+}
+
+a,
+button,
+input,
+label {
+	-webkit-tap-highlight-color: transparent;
+}

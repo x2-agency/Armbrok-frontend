@@ -1,14 +1,16 @@
+const path = require('path');
+
 module.exports = {
 	plugins: {
 		autoprefixer: {},
 		'postcss-mixins': {
-			mixinsDir: '',
+			mixinsDir: path.join(__dirname, 'styles/mixins'),
 		},
 		'postcss-simple-vars': {
 			variables: {},
 		},
 		'postcss-import': {
-			path: [''],
+			path: ['./styles'],
 		},
 	},
 };
