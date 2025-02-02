@@ -25,7 +25,7 @@
 
 .full {
 	width: 100%;
-	padding-inline: 10%;
+	padding-inline: unset;
 	max-width: unset;
 	margin-inline: unset;
 }
