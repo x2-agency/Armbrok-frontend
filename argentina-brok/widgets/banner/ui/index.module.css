@@ -1,7 +1,11 @@
 .root.medium {
-  height: 100vh;
+	height: 100vh;
 }
 
 .root.large {
-  height: 49.896rem; /* 958px */
+	height: 958px;
+}
+
+.root.small {
+	height: 547px;
 }

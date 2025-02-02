@@ -1,3 +1,3 @@
 export const BannerPanel = () => {
-  return <div></div>;
+	return <div></div>;
 };
