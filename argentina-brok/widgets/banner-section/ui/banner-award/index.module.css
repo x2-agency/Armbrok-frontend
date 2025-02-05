@@ -1,0 +1,26 @@
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.place {
+	@mixin font-h1;
+
+	color: #df2c29;
+	font-weight: 500;
+	padding-block: 0.5rem; /* 8px */
+}
+
+.title {
+	@mixin font-text20;
+
+	font-weight: 600;
+	padding-block-end: 0.75rem; /* 12px */
+	color: #fff;
+}
+
+.description {
+	@mixin font-text16;
+
+	color: #b9b9b9;
+}

@@ -1,9 +1,8 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import type { PosterImageProps } from '@/shared/types/poster';
 
-export interface BackButtonProps {
-	children: ReactNode;
+export interface BackButtonProps extends PropsWithChildren {
 	className?: string;
 }
 
@@ -33,43 +32,131 @@ export interface PanelProps {
 	button?: ButtonProps;
 }
 
-export interface BannerAwardsData {
+export interface AwardsData {
 	place: string;
 	title: string;
 	description: string;
 }
 
-type BannerSizeProps = {
-	size?: 'small' | 'medium' | 'large';
-};
-
-export interface BannerProps extends BannerSizeProps {
+interface BaseBannerProps {
+	type: string;
 	alignContent?: 'start' | 'center' | 'end' | '';
 	banner: {
 		title: string;
 		description: string;
-		poster?: PosterImageProps;
-		button?: ButtonProps;
-		panel?: PanelProps;
-		icon?: string;
-		established?: string;
-		awards?: Array<BannerAwardsData>;
+		poster: PosterImageProps;
 	};
-	withBackButton?: boolean;
 }
 
-export interface BannerHeadProps {
-	title: string;
-	description: string;
-	established?: string;
-	icon?: string;
+type ProfixBannerProps = BaseBannerProps & {
 	className?: string;
-	withBackButton?: boolean;
+	type: 'profix';
+	alignContent?: never;
+	banner: BaseBannerProps['banner'] & {
+		panel: PanelProps;
+		icon: string;
+	};
+};
+
+type DefaultBannerProps = BaseBannerProps & {
+	className?: string;
+	type: 'default';
+	banner: BaseBannerProps['banner'] & {
+		button: ButtonProps;
+	};
+};
+
+type AboutBannerProps = BaseBannerProps & {
+	className?: string;
+	type: 'about';
+	alignContent?: never;
+	banner: BaseBannerProps['banner'] & {
+		established: string;
+		awards: Array<AwardsData>;
+	};
+};
+
+export type BannerProps =
+	| ProfixBannerProps
+	| DefaultBannerProps
+	| AboutBannerProps;
+
+interface BaseBannerHeadProps {
+	type: string;
+	headData: {
+		title: string;
+		description: string;
+	};
 }
 
-export interface BannerBodyProps extends BannerSizeProps {
-	awards?: Array<BannerAwardsData>;
-	panel?: PanelProps;
-	button?: ButtonProps;
+type ProfixBannerHeadProps = BaseBannerHeadProps & {
 	className?: string;
+	type: 'profix';
+	headData: BaseBannerHeadProps['headData'] & {
+		icon: string;
+		established?: never;
+	};
+};
+
+type DefaultBannerHeadProps = BaseBannerHeadProps & {
+	className?: string;
+	type: 'default';
+	headData: BaseBannerHeadProps['headData'] & {
+		icon?: never;
+		established?: never;
+	};
+};
+
+type AboutBannerHeadProps = BaseBannerHeadProps & {
+	className?: string;
+	type: 'about';
+	headData: BaseBannerHeadProps['headData'] & {
+		icon?: never;
+		established: string;
+	};
+};
+
+export type BannerHeadProps =
+	| ProfixBannerHeadProps
+	| DefaultBannerHeadProps
+	| AboutBannerHeadProps;
+
+interface BaseBannerBodyProps {
+	type: string;
+	bodyData: Record<string, unknown>;
 }
+
+type ProfixBannerBodyProps = BaseBannerBodyProps & {
+	className?: string;
+	type: 'profix';
+	bodyData: {
+		panel: PanelProps;
+		awards?: never;
+		button?: never;
+	};
+};
+
+type DefaultBannerBodyProps = BaseBannerBodyProps & {
+	className?: string;
+	type: 'default';
+	bodyData: {
+		panel?: never;
+		awards?: never;
+		button: ButtonProps;
+	};
+};
+
+type AboutBannerBodyProps = BaseBannerBodyProps & {
+	className?: string;
+	type: 'about';
+	bodyData: {
+		awards: Array<AwardsData>;
+		panel?: never;
+		button?: never;
+	};
+};
+
+export type BannerBodyProps =
+	| ProfixBannerBodyProps
+	| DefaultBannerBodyProps
+	| AboutBannerBodyProps;

@@ -8,26 +8,63 @@ import { BannerBody } from './banner-body';
 import { BannerHead } from './banner-head';
 import css from './index.module.css';
 
-export const BannerSection = ({
-	alignContent = 'center',
-	size = 'medium',
-	banner,
-	withBackButton,
-}: BannerProps) => {
+export const BannerSection = ({ type, banner, alignContent }: BannerProps) => {
 	return (
-		<section className={cx(css.root, css[size])} data-align={alignContent}>
+		<section className={cx(css.root, css[type])} data-align={alignContent}>
 			<Container className={css.content}>
-				<BannerHead
-					title={banner.title}
-					description={banner.description}
-					icon={banner.icon}
-					withBackButton={withBackButton}
-				/>
-				<BannerBody
-					awards={banner.awards}
-					panel={banner.panel}
-					button={banner.button}
-				/>
+				{type === 'default' && (
+					<>
+						<BannerHead
+							type={type}
+							headData={{
+								title: banner.title,
+								description: banner.description,
+							}}
+						/>
+						<BannerBody
+							type={type}
+							bodyData={{
+								button: banner.button,
+							}}
+						/>
+					</>
+				)}
+				{type === 'profix' && (
+					<>
+						<BannerHead
+							type={type}
+							headData={{
+								title: banner.title,
+								description: banner.description,
+								icon: banner.icon,
+							}}
+						/>
+						<BannerBody
+							type={type}
+							bodyData={{
+								panel: banner.panel,
+							}}
+						/>
+					</>
+				)}
+				{type === 'about' && (
+					<>
+						<BannerHead
+							type={type}
+							headData={{
+								title: banner.title,
+								description: banner.description,
+								established: banner.established,
+							}}
+						/>
+						<BannerBody
+							type={type}
+							bodyData={{
+								awards: banner.awards,
+							}}
+						/>
+					</>
+				)}
 			</Container>
 
 			{banner.poster && (

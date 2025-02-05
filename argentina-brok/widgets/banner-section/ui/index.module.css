@@ -4,29 +4,36 @@
 	flex-direction: column;
 }
 
-.root[data-align='start'] {
+.root.default[data-align='start'] {
 	justify-content: start;
 	padding-block-start: 11.625rem; /* 186px */
 }
 
-.root[data-align='center'] {
+.root.default[data-align='center'] {
 	justify-content: center;
 }
 
-.root[data-align='end'] {
+.root.default[data-align='end'] {
 	justify-content: end;
 	padding-block-end: 6.25rem; /* 100px */
 }
 
-.root.medium {
+.root.default {
 	height: 100vh;
 }
 
-.root.large {
-	height: 59.875rem; /* 958px */
+.root.about {
+	padding-block-start: 11.5rem; /* 180px */
+	padding-block-end: 6.625rem; /* 106px */
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 8.75rem;
+	}
 }
 
-.root.small {
+.root.profix {
 	padding-block-start: 7.5rem; /* 120px */
 	padding-block-end: 5rem; /* 80px */
 }

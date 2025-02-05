@@ -20,16 +20,28 @@
 
 .title {
 	@mixin font-h1;
+	font-weight: 700;
 
-	padding-block-end: 1.5rem; /* 24px */
-
-	&.withBackButton {
+	&.profix {
 		padding-block-end: 1rem; /* 16px */
+	}
+
+	&.default,
+	&.about {
+		padding-block-end: 1.5rem; /* 24px */
 	}
 }
 
 .description {
 	@mixin font-text20;
+
+	color: #ebebeb;
+
+	&.profix {
+		@mixin font-text18;
+
+		color: #b9b9b9;
+	}
 }
 
 .backButton {
@@ -48,4 +60,16 @@
 		margin-inline: auto;
 		margin-block-start: 2rem; /* 32px */
 	}
+}
+
+.established {
+	@mixin font-text14;
+
+	padding-inline: 0.5rem; /* 8px*/
+	padding-block: 0.25rem; /* 4px */
+	border: 0.063rem solid white;
+	border-radius: 0.25rem; /* 4px */
+	color: white;
+	margin-block-end: 1.5rem; /* 24px */
+	font-weight: 500;
 }

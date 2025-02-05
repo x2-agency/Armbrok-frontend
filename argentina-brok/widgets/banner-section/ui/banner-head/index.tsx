@@ -10,14 +10,7 @@ import type { BannerHeadProps } from '@/widgets/banner-section/banner.types';
 
 import css from './index.module.css';
 
-export const BannerHead = ({
-	title,
-	description,
-	established,
-	icon,
-	className,
-	withBackButton,
-}: BannerHeadProps) => {
+export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 	const router = useRouter();
 
 	const handleClick = () => {
@@ -25,20 +18,22 @@ export const BannerHead = ({
 	};
 
 	return (
-		<section className={cx(css.root, className)}>
-			{withBackButton && (
+		<section className={cx(css.root, className, css[type])}>
+			{type === 'profix' && (
 				<Button variant="back" onClick={handleClick} className={css.backButton}>
 					Back
 				</Button>
 			)}
-			{established && (
-				<div className={css.established}>{parser(established)}</div>
+			{type === 'about' && (
+				<div className={css.established}>{parser(headData.established)}</div>
 			)}
-			<h1 className={cx(css.title, { [css.withBackButton]: withBackButton })}>
-				{parser(title)}
-			</h1>
-			<p className={css.description}>{parser(description)}</p>
-			{icon && <img src={icon} alt="Icon" className={css.icon} />}
+			<h1 className={cx(css.title, css[type])}>{parser(headData.title)}</h1>
+			<p className={cx(css.description, css[type])}>
+				{parser(headData.description)}
+			</p>
+			{type === 'profix' && headData.icon && (
+				<img src={headData.icon} alt="Icon" className={css.icon} />
+			)}
 		</section>
 	);
 };
