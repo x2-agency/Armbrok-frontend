@@ -1,5 +1,9 @@
 import { Button } from '@/shared/ui/button';
-import { LOGIN_BUTTON, OPEN_ACC_BUTTON } from '../../model/header.constants';
+import {
+	LOGIN_BUTTON,
+	OPEN_ACC_BUTTON,
+} from '@/widgets/app-layout/ui/header/model/header.constants';
+
 import css from './index.module.css';
 export const LogIn = () => {
 	return (

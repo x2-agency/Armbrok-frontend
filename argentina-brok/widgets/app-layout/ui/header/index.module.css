@@ -58,3 +58,7 @@
 	display: inline-block;
 	cursor: pointer;
 }
+
+.inner {
+	border-bottom: 1px solid #ffffff;
+}
