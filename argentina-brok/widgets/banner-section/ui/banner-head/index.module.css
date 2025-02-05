@@ -41,6 +41,11 @@
 		@mixin font-text18;
 
 		color: #b9b9b9;
+		padding-block-end: 4rem; /* 64px */
+
+		@media (max-width: 767px) {
+			padding-block-end: 2rem; /* 32px */
+		}
 	}
 }
 
