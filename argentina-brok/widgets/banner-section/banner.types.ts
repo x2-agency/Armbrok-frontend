@@ -1,10 +1,4 @@
-import type { PropsWithChildren } from 'react';
-
 import type { PosterImageProps } from '@/shared/types/poster';
-
-export interface BackButtonProps extends PropsWithChildren {
-	className?: string;
-}
 
 interface ButtonProps {
 	href: string;
@@ -39,6 +33,7 @@ export interface AwardsData {
 }
 
 interface BaseBannerProps {
+	className?: string;
 	type: string;
 	alignContent?: 'start' | 'center' | 'end' | '';
 	banner: {
@@ -49,7 +44,6 @@ interface BaseBannerProps {
 }
 
 type ProfixBannerProps = BaseBannerProps & {
-	className?: string;
 	type: 'profix';
 	alignContent?: never;
 	banner: BaseBannerProps['banner'] & {
@@ -59,7 +53,6 @@ type ProfixBannerProps = BaseBannerProps & {
 };
 
 type DefaultBannerProps = BaseBannerProps & {
-	className?: string;
 	type: 'default';
 	banner: BaseBannerProps['banner'] & {
 		button: ButtonProps;
@@ -67,7 +60,6 @@ type DefaultBannerProps = BaseBannerProps & {
 };
 
 type AboutBannerProps = BaseBannerProps & {
-	className?: string;
 	type: 'about';
 	alignContent?: never;
 	banner: BaseBannerProps['banner'] & {
@@ -82,6 +74,7 @@ export type BannerProps =
 	| AboutBannerProps;
 
 interface BaseBannerHeadProps {
+	className?: string;
 	type: string;
 	headData: {
 		title: string;
@@ -89,8 +82,7 @@ interface BaseBannerHeadProps {
 	};
 }
 
-type ProfixBannerHeadProps = BaseBannerHeadProps & {
-	className?: string;
+export type ProfixBannerHeadProps = BaseBannerHeadProps & {
 	type: 'profix';
 	headData: BaseBannerHeadProps['headData'] & {
 		icon: string;
@@ -98,8 +90,7 @@ type ProfixBannerHeadProps = BaseBannerHeadProps & {
 	};
 };
 
-type DefaultBannerHeadProps = BaseBannerHeadProps & {
-	className?: string;
+export type DefaultBannerHeadProps = BaseBannerHeadProps & {
 	type: 'default';
 	headData: BaseBannerHeadProps['headData'] & {
 		icon?: never;
@@ -107,8 +98,7 @@ type DefaultBannerHeadProps = BaseBannerHeadProps & {
 	};
 };
 
-type AboutBannerHeadProps = BaseBannerHeadProps & {
-	className?: string;
+export type AboutBannerHeadProps = BaseBannerHeadProps & {
 	type: 'about';
 	headData: BaseBannerHeadProps['headData'] & {
 		icon?: never;
@@ -122,12 +112,12 @@ export type BannerHeadProps =
 	| AboutBannerHeadProps;
 
 interface BaseBannerBodyProps {
+	className?: string;
 	type: string;
 	bodyData: Record<string, unknown>;
 }
 
-type ProfixBannerBodyProps = BaseBannerBodyProps & {
-	className?: string;
+export type ProfixBannerBodyProps = BaseBannerBodyProps & {
 	type: 'profix';
 	bodyData: {
 		panel: PanelProps;
@@ -136,8 +126,7 @@ type ProfixBannerBodyProps = BaseBannerBodyProps & {
 	};
 };
 
-type DefaultBannerBodyProps = BaseBannerBodyProps & {
-	className?: string;
+export type DefaultBannerBodyProps = BaseBannerBodyProps & {
 	type: 'default';
 	bodyData: {
 		panel?: never;
@@ -146,8 +135,7 @@ type DefaultBannerBodyProps = BaseBannerBodyProps & {
 	};
 };
 
-type AboutBannerBodyProps = BaseBannerBodyProps & {
-	className?: string;
+export type AboutBannerBodyProps = BaseBannerBodyProps & {
 	type: 'about';
 	bodyData: {
 		awards: Array<AwardsData>;

@@ -63,7 +63,7 @@
 	@media (max-width: 767px) {
 		position: static;
 		margin-inline: auto;
-		margin-block-start: 2rem; /* 32px */
+		margin-block-end: 2rem; /* 32px */
 	}
 }
 
