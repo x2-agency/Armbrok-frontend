@@ -1,4 +1,6 @@
-import { Button } from '@/shared/ui/button';
+'use client';
+
+import BurgerButton from '@/public/assets/icon/header/burger_button.svg';
 
 import css from './index.module.css';
 import {
@@ -6,17 +8,30 @@ import {
 	LOGO_HEADER,
 	NAVIGATION_LINKS,
 } from './model/header.constants';
+import { LanguageSelection } from './ui/language-selection';
+import { LogIn } from './ui/log-in';
 import { Logo } from './ui/logo';
 import { Navigation } from './ui/navigation';
+import { Search } from './ui/search';
 
 export const Header = () => {
 	return (
-		<header className={css.root}>
-			<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
-			<Navigation navLinks={NAVIGATION_LINKS} />
-			<Button variant="filled" href="/">
-				Open account
-			</Button>
-		</header>
+		<>
+			<header className={css.root}>
+				<div className={css.leftBlock}>
+					<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
+					<Navigation navLinks={NAVIGATION_LINKS} />
+				</div>
+
+				<div className={css.rightBlock}>
+					<BurgerButton className={css.berger} />
+
+					<Search href="#" />
+					<LanguageSelection />
+					<LogIn />
+				</div>
+			</header>
+			<div className={css.inner}></div>
+		</>
 	);
 };

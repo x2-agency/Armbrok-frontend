@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import Link from 'next/link';
 
