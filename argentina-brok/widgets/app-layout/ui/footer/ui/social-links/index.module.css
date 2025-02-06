@@ -2,8 +2,15 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 	padding-block-end: 2.5rem; /* 40px */
 	border-bottom: 1px solid #ebebeb;
+	@media (max-width: 767px) {
+		flex-direction: column;
+		align-items: baseline;
+		width: 100%;
+		gap: 0.938rem; /* 15px */
+	}
 }
 
 .store {

@@ -3,12 +3,24 @@
 	grid-template-columns: repeat(5, 1fr);
 	column-gap: 7rem; /* 112px */
 	padding-block-end: 2.5rem; /* 40px */
+	@media (max-width: 1023px) {
+		grid-template-columns: repeat(3, 1fr);
+		row-gap: 2.5rem; /* 40px */
+	}
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .title {
 	@mixin font-h6;
 	font-weight: 600;
 	padding-block-end: 1.5rem; /* 24px */
+	@media (max-width: 767px) {
+		padding-block-end: 0.6rem;
+	}
 }
 
 .list {

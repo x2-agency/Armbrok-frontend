@@ -1,7 +1,6 @@
 'use client';
 
 import BurgerButton from '@/public/assets/icon/header/burger_button.svg';
-import useMediaQuery from '@/shared/hooks/useMediaQuery/useMediaQuery';
 
 import css from './index.module.css';
 import {
@@ -16,26 +15,20 @@ import { Navigation } from './ui/navigation';
 import { Search } from './ui/search';
 
 export const Header = () => {
-	const isMobile = useMediaQuery('(max-width: 767px)');
-
 	return (
 		<>
 			<header className={css.root}>
 				<div className={css.leftBlock}>
 					<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
-					{!isMobile && <Navigation navLinks={NAVIGATION_LINKS} />}
+					<Navigation navLinks={NAVIGATION_LINKS} />
 				</div>
 
 				<div className={css.rightBlock}>
-					{isMobile ? (
-						<BurgerButton className={css.berger} />
-					) : (
-						<>
-							<Search href="#" />
-							<LanguageSelection />
-							<LogIn />
-						</>
-					)}
+					<BurgerButton className={css.berger} />
+
+					<Search href="#" />
+					<LanguageSelection />
+					<LogIn />
 				</div>
 			</header>
 			<div className={css.inner}></div>
