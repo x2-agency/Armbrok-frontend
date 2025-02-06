@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import Link from 'next/link';
 
-import { LogoProps } from '../../types/logo-types';
+import type { LogoProps } from '@/widgets/app-layout/ui/header/types/logo-types';
+
 import css from './index.module.css';
 
 export const Logo = ({ className, href, logo }: LogoProps) => {

@@ -1,4 +1,5 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
+
 import { Footer } from './ui/footer';
 import { Header } from './ui/header';
 

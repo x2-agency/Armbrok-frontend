@@ -20,12 +20,14 @@ export const Button = ({
 	}
 
 	return (
-		<button
-			className={cx(css.root, className, css[variant])}
-			type={type}
-			onClick={onClick}
-		>
-			{children}
-		</button>
+		<>
+			<button
+				className={cx(css.root, className, css[variant])}
+				type={type}
+				onClick={onClick}
+			>
+				{children}
+			</button>
+		</>
 	);
 };

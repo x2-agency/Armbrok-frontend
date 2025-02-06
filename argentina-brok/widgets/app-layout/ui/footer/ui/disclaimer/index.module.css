@@ -1,0 +1,13 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem; /* 16px */
+	padding-block-start: 2.5rem; /* 40px */
+	padding-block-end: 2.5rem; /* 40px */
+}
+
+.text,
+.time {
+	color: #777777;
+	@mixin font-text14;
+}
