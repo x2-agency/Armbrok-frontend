@@ -1,5 +1,33 @@
-.root {
+.sectionTitle {
+	@mixin font-h2;
+
+	font-weight: 600;
+	text-align: center;
+	padding-block-end: 2.5rem; /* 40px */
+}
+
+.cards {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	column-gap: 4rem; /* 64px */
+}
+
+.icon {
+	width: 3rem; /* 48px */
+	height: 3rem; /* 48px */
+	margin-block-end: 1.5rem; /* 24px */
+}
+
+.title {
+	@mixin font-text20;
+
+	font-weight: 600;
+	color: #212121;
+	padding-block-end: 0.75rem; /* 12px */
+}
+
+.description {
+	@mixin font-text16;
+
+	color: #3e3e3e;
 }
