@@ -8,24 +8,60 @@
 	margin-inline: auto;
 	pointer-events: all;
 
-	@media (min-width: 375px) and (max-width: 767px) {
+	@media (min-width: 375px) and (max-width: 949px) {
 		padding-inline: 1.25rem; /* 20px */
 		width: 100%;
 	}
 
-	@media (min-width: 768px) {
-		max-width: 45rem; /* 720px */
-	}
-
-	@media (min-width: 992px) {
+	@media (min-width: 950px) and (max-width: 1023px) {
 		max-width: 60rem; /* 960px */
 	}
 
-	@media (min-width: 1200px) {
-		max-width: 71.25rem; /* 1140px */
+	@media (min-width: 1024px) and (max-width: 1149px) {
+		max-width: 63rem; /* 1120px */
+	}
+
+	@media (min-width: 1150px) and (max-width: 1199px) {
+		max-width: 70rem; /* 1120px */
+	}
+
+	@media (min-width: 1200px) and (max-width: 1299px) {
+		max-width: 73rem; /* 1120px */
+	}
+
+	@media (min-width: 1300px) {
+		max-width: 76.438rem; /* 1223px */
 	}
 
 	@media (min-width: 1440px) {
 		max-width: 87.438rem; /* 1399px */
 	}
+}
+
+.leftBlock,
+.rightBlock {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.leftBlock {
+	gap: 5rem; /* 80px */
+}
+
+.rightBlock {
+	gap: 2.5rem; /* 40px */
+}
+
+.berger {
+	display: inline-block;
+	cursor: pointer;
+	@media (min-width: 768px) {
+		display: none;
+	}
+}
+
+.inner {
+	border-bottom: 1px solid #ffffff;
 }

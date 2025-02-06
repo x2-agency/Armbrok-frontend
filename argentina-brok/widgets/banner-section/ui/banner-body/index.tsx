@@ -7,35 +7,36 @@ import { BannerPanel } from '@/widgets/banner-section/ui/banner-panel';
 
 import css from './index.module.css';
 
-export const BannerBody = ({ type, className, bodyData }: BannerBodyProps) => {
-	const defineContent = () => {
-		if (type === 'profix') {
-			return <BannerPanel className={css.panel} {...bodyData.panel} />;
-		}
-
-		if (type === 'about') {
+export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
+	switch (type) {
+		case 'profix':
 			return (
-				<section className={css.awards}>
+				<div className={cx(css.root, className)}>
+					<BannerPanel className={css.panel} {...bodyData.panel} />
+				</div>
+			);
+		case 'about':
+			return (
+				<div className={cx(css.root, className, css.awards)}>
 					{bodyData.awards.map((award, index) => (
 						<BannerAward key={index} {...award} />
 					))}
-				</section>
+				</div>
 			);
-		}
-
-		if (type === 'default') {
+		case 'default':
 			return (
-				<Button
-					variant="filled"
-					category="big"
-					className={css.button}
-					href={bodyData.button.href}
-				>
-					{bodyData.button?.text}
-				</Button>
+				<div className={cx(css.root, className)}>
+					<Button
+						variant="filled"
+						category="big"
+						className={css.button}
+						href={bodyData.button.href}
+					>
+						{bodyData.button.text}
+					</Button>
+				</div>
 			);
-		}
-	};
-
-	return <div className={cx(css.root, className)}>{defineContent()}</div>;
+		default:
+			return null;
+	}
 };

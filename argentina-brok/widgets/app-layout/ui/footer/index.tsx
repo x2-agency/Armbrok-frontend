@@ -1,18 +1,17 @@
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
+import { Column } from './ui/column';
+import { Disclaimer } from './ui/disclaimer';
+import { Social } from './ui/social-links';
 
 export const Footer = () => {
 	return (
 		<footer className={css.root}>
 			<Container>
-				<div className={css.table}></div>
-				<div className={css.imgWrap}></div>
-				<div className={css.textWrap}>
-					<p className={css.text}>
-						Armbrok is not responsible for the accuracy and reliability of the
-					</p>
-				</div>
+				<Column />
+				<Social />
+				<Disclaimer />
 			</Container>
 		</footer>
 	);

@@ -6,7 +6,7 @@ import { Header } from './ui/header';
 export const AppLayout = ({ children }: Readonly<PropsWithChildren>) => {
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			<main>{children}</main>
 			<Footer />
 		</>

@@ -1,0 +1,8 @@
+.root {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5rem; /* 24px */
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
