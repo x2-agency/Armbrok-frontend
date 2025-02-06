@@ -86,45 +86,61 @@ export const MOCK_ABOUT_BANNER = {
 };
 
 export const HERO_DATA = {
-	titleSection: {
-		title:
-			'By&nbsp;entrusting&nbsp;us with your assets, you gain access to&nbsp;our expertise, insights, and commitment to&nbsp;your financial success.',
-		description:
-			'Trust management, also known as&nbsp;asset management, involves professional management of&nbsp;financial assets on&nbsp;behalf of&nbsp;clients. We&nbsp;tailor our services to&nbsp;meet your specific financial goals, ensuring your portfolio is&nbsp;aligned with market opportunities.',
-	},
-	experience: [
-		{
-			title: '7 years',
-			description: 'of&nbsp;successful work in&nbsp;asset management',
-		},
-		{ title: '50+', description: 'Institutional Clients' },
-		{ title: '$760M', description: 'in&nbsp;assets under<br /> management' },
-	],
-	expertSolutions: {
+	// titleSection: {
+	// 	title:
+	// 		'By&nbsp;entrusting&nbsp;us with your assets, you gain access to&nbsp;our expertise, insights, and commitment to&nbsp;your financial success.',
+	// 	description:
+	// 		'Trust management, also known as&nbsp;asset management, involves professional management of&nbsp;financial assets on&nbsp;behalf of&nbsp;clients. We&nbsp;tailor our services to&nbsp;meet your specific financial goals, ensuring your portfolio is&nbsp;aligned with market opportunities.',
+	// },
+	// experience: [
+	// 	{
+	// 		title: '7 years',
+	// 		description: 'of&nbsp;successful work in&nbsp;asset management',
+	// 	},
+	// 	{ title: '50+', description: 'Institutional Clients' },
+	// 	{ title: '$760M', description: 'in&nbsp;assets under<br /> management' },
+	// ],
+	// expertSolutions: {
+	// 	items: [
+	// 		{
+	// 			icon: '/assets/icon/mock-factoids/first.svg',
+	// 			title: '10+&nbsp;exchanges, 15 000+ instruments',
+	// 			description:
+	// 				'Access to&nbsp;all major exchanges in&nbsp;the USA, Europe, Asia and of&nbsp;course Armenia',
+	// 		},
+	// 		{
+	// 			icon: '/assets/icon/mock-factoids/second.svg',
+	// 			title: 'Over-the-Counter market',
+	// 			description:
+	// 				'We&nbsp;will find and buy for you practically any OTC instrument at&nbsp;an&nbsp;attractive price',
+	// 		},
+	// 		{
+	// 			icon: '/assets/icon/mock-factoids/third.svg',
+	// 			title: 'Own depositary and custodian',
+	// 			description:
+	// 				'This allows you to&nbsp;quickly transfer securities from one jurisdiction to&nbsp;another',
+	// 		},
+	// 		{
+	// 			icon: '/assets/icon/mock-factoids/fourth.svg',
+	// 			title: 'Expert Support When You Need&nbsp;It',
+	// 			description:
+	// 				'Caring and always ready to&nbsp;guide you through your investment journey.',
+	// 		},
+	// 	],
+	// },
+	guarantees: {
 		items: [
 			{
-				icon: '/assets/icon/mock-factoids/first.svg',
-				title: '10+&nbsp;exchanges, 15 000+ instruments',
-				description:
-					'Access to&nbsp;all major exchanges in&nbsp;the USA, Europe, Asia and of&nbsp;course Armenia',
+				icon: '/assets/icon/mock-garantees/first.svg',
+				title: 'Quarterly and annual bonuses',
 			},
 			{
-				icon: '/assets/icon/mock-factoids/second.svg',
-				title: 'Over-the-Counter market',
-				description:
-					'We&nbsp;will find and buy for you practically any OTC instrument at&nbsp;an&nbsp;attractive price',
+				icon: '/assets/icon/mock-garantees/second.svg',
+				title: 'Voluntary health insurance',
 			},
 			{
-				icon: '/assets/icon/mock-factoids/third.svg',
-				title: 'Own depositary and custodian',
-				description:
-					'This allows you to&nbsp;quickly transfer securities from one jurisdiction to&nbsp;another',
-			},
-			{
-				icon: '/assets/icon/mock-factoids/fourth.svg',
-				title: 'Expert Support When You Need&nbsp;It',
-				description:
-					'Caring and always ready to&nbsp;guide you through your investment journey.',
+				icon: '/assets/icon/mock-garantees/third.svg',
+				title: 'Pension co-financing',
 			},
 		],
 	},

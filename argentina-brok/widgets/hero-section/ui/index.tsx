@@ -1,6 +1,7 @@
 import { Container } from '@/shared/ui/container';
 import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
+import { GuaranteesSection } from '@/shared/ui/guarantees-section';
 import { TitleSection } from '@/shared/ui/title-section';
 
 import css from './index.module.css';
@@ -22,12 +23,19 @@ type HeroSectionProps = {
 			description: string;
 		}>;
 	};
+	guarantees?: {
+		items: Array<{
+			icon: string;
+			title: string;
+		}>;
+	};
 };
 
 export const HeroSection = ({
 	titleSection,
 	experience,
 	expertSolutions,
+	guarantees,
 }: HeroSectionProps) => {
 	return (
 		<Container className={css.root}>
@@ -38,6 +46,7 @@ export const HeroSection = ({
 			{expertSolutions && (
 				<ExpertSolutionSection items={expertSolutions.items} />
 			)}
+			{guarantees && <GuaranteesSection items={guarantees.items} />}
 		</Container>
 	);
 };
