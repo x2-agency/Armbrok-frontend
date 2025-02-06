@@ -26,5 +26,6 @@
 .list {
 	display: flex;
 	flex-direction: column;
+	align-items: baseline;
 	gap: 1rem; /* 16px */
 }
