@@ -16,7 +16,6 @@ export const Link = ({ items, className }: IconListProps) => {
 						alt="icon media"
 						width={link.width}
 					/>
-					<a className={css.link} href={link.href} />
 				</a>
 			))}
 		</div>
