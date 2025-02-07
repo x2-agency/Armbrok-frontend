@@ -14,19 +14,26 @@ type ExpertSolutionSectionProps = {
 		title: string;
 		description: string;
 	}>;
+	withShell?: boolean;
 };
 
 export const ExpertSolutionSection = ({
 	className,
 	title,
 	items,
+	withShell,
 }: ExpertSolutionSectionProps) => {
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.sectionTitle}>{parser(title)}</h2>}
 			<div className={css.cards}>
 				{items.map((item, key) => (
-					<article key={key} className={css.card}>
+					<article
+						key={key}
+						className={cx(css.card, {
+							[css.withShell]: withShell,
+						})}
+					>
 						<img src={item.icon} alt="icon" className={css.icon} />
 						<h4 className={css.title}>{parser(item.title)}</h4>
 						<p className={css.description}>{parser(item.description)}</p>

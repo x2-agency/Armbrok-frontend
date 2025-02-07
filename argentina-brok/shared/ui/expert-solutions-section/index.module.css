@@ -31,3 +31,8 @@
 
 	color: #3e3e3e;
 }
+
+.card.withShell {
+	padding: 32px;
+	border-radius: 16px;
+}
