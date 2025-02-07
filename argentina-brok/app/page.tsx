@@ -6,13 +6,7 @@ import {
 import { BannerSection } from '@/widgets/banner-section/ui';
 
 const HomePage = () => {
-	return (
-		<BannerSection
-			type="default"
-			banner={MOCK_DEFAULT_BANNER}
-			alignContent="end"
-		/>
-	);
+	return <BannerSection type="profix" banner={MOCK_PROFIX_BANNER} />;
 };
 
 export default HomePage;

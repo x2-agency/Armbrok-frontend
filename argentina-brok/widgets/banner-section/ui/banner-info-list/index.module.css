@@ -1,0 +1,21 @@
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+
+	@media (max-width: 767px) {
+		align-items: start;
+	}
+}
+
+.title {
+	@mixin font-text20;
+	display: flex;
+	color: white;
+	gap: 0.5rem;
+}
+
+.description {
+	@mixin font-text16;
+	color: gray;
+}

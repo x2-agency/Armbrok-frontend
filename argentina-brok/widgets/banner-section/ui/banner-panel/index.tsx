@@ -1,8 +1,10 @@
 import cx from 'clsx';
-import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
 import type { PanelProps } from '@/widgets/banner-section/banner.types';
+import { BannerInfoList } from '@/widgets/banner-section/ui/banner-info-list';
+import { BannerPercent } from '@/widgets/banner-section/ui/banner-percent';
+import { BannerRiskLevel } from '@/widgets/banner-section/ui/banner-risk-level';
 
 import css from './index.module.css';
 
@@ -18,39 +20,22 @@ export const BannerPanel = ({
 		<article className={cx(css.root, className)}>
 			<div className={css.content}>
 				{averagePercent && (
-					<p className={css.percentData}>
-						<span className={css.percent}>+{averagePercent.percent}%</span>
-						<span className={css.percentText}>
-							{parser(averagePercent.text)}
-						</span>
-					</p>
+					<BannerPercent
+						percent={averagePercent.percent}
+						text={averagePercent.text}
+					/>
 				)}
 				{amd && (
-					<ul className={css.list}>
-						<li className={css.title}>{parser(amd.subtext)}</li>
-						<li className={css.description}>{parser(amd.description)}</li>
-					</ul>
+					<BannerInfoList title={amd.subtext} description={amd.description} />
 				)}
 				{riskLevel && (
-					<ul className={css.list}>
-						<li className={css.title}>
-							{Array.from({ length: 3 }).map((_, key) => (
-								<div
-									key={key}
-									className={cx(css.circle, {
-										[css.filled]: key < riskLevel.risk,
-									})}
-								/>
-							))}
-						</li>
-						<li className={css.description}>{riskLevel.text}</li>
-					</ul>
+					<BannerRiskLevel risk={riskLevel.risk} text={riskLevel.text} />
 				)}
 				{period && (
-					<ul className={css.list}>
-						<li className={css.title}>{parser(period.title)}</li>
-						<li className={css.description}>{parser(period.description)}</li>
-					</ul>
+					<BannerInfoList
+						title={period.title}
+						description={period.description}
+					/>
 				)}
 			</div>
 			{button && (
