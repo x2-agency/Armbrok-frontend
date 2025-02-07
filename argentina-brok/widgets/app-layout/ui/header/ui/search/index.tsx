@@ -6,7 +6,7 @@ import css from './index.module.css';
 export const Search = ({ href }: { href: string }) => {
 	return (
 		<Link className={css.root} href={href}>
-			<SearchSvg />
+			<SearchSvg className={css.svg} />
 		</Link>
 	);
 };
