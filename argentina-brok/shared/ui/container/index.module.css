@@ -1,25 +1,18 @@
 .root {
+	width: 83.33vw;
 	margin-inline: auto;
+	@mixin responsive width, 100%, 83.33vw, 75rem;
+	@mixin responsive margin-inline, unset, auto, auto;
+	@mixin responsive padding-inline, 5.333rem, unset, unset;
 
-	@media (min-width: 375px) and (max-width: 767px) {
-		padding-inline: 1.25rem; /* 20px */
+	@media (max-width: 767px) {
 		width: 100%;
+		padding-inline: 5.333rem; /* 20px */
 	}
 
-	@media (min-width: 768px) {
-		max-width: 45rem; /* 720px */
-	}
-
-	@media (min-width: 992px) {
-		max-width: 60rem; /* 960px */
-	}
-
-	@media (min-width: 1200px) {
-		max-width: 71.25rem; /* 1140px */
-	}
-
-	@media (min-width: 1440px) {
-		max-width: 75rem; /* 1200px */
+	@media (min-width: 1441px) {
+		margin-inline: auto;
+		width: 75rem; /* 1200px */
 	}
 }
 

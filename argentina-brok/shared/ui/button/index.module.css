@@ -8,9 +8,9 @@
 
 .filled,
 .outline {
-	padding-inline: 1.5rem; /* 24px */
-	padding-block: 0.5rem; /* 8px */
-	border-radius: 0.75rem; /* 12px */
+	@mixin responsive padding-inline, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin responsive padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
 }
 
 .filled {

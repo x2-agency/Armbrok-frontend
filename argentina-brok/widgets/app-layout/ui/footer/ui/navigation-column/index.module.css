@@ -1,12 +1,8 @@
 .root {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	column-gap: 7rem; /* 112px */
-	padding-block-end: 2.5rem; /* 40px */
-	@media (max-width: 1023px) {
-		grid-template-columns: repeat(3, 1fr);
-		row-gap: 2.5rem; /* 40px */
-	}
+	column-gap: 7.778rem; /* 112px */
+	padding-block-end: 2.778rem; /* 40px */
 
 	@media (max-width: 767px) {
 		display: flex;
@@ -14,18 +10,23 @@
 	}
 }
 
+.column {
+	@mixin responsive padding-block-end, 4rem, unset, unset; /* 15px */
+	&:last-of-type {
+		padding-block-end: unset;
+	}
+}
+
 .title {
 	@mixin font-h6;
 	font-weight: 600;
-	padding-block-end: 1.5rem; /* 24px */
-	@media (max-width: 767px) {
-		padding-block-end: 0.6rem;
-	}
+
+	@mixin responsive padding-block-end, 2.667rem, 1.667rem, 1.5rem;
 }
 
 .list {
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
-	gap: 1rem; /* 16px */
+	gap: 1.111rem; /* 16px */
 }
