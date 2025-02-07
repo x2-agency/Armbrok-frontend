@@ -1,0 +1,27 @@
+.circle {
+	width: 0.75rem;
+	height: 0.75rem;
+	border-radius: 100%;
+	background-color: gray;
+	margin-block: 0.438rem;
+
+	&.filled {
+		background-color: white;
+	}
+}
+
+.title {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.description {
+	@mixin font-text16;
+	color: gray;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+}
