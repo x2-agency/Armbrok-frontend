@@ -6,7 +6,7 @@ import {
 import { BannerSection } from '@/widgets/banner-section/ui';
 
 const HomePage = () => {
-	return <BannerSection type="profix" banner={MOCK_PROFIX_BANNER} />;
+	return <BannerSection type="about" banner={MOCK_ABOUT_BANNER} />;
 };
 
 export default HomePage;

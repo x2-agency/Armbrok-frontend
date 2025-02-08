@@ -10,7 +10,7 @@
 }
 
 .button {
-	margin-block-start: 2.5rem; /* 40px */
+	@mixin responsive margin-block-start, 10.667rem, 2.778rem, 2.5rem;
 }
 
 .awards {

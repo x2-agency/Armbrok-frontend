@@ -6,7 +6,7 @@
 
 .root.default[data-align='start'] {
 	justify-content: start;
-	padding-block-start: 11.625rem; /* 186px */
+	@mixin responsive padding-block-start, 28rem, 12.917rem, 11.625rem;
 }
 
 .root.default[data-align='center'] {
@@ -15,7 +15,7 @@
 
 .root.default[data-align='end'] {
 	justify-content: end;
-	padding-block-end: 6.25rem; /* 100px */
+	@mixin responsive padding-block-end, 8.533rem, 6.944rem, 6.25rem;
 }
 
 .root.default {
