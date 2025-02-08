@@ -1,9 +1,9 @@
 .root {
 	width: 83.33vw;
 	margin-inline: auto;
-	@mixin responsive width, 100%, 83.33vw, 75rem;
-	@mixin responsive margin-inline, unset, auto, auto;
-	@mixin responsive padding-inline, 5.333rem, unset, unset;
+	@mixin res width, 100%, 83.33vw, 75rem;
+	@mixin res margin-inline, unset, auto, auto;
+	@mixin res padding-inline, 5.333rem, unset, unset;
 
 	@media (max-width: 767px) {
 		width: 100%;
