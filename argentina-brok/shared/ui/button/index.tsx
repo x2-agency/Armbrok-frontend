@@ -1,6 +1,6 @@
 import cx from 'clsx';
 
-import BackSVG from '@/public/assets/icon/back.svg';
+import BackSVG from '@/public/assets/back.svg';
 
 import css from './index.module.css';
 import type { ButtonProps } from './types/button.types';

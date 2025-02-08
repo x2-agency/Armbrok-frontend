@@ -1,27 +1,31 @@
 .circle {
-	width: 0.75rem;
-	height: 0.75rem;
+	@mixin responsive width, 3.2rem, 0.833rem, 0.75rem;
+	@mixin responsive height, 3.2rem, 0.833rem, 0.75rem;
+	@mixin responsive margin-block, 1.867rem, 0.472rem, 0.438rem;
+
 	border-radius: 100%;
-	background-color: gray;
-	margin-block: 0.438rem;
+	background-color: var(--gray-400-color);
 
 	&.filled {
-		background-color: white;
+		background-color: var(--white-color);
 	}
 }
 
 .title {
+	@mixin responsive gap, 2.133rem, 0.556rem, 0.5rem;
+
 	display: flex;
-	gap: 0.5rem;
 }
 
 .description {
 	@mixin font-text16;
-	color: gray;
+
+	color: var(--gray-400-color);
 }
 
 .list {
+	@mixin responsive gap, 2.133rem, 0.556rem, 0.5rem;
+
 	display: flex;
 	flex-direction: column;
-	gap: 0.375rem;
 }

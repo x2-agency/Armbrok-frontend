@@ -1,5 +1,5 @@
 export const LOGO_HEADER = {
-	src: '/assets/icon/header/logo_armbrok.svg',
+	src: '/assets/icons/header/logo_armbrok.svg',
 	alt: 'Логотип компании',
 };
 
@@ -16,7 +16,7 @@ export const NAVIGATION_LINKS = [
 	{ text: 'Contact us', href: '/contact-us' },
 ];
 
-export const LANGUAGE = [
+export const LANGUAGES = [
 	{
 		value: 'EN',
 		lang: 'En',

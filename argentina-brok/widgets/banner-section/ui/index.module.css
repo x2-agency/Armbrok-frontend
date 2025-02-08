@@ -6,7 +6,7 @@
 
 .root.default[data-align='start'] {
 	justify-content: start;
-	padding-block-start: 11.625rem; /* 186px */
+	@mixin responsive padding-block-start, 28rem, 12.917rem, 11.625rem;
 }
 
 .root.default[data-align='center'] {
@@ -15,7 +15,7 @@
 
 .root.default[data-align='end'] {
 	justify-content: end;
-	padding-block-end: 6.25rem; /* 100px */
+	@mixin responsive padding-block-end, 8.533rem, 6.944rem, 6.25rem;
 }
 
 .root.default {
@@ -23,13 +23,13 @@
 }
 
 .root.about {
-	padding-block-start: 11.5rem; /* 180px */
-	padding-block-end: 6.625rem; /* 106px */
+	@mixin responsive padding-block-start, 13.333rem, 12.5rem, 11.25rem;
+	@mixin responsive padding-block-end, 8rem, 7.361rem, 6.625rem;
 
 	.content {
 		display: flex;
 		flex-direction: column;
-		gap: 8.75rem;
+		@mixin responsive gap, 37.333rem, 9.722rem, 8.75rem;
 	}
 }
 

@@ -5,30 +5,30 @@
 
 .place {
 	@mixin font-h1;
+	@mixin responsive padding-block-end, 2.133rem, 0.556rem, 0.5rem;
 
-	color: #df2c29;
+	color: var(--red-500-color);
 	font-weight: 500;
-	padding-block: 0.5rem; /* 8px */
+
 }
 
 .title {
 	@mixin font-text20;
+	@mixin responsive padding-block-end, 3.2rem, 0.8rem, 0.75rem;
 
 	font-weight: 600;
-	padding-block-end: 0.75rem; /* 12px */
-	color: #fff;
+	color: var(--white-color);
+
 
 	@media (max-width: 767px) {
 		br {
 			display: none;
 		}
-
-        padding-block-end: 0.625rem;
 	}
 }
 
 .description {
 	@mixin font-text16;
 
-	color: #b9b9b9;
+	color: var(--gray-400-color);
 }

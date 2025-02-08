@@ -9,7 +9,7 @@
 
 .description,
 .title {
-	color: white;
+	color: var(--white-color);
 
 	@media (max-width: 767px) {
 		br {
@@ -23,58 +23,59 @@
 	font-weight: 700;
 
 	&.profix {
-		padding-block-end: 1rem; /* 16px */
+		@mixin responsive padding-block-end, 4.267rem, 1.111rem, 1rem;
 	}
 
 	&.default,
 	&.about {
-		padding-block-end: 1.5rem; /* 24px */
+		@mixin responsive padding-block-end, 6.4rem, 1.667rem, 1.5rem;
 	}
 }
 
 .description {
 	@mixin font-text20;
 
-	color: #ebebeb;
+	color: var(--gray-300-color);
 
 	&.profix {
 		@mixin font-text18;
+		@mixin responsive padding-block-end, 10.067rem, 4.444rem, 4rem;
 
-		color: #b9b9b9;
-		padding-block-end: 4rem; /* 64px */
-
-		@media (max-width: 767px) {
-			padding-block-end: 2rem; /* 32px */
-		}
+		color: var(--gray-400-color);
 	}
 }
 
+
 .backButton {
-	margin-block-end: 2.563rem; /* 41px */
+	@mixin responsive margin-block-end, 10.933rem, 2.847rem, 2.563rem;
 }
 
 .icon {
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 12.5rem; /* 200px */
-	height: 12.5rem; /* 200px */
+
+	@mixin responsive width, 53.333rem, 13.889rem, 12.5rem;
+	@mixin responsive height, 53.333rem, 13.889rem, 12.5rem;
 
 	@media (max-width: 767px) {
 		position: static;
 		margin-inline: auto;
-		margin-block-end: 2rem; /* 32px */
+		margin-block-end: 10.067rem;
 	}
 }
 
 .established {
 	@mixin font-text14;
+	@mixin responsive padding-inline, 2.133rem, 0.556rem, 0.5rem;
+	@mixin responsive padding-block, 1.067rem, 0.278rem, 0.25rem;
+	@mixin responsive border, 0.063rem, 0.063rem, 0.063rem;
+	@mixin responsive border-radius, 1.067rem, 0.278rem, 0.25rem;
+	@mixin responsive margin-block-end, 6.4rem, 1.667rem, 1.5rem;
 
-	padding-inline: 0.5rem; /* 8px*/
-	padding-block: 0.25rem; /* 4px */
-	border: 0.063rem solid white;
-	border-radius: 0.25rem; /* 4px */
-	color: white;
-	margin-block-end: 1.5rem; /* 24px */
+	border-color: var(--white-color);
+	border-style: solid;
+	color: var(--white-color);
 	font-weight: 500;
+
 }

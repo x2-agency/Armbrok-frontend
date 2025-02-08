@@ -1,6 +1,6 @@
 'use client';
 
-import BurgerButton from '@/public/assets/icon/header/burger_button.svg';
+import BurgerButton from '@/public/assets/icons/header/burger_button.svg';
 
 import css from './index.module.css';
 import {
@@ -16,22 +16,19 @@ import { Search } from './ui/search';
 
 export const Header = () => {
 	return (
-		<>
-			<header className={css.root}>
-				<div className={css.leftBlock}>
-					<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
-					<Navigation navLinks={NAVIGATION_LINKS} />
-				</div>
+		<header className={css.root}>
+			<div className={css.leftBlock}>
+				<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
+				<Navigation navLinks={NAVIGATION_LINKS} />
+			</div>
 
-				<div className={css.rightBlock}>
-					<BurgerButton className={css.berger} />
+			<div className={css.rightBlock}>
+				<BurgerButton className={css.burger} />
 
-					<Search href="#" />
-					<LanguageSelection />
-					<LogIn />
-				</div>
-			</header>
-			<div className={css.inner}></div>
-		</>
+				<Search href="#" />
+				<LanguageSelection />
+				<LogIn />
+			</div>
+		</header>
 	);
 };

@@ -1,31 +1,34 @@
 import parser from 'html-react-parser';
 
+import { Button } from '@/shared/ui/button';
 import { NAVIGATION_TABLE_DATA } from '@/widgets/app-layout/ui/footer/model/footer.constants';
 
 import css from './index.module.css';
 
-export const Column = () => {
+export const NavigationColumn = () => {
 	return (
-		<div className={css.root}>
+		<nav className={css.root}>
 			{NAVIGATION_TABLE_DATA.map(item => (
 				<div key={item.id} className={css.column}>
 					<h6 className={css.title}>{parser(item.title)}</h6>
 
 					{item.column && (
-						<div className={css.list}>
+						<ul className={css.list}>
 							{item.column.map(subItem => (
-								<a
-									href={subItem.href}
-									key={subItem.id}
-									className={css.listItem}
-								>
-									{parser(subItem.text)}
-								</a>
+								<li key={subItem.id}>
+									<Button
+										variant="subtle"
+										href={subItem.href ?? ''}
+										className={css.listItem}
+									>
+										{parser(subItem.text)}
+									</Button>
+								</li>
 							))}
-						</div>
+						</ul>
 					)}
 				</div>
 			))}
-		</div>
+		</nav>
 	);
 };
