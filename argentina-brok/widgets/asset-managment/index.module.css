@@ -1,8 +1,31 @@
 .root {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	background-color: var(--red-700-color);
+
+	@mixin res padding, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin res padding-block-end, 10.667rem, 4.306rem, 3.875rem; /* 10px 16px 16px */
+	@mixin res border-radius, 8.533rem, 2.222rem, 2rem; /* 32px */
+}
+
+.contnet {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+}
+
+.title,
+.description {
+	color: var(--white-color);
 }
 
 .title {
+	@mixin font-h2;
+	font-weight: 700;
+	@mixin res padding-block-end, 2.667rem, 1.111rem, 1rem; /* 10px 16px 16px */
 }
 
 .description {
+	@mixin font-text20;
+	@mixin res padding-block-end, 10.667rem, 4.306rem, 3.875rem; /* 40px 62px 62px */
 }

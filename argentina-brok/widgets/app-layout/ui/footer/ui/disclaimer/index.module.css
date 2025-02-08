@@ -2,8 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1.111rem; /* 16px */
-	@mixin responsive padding-block-start, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
-	@mixin responsive padding-block-end, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
+	@mixin res padding-block-start, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
+	@mixin res padding-block-end, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
 }
 
 .text,

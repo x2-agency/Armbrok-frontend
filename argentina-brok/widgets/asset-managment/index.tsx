@@ -21,11 +21,13 @@ export const AssetManagment = ({
 }) => {
 	return (
 		<Container className={css.root}>
-			<title className={css.title}>{parser(title)}</title>
-			<p className={css.description}>{parser(description)}</p>
-			<Button href={href} variant="filled">
-				{parser(buttonText)}
-			</Button>
+			<div className={css.contnet}>
+				<h2 className={css.title}>{parser(title)}</h2>
+				<p className={css.description}>{parser(description)}</p>
+				<Button href={href} variant="filled">
+					{parser(buttonText)}
+				</Button>
+			</div>
 			<img className={css.image} src={image} alt="banner picture" />
 		</Container>
 	);

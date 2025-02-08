@@ -11,7 +11,7 @@
 }
 
 .column {
-	@mixin responsive padding-block-end, 4rem, unset, unset; /* 15px */
+	@mixin res padding-block-end, 4rem, unset, unset; /* 15px */
 	&:last-of-type {
 		padding-block-end: unset;
 	}
@@ -21,7 +21,7 @@
 	@mixin font-h6;
 	font-weight: 600;
 
-	@mixin responsive padding-block-end, 2.667rem, 1.667rem, 1.5rem;
+	@mixin res padding-block-end, 2.667rem, 1.667rem, 1.5rem;
 }
 
 .list {
