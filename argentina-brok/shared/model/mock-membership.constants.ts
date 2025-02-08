@@ -7,7 +7,7 @@ export const MOCK_MEMBERSHIP = {
 		},
 		{
 			icon: '/assets/icon/mock-membership/amx.svg',
-			title: 'Central Depository of<br /> Armenia',
+			title: 'Central Depository<br /> of Armenia',
 			description:
 				'Status of the Account Operator<br /> Member of the regulated market',
 		},
@@ -28,7 +28,7 @@ export const MOCK_MEMBERSHIP = {
 		},
 		{
 			icon: '/assets/icon/mock-membership/abbc.svg',
-			title: 'Armenian British Busines<br />s Chamber',
+			title: 'Armenian British Business<br /> Chamber',
 			description: 'abbc.am',
 		},
 		{

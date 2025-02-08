@@ -1,5 +1,10 @@
 .hero {
 	@mixin res padding-block, 21.333rem, 5.556rem, 5rem;
+	@mixin res margin-block-end, 19.2rem, 5rem, 4.5rem;
 
 	background-color: var(--gray-200-color);
+}
+
+.membership {
+	@mixin res margin-block-end, 40.533rem, 10.556rem, 9.5rem;
 }
