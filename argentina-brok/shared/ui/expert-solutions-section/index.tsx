@@ -1,19 +1,16 @@
-/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import { Container } from '@/shared/ui/container';
+import type { ExpertSolutionCardProps } from '@/shared/ui/expert-solution-card';
+import { ExpertSolutionCard } from '@/shared/ui/expert-solution-card';
 
 import css from './index.module.css';
 
 export type ExpertSolutionSectionProps = {
 	className?: string;
 	title?: string;
-	items: Array<{
-		icon: string;
-		title: string;
-		description: string;
-	}>;
+	items: Array<ExpertSolutionCardProps>;
 	withShell?: boolean;
 	backgroundColor?: 'white' | 'gray';
 };
@@ -36,16 +33,15 @@ export const ExpertSolutionSection = ({
 			{title && <h2 className={css.sectionTitle}>{parser(title)}</h2>}
 			<div className={css.cards}>
 				{items.map((item, key) => (
-					<article
+					<ExpertSolutionCard
 						key={key}
+						{...item}
 						className={cx(css.card, cardBackgroundColor, {
 							[css.withShell]: withShell,
 						})}
-					>
-						<img src={item.icon} alt="icon" className={css.icon} />
-						<h4 className={css.title}>{parser(item.title)}</h4>
-						<p className={css.description}>{parser(item.description)}</p>
-					</article>
+						withShell={withShell}
+						backgroundColor={backgroundColor}
+					/>
 				))}
 			</div>
 		</Container>

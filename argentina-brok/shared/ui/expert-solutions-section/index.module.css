@@ -7,49 +7,13 @@
 }
 
 .cards {
-	@mixin res column-gap, 17.067rem, 4.444rem, 4rem;
+	@mixin res gap, 4.067rem, 4.444rem, 4rem;
 
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-}
 
-.icon {
-	@mixin res universal-size, 12.8rem, 3.333rem, 3rem;
-	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem;
-
-	width: var(--universal-size);
-	height: var(--universal-size);
-}
-
-.title {
-	@mixin font-text20;
-	@mixin res padding-block-end, 3.2rem, 0.833rem, 0.75rem;
-
-	font-weight: 600;
-	color: var(--black-color);
-}
-
-.description {
-	@mixin font-text16;
-
-	color: var(--gray-700-color);
-}
-
-.card.withShell {
-	@mixin res padding, 8.533rem, 2.222rem, 2rem;
-	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
-
-	background-color: var(--gray-200-color);
-
-	.icon {
-		@mixin res margin-block-end, 10.667rem, 2.778rem, 2.5rem;
-	}
-
-	&.whiteBackground {
-		background-color: var(--white-color);
-	}
-	
-	&.grayBackground {
-		background-color: var(--gray-200-color);
+	@media (max-width: 767px) {
+		row-gap: 6.5rem;
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
