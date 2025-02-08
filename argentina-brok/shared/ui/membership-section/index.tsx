@@ -11,19 +11,28 @@ type MembershipSectionProps = {
 	items: Array<MembershipCardProps>;
 	className?: string;
 	title?: string;
+	description?: string;
+	withGreyTitles?: boolean;
 };
 
 export const MembershipSection = ({
 	items,
 	className,
 	title,
+	description,
+	withGreyTitles,
 }: MembershipSectionProps) => {
 	return (
 		<Container className={cx(css.root, className)}>
-			{title && <h2 className={css.title}>{parser(title)}</h2>}
+			<header className={css.header}>
+				{title && <h2 className={css.title}>{parser(title)}</h2>}
+				{description && (
+					<p className={css.description}>{parser(description)}</p>
+				)}
+			</header>
 			<div className={css.items}>
-				{items.map(item => (
-					<MembershipCard key={item.title} {...item} />
+				{items.map((item, key) => (
+					<MembershipCard key={key} {...item} withGreyTitle={withGreyTitles} />
 				))}
 			</div>
 		</Container>

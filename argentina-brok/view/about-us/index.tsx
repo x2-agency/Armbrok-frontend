@@ -35,6 +35,13 @@ export const AboutUs: NextPage = () => {
 				items={MOCK_COMPANIES.items}
 				className={css.companies}
 			/>
+			<MembershipSection
+				title="Supporting Socially Significant Projects"
+				description="We Support Educational, Cultural, and Sports Initiatives"
+				items={MOCK_MEMBERSHIP.items}
+				className={css.membership}
+				withGreyTitles
+			/>
 		</>
 	);
 };

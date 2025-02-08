@@ -21,6 +21,10 @@
 	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem;
 
 	font-weight: 600;
+
+	&.greyTitle {
+		opacity: 0.3;
+	}
 }
 
 .description {
