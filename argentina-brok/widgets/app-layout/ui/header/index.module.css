@@ -5,10 +5,10 @@
 	align-items: center;
 	pointer-events: all;
 
-	@mixin responsive width, 100%, 96.667vw, 87.438rem;
-	@mixin responsive margin-inline, unset, auto, auto;
-	@mixin responsive padding-inline, 5.333rem, unset, unset;
-	@mixin responsive height, 17.067rem, 5.556rem, 5rem; /* 64px 80px 80px*/
+	@mixin res width, 100%, 96.667vw, 87.438rem;
+	@mixin res margin-inline, unset, auto, auto;
+	@mixin res padding-inline, 5.333rem, unset, unset;
+	@mixin res height, 17.067rem, 5.556rem, 5rem; /* 64px 80px 80px*/
 }
 
 .leftBlock,

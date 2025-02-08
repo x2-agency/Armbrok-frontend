@@ -1,4 +1,3 @@
-import { Container } from '@/shared/ui/container';
 import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { GuaranteesSection } from '@/shared/ui/guarantees-section';
@@ -38,7 +37,7 @@ export const HeroSection = ({
 	guarantees,
 }: HeroSectionProps) => {
 	return (
-		<Container className={css.root}>
+		<section className={css.root}>
 			{titleSection && (
 				<TitleSection className={css.titleSection} {...titleSection} />
 			)}
@@ -47,6 +46,6 @@ export const HeroSection = ({
 				<ExpertSolutionSection items={expertSolutions.items} />
 			)}
 			{guarantees && <GuaranteesSection items={guarantees.items} />}
-		</Container>
+		</section>
 	);
 };

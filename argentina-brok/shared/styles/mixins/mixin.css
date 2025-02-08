@@ -1,5 +1,5 @@
 /* prettier-ignore */
-@define-mixin responsive $property, $mobile-value, $tablet-value, $desktop-value {
+@define-mixin res $property, $mobile-value, $tablet-value, $desktop-value {
 	@media (max-width: 767px) {
 		$(property): $mobile-value;
 	}

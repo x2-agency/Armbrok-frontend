@@ -10,8 +10,8 @@
 }
 
 .root {
-	@mixin responsive padding-block, 6.4rem, 1.667rem, 1.5rem; /* 24px */
-	@mixin responsive padding-inline, 8.533rem, 2.222rem, 2rem; /* 32px */
+	@mixin res padding-block, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin res padding-inline, 8.533rem, 2.222rem, 2rem; /* 32px */
 
 	width: 100%;
 	justify-content: space-between;
@@ -20,11 +20,11 @@
 }
 
 .content {
-	@mixin responsive gap, 3rem, 3.333rem, 3rem;
+	@mixin res gap, 3rem, 3.333rem, 3rem;
 }
 
 .linkButton {
-	@mixin responsive width, 100%, 9.722rem, 8.75rem;
+	@mixin res width, 100%, 9.722rem, 8.75rem;
 
 	@media (max-width: 767px) {
 		margin-block-start: 3rem;

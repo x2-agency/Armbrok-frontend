@@ -1,38 +1,47 @@
 .sectionTitle {
 	@mixin font-h2;
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
 
 	font-weight: 600;
 	text-align: center;
-	padding-block-end: 2.5rem; /* 40px */
 }
 
 .cards {
+	@mixin res column-gap, 17.067rem, 4.444rem, 4rem;
+
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	column-gap: 4rem; /* 64px */
 }
 
 .icon {
-	width: 3rem; /* 48px */
-	height: 3rem; /* 48px */
-	margin-block-end: 1.5rem; /* 24px */
+	@mixin res universal-size, 12.8rem, 3.333rem, 3rem;
+	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem;
+
+	width: var(--universal-size);
+	height: var(--universal-size);
 }
 
 .title {
 	@mixin font-text20;
+	@mixin res padding-block-end, 3.2rem, 0.833rem, 0.75rem;
 
 	font-weight: 600;
-	color: #212121;
-	padding-block-end: 0.75rem; /* 12px */
+	color: var(--black-color);
 }
 
 .description {
 	@mixin font-text16;
 
-	color: #3e3e3e;
+	color: var(--gray-700-color);
 }
 
 .card.withShell {
-	padding: 32px;
-	border-radius: 16px;
+	@mixin res padding, 8.533rem, 2.222rem, 2rem;
+	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+
+	background-color: var(--gray-200-color);
+
+	.icon {
+		@mixin res margin-block-end, 10.667rem, 2.778rem, 2.5rem;
+	}
 }
