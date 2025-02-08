@@ -17,3 +17,7 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+.cards.withShell {
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+}

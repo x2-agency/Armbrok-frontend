@@ -31,7 +31,11 @@ export const ExpertSolutionSection = ({
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.sectionTitle}>{parser(title)}</h2>}
-			<div className={css.cards}>
+			<div
+				className={cx(css.cards, {
+					[css.withShell]: withShell,
+				})}
+			>
 				{items.map((item, key) => (
 					<ExpertSolutionCard
 						key={key}
