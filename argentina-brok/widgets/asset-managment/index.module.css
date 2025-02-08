@@ -1,8 +1,49 @@
 .root {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	background-color: var(--red-700-color);
+
+	@mixin res padding-block, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin res padding-inline, 5.333rem, 2.778rem, 2.5rem; /* 20px 40px */
+	@mixin res border-radius, 4.667rem, 2.222rem, 2rem; /* 20px  32px */
+	@mixin res margin-block, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.contnet {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+}
+
+.title,
+.description {
+	color: var(--white-color);
 }
 
 .title {
+	@mixin font-h2;
+	font-weight: 700;
+	@mixin res padding-block-end, 2.667rem, 1.111rem, 1rem; /* 10px 16px 16px */
 }
 
 .description {
+	@mixin font-text20;
+	@mixin res padding-block-end, 10.667rem, 4.306rem, 3.875rem; /* 40px 62px 62px */
+}
+
+.imgWrap {
+	@mixin res height, unset, 20.417rem, 18.375rem;
+}
+
+.image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	@mixin res border-radius, 8.533rem, 2.222rem, 2rem; /* 32px */
 }

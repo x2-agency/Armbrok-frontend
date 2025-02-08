@@ -26,17 +26,17 @@ export const LanguageSelection = () => {
 				</div>
 
 				{isOpen && (
-					<div className={css.options}>
+					<ul className={css.options}>
 						{LANGUAGES.map((item, index) => (
-							<div
+							<li
 								key={index}
 								className={css.option}
 								onClick={() => handleSelectLanguage(item.value)}
 							>
 								{item.value}
-							</div>
+							</li>
 						))}
-					</div>
+					</ul>
 				)}
 			</div>
 		</div>

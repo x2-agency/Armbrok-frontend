@@ -1,19 +1,9 @@
 .root {
 	width: 83.33vw;
 	margin-inline: auto;
-	@mixin res width, 100%, 83.33vw, 75rem;
+	@mixin res width, 100%, 83.33vw, 75rem; /* 1200px */
 	@mixin res margin-inline, unset, auto, auto;
-	@mixin res padding-inline, 5.333rem, unset, unset;
-
-	@media (max-width: 767px) {
-		width: 100%;
-		padding-inline: 5.333rem; /* 20px */
-	}
-
-	@media (min-width: 1441px) {
-		margin-inline: auto;
-		width: 75rem; /* 1200px */
-	}
+	@mixin res padding-inline, 5.333rem, unset, unset; /* 20px */
 }
 
 .full {
