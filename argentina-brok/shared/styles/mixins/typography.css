@@ -1,4 +1,4 @@
-/* Система font-size */
+/* sistem font-size */
 
 @define-mixin font-h1 {
 	font-size: var(--h1);
