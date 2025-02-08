@@ -1,7 +1,7 @@
 import { Home } from '@/view/home';
 
-const HomePage = () => {
+const IndexPage = () => {
 	return <Home />;
 };
 
-export default HomePage;
+export default IndexPage;
