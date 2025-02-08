@@ -1,33 +1,19 @@
 import { ExperienceSection } from '@/shared/ui/experience-section';
+import type { ExperienceSectionProps } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
+import type { ExpertSolutionSectionProps } from '@/shared/ui/expert-solutions-section';
+import type { GuaranteesSectionProps } from '@/shared/ui/guarantees-section';
 import { GuaranteesSection } from '@/shared/ui/guarantees-section';
 import { TitleSection } from '@/shared/ui/title-section';
+import type { TitleSectionProps } from '@/shared/ui/title-section';
 
 import css from './index.module.css';
 
 type HeroSectionProps = {
-	titleSection?: {
-		title: string;
-		description: string;
-	};
-	experience?: Array<{
-		title: string;
-		description: string;
-	}>;
-	expertSolutions?: {
-		title?: string;
-		items: Array<{
-			icon: string;
-			title: string;
-			description: string;
-		}>;
-	};
-	guarantees?: {
-		items: Array<{
-			icon: string;
-			title: string;
-		}>;
-	};
+	titleSection?: TitleSectionProps['data'];
+	experience?: ExperienceSectionProps['experience'];
+	expertSolutions?: ExpertSolutionSectionProps;
+	guarantees?: GuaranteesSectionProps['items'];
 };
 
 export const HeroSection = ({
@@ -39,13 +25,11 @@ export const HeroSection = ({
 	return (
 		<section className={css.root}>
 			{titleSection && (
-				<TitleSection className={css.titleSection} {...titleSection} />
+				<TitleSection className={css.titleSection} data={titleSection} />
 			)}
 			{experience && <ExperienceSection experience={experience} />}
-			{expertSolutions && (
-				<ExpertSolutionSection items={expertSolutions.items} />
-			)}
-			{guarantees && <GuaranteesSection items={guarantees.items} />}
+			{expertSolutions && <ExpertSolutionSection {...expertSolutions} />}
+			{guarantees && <GuaranteesSection items={guarantees} />}
 		</section>
 	);
 };

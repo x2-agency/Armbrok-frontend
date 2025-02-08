@@ -6,7 +6,7 @@ import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
-type ExpertSolutionSectionProps = {
+export type ExpertSolutionSectionProps = {
 	className?: string;
 	title?: string;
 	items: Array<{
@@ -15,6 +15,7 @@ type ExpertSolutionSectionProps = {
 		description: string;
 	}>;
 	withShell?: boolean;
+	backgroundColor?: 'white' | 'gray';
 };
 
 export const ExpertSolutionSection = ({
@@ -22,7 +23,14 @@ export const ExpertSolutionSection = ({
 	title,
 	items,
 	withShell,
+	backgroundColor,
 }: ExpertSolutionSectionProps) => {
+	const cardBackgroundColor = withShell
+		? backgroundColor === 'white'
+			? css.whiteBackground
+			: css.grayBackground
+		: '';
+
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.sectionTitle}>{parser(title)}</h2>}
@@ -30,7 +38,7 @@ export const ExpertSolutionSection = ({
 				{items.map((item, key) => (
 					<article
 						key={key}
-						className={cx(css.card, {
+						className={cx(css.card, cardBackgroundColor, {
 							[css.withShell]: withShell,
 						})}
 					>

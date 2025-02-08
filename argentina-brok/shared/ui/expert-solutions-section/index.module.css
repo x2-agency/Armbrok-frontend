@@ -44,4 +44,12 @@
 	.icon {
 		@mixin res margin-block-end, 10.667rem, 2.778rem, 2.5rem;
 	}
+
+	&.whiteBackground {
+		background-color: var(--white-color);
+	}
+	
+	&.grayBackground {
+		background-color: var(--gray-200-color);
+	}
 }

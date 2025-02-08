@@ -5,13 +5,14 @@ import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
-type ExperienceSectionProps = {
+export type ExperienceSectionProps = {
 	className?: string;
 	experience: Array<{
 		title: string;
 		description: string;
 	}>;
 };
+
 
 export const ExperienceSection = ({
 	className,

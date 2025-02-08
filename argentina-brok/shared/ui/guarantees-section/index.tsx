@@ -6,7 +6,7 @@ import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
-type GuaranteesSectionProps = {
+export type GuaranteesSectionProps = {
 	items: Array<{
 		icon: string;
 		title: string;

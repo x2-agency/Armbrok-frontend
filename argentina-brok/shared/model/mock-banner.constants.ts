@@ -86,12 +86,12 @@ export const MOCK_ABOUT_BANNER = {
 };
 
 export const HERO_DATA = {
-	titleSection: {
-		title:
-			'By&nbsp;entrusting&nbsp;us with your assets, you gain<br /> access to&nbsp;our expertise, insights, and<br /> commitment to&nbsp;your financial success.',
-		description:
-			'Trust management, also known as&nbsp;asset management, involves professional<br /> management of&nbsp;financial assets on&nbsp;behalf of&nbsp;clients. We&nbsp;tailor our services to<br /> meet your specific financial goals, ensuring your portfolio is&nbsp;aligned with<br /> market opportunities.',
-	},
+	// titleSection: {
+	// 	title:
+	// 		'By&nbsp;entrusting&nbsp;us with your assets, you gain<br /> access to&nbsp;our expertise, insights, and<br /> commitment to&nbsp;your financial success.',
+	// 	description:
+	// 		'Trust management, also known as&nbsp;asset management, involves professional<br /> management of&nbsp;financial assets on&nbsp;behalf of&nbsp;clients. We&nbsp;tailor our services to<br /> meet your specific financial goals, ensuring your portfolio is&nbsp;aligned with<br /> market opportunities.',
+	// },
 	// experience: [
 	// 	{
 	// 		title: '7 years',
@@ -100,34 +100,34 @@ export const HERO_DATA = {
 	// 	{ title: '50+', description: 'Institutional Clients' },
 	// 	{ title: '$760M', description: 'in&nbsp;assets under<br /> management' },
 	// ],
-	// expertSolutions: {
-	// 	items: [
-	// 		{
-	// 			icon: '/assets/icon/mock-factoids/first.svg',
-	// 			title: '10+&nbsp;exchanges, 15 000+ instruments',
-	// 			description:
-	// 				'Access to&nbsp;all major exchanges in&nbsp;the USA, Europe, Asia and of&nbsp;course Armenia',
-	// 		},
-	// 		{
-	// 			icon: '/assets/icon/mock-factoids/second.svg',
-	// 			title: 'Over-the-Counter market',
-	// 			description:
-	// 				'We&nbsp;will find and buy for you practically any OTC instrument at&nbsp;an&nbsp;attractive price',
-	// 		},
-	// 		{
-	// 			icon: '/assets/icon/mock-factoids/third.svg',
-	// 			title: 'Own depositary and custodian',
-	// 			description:
-	// 				'This allows you to&nbsp;quickly transfer securities from one jurisdiction to&nbsp;another',
-	// 		},
-	// 		{
-	// 			icon: '/assets/icon/mock-factoids/fourth.svg',
-	// 			title: 'Expert Support When You Need&nbsp;It',
-	// 			description:
-	// 				'Caring and always ready to&nbsp;guide you through your investment journey.',
-	// 		},
-	// 	],
-	// },
+	expertSolutions: {
+		items: [
+			{
+				icon: '/assets/icon/mock-factoids/first.svg',
+				title: '10+&nbsp;exchanges, 15 000+ instruments',
+				description:
+					'Access to&nbsp;all major exchanges in&nbsp;the USA, Europe, Asia and of&nbsp;course Armenia',
+			},
+			{
+				icon: '/assets/icon/mock-factoids/second.svg',
+				title: 'Over-the-Counter market',
+				description:
+					'We&nbsp;will find and buy for you practically any OTC instrument at&nbsp;an&nbsp;attractive price',
+			},
+			{
+				icon: '/assets/icon/mock-factoids/third.svg',
+				title: 'Own depositary and custodian',
+				description:
+					'This allows you to&nbsp;quickly transfer securities from one jurisdiction to&nbsp;another',
+			},
+			{
+				icon: '/assets/icon/mock-factoids/fourth.svg',
+				title: 'Expert Support When You Need&nbsp;It',
+				description:
+					'Caring and always ready to&nbsp;guide you through your investment journey.',
+			},
+		],
+	},
 	// guarantees: {
 	// 	items: [
 	// 		{
