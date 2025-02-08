@@ -2,7 +2,7 @@
 import cx from 'clsx';
 import { useState } from 'react';
 
-import Arrow from '@/public/assets/icon/header/arrow.svg';
+import Arrow from '@/public/assets/icons/header/arrow.svg';
 import { LANGUAGE } from '@/widgets/app-layout/ui/header/model/header.constants';
 
 import css from './index.module.css';

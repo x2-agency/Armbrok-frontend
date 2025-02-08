@@ -1,5 +1,5 @@
 export const LOGO_HEADER = {
-	src: '/assets/icon/header/logo_armbrok.svg',
+	src: '/assets/icons/header/logo_armbrok.svg',
 	alt: 'Логотип компании',
 };
 

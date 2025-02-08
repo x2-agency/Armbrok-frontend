@@ -1,6 +1,6 @@
 'use client';
 
-import BurgerButton from '@/public/assets/icon/header/burger_button.svg';
+import BurgerButton from '@/public/assets/icons/header/burger_button.svg';
 
 import css from './index.module.css';
 import {
