@@ -6,12 +6,17 @@ import {
 	HERO_DATA,
 } from '@/shared/model/mock-banner.constants';
 import { MOCK_COMPANIES } from '@/shared/model/mock-companies-group';
+import {
+	MOCK_FILES,
+	MOCK_FILES_TITLE,
+} from '@/shared/model/mock-files.constants';
 import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { MembershipSection } from '@/shared/ui/membership-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
 import { CompanyMembers } from '@/widgets/company-members';
+import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
 
@@ -45,6 +50,7 @@ export const AboutUs: NextPage = () => {
 				withGreyTitles
 			/>
 			<CompanyMembers members={ARMBROK_TEAM} />
+			<StatutoryDocuments title={MOCK_FILES_TITLE} documents={MOCK_FILES} />
 		</>
 	);
 };

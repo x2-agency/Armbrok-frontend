@@ -1,0 +1,23 @@
+.root {
+	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res padding-inline, 8.533rem, 2.222rem, 2rem;
+	@mixin res padding-block, 5.067rem, 1.319rem, 1.188rem;
+
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--gray-200-color);
+}
+
+.leftPart {
+	@mixin res gap, 4.267rem, 1.111rem, 1rem;
+
+	display: flex;
+	align-items: center;
+}
+
+.icon {
+	@mixin res --size, 12.8rem, 3.333rem, 3rem;
+
+	width: var(--size);
+	height: var(--size);
+}

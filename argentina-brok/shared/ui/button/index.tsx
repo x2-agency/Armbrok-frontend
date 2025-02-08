@@ -13,6 +13,7 @@ export const Button = ({
 	type = 'button',
 	category = 'default',
 	onClick,
+	iconRotate,
 }: ButtonProps) => {
 	if (href) {
 		return (
@@ -22,6 +23,12 @@ export const Button = ({
 			>
 				{variant === 'back' && <BackSVG className={css.icon} />}
 				{children}
+				{variant === 'next' && (
+					<BackSVG
+						className={css.icon}
+						style={{ rotate: `${iconRotate}deg` }}
+					/>
+				)}
 			</a>
 		);
 	}
@@ -34,6 +41,9 @@ export const Button = ({
 		>
 			{variant === 'back' && <BackSVG className={css.icon} />}
 			{children}
+			{variant === 'next' && (
+				<BackSVG className={css.icon} style={{ rotate: `${iconRotate}deg` }} />
+			)}
 		</button>
 	);
 };

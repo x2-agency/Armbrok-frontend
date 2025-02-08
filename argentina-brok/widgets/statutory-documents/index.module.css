@@ -1,0 +1,6 @@
+.documents {
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
