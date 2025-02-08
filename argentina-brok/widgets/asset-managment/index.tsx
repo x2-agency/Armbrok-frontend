@@ -24,7 +24,7 @@ export const AssetManagment = ({
 			<div className={css.contnet}>
 				<h2 className={css.title}>{parser(title)}</h2>
 				<p className={css.description}>{parser(description)}</p>
-				<Button href={href} variant="filled">
+				<Button category="big" href={href} variant="filled">
 					{parser(buttonText)}
 				</Button>
 			</div>
