@@ -9,10 +9,10 @@
 	@mixin responsive font-size, 12.8rem, 3.333rem, 3rem;
 
 	line-height: 0.95;
-	color: #34ca2f;
+	color: var(--green-550-color);
 }
 
 .percentText {
 	@mixin font-text16;
-	color: gray;
+	color: var(--gray-400-color);
 }

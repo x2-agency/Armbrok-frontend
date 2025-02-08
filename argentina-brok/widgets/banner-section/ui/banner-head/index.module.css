@@ -9,7 +9,7 @@
 
 .description,
 .title {
-	color: white;
+	color: var(--white-color);
 
 	@media (max-width: 767px) {
 		br {
@@ -35,15 +35,16 @@
 .description {
 	@mixin font-text20;
 
-	color: #ebebeb;
+	color: var(--gray-300-color);
 
 	&.profix {
 		@mixin font-text18;
 		@mixin responsive padding-block-end, 10.067rem, 4.444rem, 4rem;
 
-		color: #b9b9b9;
+		color: var(--gray-400-color);
 	}
 }
+
 
 .backButton {
 	@mixin responsive margin-block-end, 10.933rem, 2.847rem, 2.563rem;
@@ -72,8 +73,9 @@
 	@mixin responsive border-radius, 1.067rem, 0.278rem, 0.25rem;
 	@mixin responsive margin-block-end, 6.4rem, 1.667rem, 1.5rem;
 
-	border-color: white;
+	border-color: var(--white-color);
 	border-style: solid;
-	color: white;
+	color: var(--white-color);
 	font-weight: 500;
+
 }

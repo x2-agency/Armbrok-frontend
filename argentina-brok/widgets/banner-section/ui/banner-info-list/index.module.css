@@ -7,11 +7,11 @@
 .title {
 	@mixin font-text20;
 	display: flex;
-	color: white;
+	color: var(--white-color);
 	gap: 0.5rem;
 }
 
 .description {
 	@mixin font-text16;
-	color: gray;
+	color: var(--gray-400-color);
 }

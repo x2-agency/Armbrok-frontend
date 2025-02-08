@@ -4,10 +4,10 @@
 	@mixin responsive margin-block, 1.867rem, 0.472rem, 0.438rem;
 
 	border-radius: 100%;
-	background-color: gray;
+	background-color: var(--gray-400-color);
 
 	&.filled {
-		background-color: white;
+		background-color: var(--white-color);
 	}
 }
 
@@ -20,7 +20,7 @@
 .description {
 	@mixin font-text16;
 
-	color: gray;
+	color: var(--gray-400-color);
 }
 
 .list {
