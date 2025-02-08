@@ -16,7 +16,7 @@ export const NAVIGATION_LINKS = [
 	{ text: 'Contact us', href: '/contact-us' },
 ];
 
-export const LANGUAGE = [
+export const LANGUAGES = [
 	{
 		value: 'EN',
 		lang: 'En',
