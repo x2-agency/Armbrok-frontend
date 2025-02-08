@@ -1,9 +1,10 @@
 .root {
 	@mixin font-text16;
+
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 }
 
 .filled,
@@ -60,4 +61,24 @@
 			}
 		}
 	}
+}
+
+.back {
+	@mixin responsive gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+
+	background-color: transparent;
+	color: gray;
+}
+
+.icon {
+	@mixin responsive width, 6.4rem, 1.667rem, 1.5rem;
+}
+
+.root.default {
+	padding-block: 0.5rem; /* 8px */
+}
+
+.root.big {
+	@mixin responsive padding-block, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive padding-inline, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 }

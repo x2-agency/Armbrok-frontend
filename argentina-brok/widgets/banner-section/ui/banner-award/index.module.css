@@ -1,0 +1,34 @@
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.place {
+	@mixin font-h1;
+	@mixin responsive padding-block-end, 2.133rem, 0.556rem, 0.5rem;
+
+	color: var(--red-500-color);
+	font-weight: 500;
+
+}
+
+.title {
+	@mixin font-text20;
+	@mixin responsive padding-block-end, 3.2rem, 0.8rem, 0.75rem;
+
+	font-weight: 600;
+	color: var(--white-color);
+
+
+	@media (max-width: 767px) {
+		br {
+			display: none;
+		}
+	}
+}
+
+.description {
+	@mixin font-text16;
+
+	color: var(--gray-400-color);
+}

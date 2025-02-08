@@ -3,6 +3,7 @@ import type { PropsWithChildren } from 'react';
 interface BaseButtonProps extends PropsWithChildren {
 	className?: string;
 	variant?: 'back' | 'outline' | 'filled' | 'subtle';
+	category?: 'default' | 'big';
 }
 
 type LinkButtonProps = BaseButtonProps & {

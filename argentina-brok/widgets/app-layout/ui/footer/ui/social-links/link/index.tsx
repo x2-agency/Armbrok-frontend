@@ -9,9 +9,8 @@ export const Link = ({ items, className }: IconListProps) => {
 	return (
 		<div className={cx(css.root, className)}>
 			{items.map((link, index) => (
-				<a className={css.link} href={link.href}>
+				<a className={css.link} href={link.href} key={index}>
 					<img
-						key={index}
 						className={css.icon}
 						src={link.src}
 						alt="icon media"
