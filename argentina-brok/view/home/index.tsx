@@ -1,15 +1,7 @@
 import type { NextPage } from 'next';
 
 import { MOCK_DEFAULT_BANNER } from '@/shared/model/mock-banner.constants';
-import { AssetManagment } from '@/widgets/asset-managment';
 import { BannerSection } from '@/widgets/banner-section/ui';
-
-import {
-	HOME_ASSETS_BUTTON,
-	HOME_ASSETS_DESCRIPTION,
-	HOME_ASSETS_IMAGE,
-	HOME_ASSETS_TITLE,
-} from './model/home.constants';
 
 export const Home: NextPage = () => {
 	return (
