@@ -48,7 +48,6 @@
 
 .subtle {
 	background-color: transparent;
-	color: #000000;
 
 	&:not(:disabled) {
 		opacity: 1;
