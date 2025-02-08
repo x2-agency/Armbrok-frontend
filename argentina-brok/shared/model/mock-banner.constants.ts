@@ -1,5 +1,5 @@
 export const MOCK_DEFAULT_BANNER = {
-	title: 'Efficient investments in<br /> financial markets',
+	title: 'Efficient investments<br /> in financial markets',
 	description:
 		'Access to&nbsp;global exchanges and financial instruments&nbsp;&mdash;<br /> with high yields and strong protection',
 	button: {
