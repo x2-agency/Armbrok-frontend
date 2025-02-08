@@ -1,18 +1,7 @@
-import {
-	MOCK_ABOUT_BANNER,
-	MOCK_DEFAULT_BANNER,
-	MOCK_PROFIX_BANNER,
-} from '@/shared/model/mock-banner.constants';
-import { BannerSection } from '@/widgets/banner-section/ui';
+import { Home } from '@/view/home';
 
 const HomePage = () => {
-	return (
-		<BannerSection
-			type="default"
-			banner={MOCK_DEFAULT_BANNER}
-			alignContent="end"
-		/>
-	);
+	return <Home />;
 };
 
 export default HomePage;
