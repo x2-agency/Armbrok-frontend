@@ -1,9 +1,9 @@
 .root {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem; /* 16px */
-	padding-block-start: 2.5rem; /* 40px */
-	padding-block-end: 2.5rem; /* 40px */
+	gap: 1.111rem; /* 16px */
+	@mixin res padding-block-start, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
+	@mixin res padding-block-end, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
 }
 
 .text,

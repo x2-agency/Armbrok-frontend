@@ -1,0 +1,28 @@
+.root {
+	display: flex;
+	justify-content: start;
+}
+
+.button,
+.panel,
+.awards {
+	z-index: 10;
+}
+
+.button {
+	@mixin res margin-block-start, 10.667rem, 2.778rem, 2.5rem;
+}
+
+.awards {
+	@mixin res column-gap, 14.933rem, 3.889rem, 3.9rem;
+	@mixin res --column-width, 80rem, 20.833rem, 18.75rem;
+
+	display: grid;
+	grid-template-columns: repeat(3, var(--column-width)); /* 300px */
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem; /* 56px */
+	}
+}

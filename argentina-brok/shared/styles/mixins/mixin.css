@@ -1,0 +1,14 @@
+/* prettier-ignore */
+@define-mixin res $property, $mobile-value, $tablet-value, $desktop-value {
+	@media (max-width: 767px) {
+		$(property): $mobile-value;
+	}
+
+	@media (min-width: 768px) and (max-width: 1440px) {
+		$(property): $tablet-value;
+	}
+
+	@media (min-width: 1441px) {
+		$(property): $desktop-value;
+	}
+}

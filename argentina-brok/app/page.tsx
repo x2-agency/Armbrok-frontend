@@ -1,5 +1,7 @@
-const HomePage = () => {
-  return <div></div>;
+import { Home } from '@/view/home';
+
+const IndexPage = () => {
+	return <Home />;
 };
 
-export default HomePage;
+export default IndexPage;

@@ -1,41 +1,18 @@
 .root {
-	position: relative;
+	position: fixed;
+	top: 0;
+	color: var(--white-color);
+	z-index: 100;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 5rem; /* 80px */
-	max-width: 1399px;
-	margin-inline: auto;
 	pointer-events: all;
 
-	@media (min-width: 375px) and (max-width: 949px) {
-		padding-inline: 1.25rem; /* 20px */
-		width: 100%;
-	}
-
-	@media (min-width: 950px) and (max-width: 1023px) {
-		max-width: 60rem; /* 960px */
-	}
-
-	@media (min-width: 1024px) and (max-width: 1149px) {
-		max-width: 63rem; /* 1120px */
-	}
-
-	@media (min-width: 1150px) and (max-width: 1199px) {
-		max-width: 70rem; /* 1120px */
-	}
-
-	@media (min-width: 1200px) and (max-width: 1299px) {
-		max-width: 73rem; /* 1120px */
-	}
-
-	@media (min-width: 1300px) {
-		max-width: 76.438rem; /* 1223px */
-	}
-
-	@media (min-width: 1440px) {
-		max-width: 87.438rem; /* 1399px */
-	}
+	@mixin res width, 100%, 96.667vw, 87.438rem;
+	@mixin res margin-inline, unset, auto, auto;
+	@mixin res padding-inline, 5.333rem, unset, unset;
+	@mixin res height, 17.067rem, 5.556rem, 5rem; /* 64px 80px 80px*/
+	@mixin res left, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px 24px */
 }
 
 .leftBlock,
@@ -47,21 +24,18 @@
 }
 
 .leftBlock {
-	gap: 5rem; /* 80px */
+	gap: 5.556rem; /* 80px */
 }
 
 .rightBlock {
-	gap: 2.5rem; /* 40px */
+	gap: 2.778rem; /* 40px */
 }
 
-.berger {
+.burger {
 	display: inline-block;
 	cursor: pointer;
+
 	@media (min-width: 768px) {
 		display: none;
 	}
-}
-
-.inner {
-	border-bottom: 1px solid #ffffff;
 }

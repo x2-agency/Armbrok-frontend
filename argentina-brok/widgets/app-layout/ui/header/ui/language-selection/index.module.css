@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	@media (max-width: 767px) {
 		display: none;
 	}
@@ -16,28 +17,34 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	gap: 0.125rem; /* 2px */
+	gap: 0.139rem; /* 2px */
 }
 
 .selected {
 	justify-content: center;
 	flex-direction: row;
 	display: flex;
-	background-color: #ffffff;
+	background-color: transparent;
 	cursor: pointer;
 }
 
 .options {
 	position: absolute;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
-	border-radius: 0.75rem; /* 12px */
+	background-color: var(--white-color);
+	color: var(--black-color);
+	@mixin res height, 36.267rem, 9.444rem, 8.5rem;
+	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin res top, unset, 4.167rem, 3.75rem;
 	z-index: 10;
 }
 
 .option {
-	padding-inline: 1rem; /* 16px */
-	padding-block: 0.5rem; /* 8px */
+	padding-inline: 1.111rem; /* 16px */
+	padding-block: 0.556rem; /* 8px */
 	cursor: pointer;
 	transition: background-color 0.2s;
 }

@@ -1,4 +1,4 @@
 .logo {
-	width: 6.5rem; /* 104px */
-	height: 1.25rem; /* 20px */
+	@mixin res width, 27.733rem, 7.222rem, 6.5rem; /* 104px */
+	@mixin res height, 5.333rem, 1.389rem, 1.25rem; /* 20px */
 }

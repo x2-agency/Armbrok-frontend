@@ -1,16 +1,17 @@
 .root {
 	@mixin font-text16;
+
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 }
 
 .filled,
 .outline {
-	padding-inline: 1.5rem; /* 24px */
-	padding-block: 0.5rem; /* 8px */
-	border-radius: 0.75rem; /* 12px */
+	@mixin res padding-inline, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
 }
 
 .filled {
@@ -47,7 +48,6 @@
 
 .subtle {
 	background-color: transparent;
-	color: #000000;
 
 	&:not(:disabled) {
 		opacity: 1;
@@ -60,4 +60,24 @@
 			}
 		}
 	}
+}
+
+.back {
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+
+	background-color: transparent;
+	color: gray;
+}
+
+.icon {
+	@mixin res width, 6.4rem, 1.667rem, 1.5rem;
+}
+
+.root.default {
+	padding-block: 0.5rem; /* 8px */
+}
+
+.root.big {
+	@mixin res padding-block, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin res padding-inline, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 }

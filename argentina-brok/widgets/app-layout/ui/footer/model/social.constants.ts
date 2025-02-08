@@ -1,10 +1,10 @@
-export const APP_STORE_SVG = '/assets/icon/social/app_store.svg';
-export const GOOGLE_PLAY_SVG = '/assets/icon/social/google_play.svg';
-export const FACEBOOK_SVG = '/assets/icon/social/facebook.svg';
-export const INSTAGRAM_SVG = '/assets/icon/social/instagram.svg';
-export const LINKEDIN_SVG = '/assets/icon/social/linkedin.svg';
-export const TELEGRAM_SVG = '/assets/icon/social/telegram.svg';
-export const YOUTUBE_SVG = '/assets/icon/social/youtube.svg';
+export const APP_STORE_SVG = '/assets/social/app_store.svg';
+export const GOOGLE_PLAY_SVG = '/assets/social/google_play.svg';
+export const FACEBOOK_SVG = '/assets/social/facebook.svg';
+export const INSTAGRAM_SVG = '/assets/social/instagram.svg';
+export const LINKEDIN_SVG = '/assets/social/linkedin.svg';
+export const TELEGRAM_SVG = '/assets/social/telegram.svg';
+export const YOUTUBE_SVG = '/assets/social/youtube.svg';
 
 export interface Icon {
 	src: string;
