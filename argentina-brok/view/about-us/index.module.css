@@ -8,3 +8,7 @@
 .membership {
 	@mixin res margin-block-end, 40.533rem, 10.556rem, 9.5rem;
 }
+
+.companies {
+	@mixin res margin-block-end, 19.2rem, 5rem, 4.5rem;
+}

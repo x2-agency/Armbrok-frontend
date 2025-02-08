@@ -4,10 +4,12 @@ import {
 	MOCK_ABOUT_BANNER,
 	HERO_DATA,
 } from '@/shared/model/mock-banner.constants';
+import { MOCK_COMPANIES } from '@/shared/model/mock-companies-group';
 import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { MembershipSection } from '@/shared/ui/membership-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
+import { CompaniesGroup } from '@/widgets/companies-group';
 
 import css from './index.module.css';
 
@@ -27,6 +29,11 @@ export const AboutUs: NextPage = () => {
 				title="Membership"
 				items={MOCK_MEMBERSHIP.items}
 				className={css.membership}
+			/>
+			<CompaniesGroup
+				title={MOCK_COMPANIES.title}
+				items={MOCK_COMPANIES.items}
+				className={css.companies}
 			/>
 		</>
 	);

@@ -1,0 +1,22 @@
+.title {
+	@mixin font-h2;
+	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem;
+
+	font-weight: 700;
+	text-align: center;
+}
+
+.companies {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.company {
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res width, 75.2rem, 19.583rem, 17.625rem;
+	@mixin res height, 33.333rem, 8.681rem, 7.813rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
