@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 
+import { ARMBROK_TEAM } from '@/shared/model/armbrok-team.constants';
 import {
 	MOCK_ABOUT_BANNER,
 	HERO_DATA,
@@ -10,6 +11,7 @@ import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { MembershipSection } from '@/shared/ui/membership-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
+import { CompanyMembers } from '@/widgets/company-members';
 
 import css from './index.module.css';
 
@@ -42,6 +44,7 @@ export const AboutUs: NextPage = () => {
 				className={css.membership}
 				withGreyTitles
 			/>
+			<CompanyMembers members={ARMBROK_TEAM} />
 		</>
 	);
 };
