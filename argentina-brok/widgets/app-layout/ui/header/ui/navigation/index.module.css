@@ -9,7 +9,7 @@
 .links {
 	display: flex;
 	flex-direction: row;
-	gap: 2.5rem; /* 40px */
+	gap: 2.778rem; /* 40px */
 }
 
 .link {

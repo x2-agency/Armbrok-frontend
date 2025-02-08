@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
 import { RobotoFonts } from '@/shared/config/localFont';
+import '@/shared/styles/mixins/mixin.css';
 import { AppLayout } from '@/widgets/app-layout';
 import './global.css';
 

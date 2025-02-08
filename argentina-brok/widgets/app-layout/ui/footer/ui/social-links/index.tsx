@@ -8,11 +8,9 @@ import { Link } from './link';
 
 export const Social = () => {
 	return (
-		<>
-			<div className={css.root}>
-				<Link className={css.store} items={STORE_LINKS} />
-				<Link className={css.media} items={SOCIAL_MEDIA_LINKS} />
-			</div>
-		</>
+		<div className={css.root}>
+			<Link className={css.store} items={STORE_LINKS} />
+			<Link className={css.media} items={SOCIAL_MEDIA_LINKS} />
+		</div>
 	);
 };

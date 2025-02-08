@@ -3,8 +3,9 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding-block-end: 2.5rem; /* 40px */
+	@mixin responsive padding-block-end, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
 	border-bottom: 1px solid #ebebeb;
+
 	@media (max-width: 767px) {
 		flex-direction: column;
 		align-items: baseline;
@@ -14,9 +15,19 @@
 }
 
 .store {
-	gap: 0.5rem; /* 8px */
+	img {
+		@mixin responsive width, 30.4rem, 7.917rem, 7.125rem; /* 104px */
+		@mixin responsive height, 10.133rem, 2.639rem, 2.375rem; /* 108 */
+	}
+
+	@mixin responsive gap, 2.667rem, 0.556rem, 0.5rem; /* 10px, 8px, 8px */
 }
 
 .media {
-	gap: 1rem; /* 16px */
+	img {
+		@mixin responsive width, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+		@mixin responsive height, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	}
+
+	@mixin responsive gap, 2.667rem, 1.111rem, 1rem; /* 10px, 16px, 16px */
 }
