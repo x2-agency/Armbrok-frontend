@@ -64,13 +64,14 @@
 }
 
 .back {
+	@mixin responsive gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+
 	background-color: transparent;
 	color: gray;
-	gap: 0.5rem; /* 8px */
 }
 
 .icon {
-	width: 1.5rem;
+	@mixin responsive width, 6.4rem, 1.667rem, 1.5rem;
 }
 
 .root.default {
@@ -78,5 +79,6 @@
 }
 
 .root.big {
-	padding-block: 1rem; /* 16px */
+	@mixin responsive padding-block, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive padding-inline, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 }

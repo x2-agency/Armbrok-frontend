@@ -23,12 +23,12 @@
 	font-weight: 700;
 
 	&.profix {
-		padding-block-end: 1rem; /* 16px */
+		@mixin responsive padding-block-end, 4.267rem, 1.111rem, 1rem;
 	}
 
 	&.default,
 	&.about {
-		padding-block-end: 1.5rem; /* 24px */
+		@mixin responsive padding-block-end, 6.4rem, 1.667rem, 1.5rem;
 	}
 }
 
@@ -39,31 +39,28 @@
 
 	&.profix {
 		@mixin font-text18;
+		@mixin responsive padding-block-end, 10.067rem, 4.444rem, 4rem;
 
 		color: #b9b9b9;
-		padding-block-end: 4rem; /* 64px */
-
-		@media (max-width: 767px) {
-			padding-block-end: 2rem; /* 32px */
-		}
 	}
 }
 
 .backButton {
-	margin-block-end: 2.563rem; /* 41px */
+	@mixin responsive margin-block-end, 10.933rem, 2.847rem, 2.563rem;
 }
 
 .icon {
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 12.5rem; /* 200px */
-	height: 12.5rem; /* 200px */
+
+	@mixin responsive width, 53.333rem, 13.889rem, 12.5rem;
+	@mixin responsive height, 53.333rem, 13.889rem, 12.5rem;
 
 	@media (max-width: 767px) {
 		position: static;
 		margin-inline: auto;
-		margin-block-end: 2rem; /* 32px */
+		margin-block-end: 10.067rem;
 	}
 }
 
