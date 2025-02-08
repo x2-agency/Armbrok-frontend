@@ -66,12 +66,14 @@
 
 .established {
 	@mixin font-text14;
+	@mixin responsive padding-inline, 2.133rem, 0.556rem, 0.5rem;
+	@mixin responsive padding-block, 1.067rem, 0.278rem, 0.25rem;
+	@mixin responsive border, 0.063rem, 0.063rem, 0.063rem;
+	@mixin responsive border-radius, 1.067rem, 0.278rem, 0.25rem;
+	@mixin responsive margin-block-end, 6.4rem, 1.667rem, 1.5rem;
 
-	padding-inline: 0.5rem; /* 8px*/
-	padding-block: 0.25rem; /* 4px */
-	border: 0.063rem solid white;
-	border-radius: 0.25rem; /* 4px */
+	border-color: white;
+	border-style: solid;
 	color: white;
-	margin-block-end: 1.5rem; /* 24px */
 	font-weight: 500;
 }
