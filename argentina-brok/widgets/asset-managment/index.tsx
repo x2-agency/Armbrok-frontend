@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
@@ -10,7 +9,7 @@ export const AssetManagment = ({
 	title,
 	description,
 	buttonText,
-	image,
+	// image,
 	href,
 }: {
 	title: string;
@@ -28,7 +27,7 @@ export const AssetManagment = ({
 					{parser(buttonText)}
 				</Button>
 			</div>
-			<img className={css.image} src={image} alt="banner picture" />
+			{/* <img className={css.image} src={image} alt="banner picture" /> */}
 		</Container>
 	);
 };

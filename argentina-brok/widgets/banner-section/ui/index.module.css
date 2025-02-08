@@ -2,6 +2,7 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	@mixin res margin-block-end, 16rem, 5.556rem, 5rem; /* 60px 80px 80px */
 }
 
 .root.default[data-align='start'] {
