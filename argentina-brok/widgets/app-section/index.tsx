@@ -27,7 +27,7 @@ export const AppSection = ({
 				<h2 className={css.title}>{title}</h2>
 				<p className={css.description}>{parser(description)}</p>
 				<div className={css.wrap}>
-					<Button href="#" variant="filled">
+					<Button href="#" variant="filled" category="big">
 						{buttonText}
 					</Button>
 					<div className={css.appWrap}>

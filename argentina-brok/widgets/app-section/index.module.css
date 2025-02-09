@@ -5,6 +5,11 @@
 	background: linear-gradient(to right, #230302 0%, #df2c29 100%);
 	@mixin res margin-block-start, 13.333rem, 4.444rem, 4rem; /* 50px 64px */
 	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .svg {
@@ -29,6 +34,12 @@
 	display: flex;
 	flex-direction: row;
 	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@media (max-width: 767px) {
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .appWrap {
