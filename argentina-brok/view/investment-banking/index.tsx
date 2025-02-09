@@ -2,11 +2,13 @@ import type { NextPage } from 'next';
 
 import { MOCK_INVESTMENT_BANKING_BANNER } from '@/shared/model/mock-banner.constants';
 import { HERO_DATA } from '@/shared/model/mock-banner.constants';
+import { MOCK_PLACEMENTS } from '@/shared/model/placements.constants';
 import { MOCK_REVIEW } from '@/shared/model/review.constants';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
+import { PlacementsSection } from '@/widgets/placements-section';
 import { Review } from '@/widgets/review';
 
 import css from './index.module.css';
@@ -33,6 +35,10 @@ export const InvestmentBanking: NextPage = () => {
 				image={MOCK_REVIEW.image}
 				reviewHead={MOCK_REVIEW.reviewHead}
 				reviewFooter={MOCK_REVIEW.reviewFooter}
+			/>
+			<PlacementsSection
+				title={MOCK_PLACEMENTS.title}
+				items={MOCK_PLACEMENTS.items}
 			/>
 		</>
 	);
