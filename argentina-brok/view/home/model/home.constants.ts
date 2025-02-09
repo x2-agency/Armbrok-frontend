@@ -19,3 +19,11 @@ export const HOME_INTERACTIVE_VIDEO: InteractiveVideoType = {
 	firstButtonText: 'Open account',
 	lastButtonText: 'Request a&nbsp;consultation',
 };
+
+export const HOME_APP_SECTION = {
+	title: 'Brokerage',
+	description:
+		'For Self-Directed Investing. <br/>Start your investment journey today.',
+	downText: 'Coming soon <br/> 1Q25',
+	buttonText: 'Open account',
+};

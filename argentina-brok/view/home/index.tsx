@@ -9,6 +9,7 @@ import {
 import { MOCK_COMPANIES } from '@/shared/model/mock-companies-group';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
+import { AppSection } from '@/widgets/app-section';
 import { AssetManagment } from '@/widgets/asset-managment';
 import { AwardsSection } from '@/widgets/awards';
 import { BannerSection } from '@/widgets/banner-section/ui';
@@ -29,6 +30,7 @@ import {
 } from '@/widgets/start/model/start.constants';
 
 import {
+	HOME_APP_SECTION,
 	HOME_ASSETS_BUTTON,
 	HOME_ASSETS_DESCRIPTION,
 	HOME_ASSETS_IMAGE,
@@ -47,6 +49,12 @@ export const Home: NextPage = () => {
 			<HeroContainer>
 				<ExpertSolutionSection items={HERO_DATA.expertSolutions.items} />
 			</HeroContainer>
+			<AppSection
+				title={HOME_APP_SECTION.title}
+				description={HOME_APP_SECTION.description}
+				downText={HOME_APP_SECTION.downText}
+				buttonText={HOME_APP_SECTION.buttonText}
+			/>
 			<AssetManagment
 				href="#"
 				title={HOME_ASSETS_TITLE}
