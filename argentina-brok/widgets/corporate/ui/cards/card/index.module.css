@@ -1,10 +1,9 @@
 .root {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
 	background: linear-gradient(to right, #171717 0%, #333333 100%);
-	@mixin res padding-inline, unset, 2.222rem, 2rem; /* 32px */
-	@mixin res padding-block, unset, 2.222rem, 2rem; /* 32px */
 }
 
 .icon {
@@ -14,4 +13,13 @@
 .description {
 	@mixin font-h2;
 	font-weight: 700;
+	color: var(--white-color);
+}
+
+.link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

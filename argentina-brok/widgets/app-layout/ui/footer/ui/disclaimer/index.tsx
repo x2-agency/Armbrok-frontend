@@ -6,6 +6,7 @@ import {
 } from '@/widgets/app-layout/ui/footer/model/text-block.constants';
 
 import css from './index.module.css';
+
 export const Disclaimer = () => {
 	return (
 		<>
