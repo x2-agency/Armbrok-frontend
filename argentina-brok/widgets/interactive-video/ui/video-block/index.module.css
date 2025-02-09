@@ -15,7 +15,7 @@
 
 .wrapButton {
 	position: absolute;
-	bottom: 0;
+	@mixin res bottom, 0, 0, 1.5rem; /* 24px */
 	display: flex;
 	align-items: center;
 	@mixin res padding-block, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */

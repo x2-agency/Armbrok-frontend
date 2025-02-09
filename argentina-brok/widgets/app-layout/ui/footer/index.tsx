@@ -8,7 +8,7 @@ import { Social } from './ui/social-links';
 export const Footer = () => {
 	return (
 		<footer className={css.root}>
-			<Container category="section" padding="default">
+			<Container>
 				<NavigationColumn />
 				<Social />
 				<Disclaimer />
