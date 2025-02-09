@@ -15,6 +15,23 @@ export const MOCK_DEFAULT_BANNER = {
 	},
 };
 
+export const MOCK_INVESTMENT_BANKING_BANNER = {
+	title: 'Investment Banking<br /> Services ',
+	description:
+		'Expert Solutions for Strategic Growth<br /> and Financial Excellence',
+	button: {
+		text: 'Open account',
+		href: '/account',
+	},
+	poster: {
+		image: {
+			src: '/assets/images/banner/investment-banking-banner.jpg',
+			src2x: '/assets/images/banner/investment-banking-banner.jpg',
+			mobile: '/assets/images/banner/investment-banking-banner.jpg',
+		},
+	},
+};
+
 export const MOCK_PROFIX_BANNER = {
 	title: 'Efficient investments in<br /> financial markets',
 	description:
@@ -86,12 +103,12 @@ export const MOCK_ABOUT_BANNER = {
 };
 
 export const HERO_DATA = {
-	// titleSection: {
-	// 	title:
-	// 		'By&nbsp;entrusting&nbsp;us with your assets, you gain<br /> access to&nbsp;our expertise, insights, and<br /> commitment to&nbsp;your financial success.',
-	// 	description:
-	// 		'Trust management, also known as&nbsp;asset management, involves professional<br /> management of&nbsp;financial assets on&nbsp;behalf of&nbsp;clients. We&nbsp;tailor our services to<br /> meet your specific financial goals, ensuring your portfolio is&nbsp;aligned with<br /> market opportunities.',
-	// },
+	titleSection: {
+		title:
+			'Armbrok offers its customers highly tailored<br /> solutions relating to&nbsp;both private and public<br /> securities placements.',
+		description:
+			'We&nbsp;provide full-fledged support at&nbsp;all preparatory stages preceding the<br /> securities offering, including the selection of&nbsp;the most appropriate type of<br /> securities to&nbsp;be&nbsp;issued, determination of&nbsp;the optimal volume, assistance in<br /> publishing information and public awareness campaign. ARMBROK also<br /> carries out post-placement activities such as&nbsp;market making.',
+	},
 	// experience: [
 	// 	{
 	// 		title: '7 years',

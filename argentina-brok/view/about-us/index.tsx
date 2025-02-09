@@ -12,6 +12,7 @@ import {
 } from '@/shared/model/mock-files.constants';
 import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
+import { HeroContainer } from '@/shared/ui/hero-container';
 import { MembershipSection } from '@/shared/ui/membership-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
@@ -24,14 +25,14 @@ export const AboutUs: NextPage = () => {
 	return (
 		<>
 			<BannerSection type="about" banner={MOCK_ABOUT_BANNER} />
-			<section className={css.hero}>
+			<HeroContainer>
 				<ExpertSolutionSection
 					items={HERO_DATA.expertSolutions.items}
 					title="Our Expertise"
 					withShell
 					backgroundColor="white"
 				/>
-			</section>
+			</HeroContainer>
 			<MembershipSection
 				title="Membership"
 				items={MOCK_MEMBERSHIP.items}
