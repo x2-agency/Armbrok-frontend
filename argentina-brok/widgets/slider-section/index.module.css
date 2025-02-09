@@ -1,5 +1,5 @@
 .root {
-	@mixin res padding-block-end, 1.333rem, 10rem, 9rem;
+	@mixin res margin-block-end, 15rem, 10rem, 9rem;
 }
 
 .title,
