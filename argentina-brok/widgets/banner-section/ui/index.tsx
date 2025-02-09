@@ -17,7 +17,7 @@ export const BannerSection = (props: BannerProps) => {
 
 	return (
 		<section className={cx(css.root, css[type])} data-align={alignContent}>
-			<Container className={css.content}>
+			<Container category="section" padding="default" className={css.content}>
 				<BannerHead {...headContent} />
 				<BannerBody {...bodyContent} />
 			</Container>

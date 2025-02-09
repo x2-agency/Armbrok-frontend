@@ -1,0 +1,84 @@
+.root {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	position: relative;
+	background: linear-gradient(to right, #230302 0%, #df2c29 100%);
+	@mixin res margin-block-start, 13.333rem, 4.444rem, 4rem; /* 50px 64px */
+	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.svg {
+	@mixin res width, 21.333rem, 5.556rem, 5rem; /* 80px */
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+}
+
+.title {
+	@mixin font-h2;
+	font-weight: 600;
+	color: var(--white-color);
+	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
+}
+
+.description {
+	@mixin font-text16;
+	color: var(--gray-200-color);
+	@mixin res padding-block-end, 26.667rem, 8.889rem, 8rem; /* 100px 128px */
+}
+
+.wrap {
+	display: flex;
+	flex-direction: row;
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@media (max-width: 767px) {
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.appWrap {
+	display: flex;
+	flex-direction: row;
+	@mixin res gap, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin res padding, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	background-color: rgba(255, 255, 255, 0.15);
+	border: 1px solid var(--gray-200-color);
+}
+
+.downText {
+	@mixin font-text12;
+	color: var(--white-color);
+}
+.link {
+	height: 38px;
+}
+
+.rightBlock {
+	@media (max-width: 1000px) {
+		display: none;
+	}
+}
+
+.imageOne {
+	@mixin res width, unset, 18.819rem, 16.938rem;
+	height: auto;
+	position: absolute;
+	bottom: 0;
+	@mixin res right, unset, 23.472rem, 21.125rem;
+	z-index: 10;
+}
+
+.imageTwo {
+	@mixin res width, unset, 18.819rem, 16.938rem;
+	height: auto;
+	position: absolute;
+	@mixin res right, unset, 5.694rem, 5.125rem;
+	bottom: 0;
+}

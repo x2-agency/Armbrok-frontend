@@ -1,0 +1,9 @@
+.serve {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	@mixin font-h2;
+	font-weight: 600;
+	@mixin res padding-block, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
+}

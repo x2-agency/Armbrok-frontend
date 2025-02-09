@@ -1,0 +1,34 @@
+.root {
+	@mixin res padding, 8.533rem, 2.222rem, 2rem;
+	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res min-height, 68.267rem, 17.778rem, 20rem;
+
+	background-color: var(--gray-200-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.icon {
+	@mixin res --size, 17.067rem, 4.444rem, 4rem;
+
+	width: var(--size);
+	height: var(--size);
+}
+
+.title {
+	@mixin font-text18;
+	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem;
+
+	font-weight: 600;
+
+	&.greyTitle {
+		opacity: 0.3;
+	}
+}
+
+.description {
+	@mixin font-text14;
+
+	color: var(--gray-600-color);
+}

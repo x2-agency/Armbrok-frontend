@@ -10,23 +10,23 @@ function useMediaQuery(query: string): boolean {
 	};
 
 	const [matches, setMatches] = useState<boolean>(() => {
-		// Инициализация с начальным значением
-		// (для избежания гидратации и SSR проблем)
+		// Initialize with an initial value
+		// (to avoid hydration and SSR issues)
 		return getMatches(query);
 	});
 
 	useEffect(() => {
 		const matchMedia = window.matchMedia(query);
 
-		// Обновляем состояние при монтировании
+		// Update state on mount
 		const handleChange = () => {
 			setMatches(matchMedia.matches);
 		};
 
-		// Добавляем слушатель
+		// Add event listener
 		matchMedia.addEventListener('change', handleChange);
 
-		// Очищаем слушатель при размонтировании
+		// Clean up event listener on unmount
 		return () => {
 			matchMedia.removeEventListener('change', handleChange);
 		};

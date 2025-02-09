@@ -1,0 +1,9 @@
+.root {
+	display: flex;
+	flex-direction: row;
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+	}
+}

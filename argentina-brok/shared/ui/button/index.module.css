@@ -1,6 +1,8 @@
 .root {
 	@mixin font-text16;
+	@mixin transition;
 
+	transition-property: background-color color;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,7 +33,7 @@
 }
 
 .outline {
-	border: white solid 0.063rem;
+	border: var(--red-500-color) solid 0.063rem;
 
 	&:not(:disabled) {
 		opacity: 1;
@@ -49,6 +51,29 @@
 .subtle {
 	background-color: transparent;
 
+	&:not(:disabled) {
+		opacity: 1;
+		cursor: pointer;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: transparent;
+				color: #bf1d29;
+			}
+		}
+	}
+}
+
+.next {
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+
+	color: #bf1d29;
+
+	.icon path {
+		fill: #bf1d29;
+	}
+
+	background-color: transparent;
 	&:not(:disabled) {
 		opacity: 1;
 		cursor: pointer;

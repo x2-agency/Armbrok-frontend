@@ -1,0 +1,11 @@
+.root {
+	@mixin res padding-block-end, 38.4rem, 10rem, 9rem;
+}
+
+.title {
+	@mixin font-h2;
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+
+	text-align: center;
+	font-weight: 700;
+}

@@ -1,0 +1,17 @@
+.experience,
+.position {
+	@mixin font-text16;
+
+	color: var(--gray-700-color);
+}
+
+.position {
+	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem;
+}
+
+.fullName {
+	@mixin res padding-block-end, 1.067rem, 0.278rem, 0.25rem;
+	@mixin font-text18;
+
+	font-weight: 700;
+}

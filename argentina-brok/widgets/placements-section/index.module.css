@@ -1,0 +1,29 @@
+.root {
+	@mixin res padding-block-end, 38.4rem, 10rem, 9rem;
+}
+
+.title {
+	@mixin font-h2;
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+
+	font-weight: 700;
+	text-align: center;
+}
+
+.placements {
+	@mixin res padding-inline, 5.333rem, 7.778rem, 7.063rem;
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+
+	display: flex;
+	overflow: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* Internet Explorer & Edge */
+
+	&::-webkit-scrollbar {
+		display: none; /* Chrome, Safari */
+	}
+}
+
+.placement {
+	flex-shrink: 0;
+}

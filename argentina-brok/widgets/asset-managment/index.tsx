@@ -19,7 +19,7 @@ export const AssetManagment = ({
 	buttonText: string;
 }) => {
 	return (
-		<Container className={css.root}>
+		<Container category="section" padding="hybrid" className={css.root}>
 			<div className={css.contnet}>
 				<h2 className={css.title}>{parser(title)}</h2>
 				<p className={css.description}>{parser(description)}</p>

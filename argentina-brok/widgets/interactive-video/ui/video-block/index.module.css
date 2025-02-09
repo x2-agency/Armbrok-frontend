@@ -1,0 +1,42 @@
+.root {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	@mixin res border-radius, 4.667rem, 2.222rem, 2rem; /* 20px  32px */
+	@mixin res margin-block-start, 10.667rem, 5rem, 4.5rem; /* 40px  72px */
+	@mixin res margin-block-end, unset, 8.333rem, 7.5rem; /* 120px */
+}
+
+.video {
+	@mixin res width, 89.333rem, 42.5rem, 38.25rem; /* 335px 612px */
+	@mixin res height, auto, 29.167rem, 26.25rem; /* 420px */
+}
+
+.wrapButton {
+	position: absolute;
+	@mixin res bottom, 0, 0, 1.5rem; /* 24px */
+	display: flex;
+	align-items: center;
+	@mixin res padding-block, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */
+	@mixin res padding-inline, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */
+}
+
+.playButton {
+	display: flex;
+	align-items: center;
+	@mixin res width, 12.8rem, 3.333rem, 3rem; /* 48px */
+	@mixin res height, 12.8rem, 3.333rem, 3rem; /* 48px */
+	cursor: pointer;
+}
+
+.svg {
+	width: 100%;
+	height: auto;
+}
+
+.description {
+	@mixin font-text16;
+	color: var(--white-color);
+	@mixin res margin-inline-start, 4.267rem, 1.111rem, 1rem; /* 16px */
+}

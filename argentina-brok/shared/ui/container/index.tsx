@@ -10,22 +10,61 @@ type ContainerProps = {
 	fullWidth?: boolean;
 	id?: string;
 	style?: React.CSSProperties;
+	padding?: 'min' | 'max' | 'hybrid' | 'default';
+	category?: 'article' | 'section' | 'div';
 };
 
-export const Container = forwardRef<HTMLElement, ContainerProps>(
+export const Container = forwardRef<
+	HTMLElement | HTMLDivElement,
+	ContainerProps
+>(
 	(
-		{ children, className = '', fullWidth = false, id = '', style },
-		ref: Ref<HTMLElement>
+		{
+			children,
+			className = '',
+			id = '',
+			style,
+			fullWidth = false,
+			padding = 'default',
+			category = 'section',
+		},
+		ref
 	) => {
-		return (
-			<section
-				id={id}
-				className={cx(css.root, className, { [css.full]: fullWidth })}
-				ref={ref}
-				style={style}
-			>
-				{children}
-			</section>
-		);
+		if (category === 'article') {
+			return (
+				<article
+					id={id}
+					className={cx(className, css[padding])}
+					ref={ref as Ref<HTMLElement>}
+					style={style}
+				>
+					{children}
+				</article>
+			);
+		} else if (category === 'div') {
+			return (
+				<div
+					id={id}
+					className={cx(className, css[padding])}
+					ref={ref as Ref<HTMLDivElement>}
+					style={style}
+				>
+					{children}
+				</div>
+			);
+		} else {
+			return (
+				<section
+					id={id}
+					className={cx(css.root, className, css[padding], {
+						[css.full]: fullWidth,
+					})}
+					ref={ref}
+					style={style}
+				>
+					{children}
+				</section>
+			);
+		}
 	}
 );

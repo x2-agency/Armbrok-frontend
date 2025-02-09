@@ -1,0 +1,33 @@
+.tabsContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tabButtons {
+	@mixin res border-radius, 2.667rem, 0.694rem, 0.625rem;
+	@mixin res padding, 1.067rem, 0.278rem, 0.25rem;
+	@mixin res gap, 1.067rem, 0.278rem, 0.25rem;
+	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res --grid, 38.4rem, 10rem, 9rem;
+
+	display: grid;
+	grid-template-columns: repeat(2, var(--grid));
+	background-color: var(--gray-200-color);
+}
+
+.tabButton {
+	border-color: var(--gray-200-color);
+
+	&.active {
+		background-color: var(--white-color);
+		box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.1);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--black-color) !important;
+			border-color: var(--gray-200-color) !important;
+		}
+	}
+}

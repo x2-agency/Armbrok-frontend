@@ -1,0 +1,19 @@
+.text {
+	@mixin font-text16;
+
+	color: var(--gray-800-color);
+}
+
+.dotted {
+	@mixin res margin-block-end, 1.333rem, 0.347rem, 0.313rem;
+
+	line-height: 0;
+	flex-grow: 1;
+	border-bottom: 1px solid transparent;
+	border-image: repeating-linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.3) 0 10px,
+		transparent 5px 15px
+	);
+	border-image-slice: 1;
+}

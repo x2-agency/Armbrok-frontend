@@ -1,18 +1,18 @@
 .root {
-	position: sticky;
+	position: fixed;
 	top: 0;
 	color: var(--white-color);
-	z-index: 100;
+	z-index: 100000;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	pointer-events: all;
 
-	@mixin res width, 100%, 96.667vw, 87.438rem;
+	@mixin res width, unset, 96.667vw, 87.438rem;
 	@mixin res margin-inline, unset, auto, auto;
-	@mixin res padding-inline, 5.333rem, unset, unset;
 	@mixin res left, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px 24px */
-	@mixin res top, 5.867rem, 1.389rem, 1.25rem;
+	@mixin res right, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px 24px */
+	@mixin res top, 5.867rem, 1.389rem, 1.25rem; /* 22px */
 }
 
 .leftBlock,

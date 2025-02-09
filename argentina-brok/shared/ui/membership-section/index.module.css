@@ -1,0 +1,36 @@
+.root {
+	@mixin res padding-block, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
+}
+
+.header {
+	@mixin res padding-block-end, 12.8rem, 3.333rem, 3rem;
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	@mixin font-h2;
+
+	text-align: center;
+	font-weight: 600;
+}
+
+.items {
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.description {
+	@mixin font-text20;
+
+	text-align: center;
+}

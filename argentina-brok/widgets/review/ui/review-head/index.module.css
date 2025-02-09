@@ -1,0 +1,20 @@
+.root {
+	@mixin res gap, 2.667rem, 0.694rem, 0.625rem;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.figure {
+	@mixin res width, 7.467rem, 1.944rem, 1.75rem;
+	@mixin res height, 6.4rem, 1.667rem, 1.5rem;
+
+	&.rotated {
+		rotate: 180deg;
+		align-self: end;
+	}
+}
+
+.text {
+    @mixin font-text20;
+}

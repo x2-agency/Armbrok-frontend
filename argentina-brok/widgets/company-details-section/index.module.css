@@ -1,0 +1,30 @@
+.root {
+	@mixin res padding-block-end, 32rem, 8.333rem, 7.5rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+	@mixin font-h2;
+
+	text-align: center;
+	font-weight: 700;
+}
+
+.list {
+	@mixin res width, auto, 52.778rem, 47.5rem;
+	@mixin res gap, 6rem, 0.833rem, 0.75rem;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.detail {
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem;
+
+	display: flex;
+	justify-content: center;
+}

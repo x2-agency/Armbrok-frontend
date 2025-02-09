@@ -1,0 +1,5 @@
+.placementArticle {
+	@mixin res padding-block, 3.2rem, 0.833rem, 0.75rem;
+
+	border-bottom: 1px solid var(--gray-300-color);
+}

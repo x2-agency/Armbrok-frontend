@@ -1,5 +1,5 @@
 .root {
-	background-color: #f8f8f8;
+	background-color: var(--gray-200-color);
 
 	padding-block-start: 6.181rem; /* 89px */
 	padding-block-end: 2.222rem; /* 32px */

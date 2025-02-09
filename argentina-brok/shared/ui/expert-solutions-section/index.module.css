@@ -1,0 +1,24 @@
+.sectionTitle {
+	@mixin font-h2;
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+
+	font-weight: 600;
+	text-align: center;
+}
+
+.cards {
+	@mixin res gap, 4.067rem, 4.444rem, 4rem;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
+	@media (max-width: 767px) {
+		row-gap: 6.5rem;
+		grid-template-columns: 1fr;
+	}
+}
+
+
+.cards.withShell {
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+}
