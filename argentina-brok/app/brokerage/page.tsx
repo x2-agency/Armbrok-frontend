@@ -1,5 +1,7 @@
+import { Brokerage } from '@/view/brokerage';
+
 const BrokeragePage = () => {
-	return <></>;
+	return <Brokerage />;
 };
 
 export default BrokeragePage;
