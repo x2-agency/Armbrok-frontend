@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 
 import { ARMBROK_TEAM } from '@/shared/model/armbrok-team.constants';
+import { MOCK_AWARDS } from '@/shared/model/mock-awards';
 import {
 	MOCK_ABOUT_BANNER,
 	HERO_DATA,
@@ -14,6 +15,7 @@ import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { MembershipSection } from '@/shared/ui/membership-section';
+import { AwardsSection } from '@/widgets/awards';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
 import { CompanyMembers } from '@/widgets/company-members';
@@ -33,6 +35,11 @@ export const AboutUs: NextPage = () => {
 					backgroundColor="white"
 				/>
 			</HeroContainer>
+			<AwardsSection
+				title={MOCK_AWARDS.title}
+				awards={MOCK_AWARDS.awards}
+				withViewAll
+			/>
 			<MembershipSection
 				title="Membership"
 				items={MOCK_MEMBERSHIP.items}
