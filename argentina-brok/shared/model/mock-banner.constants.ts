@@ -15,6 +15,23 @@ export const MOCK_DEFAULT_BANNER = {
 	},
 };
 
+export const MOCK_INVESTMENT_BANKING_BANNER = {
+	title: 'Investment Banking<br /> Services ',
+	description:
+		'Expert Solutions for Strategic Growth<br /> and Financial Excellence',
+	button: {
+		text: 'Open account',
+		href: '/account',
+	},
+	poster: {
+		image: {
+			src: '/assets/images/banner/investment-banking-banner.jpg',
+			src2x: '/assets/images/banner/investment-banking-banner.jpg',
+			mobile: '/assets/images/banner/investment-banking-banner.jpg',
+		},
+	},
+};
+
 export const MOCK_PROFIX_BANNER = {
 	title: 'Efficient investments in<br /> financial markets',
 	description:
@@ -82,5 +99,66 @@ export const MOCK_ABOUT_BANNER = {
 			src2x: '/assets/images/banner/banner-pc.jpg',
 			mobile: '/assets/images/banner/banner-mob.jpg',
 		},
+	},
+};
+
+export const HERO_DATA = {
+	titleSection: {
+		title:
+			'Armbrok offers its customers highly tailored<br /> solutions relating to&nbsp;both private and public<br /> securities placements.',
+		description:
+			'We&nbsp;provide full-fledged support at&nbsp;all preparatory stages preceding the<br /> securities offering, including the selection of&nbsp;the most appropriate type of<br /> securities to&nbsp;be&nbsp;issued, determination of&nbsp;the optimal volume, assistance in<br /> publishing information and public awareness campaign. ARMBROK also<br /> carries out post-placement activities such as&nbsp;market making.',
+	},
+	experience: [
+		{
+			title: '7 years',
+			description: 'of&nbsp;successful work in&nbsp;asset management',
+		},
+		{ title: '50+', description: 'Institutional Clients' },
+		{ title: '$760M', description: 'in&nbsp;assets under<br /> management' },
+	],
+	expertSolutions: {
+		items: [
+			{
+				icon: '/assets/icon/mock-factoids/first.svg',
+				title: '10+&nbsp;exchanges, 15 000+ instruments',
+				description:
+					'Access to&nbsp;all major exchanges in&nbsp;the USA, Europe, Asia and of&nbsp;course Armenia',
+			},
+			{
+				icon: '/assets/icon/mock-factoids/second.svg',
+				title: 'Over-the-Counter market',
+				description:
+					'We&nbsp;will find and buy for you practically any OTC instrument at&nbsp;an&nbsp;attractive price',
+			},
+			{
+				icon: '/assets/icon/mock-factoids/third.svg',
+				title: 'Own depositary and custodian',
+				description:
+					'This allows you to&nbsp;quickly transfer securities from one jurisdiction to&nbsp;another',
+			},
+			{
+				icon: '/assets/icon/mock-factoids/fourth.svg',
+				title: 'Expert Support When You Need&nbsp;It',
+				description:
+					'Caring and always ready to&nbsp;guide you through your investment journey.',
+			},
+		],
+	},
+	guarantees: {
+		items: [
+			{
+				icon: '/assets/icon/mock-garantees/first.svg',
+				title: 'Quarterly and annual bonuses',
+			},
+			{
+				icon: '/assets/icon/mock-garantees/second.svg',
+				title: 'Voluntary health insurance',
+			},
+			{
+				icon: '/assets/icon/mock-garantees/third.svg',
+				title: 'Pension co-financing',
+			},
+		],
 	},
 };

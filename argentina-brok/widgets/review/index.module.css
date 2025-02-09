@@ -1,0 +1,42 @@
+.root {
+	@mixin res margin-block-end, 38.4rem, 10rem, 9rem;
+}
+
+.card {
+	@mixin res padding-inline, 10.667rem, 2.778rem, 2.5rem;
+	@mixin res gap, 10.667rem, 2.778rem, 2.5rem;
+	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+
+	background-color: var(--gray-200-color);
+	display: flex;
+
+	@media (max-width: 767px) {
+		flex-direction: column-reverse;
+	}
+}
+
+.image {
+	@mixin res height, 121.867rem, 31.736rem, 28.563rem;
+	align-self: end;
+
+    @media (max-width: 767px) {
+        align-self: unset;
+        height: auto;
+    }
+}
+
+.review {
+	@mixin res margin-block-start, 5.067rem, 1.319rem, 1.188rem;
+	@mixin res padding, 10.667rem, 2.778rem, 2.5rem;
+	@mixin res gap, 2.667rem, 0.694rem, 0.625rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@media (max-width: 767px) {
+		padding-inline: unset;
+        padding-block-end: unset;
+        margin-block-start: unset;
+	}
+}

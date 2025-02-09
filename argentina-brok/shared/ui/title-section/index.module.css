@@ -1,0 +1,23 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-inline: auto;
+}
+
+.title,
+.description {
+	text-align: center;
+}
+
+.title {
+	@mixin font-h2;
+	
+	font-weight: 700;
+	line-height: 1.2;
+	padding-block-end: 1.5rem; /* 24px */
+}
+
+.description {
+	@mixin font-text20;
+}

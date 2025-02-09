@@ -1,0 +1,25 @@
+import cx from 'clsx';
+
+import { Container } from '@/shared/ui/container';
+import type { ExperienceItemProps } from '@/shared/ui/experience-item';
+import { ExperienceItem } from '@/shared/ui/experience-item';
+
+import css from './index.module.css';
+
+export type ExperienceSectionProps = {
+	className?: string;
+	experience: Array<ExperienceItemProps>;
+};
+
+export const ExperienceSection = ({
+	className,
+	experience,
+}: ExperienceSectionProps) => {
+	return (
+		<Container className={cx(css.root, className)}>
+			{experience.map((value, index) => (
+				<ExperienceItem key={index} {...value} />
+			))}
+		</Container>
+	);
+};

@@ -1,0 +1,21 @@
+.root {
+	@mixin res padding-block-end, 19.2rem, 5rem, 4.5rem;
+}
+
+.documents {
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+
+	display: grid;
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr !important;
+	}
+}
+
+.title {
+	@mixin font-h2;
+	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem;
+
+	font-weight: 600;
+	text-align: center;
+}

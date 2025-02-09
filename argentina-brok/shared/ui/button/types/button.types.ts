@@ -2,7 +2,8 @@ import type { PropsWithChildren } from 'react';
 
 interface BaseButtonProps extends PropsWithChildren {
 	className?: string;
-	variant?: 'back' | 'outline' | 'filled' | 'subtle';
+	variant?: 'back' | 'outline' | 'filled' | 'subtle' | 'next';
+	iconRotate?: number;
 	category?: 'default' | 'big';
 }
 

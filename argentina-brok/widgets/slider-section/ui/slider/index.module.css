@@ -1,0 +1,36 @@
+.slide {
+	position: relative;
+	width: 800px;
+	overflow: hidden;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.image {
+	@mixin res width, 30rem, 55.556rem, 50rem;
+	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res margin-block-end, 8.467rem, 4.028rem, 3.625rem;
+
+	object-fit: cover;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.title,
+.description {
+	text-align: center;
+}
+
+.title {
+	@mixin font-text20;
+
+	font-weight: 700;
+}
+
+.description {
+	@mixin font-text20;
+}

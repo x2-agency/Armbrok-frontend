@@ -1,0 +1,28 @@
+.root {
+	@mixin res padding, 8.533rem, 2.222rem, 2rem;
+	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res gap, 10.667rem, 2.778rem, 2.5rem;
+
+	display: flex;
+	flex-direction: column;
+	background-color: var(--gray-200-color);
+}
+
+.image {
+	@mixin res --size, 26.667rem, 6.944rem, 6.25rem;
+	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+
+	width: var(--size);
+	height: var(--size);
+}
+
+.name {
+	@mixin font-text20;
+	@mixin res padding-block-end, 1.067rem, 0.278rem, 0.25rem;
+
+	font-weight: 700;
+}
+
+.position {
+	@mixin font-text14;
+}
