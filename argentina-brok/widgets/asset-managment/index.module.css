@@ -4,9 +4,6 @@
 	grid-template-columns: repeat(2, 1fr);
 	background-color: var(--red-700-color);
 
-	@mixin res padding-block, 10.667rem, 2.778rem, 2.5rem; /* 40px */
-	@mixin res padding-inline, 5.333rem, 2.778rem, 2.5rem; /* 20px 40px */
-	@mixin res border-radius, 4.667rem, 2.222rem, 2rem; /* 20px  32px */
 	@mixin res margin-block, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */
 
 	@media (max-width: 767px) {

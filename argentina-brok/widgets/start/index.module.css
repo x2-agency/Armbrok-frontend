@@ -1,0 +1,13 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@mixin res padding-block, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
+}
+
+.title {
+	@mixin font-h2;
+	font-weight: 700;
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+}
