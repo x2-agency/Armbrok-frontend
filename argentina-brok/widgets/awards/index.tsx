@@ -37,7 +37,7 @@ export const AwardsSection = ({
 				))}
 			</div>
 			{withViewAll && (
-				<Button href="#" variant="next" iconRotate={180}>
+				<Button href="#" variant="next" iconRotate={180} className={css.button}>
 					View all awards
 				</Button>
 			)}

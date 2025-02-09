@@ -1,7 +1,7 @@
 .root {
 	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 	@mixin res padding-inline, 8.533rem, 2.222rem, 2rem; /* 32px */
-	@mixin res padding-block, 5.067rem, 1.319rem, 1.188rem; /* 19px */ 
+	@mixin res padding-block, 5.067rem, 1.319rem, 1.188rem; /* 19px */
 
 	position: relative;
 	display: flex;
@@ -78,5 +78,23 @@
 		bottom: 0;
 		translate: 0% -80%;
 		padding-block: unset;
+	}
+}
+
+.button {
+	@mixin transition;
+
+	svg path {
+		@mixin transition;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--black-color) !important;
+
+			svg path {
+				fill: var(--black-color);
+			}
+		}
 	}
 }

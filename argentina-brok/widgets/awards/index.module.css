@@ -4,20 +4,20 @@
 
 .title {
 	@mixin font-h2;
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */ 
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
 
 	font-weight: 600;
 	text-align: center;
 }
 
 .awardWrap {
-	@mixin res gap, 10.667rem, 2.778rem, 2.5rem; /* 40px */ 
+	@mixin res gap, 10.667rem, 2.778rem, 2.5rem; /* 40px */
 
 	display: flex;
 	flex-direction: column;
 
 	&.withButton {
-		@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */ 
+		@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
 	}
 }
 
@@ -39,6 +39,24 @@
 
 		&.centered {
 			gap: 10rem; /* 38px */
+		}
+	}
+}
+
+.button {
+	@mixin transition;
+
+	svg path {
+		@mixin transition;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--black-color) !important;
+
+			svg path {
+				fill: var(--black-color);
+			}
 		}
 	}
 }
