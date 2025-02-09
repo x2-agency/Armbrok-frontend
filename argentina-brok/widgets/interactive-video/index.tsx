@@ -1,7 +1,7 @@
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import type { InteractiveProps } from './model/interactive-video';
+import type { InteractiveProps } from './types/interactive-video';
 import { TextBlock } from './ui/text-block';
 import { VideoBlock } from './ui/video-block';
 

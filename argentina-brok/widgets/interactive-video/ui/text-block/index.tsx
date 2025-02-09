@@ -2,7 +2,7 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
-import type { InteractiveProps } from '@/widgets/interactive-video/model/interactive-video';
+import type { InteractiveProps } from '@/widgets/interactive-video/types/interactive-video';
 
 import css from './index.module.css';
 

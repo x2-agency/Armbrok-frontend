@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 
+import { HOME_NEWS } from '@/entities/news-card/model/news.constants';
 import { MOCK_DEFAULT_BANNER } from '@/shared/model/mock-banner.constants';
 import { AssetManagment } from '@/widgets/asset-managment';
 import { BannerSection } from '@/widgets/banner-section/ui';
@@ -10,6 +11,7 @@ import {
 	CORPORATE_TITLE,
 } from '@/widgets/corporate/model/corporate';
 import { InteractiveVideo } from '@/widgets/interactive-video';
+import { NewsSection } from '@/widgets/news-section';
 import { Start } from '@/widgets/start';
 import {
 	START_BUTTON,
@@ -51,6 +53,7 @@ export const Home: NextPage = () => {
 				cardsNumber={START_DATA}
 				button={START_BUTTON}
 			/>
+			<NewsSection dataNews={HOME_NEWS} />
 			<InteractiveVideo data={HOME_INTERACTIVE_VIDEO} />
 		</>
 	);

@@ -1,4 +1,4 @@
-import type { InteractiveVideoType } from '@/widgets/interactive-video/model/interactive-video';
+import type { InteractiveVideoType } from '@/widgets/interactive-video/types/interactive-video';
 
 export const HOME_ASSETS_TITLE = 'Asset Management';
 export const HOME_ASSETS_DESCRIPTION =

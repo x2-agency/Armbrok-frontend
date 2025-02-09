@@ -4,7 +4,7 @@ import parser from 'html-react-parser';
 
 import PlaySVG from '@/public/assets/icons/play.svg';
 import { useVideoPlayer } from '@/shared/hooks/use-video-player';
-import type { InteractiveProps } from '@/widgets/interactive-video/model/interactive-video';
+import type { InteractiveProps } from '@/widgets/interactive-video/types/interactive-video';
 
 import css from './index.module.css';
 
