@@ -7,7 +7,7 @@ export const MOCK_FILES = [
 	},
 	{
 		icon: '/assets/icon/file/file.svg',
-		name: 'License issued by the Central Bank of Armenia',
+		name: 'License issued by&nbsp;the Central Bank of&nbsp;Armenia',
 		type: 'PDF',
 		size: '700KB',
 	},
