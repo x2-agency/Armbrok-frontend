@@ -8,6 +8,7 @@ export const Detail = ({ title, description }: CompanyDetailProps) => {
 	return (
 		<>
 			<p className={css.text}>{parser(title)}</p>
+			<span className={css.dotted} />
 			<p className={css.text}>{parser(description)}</p>
 		</>
 	);

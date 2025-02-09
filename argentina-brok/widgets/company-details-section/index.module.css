@@ -15,14 +15,16 @@
 }
 
 .list {
-	@mixin res width, 202.667rem, 52.778rem, 47.5rem;
-	@mixin res gap, 3.2rem, 0.833rem, 0.75rem;
+	@mixin res width, auto, 52.778rem, 47.5rem;
+	@mixin res gap, 6rem, 0.833rem, 0.75rem;
 
 	display: flex;
 	flex-direction: column;
 }
 
 .detail {
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem;
+
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
