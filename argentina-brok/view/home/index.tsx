@@ -1,9 +1,18 @@
 import type { NextPage } from 'next';
 
 import { HOME_NEWS } from '@/entities/news-card/model/news.constants';
-import { MOCK_DEFAULT_BANNER } from '@/shared/model/mock-banner.constants';
+import { MOCK_AWARDS } from '@/shared/model/mock-awards';
+import {
+	HERO_DATA,
+	MOCK_DEFAULT_BANNER,
+} from '@/shared/model/mock-banner.constants';
+import { MOCK_COMPANIES } from '@/shared/model/mock-companies-group';
+import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
+import { HeroContainer } from '@/shared/ui/hero-container';
 import { AssetManagment } from '@/widgets/asset-managment';
+import { AwardsSection } from '@/widgets/awards';
 import { BannerSection } from '@/widgets/banner-section/ui';
+import { CompaniesGroup } from '@/widgets/companies-group';
 import { Corporate } from '@/widgets/corporate';
 import {
 	CARDS,
@@ -35,6 +44,9 @@ export const Home: NextPage = () => {
 				banner={MOCK_DEFAULT_BANNER}
 				alignContent="end"
 			/>
+			<HeroContainer>
+				<ExpertSolutionSection items={HERO_DATA.expertSolutions.items} />
+			</HeroContainer>
 			<AssetManagment
 				href="#"
 				title={HOME_ASSETS_TITLE}
@@ -52,6 +64,15 @@ export const Home: NextPage = () => {
 				title={START_TITLE}
 				cardsNumber={START_DATA}
 				button={START_BUTTON}
+			/>
+			<AwardsSection
+				title={MOCK_AWARDS.title}
+				awards={MOCK_AWARDS.awards}
+				withViewAll
+			/>
+			<CompaniesGroup
+				title={MOCK_COMPANIES.title}
+				items={MOCK_COMPANIES.items}
 			/>
 			<NewsSection dataNews={HOME_NEWS} />
 			<InteractiveVideo data={HOME_INTERACTIVE_VIDEO} />

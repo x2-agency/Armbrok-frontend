@@ -1,5 +1,5 @@
 .root {
-	@mixin res padding-block-end, 38.4rem, 10rem, 9rem;
+	@mixin res padding-block, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
 }
 
 .title {

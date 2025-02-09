@@ -3,8 +3,8 @@ import type { NextPage } from 'next';
 import { ARMBROK_TEAM } from '@/shared/model/armbrok-team.constants';
 import { MOCK_AWARDS } from '@/shared/model/mock-awards';
 import {
-	MOCK_ABOUT_BANNER,
 	HERO_DATA,
+	MOCK_ABOUT_BANNER,
 } from '@/shared/model/mock-banner.constants';
 import { MOCK_COMPANIES } from '@/shared/model/mock-companies-group';
 import { COMPANY_DETAILS } from '@/shared/model/mock-details.constants';
