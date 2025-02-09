@@ -1,7 +1,7 @@
 export type SliderItemProps = {
 	image: string;
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
 };
 
 export type SliderSectionProps = {

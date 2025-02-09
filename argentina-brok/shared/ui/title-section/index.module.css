@@ -8,14 +8,20 @@
 .title,
 .description {
 	text-align: center;
+
+	@media (max-width: 767px) {
+		br {
+			display: none;
+		}
+	}
 }
 
 .title {
+	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 	@mixin font-h2;
-	
+
 	font-weight: 700;
 	line-height: 1.2;
-	padding-block-end: 1.5rem; /* 24px */
 }
 
 .description {

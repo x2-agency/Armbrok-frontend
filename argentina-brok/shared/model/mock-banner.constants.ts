@@ -102,6 +102,23 @@ export const MOCK_ABOUT_BANNER = {
 	},
 };
 
+export const CAREERS_AT_ARMBROCK_BANNER = {
+	title: 'Careers at&nbsp;Armbrock',
+	description:
+		'Armbrock is&nbsp;a&nbsp;company where every employee feels<br /> valued and important.',
+	button: {
+		text: 'View vacancies',
+		href: '#',
+	},
+	poster: {
+		image: {
+			src: '/assets/images/banner/careers.jpg',
+			src2x: '/assets/images/banner/careers.jpg',
+			mobile: '/assets/images/banner/careers.jpg',
+		},
+	},
+};
+
 export const HERO_DATA = {
 	titleSection: {
 		title:
