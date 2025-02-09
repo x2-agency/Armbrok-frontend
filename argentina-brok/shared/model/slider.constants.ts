@@ -3,19 +3,19 @@ export const SLIDER_DATA = {
 	description: 'We Support Educational, Cultural, and Sports Initiatives',
 	slider: [
 		{
-			image: '/assets/images/events/event.png',
+			image: '/assets/images/events/event.jpg',
 			title: 'Supporting Socially Significant Projects',
 			description:
 				'Status of the Account Operator Member of the regulated market',
 		},
 		{
-			image: '/assets/images/events/event.png',
+			image: '/assets/images/events/event.jpg',
 			title: 'Supporting Socially Significant Projects',
 			description:
 				'Status of the Account Operator Member of the regulated market',
 		},
 		{
-			image: '/assets/images/events/event.png',
+			image: '/assets/images/events/event.jpg',
 			title: 'Supporting Socially Significant Projects',
 			description:
 				'Status of the Account Operator Member of the regulated market',

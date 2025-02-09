@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+import parser from 'html-react-parser';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import parser from 'html-react-parser';
 
 import type { SliderSectionProps } from '@/widgets/slider-section/slider-section.types';
 
