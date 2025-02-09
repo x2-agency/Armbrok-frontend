@@ -26,7 +26,7 @@ function useMediaQuery(query: string): boolean {
 		// Add event listener
 		matchMedia.addEventListener('change', handleChange);
 
-		// Clean up event listener on unmount
+		// Очищаем слушатель при размонтировании
 		return () => {
 			matchMedia.removeEventListener('change', handleChange);
 		};
