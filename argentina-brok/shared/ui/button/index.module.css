@@ -31,7 +31,7 @@
 }
 
 .outline {
-	border: white solid 0.063rem;
+	border: var(--red-500-color) solid 0.063rem;
 
 	&:not(:disabled) {
 		opacity: 1;

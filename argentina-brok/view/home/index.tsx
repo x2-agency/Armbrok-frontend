@@ -9,6 +9,7 @@ import {
 	CORPORATE_DESCRIPTION,
 	CORPORATE_TITLE,
 } from '@/widgets/corporate/model/corporate';
+import { InteractiveVideo } from '@/widgets/interactive-video';
 import { Start } from '@/widgets/start';
 import {
 	START_BUTTON,
@@ -21,6 +22,7 @@ import {
 	HOME_ASSETS_DESCRIPTION,
 	HOME_ASSETS_IMAGE,
 	HOME_ASSETS_TITLE,
+	HOME_INTERACTIVE_VIDEO,
 } from './model/home.constants';
 
 export const Home: NextPage = () => {
@@ -49,6 +51,7 @@ export const Home: NextPage = () => {
 				cardsNumber={START_DATA}
 				button={START_BUTTON}
 			/>
+			<InteractiveVideo data={HOME_INTERACTIVE_VIDEO} />
 		</>
 	);
 };

@@ -16,11 +16,10 @@
 
 .store {
 	img {
-		@mixin res width, 30.4rem, 7.917rem, 7.125rem; /* 104px */
-		@mixin res height, 10.133rem, 2.639rem, 2.375rem; /* 108 */
+		@mixin res height, 10.133rem, 2.639rem, 2.375rem; /* 38px 108 */
 	}
 
-	@mixin res gap, 2.667rem, 0.556rem, 0.5rem; /* 10px, 8px, 8px */
+	@mixin res gap, 2.667rem, 0.556rem, 0.5rem; /* 10px 8px 8px */
 }
 
 .media {
