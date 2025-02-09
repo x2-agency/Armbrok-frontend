@@ -109,14 +109,14 @@ export const HERO_DATA = {
 		description:
 			'We&nbsp;provide full-fledged support at&nbsp;all preparatory stages preceding the<br /> securities offering, including the selection of&nbsp;the most appropriate type of<br /> securities to&nbsp;be&nbsp;issued, determination of&nbsp;the optimal volume, assistance in<br /> publishing information and public awareness campaign. ARMBROK also<br /> carries out post-placement activities such as&nbsp;market making.',
 	},
-	// experience: [
-	// 	{
-	// 		title: '7 years',
-	// 		description: 'of&nbsp;successful work in&nbsp;asset management',
-	// 	},
-	// 	{ title: '50+', description: 'Institutional Clients' },
-	// 	{ title: '$760M', description: 'in&nbsp;assets under<br /> management' },
-	// ],
+	experience: [
+		{
+			title: '7 years',
+			description: 'of&nbsp;successful work in&nbsp;asset management',
+		},
+		{ title: '50+', description: 'Institutional Clients' },
+		{ title: '$760M', description: 'in&nbsp;assets under<br /> management' },
+	],
 	expertSolutions: {
 		items: [
 			{
@@ -145,20 +145,20 @@ export const HERO_DATA = {
 			},
 		],
 	},
-	// guarantees: {
-	// 	items: [
-	// 		{
-	// 			icon: '/assets/icon/mock-garantees/first.svg',
-	// 			title: 'Quarterly and annual bonuses',
-	// 		},
-	// 		{
-	// 			icon: '/assets/icon/mock-garantees/second.svg',
-	// 			title: 'Voluntary health insurance',
-	// 		},
-	// 		{
-	// 			icon: '/assets/icon/mock-garantees/third.svg',
-	// 			title: 'Pension co-financing',
-	// 		},
-	// 	],
-	// },
+	guarantees: {
+		items: [
+			{
+				icon: '/assets/icon/mock-garantees/first.svg',
+				title: 'Quarterly and annual bonuses',
+			},
+			{
+				icon: '/assets/icon/mock-garantees/second.svg',
+				title: 'Voluntary health insurance',
+			},
+			{
+				icon: '/assets/icon/mock-garantees/third.svg',
+				title: 'Pension co-financing',
+			},
+		],
+	},
 };
