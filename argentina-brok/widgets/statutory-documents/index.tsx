@@ -19,7 +19,7 @@ export const StatutoryDocuments = ({
 }: StatutoryDocumentsProps) => {
 	return (
 		<Container className={cx(css.root, className)}>
-			{title && <h2>{parser(title)}</h2>}
+			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<div className={css.documents}>
 				{documents.map((document, key) => (
 					<Document key={key} {...document} />
