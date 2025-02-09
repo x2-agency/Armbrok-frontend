@@ -1,29 +1,28 @@
+import cx from 'clsx';
+
+import { Container } from '@/shared/ui/container';
 import type { PlacementItemProps } from '@/widgets/placements-section/placements.types';
-import { PlacementArticle } from '@/widgets/placements-section/ui/placement-article';
+import { PlacementBody } from '@/widgets/placements-section/ui/placement-body';
 import { PlacementHead } from '@/widgets/placements-section/ui/placement-head';
+import { PlacementSubtitle } from '@/widgets/placements-section/ui/placement-subtitle';
 
 import css from './index.module.css';
 
-export const PlacementItem = ({ head, body, subtitle }: PlacementItemProps) => {
+export const PlacementItem = ({
+	head,
+	body,
+	subtitle,
+	className,
+}: PlacementItemProps) => {
 	return (
-		<article className={css.root}>
+		<Container
+			category="article"
+			padding="min"
+			className={cx(css.root, className)}
+		>
 			<PlacementHead {...head} />
-			{subtitle && (
-				<ul className={css.subtitle}>
-					{subtitle.map((value, index) => (
-						<li key={index} className={css.subtitleArticle}>
-							<PlacementArticle {...value} />
-						</li>
-					))}
-				</ul>
-			)}
-			<ul className={css.body}>
-				{body.map((value, index) => (
-					<li key={index} className={css.placementArticle}>
-						<PlacementArticle {...value} />
-					</li>
-				))}
-			</ul>
-		</article>
+			{subtitle && <PlacementSubtitle subtitle={subtitle} />}
+			<PlacementBody body={body} />
+		</Container>
 	);
 };

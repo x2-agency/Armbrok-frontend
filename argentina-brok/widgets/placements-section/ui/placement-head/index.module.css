@@ -1,0 +1,27 @@
+.header {
+	@mixin res gap, 4.267rem, 1.111rem, 1rem;
+	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem;
+
+	display: flex;
+	align-items: start;
+}
+
+.icon {
+	@mixin res --size, 19.2rem, 5rem, 4.5rem;
+
+	width: var(--size);
+	height: var(--size);
+}
+
+.title {
+	@mixin font-text20;
+	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem;
+
+	font-weight: 700;
+}
+
+.time {
+	@mixin font-text14;
+
+	color: var(--gray-500-color);
+}

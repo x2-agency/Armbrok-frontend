@@ -1,0 +1,12 @@
+.title {
+	@mixin font-text16;
+
+	color: var(--gray-700-color);
+	font-weight: 500;
+}
+
+.description {
+	@mixin font-text14;
+
+	color: var(--gray-500-color);
+}

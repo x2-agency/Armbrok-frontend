@@ -10,18 +10,23 @@ function useMediaQuery(query: string): boolean {
 	};
 
 	const [matches, setMatches] = useState<boolean>(() => {
+		// Initialize with an initial value
+		// (to avoid hydration and SSR issues)
 		return getMatches(query);
 	});
 
 	useEffect(() => {
 		const matchMedia = window.matchMedia(query);
 
+		// Update state on mount
 		const handleChange = () => {
 			setMatches(matchMedia.matches);
 		};
 
+		// Add event listener
 		matchMedia.addEventListener('change', handleChange);
 
+		// Clean up event listener on unmount
 		return () => {
 			matchMedia.removeEventListener('change', handleChange);
 		};
