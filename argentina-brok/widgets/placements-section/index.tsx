@@ -15,7 +15,7 @@ export const PlacementsSection = ({
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<div className={css.placements}>
 				{items.map((value, index) => (
-					<PlacementItem {...value} key={index} />
+					<PlacementItem {...value} key={index} className={css.placement} />
 				))}
 			</div>
 		</section>

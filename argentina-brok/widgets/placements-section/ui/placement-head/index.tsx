@@ -12,10 +12,10 @@ export const PlacementHead = ({
 }: PlacementItemProps['head']) => {
 	return (
 		<header className={css.header}>
-			<img src={icon} alt="icon" />
+			<img src={icon} alt="icon" className={css.icon} />
 			<div className={css.titleBlock}>
-				<h2>{parser(title)}</h2>
-				<p>{parser(time)}</p>
+				<h2 className={css.title}>{parser(title)}</h2>
+				<p className={css.time}>{parser(time)}</p>
 			</div>
 		</header>
 	);

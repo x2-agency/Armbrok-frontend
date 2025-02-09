@@ -3,6 +3,14 @@ export type PlacementArticleProps = {
 	description: string;
 };
 
+export type PlacementSubtitleProps = {
+	subtitle: Array<PlacementArticleProps>;
+};
+
+export type PlacementBodyProps = {
+	body: Array<PlacementArticleProps>;
+};
+
 export type PlacementItemProps = {
 	head: {
 		icon: string;
@@ -11,6 +19,7 @@ export type PlacementItemProps = {
 	};
 	subtitle?: Array<PlacementArticleProps>;
 	body: Array<PlacementArticleProps>;
+	className?: string;
 };
 
 export type PlacementSectionProps = {

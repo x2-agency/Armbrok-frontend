@@ -1,0 +1,14 @@
+.root {
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.subtitleArticle {
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem;
+
+	display: flex;
+	flex-direction: column;
+}
