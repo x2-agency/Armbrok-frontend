@@ -3,6 +3,7 @@
 	@mixin res padding-inline, 8.533rem, 2.222rem, 2rem;
 	@mixin res padding-block, 5.067rem, 1.319rem, 1.188rem;
 
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -61,4 +62,21 @@
 
 .button {
 	height: fit-content;
+}
+
+.root.column {
+	align-items: start;
+	flex-direction: column;
+	.leftPart {
+		align-items: start;
+		flex-direction: column;
+	}
+
+	.button {
+		position: absolute;
+		align-self: end;
+		bottom: 0;
+		translate: 0% -80%;
+		padding-block: unset;
+	}
 }

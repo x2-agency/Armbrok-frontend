@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
@@ -11,11 +12,18 @@ export type DocumentProps = {
 	name: string;
 	type: string;
 	size: string;
+	direction?: 'row' | 'column';
 };
 
-export const Document = ({ icon, name, type, size }: DocumentProps) => {
+export const Document = ({
+	icon,
+	name,
+	type,
+	size,
+	direction = 'row',
+}: DocumentProps) => {
 	return (
-		<article className={css.root}>
+		<article className={cx(css.root, css[direction])}>
 			<div className={css.leftPart}>
 				<img src={icon} alt={name} className={css.icon} />
 				<header className={css.header}>
