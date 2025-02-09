@@ -28,6 +28,7 @@ export const Slider = ({
 			slideToClickedSlide
 			slideActiveClass={css.activeSlide}
 			setWrapperSize={false}
+			initialSlide={1}
 			coverflowEffect={{
 				slideShadows: false,
 				depth: 100,
