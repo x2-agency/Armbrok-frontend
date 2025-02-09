@@ -1,6 +1,8 @@
 .root {
 	@mixin font-text16;
+	@mixin transition;
 
+	transition-property: background-color color;
 	display: flex;
 	justify-content: center;
 	align-items: center;

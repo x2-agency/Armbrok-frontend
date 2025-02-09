@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 0;
 	color: var(--white-color);
-	z-index: 100;
+	z-index: 100000;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
