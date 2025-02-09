@@ -19,7 +19,9 @@ export const StatutoryDocuments = ({
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<div
 				className={css.documents}
-				style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+				style={{
+					gridTemplateColumns: `repeat(${columns}, 1fr)`,
+				}}
 			>
 				{documents.map((document, key) => (
 					<Document key={key} {...document} direction={fileDirection} />
