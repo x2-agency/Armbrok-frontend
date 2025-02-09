@@ -10,23 +10,18 @@ function useMediaQuery(query: string): boolean {
 	};
 
 	const [matches, setMatches] = useState<boolean>(() => {
-		// Инициализация с начальным значением
-		// (для избежания гидратации и SSR проблем)
 		return getMatches(query);
 	});
 
 	useEffect(() => {
 		const matchMedia = window.matchMedia(query);
 
-		// Обновляем состояние при монтировании
 		const handleChange = () => {
 			setMatches(matchMedia.matches);
 		};
 
-		// Добавляем слушатель
 		matchMedia.addEventListener('change', handleChange);
 
-		// Очищаем слушатель при размонтировании
 		return () => {
 			matchMedia.removeEventListener('change', handleChange);
 		};
