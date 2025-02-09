@@ -11,7 +11,7 @@
 }
 
 .placements {
-	@mixin res padding-inline, 5.333rem, 7.778rem;
+	@mixin res padding-inline, 5.333rem, 7.778rem, 7.063rem;
 	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
 
 	display: flex;

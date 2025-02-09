@@ -15,18 +15,16 @@
 }
 
 .store {
+	@mixin res gap, 2.667rem, 0.556rem, 0.5rem; /* 10px 8px 8px */
 	img {
 		@mixin res height, 10.133rem, 2.639rem, 2.375rem; /* 38px 108 */
 	}
-
-	@mixin res gap, 2.667rem, 0.556rem, 0.5rem; /* 10px 8px 8px */
 }
 
 .media {
+	@mixin res gap, 2.667rem, 1.111rem, 1rem; /* 10px, 16px, 16px */
 	img {
 		@mixin res width, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 		@mixin res height, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 	}
-
-	@mixin res gap, 2.667rem, 1.111rem, 1rem; /* 10px, 16px, 16px */
 }
