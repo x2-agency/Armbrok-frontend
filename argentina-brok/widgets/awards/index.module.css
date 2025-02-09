@@ -4,20 +4,20 @@
 
 .title {
 	@mixin font-h2;
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */ 
 
 	font-weight: 600;
 	text-align: center;
 }
 
 .awardWrap {
-	@mixin res gap, 10.667rem, 2.778rem, 2.5rem;
+	@mixin res gap, 10.667rem, 2.778rem, 2.5rem; /* 40px */ 
 
 	display: flex;
 	flex-direction: column;
 
 	&.withButton {
-		@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+		@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */ 
 	}
 }
 
@@ -26,7 +26,7 @@
 	justify-content: space-between;
 
 	&.centered {
-		@mixin res gap, 19.2rem, 5rem, 4.5rem;
+		@mixin res gap, 19.2rem, 5rem, 4.5rem; /* 72px */
 
 		justify-content: center;
 	}
@@ -35,10 +35,10 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: unset;
-		gap: 10rem;
+		gap: 10rem; /* 38px */
 
 		&.centered {
-			gap: 10rem;
+			gap: 10rem; /* 38px */
 		}
 	}
 }
