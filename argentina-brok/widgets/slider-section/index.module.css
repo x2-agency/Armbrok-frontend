@@ -1,0 +1,25 @@
+.root {
+	@mixin res padding-block-end, 1.333rem, 10rem, 9rem;
+}
+
+.title,
+.description {
+	text-align: center;
+}
+
+.title {
+	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem;
+	@mixin font-h2;
+
+	font-weight: 700;
+}
+
+.description {
+	@mixin font-text20;
+
+	color: var(--gray-800-color);
+}
+
+.titleBlock {
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+}

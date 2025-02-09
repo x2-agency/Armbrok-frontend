@@ -13,6 +13,7 @@ import {
 	MOCK_FILES_TITLE,
 } from '@/shared/model/mock-files.constants';
 import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
+import { SLIDER_DATA } from '@/shared/model/slider.constants';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { MembershipSection } from '@/shared/ui/membership-section';
@@ -21,6 +22,7 @@ import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
 import { CompanyDetailsSection } from '@/widgets/company-details-section';
 import { CompanyMembers } from '@/widgets/company-members';
+import { SliderSection } from '@/widgets/slider-section';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
@@ -52,6 +54,7 @@ export const AboutUs: NextPage = () => {
 				items={MOCK_COMPANIES.items}
 				className={css.companies}
 			/>
+			<SliderSection {...SLIDER_DATA} />
 			<MembershipSection
 				title="Supporting Socially Significant Projects"
 				description="We Support Educational, Cultural, and Sports Initiatives"
