@@ -13,9 +13,9 @@ export const MenuHead = () => {
 				<CloseMenuButton />
 				<Logo href="/" logo={MENU_HEADER} />
 			</div>
-			<div className={css.secondPart}>
-				<Search href="/" />
-				<LanguageSelection />
+			<div className={css.rightPart}>
+				<Search href="/" className={css.search} />
+				<LanguageSelection theme="dark" className={css.lang} />
 			</div>
 		</header>
 	);

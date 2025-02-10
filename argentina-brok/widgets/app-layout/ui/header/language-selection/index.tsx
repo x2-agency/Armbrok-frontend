@@ -1,44 +1,85 @@
 'use client';
-import cx from 'clsx';
-import { useState } from 'react';
 
-import Arrow from '@/public/assets/icons/header/arrow.svg';
+import cx from 'clsx';
+import { useState, useEffect, useRef } from 'react';
+
+import TriangleSVG from '@/public/assets/icons/header/triangle.svg';
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
+import useMediaQuery from '@/shared/hooks/use-media-query';
 import { LANGUAGES } from '@/widgets/app-layout/models/header.constants';
 
 import css from './index.module.css';
-export const LanguageSelection = () => {
-	const [selectedLanguage, setSelectedLanguage] = useState<string>(
-		LANGUAGES[0].value
-	);
-	const [isOpen, setIsOpen] = useState<boolean>(false);
 
-	const handleSelectLanguage = (value: string) => {
-		setSelectedLanguage(value);
+type LanguageSelectionProps = {
+	className?: string;
+	theme?: 'white' | 'dark';
+};
+
+export const LanguageSelection = ({
+	className,
+	theme = 'white',
+}: LanguageSelectionProps) => {
+	const { toggleMenuOpen } = useLayoutContext();
+	const isMobile = useMediaQuery('(max-width: 767px)');
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [selectedLanguage, setSelectedLanguage] = useState<string>(
+		LANGUAGES[0]
+	);
+	const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+	const handleSelectLanguage = (selectedValue: string) => {
+		setSelectedLanguage(selectedValue);
 		setIsOpen(false);
+
+		if (isMobile) {
+			toggleMenuOpen(false);
+		}
 	};
 
-	return (
-		<div className={css.root}>
-			<div className={css.dropdown}>
-				<div className={css.selected} onClick={() => setIsOpen(!isOpen)}>
-					{LANGUAGES.find(item => item.value === selectedLanguage)?.lang}
-					<Arrow className={cx(css.arrow, { [css.rotated]: isOpen })} />
-				</div>
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (
+				dropdownRef.current &&
+				!dropdownRef.current.contains(event.target as Node)
+			) {
+				setIsOpen(false);
+			}
+		};
 
-				{isOpen && (
-					<ul className={css.options}>
-						{LANGUAGES.map((item, index) => (
-							<li
-								key={index}
-								className={css.option}
-								onClick={() => handleSelectLanguage(item.value)}
+		if (isOpen) {
+			document.addEventListener('click', handleClickOutside);
+		} else {
+			document.removeEventListener('click', handleClickOutside);
+		}
+
+		return () => document.removeEventListener('click', handleClickOutside);
+	}, [isOpen]);
+
+	return (
+		<div className={cx(css.root, className)} ref={dropdownRef}>
+			<button
+				className={cx(css.selected, css[theme])}
+				onClick={() => setIsOpen(prev => !prev)}
+			>
+				{selectedLanguage}
+				<TriangleSVG className={cx(css.svg, { [css.open]: isOpen })} />
+			</button>
+			{isOpen && (
+				<ul className={css.languagesList}>
+					{LANGUAGES.map((value, index) => (
+						<li key={index} className={css.language}>
+							<button
+								onClick={() => handleSelectLanguage(value)}
+								className={cx(css.languageButton, {
+									[css.selectedLang]: value === selectedLanguage,
+								})}
 							>
-								{item.value}
-							</li>
-						))}
-					</ul>
-				)}
-			</div>
+								{value}
+							</button>
+						</li>
+					))}
+				</ul>
+			)}
 		</div>
 	);
 };

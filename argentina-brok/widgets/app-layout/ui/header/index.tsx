@@ -27,9 +27,13 @@ export const Header = () => {
 
 			<div className={css.rightBlock}>
 				{isMobile && <BurgerButton />}
-				<Search href="#" />
-				<LanguageSelection />
-				<LogIn />
+				{!isMobile && (
+					<>
+						<Search href="#" />
+						<LanguageSelection />
+						<LogIn />
+					</>
+				)}
 			</div>
 		</header>
 	);

@@ -1,62 +1,90 @@
 .root {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	@media (max-width: 767px) {
-		display: none;
-	}
+	display: relative;
 }
 
-.dropdown {
+.selected,
+.languageButton {
 	@mixin font-text16;
-}
 
-.wrap {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	gap: 0.139rem; /* 2px */
+	font-weight: 500;
+	cursor: pointer;
 }
 
 .selected {
-	justify-content: center;
-	flex-direction: row;
-	display: flex;
-	background-color: transparent;
-	cursor: pointer;
+	@mixin transition;
+	position: relative;
+
+	transition-property: color;
+
+	&.white {
+		color: var(--white-color);
+	}
+
+	&.dark {
+		color: var(--black-color);
+
+		.svg path {
+			fill: var(--black-color);
+		}
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--red-600-color);
+
+			.svg path {
+				fill: var(--red-600-color);
+			}
+		}
+	}
 }
 
-.options {
+.svg {
+	@mixin transition;
+	@mixin res width, 2.4rem, 0.625rem, 0.563rem; /* 9px */
+	@mixin res height, 1.333rem, 0.347rem, 0.313rem; /* 5px */
+
 	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	background-color: var(--white-color);
-	color: var(--black-color);
-	@mixin res height, 36.267rem, 9.444rem, 8.5rem;
+	top: 40%;
+	right: -50%;
+	transition-property: rotate;
+	rotate: 180deg;
+
+	&.open {
+		rotate: 0deg;
+	}
+
+	path {
+		@mixin transition;
+
+		transition-property: fill;
+	}
+}
+
+.languagesList {
 	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
-	@mixin res top, unset, 4.167rem, 3.75rem;
-	z-index: 10;
+	@mixin res width, 17.067rem, 4.444rem, 4rem; /* 64px */
+	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+
+	background-color: var(--white-color);
+	position: absolute;
+	overflow: hidden;
 }
 
-.option {
-	padding-inline: 1.111rem; /* 16px */
-	padding-block: 0.556rem; /* 8px */
-	cursor: pointer;
-	transition: background-color 0.2s;
-}
+.languageButton {
+	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin transition;
 
-.option:hover {
-	background-color: #f0f0f0;
-}
+	width: 100%;
+	transition-property: background-color;
 
-.arrow {
-	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
+	&.selectedLang {
+		background-color: var(--gray-300-color);
+	}
 
-.rotated {
-	transform: rotate(180deg);
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--gray-200-color);
+		}
+	}
 }

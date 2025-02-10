@@ -1,7 +1,8 @@
-.root {
+.svg {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 
-	@media (max-width: 767px) {
-		display: none;
-	}
+	@mixin res width, 5.067rem, 1.319rem, 1.188rem;
+	@mixin res height, 5.067rem, 1.319rem, 1.188rem;
 }

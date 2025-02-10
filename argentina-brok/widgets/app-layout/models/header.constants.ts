@@ -16,17 +16,4 @@ export const NAVIGATION_LINKS = [
 	{ text: 'Contact us', href: '/contact-us' },
 ];
 
-export const LANGUAGES = [
-	{
-		value: 'EN',
-		lang: 'En',
-	},
-	{
-		value: 'AM',
-		lang: 'Am',
-	},
-	{
-		value: 'RU',
-		lang: 'Ru',
-	},
-];
+export const LANGUAGES = ['EN', 'AM', 'RU'];

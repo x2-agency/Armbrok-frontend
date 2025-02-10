@@ -1,7 +1,7 @@
 .root {
 	padding-block-start: 4.267rem; /* 16px */
 	padding-block-end: 6.4rem; /* 24px */
-	height: calc(100% - 72px);
+	height: calc(100% - 17.567rem);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

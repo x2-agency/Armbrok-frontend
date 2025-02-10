@@ -15,3 +15,18 @@
 .leftPart {
     gap: 4.267rem; /* 16px */
 }
+
+.rightPart {
+    gap: 8.533rem; /* 32px */
+}
+
+.search {
+    svg path {
+        fill: var(--gray-800-color);
+    }
+}
+
+.lang ul {
+    right: 5%;
+    box-shadow: 0 0 0.5rem var(--black-color);
+}
