@@ -4,11 +4,12 @@ import parser from 'html-react-parser';
 import AppIconSvg from '@/public/assets/icon/app.svg';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
-import { STORE_LINKS } from '@/widgets/app-layout/ui/footer/model/social.constants';
-import { Link } from '@/widgets/app-layout/ui/footer/ui/social-links/link';
+import { STORE_LINKS } from '@/widgets/app-layout/models/social.constants';
+import { Link } from '@/widgets/app-layout/ui/footer/social-links/link';
 
 import '@/public/assets/images/iPhone_15_Pro.png';
 import css from './index.module.css';
+
 export const AppSection = ({
 	title,
 	description,

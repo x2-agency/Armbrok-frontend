@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 
-import type { IconListProps } from '@/widgets/app-layout/ui/footer/model/social.constants';
+import type { IconListProps } from '@/widgets/app-layout/models/social.constants';
 
 import css from './index.module.css';
 

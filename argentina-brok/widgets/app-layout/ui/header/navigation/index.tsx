@@ -1,7 +1,7 @@
 import cx from 'clsx';
 
 import { Button } from '@/shared/ui/button';
-import type { NavigationProps } from '@/widgets/app-layout/ui/header/types/nav-types';
+import type { NavigationProps } from '@/widgets/app-layout/types/nav-types';
 
 import css from './index.module.css';
 

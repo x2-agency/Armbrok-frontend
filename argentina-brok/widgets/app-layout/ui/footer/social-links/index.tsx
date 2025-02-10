@@ -1,7 +1,7 @@
 import {
 	SOCIAL_MEDIA_LINKS,
 	STORE_LINKS,
-} from '@/widgets/app-layout/ui/footer/model/social.constants';
+} from '@/widgets/app-layout/models/social.constants';
 
 import css from './index.module.css';
 import { Link } from './link';

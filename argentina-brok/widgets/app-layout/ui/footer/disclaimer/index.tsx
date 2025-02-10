@@ -3,7 +3,7 @@ import parser from 'html-react-parser';
 import {
 	LAST_UPDATE,
 	TEXT_BLOCK_FOOT,
-} from '@/widgets/app-layout/ui/footer/model/text-block.constants';
+} from '@/widgets/app-layout/models/text-block.constants';
 
 import css from './index.module.css';
 

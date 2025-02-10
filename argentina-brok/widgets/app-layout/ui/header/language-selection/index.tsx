@@ -3,7 +3,7 @@ import cx from 'clsx';
 import { useState } from 'react';
 
 import Arrow from '@/public/assets/icons/header/arrow.svg';
-import { LANGUAGES } from '@/widgets/app-layout/ui/header/model/header.constants';
+import { LANGUAGES } from '@/widgets/app-layout/models/header.constants';
 
 import css from './index.module.css';
 export const LanguageSelection = () => {

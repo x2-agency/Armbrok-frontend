@@ -23,7 +23,7 @@
 }
 
 .root.about {
-	@mixin res padding-block-start, 13.333rem, 12.5rem, 11.25rem; /* 180px */
+	@mixin res padding-block-start, 30.333rem, 12.5rem, 11.25rem; /* 180px */
 	@mixin res padding-block-end, 8rem, 7.361rem, 6.625rem; /* 106px */
 
 	.content {

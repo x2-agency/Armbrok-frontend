@@ -1,7 +1,7 @@
 import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
-import { NAVIGATION_TABLE_DATA } from '@/widgets/app-layout/ui/footer/model/footer.constants';
+import { NAVIGATION_TABLE_DATA } from '@/widgets/app-layout/models/footer.constants';
 
 import css from './index.module.css';
 

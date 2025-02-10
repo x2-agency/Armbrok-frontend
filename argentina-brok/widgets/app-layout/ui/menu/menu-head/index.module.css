@@ -1,0 +1,17 @@
+.root {
+	padding-block: 4.267rem; /* 16px */
+	padding-inline: 5.333rem; /* 20px */
+	border-bottom: 0.267rem solid var(--gray-200-color);
+	justify-content: space-between;
+}
+
+.root,
+.leftPart,
+.rightPart {
+	display: flex;
+	align-items: center;
+}
+
+.leftPart {
+    gap: 4.267rem; /* 16px */
+}
