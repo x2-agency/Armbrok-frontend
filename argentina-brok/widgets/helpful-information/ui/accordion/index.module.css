@@ -1,0 +1,88 @@
+.root {
+	background-color: var(--gray-200-color);
+}
+
+.details[open] + .accordionContent {
+	grid-template-rows: 1fr;
+	opacity: 1;
+}
+
+.details[open] .icon {
+	rotate: 180deg;
+}
+
+.accordionContent {
+	@mixin transition;
+
+	display: grid;
+	grid-template-rows: 0fr;
+	opacity: 0;
+	transition-property: grid-template-rows opacity;
+}
+
+.accordionContentBody {
+	overflow: hidden;
+}
+
+.summary {
+	all: unset;
+	cursor: pointer;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&:active {
+		background: none;
+		outline: none;
+		box-shadow: none;
+		transform: none;
+	}
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+	&::-moz-list-bullet {
+		list-style-type: none;
+	}
+
+    @media (max-width: 767px) {
+        gap: 6rem;
+    }
+}
+
+.title {
+	@mixin font-text20;
+
+	font-weight: 600;
+}
+
+.description {
+	@mixin res padding-block-start, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+}
+
+.description,
+.article,
+.under {
+	@mixin font-text16;
+}
+
+.list {
+	@mixin res padding-inline-start, 6.667rem, 1.736rem, 1.563rem; /* 25px */
+
+	list-style-type: disc;
+}
+
+.icon {
+	@mixin transition;
+	@mixin res width, 6.933rem, 1.806rem, 1.625rem; /* 26px */
+	@mixin res height, 6.933rem, 1.806rem, 1.625rem; /* 26px */
+
+	rotate: 0;
+	flex-shrink: 0;
+	transition-property: rotate;
+}
