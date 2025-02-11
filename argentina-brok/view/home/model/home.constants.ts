@@ -1,5 +1,5 @@
+import AppIcon from '@/public/assets/icon/app.svg';
 import type { InteractiveVideoType } from '@/widgets/interactive-video/types/interactive-video';
-
 export const HOME_ASSETS_TITLE = 'Asset Management';
 export const HOME_ASSETS_DESCRIPTION =
 	'Managing Your Capital in&nbsp;Your Best Interests';
@@ -21,9 +21,20 @@ export const HOME_INTERACTIVE_VIDEO: InteractiveVideoType = {
 };
 
 export const HOME_APP_SECTION = {
+	IconSvg: AppIcon,
 	title: 'Brokerage',
 	description:
 		'For Self-Directed Investing. <br/>Start your investment journey today.',
-	downText: 'Coming soon <br/> 1Q25',
-	buttonText: 'Open account',
+	preview: 'Coming soon <br/> 1Q25',
+	button: 'Open account',
+	image: [
+		{
+			src: '/assets/images/iphone/iphone_15.png',
+			alt: 'iphone',
+		},
+		{
+			src: '/assets/images/iphone/iphone_15_pro.png',
+			alt: 'iphone',
+		},
+	],
 };

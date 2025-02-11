@@ -6,7 +6,7 @@
 
 .max,
 .hybrid {
-	@mixin res padding-block, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin res padding-block, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
 	@mixin res padding-inline, 5.333rem, 2.778rem, 2.5rem; /* 20px 40px */
 }
 

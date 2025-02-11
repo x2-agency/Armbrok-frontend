@@ -11,7 +11,7 @@ export const Link = ({ items, className }: IconListProps) => {
 			{items.map((link, index) => (
 				<a className={css.link} href={link.href} key={index}>
 					<img
-						className={css.icon}
+						className={cx(css.icon, className)}
 						src={link.src}
 						alt="icon media"
 						width={link.width}
