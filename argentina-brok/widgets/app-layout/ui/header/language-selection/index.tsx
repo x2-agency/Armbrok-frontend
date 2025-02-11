@@ -64,22 +64,25 @@ export const LanguageSelection = ({
 				{selectedLanguage}
 				<TriangleSVG className={cx(css.svg, { [css.open]: isOpen })} />
 			</button>
-			{isOpen && (
-				<ul className={css.languagesList}>
-					{LANGUAGES.map((value, index) => (
-						<li key={index} className={css.language}>
-							<button
-								onClick={() => handleSelectLanguage(value)}
-								className={cx(css.languageButton, {
-									[css.selectedLang]: value === selectedLanguage,
-								})}
-							>
-								{value}
-							</button>
-						</li>
-					))}
-				</ul>
-			)}
+			<ul
+				className={cx(css.languagesList, {
+					[css.open]: isOpen,
+					[css.close]: !isOpen,
+				})}
+			>
+				{LANGUAGES.map((value, index) => (
+					<li key={index} className={css.language}>
+						<button
+							onClick={() => handleSelectLanguage(value)}
+							className={cx(css.languageButton, {
+								[css.selectedLang]: value === selectedLanguage,
+							})}
+						>
+							{value}
+						</button>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 };
