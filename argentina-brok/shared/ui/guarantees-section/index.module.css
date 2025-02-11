@@ -1,6 +1,12 @@
 .root {
+	@mixin res --item, 64rem, 16.667rem, 15rem; /* 240px */
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+
 	display: grid;
 	justify-content: center;
-	column-gap: 1.5rem; /* 24px */
-	grid-template-columns: repeat(3, 15rem); /* 240px */
+	grid-template-columns: repeat(3, var(--item)); /* 240px */
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
 }

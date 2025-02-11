@@ -1,20 +1,23 @@
 'use client';
 
-import BurgerButton from '@/public/assets/icons/header/burger_button.svg';
-
-import css from './index.module.css';
+import useMediaQuery from '@/shared/hooks/use-media-query';
 import {
 	HOME_LINK,
 	LOGO_HEADER,
 	NAVIGATION_LINKS,
-} from './model/header.constants';
-import { LanguageSelection } from './ui/language-selection';
-import { LogIn } from './ui/log-in';
-import { Logo } from './ui/logo';
-import { Navigation } from './ui/navigation';
-import { Search } from './ui/search';
+} from '@/widgets/app-layout/models/header.constants';
+import { Logo } from '@/widgets/app-layout/ui/logo';
+import { Search } from '@/widgets/app-layout/ui/search';
+
+import { BurgerButton } from './burger-button';
+import css from './index.module.css';
+import { LanguageSelection } from './language-selection';
+import { LogIn } from './log-in';
+import { Navigation } from './navigation';
 
 export const Header = () => {
+	const isMobile = useMediaQuery('(max-width: 767px)');
+
 	return (
 		<header className={css.root}>
 			<div className={css.leftBlock}>
@@ -23,11 +26,14 @@ export const Header = () => {
 			</div>
 
 			<div className={css.rightBlock}>
-				<BurgerButton className={css.burger} />
-
-				<Search href="#" />
-				<LanguageSelection />
-				<LogIn />
+				{isMobile && <BurgerButton />}
+				{!isMobile && (
+					<>
+						<Search href="#" />
+						<LanguageSelection />
+						<LogIn />
+					</>
+				)}
 			</div>
 		</header>
 	);

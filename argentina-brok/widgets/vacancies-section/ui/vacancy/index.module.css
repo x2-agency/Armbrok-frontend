@@ -1,0 +1,32 @@
+.root {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: var(--gray-200-color);
+}
+
+.name {
+	@mixin font-text20;
+
+	color: var(--gray-800-color);
+	font-weight: 500;
+}
+
+.button {
+	@mixin transition;
+
+	svg path {
+		@mixin transition;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--black-color) !important;
+
+			svg path {
+				fill: var(--black-color);
+			}
+		}
+	}
+}

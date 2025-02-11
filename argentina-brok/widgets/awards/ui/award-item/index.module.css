@@ -1,17 +1,17 @@
 .root {
-	@mixin res gap, 1.067rem, 0.278rem, 0.25rem;
+	@mixin res gap, 1.067rem, 0.278rem, 0.25rem; /* 4px */
 
 	position: relative;
 	display: flex;
 }
 
 .wreath {
-	@mixin res height, 25.333rem, 6.597rem, 5.938rem;
+	@mixin res height, 25.333rem, 6.597rem, 5.938rem; /* 95px */
 	align-self: end;
 }
 
 .content {
-	@mixin res width, 45.333rem, 11.806rem, 10.625rem;
+	@mixin res width, 45.333rem, 11.806rem, 10.625rem; /* 170px */
 
 	display: flex;
 	flex-direction: column;
@@ -39,7 +39,7 @@
 
 .age {
 	@mixin font-text18;
-	@mixin res padding-block-end, 1.067rem, 0.278rem, 0.25rem;
+	@mixin res padding-block-end, 1.067rem, 0.278rem, 0.25rem; /* 4px */
 
 	font-weight: 600;
 }

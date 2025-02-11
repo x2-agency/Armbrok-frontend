@@ -1,0 +1,8 @@
+.svg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@mixin res width, 5.067rem, 1.319rem, 1.188rem;
+	@mixin res height, 5.067rem, 1.319rem, 1.188rem;
+}

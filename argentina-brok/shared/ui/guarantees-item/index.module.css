@@ -12,7 +12,6 @@
 }
 
 .icon {
-	width: 3rem; /* 48px */
-	height: 3rem; /* 48px */
-	margin-block-end: 1rem; /* 16px */
+	@mixin res width, 12.8rem, 3.333rem, 3rem; /* 48px */
+	@mixin res margin-block-end, 4.267rem, 1.111rem, 1rem;
 }

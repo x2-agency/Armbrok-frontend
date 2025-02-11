@@ -27,6 +27,7 @@
 	@media (hover: hover) {
 		&:hover {
 			color: var(--black-color) !important;
+			background-color: var(--white-color);
 			border-color: var(--gray-200-color) !important;
 		}
 	}

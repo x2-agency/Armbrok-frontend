@@ -1,5 +1,5 @@
 .root {
-	@mixin res padding-block-end, 32rem, 8.333rem, 7.5rem;
+	@mixin res padding-block-end, 32rem, 8.333rem, 7.5rem; /* 120px */
 
 	display: flex;
 	flex-direction: column;
@@ -7,7 +7,7 @@
 }
 
 .title {
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
 	@mixin font-h2;
 
 	text-align: center;
@@ -15,15 +15,15 @@
 }
 
 .list {
-	@mixin res width, auto, 52.778rem, 47.5rem;
-	@mixin res gap, 6rem, 0.833rem, 0.75rem;
+	@mixin res width, auto, 52.778rem, 47.5rem; /* 760px */
+	@mixin res gap, 6rem, 0.833rem, 0.75rem; /* 12px */
 
 	display: flex;
 	flex-direction: column;
 }
 
 .detail {
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem;
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
 
 	display: flex;
 	justify-content: center;

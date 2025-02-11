@@ -3,8 +3,8 @@
 }
 
 .header {
-	@mixin res padding-block-end, 12.8rem, 3.333rem, 3rem;
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res padding-block-end, 12.8rem, 3.333rem, 3rem; /* 40px */ 
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 20px */
 
 	display: flex;
 	flex-direction: column;
@@ -19,7 +19,7 @@
 }
 
 .items {
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 20px */
 
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
