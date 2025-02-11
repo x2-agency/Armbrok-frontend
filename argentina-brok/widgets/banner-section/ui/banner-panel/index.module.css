@@ -20,11 +20,11 @@
 }
 
 .content {
-	@mixin res gap, 3rem, 3.333rem, 3rem;
+	@mixin res gap, 3rem, 3.333rem, 3rem; /* 30px 48px 48px */
 }
 
 .linkButton {
-	@mixin res width, 100%, 9.722rem, 8.75rem;
+	@mixin res width, 100%, 9.722rem, 8.75rem; /* 140px */
 
 	@media (max-width: 767px) {
 		margin-block-start: 3rem;

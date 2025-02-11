@@ -1,0 +1,26 @@
+.root {
+	padding-block-start: 4.267rem; /* 16px */
+	padding-block-end: 6.4rem; /* 24px */
+	height: calc(100% - 17.567rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.login,
+.account,
+.button {
+	width: fit-content;
+}
+
+.links {
+	display: flex;
+	flex-direction: column;
+	gap: 4.267rem; /* 16px */
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 4.267rem; /* 16px */
+}

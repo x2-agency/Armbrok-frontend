@@ -1,0 +1,6 @@
+.hero {
+	@mixin res gap, 17.067rem, 4.444rem, 4rem;/* 64px */
+
+	display: flex;
+	flex-direction: column;
+}

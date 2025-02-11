@@ -5,7 +5,7 @@
 }
 
 .dotted {
-	@mixin res margin-block-end, 1.333rem, 0.347rem, 0.313rem;
+	@mixin res margin-block-end, 1.333rem, 0.347rem, 0.313rem; /* 5px */
 
 	line-height: 0;
 	flex-grow: 1;

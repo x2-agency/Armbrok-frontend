@@ -1,9 +1,9 @@
 import { Container } from '@/shared/ui/container';
 
+import { Disclaimer } from './disclaimer';
 import css from './index.module.css';
-import { Disclaimer } from './ui/disclaimer';
-import { NavigationColumn } from './ui/navigation-column';
-import { Social } from './ui/social-links';
+import { NavigationColumn } from './navigation-column';
+import { Social } from './social-links';
 
 export const Footer = () => {
 	return (

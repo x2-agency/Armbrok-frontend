@@ -1,0 +1,14 @@
+.logoHeader {
+	display: block;
+	position: relative;
+
+	@mixin res width, 35.2rem, 9.167rem, 8.25rem; /* 132px */
+	@mixin res height, 5.333rem, 1.389rem, 1.25rem; /* 20px */
+}
+
+.icon {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
