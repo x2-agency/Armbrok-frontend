@@ -1,6 +1,6 @@
 import cx from 'clsx';
 
-import type { MediaData } from '@/view/home/types/response';
+import type { MediaData } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
