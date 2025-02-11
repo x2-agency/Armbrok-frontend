@@ -16,6 +16,11 @@ html[data-header-top-color='dark'] .svg path {
 	@mixin res width, 5.067rem, 1.319rem, 1.188rem;
 	@mixin res height, 5.067rem, 1.319rem, 1.188rem;
 
+	&.dark path {
+		fill: var(--black-color) !important;
+		stroke: var(--black-color) !important;
+	}
+
 	path {
 		transition:
 			stroke 0.3s ease,

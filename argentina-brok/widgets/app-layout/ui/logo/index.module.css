@@ -18,6 +18,10 @@
 	height: 100%;
 	object-fit: cover;
 
+	&.dark :global(.logo_armbrok_svg__word) {
+		fill: var(--black-color) !important;
+	}
+
 	@media (hover: hover) {
 		&:hover :global(.logo_armbrok_svg__word) {
 			fill: var(--red-600-color) !important;

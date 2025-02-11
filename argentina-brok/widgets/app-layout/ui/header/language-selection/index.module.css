@@ -21,10 +21,10 @@
 	}
 
 	&.dark {
-		color: var(--black-color);
+		color: var(--black-color) !important;
 
 		.svg path {
-			fill: var(--black-color);
+			fill: var(--black-color) !important;
 		}
 	}
 
