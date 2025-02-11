@@ -1,0 +1,19 @@
+.root {
+	position: relative;
+	width: 8.533rem; /* 32px */
+	height: 8.533rem; /* 32px */
+	background-color: var(--white-color);
+	border-radius: 100%;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 0 6.4rem 12.8rem -3.2rem #101828; /* 24px 48px 12px */
+}
+
+.icon {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	width: 6.4rem; /* 24px */
+	height: 6.4rem; /* 24px */
+}

@@ -35,7 +35,7 @@
 }
 
 .imgWrap {
-	@mixin res height, unset, 20.417rem, 18.375rem;
+	@mixin res height, unset, 20.417rem, 18.375rem; 
 }
 
 .image {

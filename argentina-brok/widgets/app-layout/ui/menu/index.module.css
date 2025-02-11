@@ -1,0 +1,29 @@
+.root {
+	@mixin transitionMenuOpenOptions;
+
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translateX(-100%);
+	transition-property: transform, opacity;
+	opacity: 0;
+	border: none;
+	padding: 0;
+	max-width: unset;
+	max-height: unset;
+
+    &::backdrop {
+        opacity: 0;
+    }
+}
+
+.root.open {
+	transform: translateX(0);
+	opacity: 1;
+
+    &::backdrop {
+        opacity: 1;
+    }
+}

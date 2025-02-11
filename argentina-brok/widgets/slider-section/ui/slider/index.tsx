@@ -40,8 +40,10 @@ export const Slider = ({
 			{slider.map((value, index) => (
 				<SwiperSlide key={index} className={css.slide}>
 					<img src={value.image} alt="image" className={css.image} />
-					<h4 className={css.title}>{parser(value.title)}</h4>
-					<p className={css.description}>{parser(value.description)}</p>
+					{value.title && <h4 className={css.title}>{parser(value.title)}</h4>}
+					{value.description && (
+						<p className={css.description}>{parser(value.description)}</p>
+					)}
 				</SwiperSlide>
 			))}
 		</Swiper>

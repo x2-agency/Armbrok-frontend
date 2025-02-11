@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import Link from 'next/link';
 
 import BackSVG from '@/public/assets/back.svg';
 
@@ -17,7 +18,7 @@ export const Button = ({
 }: ButtonProps) => {
 	if (href) {
 		return (
-			<a
+			<Link
 				className={cx(css.root, className, css[variant], css[category])}
 				href={href}
 			>
@@ -29,7 +30,7 @@ export const Button = ({
 						style={{ rotate: `${iconRotate}deg` }}
 					/>
 				)}
-			</a>
+			</Link>
 		);
 	}
 

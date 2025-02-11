@@ -49,12 +49,7 @@ export const Home: NextPage = () => {
 			<HeroContainer>
 				<ExpertSolutionSection items={HERO_DATA.expertSolutions.items} />
 			</HeroContainer>
-			<AppSection
-				title={HOME_APP_SECTION.title}
-				description={HOME_APP_SECTION.description}
-				downText={HOME_APP_SECTION.downText}
-				buttonText={HOME_APP_SECTION.buttonText}
-			/>
+			<AppSection content={HOME_APP_SECTION} image={HOME_APP_SECTION.image} />
 			<AssetManagment
 				href="#"
 				title={HOME_ASSETS_TITLE}

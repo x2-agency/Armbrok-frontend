@@ -1,0 +1,23 @@
+.svg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@mixin res width, 5.067rem, 1.319rem, 1.188rem;
+	@mixin res height, 5.067rem, 1.319rem, 1.188rem;
+
+	path {
+		stroke: var(--white-color);
+		fill: var(--white-color);
+		transition:
+			stroke 0.3s ease,
+			fill 0.3s ease;
+	}
+
+	&:hover {
+		path {
+			stroke: var(--red-500-color);
+			fill: var(--red-500-color);
+		}
+	}
+}

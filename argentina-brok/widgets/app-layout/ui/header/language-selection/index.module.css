@@ -1,0 +1,90 @@
+.root {
+	display: relative;
+}
+
+.selected,
+.languageButton {
+	@mixin font-text16;
+
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.selected {
+	@mixin transition;
+	position: relative;
+
+	transition-property: color;
+
+	&.white {
+		color: var(--white-color);
+	}
+
+	&.dark {
+		color: var(--black-color);
+
+		.svg path {
+			fill: var(--black-color);
+		}
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--red-600-color);
+
+			.svg path {
+				fill: var(--red-600-color);
+			}
+		}
+	}
+}
+
+.svg {
+	@mixin transition;
+	@mixin res width, 2.4rem, 0.625rem, 0.563rem; /* 9px */
+	@mixin res height, 1.333rem, 0.347rem, 0.313rem; /* 5px */
+
+	position: absolute;
+	top: 40%;
+	right: -50%;
+	transition-property: rotate;
+	rotate: 180deg;
+
+	&.open {
+		rotate: 0deg;
+	}
+
+	path {
+		@mixin transition;
+
+		transition-property: fill;
+	}
+}
+
+.languagesList {
+	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin res width, 17.067rem, 4.444rem, 4rem; /* 64px */
+	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+
+	background-color: var(--white-color);
+	position: absolute;
+	overflow: hidden;
+}
+
+.languageButton {
+	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin transition;
+
+	width: 100%;
+	transition-property: background-color;
+
+	&.selectedLang {
+		background-color: var(--gray-300-color);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--gray-200-color);
+		}
+	}
+}
