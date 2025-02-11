@@ -1,8 +1,8 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import type { Factoid } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
-import type { ExpertSolutionCardProps } from '@/shared/ui/expert-solution-card';
 import { ExpertSolutionCard } from '@/shared/ui/expert-solution-card';
 
 import css from './index.module.css';
@@ -10,7 +10,7 @@ import css from './index.module.css';
 export type ExpertSolutionSectionProps = {
 	className?: string;
 	title?: string;
-	items: Array<ExpertSolutionCardProps>;
+	items: Array<Factoid>;
 	withShell?: boolean;
 	backgroundColor?: 'white' | 'gray';
 };
@@ -39,12 +39,15 @@ export const ExpertSolutionSection = ({
 				{items.map((item, key) => (
 					<ExpertSolutionCard
 						key={key}
-						{...item}
 						className={cx(css.card, cardBackgroundColor, {
 							[css.withShell]: withShell,
 						})}
 						withShell={withShell}
 						backgroundColor={backgroundColor}
+						id={item.id}
+						icon={item.icon}
+						title={item.title}
+						description={item.description}
 					/>
 				))}
 			</div>

@@ -11,10 +11,12 @@ import { GuaranteesSection } from '@/shared/ui/guarantees-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
+import { FeedbackForm } from '@/widgets/feedback-form';
 import { SliderSection } from '@/widgets/slider-section';
 import { VacanciesSection } from '@/widgets/vacancies-section';
 
 import css from './index.module.css';
+import { FEEDBACK_FORM } from './models/careers-at-armbrock.constants';
 
 export const CareersAtArmbrock = () => {
 	return (
@@ -48,6 +50,7 @@ export const CareersAtArmbrock = () => {
 				description={VACANCIES_DATA.description}
 				vacancies={VACANCIES_DATA.vacancies}
 			/>
+			<FeedbackForm {...FEEDBACK_FORM} />
 		</>
 	);
 };

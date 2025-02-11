@@ -8,9 +8,13 @@ export const FormatImage = ({
 	poster,
 	className,
 }: {
-	poster: MediaData;
+	poster?: MediaData;
 	className?: string;
 }) => {
+	if (!poster) {
+		return null;
+	}
+
 	return (
 		<picture className={cx(css.image, className)}>
 			<source srcSet={poster.formats?.small?.url} media="(max-width: 767px)" />

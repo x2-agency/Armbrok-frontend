@@ -1,9 +1,4 @@
-import type { PosterImageProps } from '@/shared/types/poster';
-
-interface ButtonProps {
-	href: string;
-	text: string;
-}
+import type { MediaData, LinkItem } from '@/shared/types/global.types';
 
 export interface PanelProps {
 	className?: string;
@@ -23,7 +18,7 @@ export interface PanelProps {
 		title: string;
 		description: string;
 	};
-	button?: ButtonProps;
+	button?: LinkItem;
 }
 
 export interface AwardsData {
@@ -39,7 +34,7 @@ interface BaseBannerProps {
 	banner: {
 		title: string;
 		description: string;
-		poster: PosterImageProps;
+		poster?: MediaData;
 	};
 }
 
@@ -55,7 +50,7 @@ type ProfixBannerProps = BaseBannerProps & {
 type DefaultBannerProps = BaseBannerProps & {
 	type: 'default';
 	banner: BaseBannerProps['banner'] & {
-		button: ButtonProps;
+		button?: LinkItem;
 	};
 };
 
@@ -131,7 +126,7 @@ export type DefaultBannerBodyProps = BaseBannerBodyProps & {
 	bodyData: {
 		panel?: never;
 		awards?: never;
-		button: ButtonProps;
+		button: LinkItem;
 	};
 };
 

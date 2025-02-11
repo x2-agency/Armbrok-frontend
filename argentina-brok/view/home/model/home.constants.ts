@@ -38,3 +38,9 @@ export const HOME_APP_SECTION = {
 		},
 	],
 };
+
+export const BANNER_DATA = {
+	title: 'Efficient investments in&nbsp;financial markets',
+	description:
+		'Access to&nbsp;global exchanges and financial instruments &mdash; with high yields and strong protection',
+};
