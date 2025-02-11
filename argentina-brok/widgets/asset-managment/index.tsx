@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
@@ -9,7 +10,7 @@ export const AssetManagment = ({
 	title,
 	description,
 	buttonText,
-	// image,
+	image,
 	href,
 }: {
 	title: string;
@@ -23,11 +24,18 @@ export const AssetManagment = ({
 			<div className={css.contnet}>
 				<h2 className={css.title}>{parser(title)}</h2>
 				<p className={css.description}>{parser(description)}</p>
-				<Button category="big" href={href} variant="filled">
+				<Button
+					className={css.button}
+					category="big"
+					href={href}
+					variant="filled"
+				>
 					{parser(buttonText)}
 				</Button>
 			</div>
-			{/* <img className={css.image} src={image} alt="banner picture" /> */}
+			<div className={css.imgWrap}>
+				<img className={css.image} src={image} alt="banner picture" />
+			</div>
 		</Container>
 	);
 };
