@@ -37,8 +37,12 @@ import {
 	HOME_ASSETS_TITLE,
 	HOME_INTERACTIVE_VIDEO,
 } from './model/home.constants';
+import type { HomePageResponse } from './types/response';
 
-export const Home: NextPage = () => {
+export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
+	initialData,
+}) => {
+	console.log(initialData);
 	return (
 		<>
 			<BannerSection
