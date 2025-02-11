@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import Link from 'next/link';
 
+import LogoSVG from '@/public/assets/icons/header/logo_armbrok.svg';
 import type { LogoProps } from '@/widgets/app-layout/types/logo-types';
 
 import css from './index.module.css';
@@ -13,7 +13,7 @@ export const Logo = ({ className, href, logo }: LogoProps) => {
 			href={href}
 			className={cx(css.logoHeader, className)}
 		>
-			<img src={logo.src} alt={logo.alt} className={css.icon} />
+			<LogoSVG src={logo.src} alt={logo.alt} className={css.icon} />
 		</Link>
 	);
 };

@@ -88,3 +88,23 @@
 		}
 	}
 }
+
+html[data-header-top-color='white'] {
+	.selected {
+		color: var(--white-color);
+	}
+
+	.svg path {
+		fill: color(--white-color);
+	}
+}
+
+html[data-header-top-color='dark'] {
+	.selected {
+		color: var(--black-color);
+	}
+
+	.svg path {
+		fill: var(--black-color);
+	}
+}

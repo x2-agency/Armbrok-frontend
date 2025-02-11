@@ -6,3 +6,15 @@
 		display: none;
 	}
 }
+
+html[data-header-top-color='white'] {
+	.login {
+		color: var(--white-color);
+	}
+}
+
+html[data-header-top-color='dark'] {
+	.login {
+		color: var(--black-color);
+	}
+}
