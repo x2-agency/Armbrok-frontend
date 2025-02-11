@@ -1,8 +1,8 @@
 import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
-import { STORE_LINKS } from '@/widgets/app-layout/ui/footer/model/social.constants';
-import { Link } from '@/widgets/app-layout/ui/footer/ui/social-links/link';
+import { STORE_LINKS } from '@/widgets/app-layout/models/social.constants';
+import { Link } from '@/widgets/app-layout/ui/footer/social-links/link';
 
 import css from './index.module.css';
 
