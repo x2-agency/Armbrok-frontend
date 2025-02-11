@@ -15,10 +15,10 @@ export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 		id: 1,
 		title: 'Products&nbsp;and&nbsp;Services',
 		column: [
-			{ id: 1, text: 'Brokerage', href: '#' },
-			{ id: 2, text: 'Asset Management', href: '#' },
+			{ id: 1, text: 'Brokerage', href: '/brokerage' },
+			{ id: 2, text: 'Asset Management', href: '/asset-management' },
 			{ id: 3, text: 'Investment Funds', href: '#' },
-			{ id: 4, text: 'Investment Banking', href: '#' },
+			{ id: 4, text: 'Investment Banking', href: '/investment-banking' },
 			{ id: 5, text: 'Depositary &amp;&nbsp;Registrar', href: '#' },
 		],
 	},
