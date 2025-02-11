@@ -30,10 +30,10 @@
 
 	@media (hover: hover) {
 		&:hover {
-			color: var(--red-600-color);
+			color: var(--red-600-color) !important;
 
 			.svg path {
-				fill: var(--red-600-color);
+				fill: var(--red-600-color) !important;
 			}
 		}
 	}
