@@ -40,10 +40,11 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 					poster: initialData?.data.heroSection?.background,
 				}}
 			/>
-			{/*
-			<HeroContainer>
-				<ExpertSolutionSection items={HERO_DATA.expertSolutions.items} />
-			</HeroContainer> */}
+			{initialData?.data.advantages && (
+				<HeroContainer>
+					<ExpertSolutionSection items={initialData?.data.advantages} />
+				</HeroContainer>
+			)}
 			<MembershipSection
 				title="Available Exchanges"
 				items={MOCK_MEMBERSHIP.items}
