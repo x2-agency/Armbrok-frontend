@@ -1,4 +1,6 @@
 .root {
+	position: relative;
+
 	@mixin res margin-block-end, 38.4rem, 10rem, 9rem;
 }
 
@@ -16,18 +18,22 @@
 }
 
 .image {
-	@mixin res height, 121.867rem, 31.736rem, 28.563rem;
-	align-self: end;
+	@mixin res height, 121.867rem, 31.736rem, 28.563rem; /* 348px */
 
-    @media (max-width: 767px) {
-        align-self: unset;
-        height: auto;
-    }
+	align-self: end;
+	position: absolute;
+
+	@media (max-width: 767px) {
+		position: static;
+		align-self: unset;
+		height: auto;
+	}
 }
 
 .review {
 	@mixin res margin-block-start, 5.067rem, 1.319rem, 1.188rem;
 	@mixin res padding, 10.667rem, 2.778rem, 2.5rem;
+	@mixin res padding-inline-start, 10.667rem, 29.25rem, 29.25rem;
 	@mixin res gap, 2.667rem, 0.694rem, 0.625rem;
 
 	display: flex;
@@ -36,7 +42,7 @@
 
 	@media (max-width: 767px) {
 		padding-inline: unset;
-        padding-block-end: unset;
-        margin-block-start: unset;
+		padding-block-end: unset;
+		margin-block-start: unset;
 	}
 }
