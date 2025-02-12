@@ -1,10 +1,9 @@
 .root {
-	@mixin res min-height, 68.267rem, 17.778rem, 20rem; /* 256px */
+	@mixin res gap, 10.667rem, 2.778rem, 2.5rem; /* 40px */
 
 	background-color: var(--gray-200-color);
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 }
 
 .icon {

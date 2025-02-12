@@ -50,7 +50,6 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 			<MembershipSection
 				title={initialData.data.exchangesSection?.title}
 				items={initialData.data.exchangesSection?.exchanges}
-				withGreyTitles
 			/>
 			<Review quote={initialData?.data.quoteSection} />
 			<Container>
