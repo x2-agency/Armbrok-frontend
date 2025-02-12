@@ -46,15 +46,13 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				</HeroContainer>
 			)}
 			<MembershipSection
-				title="Available Exchanges"
-				items={MOCK_MEMBERSHIP.items}
+				title={initialData?.data.exchangesSection?.title}
+				items={initialData?.data.exchangesSection?.exchanges}
 				withGreyTitles
 			/>
-			<Review
-				image={MOCK_REVIEW.image}
-				reviewHead={MOCK_REVIEW.reviewHead}
-				reviewFooter={MOCK_REVIEW.reviewFooter}
-			/>
+			{initialData?.data.quoteSection && (
+				<Review quote={initialData?.data.quoteSection} />
+			)}
 			<Container>
 				<h2 className={css.serve}>{BROKERAGE_TEXT}</h2>
 			</Container>

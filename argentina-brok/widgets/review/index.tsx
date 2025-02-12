@@ -1,28 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 
+import type { QuoteSection } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import type { ReviewProps } from './review.types';
 import { ReviewFooter } from './ui/review-footer';
 import { ReviewHead } from './ui/review-head';
 
-export const Review = ({
-	image,
-	reviewHead,
-	reviewFooter,
-	className,
-}: ReviewProps) => {
+type ReviewProps = {
+	quote: QuoteSection;
+	className?: string;
+};
+
+export const Review = ({ quote, className }: ReviewProps) => {
 	return (
 		<Container className={cx(css.root, className)}>
 			<article className={css.card}>
-				<img src={image} alt="company member" className={css.image} />
+				<img
+					src={quote.authorPhoto?.url}
+					alt="company member"
+					className={css.image}
+				/>
 				<div className={css.review}>
-					<ReviewHead review={reviewHead.review} />
+					<ReviewHead review={quote.quote.content} />
 					<ReviewFooter
-						member={reviewFooter.member}
-						experience={reviewFooter.experience}
+						fullName={quote.quote.authorFullName}
+						position={quote.quote.authorPosition}
+						experience={quote.quote.authorExtraInfo}
 					/>
 				</div>
 			</article>

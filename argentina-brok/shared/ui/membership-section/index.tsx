@@ -1,14 +1,14 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import type { ExchangesItemType } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
-import type { MembershipCardProps } from '@/shared/ui/membership-card';
 import { MembershipCard } from '@/shared/ui/membership-card';
 
 import css from './index.module.css';
 
 type MembershipSectionProps = {
-	items: Array<MembershipCardProps>;
+	items?: Array<ExchangesItemType>;
 	className?: string;
 	title?: string;
 	description?: string;
@@ -22,6 +22,10 @@ export const MembershipSection = ({
 	description,
 	withGreyTitles,
 }: MembershipSectionProps) => {
+	if (!items) {
+		return null;
+	}
+
 	return (
 		<Container className={cx(css.root, className)}>
 			<header className={css.header}>
