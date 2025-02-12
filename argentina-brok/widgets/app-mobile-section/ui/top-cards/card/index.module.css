@@ -1,0 +1,60 @@
+.root {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background: radial-gradient(
+			circle at 70% center,
+			#d42522 0%,
+			#9e2e2c 5%,
+			transparent 70%
+		),
+		linear-gradient(to right, #230302 0%, #230302 20%, #230302 50%);
+
+	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+
+	@mixin res height, unset, 29.306rem, 26.375rem; /* 422px */
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.title,
+.description,
+.store {
+	@mixin res max-width, 100%, 16.597rem, 14.938rem; /* 239px */
+}
+
+.title {
+	@mixin font-h4;
+	font-weight: 600;
+	color: var(--gray-200-color);
+	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+}
+
+.description {
+	@mixin font-text16;
+	color: var(--gray-200-color);
+}
+
+.imageWrap {
+	position: absolute;
+	@mixin res width, unset, 19.028rem, 17.125rem; /* 245px */
+	@mixin res right, unset, 1.4rem, 1rem;
+	@mixin res top, unset, 1.3rem, 1.2rem;
+
+	z-index: 2;
+
+	@media (max-width: 767px) {
+		height: 107.867rem; /* 247px */
+		margin-inline: auto;
+		bottom: 54rem;
+	}
+}
+
+.store {
+	margin-block-start: auto;
+	@mixin res height, 10.133rem, 2.639rem, 2.375rem; /* 38px */
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+}

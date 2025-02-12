@@ -1,3 +1,5 @@
+import type { AppMobileSectionProps } from '@/widgets/app-mobile-section';
+
 export const MOCK_DEFAULT_BANNER = {
 	title: 'A&nbsp;Flexible Broker for Growing Your Investments',
 	description:
@@ -73,4 +75,45 @@ export const HELPFUL_INFORMATION = {
 			underDescription: 'Our team will assist you throughout the process.',
 		},
 	],
+};
+
+export const MOCK_MOBILE_APP_SECTION: AppMobileSectionProps = {
+	title: 'Mobile App',
+	description: 'Convenient, Powerful, Multilingual',
+	topCards: {
+		cards: [
+			{
+				title: 'Portfolio',
+				description: 'View the cash balances across your brokerage account',
+				mediaContent: { url: '/assets/images/iphone/iphone_15.png' },
+			},
+			{
+				title: 'Market',
+				description:
+					'See the total value of all currency balances in your preferred currency',
+				mediaContent: { url: '/assets/images/iphone/iphone_15_pro.png' },
+			},
+		],
+	},
+	bottomCards: {
+		cards: [
+			{
+				title: 'Securities Portfolio',
+				description: 'Access your holdings in&nbsp;the depository account',
+				mediaContent: { url: '/assets/images/banner/banner-mob.jpg' },
+			},
+			{
+				title: 'Portfolio Valuation',
+				description:
+					'Get an&nbsp;estimate of&nbsp;your portfolio&rsquo;s total value in&nbsp;the selected currency',
+				mediaContent: { url: '/assets/images/banner/banner-mob.jpg' },
+			},
+			{
+				title: 'Total Asset Overview',
+				description:
+					'Understand the combined value of&nbsp;all your assets&nbsp;&mdash; cash and securities',
+				mediaContent: { url: '/assets/images/banner/banner-mob.jpg' },
+			},
+		],
+	},
 };

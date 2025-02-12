@@ -1,0 +1,11 @@
+.root {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	@mixin res column-gap, unset, 1.667rem, 1.5rem; /* 24px */
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+		gap: 5.333rem; /* 20px */
+	}
+}

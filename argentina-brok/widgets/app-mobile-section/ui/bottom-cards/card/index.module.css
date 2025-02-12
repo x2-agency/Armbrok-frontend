@@ -1,0 +1,31 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--gray-200-color);
+	@mixin res width, unset, 26.736rem, 24.063rem; /* 385px */
+	@mixin res height, unset, 37.083rem, 33.375rem; /* 534px */
+}
+
+.title {
+	@mixin font-h4;
+	font-weight: 600;
+	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+}
+
+.description {
+	@mixin font-text16;
+	color: var(--gray-700-color);
+	@mixin res padding-block-end, 4rem, 1.667rem, 1.5rem; /* 15px 24px */
+}
+
+.imageWrap {
+	overflow: hidden;
+	@mixin res border-radius, 5.333rem, 1.667rem, 1.5rem; /* 20px  24px */
+	@mixin res width, 85.333rem, 22.292rem, 20.063rem; /* 320px 321px */
+	@mixin res height, 96rem, 25rem, 22.5rem; /* 360px */
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+}
