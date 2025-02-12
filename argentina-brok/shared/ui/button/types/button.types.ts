@@ -11,7 +11,7 @@ type LinkButtonProps = BaseButtonProps & {
 	href: string;
 	onClick?: never;
 	type?: never;
-	disabled: never;
+	disabled?: never;
 };
 
 type ClickButtonProps = BaseButtonProps & {

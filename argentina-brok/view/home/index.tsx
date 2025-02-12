@@ -60,7 +60,7 @@ export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 			<AssetManagment
 				title={initialData?.data.assetManagementCard?.title ?? ''}
 				description={initialData?.data.assetManagementCard?.description ?? ''}
-				image={initialData?.data.assetManagementCard?.mediaContent}
+				mediaContent={initialData?.data.assetManagementCard?.mediaContent}
 			/>
 			<Corporate
 				title={initialData?.data.financialSolutionsSection?.title ?? ''}

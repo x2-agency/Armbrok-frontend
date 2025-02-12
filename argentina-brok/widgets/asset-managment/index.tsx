@@ -1,24 +1,19 @@
-/* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
 
 import type { ImageFormat } from '@/shared/types/global.types';
+import type { PosterCard } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
+import { FormatImage } from '@/shared/ui/format-image';
 import { HOME_ASSETS_BUTTON } from '@/view/home/model/home.constants';
 
 import css from './index.module.css';
-
-type AssetManagmentProps = {
-	title: string;
-	description: string;
-	mediaContent: ImageFormat;
-};
 
 export const AssetManagment = ({
 	title,
 	description,
 	mediaContent,
-}: AssetManagmentProps) => {
+}: PosterCard) => {
 	return (
 		<Container category="section" padding="hybrid" className={css.root}>
 			<div className={css.contnet}>
@@ -29,11 +24,7 @@ export const AssetManagment = ({
 				</Button>
 			</div>
 			<div className={css.imgWrap}>
-				<img
-					className={css.image}
-					src={mediaContent?.url}
-					alt="banner picture"
-				/>
+				<FormatImage className={css.image} poster={mediaContent[0]} />
 			</div>
 		</Container>
 	);

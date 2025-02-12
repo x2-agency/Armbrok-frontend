@@ -55,15 +55,13 @@
 	@mixin res padding-block-end, 10.667rem, 4.306rem, 3.875rem; /* 40px 62px 62px */
 }
 
-.button {
-}
-
 .imgWrap {
 	position: absolute;
-	@mixin res width, unset, 44.139rem, 18.125rem; /* 290px */
+	@mixin res width, unset, 44.139rem, 44.125rem; /* 290px */
+	height: 100%;
 	@mixin res right, unset, 0, 0; /* 327px */
 	@mixin res top, unset, 0, 0; /* 338px */
-	z-index: 2;
+	z-index: 0;
 
 	@media (max-width: 767px) {
 		right: -16rem;
@@ -72,7 +70,8 @@
 	}
 }
 
-.image {
+.image,
+.image img {
 	width: 100%;
 	height: 100%;
 
