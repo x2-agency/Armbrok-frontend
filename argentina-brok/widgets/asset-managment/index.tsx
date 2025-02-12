@@ -1,40 +1,39 @@
 /* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
 
+import type { ImageFormat } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
+import { HOME_ASSETS_BUTTON } from '@/view/home/model/home.constants';
 
 import css from './index.module.css';
+
+type AssetManagmentProps = {
+	title: string;
+	description: string;
+	mediaContent: ImageFormat;
+};
 
 export const AssetManagment = ({
 	title,
 	description,
-	buttonText,
-	image,
-	href,
-}: {
-	title: string;
-	description: string;
-	href: string;
-	image: string;
-	buttonText: string;
-}) => {
+	mediaContent,
+}: AssetManagmentProps) => {
 	return (
 		<Container category="section" padding="hybrid" className={css.root}>
 			<div className={css.contnet}>
 				<h2 className={css.title}>{parser(title)}</h2>
-				<p className={css.description}>{parser(description)}</p>
-				<Button
-					className={css.button}
-					category="big"
-					href={href}
-					variant="filled"
-				>
-					{parser(buttonText)}
+				<p className={css.description}>{parser(description ?? '')}</p>
+				<Button className={css.button} category="big" href="#" variant="filled">
+					{parser(HOME_ASSETS_BUTTON)}
 				</Button>
 			</div>
 			<div className={css.imgWrap}>
-				<img className={css.image} src={image} alt="banner picture" />
+				<img
+					className={css.image}
+					src={mediaContent?.url}
+					alt="banner picture"
+				/>
 			</div>
 		</Container>
 	);

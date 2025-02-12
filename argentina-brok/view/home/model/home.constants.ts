@@ -5,6 +5,8 @@ export const HOME_ASSETS_DESCRIPTION =
 	'Managing Your Capital in&nbsp;Your Best Interests';
 export const HOME_ASSETS_BUTTON = 'Request a consultation';
 
+export const HOME_ASSETS_HREF = '#';
+
 export const HOME_ASSETS_IMAGE = '/assets/images/banner/arrowhand_img.png';
 
 export const HOME_INTERACTIVE_VIDEO: InteractiveVideoType = {
