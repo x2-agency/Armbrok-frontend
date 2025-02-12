@@ -1,4 +1,3 @@
-import { HERO_DATA } from '@/shared/model/mock-banner.constants';
 import { MOCK_FILES } from '@/shared/model/mock-files.constants';
 import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
 import { MOCK_REVIEW } from '@/shared/model/review.constants';
@@ -7,6 +6,7 @@ import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { MembershipSection } from '@/shared/ui/membership-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
+import { HelpfulInformation } from '@/widgets/helpful-information';
 import { Review } from '@/widgets/review';
 import { Start } from '@/widgets/start';
 import {
@@ -17,22 +17,20 @@ import {
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
-import {
-	BROKERAGE_TEXT,
-	MOCK_DEFAULT_BANNER,
-} from './model/brokerage.constants';
+import { HELPFUL_INFORMATION } from './model/brokerage.constants';
+import { BROKERAGE_TEXT } from './model/brokerage.constants';
 
 export const Brokerage = () => {
 	return (
 		<>
-			<BannerSection
+			{/* <BannerSection
 				type="default"
 				banner={MOCK_DEFAULT_BANNER}
 				alignContent="end"
 			/>
 			<HeroContainer>
 				<ExpertSolutionSection items={HERO_DATA.expertSolutions.items} />
-			</HeroContainer>
+			</HeroContainer> */}
 			<MembershipSection
 				title="Available Exchanges"
 				items={MOCK_MEMBERSHIP.items}
@@ -58,6 +56,7 @@ export const Brokerage = () => {
 				columns={2}
 				fileDirection="column"
 			/>
+			<HelpfulInformation {...HELPFUL_INFORMATION} />
 		</>
 	);
 };

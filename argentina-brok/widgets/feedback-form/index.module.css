@@ -1,0 +1,75 @@
+.root {
+	@mixin res padding-block-end, 32rem, 8.333rem, 7.5rem; /* 120px */
+
+	display: flex;
+	flex-direction: column;
+}
+
+.title,
+.description {
+	color: var(--gray-800-color);
+	text-align: center;
+}
+
+.title {
+	@mixin res font-size, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
+
+	line-height: 1.25;
+	font-weight: 600;
+
+	@media (max-width: 767px) {
+		br {
+			display: none;
+		}
+	}
+}
+
+.description {
+	@mixin res padding-block-end, 8.533rem, 2.222rem, 2rem; /* 32px */
+	@mixin font-text16;
+
+	@media (max-width: 767px) {
+		br {
+			display: none;
+		}
+	}
+}
+
+.form {
+	@mixin res gap, 4.267rem, 1.111rem, 1rem; /* 16px */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+	}
+}
+
+.input {
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+
+	input {
+		@mixin res width, 100%, 22.222rem, 20rem; /* 320px */
+	}
+}
+
+.button {
+	@mixin transition;
+
+	transition-property: background-color;
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: #bf1d29;
+		}
+	}
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}

@@ -12,7 +12,7 @@ export type SeoType = {
 
 /* HERO SECTION */
 
-export type HeroSection = {
+export type HeroSection = ItemDetail & {
 	button?: LinkItem;
 	background: MediaData;
 };
@@ -55,7 +55,7 @@ export type Factoid = ItemDetail & {
 /* BROKER APP SECTION */ /* CONSULATION CARD SECTION */
 
 export type PosterCard = ItemDetail & {
-	mediaContent?: ImageFormat | null;
+	mediaContent?: Array<ImageFormat> | ImageFormat | null;
 };
 
 /* FINANCIAL SOULUTION SECTION */

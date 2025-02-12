@@ -15,7 +15,7 @@ export type HomePageData = {
 	heroSection?: HeroSection;
 	advantages?: Array<Factoid>;
 	brokerageAppCard?: PosterCard;
-	consultationCard?: PosterCard;
+	assetManagementCard?: PosterCard;
 	financialSolutionsSection?: FinancialSolutionsSection;
 	investingStepsSection?: InvestingStepsSection;
 	awardSection?: AwardSection;

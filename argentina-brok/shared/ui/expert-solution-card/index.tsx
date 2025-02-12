@@ -1,14 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import type { Factoid } from '@/shared/types/global.types';
+
 import css from './index.module.css';
 
-export type ExpertSolutionCardProps = {
-	icon: string;
-	title: string;
-	description: string;
+export type ExpertSolutionCardProps = Factoid & {
 	className?: string;
 	withShell?: boolean;
 	backgroundColor?: 'white' | 'gray';
@@ -34,9 +32,9 @@ export const ExpertSolutionCard = ({
 				[css.withShell]: withShell,
 			})}
 		>
-			<img src={icon} alt="icon" className={css.icon} />
+			{icon?.url && <img src={icon?.url} alt="icon" className={css.icon} />}
 			<h4 className={css.title}>{parser(title)}</h4>
-			<p className={css.description}>{parser(description)}</p>
+			{description && <p className={css.description}>{parser(description)}</p>}
 		</article>
 	);
 };
