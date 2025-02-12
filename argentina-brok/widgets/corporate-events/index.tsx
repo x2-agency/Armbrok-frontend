@@ -1,3 +1,8 @@
+'use client';
+
+import cx from 'clsx';
+
+import useMediaQuery from '@/shared/hooks/use-media-query';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
@@ -10,12 +15,19 @@ export type CorporateEventsProps = {
 };
 
 export const CorporateEvents = ({ title, events }: CorporateEventsProps) => {
+	const isMaxDesctop = useMediaQuery('(max-width: 1440px)');
+
 	return (
 		<>
 			<Container category="section" className={css.root}>
 				<h2 className={css.title}>{title}</h2>
 			</Container>
-			<Events className={css.event} events={events} />
+			<Container
+				className={cx({ [css.fullWidth]: isMaxDesctop })}
+				category="div"
+			>
+				<Events className={css.event} events={events} />
+			</Container>
 		</>
 	);
 };
