@@ -2,10 +2,6 @@ import type { NextPage } from 'next';
 
 import { HOME_NEWS } from '@/entities/news-card/model/news.constants';
 import { MOCK_AWARDS } from '@/shared/model/mock-awards';
-import {
-	HERO_DATA,
-	MOCK_DEFAULT_BANNER,
-} from '@/shared/model/mock-banner.constants';
 import { MOCK_COMPANIES } from '@/shared/model/mock-companies-group';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -47,12 +43,19 @@ export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 		<>
 			<BannerSection
 				type="default"
-				banner={MOCK_DEFAULT_BANNER}
 				alignContent="end"
+				banner={{
+					title: initialData?.data.heroSection?.title ?? '',
+					description: initialData?.data.heroSection?.description ?? '',
+					button: initialData?.data.heroSection?.button,
+					poster: initialData?.data.heroSection?.background,
+				}}
 			/>
-			<HeroContainer>
-				<ExpertSolutionSection items={HERO_DATA.expertSolutions.items} />
-			</HeroContainer>
+			{initialData?.data.advantages && (
+				<HeroContainer>
+					<ExpertSolutionSection items={initialData?.data.advantages} />
+				</HeroContainer>
+			)}
 			<AppSection content={HOME_APP_SECTION} image={HOME_APP_SECTION.image} />
 			<AssetManagment
 				href="#"

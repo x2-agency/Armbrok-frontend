@@ -12,7 +12,7 @@ export type SeoType = {
 
 /* HERO SECTION */
 
-export type HeroSection = {
+export type HeroSection = ItemDetail & {
 	button?: LinkItem;
 	background: MediaData;
 };

@@ -1,0 +1,18 @@
+.input {
+	@mixin res padding, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin res border-width, 0.267rem, 0.069rem, 0.063rem; /* 1px */
+	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin font-text16;
+
+	border-style: solid;
+	border-color: var(--gray-600-color);
+	outline: none;
+
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus {
+		-webkit-box-shadow: 0 0 0px 1000px #2256cf00 inset;
+		-webkit-text-fill-color: inherit;
+		@mixin transition background-color, 5000s;
+	}
+}
