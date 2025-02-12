@@ -133,12 +133,12 @@ export type InterviewSection = ItemDetail & {
 
 export type FlagType = {
 	name: string;
-	flag?: MediaData;
+	flag?: MediaData | null;
 };
 
 export type ExchangesItemType = {
 	name: string;
-	country: FlagType;
+	country?: FlagType | null;
 	logo?: MediaData | null;
 };
 

@@ -1,6 +1,4 @@
 .root {
-	@mixin res padding, 8.533rem, 2.222rem, 2rem; /* 32px */
-	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 	@mixin res min-height, 68.267rem, 17.778rem, 20rem; /* 256px */
 
 	background-color: var(--gray-200-color);
@@ -16,9 +14,15 @@
 	height: var(--size);
 }
 
+.header {
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+
+	display: flex;
+	flex-direction: column;
+}
+
 .title {
 	@mixin font-text18;
-	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem; /* 8px */
 
 	font-weight: 600;
 
@@ -27,7 +31,18 @@
 	}
 }
 
-.description {
+.flag {
+	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+
+	display: flex;
+}
+
+.flagIcon {
+	@mixin res width, 5.333rem, 1.389rem, 1.25rem; /* 20px */
+	@mixin res height, 5.333rem, 1.389rem, 1.25rem; /* 20px */
+}
+
+.countryName {
 	@mixin font-text14;
 
 	color: var(--gray-600-color);

@@ -3,6 +3,7 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import type { ExchangesItemType } from '@/shared/types/global.types';
+import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
@@ -17,15 +18,19 @@ export const MembershipCard = ({
 	logo,
 }: MembershipCardProps) => {
 	return (
-		<article className={css.root}>
+		<Container category="article" padding="min" className={css.root}>
 			<img src={logo?.url} alt="icon" className={css.icon} />
 			<header className={css.header}>
 				<h3 className={cx(css.title, { [css.greyTitle]: withGreyTitle })}>
 					{parser(name ?? '')}
 				</h3>
-				<p className={css.description}>{}</p>
-				<img src={country.flag?.url} alt="icon" className={css.icon} />
+				{country && (
+					<div className={css.flag}>
+						<img src={country.flag?.url} alt="icon" className={css.flagIcon} />
+						<p className={css.countryName}>{parser(country.name)}</p>
+					</div>
+				)}
 			</header>
-		</article>
+		</Container>
 	);
 };
