@@ -13,6 +13,7 @@ export type ExpertSolutionSectionProps = {
 	items?: Array<Factoid>;
 	withShell?: boolean;
 	backgroundColor?: 'white' | 'gray';
+	gridClass?: string;
 };
 
 export const ExpertSolutionSection = ({
@@ -21,6 +22,7 @@ export const ExpertSolutionSection = ({
 	items,
 	withShell,
 	backgroundColor,
+	gridClass,
 }: ExpertSolutionSectionProps) => {
 	if (!items) {
 		return null;
@@ -36,7 +38,7 @@ export const ExpertSolutionSection = ({
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.sectionTitle}>{parser(title ?? '')}</h2>}
 			<div
-				className={cx(css.cards, {
+				className={cx(css.cards, gridClass, {
 					[css.withShell]: withShell,
 				})}
 			>

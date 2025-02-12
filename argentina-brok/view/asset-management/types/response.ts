@@ -14,7 +14,7 @@ export type AssetManagementPageData = {
 	benefitsSection?: BenefitsSection;
 	quoteSection?: QuoteSection;
 	wealthManagementSection?: BenefitsSection;
-	howWeWorking?: BenefitsSection;
+	howWeAreWorking?: BenefitsSection;
 	documentSection?: DocumentsSection;
 	infoSection?: AccordionSection;
 };

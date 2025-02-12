@@ -1,8 +1,15 @@
 import type { NextPage } from 'next';
 
+import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
+import {
+	HOME_ASSETS_BUTTON,
+	HOME_ASSETS_DESCRIPTION,
+	HOME_ASSETS_IMAGE,
+	HOME_ASSETS_TITLE,
+} from '@/view/home/model/home.constants';
 import { AssetManagment } from '@/widgets/asset-managment';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
@@ -31,10 +38,14 @@ export const AssetManagement: NextPage<{
 				alignContent="start"
 			/>
 			{initialData.data.experienceSection && (
-				<HeroContainer>
+				<HeroContainer className={css.hero}>
 					<TitleSection
 						title={initialData.data.experienceSection.title}
 						description={initialData.data.experienceSection.description}
+					/>
+					<ExperienceSection
+						className={css.experience}
+						experience={initialData.data.experienceSection.factoids}
 					/>
 				</HeroContainer>
 			)}
@@ -46,13 +57,27 @@ export const AssetManagement: NextPage<{
 				className={css.experts}
 			/>
 			<Review quote={initialData?.data.quoteSection} />
-			{/* <AssetManagment
+			<AssetManagment
 				href="#"
 				title={HOME_ASSETS_TITLE}
 				description={HOME_ASSETS_DESCRIPTION}
 				buttonText={HOME_ASSETS_BUTTON}
 				image={HOME_ASSETS_IMAGE}
-			/> */}
+			/>
+			<ExpertSolutionSection
+				className={css.managementSection}
+				gridClass={css.management}
+				withShell
+				title={initialData.data.wealthManagementSection?.title}
+				items={initialData.data.wealthManagementSection?.factoids}
+			/>
+			<ExpertSolutionSection
+				className={css.managementSection}
+				gridClass={css.management}
+				withShell
+				title={initialData.data.howWeAreWorking?.title}
+				items={initialData.data.howWeAreWorking?.factoids}
+			/>
 			<HelpfulInformation
 				title={initialData.data.infoSection?.title}
 				items={initialData.data.infoSection?.accordions}

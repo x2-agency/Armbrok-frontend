@@ -1,3 +1,22 @@
+.hero {
+	@mixin res gap, 8.533rem, 4.444rem, 4rem; /* 32px 64px */
+
+	display: flex;
+	flex-direction: column;
+}
+
 .experts {
-    @mixin res padding-block, 10.667rem, 5.556rem, 5rem; /* 40px 80px */
+	@mixin res padding-block, 10.667rem, 5.556rem, 5rem; /* 40px 80px */
+}
+
+.experience {
+	padding-block: unset;
+}
+
+.managementSection {
+	@mixin res padding-block, 9.6rem, 5rem, 4.5rem; /* 36px 72px */
+}
+
+.management {
+	grid-template-columns: repeat(3, 1fr) !important;
 }
