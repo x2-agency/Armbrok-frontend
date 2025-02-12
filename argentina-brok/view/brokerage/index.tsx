@@ -1,8 +1,6 @@
 import type { NextPage } from 'next';
 
 import { MOCK_FILES } from '@/shared/model/mock-files.constants';
-import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
-import { MOCK_REVIEW } from '@/shared/model/review.constants';
 import { Container } from '@/shared/ui/container';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
