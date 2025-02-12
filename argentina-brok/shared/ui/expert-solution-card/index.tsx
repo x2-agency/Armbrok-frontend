@@ -19,6 +19,7 @@ export const ExpertSolutionCard = ({
 	className,
 	withShell,
 	backgroundColor,
+	media,
 }: ExpertSolutionCardProps) => {
 	const cardBackgroundColor = withShell
 		? backgroundColor === 'white'
@@ -32,8 +33,9 @@ export const ExpertSolutionCard = ({
 				[css.withShell]: withShell,
 			})}
 		>
+			{media?.url && <img src={media?.url} alt="icon" className={css.icon} />}
 			{icon?.url && <img src={icon?.url} alt="icon" className={css.icon} />}
-			<h4 className={css.title}>{parser(title)}</h4>
+			{title && <h4 className={css.title}>{parser(title)}</h4>}
 			{description && <p className={css.description}>{parser(description)}</p>}
 		</article>
 	);

@@ -10,7 +10,7 @@ import css from './index.module.css';
 export type ExpertSolutionSectionProps = {
 	className?: string;
 	title?: string;
-	items: Array<Factoid>;
+	items?: Array<Factoid>;
 	withShell?: boolean;
 	backgroundColor?: 'white' | 'gray';
 };
@@ -22,6 +22,10 @@ export const ExpertSolutionSection = ({
 	withShell,
 	backgroundColor,
 }: ExpertSolutionSectionProps) => {
+	if (!items) {
+		return null;
+	}
+
 	const cardBackgroundColor = withShell
 		? backgroundColor === 'white'
 			? css.whiteBackground
@@ -30,7 +34,7 @@ export const ExpertSolutionSection = ({
 
 	return (
 		<Container className={cx(css.root, className)}>
-			{title && <h2 className={css.sectionTitle}>{parser(title)}</h2>}
+			{title && <h2 className={css.sectionTitle}>{parser(title ?? '')}</h2>}
 			<div
 				className={cx(css.cards, {
 					[css.withShell]: withShell,
@@ -48,6 +52,7 @@ export const ExpertSolutionSection = ({
 						icon={item.icon}
 						title={item.title}
 						description={item.description}
+						media={item.media}
 					/>
 				))}
 			</div>

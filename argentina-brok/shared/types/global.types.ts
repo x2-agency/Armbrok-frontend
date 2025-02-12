@@ -50,6 +50,7 @@ export type ItemDetail = {
 export type Factoid = ItemDetail & {
 	id: number;
 	icon?: MediaData | null;
+	media?: MediaData | null;
 };
 
 /* BROKER APP SECTION */ /* CONSULATION CARD SECTION */
@@ -204,4 +205,17 @@ export type Accordion = {
 export type AccordionSection = {
 	title: string;
 	accordions: Array<Accordion>;
+};
+
+/* EXPERIENCE SECTION */
+
+export type ExperienceSection = ItemDetail & {
+	factoids: Array<Factoid>;
+};
+
+/* BENEFITS SECTION */
+
+export type BenefitsSection = {
+	title: string;
+	factoids: Array<Factoid>;
 };

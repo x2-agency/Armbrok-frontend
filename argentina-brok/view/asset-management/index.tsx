@@ -1,47 +1,61 @@
-import { HERO_DATA } from '@/shared/model/mock-banner.constants';
-import { MOCK_REVIEW } from '@/shared/model/review.constants';
+import type { NextPage } from 'next';
+
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
-import {
-	HOME_ASSETS_BUTTON,
-	HOME_ASSETS_DESCRIPTION,
-	HOME_ASSETS_IMAGE,
-	HOME_ASSETS_TITLE,
-} from '@/view/home/model/home.constants';
+import { TitleSection } from '@/shared/ui/title-section';
 import { AssetManagment } from '@/widgets/asset-managment';
 import { BannerSection } from '@/widgets/banner-section/ui';
+import { HelpfulInformation } from '@/widgets/helpful-information';
 import { Review } from '@/widgets/review';
 
-import { MOCK_DEFAULT_BANNER } from './model/asset-managment.constants';
+import css from './index.module.css';
+import type { AssetManagementPageResponse } from './types/response';
 
-export const AssetManagement = () => {
+export const AssetManagement: NextPage<{
+	initialData?: AssetManagementPageResponse;
+}> = ({ initialData }) => {
+	if (!initialData?.data) {
+		throw new Error();
+	}
+
 	return (
 		<>
 			<BannerSection
 				type="default"
-				banner={MOCK_DEFAULT_BANNER}
+				banner={{
+					title: initialData?.data.heroSection?.title ?? '',
+					description: initialData?.data.heroSection?.description ?? '',
+					button: initialData?.data.heroSection?.button,
+					poster: initialData?.data.heroSection?.background,
+				}}
 				alignContent="start"
 			/>
-			<HeroContainer>
-				{/* <ExperienceSection experience={HERO_DATA.experience} /> */}
-				<ExpertSolutionSection
-					items={HERO_DATA.expertSolutions.items}
-					title="Benefits of Asset Management"
-					withShell
-					backgroundColor="white"
-				/>
-			</HeroContainer>
-			<Review
-				image={MOCK_REVIEW.image}
-				reviewHead={MOCK_REVIEW.reviewHead}
-				reviewFooter={MOCK_REVIEW.reviewFooter}
+			{initialData.data.experienceSection && (
+				<HeroContainer>
+					<TitleSection
+						title={initialData.data.experienceSection.title}
+						description={initialData.data.experienceSection.description}
+					/>
+				</HeroContainer>
+			)}
+			<ExpertSolutionSection
+				items={initialData.data.benefitsSection?.factoids}
+				title={initialData.data.benefitsSection?.title}
+				withShell
+				backgroundColor="white"
+				className={css.experts}
 			/>
-			<AssetManagment
+			<Review quote={initialData?.data.quoteSection} />
+			{/* <AssetManagment
 				href="#"
 				title={HOME_ASSETS_TITLE}
 				description={HOME_ASSETS_DESCRIPTION}
 				buttonText={HOME_ASSETS_BUTTON}
 				image={HOME_ASSETS_IMAGE}
+			/> */}
+			<HelpfulInformation
+				title={initialData.data.infoSection?.title}
+				items={initialData.data.infoSection?.accordions}
 			/>
 		</>
 	);
