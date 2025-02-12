@@ -1,8 +1,6 @@
 export type AccordionProps = {
-	title: string;
+	summary: string;
 	description: string;
-	articles: Array<string>;
-	underDescription: string;
 };
 
 export type HelpfulInformationProps = {

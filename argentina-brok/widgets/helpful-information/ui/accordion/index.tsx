@@ -6,31 +6,18 @@ import type { AccordionProps } from '@/widgets/helpful-information/types';
 
 import css from './index.module.css';
 
-export const Accordion = ({
-	title,
-	description,
-	articles,
-	underDescription,
-}: AccordionProps) => {
+export const Accordion = ({ summary, description }: AccordionProps) => {
 	return (
 		<Container padding="min" category="article" className={css.root}>
 			<details className={css.details}>
 				<summary className={css.summary}>
-					<h4 className={css.title}>{parser(title)}</h4>
+					<h4 className={css.title}>{parser(summary)}</h4>
 					<AccordionArrowSVG className={css.icon} />
 				</summary>
 			</details>
 			<div className={css.accordionContent} role="definition">
 				<div className={css.accordionContentBody}>
-					<p className={css.description}>{parser(description)}</p>
-					<ul className={css.list}>
-						{articles.map((article, index) => (
-							<li className={css.article} key={index}>
-								{parser(article)}
-							</li>
-						))}
-					</ul>
-					<p className={css.under}>{parser(underDescription)}</p>
+					<div className={css.accordionInnerContent}>{parser(description)}</div>
 				</div>
 			</div>
 		</Container>

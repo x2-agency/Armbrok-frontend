@@ -50,31 +50,20 @@
 		list-style-type: none;
 	}
 
-    @media (max-width: 767px) {
-        gap: 6rem;
-    }
+	@media (max-width: 767px) {
+		gap: 6rem;
+	}
+}
+
+.accordionInnerContent {
+	@mixin font-text16;
+	@mixin res padding-block-start, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 }
 
 .title {
 	@mixin font-text20;
 
 	font-weight: 600;
-}
-
-.description {
-	@mixin res padding-block-start, 6.4rem, 1.667rem, 1.5rem; /* 24px */
-}
-
-.description,
-.article,
-.under {
-	@mixin font-text16;
-}
-
-.list {
-	@mixin res padding-inline-start, 6.667rem, 1.736rem, 1.563rem; /* 25px */
-
-	list-style-type: disc;
 }
 
 .icon {

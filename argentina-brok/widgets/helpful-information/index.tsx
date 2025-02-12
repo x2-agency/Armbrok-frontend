@@ -18,12 +18,7 @@ export const HelpfulInformation = ({
 			<ul className={css.accordions}>
 				{items.map((item, index) => (
 					<li key={index}>
-						<Accordion
-							title={item.title}
-							description={item.description}
-							articles={item.articles}
-							underDescription={item.underDescription}
-						/>
+						<Accordion summary={item.summary} description={item.description} />
 					</li>
 				))}
 			</ul>

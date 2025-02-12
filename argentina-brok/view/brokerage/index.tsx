@@ -66,7 +66,12 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				columns={2}
 				fileDirection="column"
 			/>
-			<HelpfulInformation {...HELPFUL_INFORMATION} />
+			{initialData?.data.accordionSection && (
+				<HelpfulInformation
+					title={initialData.data.accordionSection.title}
+					items={initialData.data.accordionSection.accordions}
+				/>
+			)}
 		</>
 	);
 };
