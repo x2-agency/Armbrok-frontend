@@ -1,3 +1,5 @@
+import type { NextPage } from 'next';
+
 import { MOCK_FILES } from '@/shared/model/mock-files.constants';
 import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
 import { MOCK_REVIEW } from '@/shared/model/review.constants';
@@ -19,8 +21,13 @@ import { StatutoryDocuments } from '@/widgets/statutory-documents';
 import css from './index.module.css';
 import { HELPFUL_INFORMATION } from './model/brokerage.constants';
 import { BROKERAGE_TEXT } from './model/brokerage.constants';
+import type { BrokeragePageData } from './types/response';
 
-export const Brokerage = () => {
+export const Brokerage: NextPage<{ initialData?: BrokeragePageData }> = ({
+	initialData,
+}) => {
+	console.log(initialData);
+
 	return (
 		<>
 			{/* <BannerSection

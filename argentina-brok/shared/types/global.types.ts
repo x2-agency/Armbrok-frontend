@@ -66,7 +66,7 @@ export type FinancialSolutionsSection = ItemDetail & {
 
 export type Instruments = ItemDetail & {
 	id: number;
-	media?: string | null;
+	media?: MediaData | null;
 };
 
 /* INVESTING START SECTION */
@@ -127,4 +127,81 @@ export type InterviewSection = ItemDetail & {
 	primaryButton?: LinkItem;
 	secondaryButton?: LinkItem;
 	video?: MediaData;
+};
+
+/* EXCHANGES SECTION */
+
+export type FlagType = {
+	name: string;
+	flag?: MediaData;
+};
+
+export type ExchangesItemType = {
+	name: string;
+	country: FlagType;
+	logo?: MediaData | null;
+};
+
+export type ExchangesSection = {
+	title: string;
+	exchanges: Array<ExchangesItemType>;
+};
+
+/* MOBILE APP SECTION */
+
+export type CardItemType = ItemDetail & {
+	poster?: MediaData | null;
+	mediaContent?: Array<MediaData>;
+};
+
+export type MobileAppSection = ItemDetail & {
+	cards: Array<CardItemType>;
+};
+
+/* QUOTE SECTION */
+
+export type QuoteSection = {
+	quote: {
+		content: string;
+		authorFullName: string;
+		authorPosition: string;
+		authorExtraInfo: string;
+	};
+	authorPhoto?: MediaData | null;
+};
+
+/* RUNNING TEXT SECTION */
+
+export type RunningTextSection = {
+	staticText: string;
+	textArray: Array<{
+		id: number;
+		value: string;
+	}>;
+};
+
+/* COUNTRIES SECTION */
+
+export type CountriesSection = {
+	title: string;
+	additionalText: string;
+	countries: Array<FlagType>;
+};
+
+/* DOCUMENTS SECTION */
+
+export type DocumentsSection = ItemDetail & {
+	documents: Array<MediaData>;
+};
+
+/* ACCORDION SECTION */
+
+export type Accordion = {
+	summary: string;
+	description: string;
+};
+
+export type AccordionSection = {
+	title: string;
+	accordions: Array<Accordion>;
 };
