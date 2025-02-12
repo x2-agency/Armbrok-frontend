@@ -1,11 +1,12 @@
 .root {
 	position: relative;
 
+	@mixin res padding-block-start, 19.2rem, 5rem, 4.5rem;
 	@mixin res margin-block-end, 38.4rem, 10rem, 9rem;
 }
 
 .card {
-	@mixin res padding-inline, 10.667rem, 2.778rem, 2.5rem;
+	@mixin res padding, 4.267rem, 2.778rem, 2.5rem;
 	@mixin res gap, 10.667rem, 2.778rem, 2.5rem;
 	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
 
@@ -13,13 +14,14 @@
 	display: flex;
 
 	@media (max-width: 767px) {
-		flex-direction: column-reverse;
+		flex-direction: column;
 	}
 }
 
 .image {
 	@mixin res height, 121.867rem, 31.736rem, 28.563rem; /* 348px */
 
+	bottom: 0;
 	align-self: end;
 	position: absolute;
 
@@ -31,10 +33,8 @@
 }
 
 .review {
-	@mixin res margin-block-start, 5.067rem, 1.319rem, 1.188rem;
-	@mixin res padding, 10.667rem, 2.778rem, 2.5rem;
 	@mixin res padding-inline-start, 10.667rem, 29.25rem, 29.25rem;
-	@mixin res gap, 2.667rem, 0.694rem, 0.625rem;
+	@mixin res gap, 10.667rem, 0.694rem, 0.625rem;
 
 	display: flex;
 	flex-direction: column;
@@ -43,6 +43,7 @@
 	@media (max-width: 767px) {
 		padding-inline: unset;
 		padding-block-end: unset;
+		padding-block-start: unset;
 		margin-block-start: unset;
 	}
 }

@@ -16,5 +16,5 @@
 }
 
 .text {
-    @mixin font-text20;
+	@mixin font-text20;
 }

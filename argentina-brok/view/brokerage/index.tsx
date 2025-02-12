@@ -17,7 +17,6 @@ import {
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
-import { HELPFUL_INFORMATION } from './model/brokerage.constants';
 import { BROKERAGE_TEXT } from './model/brokerage.constants';
 import type { BrokeragePageResponse } from './types/response';
 
