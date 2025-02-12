@@ -10,7 +10,7 @@ export type TopCardType = {
 	title: string;
 	description: string;
 	mediaContent: ImageFormat;
-	showLink: boolean;
+	showLink?: boolean;
 };
 
 export const Card = ({

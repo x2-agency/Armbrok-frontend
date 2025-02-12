@@ -1,3 +1,5 @@
+import type { NextPage } from 'next';
+
 import { MOCK_FILES } from '@/shared/model/mock-files.constants';
 import { Container } from '@/shared/ui/container';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
@@ -23,7 +25,6 @@ import {
 	MOCK_MOBILE_APP_SECTION,
 } from './model/brokerage.constants';
 import type { BrokeragePageResponse } from './types/response';
-import { NextPage } from 'next';
 
 export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	initialData,
