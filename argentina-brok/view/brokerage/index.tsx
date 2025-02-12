@@ -21,20 +21,26 @@ import { StatutoryDocuments } from '@/widgets/statutory-documents';
 import css from './index.module.css';
 import { HELPFUL_INFORMATION } from './model/brokerage.constants';
 import { BROKERAGE_TEXT } from './model/brokerage.constants';
-import type { BrokeragePageData } from './types/response';
+import type { BrokeragePageResponse } from './types/response';
 
-export const Brokerage: NextPage<{ initialData?: BrokeragePageData }> = ({
+export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	initialData,
 }) => {
 	console.log(initialData);
 
 	return (
 		<>
-			{/* <BannerSection
+			<BannerSection
 				type="default"
-				banner={MOCK_DEFAULT_BANNER}
-				alignContent="end"
+				alignContent="center"
+				banner={{
+					title: initialData?.data.heroSection?.title ?? '',
+					description: initialData?.data.heroSection?.description ?? '',
+					button: initialData?.data.heroSection?.button,
+					poster: initialData?.data.heroSection?.background,
+				}}
 			/>
+			{/*
 			<HeroContainer>
 				<ExpertSolutionSection items={HERO_DATA.expertSolutions.items} />
 			</HeroContainer> */}

@@ -29,4 +29,4 @@ export type BrokeragePageData = {
 	accordionSection: AccordionSection;
 };
 
-export type HomePageResponse = BaseResponse<BrokeragePageData>;
+export type BrokeragePageResponse = BaseResponse<BrokeragePageData>;
