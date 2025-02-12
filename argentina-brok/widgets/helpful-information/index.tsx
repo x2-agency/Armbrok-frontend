@@ -12,9 +12,13 @@ export const HelpfulInformation = ({
 	title,
 	items,
 }: HelpfulInformationProps) => {
+	if (!items) {
+		return null;
+	}
+
 	return (
 		<Container category="section" className={cx(css.root, className)}>
-			<h2 className={css.title}>{parser(title)}</h2>
+			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<ul className={css.accordions}>
 				{items.map((item, index) => (
 					<li key={index}>

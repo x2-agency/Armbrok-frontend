@@ -9,11 +9,15 @@ import { ReviewFooter } from './ui/review-footer';
 import { ReviewHead } from './ui/review-head';
 
 type ReviewProps = {
-	quote: QuoteSection;
+	quote?: QuoteSection;
 	className?: string;
 };
 
 export const Review = ({ quote, className }: ReviewProps) => {
+	if (!quote) {
+		return null;
+	}
+
 	return (
 		<Container className={cx(css.root, className)}>
 			<article className={css.card}>

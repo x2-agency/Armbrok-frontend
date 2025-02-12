@@ -5,6 +5,6 @@ export type AccordionProps = {
 
 export type HelpfulInformationProps = {
 	className?: string;
-	title: string;
-	items: Array<AccordionProps>;
+	title?: string;
+	items?: Array<AccordionProps>;
 };
