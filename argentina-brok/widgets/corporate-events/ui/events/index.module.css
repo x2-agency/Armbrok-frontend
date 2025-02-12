@@ -1,0 +1,17 @@
+.root {
+	overflow-x: auto;
+	white-space: wrap;
+	width: 100%;
+	display: flex;
+	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.event {
+	flex: 0 0 auto;
+}
+
+.firstEvent span:first-of-type {
+	@mixin res margin-inline-start, 2.667rem, 0.694rem, 0.625rem; /* 10px */
+}

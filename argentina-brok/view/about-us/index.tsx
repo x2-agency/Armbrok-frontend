@@ -9,6 +9,10 @@ import {
 import { MOCK_COMPANIES } from '@/shared/model/mock-companies-group';
 import { COMPANY_DETAILS } from '@/shared/model/mock-details.constants';
 import {
+	MOCK_EVENTS_DATA,
+	MOCK_EVENTS_TITLE,
+} from '@/shared/model/mock-events.constants';
+import {
 	MOCK_FILES,
 	MOCK_FILES_TITLE,
 } from '@/shared/model/mock-files.constants';
@@ -22,6 +26,7 @@ import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
 import { CompanyDetailsSection } from '@/widgets/company-details-section';
 import { CompanyMembers } from '@/widgets/company-members';
+import { CorporateEvents } from '@/widgets/corporate-events';
 import { SliderSection } from '@/widgets/slider-section';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
@@ -63,6 +68,8 @@ export const AboutUs: NextPage = () => {
 				withGreyTitles
 			/>
 			<CompanyMembers members={ARMBROK_TEAM} />
+			<CorporateEvents title={MOCK_EVENTS_TITLE} events={MOCK_EVENTS_DATA} />
+
 			<StatutoryDocuments title={MOCK_FILES_TITLE} documents={MOCK_FILES} />
 			<CompanyDetailsSection {...COMPANY_DETAILS} />
 		</>

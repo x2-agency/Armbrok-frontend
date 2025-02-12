@@ -21,7 +21,7 @@ import {
 	CORPORATE_TITLE,
 } from '@/widgets/corporate/model/corporate';
 import { InteractiveVideo } from '@/widgets/interactive-video';
-import { NewsSection } from '@/widgets/news-section';
+import { NewsSectionHome } from '@/widgets/news-section';
 import { Start } from '@/widgets/start';
 import {
 	START_BUTTON,
@@ -81,7 +81,7 @@ export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 				title={MOCK_COMPANIES.title}
 				items={MOCK_COMPANIES.items}
 			/>
-			<NewsSection dataNews={HOME_NEWS} />
+			<NewsSectionHome dataNews={HOME_NEWS} />
 			<InteractiveVideo data={HOME_INTERACTIVE_VIDEO} />
 		</>
 	);

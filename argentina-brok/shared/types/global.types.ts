@@ -108,7 +108,7 @@ export type NewsSection = {
 };
 
 export type NewsType = {
-	id: number;
+	id?: number;
 	publishDate?: string;
 	title?: string;
 	description?: string;

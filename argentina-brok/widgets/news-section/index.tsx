@@ -1,13 +1,17 @@
 import parser from 'html-react-parser';
 
-import type { NewsSectionProps } from '@/entities/news-card/types';
+import type { NewsSection } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 import { NewsSlider } from './ui/news-slider';
 
-export const NewsSection = ({ dataNews }: NewsSectionProps) => {
+export type NewsSectionProps = {
+	dataNews: NewsSection;
+};
+
+export const NewsSectionHome = ({ dataNews }: NewsSectionProps) => {
 	const { title, moreButton, news } = dataNews;
 
 	return (
