@@ -32,13 +32,13 @@ export const ContentBlock = ({
 						className={css.button}
 						category="big"
 						variant="filled"
-						href="#"
+						href="/brokerage"
 					>
 						{button}
 					</Button>
 				)}
 				<div className={css.app}>
-					<p className={css.preview}>{parser(preview ?? '')}</p>
+					{preview && <p className={css.preview}>{parser(preview)}</p>}
 					<Link className={css.store} items={STORE_LINKS} />
 				</div>
 			</div>

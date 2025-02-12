@@ -1,10 +1,9 @@
-import type { NextPage } from 'next';
-
 import { MOCK_FILES } from '@/shared/model/mock-files.constants';
 import { Container } from '@/shared/ui/container';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { MembershipSection } from '@/shared/ui/membership-section';
+import { AppMobileSection } from '@/widgets/app-mobile-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { Review } from '@/widgets/review';
@@ -17,8 +16,14 @@ import {
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
-import { BROKERAGE_TEXT } from './model/brokerage.constants';
+import {
+	BROKERAGE_TEXT,
+	HELPFUL_INFORMATION,
+	MOCK_DEFAULT_BANNER,
+	MOCK_MOBILE_APP_SECTION,
+} from './model/brokerage.constants';
 import type { BrokeragePageResponse } from './types/response';
+import { NextPage } from 'next';
 
 export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	initialData,
@@ -47,6 +52,12 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 						<ExpertSolutionSection items={initialData?.data.advantages} />
 					</HeroContainer>
 				)}
+			<AppMobileSection
+				title={MOCK_MOBILE_APP_SECTION.title}
+				description={MOCK_MOBILE_APP_SECTION.description}
+				topCards={MOCK_MOBILE_APP_SECTION.topCards}
+				bottomCards={MOCK_MOBILE_APP_SECTION.bottomCards}
+			/>
 			<MembershipSection
 				title={initialData.data.exchangesSection?.title}
 				items={initialData.data.exchangesSection?.exchanges}
