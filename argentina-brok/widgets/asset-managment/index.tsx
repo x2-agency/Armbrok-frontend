@@ -1,6 +1,5 @@
 import parser from 'html-react-parser';
 
-import type { ImageFormat } from '@/shared/types/global.types';
 import type { PosterCard } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
