@@ -69,13 +69,13 @@ export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 				button={initialData?.data.investingStepsSection?.button}
 			/>
 			<AwardsSection
-				title={MOCK_AWARDS.title}
+				title={initialData?.data.companiesSection?.title}
 				awards={MOCK_AWARDS.awards}
 				withViewAll
 			/>
 			<CompaniesGroup
-				title={MOCK_COMPANIES.title}
-				items={MOCK_COMPANIES.items}
+				title={initialData?.data.companiesSection?.title}
+				items={initialData?.data.companiesSection?.companies}
 			/>
 			<NewsSectionHome dataNews={HOME_NEWS} />
 			<InteractiveVideo data={HOME_INTERACTIVE_VIDEO} />
