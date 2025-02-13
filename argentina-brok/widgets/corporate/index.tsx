@@ -22,6 +22,7 @@ export const Corporate = ({
 	description: string;
 	instruments: Array<CardType>;
 }) => {
+	console.log(instruments);
 	return (
 		<Container category="section" className={css.root}>
 			<div className={css.wrap}>

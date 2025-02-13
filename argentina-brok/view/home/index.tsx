@@ -29,7 +29,6 @@ import type { HomePageResponse } from './types/response';
 export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 	initialData,
 }) => {
-	console.log(initialData);
 	return (
 		<>
 			<BannerSection

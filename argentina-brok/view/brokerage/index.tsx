@@ -27,8 +27,6 @@ import type { BrokeragePageResponse } from './types/response';
 export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	initialData,
 }) => {
-	console.log(initialData);
-
 	if (!initialData?.data) {
 		throw new Error();
 	}
