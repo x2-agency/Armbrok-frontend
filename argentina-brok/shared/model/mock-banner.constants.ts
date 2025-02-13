@@ -1,3 +1,5 @@
+import { ImageFormat } from '@/shared/types/global.types';
+
 export const MOCK_DEFAULT_BANNER = {
 	title: 'Efficient investments<br /> in financial markets',
 	description:
@@ -111,10 +113,12 @@ export const CAREERS_AT_ARMBROCK_BANNER = {
 		href: '#',
 	},
 	poster: {
-		image: {
-			src: '/assets/images/banner/careers.jpg',
-			src2x: '/assets/images/banner/careers.jpg',
-			mobile: '/assets/images/banner/careers.jpg',
+		alternativeText: '',
+		formats: {
+			large: { url: '/assets/images/banner/careers.jpg' },
+			small: { url: '/assets/images/banner/careers.jpg' },
+			medium: { url: '/assets/images/banner/careers.jpg' },
+			thumbnail: { url: '/assets/images/banner/careers.jpg' },
 		},
 	},
 };
