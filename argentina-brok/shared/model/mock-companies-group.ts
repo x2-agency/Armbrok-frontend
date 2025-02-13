@@ -3,16 +3,20 @@ export const MOCK_COMPANIES = {
 		'Armbrok is&nbsp;a&nbsp;part<br /> of&nbsp;a&nbsp;group of&nbsp;companies',
 	items: [
 		{
-			icon: '/assets/icons/companies/armbrok.svg',
+			alternativeText: '',
+			url: '/assets/icons/companies/armbrok.svg',
 		},
 		{
-			icon: '/assets/icons/companies/glocal.svg',
+			alternativeText: '',
+			url: '/assets/icons/companies/glocal.svg',
 		},
 		{
-			icon: '/assets/icons/companies/mblegal.svg',
+			alternativeText: '',
+			url: '/assets/icons/companies/mblegal.svg',
 		},
 		{
-			icon: '/assets/icons/companies/mb.svg',
+			alternativeText: '',
+			url: '/assets/icons/companies/mb.svg',
 		},
 	],
 };

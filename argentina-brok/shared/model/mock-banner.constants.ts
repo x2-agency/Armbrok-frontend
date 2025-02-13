@@ -1,5 +1,3 @@
-import { ImageFormat } from '@/shared/types/global.types';
-
 export const MOCK_DEFAULT_BANNER = {
 	title: 'Efficient investments<br /> in financial markets',
 	description:
@@ -96,10 +94,12 @@ export const MOCK_ABOUT_BANNER = {
 		},
 	],
 	poster: {
-		image: {
-			src: '/assets/images/banner/banner-pc.jpg',
-			src2x: '/assets/images/banner/banner-pc.jpg',
-			mobile: '/assets/images/banner/banner-mob.jpg',
+		alternativeText: '',
+		formats: {
+			large: { url: '/assets/images/banner/banner-pc.jpg' },
+			small: { url: '/assets/images/banner/banner-pc.jpg' },
+			medium: { url: '/assets/images/banner/banner-mob.jpg' },
+			thumbnail: { url: '/assets/images/banner/banner-pc.jpg' },
 		},
 	},
 };
@@ -141,25 +141,37 @@ export const HERO_DATA = {
 	expertSolutions: {
 		items: [
 			{
-				icon: '/assets/icon/mock-factoids/first.svg',
+				icon: {
+					alternativeText: '',
+					url: '/assets/icon/mock-factoids/first.svg',
+				},
 				title: '10+&nbsp;exchanges, 15 000+ instruments',
 				description:
 					'Access to&nbsp;all major exchanges in&nbsp;the USA, Europe, Asia and of&nbsp;course Armenia',
 			},
 			{
-				icon: '/assets/icon/mock-factoids/second.svg',
+				icon: {
+					alternativeText: '',
+					url: '/assets/icon/mock-factoids/second.svg',
+				},
 				title: 'Over-the-Counter market',
 				description:
 					'We&nbsp;will find and buy for you practically any OTC instrument at&nbsp;an&nbsp;attractive price',
 			},
 			{
-				icon: '/assets/icon/mock-factoids/third.svg',
+				icon: {
+					alternativeText: '',
+					url: '/assets/icon/mock-factoids/third.svg',
+				},
 				title: 'Own depositary and custodian',
 				description:
 					'This allows you to&nbsp;quickly transfer securities from one jurisdiction to&nbsp;another',
 			},
 			{
-				icon: '/assets/icon/mock-factoids/fourth.svg',
+				icon: {
+					alternativeText: '',
+					url: '/assets/icon/mock-factoids/fourth.svg',
+				},
 				title: 'Expert Support When You Need&nbsp;It',
 				description:
 					'Caring and always ready to&nbsp;guide you through your investment journey.',
