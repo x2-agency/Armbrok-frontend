@@ -58,6 +58,7 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 			<Container>
 				<h2 className={css.serve}>{BROKERAGE_TEXT}</h2>
 			</Container>
+
 			<Start
 				steps={initialData?.data.investingStepsSection?.steps}
 				title={initialData?.data.investingStepsSection?.title}

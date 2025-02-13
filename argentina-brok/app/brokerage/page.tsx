@@ -7,13 +7,9 @@ export const metadata: Metadata = {
 };
 
 const BrokeragePage = async () => {
-	try {
-		const initialBrokeragePageData = await getBrokeragePage();
+	const initialBrokeragePageData = await getBrokeragePage();
 
-		return <Brokerage initialData={initialBrokeragePageData} />;
-	} catch {
-		<Brokerage />;
-	}
+	return <Brokerage initialData={initialBrokeragePageData || undefined} />;
 };
 
 export default BrokeragePage;

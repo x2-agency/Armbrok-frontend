@@ -22,8 +22,8 @@ export const InvestmentBanking: NextPage = () => {
 				type="default"
 				banner={MOCK_INVESTMENT_BANKING_BANNER}
 				alignContent="end"
-			/>
-			<HeroContainer>
+			/> */}
+			{/*<HeroContainer>
 				<TitleSection data={HERO_DATA.titleSection} />
 			</HeroContainer> */}
 			{/* <ExpertSolutionSection
