@@ -48,7 +48,7 @@ export type ItemDetail = {
 };
 
 export type Factoid = ItemDetail & {
-	id: number;
+	id?: number;
 	icon?: MediaData | null;
 	media?: MediaData | null;
 };
