@@ -11,11 +11,16 @@ import { TitleSection } from '@/shared/ui/title-section';
 // 	HOME_ASSETS_TITLE,
 // } from '@/view/home/model/home.constants';
 // import { AssetManagment } from '@/widgets/asset-managment';
+import { AssetManagment } from '@/widgets/asset-managment';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { Review } from '@/widgets/review';
 
 import css from './index.module.css';
+import {
+	MOCK_DEFAULT_BANNER,
+	TITLE_SECTION_ASSET,
+} from './model/asset-managment.constants';
 import type { AssetManagementPageResponse } from './types/response';
 
 export const AssetManagement: NextPage<{
@@ -45,7 +50,7 @@ export const AssetManagement: NextPage<{
 					/>
 					<ExperienceSection
 						className={css.experience}
-						experience={initialData.data.experienceSection.factoids}
+						experience={TITLE_SECTION_ASSET}
 					/>
 				</HeroContainer>
 			)}
@@ -57,11 +62,11 @@ export const AssetManagement: NextPage<{
 				className={css.experts}
 			/>
 			<Review quote={initialData?.data.quoteSection} />
-			{/* <AssetManagment
-				title={initialData?.data.wealthManagementSection?.title ?? ''}
-				description={initialData?.data.wealthManagementSection?.description ?? ''}
-				mediaContent={initialData?.data.wealthManagementSection?.mediaContent}
-			/> */}
+			<AssetManagment
+				title={MOCK_DEFAULT_BANNER.title}
+				// description={MOCK_DEFAULT_BANNER.description}
+				// mediaContent={initialData?.data.wealthManagementSection?.mediaContent}
+			/>
 			<ExpertSolutionSection
 				className={css.managementSection}
 				gridClass={css.management}

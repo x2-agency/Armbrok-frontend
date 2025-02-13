@@ -1,8 +1,8 @@
 export const MOCK_DEFAULT_BANNER = {
-	title: 'Asset Management',
+	title: 'Get expert advice from an <br/>investment advisort',
 	description: 'Expert Financial Management',
 	button: {
-		text: 'Open account',
+		text: 'Request a consultation',
 		href: '/account',
 	},
 	poster: {
@@ -13,3 +13,9 @@ export const MOCK_DEFAULT_BANNER = {
 		},
 	},
 };
+
+export const TITLE_SECTION_ASSET = [
+	{ title: '7 years', description: 'of successful work in asset <management' },
+	{ title: '50+', description: 'Institutional Clients' },
+	{ title: '$760M', description: 'in assets under management' },
+];
