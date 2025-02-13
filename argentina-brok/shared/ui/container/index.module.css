@@ -23,7 +23,9 @@
 
 .default {
 	@mixin res width, 100%, 83.33vw, 75rem; /* 1200px */
-	@mixin res padding-inline, 5.333rem, unset, unset; /* 20px */
+	@media (max-width: 767px) {
+		padding-inline: 5.333rem;
+	}
 }
 
 .hybrid {

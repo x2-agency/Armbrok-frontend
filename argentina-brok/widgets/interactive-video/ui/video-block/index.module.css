@@ -9,7 +9,7 @@
 }
 
 .video {
-	@mixin res width, 89.333rem, 42.5rem, 38.25rem; /* 335px 612px */
+	@mixin res width, 100%, 42.5rem, 38.25rem; /* 335px 612px */
 	@mixin res height, auto, 29.167rem, 26.25rem; /* 420px */
 }
 

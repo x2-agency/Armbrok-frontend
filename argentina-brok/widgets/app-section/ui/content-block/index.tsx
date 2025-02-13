@@ -2,7 +2,7 @@ import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
 import { STORE_LINKS } from '@/widgets/app-layout/models/social.constants';
-import { Link } from '@/widgets/app-layout/ui/footer/social-links/link';
+import { Social } from '@/widgets/app-layout/ui/footer/social-links/social';
 
 import css from './index.module.css';
 
@@ -39,7 +39,7 @@ export const ContentBlock = ({
 				)}
 				<div className={css.app}>
 					{preview && <p className={css.preview}>{parser(preview)}</p>}
-					<Link className={css.store} items={STORE_LINKS} />
+					<Social className={css.store} items={STORE_LINKS} />
 				</div>
 			</div>
 		</div>
