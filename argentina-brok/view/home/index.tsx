@@ -14,11 +14,6 @@ import { Corporate } from '@/widgets/corporate';
 import { InteractiveVideo } from '@/widgets/interactive-video';
 import { NewsSectionHome } from '@/widgets/news-section';
 import { Start } from '@/widgets/start';
-import {
-	START_BUTTON,
-	START_DATA,
-	START_TITLE,
-} from '@/widgets/start/model/start.constants';
 
 import {
 	HOME_APP_SECTION,
