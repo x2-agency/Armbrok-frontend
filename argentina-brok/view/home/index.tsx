@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 
 import { HOME_NEWS } from '@/entities/news-card/model/news.constants';
 import { MOCK_AWARDS } from '@/shared/model/mock-awards';
-import { MOCK_COMPANIES } from '@/shared/model/mock-companies-group';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
