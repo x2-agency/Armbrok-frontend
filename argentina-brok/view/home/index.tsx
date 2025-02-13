@@ -29,7 +29,6 @@ import type { HomePageResponse } from './types/response';
 export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 	initialData,
 }) => {
-	console.log(initialData);
 	return (
 		<>
 			<BannerSection
@@ -70,10 +69,9 @@ export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 				instruments={initialData?.data.financialSolutionsSection?.instruments}
 			/>
 			<Start
-				href="#"
-				title={START_TITLE}
-				cardsNumber={START_DATA}
-				button={START_BUTTON}
+				steps={initialData?.data.investingStepsSection?.steps}
+				title={initialData?.data.investingStepsSection?.title}
+				button={initialData?.data.investingStepsSection?.button}
 			/>
 			<AwardsSection
 				title={MOCK_AWARDS.title}

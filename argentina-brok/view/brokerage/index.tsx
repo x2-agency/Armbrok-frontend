@@ -10,18 +10,11 @@ import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { Review } from '@/widgets/review';
 import { Start } from '@/widgets/start';
-import {
-	START_BUTTON,
-	START_DATA,
-	START_TITLE,
-} from '@/widgets/start/model/start.constants';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
 import {
 	BROKERAGE_TEXT,
-	HELPFUL_INFORMATION,
-	MOCK_DEFAULT_BANNER,
 	MOCK_MOBILE_APP_SECTION,
 } from './model/brokerage.constants';
 import type { BrokeragePageResponse } from './types/response';
@@ -29,8 +22,6 @@ import type { BrokeragePageResponse } from './types/response';
 export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	initialData,
 }) => {
-	console.log(initialData);
-
 	if (!initialData?.data) {
 		throw new Error();
 	}
@@ -68,10 +59,9 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				<h2 className={css.serve}>{BROKERAGE_TEXT}</h2>
 			</Container>
 			<Start
-				href="#"
-				title={START_TITLE}
-				cardsNumber={START_DATA}
-				button={START_BUTTON}
+				steps={initialData?.data.investingStepsSection?.steps}
+				title={initialData?.data.investingStepsSection?.title}
+				button={initialData?.data.investingStepsSection?.button}
 			/>
 			<StatutoryDocuments
 				title="Pricing and Terms"

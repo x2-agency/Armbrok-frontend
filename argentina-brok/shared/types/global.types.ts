@@ -73,9 +73,9 @@ export type Instruments = ItemDetail & {
 /* INVESTING START SECTION */
 
 export type InvestingStepsSection = {
-	title: string;
-	button: LinkItem;
-	steps: Array<Factoid>;
+	title?: string;
+	button?: LinkItem;
+	steps?: Array<Factoid>;
 };
 
 /* AWARD SECTION */

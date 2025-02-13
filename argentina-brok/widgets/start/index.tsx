@@ -1,28 +1,24 @@
+import type { InvestingStepsSection } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import type { CardType } from './types';
 import { CardsNumber } from './ui/cards-number';
 
-export const Start = ({
-	title,
-	cardsNumber,
-	button,
-	href,
-}: {
-	title: string;
-	cardsNumber: Array<CardType>;
-	button: string;
-	href: string;
-}) => {
+export const Start = ({ title, button, steps }: InvestingStepsSection) => {
+	if (!steps) {
+		return null;
+	}
+
 	return (
 		<Container className={css.root}>
-			<h2 className={css.title}>{title}</h2>
-			<CardsNumber cardsNumber={cardsNumber} />
-			<Button category="big" href={href} variant="filled">
-				{button}
-			</Button>
+			{title && <h2 className={css.title}>{title}</h2>}
+			<CardsNumber steps={steps} />
+			{button && (
+				<Button category="big" href={button.link} variant="filled">
+					{button.text}
+				</Button>
+			)}
 		</Container>
 	);
 };
