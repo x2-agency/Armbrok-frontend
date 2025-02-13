@@ -4,13 +4,13 @@ import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
-import {
-	HOME_ASSETS_BUTTON,
-	HOME_ASSETS_DESCRIPTION,
-	HOME_ASSETS_IMAGE,
-	HOME_ASSETS_TITLE,
-} from '@/view/home/model/home.constants';
-import { AssetManagment } from '@/widgets/asset-managment';
+// import {
+// 	HOME_ASSETS_BUTTON,
+// 	HOME_ASSETS_DESCRIPTION,
+// 	HOME_ASSETS_IMAGE,
+// 	HOME_ASSETS_TITLE,
+// } from '@/view/home/model/home.constants';
+// import { AssetManagment } from '@/widgets/asset-managment';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { Review } from '@/widgets/review';
@@ -57,13 +57,11 @@ export const AssetManagement: NextPage<{
 				className={css.experts}
 			/>
 			<Review quote={initialData?.data.quoteSection} />
-			<AssetManagment
-				href="#"
-				title={HOME_ASSETS_TITLE}
-				description={HOME_ASSETS_DESCRIPTION}
-				buttonText={HOME_ASSETS_BUTTON}
-				image={HOME_ASSETS_IMAGE}
-			/>
+			{/* <AssetManagment
+				title={initialData?.data.wealthManagementSection?.title ?? ''}
+				description={initialData?.data.wealthManagementSection?.description ?? ''}
+				mediaContent={initialData?.data.wealthManagementSection?.mediaContent}
+			/> */}
 			<ExpertSolutionSection
 				className={css.managementSection}
 				gridClass={css.management}

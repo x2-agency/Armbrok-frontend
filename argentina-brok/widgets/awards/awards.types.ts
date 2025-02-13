@@ -6,6 +6,6 @@ export type AwardItemProps = {
 export type AwardSectionProps = {
 	awards: Array<AwardItemProps>;
 	withViewAll?: boolean;
-	title: string;
+	title?: string;
 	className?: string;
 };

@@ -23,7 +23,9 @@ export const AssetManagment = ({
 				</Button>
 			</div>
 			<div className={css.imgWrap}>
-				<FormatImage className={css.image} poster={mediaContent[0]} />
+				{mediaContent && (
+					<FormatImage className={css.image} poster={mediaContent[0]} />
+				)}
 			</div>
 		</Container>
 	);

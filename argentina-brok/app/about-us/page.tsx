@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import { getAboutUsPage } from '@/shared/api/get-about-us';
 import { AboutUs } from '@/view/about-us';
 
 export const metadata: Metadata = {
@@ -9,8 +8,6 @@ export const metadata: Metadata = {
 
 const AboutUsPage = async () => {
 	try {
-		const initialAboutUsPageData = await getAboutUsPage();
-
 		return <AboutUs />;
 	} catch {
 		return <AboutUs />;
