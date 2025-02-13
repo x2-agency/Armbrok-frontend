@@ -5,7 +5,7 @@ import type { IconListProps } from '@/widgets/app-layout/models/social.constants
 
 import css from './index.module.css';
 
-export const Link = ({ items, className }: IconListProps) => {
+export const Social = ({ items, className }: IconListProps) => {
 	return (
 		<div className={cx(css.root, className)}>
 			{items.map((link, index) => (

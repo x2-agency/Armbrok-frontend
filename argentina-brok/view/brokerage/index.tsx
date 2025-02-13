@@ -20,8 +20,6 @@ import { StatutoryDocuments } from '@/widgets/statutory-documents';
 import css from './index.module.css';
 import {
 	BROKERAGE_TEXT,
-	HELPFUL_INFORMATION,
-	MOCK_DEFAULT_BANNER,
 	MOCK_MOBILE_APP_SECTION,
 } from './model/brokerage.constants';
 import type { BrokeragePageResponse } from './types/response';

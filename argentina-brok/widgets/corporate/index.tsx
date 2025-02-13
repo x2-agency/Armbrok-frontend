@@ -23,7 +23,7 @@ export const Corporate = ({
 	instruments: Array<CardType>;
 }) => {
 	return (
-		<Container category="section" padding="default" className={css.root}>
+		<Container category="section" className={css.root}>
 			<div className={css.wrap}>
 				<h2 className={css.title}>{title}</h2>
 				<p className={css.description}>{parser(description)}</p>
