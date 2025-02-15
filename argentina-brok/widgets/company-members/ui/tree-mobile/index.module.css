@@ -1,0 +1,191 @@
+.root {
+	@mixin responsive gap, 40, 40, 40;
+
+	display: flex;
+	flex-direction: column;
+	overflow-x: scroll;
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.topElement {
+	@mixin font-text18;
+	@mixin responsive width, 300, 300, 300;
+	@mixin responsive height, 58, 58, 58;
+	@mixin responsive border-radius, 16, 16, 16;
+
+	position: relative;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #212121;
+	color: var(--white-color);
+
+	&::after {
+		@mixin responsive width, 1, 1, 1;
+		@mixin responsive height, 40, 40, 40;
+
+		position: absolute;
+		left: 50%;
+		top: 130%;
+		translate: -50% -50%;
+		content: '';
+		background-color: var(--gray-700-color);
+	}
+}
+
+.body {
+	display: flex;
+	justify-content: end;
+}
+
+.right,
+.left {
+	flex-shrink: 0;
+}
+
+.right {
+	@mixin responsive padding-inline-start, 32, 32, 32;
+	@mixin responsive padding-block, 200, 200, 200;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.rightGroup {
+	@mixin responsive gap, 40, 40, 40;
+
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	&::after {
+		@mixin responsive height, 144, 144, 144;
+		@mixin responsive width, 1, 1, 1;
+
+		position: absolute;
+		content: '';
+		left: 0;
+		top: 30%;
+		background-color: var(--gray-700-color);
+	}
+}
+
+.left {
+	@mixin responsive gap, 40, 40, 40;
+	@mixin responsive padding-inline-start, 92.6, 32, 32;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.element {
+	@mixin responsive border-radius, 16, 16, 16;
+	@mixin responsive width, 115, 115, 115;
+	@mixin responsive height, 96, 96, 96;
+
+	position: relative;
+	background-color: #212121;
+	color: var(--white-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	&::after {
+		@mixin responsive height, 40, 40, 40;
+		@mixin responsive width, 1, 1, 1;
+
+		position: absolute;
+		background-color: var(--gray-700-color);
+		content: '';
+		top: 120%;
+		left: 50%;
+		translate: -50% -50%;
+	}
+
+	&.leftArrow::before {
+		@mixin responsive width, 30, 30, 30;
+		@mixin responsive height, 1, 1, 1;
+
+		content: '';
+		position: absolute;
+		left: 115%;
+		top: 50%;
+		translate: -50% -50%;
+		background-color: var(--gray-700-color);
+	}
+}
+
+.element:last-child::after {
+	width: unset;
+	height: unset;
+}
+
+.rightElement {
+	@mixin responsive border-radius, 16, 16, 16;
+	@mixin responsive width, 116, 116, 116;
+	@mixin responsive height, 96, 96, 96;
+
+	background-color: #212121;
+	color: var(--white-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.circleTop {
+	@mixin responsive width, 12, 12, 12;
+	@mixin responsive height, 12, 12, 12;
+
+	position: absolute;
+	border-radius: 100%;
+	background-color: var(--white-color);
+	top: 0%;
+	left: 50%;
+	translate: -50% -50%;
+
+	&::after {
+		@mixin responsive width, 4, 4, 4;
+		@mixin responsive height, 4, 4, 4;
+		@mixin responsive --border, 1.5, 1.5, 1.5;
+
+		position: absolute;
+		content: '';
+		border: var(--border) solid var(--gray-700-color);
+		left: 50%;
+		top: 50%;
+		border-radius: 100%;
+		translate: -50% -50%;
+	}
+}
+
+.circleLeft {
+	@mixin responsive width, 12, 12, 12;
+	@mixin responsive height, 12, 12, 12;
+
+	position: absolute;
+	border-radius: 100%;
+	background-color: var(--white-color);
+	top: 50%;
+	left: 100%;
+	translate: -50% -50%;
+
+	&::after {
+		@mixin responsive width, 4, 4, 4;
+		@mixin responsive height, 4, 4, 4;
+		@mixin responsive --border, 1.5, 1.5, 1.5;
+
+		position: absolute;
+		content: '';
+		border: var(--border) solid var(--gray-700-color);
+		left: 50%;
+		top: 50%;
+		border-radius: 100%;
+		translate: -50% -50%;
+	}
+}

@@ -1,0 +1,194 @@
+.root {
+	@mixin responsive gap, 40, 40, 40;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.group {
+	@mixin responsive gap, 20, 20, 20;
+	position: relative;
+
+	display: flex;
+
+	&.first::after {
+		@mixin responsive width, 1079, 1079, 1079;
+		@mixin responsive height, 18, 18, 18;
+		@mixin responsive --radius, 15, 15, 15;
+		@mixin responsive --border, 1, 1, 1;
+
+		content: '';
+		position: absolute;
+		top: -22%;
+		left: 4.85%;
+		border-top: var(--border) solid var(--gray-400-color);
+		border-left: var(--border) solid var(--gray-400-color);
+		border-right: var(--border) solid var(--gray-400-color);
+		border-radius: var(--radius) var(--radius) 0 0;
+	}
+
+	&.second::after {
+		@mixin responsive height, 20, 20, 15;
+		@mixin responsive width, 184, 184, 184;
+		@mixin responsive --border, 1, 1, 1;
+		@mixin responsive --radius, 15, 15, 15;
+
+		content: '';
+		position: absolute;
+		top: -18%;
+		left: 50%;
+		translate: -50% -50%;
+		border-top: var(--border) solid var(--gray-400-color);
+		border-inline: var(--border) solid var(--gray-400-color);
+		border-radius: var(--radius) var(--radius) 0 0;
+	}
+}
+
+.element {
+	@mixin font-text18;
+	@mixin responsive padding, 16, 16, 16;
+	@mixin responsive border-radius, 16, 16, 16;
+
+	position: relative;
+	flex-shrink: 0;
+	background-color: #212121;
+	color: var(--white-color);
+	font-weight: 500;
+	width: fit-content;
+	text-align: center;
+	display: flex;
+	align-items: center;
+
+	&::before {
+		@mixin responsive height, 40, 40, 38;
+		@mixin responsive width, 1, 1, 1;
+
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 49.8%;
+		translate: -50% 0%;
+		z-index: 10;
+		background-color: var(--gray-400-color);
+	}
+}
+
+.elementSecondType {
+	@mixin font-text16;
+	@mixin responsive width, 115, 115, 115;
+	@mixin responsive height, 96, 96, 96;
+	@mixin responsive border-radius, 16, 16, 16;
+
+	position: relative;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #212121;
+	color: var(--white-color);
+	text-align: center;
+
+	&.withTop::after {
+		@mixin responsive width, 1, 1, 1;
+		@mixin responsive height, 17, 17, 17;
+
+		content: '';
+		position: absolute;
+		background-color: var(--gray-400-color);
+		top: -22%;
+		left: 50%;
+		translate: -50% 0%;
+	}
+
+	&.withBottom::before {
+		@mixin responsive width, 1, 1, 1;
+		@mixin responsive height, 22, 22, 22;
+
+		content: '';
+		position: absolute;
+		background-color: var(--gray-400-color);
+		top: 100%;
+	}
+}
+
+.underLevel {
+	@mixin responsive padding-inline, 154, 154, 154;
+
+	width: 100%;
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+}
+
+.elementThirdType {
+	@mixin font-text16;
+	@mixin responsive width, 164, 164, 164;
+	@mixin responsive height, 56, 56, 56;
+	@mixin responsive border-radius, 16, 16, 16;
+
+	position: relative;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #212121;
+	color: var(--white-color);
+	text-align: center;
+}
+
+.circleBottom {
+	@mixin responsive width, 12, 12, 12;
+	@mixin responsive height, 12, 12, 12;
+
+	border-radius: 50%;
+	background-color: var(--white-color);
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	translate: -50% 50%;
+
+	&::after {
+		@mixin responsive width, 5, 5, 5;
+		@mixin responsive height, 5, 5, 5;
+		@mixin responsive border-width, 1.5, 1.5, 1.5;
+
+		position: absolute;
+		content: '';
+		left: 50%;
+		top: 50%;
+		translate: -50% -50%;
+		border-radius: 100%;
+		border-color: var(--gray-700-color);
+		border-style: solid;
+		background-color: var(--white-color);
+	}
+}
+
+.circleTop {
+	@mixin responsive width, 12, 12, 12;
+	@mixin responsive height, 12, 12, 12;
+
+	border-radius: 50%;
+	background-color: var(--white-color);
+	position: absolute;
+	top: 0;
+	left: 50%;
+	translate: -50% -50%;
+
+	&::after {
+		@mixin responsive width, 5, 5, 5;
+		@mixin responsive height, 5, 5, 5;
+		@mixin responsive border-width, 1.5, 1.5, 1.5;
+
+		position: absolute;
+		content: '';
+		left: 50%;
+		top: 50%;
+		translate: -50% -50%;
+		border-radius: 100%;
+		border-color: var(--gray-700-color);
+		border-style: solid;
+		background-color: var(--white-color);
+	}
+}
