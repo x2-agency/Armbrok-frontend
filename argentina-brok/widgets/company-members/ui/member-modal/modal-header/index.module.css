@@ -1,0 +1,48 @@
+.root {
+	@mixin responsive gap, 30, 40, 40;
+	@mixin responsive padding-block-end, 16, 16, 16;
+	@mixin responsive border-width, 2, 2, 2;
+	@mixin responsive margin-block-end, 16, 16, 16;
+
+	display: flex;
+	align-items: center;
+	border-bottom: solid var(--gray-300-color);
+}
+
+.about {
+	@mixin responsive gap, 8, 8, 8;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.name {
+	@mixin responsive font-size, 20, 24, 24;
+
+	font-weight: 700;
+}
+
+.position {
+	@mixin font-text16;
+	@mixin responsive padding-inline, 6, 6, 6;
+	@mixin responsive padding-block, 2, 2, 2;
+	@mixin responsive border-radius, 4, 4, 4;
+
+	background-color: var(--gray-300-color);
+	color: var(--gray-700-color);
+	width: fit-content;
+}
+
+.imageWrap {
+	@mixin responsive width, 150, 200, 200;
+	@mixin responsive height, 150, 200, 200;
+
+	position: relative;
+}
+
+.image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

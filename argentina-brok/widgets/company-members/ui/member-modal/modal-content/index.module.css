@@ -1,0 +1,20 @@
+.title {
+	@mixin font-text16;
+	@mixin responsive padding-block-end, 4, 4, 4;
+
+	font-weight: 600;
+}
+
+.content {
+	@mixin font-text16;
+
+	ul {
+		list-style-type: none;
+	}
+
+	ul li::before {
+		@mixin responsive margin-inline-end, 10, 10, 10;
+
+		content: '—';
+	}
+}
