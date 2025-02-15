@@ -9,7 +9,7 @@
 
 html[data-header-top-color='white'] {
 	.login {
-		color: var(--white-color);
+		color: var(--gray-100-color);
 	}
 }
 

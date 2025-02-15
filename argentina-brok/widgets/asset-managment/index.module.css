@@ -41,7 +41,7 @@
 
 .title,
 .description {
-	color: var(--white-color);
+	color: var(--gray-100-color);
 }
 
 .title {

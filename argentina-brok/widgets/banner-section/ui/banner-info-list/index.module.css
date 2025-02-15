@@ -7,7 +7,7 @@
 .title {
 	@mixin font-text20;
 	display: flex;
-	color: var(--white-color);
+	color: var(--gray-100-color);
 	gap: 0.5rem;
 }
 

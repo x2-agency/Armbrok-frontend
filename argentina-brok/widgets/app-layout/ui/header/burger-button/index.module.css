@@ -5,7 +5,7 @@
 }
 
 html[data-header-top-color='white'] .burger path {
-	fill: var(--white-color);
+	fill: var(--gray-100-color);
 }
 
 html[data-header-top-color='dark'] .burger path {

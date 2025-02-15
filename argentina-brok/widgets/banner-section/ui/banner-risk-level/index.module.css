@@ -7,7 +7,7 @@
 	background-color: var(--gray-400-color);
 
 	&.filled {
-		background-color: var(--white-color);
+		background-color: var(--gray-100-color);
 	}
 }
 

@@ -13,7 +13,7 @@
 .title {
 	@mixin font-h2;
 	font-weight: 600;
-	color: var(--white-color);
+	color: var(--gray-100-color);
 	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
 }
 
@@ -66,7 +66,7 @@
 
 .preview {
 	@mixin font-text12;
-	color: var(--white-color);
+	color: var(--gray-100-color);
 
 	@media (max-width: 767px) {
 		order: 2;

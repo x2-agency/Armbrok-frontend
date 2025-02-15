@@ -1,0 +1,23 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	@mixin responsive padding-block-end, 30, 56, 56;
+
+	@mixin responsive padding-block-start, 100, 160, 160;
+	@mixin responsive max-width, 300, 600, 600;
+}
+
+.title {
+	@mixin font-h1;
+	font-weight: 700;
+	@mixin responsive padding-block-end, 10, 16, 16;
+}
+
+.description {
+	@mixin font-text18;
+	color: var(--gray-600-color);
+	text-align: center;
+}

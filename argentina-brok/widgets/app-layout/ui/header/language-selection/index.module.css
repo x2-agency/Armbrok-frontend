@@ -17,7 +17,7 @@
 	transition-property: color;
 
 	&.white {
-		color: var(--white-color);
+		color: var(--gray-100-color);
 	}
 
 	&.dark {
@@ -67,7 +67,7 @@
 	@mixin res width, 17.067rem, 4.444rem, 4rem; /* 64px */
 	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
 
-	background-color: var(--white-color);
+	background-color: var(--gray-100-color);
 	position: absolute;
 	overflow: hidden;
 	opacity: 0;
@@ -105,11 +105,11 @@
 
 html[data-header-top-color='white'] {
 	.selected {
-		color: var(--white-color);
+		color: var(--gray-100-color);
 	}
 
 	.svg path {
-		fill: color(--white-color);
+		fill: color(--gray-100-color);
 	}
 }
 

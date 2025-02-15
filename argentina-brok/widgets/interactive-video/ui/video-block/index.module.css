@@ -37,6 +37,6 @@
 
 .description {
 	@mixin font-text16;
-	color: var(--white-color);
+	color: var(--gray-100-color);
 	@mixin res margin-inline-start, 4.267rem, 1.111rem, 1rem; /* 16px */
 }

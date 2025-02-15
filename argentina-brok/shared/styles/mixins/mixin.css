@@ -15,14 +15,14 @@
 
 @define-mixin responsive $property, $mobile-size, $tablet-size, $desktop-size {
 	@media (max-width: 767px) {
-		$(property): calc($(mobile-size) rem / 3.75);
+		$(property): calc($(mobile-size)rem / 3.75);
 	}
 
 	@media (min-width: 768px) and (max-width: 1440px) {
-		$(property): calc($(tablet-size) rem / 14.4);
+		$(property): calc($(tablet-size)rem / 14.4);
 	}
 
 	@media (min-width: 1441px) {
-		$(property): calc($(desktop-size) rem / 16);
+		$(property): calc($(desktop-size)rem / 16);
 	}
 }

@@ -1,8 +1,8 @@
 .root {
+	display: flex;
 	overflow-x: auto;
 	white-space: wrap;
 	width: 100%;
-	display: flex;
 	@mixin responsive gap, 24, 24, 24;
 	scrollbar-width: none;
 	-ms-overflow-style: none;

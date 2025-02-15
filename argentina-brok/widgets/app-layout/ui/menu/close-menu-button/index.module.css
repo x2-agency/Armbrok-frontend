@@ -2,7 +2,7 @@
 	position: relative;
 	width: 8.533rem; /* 32px */
 	height: 8.533rem; /* 32px */
-	background-color: var(--white-color);
+	background-color: var(--gray-100-color);
 	border-radius: 100%;
 	cursor: pointer;
 	outline: none;
