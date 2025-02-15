@@ -45,18 +45,18 @@ export const HOME_NEWS: NewsSectionType = {
 			},
 			category: 'Company news',
 		},
-		// {
-		// 	id: 4,
-		// 	piblishDate: '15.10.2024',
-		// 	title:
-		// 		'First tier stocks: investing in&nbsp;the cream of&nbsp;the Russian market',
-		// 	description:
-		// 		'There are many instruments available to&nbsp;investors in&nbsp;the world of&nbsp;the stock market. It&nbsp;is&nbsp;important to&nbsp;choose those that will bring maximum profit at&nbsp;minimum risk. And this is&nbsp;where first-tier shares, also known as&nbsp;&quot;blue...',
-		// 	author: {
-		// 		avatar: '/assets/images/avatar.jpg',
-		// 		name: 'Aram Kaifaijan',
-		// 	},
-		// 	category: 'Company news',
-		// },
+		{
+			id: 4,
+			piblishDate: '15.10.2024',
+			title:
+				'First tier stocks: investing in&nbsp;the cream of&nbsp;the Russian market',
+			description:
+				'There are many instruments available to&nbsp;investors in&nbsp;the world of&nbsp;the stock market. It&nbsp;is&nbsp;important to&nbsp;choose those that will bring maximum profit at&nbsp;minimum risk. And this is&nbsp;where first-tier shares, also known as&nbsp;&quot;blue...',
+			author: {
+				avatar: '/assets/images/avatar.jpg',
+				name: 'Aram Kaifaijan',
+			},
+			category: 'Company news',
+		},
 	],
 };

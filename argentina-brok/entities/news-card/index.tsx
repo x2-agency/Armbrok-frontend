@@ -3,7 +3,6 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import type { NewsType } from '@/shared/types/global.types';
-import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
@@ -15,11 +14,7 @@ export type NewsCard = {
 export const NewsCard = ({ data, className }: NewsCard) => {
 	const { publishDate, title, description, author, category } = data;
 	return (
-		<Container
-			category="article"
-			padding="min"
-			className={cx(css.root, className)}
-		>
+		<article className={cx(css.root, className)}>
 			<time className={css.time}>{publishDate}</time>
 			<h5 className={css.title}>{parser(title ?? '')}</h5>
 			<p className={css.description}>{parser(description ?? '')}</p>
@@ -33,6 +28,6 @@ export const NewsCard = ({ data, className }: NewsCard) => {
 
 				<p className={css.tag}>{category}</p>
 			</div>
-		</Container>
+		</article>
 	);
 };

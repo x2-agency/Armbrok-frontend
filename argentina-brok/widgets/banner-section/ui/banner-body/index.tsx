@@ -30,9 +30,9 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 						variant="filled"
 						category="big"
 						className={css.button}
-						href={bodyData.button.href}
+						// href={bodyData.button.href}
 					>
-						{bodyData.button.text}
+						{/* {bodyData.button.text} */}
 					</Button>
 				</div>
 			);
