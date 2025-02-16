@@ -1,0 +1,48 @@
+.root {
+	@mixin responsive width, 588, 588, 588;
+
+	background-color: var(--gray-200-color);
+	height: 100%;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.titleBlock {
+	@mixin responsive gap, 16, 16, 16;
+	@mixin responsive padding-block-end, 24, 24, 24;
+
+	display: flex;
+	align-items: center;
+}
+
+.avatar {
+	@mixin responsive width, 90, 90, 90;
+	@mixin responsive height, 90, 90, 90;
+}
+
+.aboutEmployee {
+	@mixin responsive gap, 4, 4, 4;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.fullName {
+	@mixin font-text20;
+
+	font-weight: 700;
+}
+
+.position {
+	@mixin font-text16;
+
+	color: var(--gray-700-color);
+}
+
+.story {
+	@mixin font-text18;
+
+	color: var(--gray-700-color);
+}

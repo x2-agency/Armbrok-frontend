@@ -50,7 +50,7 @@ export type ImageFormat = {
 /* ADVANTAGES SECTION */
 
 export type ItemDetail = {
-	title: string;
+	title?: string;
 	description?: string;
 };
 
@@ -336,7 +336,7 @@ export type EmployeeStoriesItem = {
 };
 
 export type EmployeeStorySection = ItemDetail & {
-	employeeStories: Array<EmployeeStoriesItem>;
+	employeeStories?: Array<EmployeeStoriesItem>;
 };
 
 /* OFFICE SLIDER */
