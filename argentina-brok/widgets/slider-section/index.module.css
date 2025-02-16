@@ -4,6 +4,9 @@
 
 .title,
 .description {
+	@mixin responsive width, 350, 1200, 1200;
+
+	margin-inline: auto;
 	text-align: center;
 }
 
