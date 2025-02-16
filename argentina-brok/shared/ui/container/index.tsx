@@ -22,7 +22,6 @@ export const Container = forwardRef<
 		{
 			children,
 			className = '',
-			id = '',
 			style,
 			fullWidth = false,
 			padding = 'default',
@@ -33,7 +32,6 @@ export const Container = forwardRef<
 		if (category === 'article') {
 			return (
 				<article
-					id={id}
 					className={cx(className, css[padding], {
 						[css.full]: fullWidth,
 					})}
@@ -46,7 +44,6 @@ export const Container = forwardRef<
 		} else if (category === 'div') {
 			return (
 				<div
-					id={id}
 					className={cx(className, css[padding], {
 						[css.full]: fullWidth,
 					})}
@@ -59,7 +56,6 @@ export const Container = forwardRef<
 		} else {
 			return (
 				<section
-					id={id}
 					className={cx(css.root, className, css[padding], {
 						[css.full]: fullWidth,
 					})}
