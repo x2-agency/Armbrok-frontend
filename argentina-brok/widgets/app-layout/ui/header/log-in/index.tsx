@@ -11,7 +11,7 @@ export const LogIn = () => {
 			<Button variant="subtle" href="/" className={css.login}>
 				{LOGIN_BUTTON}
 			</Button>
-			<Button variant="filled" href="/">
+			<Button className={css.button} variant="filled" href="/">
 				{OPEN_ACC_BUTTON}
 			</Button>
 		</div>

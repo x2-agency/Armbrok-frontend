@@ -19,6 +19,9 @@
 
 .tabs {
 	@media (max-width: 767px) {
+		align-items: center;
+		flex-direction: column;
+		display: flex;
 		overflow-x: scroll;
 		flex-wrap: nowrap;
 		white-space: nowrap;

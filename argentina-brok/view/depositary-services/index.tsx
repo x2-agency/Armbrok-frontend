@@ -13,7 +13,6 @@ import type { DepositaryServicesPageResponse } from './types/response';
 export const DepositaryServices: NextPage<{
 	initialData?: DepositaryServicesPageResponse;
 }> = ({ initialData }) => {
-
 	return (
 		<>
 			<BannerSection

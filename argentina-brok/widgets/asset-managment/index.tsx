@@ -24,7 +24,7 @@ export const AssetManagment = ({
 			</div>
 			<div className={css.imgWrap}>
 				{mediaContent && (
-					<FormatImage className={css.image} poster={mediaContent[0]} />
+					<FormatImage className={css.image} poster={mediaContent} />
 				)}
 			</div>
 		</Container>

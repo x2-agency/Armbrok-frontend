@@ -11,8 +11,8 @@
 
 .filled,
 .outline {
-	@mixin responsive padding-inline, 24, 24, 24;
 	@mixin responsive padding-block, 8, 8, 8;
+	@mixin responsive padding-inline, 24, 24, 24;
 	@mixin responsive border-radius, 12, 12, 12;
 }
 
