@@ -18,14 +18,15 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 		case 'about':
 			return (
 				<div className={cx(css.root, className, css.awards)}>
-					{bodyData.awards.map((award, index) => (
-						<BannerAward
-							key={index}
-							place={award.number}
-							title={award.title}
-							description={award.description}
-						/>
-					))}
+					{bodyData.awards &&
+						bodyData.awards.map((award, index) => (
+							<BannerAward
+								key={index}
+								place={award.number}
+								title={award.title}
+								description={award.description}
+							/>
+						))}
 				</div>
 			);
 		case 'default':
