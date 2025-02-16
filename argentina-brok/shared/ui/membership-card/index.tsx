@@ -21,7 +21,7 @@ export const MembershipCard = ({
 	return (
 		<Container category="article" padding="min" className={css.root}>
 			<img src={logo?.url} alt="icon" className={css.icon} />
-			<header className={css.header}>
+			<div className={css.header}>
 				<h3 className={cx(css.title, { [css.greyTitle]: withGreyTitle })}>
 					{parser(name ?? '')}
 				</h3>
@@ -34,7 +34,7 @@ export const MembershipCard = ({
 						<p className={css.countryName}>{parser(country.name)}</p>
 					</div>
 				)}
-			</header>
+			</div>
 		</Container>
 	);
 };

@@ -20,11 +20,13 @@ export const CountriesSection = ({
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
-			<div className={css.countries}>
+			<ul className={css.countries}>
 				{countries.map((country, index) => (
-					<CountryItem name={country.name} flag={country.flag} key={index} />
+					<li key={index}>
+						<CountryItem name={country.name} flag={country.flag} />
+					</li>
 				))}
-			</div>
+			</ul>
 			{additionalText && <p className={css.others}>{parser(additionalText)}</p>}
 		</Container>
 	);

@@ -35,29 +35,31 @@ export const ExpertSolutionSection = ({
 		: '';
 
 	return (
-		<Container className={cx(css.root, className)}>
+		<Container category="div" className={cx(css.root, className)}>
 			{title && <h2 className={css.sectionTitle}>{parser(title ?? '')}</h2>}
-			<div
+			<ul
 				className={cx(css.cards, gridClass, {
 					[css.withShell]: withShell,
 				})}
 			>
 				{items.map((item, key) => (
-					<ExpertSolutionCard
-						key={key}
-						className={cx(css.card, cardBackgroundColor, {
-							[css.withShell]: withShell,
-						})}
-						withShell={withShell}
-						backgroundColor={backgroundColor}
-						id={item.id}
-						icon={item.icon}
-						title={item.title}
-						description={item.description}
-						media={item.media}
-					/>
+					<li>
+						<ExpertSolutionCard
+							key={key}
+							className={cx(css.card, cardBackgroundColor, {
+								[css.withShell]: withShell,
+							})}
+							withShell={withShell}
+							backgroundColor={backgroundColor}
+							id={item.id}
+							icon={item.icon}
+							title={item.title}
+							description={item.description}
+							media={item.media}
+						/>
+					</li>
 				))}
-			</div>
+			</ul>
 		</Container>
 	);
 };

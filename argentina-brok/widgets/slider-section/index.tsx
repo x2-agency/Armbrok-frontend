@@ -16,12 +16,12 @@ export const SliderSection = ({
 	return (
 		<section className={css.root}>
 			{title && description && (
-				<header className={css.titleBlock}>
+				<div className={css.titleBlock}>
 					{title && <h2 className={css.title}>{parser(title)}</h2>}
 					{description && (
 						<p className={css.description}>{parser(description)}</p>
 					)}
-				</header>
+				</div>
 			)}
 			<Slider slider={slider} />
 		</section>

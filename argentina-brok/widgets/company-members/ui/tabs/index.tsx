@@ -24,7 +24,7 @@ export const Tabs = ({ tabs }: TabsProps) => {
 	};
 
 	return (
-		<section className={css.tabsContainer}>
+		<div className={css.tabsContainer}>
 			<div className={css.tabButtons}>
 				{tabs.map((tab, index) => (
 					<Button
@@ -39,6 +39,6 @@ export const Tabs = ({ tabs }: TabsProps) => {
 				))}
 			</div>
 			<div className={css.tabContent}>{tabs[activeTab].content}</div>
-		</section>
+		</div>
 	);
 };

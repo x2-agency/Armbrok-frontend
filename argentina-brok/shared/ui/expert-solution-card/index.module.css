@@ -1,3 +1,7 @@
+.card {
+	height: 100%;
+}
+
 .icon {
 	@mixin res universal-size, 12.8rem, 3.333rem, 3rem; /* 48px */
 	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
