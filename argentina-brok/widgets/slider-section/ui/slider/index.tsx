@@ -18,6 +18,10 @@ export const Slider = ({
 }: {
 	slider: SliderSectionProps['slider'];
 }) => {
+	if (!slider) {
+		return null;
+	}
+
 	return (
 		<Swiper
 			effect="coverflow"
@@ -37,15 +41,28 @@ export const Slider = ({
 			}}
 			modules={[EffectCoverflow, Navigation, Pagination]}
 		>
-			{slider.map((value, index) => (
-				<SwiperSlide key={index} className={css.slide}>
-					<img src={value.image} alt="image" className={css.image} />
-					{value.title && <h4 className={css.title}>{parser(value.title)}</h4>}
+			{slider.files &&
+				slider?.files.map((value, index) => (
+					<SwiperSlide key={index} className={css.slide}>
+						<img src={value.url} alt="image" className={css.image} />
+						{/* {value.title && <h4 className={css.title}>{parser(value.title)}</h4>}
 					{value.description && (
 						<p className={css.description}>{parser(value.description)}</p>
-					)}
-				</SwiperSlide>
-			))}
+					)} */}
+					</SwiperSlide>
+				))}
+			{Array.isArray(slider) &&
+				slider?.map((value, index) => (
+					<SwiperSlide key={index} className={css.slide}>
+						<img src={value.media?.url} alt="image" className={css.image} />
+						{value.title && (
+							<h4 className={css.title}>{parser(value.title)}</h4>
+						)}
+						{value.caption && (
+							<p className={css.description}>{parser(value.caption)}</p>
+						)}
+					</SwiperSlide>
+				))}
 		</Swiper>
 	);
 };

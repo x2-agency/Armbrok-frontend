@@ -1,4 +1,8 @@
-import type { MediaData, LinkItem } from '@/shared/types/global.types';
+import type {
+	MediaData,
+	LinkItem,
+	HeroFactoid,
+} from '@/shared/types/global.types';
 
 export interface PanelProps {
 	className?: string;
@@ -22,9 +26,9 @@ export interface PanelProps {
 }
 
 export interface AwardsData {
-	place: string;
-	title: string;
-	description: string;
+	place?: number;
+	title?: string;
+	description?: string;
 }
 
 interface BaseBannerProps {
@@ -133,7 +137,7 @@ export type DefaultBannerBodyProps = BaseBannerBodyProps & {
 export type AboutBannerBodyProps = BaseBannerBodyProps & {
 	type: 'about';
 	bodyData: {
-		awards: Array<AwardsData>;
+		awards: Array<HeroFactoid>;
 		panel?: never;
 		button?: never;
 	};

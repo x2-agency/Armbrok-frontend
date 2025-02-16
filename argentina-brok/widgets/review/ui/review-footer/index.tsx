@@ -13,7 +13,7 @@ export const ReviewFooter = ({
 		<footer className={css.root}>
 			<h4 className={css.fullName}>{parser(fullName)}</h4>
 			<p className={css.position}>{parser(position)}</p>
-			<p className={css.experience}>{parser(experience)}</p>
+			{experience && <p className={css.experience}>{parser(experience)}</p>}
 		</footer>
 	);
 };

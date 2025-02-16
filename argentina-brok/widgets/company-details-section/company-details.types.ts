@@ -1,6 +1,6 @@
 export type CompanyDetailProps = {
 	title: string;
-	description: string;
+	description?: string;
 };
 
 export type CompanyDetailsSectionProps = {

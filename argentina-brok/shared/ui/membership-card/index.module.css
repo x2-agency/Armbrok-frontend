@@ -46,3 +46,9 @@
 
 	color: var(--gray-600-color);
 }
+
+.description {
+	@mixin font-text14;
+
+	color: var(--gray-600-color);
+}
