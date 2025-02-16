@@ -17,7 +17,6 @@ import type { CareersAtArmbrockPageResponse } from './types/response';
 export const CareersAtArmbrock: NextPage<{
 	initialData?: CareersAtArmbrockPageResponse;
 }> = ({ initialData }) => {
-	console.log(initialData);
 
 	return (
 		<>
