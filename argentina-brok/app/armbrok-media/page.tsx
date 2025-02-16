@@ -1,7 +1,13 @@
+import { Suspense } from 'react';
+
 import { ArmbrokMedia } from '@/view/armbrok-media';
 
 const ArmbrokMediaPage = () => {
-	return <ArmbrokMedia />;
+	return (
+		<Suspense>
+			<ArmbrokMedia />
+		</Suspense>
+	);
 };
 
 export default ArmbrokMediaPage;
