@@ -25,7 +25,7 @@ export const BannerSection = (props: BannerProps) => {
 			data-align={alignContent}
 			ref={ref}
 		>
-			<Container category="section" padding="default" className={css.content}>
+			<Container category="div" padding="default" className={css.content}>
 				<BannerHead {...headContent} className={css.head} />
 				<BannerBody {...bodyContent} />
 			</Container>
