@@ -6,11 +6,17 @@ import { useCallback, useMemo } from 'react';
 
 import { HOME_NEWS } from '@/entities/news-card/model/news.constants';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
+import { FeedbackForm } from '@/widgets/feedback-form';
 import { NewsPage } from '@/widgets/news-page';
 import { Tabs } from '@/widgets/tabs';
+import { Vacancy } from '@/widgets/vacancies-section/ui/vacancy';
 
 import css from './index.module.css';
-import { ARMBROK_MEDIA_TITLE } from './model/armbrok-media.constants';
+import {
+	ARMBROK_MEDIA_EMAIL,
+	ARMBROK_MEDIA_TITLE,
+	ARMBROK_MEDIA_VACANCIES,
+} from './model/armbrok-media.constants';
 
 export type Cateroty = {
 	title: string;
@@ -84,6 +90,14 @@ export const ArmbrokMedia: NextPage = () => {
 				initialTag="all"
 			/>
 			<NewsPage newsCard={filteredNews} isHasMore={currentTag === 'all'} />
+			<Vacancy
+				className={css.vacancy}
+				icon={ARMBROK_MEDIA_VACANCIES.icon}
+				name={ARMBROK_MEDIA_VACANCIES.title}
+				description={ARMBROK_MEDIA_VACANCIES.description}
+				link={ARMBROK_MEDIA_VACANCIES.description}
+			/>
+			<FeedbackForm title={ARMBROK_MEDIA_EMAIL.title} />
 		</section>
 	);
 };

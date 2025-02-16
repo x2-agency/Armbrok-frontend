@@ -12,3 +12,7 @@
 		@mixin responsive padding-inline, 20, unset, unset;
 	}
 }
+
+.vacancy {
+	@mixin responsive margin-block-end, 50, 72, 72;
+}

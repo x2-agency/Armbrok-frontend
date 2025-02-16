@@ -22,7 +22,11 @@ export const NewsPage = ({
 					<NewsCard className={css.card} key={news.id} data={news} />
 				))}
 			</div>
-			{isHasMore && <Button variant="next">Show more</Button>}
+			{isHasMore && (
+				<Button iconRotate={270} variant="next">
+					Show more
+				</Button>
+			)}
 		</div>
 	);
 };
