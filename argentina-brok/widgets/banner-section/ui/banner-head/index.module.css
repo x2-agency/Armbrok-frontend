@@ -9,7 +9,7 @@
 
 .description,
 .title {
-	color: var(--white-color);
+	color: var(--gray-100-color);
 
 	@media (max-width: 767px) {
 		br {
@@ -72,8 +72,8 @@
 	@mixin res border-radius, 1.067rem, 0.278rem, 0.25rem; /* 4px */
 	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 
-	border-color: var(--white-color);
+	border-color: var(--gray-100-color);
 	border-style: solid;
-	color: var(--white-color);
+	color: var(--gray-100-color);
 	font-weight: 500;
 }

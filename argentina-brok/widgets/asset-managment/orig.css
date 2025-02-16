@@ -1,0 +1,82 @@
+.root {
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	background: radial-gradient(
+			circle at 76% center,
+			#380b00 44%,
+			#230302 57%,
+			transparent 41%
+		),
+		linear-gradient(to right, #230302 0%, #230302 20%, #230302 50%);
+
+	background-color: var(--red-700-color);
+
+	@mixin res margin-block, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		height: 133.333rem; /* 500px */
+
+		background: radial-gradient(
+				circle at 76% center,
+				#380b00 44%,
+				#230302 57%,
+				transparent 41%
+			),
+			linear-gradient(to right, #230302 0%, #230302 20%, #230302 50%);
+	}
+}
+
+.contnet {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	@media (max-width: 767px) {
+		order: 2;
+	}
+}
+
+.title,
+.description {
+	color: var(--gray-100-color);
+}
+
+.title {
+	@mixin font-h2;
+	font-weight: 700;
+	@mixin res padding-block-end, 2.667rem, 1.111rem, 1rem; /* 10px 16px 16px */
+}
+
+.description {
+	@mixin font-text20;
+	@mixin res padding-block-end, 10.667rem, 4.306rem, 3.875rem; /* 40px 62px 62px */
+}
+
+.button {
+}
+
+.imgWrap {
+	position: absolute;
+	@mixin res width, unset, 44.139rem, 18.125rem; /* 290px */
+	@mixin res right, unset, 0, 0; /* 327px */
+	@mixin res top, unset, 0, 0; /* 338px */
+	z-index: 2;
+
+	@media (max-width: 767px) {
+		right: -16rem;
+		width: 132rem;
+		top: 12rem;
+	}
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+
+	@media (max-width: 767px) {
+		object-fit: contain;
+	}
+}

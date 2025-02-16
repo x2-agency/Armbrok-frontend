@@ -1,23 +1,16 @@
-import type { CardType } from '@/widgets/corporate/model/corporate';
+import type { Instruments } from '@/shared/types/global.types';
 
 import { Card } from './card';
 import css from './index.module.css';
 
-type CardsProps = {
-	cards: Array<CardType>;
+export type CardsProps = {
+	instruments: Array<Instruments>;
 };
 
-export const Cards = ({ cards }: CardsProps) => {
+export const Cards = ({ instruments }: CardsProps) => {
 	return (
 		<div className={css.root}>
-			{cards.map((card, index) => (
-				<Card
-					href={card.href}
-					key={index}
-					icon={card.icon}
-					description={card.description}
-				/>
-			))}
+			{instruments?.map((card, key) => <Card key={key} {...card} />)}
 		</div>
 	);
 };

@@ -1,3 +1,13 @@
+html[data-header-top-color='white'] .svg path {
+	fill: var(--gray-100-color);
+	stroke: var(--gray-100-color);
+}
+
+html[data-header-top-color='dark'] .svg path {
+	fill: var(--black-color);
+	stroke: var(--black-color);
+}
+
 .svg {
 	display: flex;
 	justify-content: center;
@@ -6,9 +16,12 @@
 	@mixin res width, 5.067rem, 1.319rem, 1.188rem;
 	@mixin res height, 5.067rem, 1.319rem, 1.188rem;
 
+	&.dark path {
+		fill: var(--black-color) !important;
+		stroke: var(--black-color) !important;
+	}
+
 	path {
-		stroke: var(--white-color);
-		fill: var(--white-color);
 		transition:
 			stroke 0.3s ease,
 			fill 0.3s ease;
@@ -16,8 +29,8 @@
 
 	&:hover {
 		path {
-			stroke: var(--red-500-color);
-			fill: var(--red-500-color);
+			stroke: var(--red-500-color) !important;
+			fill: var(--red-500-color) !important;
 		}
 	}
 }

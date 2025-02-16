@@ -1,7 +1,7 @@
 import cx from 'clsx';
 
 import { NewsCard } from '@/entities/news-card';
-import type { NewsType } from '@/entities/news-card/types';
+import type { NewsType } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 

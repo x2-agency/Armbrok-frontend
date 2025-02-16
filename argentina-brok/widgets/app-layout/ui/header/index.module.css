@@ -1,13 +1,12 @@
 .root {
 	position: fixed;
 	top: 0;
-	color: var(--white-color);
+	color: var(--gray-100-color);
 	z-index: 100000;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	pointer-events: all;
-	align-items: flex-start;
 
 	@mixin res width, unset, 96.667vw, 87.438rem;
 	@mixin res margin-inline, unset, auto, auto;

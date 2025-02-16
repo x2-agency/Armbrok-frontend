@@ -15,6 +15,7 @@ export const Button = ({
 	category = 'default',
 	onClick,
 	iconRotate,
+	disabled,
 }: ButtonProps) => {
 	if (href) {
 		return (
@@ -36,6 +37,7 @@ export const Button = ({
 
 	return (
 		<button
+			disabled={disabled}
 			className={cx(css.root, className, css[variant], css[category])}
 			type={type}
 			onClick={onClick}

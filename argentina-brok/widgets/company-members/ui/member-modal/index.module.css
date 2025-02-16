@@ -1,0 +1,76 @@
+.modal {
+	@mixin transition;
+	@mixin responsive width, 360, 648, 648;
+	@mixin responsive padding, 16, 32, 32;
+	@mixin responsive border-radius, 24, 24, 24;
+
+	transition-property: opacity;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	outline: none;
+	max-width: unset;
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	opacity: 0;
+
+	@media (max-width: 767px) {
+		width: 100vw;
+	}
+
+	&.open,
+    &.open::backdrop {
+		opacity: 1;
+	}
+}
+
+.modal::backdrop {
+	@mixin transition;
+
+	transition-property: all;
+	opacity: 0;
+}
+
+.button {
+	@mixin transition;
+	@mixin responsive width, 24, 44, 44;
+	@mixin responsive height, 24, 44, 44;
+	@mixin responsive margin, 16, 32, 32;
+
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	transition-property: scale;
+
+	.cross path {
+		@mixin transition;
+
+		transition-property: stroke;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			scale: 1.1;
+		}
+
+		&:hover .cross path {
+			stroke: var(--gray-500-color);
+		}
+	}
+}
+
+.content {
+	@mixin responsive margin-block-end, 16, 16, 16;
+	@mixin responsive padding-block-end, 16, 16, 16;
+	@mixin responsive border-width, 2, 2, 2;
+
+	border-bottom: solid var(--gray-300-color);
+}
+
+.content:last-child {
+	padding-block-end: unset;
+	border: unset;
+	margin-block-end: unset;
+}

@@ -1,6 +1,6 @@
 .icon {
 	@mixin res universal-size, 12.8rem, 3.333rem, 3rem; /* 48px */
-	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */ 
+	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 
 	width: var(--universal-size);
 	height: var(--universal-size);
@@ -21,7 +21,7 @@
 }
 
 .card.withShell {
-	@mixin res padding, 8.533rem, 2.222rem, 2rem;  /* 32px */
+	@mixin res padding, 8.533rem, 2.222rem, 2rem; /* 32px */
 	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 
 	background-color: var(--gray-200-color);
@@ -31,7 +31,7 @@
 	}
 
 	&.whiteBackground {
-		background-color: var(--white-color);
+		background-color: var(--gray-100-color);
 	}
 
 	&.grayBackground {

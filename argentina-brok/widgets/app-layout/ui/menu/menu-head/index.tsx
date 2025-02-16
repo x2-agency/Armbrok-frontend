@@ -1,3 +1,4 @@
+import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 import { MENU_HEADER } from '@/widgets/app-layout/models/menu.constants';
 import { LanguageSelection } from '@/widgets/app-layout/ui/header/language-selection';
 import { Logo } from '@/widgets/app-layout/ui/logo';
@@ -7,14 +8,16 @@ import { Search } from '@/widgets/app-layout/ui/search';
 import css from './index.module.css';
 
 export const MenuHead = () => {
+	const { ref } = headerScrollObserver.useObserve('dark');
+
 	return (
-		<header className={css.root}>
+		<header className={css.root} ref={ref}>
 			<div className={css.leftPart}>
 				<CloseMenuButton />
-				<Logo href="/" logo={MENU_HEADER} />
+				<Logo href="/" logo={MENU_HEADER} isDark />
 			</div>
 			<div className={css.rightPart}>
-				<Search href="/" className={css.search} />
+				<Search href="/" className={css.search} isDark />
 				<LanguageSelection theme="dark" className={css.lang} />
 			</div>
 		</header>

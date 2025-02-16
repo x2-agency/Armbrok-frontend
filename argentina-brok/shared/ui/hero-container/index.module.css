@@ -1,6 +1,5 @@
 .root {
 	@mixin res padding-block, 21.333rem, 5.556rem, 5rem; /* 80px */
-	@mixin res margin-block-end, 19.2rem, 5rem, 4.5rem; /* 72px */
 
 	background-color: var(--gray-200-color);
 }

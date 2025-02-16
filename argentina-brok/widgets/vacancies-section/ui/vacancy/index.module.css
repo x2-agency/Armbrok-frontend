@@ -4,6 +4,43 @@
 	align-items: center;
 
 	background-color: var(--gray-200-color);
+	width: 100%;
+
+	h4:has(+ p) {
+		@mixin responsive padding-block-end, 8, 8, 8;
+	}
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+		gap: 5rem;
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	@mixin responsive gap, 24, 24, 24;
+}
+
+.iconWrap {
+	display: flex;
+
+	@mixin responsive width, 42, 48, 48;
+	@mixin responsive height, 42, 48, 48;
+}
+
+.icon {
+	width: 100%;
+	height: 100%;
+}
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+
+	@mixin responsive max-width, 300, 490, 490;
 }
 
 .name {
@@ -11,6 +48,11 @@
 
 	color: var(--gray-800-color);
 	font-weight: 500;
+}
+
+.description {
+	@mixin font-text14;
+	color: var(--gray-700-color);
 }
 
 .button {

@@ -10,9 +10,9 @@ export const HOME_LINK = '/';
 
 export const NAVIGATION_LINKS = [
 	{ text: 'Services', href: '/services' },
-	{ text: 'About us', href: '/about-us' },
 	{ text: 'Investor Relations', href: '/investor-relations' },
-	{ text: 'Media', href: '/media' },
+	{ text: 'Media', href: '/armbrok-media' },
+	{ text: 'About us', href: '/about-us' },
 	{ text: 'Contact us', href: '/contact-us' },
 ];
 

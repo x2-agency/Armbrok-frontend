@@ -3,13 +3,14 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@mixin res gap, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
-	@mixin res padding-block, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
+	@mixin responsive gap, 30, 40, 40;
+	@mixin responsive padding-block, 50, 72, 72;
 }
 
 .title {
 	@mixin font-h2;
 	font-weight: 600;
+	text-align: center;
 }
 
 .button {

@@ -5,7 +5,9 @@ export const HOME_ASSETS_DESCRIPTION =
 	'Managing Your Capital in&nbsp;Your Best Interests';
 export const HOME_ASSETS_BUTTON = 'Request a consultation';
 
-export const HOME_ASSETS_IMAGE = '';
+export const HOME_ASSETS_HREF = '#';
+
+export const HOME_ASSETS_IMAGE = '/assets/images/banner/arrowhand_img.png';
 
 export const HOME_INTERACTIVE_VIDEO: InteractiveVideoType = {
 	title: 'Armbrok is&nbsp;an&nbsp;Armenia-based leading investment company',
@@ -37,4 +39,10 @@ export const HOME_APP_SECTION = {
 			alt: 'iphone',
 		},
 	],
+};
+
+export const BANNER_DATA = {
+	title: 'Efficient investments in&nbsp;financial markets',
+	description:
+		'Access to&nbsp;global exchanges and financial instruments &mdash; with high yields and strong protection',
 };

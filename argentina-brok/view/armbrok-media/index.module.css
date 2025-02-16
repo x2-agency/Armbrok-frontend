@@ -1,0 +1,33 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@mixin responsive gap, 24, 24, 24;
+	@mixin responsive width, unset, 760, 760;
+	margin-inline: auto;
+
+	@media (max-width: 767px) {
+		width: 100%;
+		@mixin responsive padding-inline, 20, unset, unset;
+	}
+}
+
+.vacancy {
+	@mixin responsive margin-block-end, 50, 72, 72;
+}
+
+.tabs {
+	@media (max-width: 767px) {
+		align-items: center;
+		flex-direction: column;
+		display: flex;
+		overflow-x: scroll;
+		flex-wrap: nowrap;
+		white-space: nowrap;
+		scrollbar-width: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}

@@ -1,9 +1,13 @@
 .root {
 	display: flex;
-	flex-direction: row;
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	overflow-x: auto;
+	white-space: wrap;
+	width: 100%;
+	@mixin responsive gap, 24, 24, 24;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
 
-	@media (max-width: 767px) {
-		flex-direction: column;
-	}
+.card {
+	flex: 0 0 auto;
 }

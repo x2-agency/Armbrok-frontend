@@ -1,5 +1,5 @@
 .root {
-	@mixin res padding-block-end, 19.2rem, 5rem, 4.5rem;
+	@mixin res padding-block, 9.6rem, 5rem, 4.5rem; /* 36px 72px */
 }
 
 .documents {

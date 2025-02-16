@@ -34,7 +34,9 @@ export const Container = forwardRef<
 			return (
 				<article
 					id={id}
-					className={cx(className, css[padding])}
+					className={cx(className, css[padding], {
+						[css.full]: fullWidth,
+					})}
 					ref={ref as Ref<HTMLElement>}
 					style={style}
 				>
@@ -45,7 +47,9 @@ export const Container = forwardRef<
 			return (
 				<div
 					id={id}
-					className={cx(className, css[padding])}
+					className={cx(className, css[padding], {
+						[css.full]: fullWidth,
+					})}
 					ref={ref as Ref<HTMLDivElement>}
 					style={style}
 				>

@@ -14,6 +14,10 @@ export const StatutoryDocuments = ({
 	columns = 3,
 	fileDirection = 'row',
 }: StatutoryDocumentsProps) => {
+	if (!documents || documents.length === 0) {
+		return null;
+	}
+
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
@@ -24,7 +28,13 @@ export const StatutoryDocuments = ({
 				}}
 			>
 				{documents.map((document, key) => (
-					<Document key={key} {...document} direction={fileDirection} />
+					<Document
+						key={key}
+						name={document.name}
+						file={document.file}
+						alternativeText=""
+						direction={fileDirection}
+					/>
 				))}
 			</div>
 		</Container>

@@ -1,0 +1,10 @@
+.benefits {
+	@mixin responsive padding-block, 40, 80, 80;
+}
+
+.hero {
+	@mixin responsive gap, 40, 80, 80;
+
+	display: flex;
+	flex-direction: column;
+}

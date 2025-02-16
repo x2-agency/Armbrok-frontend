@@ -11,10 +11,12 @@ type LinkButtonProps = BaseButtonProps & {
 	href: string;
 	onClick?: never;
 	type?: never;
+	disabled?: never;
 };
 
 type ClickButtonProps = BaseButtonProps & {
-	onClick: () => void;
+	onClick?: () => void;
+	disabled?: boolean;
 	type?: 'button' | 'submit' | 'reset';
 	href?: never;
 };

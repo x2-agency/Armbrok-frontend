@@ -17,6 +17,14 @@
 }
 
 .title {
+	@mixin res max-width, 100%, 55.556rem, 50rem; /* 800px */
+}
+
+.description {
+	@mixin res max-width, 100%, 48.611rem, 43.75rem; /* 700px */
+}
+
+.title {
 	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 	@mixin font-h2;
 

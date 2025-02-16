@@ -1,18 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-
+import parser from 'html-react-parser';
 import Link from 'next/link';
 
+import type { Instruments } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
-import type { CardType } from '@/widgets/corporate/model/corporate';
 
 import css from './index.module.css';
 
-export const Card = ({ icon, description, href }: CardType) => {
+export const Card = ({ title, media }: Instruments) => {
 	return (
 		<Container category="article" padding="min" className={css.root}>
-			<img className={css.icon} src={icon ?? ''} alt="icon docs" />
-			<p className={css.description}>{description}</p>
-			<Link href={href} className={css.link} />
+			{media?.url && (
+				<img
+					className={css.icon}
+					src={media?.url}
+					alt="{media?.alternativeText}"
+				/>
+			)}
+			{title && <p className={css.description}>{parser(title)}</p>}
+			<Link href="#" className={css.link} />
 		</Container>
 	);
 };

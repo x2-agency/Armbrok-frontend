@@ -1,11 +1,10 @@
-export type SliderItemProps = {
-	image: string;
-	title?: string;
-	description?: string;
-};
+import type {
+	SliderItem,
+	SliderItemWithText,
+} from '@/shared/types/global.types';
 
 export type SliderSectionProps = {
 	title?: string;
 	description?: string;
-	slider: Array<SliderItemProps>;
+	slider?: SliderItem | Array<SliderItemWithText>;
 };

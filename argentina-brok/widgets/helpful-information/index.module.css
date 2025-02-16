@@ -1,0 +1,19 @@
+.root {
+	@mixin res padding-block-start, 9.6rem, 5rem, 4.5rem; /* 36px 72px */
+	@mixin res padding-block-end, 16rem, 8.333rem, 7.5rem; /* 60px 120px */
+}
+
+.title {
+	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin font-h2;
+
+	font-weight: 600;
+	text-align: center;
+}
+
+.accordions {
+	@mixin res gap, 4.267rem, 1.111rem, 1rem; /* 16px */
+
+	display: flex;
+	flex-direction: column;
+}

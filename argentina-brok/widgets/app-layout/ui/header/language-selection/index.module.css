@@ -17,23 +17,23 @@
 	transition-property: color;
 
 	&.white {
-		color: var(--white-color);
+		color: var(--gray-100-color);
 	}
 
 	&.dark {
-		color: var(--black-color);
+		color: var(--black-color) !important;
 
 		.svg path {
-			fill: var(--black-color);
+			fill: var(--black-color) !important;
 		}
 	}
 
 	@media (hover: hover) {
 		&:hover {
-			color: var(--red-600-color);
+			color: var(--red-600-color) !important;
 
 			.svg path {
-				fill: var(--red-600-color);
+				fill: var(--red-600-color) !important;
 			}
 		}
 	}
@@ -62,13 +62,27 @@
 }
 
 .languagesList {
+	@mixin transition;
 	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
 	@mixin res width, 17.067rem, 4.444rem, 4rem; /* 64px */
 	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
 
-	background-color: var(--white-color);
+	background-color: var(--gray-100-color);
 	position: absolute;
 	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	transition-property: opacity visibility;
+}
+
+.languagesList.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.languagesList.close {
+	opacity: 0;
+	visibility: hidden;
 }
 
 .languageButton {
@@ -86,5 +100,25 @@
 		&:hover {
 			background-color: var(--gray-200-color);
 		}
+	}
+}
+
+html[data-header-top-color='white'] {
+	.selected {
+		color: var(--gray-100-color);
+	}
+
+	.svg path {
+		fill: color(--gray-100-color);
+	}
+}
+
+html[data-header-top-color='dark'] {
+	.selected {
+		color: var(--black-color);
+	}
+
+	.svg path {
+		fill: var(--black-color);
 	}
 }

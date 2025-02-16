@@ -16,3 +16,11 @@
 .link {
 	@mixin font-text16;
 }
+
+html[data-header-top-color='white'] .link {
+	color: var(--gray-100-color);
+}
+
+html[data-header-top-color='dark'] .link {
+	color: var(--black-color);
+}

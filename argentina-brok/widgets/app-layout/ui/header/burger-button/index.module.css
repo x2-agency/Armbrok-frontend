@@ -1,2 +1,13 @@
-.burger {
+.burger path {
+	@mixin transition;
+
+	transition-property: fill;
+}
+
+html[data-header-top-color='white'] .burger path {
+	fill: var(--gray-100-color);
+}
+
+html[data-header-top-color='dark'] .burger path {
+	fill: var(--black-color);
 }

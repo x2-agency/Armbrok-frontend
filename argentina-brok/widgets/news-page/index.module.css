@@ -1,0 +1,11 @@
+.root,
+.news {
+	display: flex;
+	flex-direction: column;
+	@mixin responsive padding-block-end, 50, 72, 72;
+}
+
+.news {
+	@mixin responsive gap, 24, 24, 24;
+	@mixin responsive padding-block-end, 30, 40, 40;
+}

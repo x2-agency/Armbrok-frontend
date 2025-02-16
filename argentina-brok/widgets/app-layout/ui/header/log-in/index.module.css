@@ -2,7 +2,20 @@
 	display: flex;
 	flex-direction: row;
 	gap: 1.667rem; /* 24px */
+
 	@media (max-width: 767px) {
 		display: none;
+	}
+}
+
+html[data-header-top-color='white'] {
+	.login {
+		color: var(--gray-100-color);
+	}
+}
+
+html[data-header-top-color='dark'] {
+	.login {
+		color: var(--black-color);
 	}
 }

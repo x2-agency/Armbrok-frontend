@@ -1,9 +1,8 @@
 .root {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	column-gap: 7.778rem; /* 112px */
-	padding-block-end: 2.778rem; /* 40px */
-
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	@mixin responsive padding-block-end, 30, 40, 40;
 	@media (max-width: 767px) {
 		display: flex;
 		flex-direction: column;
@@ -28,5 +27,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
-	gap: 1.111rem; /* 16px */
+	@mixin responsive max-width, 175, 175, 175;
+
+	@mixin responsive gap, 10, 16, 16;
 }

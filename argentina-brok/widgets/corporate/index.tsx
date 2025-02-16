@@ -1,27 +1,29 @@
 import parser from 'html-react-parser';
 
+import type { FinancialSolutionsSection } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import type { CardType } from './model/corporate';
 import { Cards } from './ui/cards';
 
 export const Corporate = ({
 	title,
+	instruments,
 	description,
-	cards,
-}: {
-	title: string;
-	description: string;
-	cards: Array<CardType>;
-}) => {
+}: FinancialSolutionsSection) => {
+	if (!instruments) {
+		return null;
+	}
+
 	return (
-		<Container category="section" padding="default" className={css.root}>
+		<Container category="section" className={css.root}>
 			<div className={css.wrap}>
 				<h2 className={css.title}>{title}</h2>
-				<p className={css.description}>{parser(description)}</p>
+				{description && (
+					<p className={css.description}>{parser(description)}</p>
+				)}
 			</div>
-			<Cards cards={cards} />
+			<Cards instruments={instruments} />
 		</Container>
 	);
 };

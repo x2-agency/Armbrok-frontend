@@ -2,24 +2,44 @@
 
 import parser from 'html-react-parser';
 
+import useMediaQuery from '@/shared/hooks/use-media-query';
+import type {
+	CompanyStructureSection,
+	Employee,
+} from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
-import { COMPANY_MEMBERS_TITLE } from '@/widgets/company-members/models/company-members.constants';
 import { Tabs } from '@/widgets/company-members/ui/tabs';
 
-import type { CompanyMembersProps } from './company-members.types';
 import css from './index.module.css';
 import { CompanyMembersSection } from './ui/members-section';
+import { TreeDesktop } from './ui/tree-desktop';
+import { TreeMobile } from './ui/tree-mobile';
 
-export const CompanyMembers = ({ members }: CompanyMembersProps) => {
-	const tabs = [
-		{ label: 'Team', content: <CompanyMembersSection members={members} /> },
-		{ label: 'Structure', content: '' },
-	];
+export const CompanyMembers = ({ tabs, title }: CompanyStructureSection) => {
+	const isMobile = useMediaQuery('(max-width: 767px)');
+
+	if (!tabs || tabs.length === 0) {
+		return null;
+	}
+
+	const tabsElem = tabs.map(tab => {
+		return tab.tabName === 'Team'
+			? {
+					label: tab.tabName,
+					content: (
+						<CompanyMembersSection {...(tab.content as Array<Employee>)} />
+					),
+				}
+			: {
+					label: tab.tabName,
+					content: isMobile ? <TreeMobile /> : <TreeDesktop />,
+				};
+	});
 
 	return (
 		<Container className={css.root}>
-			<h2 className={css.title}>{parser(COMPANY_MEMBERS_TITLE)}</h2>
-			<Tabs tabs={tabs} />
+			{title && <h2 className={css.title}>{parser(title)}</h2>}
+			<Tabs tabs={tabsElem} />
 		</Container>
 	);
 };

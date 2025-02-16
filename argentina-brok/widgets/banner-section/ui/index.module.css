@@ -20,16 +20,34 @@
 
 .root.default {
 	height: 100vh;
+
+	.head {
+		@mixin responsive width, 335, 863, 863;
+
+		@media (max-width: 767px) {
+			width: 100%;
+		}
+	}
 }
 
 .root.about {
 	@mixin res padding-block-start, 30.333rem, 12.5rem, 11.25rem; /* 180px */
 	@mixin res padding-block-end, 8rem, 7.361rem, 6.625rem; /* 106px */
 
+	min-height: 100vh;
+
 	.content {
 		display: flex;
 		flex-direction: column;
 		@mixin res gap, 37.333rem, 9.722rem, 8.75rem; /* 140px */
+	}
+
+	.head {
+		@mixin responsive width, 680, 680, 680;
+
+		@media (max-width: 767px) {
+			width: 100%;
+		}
 	}
 }
 

@@ -1,5 +1,8 @@
+'use client';
+
 import cx from 'clsx';
 
+import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 import { Container } from '@/shared/ui/container';
 import { FormatImage } from '@/shared/ui/format-image';
 import type { BannerProps } from '@/widgets/banner-section/banner.types';
@@ -14,11 +17,16 @@ export const BannerSection = (props: BannerProps) => {
 	const { type, banner, alignContent } = props;
 	const headContent = defineHeadContent(props);
 	const bodyContent = defineBodyContent(props);
+	const { ref } = headerScrollObserver.useObserve('white');
 
 	return (
-		<section className={cx(css.root, css[type])} data-align={alignContent}>
+		<section
+			className={cx(css.root, css[type])}
+			data-align={alignContent}
+			ref={ref}
+		>
 			<Container category="section" padding="default" className={css.content}>
-				<BannerHead {...headContent} />
+				<BannerHead {...headContent} className={css.head} />
 				<BannerBody {...bodyContent} />
 			</Container>
 			{props.banner.poster && (

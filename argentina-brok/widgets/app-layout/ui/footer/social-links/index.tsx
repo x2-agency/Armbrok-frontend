@@ -4,13 +4,13 @@ import {
 } from '@/widgets/app-layout/models/social.constants';
 
 import css from './index.module.css';
-import { Link } from './link';
+import { Social } from './social';
 
-export const Social = () => {
+export const SocialLinks = () => {
 	return (
 		<div className={css.root}>
-			<Link className={css.store} items={STORE_LINKS} />
-			<Link className={css.media} items={SOCIAL_MEDIA_LINKS} />
+			<Social className={css.store} items={STORE_LINKS} />
+			<Social className={css.media} items={SOCIAL_MEDIA_LINKS} />
 		</div>
 	);
 };

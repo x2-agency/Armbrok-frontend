@@ -1,0 +1,18 @@
+.root {
+	@mixin responsive gap, 16, 16, 16;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.image {
+	@mixin responsive width, 64, 64, 64;
+	@mixin responsive height, 64, 64, 64;
+}
+
+.title {
+    @mixin font-text18;
+
+    font-weight: 700;
+}
