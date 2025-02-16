@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const AboutUsPage = async () => {
 	const initialAboutUsPageData = await getAboutUsPage();
 
-	return <AboutUs initialData={initialAboutUsPageData} />;
+	return <AboutUs initialData={initialAboutUsPageData || undefined} />;
 };
 
 export default AboutUsPage;

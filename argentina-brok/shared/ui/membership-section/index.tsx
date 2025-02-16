@@ -28,12 +28,12 @@ export const MembershipSection = ({
 
 	return (
 		<Container className={cx(css.root, className)}>
-			<header className={css.header}>
+			<div className={css.header}>
 				{title && <h2 className={css.title}>{parser(title)}</h2>}
 				{description && (
 					<p className={css.description}>{parser(description)}</p>
 				)}
-			</header>
+			</div>
 			<div className={css.items}>
 				{items.map((item, key) => (
 					<MembershipCard key={key} {...item} withGreyTitle={withGreyTitles} />
