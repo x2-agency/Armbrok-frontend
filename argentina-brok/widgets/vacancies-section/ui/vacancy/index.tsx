@@ -28,7 +28,7 @@ export const Vacancy = ({
 					</div>
 				)}
 				<div className={css.wrap}>
-					<h4 className={css.name}>{parser(name)}</h4>
+					{name && <h4 className={css.name}>{parser(name)}</h4>}
 					{description && (
 						<p className={css.description}>{parser(description)}</p>
 					)}

@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 
-import { VACANCIES_DATA } from '@/shared/model/vacancies.constants';
 import type { SliderItem } from '@/shared/types/global.types';
 import { GuaranteesSection } from '@/shared/ui/guarantees-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -25,6 +24,7 @@ export const CareersAtArmbrock: NextPage<
 	employeeStorySection,
 	eventsSlider,
 	vacanciesSection,
+	vacancies,
 }) => {
 	return (
 		<>
@@ -68,7 +68,7 @@ export const CareersAtArmbrock: NextPage<
 			<VacanciesSection
 				title={vacanciesSection?.title ?? ''}
 				description={vacanciesSection?.description ?? ''}
-				vacancies={VACANCIES_DATA.vacancies}
+				vacancies={vacancies?.data}
 			/>
 			<FeedbackForm {...FEEDBACK_FORM} />
 		</>

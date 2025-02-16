@@ -389,3 +389,15 @@ export type ShareholdersSection = {
 	stockInfo?: Array<StockInfoType>;
 	shareholders?: ShareholdersItemType;
 };
+
+/* Vacancies */
+
+export type Vacancy = {
+	name?: string;
+	link?: string;
+	opened?: boolean;
+};
+
+export type Vacancies = {
+	data: Array<Vacancy>;
+};
