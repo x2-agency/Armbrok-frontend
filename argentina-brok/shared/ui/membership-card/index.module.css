@@ -1,5 +1,5 @@
 .root {
-	@mixin res gap, 12.8rem, 3.333rem, 3rem; /* 48px */
+	@mixin responsive gap, 20, 48, 48; /* 48px */
 
 	background-color: var(--gray-200-color);
 	display: flex;
@@ -27,6 +27,10 @@
 
 	&.greyTitle {
 		opacity: 0.3;
+	}
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
 	}
 }
 

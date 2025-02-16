@@ -19,4 +19,8 @@
 
 .management {
 	grid-template-columns: repeat(3, 1fr) !important;
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
 }

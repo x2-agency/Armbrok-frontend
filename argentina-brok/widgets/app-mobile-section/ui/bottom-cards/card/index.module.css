@@ -21,7 +21,7 @@
 .imageWrap {
 	overflow: hidden;
 	@mixin res border-radius, 5.333rem, 1.667rem, 1.5rem; /* 20px  24px */
-	@mixin res width, 85.333rem, 22.292rem, 20.063rem; /* 320px 321px */
+	@mixin res width, 78.333rem, 22.292rem, 20.063rem; /* 320px 321px */
 	@mixin res height, 96rem, 25rem, 22.5rem; /* 360px */
 }
 

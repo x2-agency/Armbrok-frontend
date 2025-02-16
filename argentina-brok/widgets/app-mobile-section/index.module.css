@@ -12,6 +12,7 @@
 
 .title {
 	@mixin font-h2;
+	font-weight: 600;
 	@mixin res padding-block-end, 2.667rem, 1.111rem, 1rem; /* 10px 16px */
 }
 

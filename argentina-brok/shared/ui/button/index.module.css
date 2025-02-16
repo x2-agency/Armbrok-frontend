@@ -98,7 +98,7 @@
 }
 
 .root.default {
-	padding-block: unset; /* 8px */
+	/* padding-block: unset; 8px */
 }
 
 .root.big {
