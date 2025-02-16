@@ -1,0 +1,3 @@
+.dividend {
+	@mixin responsive padding-block, 36, 72, 72;
+}

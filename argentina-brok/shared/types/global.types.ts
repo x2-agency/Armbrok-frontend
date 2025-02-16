@@ -361,3 +361,31 @@ export type SubscribeEmailForm = ItemDetail & {
 	emailPlaceholder?: string;
 	subscribeButtonText?: string;
 };
+
+/* RESIDENCE COUNTRIES */
+
+export type ResidenceCountriesSection = {
+	title?: string;
+	additionalText?: string;
+	countries?: Array<FlagType>;
+};
+
+/* SHAREHOLDERS SECTION */
+
+export type StockInfoType = {
+	label: string;
+	value: number;
+};
+
+export type ShareholdersItemType = {
+	name: string;
+	share: number;
+	photo: MediaData;
+};
+
+export type ShareholdersSection = {
+	stockInfoTitle?: string;
+	shareholdersTitle?: string;
+	stockInfo?: Array<StockInfoType>;
+	shareholders?: ShareholdersItemType;
+};
