@@ -4,28 +4,35 @@
 import parser from 'html-react-parser';
 import { useState } from 'react';
 
-import type { MemberProps } from '@/widgets/company-members/company-members.types';
+import type { Employee } from '@/shared/types/global.types';
 import { MemberModal } from '@/widgets/company-members/ui/member-modal';
 
 import css from './index.module.css';
 
-export const Member = ({ name, image, position, content }: MemberProps) => {
+export const Member = ({
+	fullName,
+	position,
+	qualification,
+	career,
+	avatar,
+}: Employee) => {
 	const [isModalOpen, toggleModalOpen] = useState<boolean>(false);
 
 	return (
 		<>
 			<button className={css.root} onClick={() => toggleModalOpen(true)}>
-				<img src={image} alt={name} className={css.image} />
+				<img src={avatar?.url} alt="company member" className={css.image} />
 				<header>
-					<h3 className={css.name}>{parser(name)}</h3>
-					<p className={css.position}>{parser(position)}</p>
+					{fullName && <h3 className={css.name}>{parser(fullName)}</h3>}
+					{position && <p className={css.position}>{parser(position)}</p>}
 				</header>
 			</button>
 			<MemberModal
-				name={name}
-				image={image}
+				fullName={fullName}
+				qualification={qualification}
+				career={career}
 				position={position}
-				content={content}
+				avatar={avatar}
 				isModalOpen={isModalOpen}
 				toggleModalOpen={toggleModalOpen}
 			/>

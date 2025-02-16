@@ -1,23 +1,23 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import type { EventItemType } from '@/shared/types/global.types';
+
 import css from './index.module.css';
 
-export type EventType = {
-	date: string;
-	description: string;
-	className?: string;
-};
-
-export const Event = ({ date, description, className }: EventType) => {
+export const Event = ({
+	year,
+	description,
+	className,
+}: EventItemType & { className?: string }) => {
 	return (
 		<div className={cx(css.root, className)}>
-			<h6 className={css.date}>{date}</h6>
+			<h6 className={css.date}>{year}</h6>
 			<div className={css.lineWrap}>
 				<span className={cx(css.ball)} />
 				<span className={css.line} />
 			</div>
-			<p className={css.description}>{parser(description)}</p>
+			{description && <p className={css.description}>{parser(description)}</p>}
 		</div>
 	);
 };

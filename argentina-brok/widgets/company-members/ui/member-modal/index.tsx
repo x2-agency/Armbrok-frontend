@@ -4,23 +4,24 @@ import cx from 'clsx';
 import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react';
 
 import CrossSVG from '@/public/assets/icons/cross.svg';
-import type { MemberProps } from '@/widgets/company-members/company-members.types';
+import type { Employee } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 import { ModalContent } from './modal-content';
 import { ModalHeader } from './modal-header';
 
-type MemberModalProps = MemberProps & {
+type MemberModalProps = Employee & {
 	isModalOpen: boolean;
 	toggleModalOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export const MemberModal = ({
-	name,
-	image,
+	avatar,
+	fullName,
+	qualification,
+	career,
 	position,
 	isModalOpen,
-	content,
 	toggleModalOpen,
 }: MemberModalProps) => {
 	const ref = useRef<HTMLDialogElement | null>(null);
@@ -42,16 +43,17 @@ export const MemberModal = ({
 			<button className={css.button} onClick={() => toggleModalOpen(false)}>
 				<CrossSVG className={css.cross} />
 			</button>
-			<ModalHeader image={image} fullName={name} position={position} />
-			{content &&
-				content.map((value, index) => (
-					<ModalContent
-						className={css.content}
-						key={index}
-						title={value.title}
-						content={value.content}
-					/>
-				))}
+			<ModalHeader
+				image={avatar?.url}
+				fullName={fullName}
+				position={position}
+			/>
+			<ModalContent
+				className={css.content}
+				title={'Qualifications summary'}
+				content={qualification}
+			/>
+			<ModalContent className={css.content} title={'Career'} content={career} />
 		</dialog>
 	);
 };

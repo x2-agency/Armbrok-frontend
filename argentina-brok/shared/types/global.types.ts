@@ -23,6 +23,7 @@ export type LinkItem = {
 };
 
 export type MediaData = {
+	name?: string;
 	alternativeText: string;
 	formats?: {
 		large?: ImageFormat;
@@ -34,6 +35,7 @@ export type MediaData = {
 		name?: string;
 		url?: string;
 		size?: number;
+		ext?: string;
 	};
 	url?: string;
 };
@@ -272,7 +274,7 @@ export type MembershipItemType = ItemDetail & {
 };
 
 export type MembershipSection = ItemDetail & {
-	companies: Array<MembershipItemType>;
+	companies: Array<ExchangesItemType>;
 };
 
 /* PROJECTS SECTION */
@@ -315,8 +317,8 @@ export interface Tab {
 }
 
 export type CompanyStructureSection = {
-	title: string;
-	tabs: Array<Tab>;
+	title?: string;
+	tabs?: Array<Tab>;
 };
 
 /* EMPLOYEE STORY SECTION */

@@ -4,9 +4,9 @@ import parser from 'html-react-parser';
 import css from './index.module.css';
 
 type ModalHeaderProps = {
-	image: string;
-	fullName: string;
-	position: string;
+	image?: string;
+	fullName?: string;
+	position?: string;
 };
 
 export const ModalHeader = ({
@@ -17,11 +17,13 @@ export const ModalHeader = ({
 	return (
 		<header className={css.root}>
 			<div className={css.imageWrap}>
-				<img src={image} alt="company member image" className={css.image} />
+				{image && (
+					<img src={image} alt="company member image" className={css.image} />
+				)}
 			</div>
 			<div className={css.about}>
-				<h2 className={css.name}>{parser(fullName)}</h2>
-				<div className={css.position}>{parser(position)}</div>
+				{fullName && <h2 className={css.name}>{parser(fullName)}</h2>}
+				{position && <div className={css.position}>{parser(position)}</div>}
 			</div>
 		</header>
 	);

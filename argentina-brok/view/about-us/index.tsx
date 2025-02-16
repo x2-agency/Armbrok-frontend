@@ -1,17 +1,6 @@
 import type { NextPage } from 'next';
 
-import { ARMBROK_TEAM } from '@/shared/model/armbrok-team.constants';
 import { MOCK_AWARDS } from '@/shared/model/mock-awards';
-import {
-	MOCK_EVENTS_DATA,
-	MOCK_EVENTS_TITLE,
-} from '@/shared/model/mock-events.constants';
-import {
-	MOCK_FILES,
-	MOCK_FILES_TITLE,
-} from '@/shared/model/mock-files.constants';
-// import { MOCK_MEMBERSHIP } from '@/shared/model/mock-membership.constants';
-import { SLIDER_DATA } from '@/shared/model/slider.constants';
 import type { SliderItemWithText } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -31,8 +20,6 @@ import type { AboutUsPageResponse } from './types/response';
 export const AboutUs: NextPage<{ initialData?: AboutUsPageResponse }> = ({
 	initialData,
 }) => {
-	console.log(initialData);
-
 	return (
 		<>
 			<BannerSection
@@ -75,9 +62,18 @@ export const AboutUs: NextPage<{ initialData?: AboutUsPageResponse }> = ({
 						?.slider as Array<SliderItemWithText>
 				}
 			/>
-			<CompanyMembers members={ARMBROK_TEAM} />
-			<CorporateEvents title={MOCK_EVENTS_TITLE} events={MOCK_EVENTS_DATA} />
-			<StatutoryDocuments title={MOCK_FILES_TITLE} documents={MOCK_FILES} />
+			<CompanyMembers
+				title={initialData?.data.companyStructureSection?.title}
+				tabs={initialData?.data.companyStructureSection?.tabs}
+			/>
+			<CorporateEvents
+				title={initialData?.data.corporateEventsSection?.title}
+				events={initialData?.data.corporateEventsSection?.events}
+			/>
+			<StatutoryDocuments
+				title={initialData?.data.documentsSection?.title}
+				documents={initialData?.data.documentsSection?.documents}
+			/>
 			<CompanyDetailsSection
 				title={initialData?.data.companyDetails?.title ?? ''}
 				factoids={initialData?.data.companyDetails?.factoids}

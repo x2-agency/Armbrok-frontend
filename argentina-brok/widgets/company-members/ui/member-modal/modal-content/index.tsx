@@ -5,7 +5,7 @@ import css from './index.module.css';
 
 type ModalContentProps = {
 	title: string;
-	content: string;
+	content?: string;
 	className?: string;
 };
 
@@ -14,6 +14,10 @@ export const ModalContent = ({
 	content,
 	className,
 }: ModalContentProps) => {
+	if (!content) {
+		return null;
+	}
+
 	return (
 		<article className={cx(css.root, className)}>
 			<h4 className={css.title}>{parser(title)}</h4>

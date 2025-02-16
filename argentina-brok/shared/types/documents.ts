@@ -1,9 +1,9 @@
-import type { DocumentProps } from '@/shared/ui/document';
+import type { MediaData } from './global.types';
 
 export type StatutoryDocumentsProps = {
 	className?: string;
 	title?: string;
-	documents: Array<DocumentProps>;
+	documents?: Array<MediaData>;
 	columns?: number;
 	fileDirection?: 'row' | 'column';
 };

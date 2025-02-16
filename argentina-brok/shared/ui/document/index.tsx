@@ -3,35 +3,34 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import type { MediaData } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
 
-export type DocumentProps = {
-	icon: string;
-	name: string;
-	type: string;
-	size: string;
-	direction?: 'row' | 'column';
-};
-
 export const Document = ({
-	icon,
+	direction,
+	file,
 	name,
-	type,
-	size,
-	direction = 'row',
-}: DocumentProps) => {
+}: MediaData & { direction: string }) => {
+	if (!file) {
+		return null;
+	}
+
 	return (
 		<article className={cx(css.root, css[direction])}>
 			<div className={css.leftPart}>
-				<img src={icon} alt={name} className={css.icon} />
+				<img src="/assets/icon/file/file.svg" alt="file" className={css.icon} />
 				<header className={css.header}>
-					<h3 className={css.name}>{parser(name)}</h3>
+					{name && <h3 className={css.name}>{parser(name)}</h3>}
 					<div className={css.info}>
-						<p className={css.type}>{parser(type)}</p>
+						{file.ext && (
+							<p className={css.type}>
+								{parser(file.ext.slice(1).toUpperCase())}
+							</p>
+						)}
 						<div className={css.circle} />
-						<p className={css.size}>{parser(size)}</p>
+						{file.size && <p className={css.size}>{file.size * 10}KB</p>}
 					</div>
 				</header>
 			</div>

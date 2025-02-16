@@ -1,12 +1,12 @@
 import cx from 'clsx';
 
-import type { EventType } from '@/widgets/corporate-events/ui/event';
+import type { EventItemType } from '@/shared/types/global.types';
 import { Event } from '@/widgets/corporate-events/ui/event';
 
 import css from './index.module.css';
 
 export type EventsPops = {
-	events: Array<EventType>;
+	events: Array<EventItemType>;
 	className?: string;
 };
 
@@ -17,7 +17,7 @@ export const Events = ({ events, className }: EventsPops) => {
 				<Event
 					className={cx(css.event, { [css.firstEvent]: index === 0 })}
 					key={index}
-					date={event.date}
+					year={event.year}
 					description={event.description}
 				/>
 			))}

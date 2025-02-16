@@ -1,5 +1,5 @@
 .root {
-	@mixin res padding-block-end, 38.4rem, 10rem, 9rem;
+	@mixin responsive padding-block, 36, 72, 72;
 }
 
 .title {
@@ -13,6 +13,12 @@
 .placements {
 	@mixin res padding-inline, 5.333rem, 7.778rem, 7.063rem;
 	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+
+	@media (min-width: 1441px) {
+		padding-inline: unset;
+		margin-inline: auto;
+		max-width: 75rem;
+	}
 
 	display: flex;
 	overflow: scroll;
