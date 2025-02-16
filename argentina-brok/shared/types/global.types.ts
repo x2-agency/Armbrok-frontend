@@ -30,6 +30,11 @@ export type MediaData = {
 		medium?: ImageFormat;
 		thumbnail?: ImageFormat;
 	};
+	file?: {
+		name?: string;
+		url?: string;
+		size?: number;
+	};
 	url?: string;
 };
 
@@ -139,6 +144,7 @@ export type FlagType = {
 
 export type ExchangesItemType = {
 	name: string;
+	description?: string;
 	country?: FlagType | null;
 	logo?: MediaData | null;
 };
@@ -218,4 +224,137 @@ export type ExperienceSection = ItemDetail & {
 export type BenefitsSection = {
 	title: string;
 	factoids: Array<Factoid>;
+};
+
+/* ABOUT US HERO SECTION */
+
+export type HeroFactoid = {
+	number?: number;
+	title?: string;
+	description?: string;
+};
+
+export type HeroSectionAboutUs = ItemDetail & {
+	titleLabel?: string;
+	button?: LinkItem;
+	background?: MediaData;
+	factoids?: Array<HeroFactoid>;
+};
+
+/* VALUES SECTION */
+
+export type ValuesSection = ItemDetail & {
+	factoids?: Array<Factoid>;
+};
+
+/* CORPORATE EVENTS SECTION */
+
+export type EventItemType = {
+	year?: number;
+	description?: string;
+};
+
+export type CorporateEventsSection = {
+	title?: string;
+	events?: Array<EventItemType>;
+};
+
+/* COMPANY DETAILS SECTION */
+
+export type CompanyDetailsSection = ItemDetail & {
+	factoids?: Array<Factoid>;
+};
+
+/* MEMBERSHIP SECTION */
+
+export type MembershipItemType = ItemDetail & {
+	logo: MediaData;
+};
+
+export type MembershipSection = ItemDetail & {
+	companies: Array<MembershipItemType>;
+};
+
+/* PROJECTS SECTION */
+
+export type ProjectItemType = {
+	description?: string;
+	name?: string;
+	logo?: MediaData;
+};
+
+export type ProjectsSection = ItemDetail & {
+	companies?: Array<ProjectItemType>;
+};
+
+/* COMPANY STRUCTURE SECTION */
+
+export interface Employee {
+	fullName?: string;
+	position?: string;
+	qualification?: string;
+	career?: string;
+	avatar?: MediaData;
+}
+
+export interface TextItem {
+	value?: string;
+}
+
+export interface EmployeeList {
+	employees: Array<Employee>;
+}
+
+export interface TextItemList {
+	list: Array<TextItem>;
+}
+
+export interface Tab {
+	tabName: string;
+	content: Array<EmployeeList | TextItemList>;
+}
+
+export type CompanyStructureSection = {
+	title: string;
+	tabs: Array<Tab>;
+};
+
+/* EMPLOYEE STORY SECTION */
+
+export type EmployeeStoriesItem = {
+	story: string;
+	employee: {
+		fullName: string;
+		position: string;
+		qualification?: string;
+		career?: string;
+		avatar?: MediaData;
+	};
+};
+
+export type EmployeeStorySection = ItemDetail & {
+	employeeStories: Array<EmployeeStoriesItem>;
+};
+
+/* OFFICE SLIDER */
+
+export type SliderItem = {
+	files?: Array<MediaData>;
+};
+
+export type SliderItemWithText = {
+	media?: MediaData;
+	title?: string;
+	caption?: string;
+};
+
+export type OfficeSliderSection = ItemDetail & {
+	slider?: SliderItem | Array<SliderItemWithText>;
+};
+
+/* SUBSCRIBE EMAIL FORM */
+
+export type SubscribeEmailForm = ItemDetail & {
+	emailPlaceholder?: string;
+	subscribeButtonText?: string;
 };

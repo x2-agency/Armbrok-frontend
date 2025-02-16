@@ -19,7 +19,12 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 			return (
 				<div className={cx(css.root, className, css.awards)}>
 					{bodyData.awards.map((award, index) => (
-						<BannerAward key={index} {...award} />
+						<BannerAward
+							key={index}
+							place={award.number}
+							title={award.title}
+							description={award.description}
+						/>
 					))}
 				</div>
 			);
@@ -30,9 +35,9 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 						variant="filled"
 						category="big"
 						className={css.button}
-						href={bodyData.button.href}
+						href={bodyData.button?.link}
 					>
-						{bodyData.button.text}
+						{bodyData.button?.text}
 					</Button>
 				</div>
 			);

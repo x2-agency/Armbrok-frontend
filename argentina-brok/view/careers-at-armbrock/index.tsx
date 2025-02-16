@@ -1,12 +1,7 @@
-import { CAREERS_AT_ARMBROCK_BANNER } from '@/shared/model/mock-banner.constants';
-import { HERO_DATA } from '@/shared/model/mock-banner.constants';
-import {
-	OFFICE_SLIDER,
-	EVENTS_SLIDER_DATA,
-	HOBBY_SLIDER_DATA,
-} from '@/shared/model/office.constants';
-import { MOCK_TITLE_SECTION } from '@/shared/model/title-section.constants';
+import type { NextPage } from 'next';
+
 import { VACANCIES_DATA } from '@/shared/model/vacancies.constants';
+import type { SliderItem } from '@/shared/types/global.types';
 import { GuaranteesSection } from '@/shared/ui/guarantees-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
@@ -17,45 +12,54 @@ import { VacanciesSection } from '@/widgets/vacancies-section';
 
 import css from './index.module.css';
 import { FEEDBACK_FORM } from './models/careers-at-armbrock.constants';
+import type { CareersAtArmbrockPageResponse } from './types/response';
 
-export const CareersAtArmbrock = () => {
+export const CareersAtArmbrock: NextPage<{
+	initialData?: CareersAtArmbrockPageResponse;
+}> = ({ initialData }) => {
+	console.log(initialData);
+
 	return (
 		<>
 			<BannerSection
 				type="default"
 				banner={{
-					title: CAREERS_AT_ARMBROCK_BANNER.title,
-					description: CAREERS_AT_ARMBROCK_BANNER.description,
-					button: { text: 'View vacancies', link: '#' },
-					poster: CAREERS_AT_ARMBROCK_BANNER.poster,
+					title: initialData?.data.heroSection?.title ?? '',
+					description: initialData?.data.heroSection?.description ?? '',
+					button: initialData?.data.heroSection?.button,
+					poster: initialData?.data.heroSection?.background,
 				}}
 				alignContent="center"
 			/>
 			<HeroContainer className={css.hero}>
 				<TitleSection
-					title={MOCK_TITLE_SECTION.title}
-					description={MOCK_TITLE_SECTION.description}
+					title={initialData?.data.workAdvantagesSection?.title ?? ''}
+					description={
+						initialData?.data.workAdvantagesSection?.description ?? ''
+					}
 				/>
-				<GuaranteesSection items={HERO_DATA.guarantees.items} />
+				<GuaranteesSection
+					items={initialData?.data.workAdvantagesSection?.factoids}
+				/>
 			</HeroContainer>
 			<SliderSection
-				title={OFFICE_SLIDER.title}
-				description={OFFICE_SLIDER.description}
-				slider={OFFICE_SLIDER.slider}
+				title={initialData?.data.officeSlider?.title}
+				description={initialData?.data.officeSlider?.description}
+				slider={initialData?.data.officeSlider?.slider as SliderItem}
 			/>
 			<SliderSection
-				title={EVENTS_SLIDER_DATA.title}
-				description={EVENTS_SLIDER_DATA.description}
-				slider={EVENTS_SLIDER_DATA.slider}
+				title={initialData?.data.eventsSlider?.title}
+				description={initialData?.data.eventsSlider?.description}
+				slider={initialData?.data.eventsSlider?.slider as SliderItem}
 			/>
 			<SliderSection
-				title={HOBBY_SLIDER_DATA.title}
-				description={HOBBY_SLIDER_DATA.description}
-				slider={HOBBY_SLIDER_DATA.slider}
+				title={initialData?.data.hobbyClubsSlider?.title}
+				description={initialData?.data.hobbyClubsSlider?.description}
+				slider={initialData?.data.hobbyClubsSlider?.slider as SliderItem}
 			/>
 			<VacanciesSection
-				title={VACANCIES_DATA.title}
-				description={VACANCIES_DATA.description}
+				title={initialData?.data.vacanciesSection?.title ?? ''}
+				description={initialData?.data.vacanciesSection?.description ?? ''}
 				vacancies={VACANCIES_DATA.vacancies}
 			/>
 			<FeedbackForm {...FEEDBACK_FORM} />

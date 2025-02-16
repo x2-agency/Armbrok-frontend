@@ -16,6 +16,7 @@ export const MembershipCard = ({
 	name,
 	country,
 	logo,
+	description,
 }: MembershipCardProps) => {
 	return (
 		<Container category="article" padding="min" className={css.root}>
@@ -24,6 +25,9 @@ export const MembershipCard = ({
 				<h3 className={cx(css.title, { [css.greyTitle]: withGreyTitle })}>
 					{parser(name ?? '')}
 				</h3>
+				{description && (
+					<p className={css.description}>{parser(description)}</p>
+				)}
 				{country && (
 					<div className={css.flag}>
 						<img src={country.flag?.url} alt="icon" className={css.flagIcon} />

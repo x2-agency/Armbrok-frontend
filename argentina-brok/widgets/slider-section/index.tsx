@@ -9,14 +9,20 @@ export const SliderSection = ({
 	description,
 	slider,
 }: SliderSectionProps) => {
+	if (!slider) {
+		return null;
+	}
+
 	return (
 		<section className={css.root}>
-			<header className={css.titleBlock}>
-				{title && <h2 className={css.title}>{parser(title)}</h2>}
-				{description && (
-					<p className={css.description}>{parser(description)}</p>
-				)}
-			</header>
+			{title && description && (
+				<header className={css.titleBlock}>
+					{title && <h2 className={css.title}>{parser(title)}</h2>}
+					{description && (
+						<p className={css.description}>{parser(description)}</p>
+					)}
+				</header>
+			)}
 			<Slider slider={slider} />
 		</section>
 	);

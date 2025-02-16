@@ -24,7 +24,7 @@ export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 					Back
 				</Button>
 			)}
-			{type === 'about' && (
+			{type === 'about' && headData.established && (
 				<div className={css.established}>{parser(headData.established)}</div>
 			)}
 			<h1 className={cx(css.title, css[type])}>{parser(headData.title)}</h1>

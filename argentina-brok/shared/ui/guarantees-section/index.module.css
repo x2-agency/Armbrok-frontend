@@ -1,12 +1,19 @@
-.root {
-	@mixin res --item, 64rem, 16.667rem, 15rem; /* 240px */
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+.items {
+	@mixin responsive gap, 24, 24, 24;
 
-	display: grid;
+	display: flex;
 	justify-content: center;
-	grid-template-columns: repeat(3, var(--item)); /* 240px */
+	align-items: center;
 
 	@media (max-width: 767px) {
-		grid-template-columns: 1fr;
+		flex-direction: column;
 	}
+}
+
+.title {
+	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin font-h2;
+
+	font-weight: 700;
+	text-align: center;
 }
