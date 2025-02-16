@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const CareersAtArmbrockPage = async () => {
 	const initialCareersAtArmbrockPageData = await getCareersAtArmbrockPage();
 
-	return <CareersAtArmbrock initialData={initialCareersAtArmbrockPageData} />;
+	return <CareersAtArmbrock {...initialCareersAtArmbrockPageData.data} />;
 };
 
 export default CareersAtArmbrockPage;

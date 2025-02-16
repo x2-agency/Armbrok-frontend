@@ -12,44 +12,48 @@ import { StatutoryDocuments } from '@/widgets/statutory-documents';
 import css from './index.module.css';
 import type { InvestmentBankingPageResponse } from './types/response';
 
-export const InvestmentBanking: NextPage<{
-	initialData?: InvestmentBankingPageResponse;
-}> = ({ initialData }) => {
+export const InvestmentBanking: NextPage<
+	InvestmentBankingPageResponse['data']
+> = ({
+	heroSection,
+	offerSolutionSection,
+	ourServicesSection,
+	quoteSection,
+	documentsSection,
+}) => {
 	return (
 		<>
 			<BannerSection
 				type="default"
 				alignContent="end"
 				banner={{
-					title: initialData?.data.heroSection?.title ?? '',
-					description: initialData?.data.heroSection?.description ?? '',
-					button: initialData?.data.heroSection?.button,
-					poster: initialData?.data.heroSection?.background,
+					title: heroSection?.title ?? '',
+					description: heroSection?.description ?? '',
+					button: heroSection?.button,
+					poster: heroSection?.background,
 				}}
 			/>
 			<HeroContainer>
 				<TitleSection
-					title={initialData?.data.offerSolutionSection?.title ?? ''}
-					description={
-						initialData?.data.offerSolutionSection?.description ?? ''
-					}
+					title={offerSolutionSection?.title ?? ''}
+					description={offerSolutionSection?.description ?? ''}
 				/>
 			</HeroContainer>
 			<ExpertSolutionSection
 				className={css.factoids}
-				items={initialData?.data.ourServicesSection?.factoids}
-				title={initialData?.data.ourServicesSection?.title}
+				items={ourServicesSection?.factoids}
+				title={ourServicesSection?.title}
 				withShell
 				backgroundColor="gray"
 			/>
-			<Review quote={initialData?.data.quoteSection} />
+			<Review quote={quoteSection} />
 			<PlacementsSection
 				items={MOCK_PLACEMENTS.items}
 				title={MOCK_PLACEMENTS.title}
 			/>
 			<StatutoryDocuments
-				title={initialData?.data.documentsSection?.title}
-				documents={initialData?.data.documentsSection?.documents}
+				title={documentsSection?.title}
+				documents={documentsSection?.documents}
 				columns={2}
 				fileDirection="column"
 			/>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const InvestmentBankingPage = async () => {
 	const initialInvestmentBankingPageData = await getInvestmentBankingPage();
 
-	return <InvestmentBanking initialData={initialInvestmentBankingPageData} />;
+	return <InvestmentBanking {...initialInvestmentBankingPageData.data} />;
 };
 
 export default InvestmentBankingPage;
