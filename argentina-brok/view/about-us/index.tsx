@@ -21,7 +21,7 @@ export const AboutUs: NextPage<{ initialData?: AboutUsPageResponse }> = ({
 	initialData,
 }) => {
 	return (
-		<>
+		<>	
 			<BannerSection
 				type="about"
 				banner={{
