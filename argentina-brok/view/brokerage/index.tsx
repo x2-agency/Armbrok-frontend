@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 
-import { MOCK_FILES } from '@/shared/model/mock-files.constants';
 import { Container } from '@/shared/ui/container';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -65,8 +64,8 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				button={initialData?.data.investingStepsSection?.button}
 			/>
 			<StatutoryDocuments
-				title="Pricing and Terms"
-				documents={MOCK_FILES.slice(0, 2)}
+				title={initialData?.data.documentsSection?.title}
+				documents={initialData?.data.documentsSection?.documents}
 				columns={2}
 				fileDirection="column"
 			/>
