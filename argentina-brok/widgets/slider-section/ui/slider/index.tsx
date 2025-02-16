@@ -4,11 +4,6 @@ import parser from 'html-react-parser';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
 import type { SliderSectionProps } from '@/widgets/slider-section/slider-section.types';
 
 import css from './index.module.css';
@@ -40,15 +35,15 @@ export const Slider = ({
 				rotate: 0,
 			}}
 			modules={[EffectCoverflow, Navigation, Pagination]}
+			pagination={{
+				clickable: true,
+			}}
+			navigation={true}
 		>
 			{slider.files &&
 				slider?.files.map((value, index) => (
 					<SwiperSlide key={index} className={css.slide}>
 						<img src={value.url} alt="image" className={css.image} />
-						{/* {value.title && <h4 className={css.title}>{parser(value.title)}</h4>}
-					{value.description && (
-						<p className={css.description}>{parser(value.description)}</p>
-					)} */}
 					</SwiperSlide>
 				))}
 			{Array.isArray(slider) &&

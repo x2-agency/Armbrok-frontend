@@ -6,6 +6,10 @@ import '@/shared/styles/mixins/mixin.css';
 import { AppLayout } from '@/widgets/app-layout';
 
 import './global.css';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
 	return (
