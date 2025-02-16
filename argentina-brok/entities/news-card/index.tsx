@@ -17,7 +17,7 @@ export type NewsCard = {
 
 export const NewsCard = ({ data, className }: NewsCard) => {
 	const pathname = usePathname();
-	const isArmbrokMedia = pathname === '/about-us/armbrok-media';
+	const isArmbrokMedia = pathname === '/armbrok-media';
 	const { publishDate, title, description, author, category, poster } = data;
 	return (
 		<article

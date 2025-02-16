@@ -18,11 +18,7 @@ export const NewsSectionHome = ({ dataNews }: NewsSectionProps) => {
 		<Container className={css.root}>
 			<h2 className={css.title}>{parser(title)}</h2>
 			<NewsSlider className={css.slider} newsSlider={news} />
-			<Button
-				variant="subtle"
-				className={css.button}
-				href={`/about-us/armbrok-media`}
-			>
+			<Button variant="subtle" className={css.button} href={`/armbrok-media`}>
 				{moreButton.text}
 			</Button>
 		</Container>
