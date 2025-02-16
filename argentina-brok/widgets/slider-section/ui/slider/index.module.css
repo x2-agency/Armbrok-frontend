@@ -1,4 +1,6 @@
 .swiper {
+	@mixin responsive min-height, 450, 750, 750;
+
 	:global(.swiper-pagination) {
 		top: 83%;
 
