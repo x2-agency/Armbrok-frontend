@@ -19,7 +19,6 @@
 .filled {
 	color: white;
 	background-color: #df2c29;
-
 	&:not(:disabled) {
 		opacity: 1;
 		cursor: pointer;
