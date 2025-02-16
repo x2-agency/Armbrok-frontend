@@ -5,8 +5,9 @@
 }
 
 .tabButtons {
+	@mixin responsive height, 48, 48, 48;
+	@mixin responsive padding, 4, 4, 4;
 	@mixin res border-radius, 2.667rem, 0.694rem, 0.625rem;
-	@mixin res padding, 1.067rem, 0.278rem, 0.25rem;
 	@mixin res gap, 1.067rem, 0.278rem, 0.25rem;
 	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem;
 	@mixin res --grid, 38.4rem, 10rem, 9rem;
@@ -17,6 +18,7 @@
 }
 
 .tabButton {
+	@mixin responsive padding-block, 8, 8, 8;
 	border-color: var(--gray-200-color);
 
 	&.active {
