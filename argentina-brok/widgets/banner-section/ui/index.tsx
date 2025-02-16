@@ -26,7 +26,7 @@ export const BannerSection = (props: BannerProps) => {
 			ref={ref}
 		>
 			<Container category="section" padding="default" className={css.content}>
-				<BannerHead {...headContent} />
+				<BannerHead {...headContent} className={css.head} />
 				<BannerBody {...bodyContent} />
 			</Container>
 			{props.banner.poster && (
