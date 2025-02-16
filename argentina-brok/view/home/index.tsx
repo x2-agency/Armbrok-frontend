@@ -23,6 +23,7 @@ import type { HomePageResponse } from './types/response';
 export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 	initialData,
 }) => {
+	console.log(initialData?.data.assetManagementCard?.mediaContent[0].url);
 	return (
 		<>
 			<BannerSection
@@ -48,12 +49,11 @@ export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 					preview: HOME_APP_SECTION.preview,
 					button: HOME_APP_SECTION.button,
 				}}
-				image={initialData?.data.brokerageAppCard?.mediaContent || undefined}
+				image={initialData?.data.brokerageAppCard.phoneMockups}
 			/>
 			<AssetManagment
 				title={initialData?.data.assetManagementCard?.title ?? ''}
 				description={initialData?.data.assetManagementCard?.description ?? ''}
-				mediaContent={initialData?.data.assetManagementCard?.mediaContent}
 			/>
 			<Corporate
 				title={initialData?.data.financialSolutionsSection?.title ?? ''}

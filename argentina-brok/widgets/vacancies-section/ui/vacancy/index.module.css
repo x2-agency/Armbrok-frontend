@@ -9,6 +9,11 @@
 	h4:has(+ p) {
 		@mixin responsive padding-block-end, 8, 8, 8;
 	}
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+		gap: 5rem;
+	}
 }
 
 .content {
