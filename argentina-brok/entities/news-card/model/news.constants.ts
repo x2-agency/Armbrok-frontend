@@ -1,5 +1,5 @@
 import type { NewsSectionType } from '@/entities/news-card/types';
-
+import '@/public/assets/images/news/news_img.png';
 export const HOME_NEWS: NewsSectionType = {
 	title: 'Current News &amp; <br/>Articles in&nbsp;Armbrock',
 	moreButton: {
@@ -8,8 +8,12 @@ export const HOME_NEWS: NewsSectionType = {
 	},
 	news: [
 		{
+			poster: {
+				url: '/assets/images/news/news_img.png',
+				alternativeText: 'text',
+			},
 			id: 1,
-			piblishDate: '01.11.2024',
+			publishDate: '01.11.2024',
 			title:
 				'Dividend shares of&nbsp;Russian companies: how to&nbsp;choose the best ones',
 			description:
@@ -18,11 +22,11 @@ export const HOME_NEWS: NewsSectionType = {
 				avatar: '/assets/images/avatar.jpg',
 				name: 'Aram Kaifaijan',
 			},
-			category: 'Company news',
+			category: 'Articles',
 		},
 		{
 			id: 2,
-			piblishDate: '15.10.2024',
+			publishDate: '15.10.2024',
 			title: 'Armbrok became the title sponsor of&nbsp;the Yerevan Marathon',
 			description:
 				'The Yerevan Marathon annually gathers thousands of&nbsp;people from Armenia and all over the world under its banners. This festival unites participants in&nbsp;their endeavour to&nbsp;reach new heights. The marathon offers&nbsp;ro...',
@@ -34,7 +38,7 @@ export const HOME_NEWS: NewsSectionType = {
 		},
 		{
 			id: 3,
-			piblishDate: '12.10.2024',
+			publishDate: '12.10.2024',
 			title:
 				'First tier stocks: investing in&nbsp;the cream of&nbsp;the Russian market',
 			description:
@@ -45,18 +49,35 @@ export const HOME_NEWS: NewsSectionType = {
 			},
 			category: 'Company news',
 		},
-		// {
-		// 	id: 4,
-		// 	piblishDate: '15.10.2024',
-		// 	title:
-		// 		'First tier stocks: investing in&nbsp;the cream of&nbsp;the Russian market',
-		// 	description:
-		// 		'There are many instruments available to&nbsp;investors in&nbsp;the world of&nbsp;the stock market. It&nbsp;is&nbsp;important to&nbsp;choose those that will bring maximum profit at&nbsp;minimum risk. And this is&nbsp;where first-tier shares, also known as&nbsp;&quot;blue...',
-		// 	author: {
-		// 		avatar: '/assets/images/avatar.jpg',
-		// 		name: 'Aram Kaifaijan',
-		// 	},
-		// 	category: 'Company news',
-		// },
+		{
+			poster: {
+				url: '/assets/images/news/news_img_two.png',
+				alternativeText: 'text',
+			},
+			id: 4,
+			publishDate: '15.10.2024',
+			title:
+				'First tier stocks: investing in&nbsp;the cream of&nbsp;the Russian market',
+			description:
+				'There are many instruments available to&nbsp;investors in&nbsp;the world of&nbsp;the stock market. It&nbsp;is&nbsp;important to&nbsp;choose those that will bring maximum profit at&nbsp;minimum risk. And this is&nbsp;where first-tier shares, also known as&nbsp;&quot;blue...',
+			author: {
+				avatar: '/assets/images/avatar.jpg',
+				name: 'Aram Kaifaijan',
+			},
+			category: 'Investment ideas',
+		},
+		{
+			id: 5,
+			publishDate: '15.10.2024',
+			title:
+				'First tier stocks: investing in&nbsp;the cream of&nbsp;the Russian market',
+			description:
+				'There are many instruments available to&nbsp;investors in&nbsp;the world of&nbsp;the stock market. It&nbsp;is&nbsp;important to&nbsp;choose those that will bring maximum profit at&nbsp;minimum risk. And this is&nbsp;where first-tier shares, also known as&nbsp;&quot;blue...',
+			author: {
+				avatar: '/assets/images/avatar.jpg',
+				name: 'Aram Kaifaijan',
+			},
+			category: 'Investment ideas',
+		},
 	],
 };

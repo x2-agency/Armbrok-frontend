@@ -13,6 +13,7 @@ export const Start = ({ title, button, steps }: InvestingStepsSection) => {
 	return (
 		<Container className={css.root}>
 			{title && <h2 className={css.title}>{title}</h2>}
+
 			<CardsNumber steps={steps} />
 			{button && (
 				<Button category="big" href={button.link} variant="filled">

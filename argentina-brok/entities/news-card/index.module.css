@@ -1,28 +1,48 @@
 .root {
 	display: flex;
+	position: relative;
 	flex-direction: column;
-	align-items: baseline;
-	justify-content: space-between;
 	background-color: var(--gray-200-color);
+	@mixin responsive width, 336, 384, 384;
+
+	@mixin responsive border-radius, 24, 24, 24;
+}
+
+.textWrap {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	@mixin responsive padding-inline, 32, 32, 32;
+	@mixin responsive padding-block, 32, 32, 32;
+}
+
+.poster {
+	@mixin responsive height, 200, 400, 400;
+	width: 100%;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .time {
 	@mixin font-text14;
 	color: var(--gray-500-color);
-	@mixin res padding-block-end, 2.667rem, 1.111rem, 1rem; /* 10px 16px */
+	@mixin responsive margin-block-end, 10, 16, 16;
 }
 
 .title {
 	@mixin font-h5;
 	font-weight: 600;
 	color: var(--gray-800-color);
-	@mixin res padding-block-end, 3.2rem, 0.833rem, 0.75rem; /* 20px, 24px */
+	@mixin responsive padding-block-end, 10, 12, 12;
 }
 
 .description {
 	@mixin font-text16;
 	color: var(--gray-700-color);
-	@mixin res padding-block-end, 5.333rem, 1.667rem, 1.5rem; /* 20px, 24px */
+	@mixin responsive margin-block-end, 20, 24, 24;
 }
 
 .wrap {
@@ -31,6 +51,8 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+	margin-block-start: auto;
+
 	@media (max-width: 1000px) {
 		flex-direction: column;
 		align-items: baseline;
@@ -41,12 +63,12 @@
 .authorWrap {
 	display: flex;
 	flex-direction: row;
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive gap, 8, 8, 8;
 }
 
 .imgWrap {
-	@mixin res width, 8.533rem, 2.222rem, 2rem; /* 32px */
-	@mixin res height, 8.533rem, 2.222rem, 2rem; /* 32px */
+	@mixin responsive width, 32, 32, 32;
+	@mixin responsive height, 32, 32, 32;
 }
 
 .avatar {
@@ -57,8 +79,27 @@
 	@mixin font-text12;
 	font-weight: 700;
 	color: var(--gray-500-color);
-	@mixin res padding-block, 1.067rem, 0.278rem, 0.25rem; /* 4px */
-	@mixin res padding-inline, 2.133rem, 0.556rem, 0.5rem; /* 8px */
-	@mixin res border-radius, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive padding-block, 4, 4, 4;
+	@mixin responsive padding-inline, 8, 8, 8;
+	@mixin responsive border-radius, 8, 8, 8;
 	border: 0.069rem solid var(--gray-500-color);
+}
+
+.link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+.armbrokMediaRoot {
+	@mixin responsive width, 336, 760, 760;
+	padding: unset;
+}
+
+.armbrokMediaTitle {
+	@mixin font-h3;
+	font-weight: 600;
 }

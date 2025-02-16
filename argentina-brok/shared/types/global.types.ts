@@ -122,6 +122,7 @@ export type NewsType = {
 	description?: string;
 	author?: AuthorType;
 	category?: string | null;
+	poster?: MediaData;
 };
 
 export type AuthorType = {

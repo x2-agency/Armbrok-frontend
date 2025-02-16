@@ -30,7 +30,7 @@
 }
 
 html[data-header-top-color='white'] .icon :global(.logo_armbrok_svg__word) {
-	fill: var(--white-color);
+	fill: var(--gray-100-color);
 }
 
 html[data-header-top-color='dark'] .icon :global(.logo_armbrok_svg__word) {

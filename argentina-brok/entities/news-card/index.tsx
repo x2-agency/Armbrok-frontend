@@ -1,9 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+'use client';
+
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import type { NewsType } from '@/shared/types/global.types';
-import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
@@ -13,26 +16,42 @@ export type NewsCard = {
 };
 
 export const NewsCard = ({ data, className }: NewsCard) => {
-	const { publishDate, title, description, author, category } = data;
+	const pathname = usePathname();
+	const isArmbrokMedia = pathname === '/about-us/armbrok-media';
+	const { publishDate, title, description, author, category, poster } = data;
 	return (
-		<Container
-			category="article"
-			padding="min"
-			className={cx(css.root, className)}
+		<article
+			className={cx(css.root, className, {
+				[css.armbrokMediaRoot]: isArmbrokMedia,
+			})}
 		>
-			<time className={css.time}>{publishDate}</time>
-			<h5 className={css.title}>{parser(title ?? '')}</h5>
-			<p className={css.description}>{parser(description ?? '')}</p>
-			<div className={css.wrap}>
-				<div className={css.authorWrap}>
-					<div className={css.imgWrap}>
-						<img className={css.avatar} src={author?.avatar ?? ''} alt="" />
+			{poster && isArmbrokMedia && (
+				<img
+					src={poster.url}
+					alt={poster.alternativeText}
+					className={css.poster}
+				/>
+			)}
+			<div className={css.textWrap}>
+				<time className={css.time}>{publishDate}</time>
+				<h5
+					className={cx(css.title, { [css.armbrokMediaTitle]: isArmbrokMedia })}
+				>
+					{parser(title ?? '')}
+				</h5>
+				<p className={css.description}>{parser(description ?? '')}</p>
+				<div className={css.wrap}>
+					<div className={css.authorWrap}>
+						<div className={css.imgWrap}>
+							<img className={css.avatar} src={author?.avatar ?? ''} alt="" />
+						</div>
+						<span className={css.name}>{parser(author?.name ?? '')}</span>
 					</div>
-					<span className={css.name}>{parser(author?.name ?? '')}</span>
-				</div>
 
-				<p className={css.tag}>{category}</p>
+					<p className={css.tag}>{category}</p>
+				</div>
 			</div>
-		</Container>
+			<Link className={css.link} href={`#`} />
+		</article>
 	);
 };

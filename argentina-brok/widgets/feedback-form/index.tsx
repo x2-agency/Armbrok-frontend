@@ -5,14 +5,13 @@ import { useForm } from 'react-hook-form';
 
 import { getValidationRules } from '@/shared/lib/validation';
 import { Button } from '@/shared/ui/button';
-import { Container } from '@/shared/ui/container';
 import { Input } from '@/shared/ui/input';
 
 import css from './index.module.css';
 
 export type FeedbackFormProps = {
 	title: string;
-	description: string;
+	description?: string;
 };
 
 type FeedbackInputs = {
@@ -26,9 +25,9 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 	} = useForm<FeedbackInputs>({ mode: 'onChange' });
 
 	return (
-		<Container category="section" className={css.root}>
+		<section className={css.root}>
 			<h2 className={css.title}>{parser(title)}</h2>
-			<p className={css.description}>{parser(description)}</p>
+			{description && <p className={css.description}>{parser(description)}</p>}
 			<form className={css.form}>
 				<Input
 					className={css.input}
@@ -46,6 +45,6 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 					Subscribe
 				</Button>
 			</form>
-		</Container>
+		</section>
 	);
 };

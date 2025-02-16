@@ -16,7 +16,7 @@
 	@mixin res padding-block-end, 3.2rem, 0.8rem, 0.75rem; /* 12px */
 
 	font-weight: 600;
-	color: var(--white-color);
+	color: var(--gray-100-color);
 
 	@media (max-width: 767px) {
 		br {

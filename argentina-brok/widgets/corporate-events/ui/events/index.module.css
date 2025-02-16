@@ -3,7 +3,7 @@
 	white-space: wrap;
 	width: 100%;
 	display: flex;
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin responsive gap, 24, 24, 24;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 }

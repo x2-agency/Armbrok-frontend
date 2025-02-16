@@ -1,3 +1,5 @@
+import type { MediaData } from '@/shared/types/global.types';
+
 export type NewsSectionType = {
 	title: string;
 	moreButton: {
@@ -12,8 +14,9 @@ export type NewsSectionProps = {
 };
 
 export type NewsType = {
+	poster?: MediaData;
 	id: number;
-	piblishDate: string;
+	publishDate: string;
 	title: string;
 	description: string;
 	author: {

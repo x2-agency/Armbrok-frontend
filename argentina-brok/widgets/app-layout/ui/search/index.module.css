@@ -1,6 +1,6 @@
 html[data-header-top-color='white'] .svg path {
-	fill: var(--white-color);
-	stroke: var(--white-color);
+	fill: var(--gray-100-color);
+	stroke: var(--gray-100-color);
 }
 
 html[data-header-top-color='dark'] .svg path {

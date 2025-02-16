@@ -11,15 +11,14 @@
 
 .filled,
 .outline {
-	@mixin res padding-inline, 6.4rem, 1.667rem, 1.5rem; /* 24px */
-	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
-	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin responsive padding-inline, 24, 24, 24;
+	@mixin responsive padding-block, 8, 8, 8;
+	@mixin responsive border-radius, 12, 12, 12;
 }
 
 .filled {
 	color: white;
 	background-color: #df2c29;
-
 	&:not(:disabled) {
 		opacity: 1;
 		cursor: pointer;
@@ -65,7 +64,7 @@
 }
 
 .next {
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive gap, 8, 8, 8;
 
 	color: #bf1d29;
 
@@ -88,7 +87,7 @@
 }
 
 .back {
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive gap, 8, 8, 8;
 
 	background-color: transparent;
 	color: gray;
@@ -99,10 +98,10 @@
 }
 
 .root.default {
-	padding-block: 0.5rem; /* 8px */
+	padding-block: unset; /* 8px */
 }
 
 .root.big {
-	@mixin res padding-block, 4.267rem, 1.111rem, 1rem; /* 16px */
-	@mixin res padding-inline, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin responsive padding-block, 16, 16, 16;
+	@mixin responsive padding-inline, 24, 24, 24;
 }
