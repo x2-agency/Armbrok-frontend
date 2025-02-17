@@ -21,3 +21,30 @@
 .cards.withShell {
 	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
 }
+
+.flexCards {
+	@mixin responsive gap, 24, 24, 24;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.firstList,
+.secondList {
+	@mixin responsive gap, 24, 24, 24;
+
+	display: flex;
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+	}
+}
+
+.listElement {
+	@mixin responsive width, 282, 282, 282;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}

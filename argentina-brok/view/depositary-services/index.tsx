@@ -44,6 +44,7 @@ export const DepositaryServices: NextPage<
 					title={supplementaryServices?.title}
 					withShell
 					backgroundColor="white"
+					gridClass={css.experts}
 				/>
 			</HeroContainer>
 			<GuaranteesSection
