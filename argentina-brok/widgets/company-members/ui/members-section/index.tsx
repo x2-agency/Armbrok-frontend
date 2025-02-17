@@ -1,12 +1,13 @@
-import type { Employee } from '@/shared/types/global.types';
+import type { EmployeeList } from '@/shared/types/global.types';
 import { Member } from '@/widgets/company-members/ui/member';
 
 import css from './index.module.css';
 
-export const CompanyMembersSection = (employee: Array<Employee>) => {
+export const CompanyMembersSection = ({ employees }: EmployeeList) => {
+	console.log(employees);
 	return (
 		<section className={css.root}>
-			{employee.map((value, index) => (
+			{employees.map((value, index) => (
 				<Member key={index} {...value} />
 			))}
 		</section>
