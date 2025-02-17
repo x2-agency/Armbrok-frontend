@@ -5,6 +5,7 @@ import type {
 	ExperienceSection,
 	QuoteSection,
 	DocumentsSection,
+	SecurityPaperItem,
 } from '@/shared/types/global.types';
 
 export type InvestmentBankingPageData = {
@@ -14,6 +15,7 @@ export type InvestmentBankingPageData = {
 	quoteSection?: QuoteSection;
 	latestSecuritiesPlacementsSection?: ItemDetail;
 	documentsSection?: DocumentsSection;
+	securityPapers?: Array<SecurityPaperItem>;
 };
 
 export type InvestmentBankingPageResponse =

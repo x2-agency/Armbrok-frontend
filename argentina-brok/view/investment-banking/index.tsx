@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 
-import { MOCK_PLACEMENTS } from '@/shared/model/placements.constants';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
@@ -20,6 +19,8 @@ export const InvestmentBanking: NextPage<
 	ourServicesSection,
 	quoteSection,
 	documentsSection,
+	securityPapers,
+	latestSecuritiesPlacementsSection,
 }) => {
 	return (
 		<>
@@ -48,8 +49,8 @@ export const InvestmentBanking: NextPage<
 			/>
 			<Review quote={quoteSection} />
 			<PlacementsSection
-				items={MOCK_PLACEMENTS.items}
-				title={MOCK_PLACEMENTS.title}
+				title={latestSecuritiesPlacementsSection?.title}
+				items={securityPapers}
 			/>
 			<StatutoryDocuments
 				title={documentsSection?.title}

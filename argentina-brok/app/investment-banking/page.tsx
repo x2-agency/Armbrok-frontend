@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getInvestmentBankingPage } from '@/shared/api/get-investment-banking';
+import { getSecurityPapers } from '@/shared/api/security-papers';
 import { InvestmentBanking } from '@/view/investment-banking';
 
 export const metadata: Metadata = {
@@ -9,8 +10,14 @@ export const metadata: Metadata = {
 
 const InvestmentBankingPage = async () => {
 	const initialInvestmentBankingPageData = await getInvestmentBankingPage();
+	const initialSecurityPapersData = await getSecurityPapers();
 
-	return <InvestmentBanking {...initialInvestmentBankingPageData.data} />;
+	return (
+		<InvestmentBanking
+			securityPapers={initialSecurityPapersData.data}
+			{...initialInvestmentBankingPageData.data}
+		/>
+	);
 };
 
 export default InvestmentBankingPage;

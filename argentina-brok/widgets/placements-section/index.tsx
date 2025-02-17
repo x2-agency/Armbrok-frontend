@@ -10,14 +10,20 @@ export const PlacementsSection = ({
 	items,
 	className,
 }: PlacementSectionProps) => {
+	if (!items || items.length === 0) {
+		return null;
+	}
+
 	return (
 		<section className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
-			<div className={css.placements}>
+			<ul className={css.placements}>
 				{items.map((value, index) => (
-					<PlacementItem {...value} key={index} className={css.placement} />
+					<li key={index} className={css.placement}>
+						<PlacementItem {...value} />
+					</li>
 				))}
-			</div>
+			</ul>
 		</section>
 	);
 };

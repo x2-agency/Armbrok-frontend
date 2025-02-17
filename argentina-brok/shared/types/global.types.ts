@@ -401,3 +401,21 @@ export type Vacancy = {
 export type Vacancies = {
 	data: Array<Vacancy>;
 };
+
+/* SECURITY PAPERS */
+
+export type SecurityPaperItem = {
+	name?: string;
+	launchData?: string;
+	launchDataLabel?: string;
+	ipoVolumeLabel?: string;
+	ipoVolumeValue?: string;
+	sharePriceLabel?: string;
+	sharePriceValue?: string;
+	logo?: MediaData;
+	infoBlock?: Array<ItemDetail>;
+};
+
+export type SecurityPapers = {
+	data: Array<SecurityPaperItem>;
+};
