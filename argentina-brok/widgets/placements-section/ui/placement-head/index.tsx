@@ -5,13 +5,23 @@ import type { SecurityPaperItem } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-export const PlacementHead = ({ logo, name }: SecurityPaperItem) => {
+export const PlacementHead = ({
+	logo,
+	name,
+	launchDate,
+	launchDateLabel,
+}: SecurityPaperItem) => {
 	return (
 		<header className={css.header}>
 			<img src={logo?.url} alt="icon" className={css.icon} />
 			<div className={css.titleBlock}>
 				{name && <h2 className={css.title}>{parser(name)}</h2>}
-				{/* <p className={css.time}>{parser(time)}</p> */}
+				<div className={css.dateLabel}>
+					{launchDateLabel && (
+						<p className={css.time}>{parser(launchDateLabel)}</p>
+					)}
+					{launchDate && <time className={css.date}>{launchDate}</time>}
+				</div>
 			</div>
 		</header>
 	);

@@ -8,8 +8,8 @@ import css from './index.module.css';
 
 export const PlacementItem = ({
 	name,
-	launchData,
-	launchDataLabel,
+	launchDate,
+	launchDateLabel,
 	ipoVolumeLabel,
 	ipoVolumeValue,
 	sharePriceLabel,
@@ -22,8 +22,8 @@ export const PlacementItem = ({
 			<PlacementHead
 				logo={logo}
 				name={name}
-				launchDataLabel={launchDataLabel}
-				launchData={launchData}
+				launchDateLabel={launchDateLabel}
+				launchDate={launchDate}
 			/>
 			<PlacementSubtitle
 				ipoVolumeLabel={ipoVolumeLabel}

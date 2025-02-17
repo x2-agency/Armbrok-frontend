@@ -2,7 +2,7 @@
 	@mixin font-text16;
 
 	color: var(--gray-700-color);
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .description {

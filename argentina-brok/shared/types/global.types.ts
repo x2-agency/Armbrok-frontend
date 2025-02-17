@@ -406,8 +406,8 @@ export type Vacancies = {
 
 export type SecurityPaperItem = {
 	name?: string;
-	launchData?: string;
-	launchDataLabel?: string;
+	launchDate?: string;
+	launchDateLabel?: string;
 	ipoVolumeLabel?: string;
 	ipoVolumeValue?: string;
 	sharePriceLabel?: string;
