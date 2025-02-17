@@ -6,7 +6,7 @@
 }
 
 .experts {
-	@mixin res padding-block, 10.667rem, 5.556rem, 5rem; /* 40px 80px */
+	@mixin res padding-block, 10.667rem, 5.556rem, 5rem; /* 40px 80px d*/
 }
 
 .experience {
