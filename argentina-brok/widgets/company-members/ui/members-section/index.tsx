@@ -6,10 +6,12 @@ import css from './index.module.css';
 export const CompanyMembersSection = ({ employees }: EmployeeList) => {
 	console.log(employees);
 	return (
-		<section className={css.root}>
+		<ul className={css.root}>
 			{employees.map((value, index) => (
-				<Member key={index} {...value} />
+				<li key={index}>
+					<Member {...value} />
+				</li>
 			))}
-		</section>
+		</ul>
 	);
 };
