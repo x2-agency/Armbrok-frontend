@@ -20,7 +20,7 @@ export const Card = ({
 	showLink,
 }: TopCardType) => {
 	return (
-		<Container className={css.root} category="article" padding="min">
+		<Container className={css.root} category="article" padding="p-32">
 			<h2 className={css.title}>{title}</h2>
 			<p className={css.description}>{description}</p>
 			{showLink && <Social className={css.store} items={STORE_LINKS} />}

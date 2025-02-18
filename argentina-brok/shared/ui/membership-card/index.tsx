@@ -3,7 +3,6 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import type { ExchangesItemType } from '@/shared/types/global.types';
-import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
@@ -19,7 +18,7 @@ export const MembershipCard = ({
 	description,
 }: MembershipCardProps) => {
 	return (
-		<Container category="article" padding="min" className={css.root}>
+		<article className={cx(css.root, 'p-40')}>
 			<img src={logo?.url} alt="icon" className={css.icon} />
 			<div className={css.header}>
 				<h3 className={cx(css.title, { [css.greyTitle]: withGreyTitle })}>
@@ -35,6 +34,6 @@ export const MembershipCard = ({
 					</div>
 				)}
 			</div>
-		</Container>
+		</article>
 	);
 };

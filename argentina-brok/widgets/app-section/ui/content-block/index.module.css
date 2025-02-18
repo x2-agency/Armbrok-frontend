@@ -1,37 +1,38 @@
 .root {
 	display: flex;
 	flex-direction: column;
-	@mixin res max-width, unset, 36.458rem, 32.813rem; /* 525px */
+	@mixin responsive max-width, unset, 525, 525;
+	height: 100%;
 }
 
 .icon {
 	height: auto;
-	@mixin res width, 16rem, 5.556rem, 5rem; /* 60px  80px */
-	@mixin res padding-block-end, 5.333rem, 2.778rem, 2.5rem; /* 20px 40px */
+	@mixin responsive width, 60, 80, 80;
+	@mixin responsive padding-block-end, 20, 40, 40;
 }
 
 .title {
 	@mixin font-h2;
 	font-weight: 600;
 	color: var(--gray-100-color);
-	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive padding-block-end, 10, 16, 16;
 }
 
 .description {
 	@mixin font-text16;
 	color: var(--gray-200-color);
-	@mixin res padding-block-end, 133.333rem, 8.889rem, 8rem; /* 500px 128px */
 }
 
 .bottomWrap {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin-block-start: auto;
 
 	@media (max-width: 767px) {
 		flex-direction: column;
 		align-items: center;
-		gap: 8rem; /* 20px */
+		gap: 4rem;
 	}
 }
 
@@ -46,11 +47,11 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	@mixin res gap, 1.067rem, 0.833rem, 0.75rem; /* 4px 12px */
-	@mixin res padding-block, 1.067rem, 0.625rem, 0.563rem; /* 4px 9px */
-	@mixin res padding-inline, 1.067rem, 0.625rem, 0.563rem; /* 4px 9px */
-	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
-	background-color: rgba(255, 255, 255, 0.15);
+	@mixin responsive gap, 4, 12, 12;
+	@mixin responsive padding-block, 4, 9, 9;
+	@mixin responsive padding-inline, 4, 9, 9;
+	@mixin responsive border-radius, 12, 12, 12;
+	background-color: #ffffff26;
 	border: 1px solid var(--gray-200-color);
 
 	@media (max-width: 767px) {
@@ -74,6 +75,6 @@
 }
 
 .store {
-	@mixin res height, 10.133rem, 2.639rem, 2.375rem; /* 38px */
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive height, 38, 38, 38;
+	@mixin responsive gap, 8, 8, 8;
 }

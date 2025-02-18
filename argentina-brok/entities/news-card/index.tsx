@@ -51,7 +51,7 @@ export const NewsCard = ({ data, className }: NewsCard) => {
 					<p className={css.tag}>{category}</p>
 				</div>
 			</div>
-			<Link className={css.link} href={`#`} />
+			<Link className={css.link} href="#" />
 		</article>
 	);
 };

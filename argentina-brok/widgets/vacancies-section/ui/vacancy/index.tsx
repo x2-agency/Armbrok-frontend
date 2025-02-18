@@ -18,7 +18,7 @@ export const Vacancy = ({
 	return (
 		<Container
 			category="article"
-			padding="min"
+			padding="p-32"
 			className={cx(css.root, className)}
 		>
 			<div className={css.content}>

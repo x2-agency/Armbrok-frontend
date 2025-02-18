@@ -18,7 +18,7 @@ export const PlacementItem = ({
 	infoBlock,
 }: SecurityPaperItem) => {
 	return (
-		<Container category="article" padding="min" className={css.root}>
+		<Container category="article" padding="p-32" className={css.root}>
 			<PlacementHead
 				logo={logo}
 				name={name}

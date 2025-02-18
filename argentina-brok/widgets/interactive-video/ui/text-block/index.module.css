@@ -2,26 +2,26 @@
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
-	@mixin res padding-block-start, unset, 8.194rem, 7.375rem; /* 60px 118px */
-	@mixin res padding-block-end, 21.333rem, 11.528rem, 10.375rem; /* 80px 166px */
+	@mixin responsive padding-block-start, unset, 118, 118;
+	@mixin responsive padding-block-end, 80, 166, 166;
 }
 
 .title {
 	@mixin font-h2;
 	font-weight: 700;
-	@mixin res padding-block-end, 2.667rem, 1.111rem, 1rem; /* 10px 16px */
+	@mixin responsive padding-block-end, 10, 16, 16;
 }
 
 .description {
 	@mixin font-text20;
 	color: var(--gray-700-color);
-	@mixin res padding-block-end, 8rem, 3.333rem, 3.333rem; /* 30px 48px */
+	@mixin responsive padding-block-end, 30, 48, 48;
 }
 
 .wrapButton {
 	display: flex;
 	flex-direction: row;
-	@mixin res gap, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive gap, 16, 16, 16;
 
 	@media (max-width: 767px) {
 		width: 100%;

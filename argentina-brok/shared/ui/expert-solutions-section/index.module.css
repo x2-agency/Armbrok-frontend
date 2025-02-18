@@ -1,25 +1,25 @@
 .sectionTitle {
 	@mixin font-h2;
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin responsive padding-block-end, 40, 40, 40;
 
 	font-weight: 600;
 	text-align: center;
 }
 
 .cards {
-	@mixin res gap, 4.067rem, 4.444rem, 4rem; /* 64px */
+	@mixin responsive gap, 64, 64, 64;
 
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 
 	@media (max-width: 767px) {
-		row-gap: 6.5rem; /* 25px */
+		row-gap: 3rem; /* 20px */
 		grid-template-columns: 1fr;
 	}
 }
 
 .cards.withShell {
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin res gap, 24, 24, 24;
 }
 
 .flexCards {

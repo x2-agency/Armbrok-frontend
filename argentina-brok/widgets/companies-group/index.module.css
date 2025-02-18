@@ -1,11 +1,11 @@
 .root {
-	@mixin res padding-block-start, 13.333rem, 5.556rem, 5rem; /* 50px 80px */
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin responsive padding-block-start, 50, 80, 80;
+	@mixin responsive padding-block-end, 40, 40, 40;
 }
 
 .title {
 	@mixin font-h2;
-	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin responsive padding-block-end, 24, 24, 24;
 
 	font-weight: 700;
 	text-align: center;
@@ -16,14 +16,15 @@
 	justify-content: space-around;
 
 	@media (max-width: 767px) {
-		gap: 12rem; /* 45px */
-		flex-direction: column;
-		align-items: center;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 .company {
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin responsive padding-block, 20, 40, 40;
+	@mixin responsive padding-inline, 10, 17, 17;
+	@mixin responsive gap, 10, 16, 16;
 
 	display: flex;
 	justify-content: center;
