@@ -5,7 +5,7 @@ import css from './index.module.css';
 
 export type GuaranteesItemProps = {
 	icon: string;
-	title: string;
+	title?: string;
 	description?: string;
 };
 
