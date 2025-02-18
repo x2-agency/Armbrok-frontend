@@ -2,4 +2,5 @@
 	@mixin res width, 86.4rem, 26.667rem, 24rem;
 
 	background-color: var(--gray-200-color);
+	height: 100%;
 }

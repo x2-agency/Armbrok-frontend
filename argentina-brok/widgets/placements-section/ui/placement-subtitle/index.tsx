@@ -1,16 +1,32 @@
-import type { PlacementSubtitleProps } from '@/widgets/placements-section/placements.types';
+import type { SecurityPaperItem } from '@/shared/types/global.types';
 import { PlacementArticle } from '@/widgets/placements-section/ui/placement-article';
 
 import css from './index.module.css';
 
-export const PlacementSubtitle = ({ subtitle }: PlacementSubtitleProps) => {
+export const PlacementSubtitle = ({
+	ipoVolumeLabel,
+	ipoVolumeValue,
+	sharePriceLabel,
+	sharePriceValue,
+}: SecurityPaperItem) => {
 	return (
 		<ul className={css.root}>
-			{subtitle.map((value, index) => (
-				<li key={index} className={css.subtitleArticle}>
-					<PlacementArticle {...value} />
+			{ipoVolumeLabel && ipoVolumeValue && (
+				<li className={css.subtitleArticle}>
+					<PlacementArticle
+						title={ipoVolumeLabel}
+						description={ipoVolumeValue}
+					/>
 				</li>
-			))}
+			)}
+			{sharePriceLabel && sharePriceValue && (
+				<li className={css.subtitleArticle}>
+					<PlacementArticle
+						title={ipoVolumeLabel}
+						description={ipoVolumeValue}
+					/>
+				</li>
+			)}
 		</ul>
 	);
 };

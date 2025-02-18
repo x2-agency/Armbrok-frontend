@@ -10,8 +10,10 @@ export const PlacementArticle = ({
 }: PlacementArticleProps) => {
 	return (
 		<>
-			<h4 className={css.title}>{parser(title)}</h4>
-			<p className={css.description}>{parser(description)}</p>
+			{title && <h4 className={css.title}>{parser(title)}</h4>}
+			{description && (
+				<p className={css.description}>{parser(description.toString())}</p>
+			)}
 		</>
 	);
 };

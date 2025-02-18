@@ -18,7 +18,7 @@ export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 	};
 
 	return (
-		<section className={cx(css.root, className, css[type])}>
+		<article className={cx(css.root, className, css[type])}>
 			{type === 'profix' && (
 				<Button variant="back" onClick={handleClick} className={css.backButton}>
 					Back
@@ -34,6 +34,6 @@ export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 			{type === 'profix' && headData.icon && (
 				<img src={headData.icon} alt="Icon" className={css.icon} />
 			)}
-		</section>
+		</article>
 	);
 };

@@ -9,42 +9,48 @@ import { StatutoryDocuments } from '@/widgets/statutory-documents';
 import css from './index.module.css';
 import type { InvestorRelationsPageResponse } from './types/response';
 
-export const InvestorRelations: NextPage<{
-	initialData?: InvestorRelationsPageResponse;
-}> = ({ initialData }) => {
+export const InvestorRelations: NextPage<
+	InvestorRelationsPageResponse['data']
+> = ({
+	heroSection,
+	transparencySection,
+	residenceCountries,
+	shareholdersMeetingsSection,
+	dividendPolicySection,
+}) => {
 	return (
 		<>
 			<BannerSection
 				type="default"
 				banner={{
-					title: initialData?.data.heroSection?.title ?? '',
-					description: initialData?.data.heroSection?.description ?? '',
-					button: initialData?.data.heroSection?.button,
-					poster: initialData?.data.heroSection?.background,
+					title: heroSection?.title ?? '',
+					description: heroSection?.description ?? '',
+					button: heroSection?.button,
+					poster: heroSection?.background,
 				}}
 				alignContent="center"
 			/>
 			<HeroContainer>
 				<TitleSection
-					title={initialData?.data.transparencySection?.title ?? ''}
-					description={initialData?.data.transparencySection?.description}
+					title={transparencySection?.title ?? ''}
+					description={transparencySection?.description}
 				/>
 			</HeroContainer>
 			<CountriesSection
-				title={initialData?.data.residenceCountries?.title}
-				countries={initialData?.data.residenceCountries?.countries}
-				additionalText={initialData?.data.residenceCountries?.additionalText}
+				title={residenceCountries?.title}
+				countries={residenceCountries?.countries}
+				additionalText={residenceCountries?.additionalText}
 			/>
 			<StatutoryDocuments
-				title={initialData?.data.shareholdersMeetingsSection?.title}
+				title={shareholdersMeetingsSection?.title}
 				columns={2}
 				fileDirection="row"
-				documents={initialData?.data.shareholdersMeetingsSection?.documents}
+				documents={shareholdersMeetingsSection?.documents}
 			/>
 			<TitleSection
 				className={css.dividend}
-				title={initialData?.data.dividendPolicySection?.title ?? ''}
-				description={initialData?.data.dividendPolicySection?.description}
+				title={dividendPolicySection?.title ?? ''}
+				description={dividendPolicySection?.description}
 			/>
 		</>
 	);

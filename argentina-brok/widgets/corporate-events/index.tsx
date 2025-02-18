@@ -16,7 +16,7 @@ export type CorporateEventsProps = {
 };
 
 export const CorporateEvents = ({ title, events }: CorporateEventsProps) => {
-	const isMaxDesctop = useMediaQuery('(max-width: 1440px)');
+	const isMaxDesktop = useMediaQuery('(max-width: 1440px)');
 
 	if (!events) {
 		return null;
@@ -28,7 +28,7 @@ export const CorporateEvents = ({ title, events }: CorporateEventsProps) => {
 				{title && <h2 className={css.title}>{parser(title)}</h2>}
 			</Container>
 			<Container
-				className={cx({ [css.fullWidth]: isMaxDesctop })}
+				className={cx({ [css.fullWidth]: isMaxDesktop })}
 				category="div"
 			>
 				<Events className={css.event} events={events} />

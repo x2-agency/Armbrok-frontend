@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const DepositaryServicesPage = async () => {
 	const initialDepositaryServicesPageData = await getDepositaryServicesPage();
 
-	return <DepositaryServices initialData={initialDepositaryServicesPageData} />;
+	return <DepositaryServices {...initialDepositaryServicesPageData.data} />;
 };
 
 export default DepositaryServicesPage;

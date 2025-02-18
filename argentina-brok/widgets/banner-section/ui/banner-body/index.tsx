@@ -17,17 +17,18 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 			);
 		case 'about':
 			return (
-				<div className={cx(css.root, className, css.awards)}>
+				<ul className={cx(css.root, className, css.awards)}>
 					{bodyData.awards &&
 						bodyData.awards.map((award, index) => (
-							<BannerAward
-								key={index}
-								place={award.number}
-								title={award.title}
-								description={award.description}
-							/>
+							<li key={index}>
+								<BannerAward
+									place={award.number}
+									title={award.title}
+									description={award.description}
+								/>
+							</li>
 						))}
-				</div>
+				</ul>
 			);
 		case 'default':
 			return (

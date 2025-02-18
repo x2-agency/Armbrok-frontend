@@ -6,6 +6,7 @@ import type {
 	OfficeSliderSection,
 	ItemDetail,
 	SubscribeEmailForm,
+	Vacancies,
 } from '@/shared/types/global.types';
 
 export type CareersAtArmbrockPageData = {
@@ -17,6 +18,7 @@ export type CareersAtArmbrockPageData = {
 	hobbyClubsSlider?: OfficeSliderSection;
 	vacanciesSection?: ItemDetail;
 	subscribeEmailForm?: SubscribeEmailForm;
+	vacancies?: Vacancies;
 };
 
 export type CareersAtArmbrockPageResponse =

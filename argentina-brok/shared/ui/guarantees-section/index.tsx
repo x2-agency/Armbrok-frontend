@@ -18,23 +18,24 @@ export const GuaranteesSection = ({
 	className,
 	title,
 }: GuaranteesSectionProps) => {
-	if (!items) {
+	if (!items || items.length === 0) {
 		return null;
 	}
 
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
-			<div className={css.items}>
+			<ul className={css.items}>
 				{items.map((value, index) => (
-					<GuaranteesItem
-						key={index}
-						title={value.title}
-						icon={value.media?.url ?? ''}
-						description={value.description}
-					/>
+					<li key={index}>
+						<GuaranteesItem
+							title={value.title}
+							icon={value.media?.url ?? ''}
+							description={value.description}
+						/>
+					</li>
 				))}
-			</div>
+			</ul>
 		</Container>
 	);
 };

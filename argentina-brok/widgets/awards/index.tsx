@@ -24,18 +24,18 @@ export const AwardsSection = ({
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
-			<div className={cx(css.awardWrap, { [css.withButton]: withViewAll })}>
+			<ul className={cx(css.awardWrap, { [css.withButton]: withViewAll })}>
 				{groupedAwards.map((row, rowIndex) => (
-					<div
+					<li
 						className={cx(css.row, { [css.centered]: row.length < 4 })}
 						key={rowIndex}
 					>
 						{row.map((award, index) => (
 							<AwardItem {...award} key={index} />
 						))}
-					</div>
+					</li>
 				))}
-			</div>
+			</ul>
 			{withViewAll && (
 				<Button href="#" variant="next" iconRotate={180} className={css.button}>
 					View all awards

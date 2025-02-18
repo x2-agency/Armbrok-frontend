@@ -50,7 +50,7 @@ export type ImageFormat = {
 /* ADVANTAGES SECTION */
 
 export type ItemDetail = {
-	title: string;
+	title?: string;
 	description?: string;
 };
 
@@ -336,7 +336,7 @@ export type EmployeeStoriesItem = {
 };
 
 export type EmployeeStorySection = ItemDetail & {
-	employeeStories: Array<EmployeeStoriesItem>;
+	employeeStories?: Array<EmployeeStoriesItem>;
 };
 
 /* OFFICE SLIDER */
@@ -388,4 +388,34 @@ export type ShareholdersSection = {
 	shareholdersTitle?: string;
 	stockInfo?: Array<StockInfoType>;
 	shareholders?: ShareholdersItemType;
+};
+
+/* Vacancies */
+
+export type Vacancy = {
+	name?: string;
+	link?: string;
+	opened?: boolean;
+};
+
+export type Vacancies = {
+	data: Array<Vacancy>;
+};
+
+/* SECURITY PAPERS */
+
+export type SecurityPaperItem = {
+	name?: string;
+	launchDate?: string;
+	launchDateLabel?: string;
+	ipoVolumeLabel?: string;
+	ipoVolumeValue?: string;
+	sharePriceLabel?: string;
+	sharePriceValue?: string;
+	logo?: MediaData;
+	infoBlock?: Array<ItemDetail>;
+};
+
+export type SecurityPapers = {
+	data: Array<SecurityPaperItem>;
 };

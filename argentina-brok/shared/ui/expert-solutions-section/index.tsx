@@ -35,29 +35,71 @@ export const ExpertSolutionSection = ({
 		: '';
 
 	return (
-		<Container className={cx(css.root, className)}>
+		<Container category="div" className={cx(css.root, className)}>
 			{title && <h2 className={css.sectionTitle}>{parser(title ?? '')}</h2>}
-			<div
-				className={cx(css.cards, gridClass, {
-					[css.withShell]: withShell,
-				})}
-			>
-				{items.map((item, key) => (
-					<ExpertSolutionCard
-						key={key}
-						className={cx(css.card, cardBackgroundColor, {
-							[css.withShell]: withShell,
-						})}
-						withShell={withShell}
-						backgroundColor={backgroundColor}
-						id={item.id}
-						icon={item.icon}
-						title={item.title}
-						description={item.description}
-						media={item.media}
-					/>
-				))}
-			</div>
+			{items.length === 5 ? (
+				<div className={css.flexCards}>
+					<ul className={css.firstList}>
+						{items.slice(0, 3).map((item, index) => (
+							<li key={index} className={css.listElement}>
+								<ExpertSolutionCard
+									className={cx(css.card, cardBackgroundColor, {
+										[css.withShell]: withShell,
+									})}
+									withShell={withShell}
+									backgroundColor={backgroundColor}
+									id={item.id}
+									icon={item.icon}
+									title={item.title}
+									description={item.description}
+									media={item.media}
+								/>
+							</li>
+						))}
+					</ul>
+					<ul className={css.secondList}>
+						{items.slice(3).map((item, index) => (
+							<li key={index} className={css.listElement}>
+								<ExpertSolutionCard
+									className={cx(css.card, cardBackgroundColor, {
+										[css.withShell]: withShell,
+									})}
+									withShell={withShell}
+									backgroundColor={backgroundColor}
+									id={item.id}
+									icon={item.icon}
+									title={item.title}
+									description={item.description}
+									media={item.media}
+								/>
+							</li>
+						))}
+					</ul>
+				</div>
+			) : (
+				<ul
+					className={cx(css.cards, gridClass, {
+						[css.withShell]: withShell,
+					})}
+				>
+					{items.map((item, key) => (
+						<li key={key}>
+							<ExpertSolutionCard
+								className={cx(css.card, cardBackgroundColor, {
+									[css.withShell]: withShell,
+								})}
+								withShell={withShell}
+								backgroundColor={backgroundColor}
+								id={item.id}
+								icon={item.icon}
+								title={item.title}
+								description={item.description}
+								media={item.media}
+							/>
+						</li>
+					))}
+				</ul>
+			)}
 		</Container>
 	);
 };
