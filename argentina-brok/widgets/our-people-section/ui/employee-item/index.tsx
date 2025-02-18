@@ -8,7 +8,7 @@ import css from './index.module.css';
 
 export const EmployeeItem = ({ story, employee }: EmployeeStoriesItem) => {
 	return (
-		<Container category="article" padding="min" className={css.root}>
+		<Container category="article" padding="p-32" className={css.root}>
 			<div className={css.titleBlock}>
 				<img
 					className={css.avatar}

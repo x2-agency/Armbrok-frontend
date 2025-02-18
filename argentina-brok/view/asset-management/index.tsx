@@ -39,7 +39,7 @@ export const AssetManagement: NextPage<{
 			{initialData.data.experienceSection && (
 				<HeroContainer className={css.hero}>
 					<TitleSection
-						title={initialData.data.experienceSection.title}
+						title={initialData.data.experienceSection.title ?? ''}
 						description={initialData.data.experienceSection.description}
 					/>
 					<ExperienceSection
