@@ -3,7 +3,6 @@
 import cx from 'clsx';
 
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
-import { Container } from '@/shared/ui/container';
 import { FormatImage } from '@/shared/ui/format-image';
 import type { BannerProps } from '@/widgets/banner-section/banner.types';
 import { defineBodyContent } from '@/widgets/banner-section/helpers/define-body-content';
@@ -25,10 +24,10 @@ export const BannerSection = (props: BannerProps) => {
 			data-align={alignContent}
 			ref={ref}
 		>
-			<Container category="section" padding="default" className={css.content}>
+			<div className={cx(css.content, 'default')}>
 				<BannerHead {...headContent} className={css.head} />
 				<BannerBody {...bodyContent} />
-			</Container>
+			</div>
 			{props.banner.poster && (
 				<FormatImage poster={banner.poster} className={css.poster} />
 			)}

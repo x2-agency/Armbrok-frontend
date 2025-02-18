@@ -8,22 +8,25 @@
 			transparent 70%
 		),
 		linear-gradient(to right, #230302 0%, #230302 20%, #230302 50%);
-	@mixin res margin-block-start, 13.333rem, 4.444rem, 4rem; /* 50px 64px */
-	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin responsive margin-block-start, 40, 64, 64;
+	@mixin responsive margin-block-end, 20, 24, 24;
 
-	@mixin res height, unset, 34.444rem, 31rem; /* 496px */
+	@mixin responsive height, 862.5, 496, 496;
 
 	@media (max-width: 767px) {
 		display: flex;
 		flex-direction: column;
+		width: 100%;
+		border-radius: unset;
+		padding-inline: 5rem;
 	}
 }
 
 .firstIphone {
 	position: absolute;
-	@mixin res width, unset, 20.139rem, 18.125rem; /* 290px */
-	@mixin res right, unset, 22.708rem, 20.438rem; /* 327px */
-	@mixin res top, unset, 5rem, 4.5rem; /* 338px */
+	@mixin responsive width, unset, 290, 290;
+	@mixin responsive right, unset, 327, 327;
+	@mixin responsive top, unset, 72, 72;
 	z-index: 2;
 
 	@media (max-width: 767px) {
@@ -35,9 +38,9 @@
 
 .secondIphone {
 	position: absolute;
-	@mixin res width, unset, 20.139rem, 18.125rem; /* 290px */
-	@mixin res right, unset, 5.694rem, 5.125rem; /* 82px */
-	@mixin res top, unset, 6.806rem, 6.125rem; /* 98px */
+	@mixin responsive width, unset, 290, 290;
+	@mixin responsive right, unset, 82, 82;
+	@mixin responsive top, unset, 98, 98;
 
 	@media (max-width: 767px) {
 		height: 107.867rem; /* 247px */

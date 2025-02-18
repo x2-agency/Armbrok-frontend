@@ -7,7 +7,7 @@ export const HOME_ASSETS_BUTTON = 'Request a consultation';
 
 export const HOME_ASSETS_HREF = '#';
 
-export const HOME_ASSETS_IMAGE = '/assets/images/banner/arrowhand_img.png';
+export const HOME_ASSETS_IMAGE = '/assets/images/home/hand_up.png';
 
 export const HOME_INTERACTIVE_VIDEO: InteractiveVideoType = {
 	title: 'Armbrok is&nbsp;an&nbsp;Armenia-based leading investment company',

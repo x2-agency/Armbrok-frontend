@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	@mixin res width, 88rem, 27.778rem, 25rem; /* 330px 400px */
+	@mixin responsive width, 330, 400, 400;
 	text-align: center;
 }
 
@@ -11,13 +11,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@mixin res width, 23.467rem, 6.111rem, 5.5rem; /* 88px */
-	@mixin res height, 23.467rem, 6.111rem, 5.5rem; /* 88px */
+	@mixin responsive width, 88, 88, 88;
+	@mixin responsive height, 88, 88, 88;
 
 	border: 0.069rem solid var(--gray-300-color);
 
 	border-radius: 50%;
-	@mixin res margin-block-end, 5.333rem, 2.778rem, 2.5rem; /* 20px 40px */
+	@mixin responsive margin-block-end, 20, 40, 40;
 	position: relative;
 
 	@media (max-width: 767px) {
@@ -30,10 +30,10 @@
 	&::before {
 		content: '';
 		position: absolute;
-		@mixin res top, -0.8rem, -0.208rem, -0.188rem; /* -3px */
-		@mixin res left, -0.8rem, -0.208rem, -0.188rem; /* -3px */
-		@mixin res right, -0.8rem, -0.208rem, -0.188rem; /* -3px */
-		@mixin res bottom, -0.8rem, -0.208rem, -0.188rem; /* -3px */
+		@mixin responsive top, -3, -3, -3;
+		@mixin responsive left, -3, -3, -3;
+		@mixin responsive right, -3, -3, -3;
+		@mixin responsive bottom, -3, -3, -3;
 		border-radius: 50%;
 		border: 0.278rem solid var(--red-500-color);
 
@@ -61,10 +61,10 @@
 	&::after {
 		content: '';
 		position: absolute;
-		@mixin res top, -0.8rem, -0.208rem, -0.188rem; /* -3px */
-		@mixin res left, -0.8rem, -0.208rem, -0.188rem; /* -3px */
-		@mixin res right, -0.8rem, -0.208rem, -0.188rem; /* -3px */
-		@mixin res bottom, -0.8rem, -0.208rem, -0.188rem; /* -3px */
+		@mixin responsive top, -3, -3, -3;
+		@mixin responsive left, -3, -3, -3;
+		@mixin responsive right, -3, -3, -3;
+		@mixin responsive bottom, -3, -3, -3;
 		border-radius: 50%;
 		border: 0.278rem solid var(--red-500-color);
 		clip-path: inset(0 0% 0 0);
@@ -87,7 +87,7 @@
 }
 
 .title {
-	@mixin res padding-block-end, 1.333rem, 0.556rem, 0.5rem; /* 5px 8px */
+	@mixin responsive padding-block-end, 5, 8, 8;
 }
 
 .description {
@@ -104,8 +104,8 @@
 	content: '';
 	position: absolute;
 	top: 50%;
-	@mixin res width, unset, 19.931rem, 17.938rem; /* 287px */
-	@mixin res height, unset, 0.069rem, 0.063rem; /* 1px */
+	@mixin responsive width, unset, 287, 287;
+	@mixin responsive height, unset, 1, 1;
 	background-color: var(--gray-300-color);
 	@media (max-width: 767px) {
 		display: none;
@@ -113,9 +113,9 @@
 }
 
 .first::after {
-	@mixin res left, uset, 6.736rem, 6.063rem; /* 97px */
+	@mixin responsive left, uset, 97, 97;
 }
 
 .last::before {
-	@mixin res right, uset, 6.736rem, 6.063rem; /* 97px */
+	@mixin responsive right, uset, 97, 97;
 }

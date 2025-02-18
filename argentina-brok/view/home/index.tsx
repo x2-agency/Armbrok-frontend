@@ -1,7 +1,16 @@
 import type { NextPage } from 'next';
 
+// Типизация данных на основе предоставленных типов
 import { HOME_NEWS } from '@/entities/news-card/model/news.constants';
 import { MOCK_AWARDS } from '@/shared/model/mock-awards';
+import type {
+	CompaniesSection,
+	FinancialSolutionsSection,
+	HeroSection,
+	InvestingStepsSection,
+	ItemDetail,
+	PosterCard,
+} from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
@@ -23,59 +32,88 @@ import type { HomePageResponse } from './types/response';
 export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 	initialData,
 }) => {
+	const {
+		data: {
+			heroSection = {} as HeroSection,
+			advantages = [],
+			brokerageAppCard = {} as PosterCard,
+			assetManagementCard = {} as ItemDetail,
+			financialSolutionsSection = {} as FinancialSolutionsSection,
+			investingStepsSection = {} as InvestingStepsSection,
+			companiesSection = {} as CompaniesSection,
+		} = {},
+	} = initialData || {};
+
 	return (
 		<>
+			{/* Banner Section */}
 			<BannerSection
 				type="default"
 				alignContent="end"
 				banner={{
-					title: initialData?.data.heroSection?.title ?? '',
-					description: initialData?.data.heroSection?.description ?? '',
-					button: initialData?.data.heroSection?.button,
-					poster: initialData?.data.heroSection?.background,
+					title: heroSection?.title ?? '',
+					description: heroSection?.description ?? '',
+					button: heroSection?.button,
+					poster: heroSection?.background,
 				}}
 			/>
-			{initialData?.data.advantages && (
+
+			{/* Advantages Section */}
+			{advantages.length > 0 && (
 				<HeroContainer>
-					<ExpertSolutionSection items={initialData?.data.advantages} />
+					<ExpertSolutionSection items={advantages} />
 				</HeroContainer>
 			)}
+
+			{/* App Section */}
 			<AppSection
 				content={{
-					title: initialData?.data.brokerageAppCard?.title ?? '',
-					description: initialData?.data.brokerageAppCard?.description ?? '',
+					title: brokerageAppCard?.title ?? '',
+					description: brokerageAppCard?.description ?? '',
 					IconSvg: HOME_APP_SECTION.IconSvg,
 					preview: HOME_APP_SECTION.preview,
 					button: HOME_APP_SECTION.button,
 				}}
-				image={initialData?.data.brokerageAppCard.phoneMockups}
+				image={brokerageAppCard?.phoneMockups ?? []}
 			/>
+
+			{/* Asset Management Section */}
 			<AssetManagment
-				title={initialData?.data.assetManagementCard?.title ?? ''}
-				description={initialData?.data.assetManagementCard?.description ?? ''}
+				title={assetManagementCard?.title ?? ''}
+				description={assetManagementCard?.description ?? ''}
 			/>
+
+			{/* Corporate Section */}
 			<Corporate
-				title={initialData?.data.financialSolutionsSection?.title ?? ''}
-				description={
-					initialData?.data.financialSolutionsSection?.description ?? ''
-				}
-				instruments={initialData?.data.financialSolutionsSection?.instruments}
+				title={financialSolutionsSection?.title ?? ''}
+				description={financialSolutionsSection?.description ?? ''}
+				instruments={financialSolutionsSection?.instruments ?? []}
 			/>
+
+			{/* Start Section */}
 			<Start
-				steps={initialData?.data.investingStepsSection?.steps}
-				title={initialData?.data.investingStepsSection?.title}
-				button={initialData?.data.investingStepsSection?.button}
+				steps={investingStepsSection?.steps ?? []}
+				title={investingStepsSection?.title ?? ''}
+				button={investingStepsSection?.button ?? ''}
 			/>
+
+			{/* Awards Section */}
 			<AwardsSection
-				title={initialData?.data.companiesSection?.title}
+				title={companiesSection?.title ?? ''}
 				awards={MOCK_AWARDS.awards}
 				withViewAll
 			/>
+
+			{/* Companies Group Section */}
 			<CompaniesGroup
-				title={initialData?.data.companiesSection?.title}
-				items={initialData?.data.companiesSection?.companies}
+				title={companiesSection?.title ?? ''}
+				items={companiesSection?.companies ?? []}
 			/>
+
+			{/* News Section */}
 			<NewsSectionHome dataNews={HOME_NEWS} />
+
+			{/* Interactive Video Section */}
 			<InteractiveVideo data={HOME_INTERACTIVE_VIDEO} />
 		</>
 	);

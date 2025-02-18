@@ -1,3 +1,5 @@
+import cx from 'clsx';
+
 import type { ImageFormat, PosterCard } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
@@ -15,7 +17,7 @@ export const AppSection = ({ image = [], content }: AppSectionProp) => {
 	const [firstIphone, secondIphone] = image || [];
 
 	return (
-		<Container className={css.root} category="section" padding="hybrid">
+		<Container className={cx(css.root, 'hybrid')}>
 			<Iphone image={firstIphone} wrapperClass={css.secondIphone} />
 			<Iphone image={secondIphone} wrapperClass={css.firstIphone} />
 			<ContentBlock
