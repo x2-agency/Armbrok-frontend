@@ -3,30 +3,46 @@
 	display: flex;
 	flex-direction: column;
 
-	@mixin res border-radius, 4.667rem, 2.222rem, 2rem; /* 20px  32px */
-	@mixin res margin-block-start, 10.667rem, 5rem, 4.5rem; /* 40px  72px */
-	@mixin res margin-block-end, unset, 8.333rem, 7.5rem; /* 120px */
+	@mixin responsive border-radius, 20, 32, 32;
+	@mixin responsive margin-block-start, 40, 72, 72;
+	@mixin responsive margin-block-end, unset, 120, 120;
+}
+
+.videoWrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 .video {
-	@mixin res width, 100%, 42.5rem, 38.25rem; /* 335px 612px */
-	@mixin res height, auto, 29.167rem, 26.25rem; /* 420px */
+	@mixin responsive width, unset, 612, 612;
+	@mixin responsive height, auto, 420, 420;
+
+	@media (max-width: 767px) {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .wrapButton {
 	position: absolute;
-	@mixin res bottom, 0, 0, 1.5rem; /* 24px */
+	@mixin responsive bottom, 0, 0, 22;
+	left: 0;
 	display: flex;
 	align-items: center;
-	@mixin res padding-block, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */
-	@mixin res padding-inline, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */
+	@mixin responsive padding-block, 20, 24, 24;
+	@mixin responsive padding-inline, 20, 24, 24;
 }
 
 .playButton {
 	display: flex;
 	align-items: center;
-	@mixin res width, 12.8rem, 3.333rem, 3rem; /* 48px */
-	@mixin res height, 12.8rem, 3.333rem, 3rem; /* 48px */
+	@mixin responsive width, 48, 48, 48;
+	@mixin responsive height, 48, 48, 48;
 	cursor: pointer;
 }
 
@@ -38,5 +54,28 @@
 .description {
 	@mixin font-text16;
 	color: var(--gray-100-color);
-	@mixin res margin-inline-start, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive margin-inline-start, 16, 16, 16;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	@mixin responsive border-radius, 20, 32, 32;
+	cursor: pointer;
+}
+
+.videoWrapper:hover .overlay {
+	opacity: 0.4;
+}
+
+.videoWrapper:active .overlay {
+	opacity: 1;
 }

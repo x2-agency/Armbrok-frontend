@@ -17,7 +17,7 @@ export const PlacementItem = ({
 	return (
 		<Container
 			category="article"
-			padding="min"
+			padding="p-32"
 			className={cx(css.root, className)}
 		>
 			<PlacementHead {...head} />

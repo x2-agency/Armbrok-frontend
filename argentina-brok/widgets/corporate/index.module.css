@@ -2,23 +2,20 @@
 	display: flex;
 	flex-direction: column;
 	background-color: var(--gray-200-color);
-	@mixin res padding-block, 10.667rem, 2.778rem, 2.5rem; /* 40px */
-	@mixin res padding-inline, 5.333rem, 2.778rem, 2.5rem; /* 20px 40px */
-	@mixin res border-radius, 4.667rem, 2.222rem, 2rem; /* 20px  32px */
-	@mixin res margin-block, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px */
-}
-
-.wrap {
+	@mixin responsive padding-block, 40, 40, 40;
+	@mixin responsive padding-inline, 20, 40, 40;
+	@mixin responsive border-radius, 20, 32, 32;
+	@mixin responsive margin-block, 20, 24, 24;
 }
 
 .title {
 	@mixin font-h2;
 	font-weight: 700;
-	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive padding-block-end, 10, 16, 16;
 }
 
 .description {
 	color: var(--gray-600-color);
 	@mixin font-text20;
-	@mixin res padding-block-end, 5.333rem, 2.778rem, 2.5rem; /* 20px 40px */
+	@mixin responsive padding-block-end, 20, 40, 40;
 }

@@ -29,7 +29,7 @@ export const ExpertSolutionCard = ({
 
 	return (
 		<article
-			className={cx(css.card, className, cardBackgroundColor, {
+			className={cx(css.card, className, cardBackgroundColor, 'p-32', {
 				[css.withShell]: withShell,
 			})}
 		>

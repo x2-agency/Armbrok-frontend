@@ -2,6 +2,7 @@
 	display: flex;
 	position: relative;
 	overflow: hidden;
+	background-color: var(--red-700-color);
 	@mixin responsive margin-block, 20, 24, 24;
 	background: radial-gradient(
 			circle at 92% 7%,
@@ -15,7 +16,6 @@
 			#9e2e2c 5%,
 			transparent 44%
 		);
-	background-color: var(--red-700-color);
 
 	@media (max-width: 767px) {
 		display: flex;
@@ -71,7 +71,7 @@
 
 .imgWrap {
 	position: absolute;
-	@mixin responsive width, unset, 635, 635;
+	@mixin responsive width, unset, 290, 290;
 	height: 100%;
 	@mixin res right, unset, 0, 0;
 	@mixin res top, unset, 0, 0;

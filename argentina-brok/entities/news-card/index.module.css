@@ -54,16 +54,15 @@
 	margin-block-start: auto;
 
 	@media (max-width: 1000px) {
-		flex-direction: column;
-		align-items: baseline;
-		gap: 5.667rem; /* 40px */
+		gap: 1.667rem;
 	}
 }
 
 .authorWrap {
 	display: flex;
 	flex-direction: row;
-	@mixin responsive gap, 8, 8, 8;
+	align-items: center;
+	@mixin responsive gap, 10, 8, 8;
 }
 
 .imgWrap {
@@ -72,7 +71,14 @@
 }
 
 .avatar {
+	width: 100%;
+	height: 100%;
 	border-radius: 50%;
+}
+
+.name {
+	@mixin font-text14;
+	text-align: center;
 }
 
 .tag {

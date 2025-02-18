@@ -1,7 +1,7 @@
 .root {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin responsive padding-block-end, 40, 40, 40;
 
 	@media (max-width: 767px) {
 		display: flex;

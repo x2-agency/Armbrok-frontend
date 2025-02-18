@@ -16,7 +16,7 @@ export const Corporate = ({
 	}
 
 	return (
-		<Container category="section" className={css.root}>
+		<Container className={css.root}>
 			<div className={css.wrap}>
 				<h2 className={css.title}>{title}</h2>
 				{description && (
