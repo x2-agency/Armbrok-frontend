@@ -1,2 +1,6 @@
+# *
 User-agent: *
-Disallow: /notes
+Allow: /
+
+# Host
+Host: https://example.website.com
