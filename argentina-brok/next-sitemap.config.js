@@ -1,22 +1,24 @@
-module.exports = {
-	siteUrl: process.env.WEBSITE_DOMAIN || 'https://example.com', // YOUR WEBSITE DOMAIN
-	generateRobotsTxt: true, // robots.tsx GENERATION
-	exclude: [''], // EXCLUDED PAGES
-	generateIndexSitemap: false, // SITEMAP SPLIT
-	transform: async (config, path) => {
-		const locales = ['en', 'fr', 'de'];
-		const defaultLocale = 'en';
+const { LOCALES, WEBSITE_URLS } = require('./website-locale');
 
-		return locales.map(locale => ({
-			loc: `${config.siteUrl}/${locale}${path === '/' ? '' : path}`,
-			changefreq: 'daily',
-			priority: path === '/' ? 1.0 : 0.7,
-			lastmod: new Date().toISOString(),
-			alternates: locales.map(altLocale => ({
-				hreflang: altLocale,
-				href: `${config.siteUrl}/${altLocale}${path === '/' ? '' : path}`,
-			})),
-			canonical: `${config.siteUrl}/${defaultLocale}${path === '/' ? '' : path}`,
-		}));
-	},
+module.exports = {
+	siteUrl: process.env.WEBSITE_DOMAIN || 'https://example.com',
+	generateRobotsTxt: true,
+	exclude: ['/error', '/not-found'],
+	generateIndexSitemap: true,
+	additionalPaths: async config =>
+		LOCALES.flatMap(locale =>
+			WEBSITE_URLS.map(path => {
+				const loc = `${config.siteUrl}/${locale}${path}`;
+				return {
+					loc,
+					changefreq: 'daily',
+					priority: path === '/' ? 1.0 : 0.7,
+					lastmod: new Date().toISOString(),
+					alternateRefs: LOCALES.map(altLocale => ({
+						hreflang: altLocale,
+						href: `${config.siteUrl}/${altLocale}${path}`,
+					})),
+				};
+			})
+		),
 };
