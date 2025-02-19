@@ -6,17 +6,6 @@ import { LOCALES, DEFAULT_LOCALE } from './website-locale';
 export function middleware(req: NextRequest) {
 	const { pathname } = req.nextUrl; // Extracts the pathname from the request URL.
 
-	// Exclude static files and public files from middleware processing.
-	if (
-		pathname.startsWith('/_next/') || // Next.js static files
-		pathname.startsWith('/static/') || // Custom static files (if any)
-		pathname.startsWith('/favicon.ico') || // Favicon
-		pathname.startsWith('/images/') || // Images from the public folder
-		pathname.startsWith('/assets/') // Other assets from the public folder
-	) {
-		return NextResponse.next(); // Skip middleware for static files.
-	}
-
 	// Check if the pathname already starts with a supported locale.
 	if (LOCALES.some(locale => pathname.startsWith(`/${locale}`))) {
 		return NextResponse.next(); // If the locale is already in the URL, proceed without changes.
