@@ -4,7 +4,7 @@ module.exports = {
 	siteUrl: process.env.WEBSITE_DOMAIN || 'https://example.com',
 	generateRobotsTxt: true,
 	exclude: ['/error', '/not-found'],
-	generateIndexSitemap: true,
+	generateIndexSitemap: false,
 	additionalPaths: async config =>
 		LOCALES.flatMap(locale =>
 			WEBSITE_URLS.map(path => {
