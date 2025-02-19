@@ -1,4 +1,11 @@
 .root {
+	@media (max-width: 767px) {
+		width: 100%;
+		padding-inline: 5rem;
+	}
+}
+
+.wrap {
 	position: relative;
 	overflow: hidden;
 	background: radial-gradient(
@@ -11,13 +18,12 @@
 	@mixin responsive margin-block-start, 40, 64, 64;
 	@mixin responsive margin-block-end, 20, 24, 24;
 
-	@mixin responsive height, 862.5, 496, 496;
+	@mixin responsive height, 794.5, 496, 496;
 
 	@media (max-width: 767px) {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		border-radius: unset;
 		padding-inline: 5rem;
 	}
 }
@@ -30,7 +36,7 @@
 	z-index: 2;
 
 	@media (max-width: 767px) {
-		height: 107.867rem; /* 247px */
+		height: 88.867rem; /* 247px */
 		margin-inline: auto;
 		bottom: 54rem;
 	}
@@ -43,7 +49,7 @@
 	@mixin responsive top, unset, 98, 98;
 
 	@media (max-width: 767px) {
-		height: 107.867rem; /* 247px */
+		height: 88.867rem; /* 247px */
 		margin-inline: auto;
 		bottom: 62rem;
 		right: 4rem;

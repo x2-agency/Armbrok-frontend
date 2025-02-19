@@ -14,16 +14,23 @@ import css from './index.module.css';
 export const AssetManagment = ({ title, description }: PosterCard) => {
 	return (
 		<Container category="section" padding="hybrid" className={css.root}>
-			<div className={css.contnet}>
-				<h2 className={css.title}>{parser(title)}</h2>
-				<p className={css.description}>{parser(description ?? '')}</p>
-				<Button className={css.button} category="big" href="#" variant="filled">
-					{parser(HOME_ASSETS_BUTTON)}
-				</Button>
-			</div>
-			<div className={css.imgWrap}>
-				<img className={css.image} src={HOME_ASSETS_IMAGE} alt="hand" />
-			</div>
+			<article className={css.wrap}>
+				<div className={css.contnet}>
+					<h2 className={css.title}>{parser(title)}</h2>
+					<p className={css.description}>{parser(description ?? '')}</p>
+					<Button
+						className={css.button}
+						category="big"
+						href="#"
+						variant="filled"
+					>
+						{parser(HOME_ASSETS_BUTTON)}
+					</Button>
+				</div>
+				<div className={css.imgWrap}>
+					<img className={css.image} src={HOME_ASSETS_IMAGE} alt="hand" />
+				</div>
+			</article>
 		</Container>
 	);
 };

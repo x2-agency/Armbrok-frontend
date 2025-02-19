@@ -17,16 +17,18 @@ export const AppSection = ({ image = [], content }: AppSectionProp) => {
 	const [firstIphone, secondIphone] = image || [];
 
 	return (
-		<Container className={cx(css.root, 'hybrid')}>
-			<Iphone image={firstIphone} wrapperClass={css.secondIphone} />
-			<Iphone image={secondIphone} wrapperClass={css.firstIphone} />
-			<ContentBlock
-				IconSvg={content?.IconSvg}
-				title={content?.title ?? ''}
-				description={content?.description ?? ''}
-				button={content?.button}
-				preview={content?.preview}
-			/>
+		<Container className={css.root}>
+			<div className={cx(css.wrap, 'hybrid')}>
+				<Iphone image={firstIphone} wrapperClass={css.firstIphone} />
+				<Iphone image={secondIphone} wrapperClass={css.secondIphone} />
+				<ContentBlock
+					IconSvg={content?.IconSvg}
+					title={content?.title ?? ''}
+					description={content?.description ?? ''}
+					button={content?.button}
+					preview={content?.preview}
+				/>
+			</div>
 		</Container>
 	);
 };

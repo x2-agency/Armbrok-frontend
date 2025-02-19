@@ -14,7 +14,7 @@
 	@mixin responsive width, 88, 88, 88;
 	@mixin responsive height, 88, 88, 88;
 
-	border: 0.069rem solid var(--gray-300-color);
+	border: 0.4rem solid var(--gray-300-color);
 
 	border-radius: 50%;
 	@mixin responsive margin-block-end, 20, 40, 40;
@@ -30,12 +30,12 @@
 	&::before {
 		content: '';
 		position: absolute;
-		@mixin responsive top, -3, -3, -3;
-		@mixin responsive left, -3, -3, -3;
-		@mixin responsive right, -3, -3, -3;
-		@mixin responsive bottom, -3, -3, -3;
+		@mixin responsive top, -5, -5, -5;
+		@mixin responsive left, -5, -5, -5;
+		@mixin responsive right, -5, -5, -5;
+		@mixin responsive bottom, -5, -5, -5;
 		border-radius: 50%;
-		border: 0.278rem solid var(--red-500-color);
+		border: 0.3rem solid var(--red-500-color);
 
 		@media (max-width: 767px) {
 			border: 0.7rem solid var(--red-500-color);
@@ -61,10 +61,10 @@
 	&::after {
 		content: '';
 		position: absolute;
-		@mixin responsive top, -3, -3, -3;
-		@mixin responsive left, -3, -3, -3;
-		@mixin responsive right, -3, -3, -3;
-		@mixin responsive bottom, -3, -3, -3;
+		@mixin responsive top, -5, -5, -5;
+		@mixin responsive left, -5, -5, -5;
+		@mixin responsive right, -5, -5, -5;
+		@mixin responsive bottom, -5, -5, -5;
 		border-radius: 50%;
 		border: 0.278rem solid var(--red-500-color);
 		clip-path: inset(0 0% 0 0);
