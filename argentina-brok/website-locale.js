@@ -13,4 +13,5 @@ module.exports = {
 		'/investment-banking',
 		'/investor-relations',
 	],
+	EXCLUDED_PATHS: ['/error', '/not-found'],
 };

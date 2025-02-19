@@ -1,9 +1,9 @@
-const { LOCALES, WEBSITE_URLS } = require('./website-locale');
+const { LOCALES, WEBSITE_URLS, EXCLUDED_PATHS } = require('./website-locale');
 
 module.exports = {
 	siteUrl: process.env.WEBSITE_DOMAIN || 'https://example.com',
 	generateRobotsTxt: true,
-	exclude: ['/error', '/not-found'],
+	exclude: EXCLUDED_PATHS,
 	generateIndexSitemap: false,
 	additionalPaths: async config =>
 		LOCALES.flatMap(locale =>
