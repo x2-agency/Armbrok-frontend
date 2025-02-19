@@ -5,7 +5,7 @@ import parser from 'html-react-parser';
 import useMediaQuery from '@/shared/hooks/use-media-query';
 import type {
 	CompanyStructureSection,
-	Employee,
+	EmployeeList,
 } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 import { Tabs } from '@/widgets/company-members/ui/tabs';
@@ -23,12 +23,16 @@ export const CompanyMembers = ({ tabs, title }: CompanyStructureSection) => {
 	}
 
 	const tabsElem = tabs.map(tab => {
+		const employeesList = tab.content.find(item => 'employees' in item) as
+			| EmployeeList
+			| undefined;
+
 		return tab.tabName === 'Team'
 			? {
 					label: tab.tabName,
-					content: (
-						<CompanyMembersSection {...(tab.content as Array<Employee>)} />
-					),
+					content: employeesList ? (
+						<CompanyMembersSection employees={employeesList.employees} />
+					) : null,
 				}
 			: {
 					label: tab.tabName,

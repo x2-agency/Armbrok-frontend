@@ -4,7 +4,7 @@ import { InvestorRelations } from '@/view/investor-relations';
 const InvestorRelationsPage = async () => {
 	const initialInvestorRelationsPageData = await getInvestorRelations();
 
-	return <InvestorRelations initialData={initialInvestorRelationsPageData} />;
+	return <InvestorRelations {...initialInvestorRelationsPageData.data} />;
 };
 
 export default InvestorRelationsPage;

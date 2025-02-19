@@ -17,25 +17,33 @@ import { StatutoryDocuments } from '@/widgets/statutory-documents';
 import css from './index.module.css';
 import type { AboutUsPageResponse } from './types/response';
 
-export const AboutUs: NextPage<{ initialData?: AboutUsPageResponse }> = ({
-	initialData,
+export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
+	heroSection,
+	valuesSection,
+	membershipSection,
+	companiesSection,
+	significantProjectsSection,
+	companyStructureSection,
+	corporateEventsSection,
+	documentsSection,
+	companyDetails,
 }) => {
 	return (
-		<>	
+		<>
 			<BannerSection
 				type="about"
 				banner={{
-					established: initialData?.data.heroSection?.titleLabel,
-					title: initialData?.data.heroSection?.title ?? '',
-					description: initialData?.data.heroSection?.description ?? '',
-					poster: initialData?.data.heroSection?.background,
-					awards: initialData?.data.heroSection?.factoids,
+					established: heroSection?.titleLabel,
+					title: heroSection?.title ?? '',
+					description: heroSection?.description ?? '',
+					poster: heroSection?.background,
+					awards: heroSection?.factoids,
 				}}
 			/>
 			<HeroContainer>
 				<ExpertSolutionSection
-					items={initialData?.data.valuesSection?.factoids}
-					title={initialData?.data.valuesSection?.title}
+					items={valuesSection?.factoids}
+					title={valuesSection?.title}
 					withShell
 					backgroundColor="white"
 				/>
@@ -46,37 +54,34 @@ export const AboutUs: NextPage<{ initialData?: AboutUsPageResponse }> = ({
 				withViewAll
 			/>
 			<MembershipSection
-				title={initialData?.data.membershipSection?.title}
-				items={initialData?.data.membershipSection?.companies}
+				title={membershipSection?.title}
+				items={membershipSection?.companies}
 			/>
 			<CompaniesGroup
-				title={initialData?.data.companiesSection?.title}
-				items={initialData?.data.companiesSection?.companies}
+				title={companiesSection?.title}
+				items={companiesSection?.companies}
 				className={css.companies}
 			/>
 			<SliderSection
-				title={initialData?.data.significantProjectsSection?.title}
-				description={initialData?.data.significantProjectsSection?.description}
-				slider={
-					initialData?.data.significantProjectsSection
-						?.slider as Array<SliderItemWithText>
-				}
+				title={significantProjectsSection?.title}
+				description={significantProjectsSection?.description}
+				slider={significantProjectsSection?.slider as Array<SliderItemWithText>}
 			/>
 			<CompanyMembers
-				title={initialData?.data.companyStructureSection?.title}
-				tabs={initialData?.data.companyStructureSection?.tabs}
+				title={companyStructureSection?.title}
+				tabs={companyStructureSection?.tabs}
 			/>
 			<CorporateEvents
-				title={initialData?.data.corporateEventsSection?.title}
-				events={initialData?.data.corporateEventsSection?.events}
+				title={corporateEventsSection?.title}
+				events={corporateEventsSection?.events}
 			/>
 			<StatutoryDocuments
-				title={initialData?.data.documentsSection?.title}
-				documents={initialData?.data.documentsSection?.documents}
+				title={documentsSection?.title}
+				documents={documentsSection?.documents}
 			/>
 			<CompanyDetailsSection
-				title={initialData?.data.companyDetails?.title ?? ''}
-				factoids={initialData?.data.companyDetails?.factoids}
+				title={companyDetails?.title ?? ''}
+				factoids={companyDetails?.factoids}
 			/>
 		</>
 	);

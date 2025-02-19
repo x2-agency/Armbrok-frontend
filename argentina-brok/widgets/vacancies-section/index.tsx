@@ -13,6 +13,10 @@ export const VacanciesSection = ({
 	vacancies,
 	className,
 }: VacanciesSectionProps) => {
+	if (!vacancies || vacancies.length === 0) {
+		return null;
+	}
+
 	return (
 		<Container className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(title)}</h2>

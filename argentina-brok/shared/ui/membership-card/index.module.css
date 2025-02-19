@@ -4,6 +4,7 @@
 	background-color: var(--gray-200-color);
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 }
 
 .icon {

@@ -1,14 +1,14 @@
+import type { Vacancy } from '@/shared/types/global.types';
 export type VacancyProps = {
-	name: string;
-	link: string;
+	name?: string;
+	link?: string;
 	description?: string;
 	icon?: string;
 	className?: string;
 };
-
 export type VacanciesSectionProps = {
 	title: string;
 	description: string;
-	vacancies: Array<VacancyProps>;
+	vacancies?: Array<Vacancy>;
 	className?: string;
 };

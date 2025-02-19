@@ -3,6 +3,7 @@
 import parser from 'html-react-parser';
 import { useForm } from 'react-hook-form';
 
+import { postEmailForm } from '@/shared/api/post-email-form.ts';
 import { getValidationRules } from '@/shared/lib/validation';
 import { Button } from '@/shared/ui/button';
 import { Input } from '@/shared/ui/input';
@@ -22,13 +23,21 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 	const {
 		formState: { isValid },
 		register,
+		handleSubmit,
 	} = useForm<FeedbackInputs>({ mode: 'onChange' });
+
+	const handleSubmitForm = ({ email }: FeedbackInputs) => {
+		postEmailForm({ email });
+	};
 
 	return (
 		<section className={css.root}>
 			<h2 className={css.title}>{parser(title)}</h2>
 			{description && <p className={css.description}>{parser(description)}</p>}
-			<form className={css.form}>
+			<form
+				className={css.form}
+				onSubmit={handleSubmit(data => handleSubmitForm(data))}
+			>
 				<Input
 					className={css.input}
 					type="email"
@@ -38,7 +47,7 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 				<Button
 					variant="filled"
 					category="big"
-					type="button"
+					type="submit"
 					disabled={!isValid}
 					className={css.button}
 				>

@@ -1,6 +1,8 @@
+import type { SecurityPaperItem } from '@/shared/types/global.types';
+
 export type PlacementArticleProps = {
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
 };
 
 export type PlacementSubtitleProps = {
@@ -23,7 +25,7 @@ export type PlacementItemProps = {
 };
 
 export type PlacementSectionProps = {
-	items: Array<PlacementItemProps>;
+	items?: Array<SecurityPaperItem>;
 	title?: string;
 	className?: string;
 };

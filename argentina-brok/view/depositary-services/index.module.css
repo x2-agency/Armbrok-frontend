@@ -8,3 +8,13 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.experts {
+	@mixin responsive padding-inline, 0, 153, 153;
+
+	grid-template-columns: repeat(3, 1fr);
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
+}

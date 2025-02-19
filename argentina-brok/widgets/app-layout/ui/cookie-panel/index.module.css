@@ -1,0 +1,43 @@
+.root {
+	@mixin responsive border-radius, 16, 16, 16;
+	@mixin responsive padding, 16, 24, 24;
+	@mixin responsive gap, 24, 24, 24;
+	@mixin responsive --shadow, 48, 48, 48;
+
+	position: fixed;
+	z-index: 1000;
+	top: 90%;
+	left: 50%;
+	translate: -50% -50%;
+	background-color: var(--gray-100-color);
+	display: flex;
+	align-items: center;
+	outline: none;
+	box-shadow: 0 0 var(--shadow) -12px #101828;
+
+	&::backdrop {
+		background: unset;
+		width: 0;
+		height: 0;
+	}
+}
+
+.about {
+	@mixin responsive gap, 2, 2, 2;
+
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}
+
+.summary,
+.about {
+	@mixin font-text14;
+
+	color: var(--gray-700-color);
+
+	a {
+		outline: none;
+		text-decoration: underline;
+	}
+}

@@ -20,12 +20,12 @@ export const Member = ({
 
 	return (
 		<>
-			<button className={css.root} onClick={() => toggleModalOpen(true)}>
+			<button className={css.card} onClick={() => toggleModalOpen(true)}>
 				<img src={avatar?.url} alt="company member" className={css.image} />
-				<header>
+				<div>
 					{fullName && <h3 className={css.name}>{parser(fullName)}</h3>}
 					{position && <p className={css.position}>{parser(position)}</p>}
-				</header>
+				</div>
 			</button>
 			<MemberModal
 				fullName={fullName}

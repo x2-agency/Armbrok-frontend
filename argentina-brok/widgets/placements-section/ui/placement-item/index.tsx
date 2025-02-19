@@ -1,7 +1,5 @@
-import cx from 'clsx';
-
+import type { SecurityPaperItem } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
-import type { PlacementItemProps } from '@/widgets/placements-section/placements.types';
 import { PlacementBody } from '@/widgets/placements-section/ui/placement-body';
 import { PlacementHead } from '@/widgets/placements-section/ui/placement-head';
 import { PlacementSubtitle } from '@/widgets/placements-section/ui/placement-subtitle';
@@ -9,20 +7,31 @@ import { PlacementSubtitle } from '@/widgets/placements-section/ui/placement-sub
 import css from './index.module.css';
 
 export const PlacementItem = ({
-	head,
-	body,
-	subtitle,
-	className,
-}: PlacementItemProps) => {
+	name,
+	launchDate,
+	launchDateLabel,
+	ipoVolumeLabel,
+	ipoVolumeValue,
+	sharePriceLabel,
+	sharePriceValue,
+	logo,
+	infoBlock,
+}: SecurityPaperItem) => {
 	return (
-		<Container
-			category="article"
-			padding="p-32"
-			className={cx(css.root, className)}
-		>
-			<PlacementHead {...head} />
-			{subtitle && <PlacementSubtitle subtitle={subtitle} />}
-			<PlacementBody body={body} />
+		<Container category="article" padding="p-32" className={css.root}>
+			<PlacementHead
+				logo={logo}
+				name={name}
+				launchDateLabel={launchDateLabel}
+				launchDate={launchDate}
+			/>
+			<PlacementSubtitle
+				ipoVolumeLabel={ipoVolumeLabel}
+				ipoVolumeValue={ipoVolumeValue}
+				sharePriceLabel={sharePriceLabel}
+				sharePriceValue={sharePriceValue}
+			/>
+			<PlacementBody infoBlock={infoBlock} />
 		</Container>
 	);
 };

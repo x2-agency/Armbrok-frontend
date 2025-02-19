@@ -21,22 +21,23 @@ export const StatutoryDocuments = ({
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
-			<div
+			<ul
 				className={css.documents}
 				style={{
 					gridTemplateColumns: `repeat(${columns}, 1fr)`,
 				}}
 			>
 				{documents.map((document, key) => (
-					<Document
-						key={key}
-						name={document.name}
-						file={document.file}
-						alternativeText=""
-						direction={fileDirection}
-					/>
+					<li key={key}>
+						<Document
+							name={document.name}
+							file={document.file}
+							alternativeText=""
+							direction={fileDirection}
+						/>
+					</li>
 				))}
-			</div>
+			</ul>
 		</Container>
 	);
 };

@@ -62,8 +62,8 @@ type AboutBannerProps = BaseBannerProps & {
 	type: 'about';
 	alignContent?: never;
 	banner: BaseBannerProps['banner'] & {
-		established: string;
-		awards: Array<AwardsData>;
+		established?: string;
+		awards?: Array<AwardsData>;
 	};
 };
 

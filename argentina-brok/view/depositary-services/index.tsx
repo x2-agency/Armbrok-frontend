@@ -10,44 +10,52 @@ import { Review } from '@/widgets/review';
 import css from './index.module.css';
 import type { DepositaryServicesPageResponse } from './types/response';
 
-export const DepositaryServices: NextPage<{
-	initialData?: DepositaryServicesPageResponse;
-}> = ({ initialData }) => {
+export const DepositaryServices: NextPage<
+	DepositaryServicesPageResponse['data']
+> = ({
+	heroSection,
+	infoSection,
+	primaryServicesSection,
+	supplementaryServices,
+	benefitsSection,
+	quoteSection,
+}) => {
 	return (
 		<>
 			<BannerSection
 				type="default"
 				banner={{
-					title: initialData?.data.heroSection?.title ?? '',
-					description: initialData?.data.heroSection?.description ?? '',
-					button: initialData?.data.heroSection?.button,
-					poster: initialData?.data.heroSection?.background,
+					title: heroSection?.title ?? '',
+					description: heroSection?.description ?? '',
+					button: heroSection?.button,
+					poster: heroSection?.background,
 				}}
 				alignContent="center"
 			/>
 			<HeroContainer className={css.hero}>
 				<ExpertSolutionSection
-					items={initialData?.data.primaryServicesSection?.factoids}
-					title={initialData?.data.primaryServicesSection?.title}
+					items={primaryServicesSection?.factoids}
+					title={primaryServicesSection?.title}
 					withShell
 					backgroundColor="white"
 				/>
 				<ExpertSolutionSection
-					items={initialData?.data.supplementaryServices?.factoids}
-					title={initialData?.data.supplementaryServices?.title}
+					items={supplementaryServices?.factoids}
+					title={supplementaryServices?.title}
 					withShell
 					backgroundColor="white"
+					gridClass={css.experts}
 				/>
 			</HeroContainer>
 			<GuaranteesSection
 				className={css.benefits}
-				title={initialData?.data.benefitsSection?.title}
-				items={initialData?.data.benefitsSection?.factoids}
+				title={benefitsSection?.title}
+				items={benefitsSection?.factoids}
 			/>
-			<Review quote={initialData?.data.quoteSection} />
+			<Review quote={quoteSection} />
 			<HelpfulInformation
-				title={initialData?.data.infoSection?.title}
-				items={initialData?.data.infoSection?.accordions}
+				title={infoSection?.title}
+				items={infoSection?.accordions}
 			/>
 		</>
 	);
