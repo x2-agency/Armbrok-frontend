@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import type { PosterCard } from '@/shared/types/global.types';
@@ -10,11 +11,10 @@ import {
 } from '@/view/home/model/home.constants';
 
 import css from './index.module.css';
-
 export const AssetManagment = ({ title, description }: PosterCard) => {
 	return (
-		<Container category="section" padding="hybrid" className={css.root}>
-			<article className={css.wrap}>
+		<Container className={css.root}>
+			<article className={cx(css.wrap, 'hybrid')}>
 				<div className={css.contnet}>
 					<h2 className={css.title}>{parser(title)}</h2>
 					<p className={css.description}>{parser(description ?? '')}</p>
