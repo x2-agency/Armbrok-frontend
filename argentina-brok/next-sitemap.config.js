@@ -7,17 +7,17 @@ module.exports = {
 	generateIndexSitemap: false,
 	additionalPaths: async config =>
 		LOCALES.flatMap(locale =>
-			WEBSITE_URLS.map(path => {
-				const loc = `${config.siteUrl}/${locale}${path}`;
+			WEBSITE_URLS.map(({ path, priority, changefreq }) => {
+				const loc =
+					path === '/'
+						? `${config.siteUrl}/${locale}`
+						: `${config.siteUrl}/${locale}${path}`;
+
 				return {
 					loc,
-					changefreq: 'daily',
-					priority: path === '/' ? 1.0 : 0.7,
+					changefreq,
+					priority,
 					lastmod: new Date().toISOString(),
-					alternateRefs: LOCALES.map(altLocale => ({
-						hreflang: altLocale,
-						href: `${config.siteUrl}/${altLocale}${path}`,
-					})),
 				};
 			})
 		),
