@@ -19,7 +19,7 @@
 }
 
 .cards.withShell {
-	@mixin res gap, 24, 24, 24;
+	@mixin responsive gap, 24, 24, 24;
 }
 
 .flexCards {
