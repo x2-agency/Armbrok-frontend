@@ -36,9 +36,10 @@ export const Document = ({
 					)}
 				</header>
 			</div>
-			<Button href="#" variant="next" iconRotate={270} className={css.button}>
+			<Button variant="next" iconRotate={270} className={css.button}>
 				Download
 			</Button>
+			<a href={file.url} className={css.downloadLink} download />
 		</article>
 	);
 };

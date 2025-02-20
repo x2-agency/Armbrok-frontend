@@ -17,13 +17,17 @@ export const PlacementsSection = ({
 	return (
 		<section className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
-			<ul className={css.placements}>
-				{items.map((value, index) => (
-					<li key={index} className={css.placement}>
-						<PlacementItem {...value} />
-					</li>
-				))}
-			</ul>
+			<div className={css.container}>
+				<div className={cx(css.leftOverlay)} />
+				<ul className={css.placements}>
+					{items.map((value, index) => (
+						<li key={index} className={css.placement}>
+							<PlacementItem {...value} />
+						</li>
+					))}
+				</ul>
+				<div className={css.rightOverlay} />
+			</div>
 		</section>
 	);
 };
