@@ -78,12 +78,17 @@
 	transition-property: background-color;
 
 	@media (hover: hover) {
-		&:hover {
+		&:not(:disabled):hover {
 			background-color: #bf1d29;
 		}
 	}
 
 	@media (max-width: 767px) {
 		width: 100%;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
 	}
 }
