@@ -1,3 +1,7 @@
+.root {
+	position: relative;
+}
+
 .input {
 	@mixin res padding, 4.267rem, 1.111rem, 1rem; /* 16px */
 	@mixin res border-width, 0.267rem, 0.069rem, 0.063rem; /* 1px */
@@ -15,4 +19,18 @@
 		-webkit-text-fill-color: inherit;
 		@mixin transition background-color, 5000s;
 	}
+
+	&.withIcon {
+		@mixin responsive padding-inline-start, 40, 50, 50;
+	}
+}
+
+.leftIcon {
+	@mixin responsive width, 16, 24, 24;
+	@mixin responsive height, 16, 24, 24;
+	@mixin responsive margin-inline-start, 16, 16, 16;
+
+	position: absolute;
+	top: 50%;
+	translate: 0% -50%;
 }
