@@ -28,6 +28,8 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	documentsSection,
 	companyDetails,
 }) => {
+
+	console.log(companyDetails);
 	return (
 		<>
 			<BannerSection
@@ -81,7 +83,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 			/>
 			<CompanyDetailsSection
 				title={companyDetails?.title ?? ''}
-				factoids={companyDetails?.factoids}
+				items={companyDetails?.items}
 			/>
 		</>
 	);
