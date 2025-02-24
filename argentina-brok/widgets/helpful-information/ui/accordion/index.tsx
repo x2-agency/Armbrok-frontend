@@ -8,7 +8,7 @@ import css from './index.module.css';
 
 export const Accordion = ({ summary, description }: AccordionProps) => {
 	return (
-		<article className={cx(css.root, 'p-30')}>
+		<article className={cx(css.root, 'p-32')}>
 			<details className={css.details}>
 				<summary className={css.summary}>
 					<h4 className={css.title}>{parser(summary)}</h4>

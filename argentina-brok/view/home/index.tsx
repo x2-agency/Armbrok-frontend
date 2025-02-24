@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 
 // Типизация данных на основе предоставленных типов
-import { HOME_NEWS } from '@/entities/news-card/model/news.constants';
 import { MOCK_AWARDS } from '@/shared/model/mock-awards';
+import type { BlogData } from '@/shared/types/article';
 import type {
 	CompaniesSection,
 	FinancialSolutionsSection,
@@ -20,6 +20,7 @@ import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
 import { Corporate } from '@/widgets/corporate';
 import { InteractiveVideo } from '@/widgets/interactive-video';
+import type { NewsSectionProps } from '@/widgets/news-section';
 import { NewsSectionHome } from '@/widgets/news-section';
 import { Start } from '@/widgets/start';
 
@@ -29,9 +30,10 @@ import {
 } from './model/home.constants';
 import type { HomePageResponse } from './types/response';
 
-export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
-	initialData,
-}) => {
+export const Home: NextPage<{
+	initialData?: HomePageResponse;
+	initialNewsCard: BlogData;
+}> = ({ initialData, initialNewsCard }) => {
 	const {
 		data: {
 			heroSection = {} as HeroSection,
@@ -41,6 +43,7 @@ export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 			financialSolutionsSection = {} as FinancialSolutionsSection,
 			investingStepsSection = {} as InvestingStepsSection,
 			companiesSection = {} as CompaniesSection,
+			newsSection = {} as NewsSectionProps,
 		} = {},
 	} = initialData || {};
 
@@ -111,7 +114,11 @@ export const Home: NextPage<{ initialData?: HomePageResponse }> = ({
 			/>
 
 			{/* News Section */}
-			<NewsSectionHome dataNews={HOME_NEWS} />
+			<NewsSectionHome
+				title={newsSection?.title ?? ''}
+				moreButton={newsSection.moreButton}
+				dataNews={initialNewsCard}
+			/>
 
 			{/* Interactive Video Section */}
 			<InteractiveVideo data={HOME_INTERACTIVE_VIDEO} />

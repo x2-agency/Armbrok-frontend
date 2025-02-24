@@ -18,7 +18,7 @@ export const MembershipCard = ({
 	description,
 }: MembershipCardProps) => {
 	return (
-		<article className={cx(css.root, 'p-40')}>
+		<article className={cx(css.root, 'p-32')}>
 			<img src={logo?.url} alt="icon" className={css.icon} />
 			<header className={css.header}>
 				<h3 className={cx(css.title, { [css.greyTitle]: withGreyTitle })}>

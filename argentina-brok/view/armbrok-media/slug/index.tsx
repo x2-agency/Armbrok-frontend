@@ -1,33 +1,61 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
+import type { NextPage } from 'next';
 
+import type { BlogData } from '@/shared/types/article';
 import type { MediaData } from '@/shared/types/global.types';
-import { ARTICLE_PAGE_DATA } from '@/view/armbrok-media/model/article.constants';
+import ContentMarkup from '@/shared/ui/content-markup';
+import { LAST_MEDIA_DATA } from '@/view/armbrok-media/model/armbrok-media.constants';
+import { NewsSectionHome } from '@/widgets/news-section';
 
 import css from './index.module.css';
-import { Author } from './ui/author';
+import { Author, type AuthorData } from './ui/author';
 
-export type ArticleType = {
+export type BlogType = {
 	data: {
 		title: string;
 		description: string;
 	};
 	image: MediaData;
 };
-export const Article = ({ data }: ArticleType) => {
+
+export const Blog: NextPage<{
+	initialBlogPage: BlogData;
+	initialAuthor: AuthorData;
+}> = initialData => {
 	return (
 		<>
 			<div className={css.wrap}>
-				<h1 className={css.title}>{parser(ARTICLE_PAGE_DATA.title)}</h1>
+				<h1 className={css.title}>
+					{parser(initialData.initialBlogPage.data[1].title)}
+				</h1>
 				<p className={css.description}>
-					{parser(ARTICLE_PAGE_DATA.description)}
+					{parser(initialData.initialBlogPage.data[1].description)}
 				</p>
 
-				<Author author={ARTICLE_PAGE_DATA.author} />
+				<Author data={initialData.initialAuthor.data} />
 			</div>
 			<div className={css.imageWrap}>
-				<img className={css.img} src={ARTICLE_PAGE_DATA.formats.src} />
+				<img
+					className={css.img}
+					src={initialData.initialBlogPage.data[1].poster?.formats.medium.url}
+				/>
 			</div>
+			<article className={css.root}>
+				<ContentMarkup
+					extraClass={css.markup}
+					html={initialData.initialBlogPage.data[1].markup}
+				></ContentMarkup>
+			</article>
+			{/* <Author data={initialData.initialAuthor.data} /> */}
+			<NewsSectionHome
+				className={css.news}
+				title={LAST_MEDIA_DATA.title}
+				description={LAST_MEDIA_DATA.description}
+				dataNews={initialData.initialBlogPage}
+			/>
 		</>
 	);
 };

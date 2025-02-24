@@ -2,19 +2,19 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import type { glossaryCard } from '@/shared/types/media-page';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
-import type { VacancyProps } from '@/widgets/vacancies-section/vacancies.types';
 
 import css from './index.module.css';
 
-export const Vacancy = ({
-	name,
-	link,
-	description,
-	icon,
-	className,
-}: VacancyProps) => {
+export type VacancyProps = {
+	data: glossaryCard;
+	className?: string;
+};
+
+export const Vacancy = ({ data, className }: VacancyProps) => {
+	const { title, description, icon, link } = data;
 	return (
 		<Container
 			category="article"
@@ -22,14 +22,14 @@ export const Vacancy = ({
 			className={cx(css.root, className)}
 		>
 			<div className={css.content}>
-				{icon && (
+				{icon.url && (
 					<div className={css.iconWrap}>
-						<img className={css.icon} src={icon} alt="icon" />
+						<img className={css.icon} src={icon.url} alt="icon" />
 					</div>
 				)}
 				<div className={css.wrap}>
-					<h4 className={css.name}>{parser(name)}</h4>
-					{description && (
+					<h4 className={css.name}>{parser(title)}</h4>
+					{data.description && (
 						<p className={css.description}>{parser(description)}</p>
 					)}
 				</div>
@@ -37,10 +37,10 @@ export const Vacancy = ({
 			<Button
 				variant="next"
 				iconRotate={180}
-				href={link}
+				href={link.link}
 				className={css.button}
 			>
-				Read more
+				{parser(link.text)}
 			</Button>
 		</Container>
 	);

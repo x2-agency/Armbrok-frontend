@@ -1,4 +1,4 @@
-import type { MediaData } from '@/shared/types/global.types';
+import type { ImageFormat } from '@/shared/types/global.types';
 
 export type NewsSectionType = {
 	title: string;
@@ -14,8 +14,14 @@ export type NewsSectionProps = {
 };
 
 export type NewsType = {
-	poster?: MediaData;
-	id: number;
+	poster?: {
+		formats?: {
+			large?: ImageFormat;
+			small?: ImageFormat;
+			medium?: ImageFormat;
+			thumbnail?: ImageFormat;
+		};
+	};
 	publishDate: string;
 	title: string;
 	description: string;

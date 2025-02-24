@@ -1,20 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 
-import type { IconListProps } from '@/widgets/app-layout/models/social.constants';
+import type { AppStoreLogosType } from '@/view/brokerage/types/response';
 
 import css from './index.module.css';
 
-export const Social = ({ items, className }: IconListProps) => {
+export type SocialType = {
+	appStoreLogos?: Array<AppStoreLogosType>;
+	className: string;
+};
+
+export const Social = ({ appStoreLogos, className }: SocialType) => {
 	return (
 		<div className={cx(css.root, className)}>
-			{items.map((link, index) => (
-				<a className={css.link} href={link.href} key={index}>
+			{appStoreLogos?.map((link, index) => (
+				<a className={css.link} href="#" key={index}>
 					<img
 						className={cx(css.icon, className)}
-						src={link.src}
+						src={link.url}
 						alt="icon media"
-						width={link.width}
 					/>
 				</a>
 			))}

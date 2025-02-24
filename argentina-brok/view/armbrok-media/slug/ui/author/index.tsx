@@ -1,27 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
 
-import css from './index.module.css';
-export type AuthorType = {
-	author: {
-		name: string;
-		avatar: string;
-		position: string;
-		date: string;
-	};
-};
+import type { AuthorType } from '@/shared/types/article';
 
-export const Author = ({ author }: AuthorType) => {
+import css from './index.module.css';
+
+export type AuthorData = {
+	data: Array<AuthorType>;
+};
+export const Author = ({ data }: AuthorData) => {
 	return (
 		<div className={css.root}>
 			<div className={css.avatar}>
-				<img className={css.img} src={author.avatar} alt="image author" />
+				<img className={css.img} src={data[0].avatar?.url} alt="image author" />
 			</div>
 			<div className={css.textContent}>
-				<p className={css.name}>{parser(author.name)}</p>
-				<p className={css.position}>{parser(author.position)}</p>
+				<p className={css.name}>{parser(data[0].name ?? '')}</p>
+				<p className={css.position}>{parser(data[0].position ?? '')}</p>
 			</div>
-			<time className={css.date}>{author.date} </time>
+			<time className={css.date}>{data[0].publishDate} </time>
 		</div>
 	);
 };

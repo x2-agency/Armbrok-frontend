@@ -1,31 +1,26 @@
-import type { ImageFormat } from '@/shared/types/global.types';
-import { Container } from '@/shared/ui/container';
-import { STORE_LINKS } from '@/widgets/app-layout/models/social.constants';
+import cx from 'clsx';
+
+import type { CardType } from '@/view/brokerage/types/response';
 import { Social } from '@/widgets/app-layout/ui/footer/social-links/social';
 import { Iphone } from '@/widgets/app-section/ui/iphone';
 
 import css from './index.module.css';
 
 export type TopCardType = {
-	title: string;
-	description: string;
-	mediaContent: ImageFormat;
+	data: CardType;
 	showLink?: boolean;
 };
 
-export const Card = ({
-	title,
-	description,
-	mediaContent,
-	showLink,
-}: TopCardType) => {
+export const Card = ({ data, showLink }: TopCardType) => {
 	return (
-		<Container className={css.root} category="article" padding="p-32">
-			<h2 className={css.title}>{title}</h2>
-			<p className={css.description}>{description}</p>
-			{showLink && <Social className={css.store} items={STORE_LINKS} />}
+		<article className={cx(css.root, 'p-32')}>
+			<h2 className={css.title}>{data.title ?? ''}</h2>
+			<p className={css.description}>{data.description ?? ''}</p>
+			{showLink && (
+				<Social className={css.store} appStoreLogos={data?.appStoreLogos} />
+			)}
 
-			<Iphone wrapperClass={css.imageWrap} image={mediaContent} />
-		</Container>
+			<Iphone wrapperClass={css.imageWrap} image={data.phoneMockup ?? ''} />
+		</article>
 	);
 };

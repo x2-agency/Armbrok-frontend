@@ -1,0 +1,316 @@
+/* .markup {
+	@mixin responsive margin-block-end, 80, 116;
+
+	ul,
+	ol,
+	h2,
+	h3,
+	p {
+		width: 66.6vw;
+		margin: 0 auto;
+		@media (max-width: 767px) {
+			padding-inline: 15px;
+			width: 100%;
+		}
+	}
+
+	b {
+		font-weight: 700;
+	}
+
+	h2 + h3 {
+		@mixin responsive padding-block-start, 15, 20;
+	}
+
+	@mixin responsive margin-block-start, 50, 62;
+
+	h2 {
+		@mixin text-h4;
+		line-height: 1.26;
+		@mixin responsive margin-block-start, 50, 62;
+		@mixin responsive margin-block-end, 10, 10;
+		@media (max-width: 767px) {
+			line-height: 1.3;
+		}
+		@media (min-width: 2250px) and (max-width: 2400px) {
+			font-size: 48px;
+		}
+	}
+
+	h2 + ol,
+	h2 + ul {
+		margin-block-start: -5px;
+	}
+
+	h2:first-of-type {
+		@mixin responsive margin-block-start, 40, 40;
+	}
+
+	h3 {
+		@mixin text-ls;
+		line-height: 1.4;
+		margin-block-end: 10px;
+	}
+
+	p > img {
+		display: block;
+		width: 100%;
+		height: auto;
+		@mixin responsive margin-block-start, 15, 20;
+
+		@mixin responsive margin-block-end, 15, 20;
+	}
+
+	ul,
+	ol {
+		@mixin text-s;
+		padding-inline-start: 65px;
+		padding-block-start: 0;
+		@mixin responsive margin-block-end, 50, 40;
+
+		list-style-type: disc;
+		li {
+			@mixin responsive padding-inline-start, 0, 4;
+			@mixin responsive margin-block-end, 5, 5;
+
+			@media (min-width: 2250px) and (max-width: 2400px) {
+				font-size: 23px;
+			}
+		}
+	}
+
+	ol {
+		list-style: decimal;
+		padding-inline-start: 70px;
+		li {
+			@mixin text-s;
+			padding-inline-start: 0;
+			@media (max-width: 767px) {
+				line-height: 1.45;
+			}
+		}
+	}
+
+	p {
+		@mixin responsive margin-block-end, 10, 15;
+
+		@mixin text-s;
+		line-height: 1.52;
+		@media (max-width: 767px) {
+			line-height: 1.45;
+		}
+
+		@media (min-width: 2250px) and (max-width: 2400px) {
+			font-size: 23px;
+		}
+	}
+
+	p + ul {
+		margin-top: -5px;
+	}
+
+	ul + p {
+		@mixin responsive margin-block-start, 0, -25;
+	}
+
+	ul + p > img,
+	ol + p > img {
+		@mixin responsive margin-block-start, -35, 45;
+	}
+
+	p > b {
+		@mixin text-s;
+		line-height: 1.6;
+	}
+
+	h2 + p + p + p + p > b {
+		margin-top: 30px;
+	}
+
+	p + h3 {
+		@mixin responsive margin-block-start, 50, 62;
+	}
+
+	p + ul > li:first-of-type {
+		margin-top: 30px;
+	}
+
+	p + ul {
+		margin-block-start: -25px;
+	}
+
+	p + ol {
+		@mixin responsive margin-block-start, -5, -10;
+	}
+
+	p > video {
+		width: 100%;
+		height: auto;
+		@mixin responsive margin-block-start, 40, 47;
+		@mixin responsive margin-block-end, -2, -2;
+		@media (max-width: 767px) {
+			width: 100%;
+			margin-left: unset;
+		}
+	}
+
+	p:last-of-type > video {
+		padding-block-end: 0;
+	}
+
+	figure {
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			@mixin responsive padding-block-end, 20, 20;
+		}
+		figcaption {
+			@media (max-width: 767px) {
+				@mixin text-x;
+			}
+			@media (min-width: 2250px) and (max-width: 2400px) {
+				font-size: 21px;
+			}
+		}
+	}
+
+	blockquote + p > img {
+		@mixin responsive margin-block-start, -10, -22;
+	}
+
+	blockquote {
+		position: relative;
+		@mixin text-ls;
+		line-height: 1.4;
+		@mixin responsive padding-inline-start, 42, 70;
+		@mixin responsive padding-block, 0, 20;
+		@mixin responsive margin-block, 50, 62;
+		footer {
+			@mixin text-s;
+			line-height: 1.6;
+			@media (max-width: 767px) {
+				@mixin text-x;
+			}
+			span:nth-child(2)::before {
+				content: ', ';
+			}
+			@media (min-width: 2250px) and (max-width: 2400px) {
+				font-size: 21px;
+			}
+		}
+		p {
+			@mixin text-ls;
+			margin-block-end: 20px;
+		}
+	}
+
+	blockquote + h2 {
+		@mixin responsive margin-block-start, 40, 40;
+	}
+
+	blockquote:after {
+		content: '';
+
+		position: absolute;
+		left: 0;
+		width: 34px;
+		height: 27px;
+
+		background-image: url('../../../../public/assets/images/quotes.svg');
+		background-repeat: no-repeat;
+		background-size: 34px auto;
+	}
+
+	@media (max-width: 767px) {
+		blockquote:after {
+			background-size: 23px auto;
+			width: 23px;
+			height: 18px;
+			top: 5.5px;
+		}
+	}
+
+	@media (min-width: 767px) and (max-width: 1024px) {
+		blockquote:after {
+			top: 6px;
+		}
+	}
+
+	@media (min-width: 1024px) and (max-width: 1200px) {
+		blockquote:after {
+			top: -2px;
+		}
+	}
+
+	@media (min-width: 1200px) and (max-width: 1400px) {
+		blockquote:after {
+			top: -1px;
+		}
+	}
+
+	@media (min-width: 1400px) and (max-width: 1600px) {
+		blockquote:after {
+			top: 2px;
+		}
+	}
+
+	@media (min-width: 1600px) and (max-width: 2000px) {
+		blockquote:after {
+			top: 4px;
+		}
+	}
+
+	@media (min-width: 2000px) and (max-width: 2400px) {
+		blockquote:after {
+			top: 5px;
+		}
+	}
+
+	@media (min-width: 2400px) {
+		blockquote:after {
+			top: 11px;
+		}
+	}
+
+	a {
+		color: var(--linkColor);
+		@mixin transition color;
+	}
+	a:hover {
+		color: var(--linkHoverColor);
+	}
+
+	a > b {
+		font-weight: 500;
+	}
+
+	div > img {
+		margin-block-start: 0;
+	}
+} */
+
+.markup {
+	ul,
+	ol,
+	h2,
+	h3,
+	figure,
+	p {
+		@mixin responsive width, unset, 800, 800;
+		@mixin responsive padding-inline, 0, unset, unset;
+		margin: 0 auto;
+		@media (max-width: 767px) {
+			width: 100%;
+		}
+	}
+
+	p {
+		@mixin font-text18;
+		@mixin responsive padding-block-end, 10, 10, 10;
+	}
+
+	figure {
+		@mixin responsive padding-block, 20, 48, 48;
+	}
+}

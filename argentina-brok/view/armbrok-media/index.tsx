@@ -4,7 +4,8 @@ import type { NextPage } from 'next';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 
-import { HOME_NEWS } from '@/entities/news-card/model/news.constants';
+import type { ArticleData, Category } from '@/shared/types/article';
+import type { MediaProps } from '@/shared/types/media-page';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
 import { FeedbackForm } from '@/widgets/feedback-form';
 import { NewsPage } from '@/widgets/news-page';
@@ -15,43 +16,23 @@ import css from './index.module.css';
 import {
 	ARMBROK_MEDIA_EMAIL,
 	ARMBROK_MEDIA_TITLE,
-	ARMBROK_MEDIA_VACANCIES,
 } from './model/armbrok-media.constants';
 
-export type Cateroty = {
-	title: string;
-	slug: string;
-};
-
-export const ArmbrokMedia: NextPage = () => {
+export const ArmbrokMedia: NextPage<{
+	initialData: ArticleData;
+	initialMediaData: MediaProps;
+}> = initialData => {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	const tags: Array<Cateroty> = useMemo(
-		() => [
-			{ title: 'Articles', slug: 'articles' },
-			{ title: 'Company news', slug: 'company news' },
-			{ title: 'Investment ideas', slug: 'investment ideas' },
-		],
-		[]
-	);
-
-	const filteredNews = useMemo(() => {
-		if (currentTag === 'all') {
-			return HOME_NEWS.news;
-		}
-
-		// Фильтрация новостей по категории
-		return HOME_NEWS.news.filter(
-			news => news.category.toLowerCase() === currentTag.toLowerCase()
+	const tags: Array<Category> = useMemo(() => {
+		const categories = initialData.initialMediaData.data.articles.map(
+			article => article.category
 		);
-	}, [currentTag]);
-	// const tags: Array<Cateroty> = useMemo(
-	// 	() => initialData?.pages[0]?.categories || [],
-	// 	[initialData]
-	// );
+		return Array.from(new Set(categories)).filter(Boolean) as Array<Category>;
+	}, [initialData.initialMediaData]);
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
@@ -74,7 +55,6 @@ export const ArmbrokMedia: NextPage = () => {
 		},
 		[router, pathname, createQueryString]
 	);
-
 	return (
 		<section className={css.root}>
 			<TitleSlugSection
@@ -89,13 +69,13 @@ export const ArmbrokMedia: NextPage = () => {
 				isCasesExists
 				initialTag="all"
 			/>
-			<NewsPage newsCard={filteredNews} isHasMore={currentTag === 'all'} />
+			<NewsPage
+				newsCard={initialData.initialData.data}
+				isHasMore={currentTag === 'all'}
+			/>
 			<Vacancy
 				className={css.vacancy}
-				icon={ARMBROK_MEDIA_VACANCIES.icon}
-				name={ARMBROK_MEDIA_VACANCIES.title}
-				description={ARMBROK_MEDIA_VACANCIES.description}
-				link={ARMBROK_MEDIA_VACANCIES.description}
+				data={initialData.initialMediaData.data.glossaryCard}
 			/>
 			<FeedbackForm title={ARMBROK_MEDIA_EMAIL.title} />
 		</section>

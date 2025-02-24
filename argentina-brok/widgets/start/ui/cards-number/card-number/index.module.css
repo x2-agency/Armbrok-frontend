@@ -30,10 +30,10 @@
 	&::before {
 		content: '';
 		position: absolute;
-		@mixin responsive top, -5, -5, -5;
-		@mixin responsive left, -5, -5, -5;
-		@mixin responsive right, -5, -5, -5;
-		@mixin responsive bottom, -5, -5, -5;
+		@mixin responsive top, -2, -5, -5;
+		@mixin responsive left, -2, -5, -5;
+		@mixin responsive right, -2, -5, -5;
+		@mixin responsive bottom, -2, -5, -5;
 		border-radius: 50%;
 		border: 0.3rem solid var(--red-500-color);
 
@@ -61,10 +61,10 @@
 	&::after {
 		content: '';
 		position: absolute;
-		@mixin responsive top, -5, -5, -5;
-		@mixin responsive left, -5, -5, -5;
-		@mixin responsive right, -5, -5, -5;
-		@mixin responsive bottom, -5, -5, -5;
+		@mixin responsive top, -2, -5, -5;
+		@mixin responsive left, -2, -5, -5;
+		@mixin responsive right, -2, -5, -5;
+		@mixin responsive bottom, -2, -5, -5;
 		border-radius: 50%;
 		border: 0.278rem solid var(--red-500-color);
 		clip-path: inset(0 0% 0 0);

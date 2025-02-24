@@ -1,8 +1,20 @@
-import type { ArticleType } from '@/view/armbrok-media/slug';
-import { Article } from '@/view/armbrok-media/slug';
+import { getArticle } from '@/shared/api/get-article';
+import { getAuthor } from '@/shared/api/get-author';
+import { Blog } from '@/view/armbrok-media/slug';
 
-const ArticlePage = ({ data }: ArticleType) => {
-	return <Article data={data} />;
+const BlogPage = async () => {
+	try {
+		const [initialBlogPage, initialAuthor] = await Promise.all([
+			getArticle(),
+			getAuthor(),
+		]);
+
+		return (
+			<Blog initialBlogPage={initialBlogPage} initialAuthor={initialAuthor} />
+		);
+	} catch {
+		return <Blog />;
+	}
 };
 
-export default ArticlePage;
+export default BlogPage;

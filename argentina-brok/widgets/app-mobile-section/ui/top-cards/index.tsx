@@ -1,22 +1,20 @@
-import type { TopCardType } from './card';
+import type { CardType } from '@/view/brokerage/types/response';
+
 import { Card } from './card';
 import css from './index.module.css';
 
 export type TopCardsProps = {
-	cards: Array<TopCardType>;
+	cards: Array<CardType>;
 };
 
 export const TopCards = ({ cards }: TopCardsProps) => {
+	if (!cards) {
+		return null;
+	}
 	return (
 		<div className={css.root}>
 			{cards.map((card, index) => (
-				<Card
-					key={index}
-					title={card.title}
-					description={card.description}
-					mediaContent={card.mediaContent}
-					showLink={index === 0}
-				/>
+				<Card data={card} showLink={index === 0} />
 			))}
 		</div>
 	);

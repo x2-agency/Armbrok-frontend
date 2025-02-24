@@ -1,0 +1,25 @@
+.root {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	@mixin responsive column-gap, unset, 24, 24;
+
+	@media (max-width: 767px) {
+		display: flex;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		gap: 1rem;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.root > * {
+	@media (max-width: 767px) {
+		flex: 0 0 100%;
+		scroll-snap-align: center;
+	}
+}

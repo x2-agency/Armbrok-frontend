@@ -7,15 +7,14 @@ import { MembershipSection } from '@/shared/ui/membership-section';
 import { AppMobileSection } from '@/widgets/app-mobile-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
+import { InstrumentsSection } from '@/widgets/instruments-section';
+import { PortfolioSection } from '@/widgets/portfolio-section';
 import { Review } from '@/widgets/review';
 import { Start } from '@/widgets/start';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
-import {
-	BROKERAGE_TEXT,
-	MOCK_MOBILE_APP_SECTION,
-} from './model/brokerage.constants';
+import { BROKERAGE_TEXT } from './model/brokerage.constants';
 import type { BrokeragePageResponse } from './types/response';
 
 export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
@@ -24,7 +23,7 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	if (!initialData?.data) {
 		throw new Error();
 	}
-
+	console.log(initialData.data);
 	return (
 		<>
 			<BannerSection
@@ -43,16 +42,18 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 						<ExpertSolutionSection items={initialData?.data.advantages} />
 					</HeroContainer>
 				)}
-			<AppMobileSection
-				title={MOCK_MOBILE_APP_SECTION.title}
-				description={MOCK_MOBILE_APP_SECTION.description}
-				topCards={MOCK_MOBILE_APP_SECTION.topCards}
-				bottomCards={MOCK_MOBILE_APP_SECTION.bottomCards}
-			/>
+
 			<MembershipSection
 				title={initialData.data.exchangesSection?.title}
 				items={initialData.data.exchangesSection?.exchanges}
 			/>
+			<InstrumentsSection
+				title={initialData.data.instrumentsSection?.title ?? ''}
+				instruments={initialData.data.instrumentsSection?.instruments ?? []}
+			/>
+			<AppMobileSection data={initialData.data.mobileAppSection} />
+			<PortfolioSection cards={initialData.data.portfolioSection} />
+
 			<Review quote={initialData?.data.quoteSection} />
 			<Container>
 				<h2 className={css.serve}>{BROKERAGE_TEXT}</h2>
@@ -70,8 +71,8 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				fileDirection="column"
 			/>
 			<HelpfulInformation
-				title={initialData.data.accordionSection.title}
-				items={initialData.data.accordionSection.accordions}
+				title={initialData.data.infoSection?.title}
+				items={initialData.data.infoSection?.accordions}
 			/>
 		</>
 	);
