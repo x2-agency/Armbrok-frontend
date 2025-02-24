@@ -1,17 +1,18 @@
-import { getArticle } from '@/shared/api/get-article';
-import { getAuthor } from '@/shared/api/get-author';
+import { getBlogPage } from '@/shared/api/get-blog-page';
 import { Blog } from '@/view/armbrok-media/slug';
 
-const BlogPage = async () => {
-	try {
-		const [initialBlogPage, initialAuthor] = await Promise.all([
-			getArticle(),
-			getAuthor(),
-		]);
+type BlogPageProps = {
+	params: {
+		slug: string;
+	};
+};
 
-		return (
-			<Blog initialBlogPage={initialBlogPage} initialAuthor={initialAuthor} />
-		);
+const BlogPage = async ({ params }: BlogPageProps) => {
+	const { slug } = params;
+	try {
+		const initialBlogPage = await getBlogPage(slug);
+
+		return <Blog initialBlogPage={initialBlogPage} />;
 	} catch {
 		return <Blog />;
 	}

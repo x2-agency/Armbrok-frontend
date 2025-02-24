@@ -14,13 +14,13 @@ export type TopCardType = {
 export const Card = ({ data, showLink }: TopCardType) => {
 	return (
 		<article className={cx(css.root, 'p-32')}>
+			<Iphone wrapperClass={css.imageWrap} image={data.phoneMockup ?? ''} />
+
 			<h2 className={css.title}>{data.title ?? ''}</h2>
 			<p className={css.description}>{data.description ?? ''}</p>
 			{showLink && (
 				<Social className={css.store} appStoreLogos={data?.appStoreLogos} />
 			)}
-
-			<Iphone wrapperClass={css.imageWrap} image={data.phoneMockup ?? ''} />
 		</article>
 	);
 };

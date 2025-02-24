@@ -1,26 +1,32 @@
 import apiClient from '@/shared/api/api-client';
 import type { ArticleData } from '@/shared/types/article';
 
+export type GetArticleProps = {
+	limit?: number;
+	start?: number;
+	fields?: Array<string>;
+	populate?: object;
+	filters?: object;
+	page?: number;
+	pageSize?: number;
+};
+
 export const getArticle = async (
-	limit?: number,
-	offset?: number,
-	sort?: string,
-	fields?: string,
-	populate?: string,
-	filters?: string
+	queryParams?: GetArticleProps
 ): Promise<ArticleData> => {
 	const params = {
-		limit: limit ?? 25,
-		offset: offset ?? 0,
-		sort,
-		fields,
-		populate,
-		filters,
+		pagination: {
+			limit: queryParams?.limit,
+			start: queryParams?.start,
+			page: queryParams?.page,
+			pageSize: queryParams?.pageSize,
+		},
+		fields: queryParams?.fields,
+		populate: queryParams?.populate,
+		filters: queryParams?.filters,
 	};
 
-	const response = await apiClient.get('/articles', {
-		params,
-	});
-
+	const response = await apiClient.get('/articles', { params });
+	console.log(response.data);
 	return response.data;
 };

@@ -312,5 +312,9 @@
 
 	figure {
 		@mixin responsive padding-block, 20, 48, 48;
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 }

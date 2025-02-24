@@ -18,7 +18,10 @@ export type NewsCard = {
 export const NewsCard = ({ data, className }: NewsCard) => {
 	const pathname = usePathname();
 	const isArmbrokMedia = pathname === '/armbrok-media';
-	const { publishDate, title, description, author, category, poster } = data;
+
+	const { publishDate, title, description, author, category, poster, slug } =
+		data;
+
 	return (
 		<article
 			className={cx(css.root, className, {
@@ -51,7 +54,7 @@ export const NewsCard = ({ data, className }: NewsCard) => {
 					<p className={css.tag}>{category?.name}</p>
 				</div>
 			</div>
-			<Link className={css.link} href={`/armbrok-media/article`} />
+			<Link className={css.link} href={`/armbrok-media/${slug}`} />
 		</article>
 	);
 };

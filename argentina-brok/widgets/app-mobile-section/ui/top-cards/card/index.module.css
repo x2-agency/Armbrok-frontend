@@ -17,6 +17,7 @@
 	@media (max-width: 767px) {
 		display: flex;
 		flex-direction: column;
+		height: 136rem;
 	}
 }
 
@@ -40,6 +41,7 @@
 .description {
 	@mixin font-text16;
 	color: var(--gray-200-color);
+	@mixin responsive padding-block-end, 10, unset, unset;
 }
 
 .imageWrap {
@@ -48,11 +50,13 @@
 	@mixin responsive width, unset, 274, 274;
 	@mixin responsive right, unset, 20, 16;
 	@mixin responsive top, unset, 18.5, 19.2;
+	@mixin responsive padding-block-end, 30, unset, unset;
 
 	z-index: 2;
 
 	@media (max-width: 767px) {
-		height: 107.867rem; /* 404px */
+		position: static;
+		height: 86.867rem; /* 404px */
 		margin-inline: auto;
 		bottom: 54rem; /* 202.5px */
 	}

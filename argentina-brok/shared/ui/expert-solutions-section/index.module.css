@@ -7,8 +7,6 @@
 }
 
 .cards {
-	@mixin responsive gap, 64, 64, 64;
-
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 

@@ -8,10 +8,15 @@
 	padding-block-end: 0.5rem; /* 8px */
 	font-weight: 500;
 	color: #df2c29;
+	@media (max-width: 767px) {
+		@mixin font-h3;
+	}
 }
 
 .description {
 	@mixin font-text18;
-
 	color: #212121;
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }

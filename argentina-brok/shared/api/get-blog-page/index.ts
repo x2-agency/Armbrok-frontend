@@ -1,8 +1,8 @@
 import apiClient from '@/shared/api/api-client';
 
-export const getBlogPage = async () => {
+export const getBlogPage = async (slug: string) => {
 	try {
-		const response = await apiClient.get('/armbrok-blog-page');
+		const response = await apiClient.get(`/media?slug=${slug}`);
 
 		return response.data;
 	} catch (error) {

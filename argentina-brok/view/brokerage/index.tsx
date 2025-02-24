@@ -23,7 +23,6 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	if (!initialData?.data) {
 		throw new Error();
 	}
-	console.log(initialData.data);
 	return (
 		<>
 			<BannerSection

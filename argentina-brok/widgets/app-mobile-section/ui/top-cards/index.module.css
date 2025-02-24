@@ -6,6 +6,5 @@
 	@media (max-width: 767px) {
 		display: flex;
 		flex-direction: column;
-		gap: 6.4rem; /* 24px */
 	}
 }
