@@ -27,6 +27,5 @@ export const getArticle = async (
 	};
 
 	const response = await apiClient.get('/articles', { params });
-	console.log(response.data);
 	return response.data;
 };

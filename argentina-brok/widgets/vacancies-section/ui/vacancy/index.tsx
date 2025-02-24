@@ -22,7 +22,7 @@ export const Vacancy = ({ data, className }: VacancyProps) => {
 			className={cx(css.root, className)}
 		>
 			<div className={css.content}>
-				{icon.url && (
+				{icon && icon.url && (
 					<div className={css.iconWrap}>
 						<img className={css.icon} src={icon.url} alt="icon" />
 					</div>

@@ -6,7 +6,9 @@ import { Home } from '@/view/home';
 import { HOME_OG } from '@/view/home/types/meta.constants';
 
 export const metadata: Metadata = {
-	metadataBase: new URL(`${process.env.NEXT_PUBLIC_HOST_URL}`),
+	metadataBase: process.env.NEXT_PUBLIC_HOST_URL
+		? new URL(`${process.env.NEXT_PUBLIC_HOST_URL}`)
+		: undefined,
 	title: HOME_OG.title,
 	description: HOME_OG.description,
 	openGraph: HOME_OG,

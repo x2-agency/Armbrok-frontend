@@ -18,14 +18,14 @@ export type MediaType = {
 };
 
 export type glossaryCard = {
-	title: string;
-	description: string;
-	icon: {
+	title?: string;
+	description?: string;
+	icon?: {
 		url: string;
 	};
 	link: {
 		text: string;
-		link: string;
+		link?: string;
 	};
 };
 

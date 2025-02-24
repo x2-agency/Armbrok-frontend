@@ -24,7 +24,12 @@ export const VacanciesSection = ({
 			<ul className={css.vacancies}>
 				{vacancies.map((vacancy, index) => (
 					<li key={index}>
-						<Vacancy name={vacancy.name} link={vacancy.link} />
+						<Vacancy
+							data={{
+								title: vacancy.name,
+								link: { link: vacancy.link, text: 'Read more' },
+							}}
+						/>
 					</li>
 				))}
 			</ul>
