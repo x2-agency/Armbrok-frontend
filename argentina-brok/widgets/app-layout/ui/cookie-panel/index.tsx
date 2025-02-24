@@ -11,7 +11,7 @@ import css from './index.module.css';
 export const CookiePanel = () => {
 	const ref = useRef<HTMLDialogElement | null>(null);
 	const [isClosed, setIsClosed] = useState<boolean>(true);
-	const [isMounted, setIsMounted] = useState<boolean>(false); // Для управления display
+	const [isMounted, setIsMounted] = useState<boolean>(false);
 
 	useEffect(() => {
 		const isAccepted = localStorage.getItem('isAccepted') === 'true';
@@ -26,16 +26,16 @@ export const CookiePanel = () => {
 		const currentRef = ref.current;
 
 		if (currentRef && !isClosed) {
-			currentRef.show();
+			setIsMounted(true); 
 			setTimeout(() => {
 				currentRef.setAttribute('open', '');
-			}, 300);
+			}, 10);
 		} else if (currentRef) {
 			currentRef.removeAttribute('open');
 			setTimeout(() => {
 				currentRef.close();
 				setIsMounted(false);
-			}, 300);
+			}, 300); 
 		}
 	}, [isClosed]);
 
