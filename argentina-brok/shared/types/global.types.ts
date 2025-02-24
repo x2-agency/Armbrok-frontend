@@ -265,7 +265,7 @@ export type CorporateEventsSection = {
 /* COMPANY DETAILS SECTION */
 
 export type CompanyDetailsSection = ItemDetail & {
-	factoids?: Array<Factoid>;
+	items?: Array<Factoid>;
 };
 
 /* MEMBERSHIP SECTION */

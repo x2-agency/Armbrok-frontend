@@ -10,7 +10,7 @@ export const BannerAward = ({ place, title, description }: AwardsData) => {
 			{place && <h2 className={css.place}>#{place ?? ''}</h2>}
 			{title && <h4 className={css.title}>{parser(title ?? '')}</h4>}
 			{description && (
-				<p className={css.description}>{parser(description ?? '')}</p>
+				<div className={css.description}>{parser(description ?? '')}</div>
 			)}
 		</article>
 	);
