@@ -13,7 +13,7 @@
 
 .companies {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 
 	@media (max-width: 767px) {
 		display: grid;
@@ -29,4 +29,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+}
+
+.companyIcon {
+	width: 100%;
 }
