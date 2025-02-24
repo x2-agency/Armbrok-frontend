@@ -10,37 +10,41 @@ import css from './index.module.css';
 
 export const CookiePanel = () => {
 	const ref = useRef<HTMLDialogElement | null>(null);
-	const [isClosed, toggleClose] = useState<boolean>(true);
+	const [isClosed, setIsClosed] = useState<boolean>(true);
+	const [isMounted, setIsMounted] = useState<boolean>(false); // Для управления display
 
 	useEffect(() => {
-		const currentRef = ref.current;
 		const isAccepted = localStorage.getItem('isAccepted') === 'true';
 
 		if (!isAccepted) {
-			toggleClose(false);
-			return;
+			setIsClosed(false);
+			setIsMounted(true);
 		}
+	}, []);
+
+	useEffect(() => {
+		const currentRef = ref.current;
 
 		if (currentRef && !isClosed) {
+			currentRef.show();
 			setTimeout(() => {
-				currentRef.show();
-			}, 200);
+				currentRef.setAttribute('open', '');
+			}, 300);
+		} else if (currentRef) {
+			currentRef.removeAttribute('open');
+			setTimeout(() => {
+				currentRef.close();
+				setIsMounted(false);
+			}, 300);
 		}
 	}, [isClosed]);
 
 	const handleClick = () => {
-		const currentRef = ref.current;
-
-		if (currentRef) {
-			localStorage.setItem('isAccepted', 'true');
-			toggleClose(true);
-			currentRef.close();
-		}
+		localStorage.setItem('isAccepted', 'true');
+		setIsClosed(true);
 	};
 
-	if (isClosed) {
-		return null;
-	}
+	if (!isMounted) return null;
 
 	return (
 		<dialog className={css.root} ref={ref}>
@@ -48,7 +52,7 @@ export const CookiePanel = () => {
 				<p className={css.summary}>{parser(COOKIE_PANEL_INFO.summary)}</p>
 				<p className={css.aboutCookies}>{parser(COOKIE_PANEL_INFO.about)}</p>
 			</div>
-			<Button variant="filled" onClick={handleClick}>
+			<Button variant="filled" onClick={handleClick} className={css.button}>
 				{parser(COOKIE_PANEL_INFO.button)}
 			</Button>
 		</dialog>
