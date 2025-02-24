@@ -27,6 +27,7 @@
 	@mixin responsive padding-inline, 6, 6, 6;
 	@mixin responsive padding-block, 2, 2, 2;
 	@mixin responsive border-radius, 4, 4, 4;
+	@mixin responsive max-width, 160, 222, 222;
 
 	background-color: var(--gray-300-color);
 	color: var(--gray-700-color);

@@ -7,7 +7,7 @@ export const CompanyMembersSection = ({ employees }: EmployeeList) => {
 	return (
 		<ul className={css.root}>
 			{employees.map((value, index) => (
-				<li key={index}>
+				<li key={index} className={css.member}>
 					<Member {...value} />
 				</li>
 			))}

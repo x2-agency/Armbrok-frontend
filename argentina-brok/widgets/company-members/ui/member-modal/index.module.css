@@ -4,7 +4,7 @@
 	@mixin responsive padding, 16, 32, 32;
 	@mixin responsive border-radius, 24, 24, 24;
 
-	transition-property: opacity;
+	transition-property: all;
 	left: 50%;
 	top: 50%;
 	translate: -50% -50%;
@@ -14,13 +14,14 @@
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	opacity: 0;
+	visibility: hidden;
 
 	@media (max-width: 767px) {
 		width: 100vw;
 	}
 
 	&.open,
-    &.open::backdrop {
+	&.open::backdrop {
 		opacity: 1;
 	}
 }
@@ -30,6 +31,20 @@
 
 	transition-property: all;
 	opacity: 0;
+}
+
+.modal.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal::backdrop {
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.modal.open::backdrop {
+	opacity: 1;
 }
 
 .button {
