@@ -29,7 +29,6 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	companyDetails,
 }) => {
 
-	console.log(companyDetails);
 	return (
 		<>
 			<BannerSection
