@@ -9,7 +9,11 @@
 
 .description,
 .title {
-	color: var(--gray-100-color);
+	
+	h1,
+	p {
+		color: var(--gray-100-color);
+	}
 
 	@media (max-width: 767px) {
 		br {
@@ -20,6 +24,7 @@
 
 .title {
 	@mixin font-h1;
+
 	font-weight: 700;
 
 	&.profix {
