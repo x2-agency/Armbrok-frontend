@@ -2,5 +2,5 @@
 	display: grid;
 	justify-content: center;
 	grid-template-columns: repeat(3, 1fr);
-	@mixin res padding-block, 16rem, 5.556rem, 5rem; /* 60px 80px */
+	@mixin responsive padding-block, 60, 80, 80;
 }

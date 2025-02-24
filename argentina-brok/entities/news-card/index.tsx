@@ -6,19 +6,22 @@ import parser from 'html-react-parser';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import type { NewsType } from '@/shared/types/global.types';
+import type { Article } from '@/shared/types/article';
 
 import css from './index.module.css';
 
 export type NewsCard = {
-	data: NewsType;
+	data: Article;
 	className: string;
 };
 
 export const NewsCard = ({ data, className }: NewsCard) => {
 	const pathname = usePathname();
 	const isArmbrokMedia = pathname === '/armbrok-media';
-	const { publishDate, title, description, author, category, poster } = data;
+
+	const { publishDate, title, description, author, category, poster, slug } =
+		data;
+
 	return (
 		<article
 			className={cx(css.root, className, {
@@ -26,11 +29,7 @@ export const NewsCard = ({ data, className }: NewsCard) => {
 			})}
 		>
 			{poster && isArmbrokMedia && (
-				<img
-					src={poster.url}
-					alt={poster.alternativeText}
-					className={css.poster}
-				/>
+				<img src={poster.url} className={css.poster} />
 			)}
 			<div className={css.textWrap}>
 				<time className={css.time}>{publishDate}</time>
@@ -43,15 +42,19 @@ export const NewsCard = ({ data, className }: NewsCard) => {
 				<div className={css.wrap}>
 					<div className={css.authorWrap}>
 						<div className={css.imgWrap}>
-							<img className={css.avatar} src={author?.avatar ?? ''} alt="" />
+							<img
+								className={css.avatar}
+								src={author.avatar?.url ?? ''}
+								alt=""
+							/>
 						</div>
 						<span className={css.name}>{parser(author?.name ?? '')}</span>
 					</div>
 
-					<p className={css.tag}>{category}</p>
+					<p className={css.tag}>{category?.name}</p>
 				</div>
 			</div>
-			<Link className={css.link} href="#" />
+			<Link className={css.link} href={`/armbrok-media/${slug}`} />
 		</article>
 	);
 };

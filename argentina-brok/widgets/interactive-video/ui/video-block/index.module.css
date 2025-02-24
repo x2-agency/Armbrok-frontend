@@ -5,7 +5,7 @@
 
 	@mixin responsive border-radius, 20, 32, 32;
 	@mixin responsive margin-block-start, 40, 72, 72;
-	@mixin responsive margin-block-end, unset, 120, 120;
+	@mixin responsive margin-block-end, unset, 120, 150;
 }
 
 .videoWrapper {

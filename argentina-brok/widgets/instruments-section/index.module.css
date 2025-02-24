@@ -1,0 +1,25 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	@mixin responsive padding-block, 50, 72, 72;
+}
+
+.title {
+	@mixin font-h2;
+	font-weight: 600;
+	@mixin responsive padding-block-end, 20, 40, 40;
+}
+
+.wrap {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	@mixin responsive row-gap, unset, 24, 24;
+	@mixin responsive column-gap, unset, 24, 24;
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+		gap: 1.333rem; /* 5px */
+	}
+}

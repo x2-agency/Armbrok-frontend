@@ -1,15 +1,12 @@
 import cx from 'clsx';
 
+import type { Category } from '@/shared/types/article';
+
 import css from './index.module.css';
 import { Tab } from './Tab';
 
-type TagsData = {
-	title: string;
-	slug: string;
-};
-
 type TabsProps = {
-	tags: Array<TagsData>;
+	tags?: Array<Category>;
 	onChangeTab: (event: any) => void;
 	currentTag: string;
 	isCasesExists: boolean;
@@ -53,15 +50,14 @@ export const Tabs = ({
 							handleClick={handleClick}
 						/>
 					)}
-					{tags.map(tag => {
+					{tags?.map(tag => {
 						return (
 							<Tab
-								key={tag.slug}
-								title={tag.title}
-								data-value={tag.slug}
+								key={tag.id}
+								title={tag.name}
 								handleClick={handleClick}
 								className={cx({
-									[css[tabColor]]: selectedTag === tag.slug,
+									[css[tabColor]]: selectedTag === tag.name,
 								})}
 							/>
 						);

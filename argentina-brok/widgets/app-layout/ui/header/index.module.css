@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 0;
 	color: var(--gray-100-color);
-	z-index: 100000;
+	z-index: 100;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -13,6 +13,10 @@
 	@mixin res left, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px 24px */
 	@mixin res right, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px 24px */
 	@mixin res top, 5.867rem, 1.389rem, 1.25rem; /* 22px */
+
+	@media (max-width: 767px) {
+		align-items: flex-start;
+	}
 }
 
 .leftBlock,
