@@ -43,13 +43,12 @@
 		margin-inline: auto;
 		padding-inline: unset;
 	}
-
-    @media (max-width: 767px) {
-        overflow-x: auto;
-        flex-direction: column;
-    }
 }
 
 .listElement {
 	flex-shrink: 0;
+
+	@media (max-width: 767px) {
+		width: 89rem;
+	}
 }
