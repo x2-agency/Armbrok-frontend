@@ -1,3 +1,5 @@
+import type { Article } from './article';
+
 export interface Image {
 	name: string;
 	alternativeText: string | null;
@@ -6,7 +8,7 @@ export interface Image {
 		medium?: ImageFormat;
 		thumbnail?: ImageFormat;
 	};
-	url: string;
+	url?: string;
 }
 
 export interface ImageFormat {
@@ -23,20 +25,6 @@ export interface Author {
 export interface Category {
 	name: string;
 	locale: string;
-}
-
-export interface Article {
-	id: number;
-	title: string;
-	description: string;
-	slug: string;
-	locale: string;
-	publishDate: string;
-	readTimeInMinutes: number;
-	markup: string;
-	category: Category;
-	author: Author;
-	poster: Image | null;
 }
 
 export interface LatestNewsSection {

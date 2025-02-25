@@ -8,14 +8,10 @@ type BlogPageProps = {
 };
 
 const BlogPage = async ({ params }: BlogPageProps) => {
-	const { slug } = params;
-	try {
-		const initialBlogPage = await getBlogPage(slug);
+	const { slug } = await params;
+	const initialBlogPage = await getBlogPage(slug);
 
-		return <Blog initialBlogPage={initialBlogPage} />;
-	} catch {
-		return <Blog />;
-	}
+	return <Blog initialBlogPage={initialBlogPage} />;
 };
 
 export default BlogPage;
