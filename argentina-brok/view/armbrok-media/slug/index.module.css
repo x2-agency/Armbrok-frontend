@@ -3,11 +3,12 @@
 	flex-direction: column;
 	margin-inline: auto;
 	@mixin responsive max-width, unset, 600, 600;
-	@mixin responsive padding-block-start, 60, 160, 160;
+	@mixin responsive padding-block-start, 140, 160, 160;
 	text-align: center;
 
 	@media (max-width: 767px) {
-		max-width: 100%;
+		width: 100%;
+		padding-inline: 5.33rem;
 	}
 }
 
@@ -27,7 +28,7 @@
 .imageWrap {
 	margin-inline: auto;
 	overflow: hidden;
-	@mixin responsive width, 300, 920, 920;
+	@mixin responsive width, 335, 920, 920;
 	@mixin responsive height, 200, 560, 560;
 	@mixin responsive border-radius, 24, 24, 24;
 }

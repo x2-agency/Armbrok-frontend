@@ -17,13 +17,13 @@ export const Blog: NextPage<{
 		<>
 			<div className={css.wrap}>
 				<h1 className={css.title}>
-					{parser(initialData.initialBlogPage.data.title)}
+					{parser(initialData.initialBlogPage.data.slug)}
 				</h1>
 				<p className={css.description}>
 					{parser(initialData.initialBlogPage.data.description)}
 				</p>
 
-				{/* <Author data={initialData.initialAuthor.data} /> */}
+				{/* <Author data={[initialData.initialBlogPage.data.author]} /> */}
 			</div>
 			{initialData?.initialBlogPage?.data?.poster?.url && (
 				<div className={css.imageWrap}>
@@ -40,14 +40,16 @@ export const Blog: NextPage<{
 					html={initialData.initialBlogPage.data.markup}
 				></ContentMarkup>
 			</article>
-			{/* <Author data={initialData.initialAuthor.data} /> */}
+			{/* <Author data={[initialData.initialBlogPage.data.author]} /> */}
 			<NewsSectionHome
 				className={css.news}
 				title={initialData.initialBlogPage.data.latestNewsSection.title}
 				description={
 					initialData.initialBlogPage.data.latestNewsSection.description
 				}
-				dataNews={initialData.initialBlogPage.data.latestNewsSection.articles}
+				dataNews={{
+					data: initialData.initialBlogPage.data.latestNewsSection.articles,
+				}}
 			/>
 		</>
 	);

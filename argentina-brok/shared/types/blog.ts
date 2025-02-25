@@ -1,4 +1,4 @@
-import type { Article } from './article';
+import type { Article, AuthorType } from './article';
 
 export interface Image {
 	name: string;
@@ -15,13 +15,6 @@ export interface ImageFormat {
 	url: string;
 	name: string;
 }
-
-export interface Author {
-	name: string;
-	email: string | null;
-	avatar: Image;
-}
-
 export interface Category {
 	name: string;
 	locale: string;
@@ -44,7 +37,7 @@ export interface Data {
 	readTimeInMinutes: number;
 	markup: string;
 	category: Category;
-	author: Author;
+	author: AuthorType;
 	poster: Image;
 	latestNewsSection: LatestNewsSection;
 }
