@@ -13,7 +13,6 @@ import css from './index.module.css';
 export const Blog: NextPage<{
 	initialBlogPage: BlogPageResponse;
 }> = initialData => {
-	console.log(initialData.initialBlogPage.data.latestNewsSection.articles);
 	return (
 		<>
 			<div className={css.wrap}>
