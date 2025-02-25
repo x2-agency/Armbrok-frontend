@@ -6,12 +6,14 @@ import type { NextPage } from 'next';
 
 import type { BlogPageResponse } from '@/shared/types/blog';
 import ContentMarkup from '@/shared/ui/content-markup';
+import { NewsSectionHome } from '@/widgets/news-section';
 
 import css from './index.module.css';
 
 export const Blog: NextPage<{
 	initialBlogPage: BlogPageResponse;
 }> = initialData => {
+	console.log(initialData.initialBlogPage.data.latestNewsSection.articles);
 	return (
 		<>
 			<div className={css.wrap}>
@@ -24,12 +26,15 @@ export const Blog: NextPage<{
 
 				{/* <Author data={initialData.initialAuthor.data} /> */}
 			</div>
-			<div className={css.imageWrap}>
-				<img
-					className={css.img}
-					src={initialData.initialBlogPage.data.poster.url}
-				/>
-			</div>
+			{initialData?.initialBlogPage?.data?.poster?.url && (
+				<div className={css.imageWrap}>
+					<img
+						className={css.img}
+						src={initialData?.initialBlogPage?.data?.poster?.url}
+					/>
+				</div>
+			)}
+
 			<article className={css.root}>
 				<ContentMarkup
 					extraClass={css.markup}
@@ -37,12 +42,14 @@ export const Blog: NextPage<{
 				></ContentMarkup>
 			</article>
 			{/* <Author data={initialData.initialAuthor.data} /> */}
-			{/* <NewsSectionHome
+			<NewsSectionHome
 				className={css.news}
-				title={LAST_MEDIA_DATA.title}
-				description={LAST_MEDIA_DATA.description}
+				title={initialData.initialBlogPage.data.latestNewsSection.title}
+				description={
+					initialData.initialBlogPage.data.latestNewsSection.description
+				}
 				dataNews={initialData.initialBlogPage.data.latestNewsSection.articles}
-			/> */}
+			/>
 		</>
 	);
 };
