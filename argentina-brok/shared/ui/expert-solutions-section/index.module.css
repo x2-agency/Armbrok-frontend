@@ -7,8 +7,6 @@
 }
 
 .cards {
-	@mixin responsive gap, 64, 64, 64;
-
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 
@@ -19,7 +17,7 @@
 }
 
 .cards.withShell {
-	@mixin res gap, 24, 24, 24;
+	@mixin responsive gap, 24, 24, 24;
 }
 
 .flexCards {

@@ -1,7 +1,7 @@
 import cx from 'clsx';
 
 import { NewsCard } from '@/entities/news-card';
-import type { NewsType } from '@/entities/news-card/types';
+import type { Article } from '@/shared/types/article';
 import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
@@ -11,15 +11,15 @@ export const NewsPage = ({
 	className,
 	isHasMore,
 }: {
-	newsCard: Array<NewsType>;
+	newsCard: Array<Article>;
 	className?: string;
 	isHasMore: boolean;
 }) => {
 	return (
 		<div className={css.root}>
 			<div className={cx(css.news, className)}>
-				{newsCard.map(news => (
-					<NewsCard className={css.card} key={news.id} data={news} />
+				{newsCard.map((news, index) => (
+					<NewsCard className={css.card} key={index} data={news} />
 				))}
 			</div>
 			{isHasMore && (

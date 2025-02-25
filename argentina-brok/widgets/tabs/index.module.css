@@ -8,6 +8,12 @@
 		solid var(--gray-400-color);
 	@mixin responsive border-radius, 10, 10, 10;
 	background-color: var(--gray-300-color);
+	scrollbar-width: 0;
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		display: none; 
+	}
 }
 
 .white {

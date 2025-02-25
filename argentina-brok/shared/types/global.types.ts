@@ -63,7 +63,7 @@ export type Factoid = ItemDetail & {
 /* BROKER APP SECTION */ /* CONSULATION CARD SECTION */
 
 export type PosterCard = ItemDetail & {
-	mediaContent?: Array<ImageFormat> | ImageFormat | null;
+	phoneMockups?: Array<ImageFormat> | ImageFormat | null;
 };
 
 /* FINANCIAL SOULUTION SECTION */
@@ -116,18 +116,23 @@ export type NewsSection = {
 };
 
 export type NewsType = {
-	id?: number;
+	slug?: string;
 	publishDate?: string;
 	title?: string;
 	description?: string;
 	author?: AuthorType;
-	category?: string | null;
+	category?: { name: string };
 	poster?: MediaData;
 };
 
 export type AuthorType = {
-	avatar: string;
+	avatar: Avatar;
 	name: string;
+	email: string;
+};
+
+export type Avatar = {
+	url: string;
 };
 
 /* INTERVIEW SECTION */
@@ -265,7 +270,7 @@ export type CorporateEventsSection = {
 /* COMPANY DETAILS SECTION */
 
 export type CompanyDetailsSection = ItemDetail & {
-	factoids?: Array<Factoid>;
+	items?: Array<Factoid>;
 };
 
 /* MEMBERSHIP SECTION */

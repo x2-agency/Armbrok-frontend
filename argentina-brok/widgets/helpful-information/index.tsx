@@ -17,7 +17,7 @@ export const HelpfulInformation = ({
 	}
 
 	return (
-		<Container category="section" className={cx(css.root, className)}>
+		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<ul className={css.accordions}>
 				{items.map((item, index) => (

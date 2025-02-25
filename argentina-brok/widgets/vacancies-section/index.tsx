@@ -4,7 +4,6 @@ import parser from 'html-react-parser';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import { Vacancy } from './ui/vacancy';
 import type { VacanciesSectionProps } from './vacancies.types';
 
 export const VacanciesSection = ({
@@ -24,7 +23,12 @@ export const VacanciesSection = ({
 			<ul className={css.vacancies}>
 				{vacancies.map((vacancy, index) => (
 					<li key={index}>
-						<Vacancy name={vacancy.name} link={vacancy.link} />
+						<Vacancy
+							data={{
+								title: vacancy.name,
+								link: { link: vacancy.link, text: 'Read more' },
+							}}
+						/>
 					</li>
 				))}
 			</ul>

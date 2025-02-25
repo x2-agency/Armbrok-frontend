@@ -1,5 +1,4 @@
 .root {
 	@mixin responsive padding-block, 50, 80, 80; /* 80px */
-
 	background-color: var(--gray-200-color);
 }

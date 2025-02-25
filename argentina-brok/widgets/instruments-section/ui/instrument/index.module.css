@@ -1,0 +1,27 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	@mixin responsive border-radius, 24, 24, 24;
+	background: linear-gradient(to right, #171717 0%, #333333 100%);
+	@mixin responsive gap, 5, 8, 8;
+}
+
+.title {
+	@mixin font-h3;
+	font-weight: 600;
+	color: var(--gray-100-color);
+
+	@media (max-width: 767px) {
+		@mixin font-h5;
+	}
+}
+
+.description {
+	@mixin font-text16;
+	color: var(--gray-300-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
+}

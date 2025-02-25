@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow: /notes
+Allow: /
+
+# Host
+Host: https://example.website.com
+
+# Sitemaps
+Sitemap: https://example.website.com/sitemap.xml

@@ -1,0 +1,30 @@
+.root {
+	@mixin responsive padding-block-start, 28, 56, 56;
+	@mixin responsive padding-block-end, 36, 72, 72;
+	@mixin responsive gap, 10, 16, 16;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.input {
+	@mixin responsive width, 320, 760, 760;
+
+	input {
+		width: 100%;
+	}
+}
+
+.button {
+	@mixin responsive height, 57, 57, 57;
+
+	@media (max-width: 767px) {
+		@mixin responsive width, 320;
+	}
+}

@@ -27,10 +27,10 @@ export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 			{type === 'about' && headData.established && (
 				<div className={css.established}>{parser(headData.established)}</div>
 			)}
-			<h1 className={cx(css.title, css[type])}>{parser(headData.title)}</h1>
-			<p className={cx(css.description, css[type])}>
+			<div className={cx(css.title, css[type])}>{parser(headData.title)}</div>
+			<div className={cx(css.description, css[type])}>
 				{parser(headData.description)}
-			</p>
+			</div>
 			{type === 'profix' && headData.icon && (
 				<img src={headData.icon} alt="Icon" className={css.icon} />
 			)}

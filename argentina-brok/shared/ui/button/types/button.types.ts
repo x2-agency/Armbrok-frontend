@@ -8,6 +8,7 @@ interface BaseButtonProps extends PropsWithChildren {
 }
 
 type LinkButtonProps = BaseButtonProps & {
+	text?: string;
 	href: string;
 	onClick?: never;
 	type?: never;

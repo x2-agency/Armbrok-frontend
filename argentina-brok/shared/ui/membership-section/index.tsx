@@ -28,12 +28,8 @@ export const MembershipSection = ({
 
 	return (
 		<Container className={cx(css.root, className)}>
-			<div className={css.header}>
-				{title && <h2 className={css.title}>{parser(title)}</h2>}
-				{description && (
-					<p className={css.description}>{parser(description)}</p>
-				)}
-			</div>
+			{title && <h2 className={css.title}>{parser(title)}</h2>}
+			{description && <p className={css.description}>{parser(description)}</p>}
 			<ul className={css.items}>
 				{items.map((item, key) => (
 					<li key={key}>

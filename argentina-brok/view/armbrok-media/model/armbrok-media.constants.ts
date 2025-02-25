@@ -14,3 +14,9 @@ export const ARMBROK_MEDIA_EMAIL = {
 	title:
 		'Subscribe to&nbsp;our newsletter <br/> with interesting articles and news',
 };
+
+export const LAST_MEDIA_DATA = {
+	title: 'Lastest blog posts',
+	description:
+		'Tool and strategies modern teams need to&nbsp;help their companies grow.',
+};

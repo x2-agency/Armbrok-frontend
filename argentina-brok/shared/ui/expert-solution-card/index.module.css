@@ -30,7 +30,7 @@
 	background-color: var(--gray-200-color);
 
 	.icon {
-		@mixin responsive margin-block-end, 40, 40, 40;
+		@mixin responsive margin-block-end, 15, 40, 40;
 	}
 
 	&.whiteBackground {

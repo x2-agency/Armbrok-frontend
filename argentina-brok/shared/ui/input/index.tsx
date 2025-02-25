@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import {
@@ -15,19 +16,21 @@ type PropsWithType = {
 	isColorInput?: boolean;
 	className?: string;
 	label?: string;
+	leftIcon?: string;
 } & Props;
 
 const InputComponent = (
-	{ className, placeholder, type, label, ...props }: PropsWithType,
+	{ className, placeholder, type, label, leftIcon, ...props }: PropsWithType,
 	ref: ForwardedRef<HTMLInputElement>
 ) => {
 	return (
 		<label className={cx(className, css.root)}>
 			{label && <span className={css.label}>{parser(label)}</span>}
+			{leftIcon && <img className={css.leftIcon} src={leftIcon} />}
 			<input
 				type={type}
 				ref={ref}
-				className={css.input}
+				className={cx(css.input, { [css.withIcon]: leftIcon })}
 				placeholder={placeholder}
 				{...props}
 			/>

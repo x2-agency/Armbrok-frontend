@@ -5,7 +5,7 @@
 
 .place {
 	@mixin font-h1;
-	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive padding-block-end, 8, 8, 8;
 
 	color: var(--red-500-color);
 	font-weight: 500;
@@ -13,7 +13,7 @@
 
 .title {
 	@mixin font-text20;
-	@mixin res padding-block-end, 3.2rem, 0.8rem, 0.75rem; /* 12px */
+	@mixin responsive padding-block-end, 12, 12, 12;
 
 	font-weight: 600;
 	color: var(--gray-100-color);
@@ -29,4 +29,8 @@
 	@mixin font-text16;
 
 	color: var(--gray-400-color);
+
+	p {
+		color: var(--gray-400-color);
+	}
 }

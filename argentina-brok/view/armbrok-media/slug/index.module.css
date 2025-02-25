@@ -1,0 +1,49 @@
+.wrap {
+	display: flex;
+	flex-direction: column;
+	margin-inline: auto;
+	@mixin responsive max-width, unset, 600, 600;
+	@mixin responsive padding-block-start, 140, 160, 160;
+	text-align: center;
+
+	@media (max-width: 767px) {
+		width: 100%;
+		padding-inline: 5.33rem;
+	}
+}
+
+.title {
+	@mixin font-h1;
+	font-weight: 700;
+	color: var(--gray-800-color);
+	@mixin responsive padding-block-end, 10, 16, 16;
+}
+
+.description {
+	@mixin font-h6;
+	color: var(--gray-600-color);
+	@mixin responsive padding-block-end, 20, 40, 40;
+}
+
+.imageWrap {
+	margin-inline: auto;
+	overflow: hidden;
+	@mixin responsive width, 335, 920, 920;
+	@mixin responsive height, 200, 560, 560;
+	@mixin responsive border-radius, 24, 24, 24;
+}
+
+.img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.root {
+	@mixin responsive padding-block-start, 50, 72, 72;
+	@mixin responsive padding-block-end, 30, 48, 48;
+}
+
+.news {
+	@mixin responsive padding-block-end, 50, 120, 120;
+}

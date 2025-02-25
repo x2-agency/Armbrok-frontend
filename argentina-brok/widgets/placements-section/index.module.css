@@ -15,11 +15,12 @@
 	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
 
 	@media (min-width: 1441px) {
-		padding-inline: unset;
+		width: 90rem;
 		margin-inline: auto;
-		max-width: 75rem;
+		padding-inline: 7.4rem;
 	}
 
+	position: relative;
 	display: flex;
 	overflow: scroll;
 	scrollbar-width: none; /* Firefox */
@@ -32,4 +33,53 @@
 
 .placement {
 	flex-shrink: 0;
+}
+
+.rightOverlay {
+	right: 0;
+	background: linear-gradient(
+		to left,
+		rgba(243, 244, 245, 1) 0%,
+		rgba(243, 244, 245, 0) 100%
+	);
+}
+
+.leftOverlay,
+.rightOverlay {
+	@mixin responsive width, 74, 74, 74;
+
+	height: 100%;
+	z-index: 100;
+	position: absolute;
+	top: 0;
+
+	@media (min-width: 1441px) {
+		display: none;
+	}
+
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+
+.leftOverlay {
+	left: 0;
+	background: linear-gradient(
+		to right,
+		rgba(243, 244, 245, 1) 0%,
+		rgba(243, 244, 245, 0) 100%
+	);
+}
+
+.rightOverlay {
+	right: 0;
+	background: linear-gradient(
+		to left,
+		rgba(243, 244, 245, 1) 0%,
+		rgba(243, 244, 245, 0) 100%
+	);
+}
+
+.container {
+	position: relative;
 }

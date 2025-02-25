@@ -1,7 +1,13 @@
 'use client';
 
 import cx from 'clsx';
-import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react';
+import {
+	useEffect,
+	useRef,
+	useState,
+	type Dispatch,
+	type SetStateAction,
+} from 'react';
 
 import CrossSVG from '@/public/assets/icons/cross.svg';
 import type { Employee } from '@/shared/types/global.types';
@@ -25,21 +31,47 @@ export const MemberModal = ({
 	toggleModalOpen,
 }: MemberModalProps) => {
 	const ref = useRef<HTMLDialogElement | null>(null);
+	const [isAnimating, setIsAnimating] = useState(false);
 
 	useEffect(() => {
-		const currentRef = ref.current;
+		const modal = ref.current;
+		let openTimeout: ReturnType<typeof setTimeout>;
+		let closeTimeout: ReturnType<typeof setTimeout>;
 
-		if (currentRef && isModalOpen) {
-			currentRef.showModal();
-			document.body.style.overflow = 'hidden';
-		} else {
-			currentRef?.close();
-			document.body.style.overflow = '';
+		if (modal) {
+			if (isModalOpen) {
+				modal.showModal();
+				document.body.style.overflow = 'hidden';
+
+				openTimeout = setTimeout(() => {
+					modal.classList.add(css.open);
+					setIsAnimating(false);
+				}, 10);
+			} else {
+				setIsAnimating(true);
+				modal.classList.remove(css.open);
+
+				closeTimeout = setTimeout(() => {
+					modal.close();
+					document.body.style.overflow = '';
+					setIsAnimating(false);
+				}, 300);
+			}
 		}
-	}, [ref, isModalOpen]);
+
+		return () => {
+			if (openTimeout) clearTimeout(openTimeout);
+			if (closeTimeout) clearTimeout(closeTimeout);
+		};
+	}, [isModalOpen]);
 
 	return (
-		<dialog className={cx(css.modal, { [css.open]: isModalOpen })} ref={ref}>
+		<dialog
+			className={cx(css.modal, {
+				[css.closing]: isAnimating,
+			})}
+			ref={ref}
+		>
 			<button className={css.button} onClick={() => toggleModalOpen(false)}>
 				<CrossSVG className={css.cross} />
 			</button>

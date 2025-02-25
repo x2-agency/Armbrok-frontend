@@ -5,4 +5,3 @@ export const COOKIE_PANEL_INFO = {
 	button: 'Allow Cookies',
 };
 
-export const SHOW_PANEL_URLS = ['/careers-at-armbrock'];

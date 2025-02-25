@@ -105,7 +105,7 @@ const FAVICON_DATA = [
 		rel: 'icon',
 		sizes: '128x128',
 		type: 'image/png',
-		path: '/assets/icons/favicons/128x128.png',
+		path: '/assets/icons/favicons/120x120.png',
 	},
 	{
 		rel: 'icon',
@@ -130,8 +130,8 @@ const FAVICON_DATA = [
 export const Favicons = () => {
 	return (
 		<>
-			{FAVICON_DATA.map(({ rel, sizes, type, path }) => (
-				<link key={sizes} rel={rel} sizes={sizes} type={type} href={path} />
+			{FAVICON_DATA.map(({ rel, sizes, type, path }, index) => (
+				<link key={index} rel={rel} sizes={sizes} type={type} href={path} />
 			))}
 		</>
 	);

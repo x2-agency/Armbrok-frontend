@@ -1,7 +1,16 @@
 .main {
-  margin-block-start: 120px;
+	margin-block-start: 120px;
 
-  @media (max-width: 767px) {
-    margin-block-start: 0;
-  }
+	@media (max-width: 767px) {
+		margin-block-start: 0;
+	}
+}
+
+.divider {
+	position: fixed;
+	@mixin responsive top, 64, 80, 80;
+	width: 100%;
+	z-index: 101;
+	@mixin responsive height, 1, 1, 1;
+	background-color: var(--gray-600-color);
 }

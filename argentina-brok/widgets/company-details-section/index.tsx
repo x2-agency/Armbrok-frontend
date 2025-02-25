@@ -8,20 +8,25 @@ import { Detail } from './ui/detail';
 
 export const CompanyDetailsSection = ({
 	title,
-	factoids,
+	items,
 }: CompanyDetailsSectionProps) => {
+	if (!items || items.length === 0) {
+		return null;
+	}
+
 	return (
 		<Container className={css.root}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
-			{factoids && (
-				<ul className={css.list}>
-					{factoids.map((detail, index) => (
-						<li className={css.detail} key={index}>
-							<Detail title={detail.title} description={detail.description} />
-						</li>
-					))}
-				</ul>
-			)}
+			<ul className={css.list}>
+				{items.map((detail, index) => (
+					<li className={css.detail} key={index}>
+						<Detail
+							title={detail.title ?? ''}
+							description={detail.description}
+						/>
+					</li>
+				))}
+			</ul>
 		</Container>
 	);
 };
