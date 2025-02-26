@@ -9,11 +9,17 @@
 
 .description,
 .title {
-	
 	h1,
 	p {
 		color: var(--gray-100-color);
+		word-break: break-word;
+		overflow-wrap: break-word;
+		white-space: normal;
 	}
+
+	word-break: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
 
 	@media (max-width: 767px) {
 		br {
@@ -25,15 +31,22 @@
 .title {
 	@mixin font-h1;
 
-	font-weight: 700;
+	h1,
+	p {
+		font-weight: 700;
+	}
 
 	&.profix {
 		@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
 	}
 
+	&.about {
+		font-weight: 700;
+	}
+
 	&.default,
 	&.about {
-		@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+		@mixin responsive padding-block-end, 16, 24, 24;
 	}
 }
 

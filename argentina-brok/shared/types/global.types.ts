@@ -178,12 +178,10 @@ export type MobileAppSection = ItemDetail & {
 /* QUOTE SECTION */
 
 export type QuoteSection = {
-	quote: {
-		content: string;
-		authorFullName: string;
-		authorPosition: string;
-		authorExtraInfo: string;
-	};
+	content: string;
+	authorFullName: string;
+	authorPosition: string;
+	authorExtraInfo: string;
 	authorPhoto?: MediaData | null;
 };
 
