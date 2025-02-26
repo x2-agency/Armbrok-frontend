@@ -1,3 +1,5 @@
+import type { PosterImageProps } from './poster';
+
 export type BaseResponse<T> = {
 	data: T & { updatedAt: string; locale?: string; seo?: SeoType | null };
 };
@@ -14,7 +16,7 @@ export type SeoType = {
 
 export type HeroSection = ItemDetail & {
 	button?: LinkItem;
-	background: MediaData;
+	background: PosterImageProps;
 };
 
 export type LinkItem = {
@@ -245,7 +247,7 @@ export type HeroFactoid = {
 export type HeroSectionAboutUs = ItemDetail & {
 	titleLabel?: string;
 	button?: LinkItem;
-	background?: MediaData;
+	background?: PosterImageProps;
 	factoids?: Array<HeroFactoid>;
 };
 

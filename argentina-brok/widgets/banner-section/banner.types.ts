@@ -1,8 +1,8 @@
 import type {
-	MediaData,
 	LinkItem,
 	HeroFactoid,
 } from '@/shared/types/global.types';
+import type { PosterImageProps } from '@/shared/types/poster';
 
 export interface PanelProps {
 	className?: string;
@@ -38,7 +38,7 @@ interface BaseBannerProps {
 	banner: {
 		title: string;
 		description: string;
-		poster?: MediaData;
+		poster?: PosterImageProps;
 	};
 }
 
