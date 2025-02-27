@@ -3,14 +3,14 @@
 
 	display: flex;
 	flex-direction: column;
+}
 
-	h2:has(+ p) {
-		@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
-	}
+.title:has(+ .description) {
+	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
+}
 
-	h2:has(+ form) {
-		@mixin res padding-block-end, 8.533rem, 2.222rem, 2rem; /* 32px */
-	}
+.title:has(+ .form) {
+	@mixin res padding-block-end, 8.533rem, 2.222rem, 2rem; /* 32px */
 }
 
 .title,
@@ -38,7 +38,7 @@
 
 .description {
 	@mixin font-text16;
-	@mixin responsive padding-block-end, 16, 32, 32;
+	@mixin responsive padding-block-end, 32, 32, 32;
 
 	@media (max-width: 767px) {
 		br {

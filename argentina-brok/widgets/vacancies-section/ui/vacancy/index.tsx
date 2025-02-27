@@ -4,7 +4,6 @@ import parser from 'html-react-parser';
 
 import type { glossaryCard } from '@/shared/types/media-page';
 import { Button } from '@/shared/ui/button';
-import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 
@@ -16,11 +15,7 @@ export type VacancyProps = {
 export const Vacancy = ({ data, className }: VacancyProps) => {
 	const { title, description, icon, link } = data;
 	return (
-		<Container
-			category="article"
-			padding="p-32"
-			className={cx(css.root, className)}
-		>
+		<article className={cx(css.root, className, 'p-32')}>
 			<div className={css.content}>
 				{icon && icon.url && (
 					<div className={css.iconWrap}>
@@ -42,6 +37,6 @@ export const Vacancy = ({ data, className }: VacancyProps) => {
 			>
 				{parser(link.text)}
 			</Button>
-		</Container>
+		</article>
 	);
 };

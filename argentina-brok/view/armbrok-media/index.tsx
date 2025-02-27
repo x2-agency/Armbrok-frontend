@@ -2,15 +2,12 @@
 
 import type { NextPage } from 'next';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 
-import type { ArticleData, Category } from '@/shared/types/article';
 import type { MediaProps } from '@/shared/types/media-page';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
 import { FeedbackForm } from '@/widgets/feedback-form';
-import { NewsPage } from '@/widgets/news-page';
 import { Tabs } from '@/widgets/tabs';
-import { Vacancy } from '@/widgets/vacancies-section/ui/vacancy';
 
 import css from './index.module.css';
 import {
@@ -19,7 +16,6 @@ import {
 } from './model/armbrok-media.constants';
 
 export const ArmbrokMedia: NextPage<{
-	initialData: ArticleData;
 	initialMediaData: MediaProps;
 }> = initialData => {
 	const router = useRouter();
@@ -27,12 +23,12 @@ export const ArmbrokMedia: NextPage<{
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	const tags: Array<Category> = useMemo(() => {
-		const categories = initialData.initialMediaData.data.articles.map(
-			article => article.category
-		);
-		return Array.from(new Set(categories)).filter(Boolean) as Array<Category>;
-	}, [initialData.initialMediaData]);
+	// const tags: Array<Category> = useMemo(() => {
+	// 	const categories = initialData?.initialMediaData?.data?.articles.map(
+	// 		article => article.category
+	// 	);
+	// 	return Array.from(new Set(categories)).filter(Boolean) as Array<Category>;
+	// }, [initialData.initialMediaData]);
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
@@ -65,18 +61,18 @@ export const ArmbrokMedia: NextPage<{
 				className={css.tabs}
 				onChangeTab={onChangeTab}
 				currentTag={currentTag}
-				tags={tags}
+				// tags={tags}
 				isCasesExists
 				initialTag="all"
 			/>
-			<NewsPage
-				newsCard={initialData.initialData.data}
+			{/* <NewsPage
+				newsCard={initialData.initialMediaData.data.articles}
 				isHasMore={currentTag === 'all'}
 			/>
 			<Vacancy
 				className={css.vacancy}
 				data={initialData.initialMediaData.data.glossaryCard}
-			/>
+			/> */}
 			<FeedbackForm title={ARMBROK_MEDIA_EMAIL.title} />
 		</section>
 	);
