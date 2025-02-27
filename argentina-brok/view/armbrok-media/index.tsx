@@ -7,7 +7,7 @@ import { useCallback, useMemo } from 'react';
 import type { ArticleData, Category } from '@/shared/types/article';
 import type { MediaProps } from '@/shared/types/media-page';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
-import { FeedbackForm } from '@/widgets/feedback-form';
+import { FeedbackForm } from '@/features/feedback-form';
 import { NewsPage } from '@/widgets/news-page';
 import { Tabs } from '@/widgets/tabs';
 import { Vacancy } from '@/widgets/vacancies-section/ui/vacancy';

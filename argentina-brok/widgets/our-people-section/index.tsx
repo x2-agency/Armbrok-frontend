@@ -1,3 +1,5 @@
+'use client';
+
 import parser from 'html-react-parser';
 
 import type { EmployeeStorySection } from '@/shared/types/global.types';
@@ -22,7 +24,7 @@ export const OurPeopleSection = ({
 					<p className={css.description}>{parser(description)}</p>
 				)}
 			</div>
-			<ul className={css.employees}>
+			<ul className={css.employees} dir="ltr">
 				{employeeStories.map((value, index) => (
 					<li key={index} className={css.listElement}>
 						<EmployeeItem employee={value.employee} story={value.story} />

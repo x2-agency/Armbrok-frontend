@@ -1,8 +1,12 @@
 .swiper {
-	@mixin responsive min-height, 450, 750, 750;
+	&.withSummary {
+		:global(.swiper-pagination) {
+			display: none;
+		}
+	}
 
 	:global(.swiper-pagination) {
-		top: 83%;
+		position: static !important;
 
 		:global(.swiper-pagination-bullet) {
 			background-color: var(--gray-500-color);
@@ -10,21 +14,18 @@
 				background-color: var(--black-color);
 			}
 		}
-
-		@media (max-width: 767px) {
-			top: 71%;
-		}
 	}
 
 	:global(.swiper-button-prev),
 	:global(.swiper-button-next) {
-		@mixin responsive width, 48, 48, 48;
-		@mixin responsive height, 48, 48, 48;
+		@mixin responsive width, 36, 48, 48;
+		@mixin responsive height, 36, 48, 48;
 		@mixin responsive border-radius, 66, 66, 66;
 
 		background: #fff !important;
 		color: var(--black-color);
-		top: 40%;
+		top: 48.5%;
+		translate: 0% -50%;
 
 		&::after {
 			@mixin responsive width, 26, 26, 26;
@@ -40,7 +41,7 @@
 		}
 
 		@media (max-width: 767px) {
-			top: 35%;
+			display: none;
 		}
 	}
 
@@ -62,23 +63,54 @@
 	}
 }
 
-.slide {
-	@mixin responsive width, 800, 800, 800;
+.swiper.withSummary .imageWrapper {
+	@mixin responsive margin-block-end, 16, 58, 58;
+}
 
-	position: relative;
-	overflow: hidden;
+.swiper.withSummary {
+	:global(.swiper-button-prev),
+	:global(.swiper-button-next) {
+		top: 44.5%;
+
+		@media (max-width: 767px) {
+			display: unset;
+		}
+	}
 
 	@media (max-width: 767px) {
-		width: 100%;
+		:global(.swiper-button-prev) {
+			left: 10%;
+		}
+
+		:global(.swiper-button-next) {
+			right: 10%;
+		}
 	}
 }
 
-.image {
-	@mixin responsive width, 800, 800, 800;
-	@mixin responsive height, 300, 600, 600;
-	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
-	@mixin res margin-block-end, 8.467rem, 4.028rem, 3.625rem;
+.swiper.withoutSummary .imageWrapper {
+	@mixin responsive margin-block-end, 16, 32, 32;
+}
 
+.slide {
+	@mixin responsive width, 335, 800, 800;
+
+	position: relative;
+	overflow: hidden;
+}
+
+.imageWrapper {
+	@mixin responsive width, 335, 800, 800;
+	@mixin responsive height, 300, 600, 600;
+	@mixin responsive border-radius, 24, 24, 24;
+
+	overflow: hidden;
+	position: relative;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 
 	@media (max-width: 767px) {

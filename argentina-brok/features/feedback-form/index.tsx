@@ -27,7 +27,7 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 	} = useForm<FeedbackInputs>({ mode: 'onChange' });
 
 	const handleSubmitForm = ({ email }: FeedbackInputs) => {
-		postEmailForm({ email });
+		postEmailForm({ data: { email } });
 	};
 
 	return (
