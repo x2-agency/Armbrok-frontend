@@ -1,5 +1,13 @@
 .benefits {
 	@mixin responsive padding-block, 40, 80, 80;
+
+	ul {
+		justify-content: space-between;
+
+		li {
+			@mixin responsive width, 350, 282, 282;
+		}
+	}
 }
 
 .hero {
