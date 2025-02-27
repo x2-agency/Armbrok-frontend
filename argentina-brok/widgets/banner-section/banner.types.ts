@@ -1,7 +1,4 @@
-import type {
-	LinkItem,
-	HeroFactoid,
-} from '@/shared/types/global.types';
+import type { LinkItem, HeroFactoid } from '@/shared/types/global.types';
 import type { PosterImageProps } from '@/shared/types/poster';
 
 export interface PanelProps {
@@ -26,7 +23,7 @@ export interface PanelProps {
 }
 
 export interface AwardsData {
-	place?: number;
+	itemIndex?: string;
 	title?: string;
 	description?: string;
 }
@@ -137,7 +134,7 @@ export type DefaultBannerBodyProps = BaseBannerBodyProps & {
 export type AboutBannerBodyProps = BaseBannerBodyProps & {
 	type: 'about';
 	bodyData: {
-		awards: Array<HeroFactoid>;
+		awards: Array<HeroFactoid & { itemIndex?: string }>;
 		panel?: never;
 		button?: never;
 	};
