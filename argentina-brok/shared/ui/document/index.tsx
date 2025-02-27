@@ -2,6 +2,7 @@
 'use client';
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import Link from 'next/link';
 
 import type { MediaData } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
@@ -39,7 +40,7 @@ export const Document = ({
 			<Button variant="next" iconRotate={270} className={css.button}>
 				Download
 			</Button>
-			<a href={file.url} className={css.downloadLink} download />
+			<Link href={file.url ?? '#'} className={css.downloadLink} download />
 		</article>
 	);
 };

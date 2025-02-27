@@ -1,5 +1,6 @@
+import cx from 'clsx';
+
 import type { SecurityPaperItem } from '@/shared/types/global.types';
-import { Container } from '@/shared/ui/container';
 import { PlacementBody } from '@/widgets/placements-section/ui/placement-body';
 import { PlacementHead } from '@/widgets/placements-section/ui/placement-head';
 import { PlacementSubtitle } from '@/widgets/placements-section/ui/placement-subtitle';
@@ -18,7 +19,7 @@ export const PlacementItem = ({
 	infoBlock,
 }: SecurityPaperItem) => {
 	return (
-		<Container category="article" padding="p-32" className={css.root}>
+		<article className={cx(css.root, 'p-32')}>
 			<PlacementHead
 				logo={logo}
 				name={name}
@@ -32,6 +33,6 @@ export const PlacementItem = ({
 				sharePriceValue={sharePriceValue}
 			/>
 			<PlacementBody infoBlock={infoBlock} />
-		</Container>
+		</article>
 	);
 };

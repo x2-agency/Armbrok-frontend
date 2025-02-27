@@ -4,7 +4,7 @@
 
 .title {
 	@mixin font-h2;
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+	@mixin responsive padding-block-end, 20, 40, 40;
 
 	font-weight: 700;
 	text-align: center;
@@ -20,6 +20,11 @@
 		padding-inline: 7.4rem;
 	}
 
+	@media (max-width: 767px) {
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+	}
+
 	position: relative;
 	display: flex;
 	overflow: scroll;
@@ -33,6 +38,10 @@
 
 .placement {
 	flex-shrink: 0;
+
+	@media (max-width: 767px) {
+		scroll-snap-align: center;
+	}
 }
 
 .rightOverlay {

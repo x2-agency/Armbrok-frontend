@@ -1,5 +1,7 @@
 .text {
 	@mixin font-text16;
+	@mixin responsive max-width, 170, 479, 560;
+	height: fit-content;
 
 	color: var(--gray-800-color);
 }
