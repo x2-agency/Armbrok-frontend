@@ -54,7 +54,7 @@
 	flex-shrink: 0;
 
 	@media (max-width: 767px) {
-		width: 89rem;
+		@mixin responsive width, 320;
 		scroll-snap-align: center;
 	}
 }

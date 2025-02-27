@@ -100,6 +100,24 @@
 	}
 }
 
+.root.row .name {
+	@mixin responsive max-width, 0, 130, 135;
+
+	@media (min-width: 768px) {
+		display: -webkit-box; 
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3; 
+		overflow: hidden;
+		word-break: break-word;
+		overflow-wrap: break-word;
+		white-space: normal;
+	}
+
+	@media (max-width: 767px) {
+		max-width: unset;
+	}
+}
+
 .button {
 	@mixin transition;
 

@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 
+import { FeedbackForm } from '@/features/feedback-form';
 import type { SliderItem } from '@/shared/types/global.types';
 import { GuaranteesSection } from '@/shared/ui/guarantees-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
-import { FeedbackForm } from '@/features/feedback-form';
 import { OurPeopleSection } from '@/widgets/our-people-section';
 import { SliderSection } from '@/widgets/slider-section';
 import { VacanciesSection } from '@/widgets/vacancies-section';
