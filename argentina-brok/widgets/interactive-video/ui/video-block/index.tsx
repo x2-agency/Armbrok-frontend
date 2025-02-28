@@ -4,13 +4,20 @@ import parser from 'html-react-parser';
 
 import PlaySVG from '@/public/assets/icons/play.svg';
 import { useVideoPlayer } from '@/shared/hooks/use-video-player';
-import type { InteractiveProps } from '@/widgets/interactive-video/types/interactive-video';
+import type { InterviewProps } from '@/view/home/types/response';
 
 import css from './index.module.css';
 
-export const VideoBlock = ({ data }: InteractiveProps) => {
-	const { src, poster, descriptionVideo } = data;
-	const { videoRef, isPlaying, handlePlay } = useVideoPlayer(src, poster.src);
+export type VideoBlockProps = {
+	data: InterviewProps;
+};
+
+export const VideoBlock = ({ data }: VideoBlockProps) => {
+	const { videoCaption, video } = data;
+
+	const videoUrl = video.url;
+
+	const { videoRef, isPlaying, handlePlay } = useVideoPlayer(videoUrl);
 
 	const handleVideoClick = () => {
 		if (!isPlaying) {
@@ -24,8 +31,8 @@ export const VideoBlock = ({ data }: InteractiveProps) => {
 				<video
 					ref={videoRef}
 					className={css.video}
-					src={src}
-					poster={poster.src}
+					src={video.url}
+					// poster={poster.src}
 					controls={isPlaying}
 				/>
 				{!isPlaying && (
@@ -33,7 +40,7 @@ export const VideoBlock = ({ data }: InteractiveProps) => {
 						<button className={css.playButton} onClick={handlePlay}>
 							<PlaySVG className={css.svg} />
 						</button>
-						<span className={css.description}>{parser(descriptionVideo)}</span>
+						<span className={css.description}>{parser(videoCaption)}</span>
 					</div>
 				)}
 				<div className={css.overlay} />

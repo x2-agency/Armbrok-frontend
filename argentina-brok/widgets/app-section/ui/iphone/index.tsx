@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type { ImageFormat } from '@/shared/types/global.types';
+import type { PhoneMockupsType } from '@/view/home/types/response';
 
 import css from './index.module.css';
 
@@ -7,7 +7,7 @@ export const Iphone = ({
 	image,
 	wrapperClass,
 }: {
-	image?: ImageFormat;
+	image?: PhoneMockupsType;
 	wrapperClass: string;
 }) => {
 	if (!image) return null;

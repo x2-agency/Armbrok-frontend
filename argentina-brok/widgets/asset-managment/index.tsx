@@ -2,33 +2,40 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
-import type { PosterCard } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
-import {
-	HOME_ASSETS_BUTTON,
-	HOME_ASSETS_IMAGE,
-} from '@/view/home/model/home.constants';
+import type { AssetManagementCardProps } from '@/view/home/types/response';
+
+export type AssetManagmentProps = {
+	data: AssetManagementCardProps;
+};
 
 import css from './index.module.css';
-export const AssetManagment = ({ title, description }: PosterCard) => {
+export const AssetManagment = ({ data }: AssetManagmentProps) => {
+	const { title, description, mediaContent, button } = data;
 	return (
 		<Container className={css.root}>
 			<article className={cx(css.wrap, 'hybrid')}>
 				<div className={css.contnet}>
-					<h2 className={css.title}>{parser(title)}</h2>
-					<p className={css.description}>{parser(description ?? '')}</p>
+					<h2 className={css.title}>{parser(title ?? '')}</h2>
+					{description && (
+						<p className={css.description}>{parser(description ?? '')}</p>
+					)}
 					<Button
 						className={css.button}
 						category="big"
-						href="#"
+						href={button.link}
 						variant="filled"
 					>
-						{parser(HOME_ASSETS_BUTTON)}
+						{parser(button.text)}
 					</Button>
 				</div>
 				<div className={css.imgWrap}>
-					<img className={css.image} src={HOME_ASSETS_IMAGE} alt="hand" />
+					<img
+						className={css.image}
+						src={mediaContent.url}
+						alt={mediaContent.alternativeText}
+					/>
 				</div>
 			</article>
 		</Container>

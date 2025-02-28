@@ -1,16 +1,18 @@
 import cx from 'clsx';
 
-import type { ImageFormat, PosterCard } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
+import type {
+	BrokerageAppCardProps,
+	PhoneMockupsType,
+} from '@/view/home/types/response';
 
 import css from './index.module.css';
-import type { ContentProp } from './ui/content-block';
 import { ContentBlock } from './ui/content-block';
 import { Iphone } from './ui/iphone';
 
 type AppSectionProp = {
-	content: PosterCard & ContentProp;
-	image?: Array<ImageFormat>;
+	content: BrokerageAppCardProps;
+	image?: Array<PhoneMockupsType>;
 };
 
 export const AppSection = ({ image = [], content }: AppSectionProp) => {
@@ -21,13 +23,7 @@ export const AppSection = ({ image = [], content }: AppSectionProp) => {
 			<div className={cx(css.wrap, 'hybrid')}>
 				<Iphone image={firstIphone} wrapperClass={css.firstIphone} />
 				<Iphone image={secondIphone} wrapperClass={css.secondIphone} />
-				<ContentBlock
-					IconSvg={content?.IconSvg}
-					title={content?.title ?? ''}
-					description={content?.description ?? ''}
-					button={content?.button}
-					preview={content?.preview}
-				/>
+				<ContentBlock data={content} />
 			</div>
 		</Container>
 	);

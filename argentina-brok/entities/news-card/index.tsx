@@ -10,12 +10,12 @@ import type { Article } from '@/shared/types/article';
 
 import css from './index.module.css';
 
-export type NewsCard = {
+export type NewsCardProps = {
 	data: Article;
 	className: string;
 };
 
-export const NewsCard = ({ data, className }: NewsCard) => {
+export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const pathname = usePathname();
 	const isArmbrokMedia = pathname === '/armbrok-media';
 
@@ -51,7 +51,7 @@ export const NewsCard = ({ data, className }: NewsCard) => {
 						<span className={css.name}>{parser(author?.name ?? '')}</span>
 					</div>
 
-					<p className={css.tag}>{category?.name}</p>
+					{category && <p className={css.tag}>{category?.name}</p>}
 				</div>
 			</div>
 			<Link className={css.link} href={`/armbrok-media/${slug}`} />

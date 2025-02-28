@@ -2,27 +2,31 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
-import type { InteractiveProps } from '@/widgets/interactive-video/types/interactive-video';
+import type { InterviewProps } from '@/view/home/types/response';
 
 import css from './index.module.css';
 
-export const TextBlock = ({ data }: InteractiveProps) => {
-	const { title, description, firstButtonText, lastButtonText } = data;
+export type TextBlockProps = {
+	data: InterviewProps;
+};
+
+export const TextBlock = ({ data }: TextBlockProps) => {
+	const { title, description, primaryButton, secondaryButton } = data;
 	return (
 		<article className={cx(css.root)}>
 			<h2 className={css.title}>{parser(title)}</h2>
 			<p className={css.description}>{parser(description)}</p>
 			<div className={css.wrapButton}>
-				<Button href="#" category="big" variant="filled">
-					{parser(firstButtonText)}
+				<Button href={primaryButton.link} category="big" variant="filled">
+					{parser(primaryButton.text)}
 				</Button>
 				<Button
 					className={css.button}
-					href="#"
+					href={primaryButton.link}
 					category="big"
 					variant="outline"
 				>
-					{parser(lastButtonText)}
+					{parser(secondaryButton.text)}
 				</Button>
 			</div>
 		</article>
