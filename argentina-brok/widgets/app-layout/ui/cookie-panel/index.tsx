@@ -26,7 +26,7 @@ export const CookiePanel = () => {
 		const currentRef = ref.current;
 
 		if (currentRef && !isClosed) {
-			setIsMounted(true); 
+			setIsMounted(true);
 			setTimeout(() => {
 				currentRef.setAttribute('open', '');
 			}, 10);
@@ -35,7 +35,7 @@ export const CookiePanel = () => {
 			setTimeout(() => {
 				currentRef.close();
 				setIsMounted(false);
-			}, 300); 
+			}, 300);
 		}
 	}, [isClosed]);
 
@@ -47,7 +47,7 @@ export const CookiePanel = () => {
 	if (!isMounted) return null;
 
 	return (
-		<dialog className={css.root} ref={ref}>
+		<dialog className={css.root} ref={ref} role="dialog" aria-modal="true">
 			<div className={css.about}>
 				<p className={css.summary}>{parser(COOKIE_PANEL_INFO.summary)}</p>
 				<p className={css.aboutCookies}>{parser(COOKIE_PANEL_INFO.about)}</p>
