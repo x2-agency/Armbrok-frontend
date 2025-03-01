@@ -16,6 +16,6 @@ export type SearchDataItem = {
 	formattedUrl: string;
 	htmlFormattedUrl: string;
 	pagemap: {
-		case_image: Array<{ src: string }>;
+		cse_image: Array<{ src: string }>;
 	};
 };

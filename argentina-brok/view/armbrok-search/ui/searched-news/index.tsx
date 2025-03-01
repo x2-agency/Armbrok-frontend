@@ -1,7 +1,8 @@
+import { Container } from '@/shared/ui/container';
+import type { SearchDataItem } from '@/view/armbrok-search/types/armbrok-search.types';
+
 import css from './index.module.css';
 import { NewsItem } from './news-item';
-
-import type { SearchDataItem } from '@/view/armbrok-search/types/armbrok-search.types';
 
 type SearchedNewsProps = {
 	news?: Array<SearchDataItem>;
@@ -13,7 +14,7 @@ export const SearchedNews = ({ news }: SearchedNewsProps) => {
 	}
 
 	return (
-		<section className={css.root}>
+		<Container className={css.root}>
 			<ul className={css.newsList}>
 				{news.map((item, index) => (
 					<li key={index} className={css.listItem}>
@@ -21,6 +22,6 @@ export const SearchedNews = ({ news }: SearchedNewsProps) => {
 					</li>
 				))}
 			</ul>
-		</section>
+		</Container>
 	);
 };
