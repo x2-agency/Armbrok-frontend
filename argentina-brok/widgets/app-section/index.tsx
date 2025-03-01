@@ -11,7 +11,7 @@ import { ContentBlock } from './ui/content-block';
 import { Iphone } from './ui/iphone';
 
 type AppSectionProp = {
-	content: BrokerageAppCardProps;
+	content?: BrokerageAppCardProps;
 	image?: Array<PhoneMockupsType>;
 };
 

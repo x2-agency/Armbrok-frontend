@@ -1,6 +1,7 @@
 'use client';
 
 import cx from 'clsx';
+import { forwardRef } from 'react';
 
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 import { FormatImage } from '@/shared/ui/format-image';
@@ -12,7 +13,7 @@ import { BannerBody } from './banner-body';
 import { BannerHead } from './banner-head';
 import css from './index.module.css';
 
-export const BannerSection = (props: BannerProps) => {
+export const BannerSection = forwardRef((props: BannerProps) => {
 	const { type, banner, alignContent } = props;
 	const headContent = defineHeadContent(props);
 	const bodyContent = defineBodyContent(props);
@@ -33,4 +34,4 @@ export const BannerSection = (props: BannerProps) => {
 			)}
 		</section>
 	);
-};
+});

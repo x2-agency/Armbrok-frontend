@@ -9,17 +9,17 @@ import css from './index.module.css';
 import { NewsSlider } from './ui/news-slider';
 
 export type NewsSectionProps = {
-	data: NewsProps;
+	data?: NewsProps;
 	className?: string;
 };
 
 export const NewsSectionHome = ({ data, className }: NewsSectionProps) => {
-	const { title, description, moreButton, news } = data;
+	const { title, description, moreButton, news } = data ?? {};
 	return (
 		<Container className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(title ?? '')}</h2>
 			{description && <p className={css.description}>{parser(description)}</p>}
-			<NewsSlider className={css.slider} newsSlider={news} />
+			<NewsSlider className={css.slider} newsSlider={news ?? []} />
 			<Button
 				variant="next"
 				iconRotate={180}

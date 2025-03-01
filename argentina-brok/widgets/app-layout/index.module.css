@@ -14,3 +14,9 @@
 	@mixin responsive height, 1, 1, 1;
 	background-color: var(--gray-600-color);
 }
+
+.backgroundColor {
+	top: 0;
+	height: 100px;
+	background-color: rgba(195, 195, 195, 0.6);
+}

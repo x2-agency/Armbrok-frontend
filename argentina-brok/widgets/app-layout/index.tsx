@@ -1,5 +1,6 @@
 'use client';
 
+import cx from 'clsx';
 import type { PropsWithChildren } from 'react';
 
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
@@ -14,7 +15,7 @@ export const AppLayout = ({ children }: Readonly<PropsWithChildren>) => {
 	return (
 		<headerScrollObserver.ScrollObserverProvider>
 			<Header />
-			<span className={css.divider} />
+			<span className={cx(css.divider, css.backgroundColor)} />
 			<Menu />
 			<CookiePanel />
 			<main>{children}</main>

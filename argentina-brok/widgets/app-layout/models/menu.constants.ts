@@ -18,7 +18,7 @@ export const MENU_LINKS = [
 	},
 	{
 		label: 'Media',
-		href: '/armbrok-media',
+		href: '/media',
 	},
 	{
 		label: 'Contact us',

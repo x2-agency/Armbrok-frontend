@@ -1,5 +1,5 @@
 import { getBlogPage } from '@/shared/api/get-blog-page';
-import { Blog } from '@/view/armbrok-media/slug';
+import { Blog } from '@/view/media/slug';
 
 type BlogPageProps = {
 	params: {

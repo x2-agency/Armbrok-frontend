@@ -7,12 +7,12 @@ import { Container } from '@/shared/ui/container';
 import type { AssetManagementCardProps } from '@/view/home/types/response';
 
 export type AssetManagmentProps = {
-	data: AssetManagementCardProps;
+	data?: AssetManagementCardProps;
 };
 
 import css from './index.module.css';
 export const AssetManagment = ({ data }: AssetManagmentProps) => {
-	const { title, description, mediaContent, button } = data;
+	const { title, description, mediaContent, button } = data ?? {};
 	return (
 		<Container className={css.root}>
 			<article className={cx(css.wrap, 'hybrid')}>
@@ -24,17 +24,17 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 					<Button
 						className={css.button}
 						category="big"
-						href={button.link}
+						href={button?.link}
 						variant="filled"
 					>
-						{parser(button.text)}
+						{parser(button?.text ?? '')}
 					</Button>
 				</div>
 				<div className={css.imgWrap}>
 					<img
 						className={css.image}
-						src={mediaContent.url}
-						alt={mediaContent.alternativeText}
+						src={mediaContent?.url ?? ''}
+						alt={mediaContent?.alternativeText ?? ''}
 					/>
 				</div>
 			</article>

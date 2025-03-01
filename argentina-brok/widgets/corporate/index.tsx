@@ -7,11 +7,11 @@ import css from './index.module.css';
 import { Cards } from './ui/cards';
 
 export type Corporate = {
-	cards: FinancialSolutionsSectionProps;
+	cards?: FinancialSolutionsSectionProps;
 };
 
 export const Corporate = ({ cards }: Corporate) => {
-	const { title, description, instruments } = cards;
+	const { title, description, instruments } = cards ?? {};
 
 	if (!instruments) {
 		return null;
@@ -20,7 +20,7 @@ export const Corporate = ({ cards }: Corporate) => {
 	return (
 		<Container className={css.root}>
 			<div className={css.wrap}>
-				<h2 className={css.title}>{parser(title)}</h2>
+				<h2 className={css.title}>{parser(title ?? '')}</h2>
 				{description && (
 					<p className={css.description}>{parser(description)}</p>
 				)}

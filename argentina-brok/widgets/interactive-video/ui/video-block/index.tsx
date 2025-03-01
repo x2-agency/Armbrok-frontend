@@ -15,7 +15,7 @@ export type VideoBlockProps = {
 export const VideoBlock = ({ data }: VideoBlockProps) => {
 	const { videoCaption, video } = data;
 
-	const videoUrl = video.url;
+	const videoUrl = video?.url;
 
 	const { videoRef, isPlaying, handlePlay } = useVideoPlayer(videoUrl);
 
@@ -31,8 +31,8 @@ export const VideoBlock = ({ data }: VideoBlockProps) => {
 				<video
 					ref={videoRef}
 					className={css.video}
-					src={video.url}
-					// poster={poster.src}
+					src={video?.url}
+					// poster={poster?.src}
 					controls={isPlaying}
 				/>
 				{!isPlaying && (
@@ -40,7 +40,9 @@ export const VideoBlock = ({ data }: VideoBlockProps) => {
 						<button className={css.playButton} onClick={handlePlay}>
 							<PlaySVG className={css.svg} />
 						</button>
-						<span className={css.description}>{parser(videoCaption)}</span>
+						<span className={css.description}>
+							{parser(videoCaption ?? '')}
+						</span>
 					</div>
 				)}
 				<div className={css.overlay} />

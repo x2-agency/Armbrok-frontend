@@ -6,11 +6,11 @@ import css from './index.module.css';
 import { CardsNumber } from './ui/cards-number';
 
 export type StartProps = {
-	data: InvestingStepsSectionProps;
+	data?: InvestingStepsSectionProps;
 };
 
 export const Start = ({ data }: StartProps) => {
-	const { title, button, steps } = data;
+	const { title, button, steps } = data ?? {};
 	if (!steps) {
 		return null;
 	}

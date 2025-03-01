@@ -23,7 +23,7 @@ export const AwardsSection = ({
 
 	return (
 		<Container className={cx(css.root, className)}>
-			{title && <h2 className={css.title}>{parser(title)}</h2>}
+			{title && <h2 className={css.title}>{parser(title ?? '')}</h2>}
 			<ul className={cx(css.awardWrap, { [css.withButton]: withViewAll })}>
 				{groupedAwards.map((row, rowIndex) => (
 					<li

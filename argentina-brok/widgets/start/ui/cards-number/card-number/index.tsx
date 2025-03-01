@@ -28,7 +28,7 @@ export const CardNumber = ({ data, totalLength, index }: CardNumberProps) => {
 				<h4 className={css.number}>{step}</h4>
 			</div>
 			<h4 className={css.title}>{title}</h4>
-			<p className={css.description}>{parser(description)}</p>
+			<p className={css.description}>{parser(description ?? '')}</p>
 		</article>
 	);
 };

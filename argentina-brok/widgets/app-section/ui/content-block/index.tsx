@@ -8,7 +8,7 @@ import { Social } from '@/widgets/app-layout/ui/footer/social-links/social';
 import css from './index.module.css';
 
 export type ContentProp = {
-	data: BrokerageAppCardProps;
+	data?: BrokerageAppCardProps;
 };
 
 export const ContentBlock = ({ data }: ContentProp) => {
@@ -19,7 +19,7 @@ export const ContentBlock = ({ data }: ContentProp) => {
 		armbrokLogo,
 		button,
 		appStoreLogos,
-	} = data;
+	} = data ?? {};
 
 	return (
 		<div className={css.root}>
@@ -40,7 +40,7 @@ export const ContentBlock = ({ data }: ContentProp) => {
 						variant="filled"
 						href={button.link}
 					>
-						{parser(button.text)}
+						{parser(button.text ?? '')}
 					</Button>
 				)}
 				<div className={css.app}>

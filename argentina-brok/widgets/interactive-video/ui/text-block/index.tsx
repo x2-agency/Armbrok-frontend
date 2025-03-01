@@ -14,19 +14,19 @@ export const TextBlock = ({ data }: TextBlockProps) => {
 	const { title, description, primaryButton, secondaryButton } = data;
 	return (
 		<article className={cx(css.root)}>
-			<h2 className={css.title}>{parser(title)}</h2>
-			<p className={css.description}>{parser(description)}</p>
+			<h2 className={css.title}>{parser(title ?? '')}</h2>
+			<p className={css.description}>{parser(description ?? '')}</p>
 			<div className={css.wrapButton}>
-				<Button href={primaryButton.link} category="big" variant="filled">
-					{parser(primaryButton.text)}
+				<Button href={primaryButton?.link} category="big" variant="filled">
+					{parser(primaryButton?.text ?? '')}
 				</Button>
 				<Button
 					className={css.button}
-					href={primaryButton.link}
+					href={primaryButton?.link ?? ''}
 					category="big"
 					variant="outline"
 				>
-					{parser(secondaryButton.text)}
+					{parser(secondaryButton?.text ?? '')}
 				</Button>
 			</div>
 		</article>

@@ -10,12 +10,9 @@ import { FeedbackForm } from '@/widgets/feedback-form';
 import { Tabs } from '@/widgets/tabs';
 
 import css from './index.module.css';
-import {
-	ARMBROK_MEDIA_EMAIL,
-	ARMBROK_MEDIA_TITLE,
-} from './model/armbrok-media.constants';
+import { MEDIA_EMAIL, MEDIA_TITLE } from './model/media.constants';
 
-export const ArmbrokMedia: NextPage<{
+export const Media: NextPage<{
 	initialMediaData: MediaProps;
 }> = initialData => {
 	const router = useRouter();
@@ -54,8 +51,8 @@ export const ArmbrokMedia: NextPage<{
 	return (
 		<section className={css.root}>
 			<TitleSlugSection
-				title={ARMBROK_MEDIA_TITLE.title}
-				description={ARMBROK_MEDIA_TITLE.description}
+				title={MEDIA_TITLE.title}
+				description={MEDIA_TITLE.description}
 			/>
 			<Tabs
 				className={css.tabs}
@@ -73,7 +70,7 @@ export const ArmbrokMedia: NextPage<{
 				className={css.vacancy}
 				data={initialData.initialMediaData.data.glossaryCard}
 			/> */}
-			<FeedbackForm title={ARMBROK_MEDIA_EMAIL.title} />
+			<FeedbackForm title={MEDIA_EMAIL.title} />
 		</section>
 	);
 };

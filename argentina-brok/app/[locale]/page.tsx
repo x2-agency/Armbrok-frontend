@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();
 
-	return <Home initialData={initialHomePageData || undefined} />;
+	return <Home initialData={initialHomePageData} />;
 };
 
 export default IndexPage;

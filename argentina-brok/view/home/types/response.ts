@@ -2,99 +2,109 @@ import type { Article } from '@/shared/types/article';
 import type {
 	AwardSection,
 	BaseResponse,
-	CompaniesSection,
 	Factoid,
 	HeroSection,
 } from '@/shared/types/global.types';
 
 export type HomePageData = {
-	heroSection?: HeroSection;
-	advantages?: Array<Factoid>;
-	brokerageAppCard: BrokerageAppCardProps;
-	assetManagementCard?: AssetManagementCardProps;
-	financialSolutionsSection?: FinancialSolutionsSectionProps;
-	investingStepsSection?: InvestingStepsSectionProps;
-	awardSection?: AwardSection;
-	companiesSection?: CompaniesSection;
-	newsSection?: NewsProps;
-	interviewSection?: InterviewProps;
+	data: {
+		heroSection?: HeroSection;
+		advantages?: Array<Factoid>;
+		brokerageAppCard?: BrokerageAppCardProps;
+		assetManagementCard?: AssetManagementCardProps;
+		financialSolutionsSection?: FinancialSolutionsSectionProps;
+		investingStepsSection?: InvestingStepsSectionProps;
+		awardSection?: AwardSection;
+		companiesSection?: CompaniesSectionProps;
+		newsSection?: NewsProps;
+		interviewSection?: InterviewProps;
+	};
 };
 
 export type HomePageResponse = BaseResponse<HomePageData>;
 
+// app section
+
 export type BrokerageAppCardProps = {
-	title: string;
-	description: string;
-	appStoreCaption: string;
-	armbrokLogo: {
+	title?: string;
+	description?: string;
+	appStoreCaption?: string;
+	armbrokLogo?: {
 		alternativeText?: string;
-		url: string;
+		url?: string;
 	};
-	phoneMockups: Array<PhoneMockupsType>;
-	button: ButtonType;
-	appStoreLogos: Array<AppStoreLogosType>;
+	phoneMockups?: Array<PhoneMockupsType>;
+	button?: ButtonType;
+	appStoreLogos?: Array<AppStoreLogosType>;
 };
 
 export type PhoneMockupsType = {
 	alternativeText?: string;
-	formats: FormatsType;
-	url: string;
+	formats?: FormatsType;
+	url?: string;
 };
 
 export type AppStoreLogosType = {
 	alternativeText?: string;
-	url: string;
-	media: MediaType;
+	url?: string;
+	media?: MediaType;
 };
 
 // assets
 
 export type AssetManagementCardProps = {
-	title: string;
-	description: string;
-	mediaContent: {
-		url: string;
+	title?: string;
+	description?: string;
+	mediaContent?: {
+		url?: string;
 		alternativeText?: string;
-		format: FormatsType;
+		format?: FormatsType;
 	};
-	button: ButtonType;
+	button?: ButtonType;
 };
 
 // financial
 
 export type FinancialSolutionsSectionProps = {
-	title: string;
-	description: string;
-	instruments: Array<InstrumentType>;
+	title?: string;
+	description?: string;
+	instruments?: Array<InstrumentType>;
 };
 
 export type InstrumentType = {
-	title: string;
+	title?: string;
 	description?: string;
-	media: MediaType;
+	media?: MediaType;
 };
 
 // StepsSection
 
 export type InvestingStepsSectionProps = {
-	title: string;
-	button: ButtonType;
-	steps: Array<StepsType>;
+	title?: string;
+	button?: ButtonType;
+	steps?: Array<StepsType>;
 };
 
 export type StepsType = {
-	id: number;
-	title: string;
-	description: string;
+	id?: number;
+	title?: string;
+	description?: string;
 	icon?: string;
-	step: string;
+	step?: string;
+};
+
+// companies
+
+export type CompaniesSectionProps = {
+	title?: string;
+	companies?: Array<MediaType>;
 };
 
 // news
 
 export type NewsProps = {
-	news: Array<Article>;
-	title: string;
+	news?: Array<Article>;
+	title?: string;
 	description?: string;
 	moreButton?: ButtonType;
 };
@@ -102,35 +112,35 @@ export type NewsProps = {
 // interview
 
 export type InterviewProps = {
-	title: string;
-	description: string;
-	primaryButton: ButtonType;
-	secondaryButton: ButtonType;
-	videoCaption: string;
-	video: MediaType;
+	title?: string;
+	description?: string;
+	primaryButton?: ButtonType;
+	secondaryButton?: ButtonType;
+	videoCaption?: string;
+	video?: MediaType;
 };
 
 // shared
 
 export type ButtonType = {
-	text: string;
-	link: string;
+	text?: string;
+	link?: string;
 };
 
 export type MediaType = {
 	alternativeText?: string;
-	url: string;
+	url?: string;
 	formats?: FormatsType;
 };
 
 export type FormatsType = {
-	large: ImgType;
-	mediuml: ImgType;
-	small: ImgType;
-	thumbnail: ImgType;
+	large?: ImgType;
+	mediuml?: ImgType;
+	small?: ImgType;
+	thumbnail?: ImgType;
 };
 
 export type ImgType = {
-	url: string;
+	url?: string;
 	name?: string;
 };

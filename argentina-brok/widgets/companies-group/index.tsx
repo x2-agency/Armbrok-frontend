@@ -2,23 +2,19 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
-import type { MediaData } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
+import type { CompaniesSectionProps } from '@/view/home/types/response';
 
 import css from './index.module.css';
 
 type CompaniesGroupProps = {
-	title?: string;
-	items?: Array<MediaData>;
+	data?: CompaniesSectionProps;
 	className?: string;
 };
 
-export const CompaniesGroup = ({
-	title,
-	items,
-	className,
-}: CompaniesGroupProps) => {
-	if (!items || items.length === 0) {
+export const CompaniesGroup = ({ data, className }: CompaniesGroupProps) => {
+	const { title, companies = [] } = data ?? {};
+	if (!companies || companies.length === 0) {
 		return null;
 	}
 
@@ -26,11 +22,11 @@ export const CompaniesGroup = ({
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<ul className={css.companies}>
-				{items.map((value, index) => (
+				{companies.map((value, index) => (
 					<li key={index} className={css.company}>
 						<img
 							src={value.url}
-							alt="company"
+							alt={value.alternativeText}
 							className={css.companyIcon}
 							draggable={false}
 						/>

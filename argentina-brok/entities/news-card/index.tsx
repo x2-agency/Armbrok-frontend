@@ -17,7 +17,7 @@ export type NewsCardProps = {
 
 export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const pathname = usePathname();
-	const isArmbrokMedia = pathname === '/armbrok-media';
+	const isArmbrokMedia = pathname === '/media';
 
 	const { publishDate, title, description, author, category, poster, slug } =
 		data;
@@ -54,7 +54,7 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 					{category && <p className={css.tag}>{category?.name}</p>}
 				</div>
 			</div>
-			<Link className={css.link} href={`/armbrok-media/${slug}`} />
+			<Link className={css.link} href={`/media/${slug}`} />
 		</article>
 	);
 };

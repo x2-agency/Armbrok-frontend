@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 
 import type { MediaProps } from '@/shared/types/media-page';
-import { ArmbrokMedia } from '@/view/armbrok-media';
+import { Media } from '@/view/media';
 
-const ArmbrokMediaPage = async ({
+const MediaPage = async ({
 	searchParams,
 }: {
 	searchParams: { category?: string };
@@ -17,9 +17,9 @@ const ArmbrokMediaPage = async ({
 
 	return (
 		<Suspense>
-			<ArmbrokMedia initialMediaData={{} as MediaProps} />
+			<Media initialMediaData={{} as MediaProps} />
 		</Suspense>
 	);
 };
 
-export default ArmbrokMediaPage;
+export default MediaPage;

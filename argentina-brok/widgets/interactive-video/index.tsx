@@ -6,10 +6,10 @@ import { TextBlock } from './ui/text-block';
 import { VideoBlock } from './ui/video-block';
 
 export type InteractiveVideoProps = {
-	data: InterviewProps;
+	data?: InterviewProps;
 };
 
-export const InteractiveVideo = ({ data }: InteractiveVideoProps) => {
+export const InteractiveVideo = ({ data = {} }: InteractiveVideoProps) => {
 	return (
 		<Container className={css.root}>
 			<TextBlock data={data} />
