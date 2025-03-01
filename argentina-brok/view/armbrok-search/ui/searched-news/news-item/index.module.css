@@ -38,9 +38,6 @@
 }
 
 .link {
-	@mixin transition;
-
-	transition-property: color;
 	color: #1a0dab;
 
 	@media (hover: hover) {
