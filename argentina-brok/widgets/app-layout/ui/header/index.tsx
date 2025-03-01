@@ -29,7 +29,7 @@ export const Header = () => {
 				{isMobile && <BurgerButton />}
 				{!isMobile && (
 					<>
-						<Search href="#" />
+						<Search href="/armbrok-search" />
 						<LanguageSelection />
 						<LogIn />
 					</>
