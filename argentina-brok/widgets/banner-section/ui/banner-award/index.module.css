@@ -34,3 +34,12 @@
 		color: var(--gray-400-color);
 	}
 }
+
+.place,
+.title,
+.description,
+.description p {
+	word-break: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
+}

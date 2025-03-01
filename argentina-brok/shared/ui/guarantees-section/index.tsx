@@ -27,7 +27,7 @@ export const GuaranteesSection = ({
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<ul className={css.items}>
 				{items.map((value, index) => (
-					<li key={index}>
+					<li key={index} className={css.item}>
 						<GuaranteesItem
 							title={value.title}
 							icon={value.media?.url ?? ''}

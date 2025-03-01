@@ -8,7 +8,7 @@
 }
 
 .title {
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin responsive padding-block-end, 20, 40, 40;
 	@mixin font-h2;
 
 	text-align: center;
@@ -16,16 +16,17 @@
 }
 
 .list {
-	@mixin res width, auto, 52.778rem, 47.5rem; /* 760px */
-	@mixin res gap, 6rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin responsive width, 320, 760, 760;
+	@mixin responsive gap, 12, 12, 12;
 
 	display: flex;
 	flex-direction: column;
 }
 
 .detail {
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive gap, 8, 8, 8;
 
 	display: flex;
 	justify-content: center;
+	align-items: end;
 }

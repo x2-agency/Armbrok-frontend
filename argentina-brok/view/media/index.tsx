@@ -2,30 +2,38 @@
 
 import type { NextPage } from 'next';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
-import type { MediaProps } from '@/shared/types/media-page';
+import { FeedbackForm } from '@/features/feedback-form';
+import { useGetArticles } from '@/features/get-articles/api/use-get-articles';
+import type { ArticlesData } from '@/shared/types/article';
+import type { MediaPageProps } from '@/shared/types/media-page';
+import { Preloader } from '@/shared/ui/preloader';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
-import { FeedbackForm } from '@/widgets/feedback-form';
+import { NewsPage } from '@/widgets/news-page';
 import { Tabs } from '@/widgets/tabs';
+import { Vacancy } from '@/widgets/vacancies-section/ui/vacancy';
 
 import css from './index.module.css';
-import { MEDIA_EMAIL, MEDIA_TITLE } from './model/media.constants';
 
 export const Media: NextPage<{
-	initialMediaData: MediaProps;
-}> = initialData => {
+	initialMediaData?: MediaPageProps;
+	initialArticles?: ArticlesData;
+}> = ({ initialMediaData, initialArticles }) => {
+	const { glossaryCard, emailForm, title, description } =
+		initialMediaData?.data ?? {};
+
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	// const tags: Array<Category> = useMemo(() => {
-	// 	const categories = initialData?.initialMediaData?.data?.articles.map(
-	// 		article => article.category
-	// 	);
-	// 	return Array.from(new Set(categories)).filter(Boolean) as Array<Category>;
-	// }, [initialData.initialMediaData]);
+	const { fetchNextPage, isFetching, hasNextPage, isFetchingNextPage } =
+		useGetArticles({ filters: { category: currentTag } }, initialArticles);
+
+	const filteredNews = initialArticles?.data?.filter(
+		article => currentTag === 'all' || article.category === currentTag
+	);
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
@@ -42,35 +50,43 @@ export const Media: NextPage<{
 
 	const onChangeTab = useCallback(
 		(value: string) => {
-			router.push(pathname + '?' + createQueryString('category', value), {
-				scroll: false,
-			});
+			const queryString = createQueryString('category', value);
+			router.push(`${pathname}?${queryString}`, { scroll: false });
 		},
 		[router, pathname, createQueryString]
 	);
+
+	useEffect(() => {
+		fetchNextPage();
+	}, [currentTag, fetchNextPage]);
+
 	return (
 		<section className={css.root}>
-			<TitleSlugSection
-				title={MEDIA_TITLE.title}
-				description={MEDIA_TITLE.description}
-			/>
+			<TitleSlugSection title={title} description={description} />
 			<Tabs
 				className={css.tabs}
 				onChangeTab={onChangeTab}
 				currentTag={currentTag}
-				// tags={tags}
+				tags={initialArticles?.categories}
 				isCasesExists
 				initialTag="all"
 			/>
-			{/* <NewsPage
-				newsCard={initialData.initialMediaData.data.articles}
-				isHasMore={currentTag === 'all'}
+			{!isFetchingNextPage ? (
+				<NewsPage
+					newsCard={filteredNews}
+					isFetching={isFetching}
+					hasNextPage={hasNextPage}
+					fetchNextPage={fetchNextPage}
+				/>
+			) : (
+				<Preloader className={css.loader} />
+			)}
+			<Vacancy className={css.vacancy} data={glossaryCard} />
+			<FeedbackForm
+				title={emailForm?.title}
+				description={emailForm?.description}
+				subscribeButtonText={emailForm?.subscribeButtonText}
 			/>
-			<Vacancy
-				className={css.vacancy}
-				data={initialData.initialMediaData.data.glossaryCard}
-			/> */}
-			<FeedbackForm title={MEDIA_EMAIL.title} />
 		</section>
 	);
 };

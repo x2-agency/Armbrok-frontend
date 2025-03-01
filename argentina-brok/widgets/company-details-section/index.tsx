@@ -1,7 +1,6 @@
 import parser from 'html-react-parser';
 
 import type { CompanyDetailsSection as CompanyDetailsSectionProps } from '@/shared/types/global.types';
-import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 import { Detail } from './ui/detail';
@@ -15,7 +14,7 @@ export const CompanyDetailsSection = ({
 	}
 
 	return (
-		<Container className={css.root}>
+		<section className={css.root}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<ul className={css.list}>
 				{items.map((detail, index) => (
@@ -27,6 +26,6 @@ export const CompanyDetailsSection = ({
 					</li>
 				))}
 			</ul>
-		</Container>
+		</section>
 	);
 };

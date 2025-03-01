@@ -2,40 +2,40 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
-import type { glossaryCard } from '@/shared/types/media-page';
+import type { GlossaryCardType } from '@/shared/types/media-page';
 import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
 
 export type VacancyProps = {
-	data: glossaryCard;
+	data?: GlossaryCardType;
 	className?: string;
 };
 
 export const Vacancy = ({ data, className }: VacancyProps) => {
-	const { title, description, icon, link } = data;
+	const { title, description, icon, link } = data ?? {};
 	return (
 		<article className={cx(css.root, className, 'p-32')}>
 			<div className={css.content}>
-				{icon && icon.url && (
+				{icon && icon?.url && (
 					<div className={css.iconWrap}>
-						<img className={css.icon} src={icon.url} alt="icon" />
+						<img className={css.icon} src={icon?.url ?? ''} alt="icon" />
 					</div>
 				)}
 				<div className={css.wrap}>
-					{title && <h4 className={css.name}>{parser(title)}</h4>}
+					{title && <h4 className={css.name}>{parser(title ?? '')}</h4>}
 					{description && (
-						<p className={css.description}>{parser(description)}</p>
+						<p className={css.description}>{parser(description ?? '')}</p>
 					)}
 				</div>
 			</div>
 			<Button
 				variant="next"
 				iconRotate={180}
-				href={link.link}
+				href={link?.link}
 				className={css.button}
 			>
-				{parser(link.text)}
+				{parser(link?.text ?? '')}
 			</Button>
 		</article>
 	);

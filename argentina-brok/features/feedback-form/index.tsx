@@ -11,15 +11,20 @@ import { Input } from '@/shared/ui/input';
 import css from './index.module.css';
 
 export type FeedbackFormProps = {
-	title: string;
+	title?: string;
 	description?: string;
+	subscribeButtonText?: string;
 };
 
 type FeedbackInputs = {
 	email: string;
 };
 
-export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
+export const FeedbackForm = ({
+	title,
+	description,
+	subscribeButtonText,
+}: FeedbackFormProps) => {
 	const {
 		formState: { isValid },
 		register,
@@ -27,13 +32,15 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 	} = useForm<FeedbackInputs>({ mode: 'onChange' });
 
 	const handleSubmitForm = ({ email }: FeedbackInputs) => {
-		postEmailForm({ email });
+		postEmailForm({ data: { email } });
 	};
 
 	return (
 		<section className={css.root}>
-			<h2 className={css.title}>{parser(title)}</h2>
-			{description && <p className={css.description}>{parser(description)}</p>}
+			<h2 className={css.title}>{parser(title ?? '')}</h2>
+			{description && (
+				<p className={css.description}>{parser(description ?? '')}</p>
+			)}
 			<form
 				className={css.form}
 				onSubmit={handleSubmit(data => handleSubmitForm(data))}
@@ -51,7 +58,7 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 					disabled={!isValid}
 					className={css.button}
 				>
-					Subscribe
+					{parser(subscribeButtonText ?? '')}
 				</Button>
 			</form>
 		</section>

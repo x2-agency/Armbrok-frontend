@@ -1,5 +1,5 @@
 .root {
-	@mixin res width, 86.4rem, 26.667rem, 24rem;
+	@mixin responsive width, 320, 384, 384;
 
 	background-color: var(--gray-200-color);
 	height: 100%;

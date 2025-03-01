@@ -237,7 +237,7 @@ export type BenefitsSection = {
 /* ABOUT US HERO SECTION */
 
 export type HeroFactoid = {
-	number?: number;
+	place?: string;
 	title?: string;
 	description?: string;
 };
@@ -246,7 +246,7 @@ export type HeroSectionAboutUs = ItemDetail & {
 	titleLabel?: string;
 	button?: LinkItem;
 	background?: PosterImageProps;
-	factoids?: Array<HeroFactoid>;
+	factoids?: Array<HeroFactoid & { itemIndex?: string }>;
 };
 
 /* VALUES SECTION */

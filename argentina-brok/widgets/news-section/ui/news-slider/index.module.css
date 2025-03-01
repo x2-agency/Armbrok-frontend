@@ -22,6 +22,7 @@
 }
 
 .root > * {
+	flex: 0 0 auto;
 	@media (max-width: 767px) {
 		flex: 0 0 100%;
 		scroll-snap-align: center;

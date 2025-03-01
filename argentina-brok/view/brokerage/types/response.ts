@@ -6,10 +6,10 @@ import type {
 	ExchangesSection,
 	Factoid,
 	HeroSection,
-	InvestingStepsSection,
 	QuoteSection,
 	RunningTextSection,
 } from '@/shared/types/global.types';
+import type { InvestingStepsSectionProps } from '@/view/home/types/response';
 import type { InstrumentsSectionProps } from '@/widgets/instruments-section';
 
 export type BrokeragePageData = {
@@ -22,7 +22,7 @@ export type BrokeragePageData = {
 	quoteSection?: QuoteSection;
 	runningTextSection?: RunningTextSection;
 	countriesSection?: CountriesSection;
-	investingStepsSection?: InvestingStepsSection;
+	investingStepsSection?: InvestingStepsSectionProps;
 	documentsSection?: DocumentsSection;
 	infoSection: AccordionSection;
 };

@@ -9,7 +9,6 @@ export type AuthorData = {
 	data: Array<AuthorType>;
 };
 export const Author = ({ data }: AuthorData) => {
-	console.log(data);
 	return (
 		<div className={css.root}>
 			<div className={css.avatar}>

@@ -17,6 +17,10 @@
 
 .backgroundColor {
 	top: 0;
-	height: 100px;
+	@mixin responsive height, 80, 80, 80;
 	background-color: rgba(195, 195, 195, 0.6);
+}
+
+.spacing {
+	@mixin responsive margin-block-start, 20, 20, 20;
 }

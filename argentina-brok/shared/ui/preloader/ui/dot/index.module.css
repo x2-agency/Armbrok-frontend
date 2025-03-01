@@ -1,0 +1,35 @@
+.ball {
+	@mixin responsive width, 8, 9, 9;
+	@mixin responsive height, 8, 9, 9;
+	background-color: red;
+	border-radius: 50%;
+
+	@mixin animation scaleUpDown;
+}
+
+.first {
+	animation-delay: 0s;
+}
+
+.second {
+	animation-delay: 0.25s;
+}
+
+.third {
+	animation-delay: 0.5s;
+}
+
+@keyframes scaleUpDown {
+	0%,
+	100% {
+		@mixin translate 1;
+		opacity: 1;
+	}
+	25% {
+		@mixin translate 1.3;
+	}
+	50% {
+		@mixin translate 1;
+		opacity: 1;
+	}
+}

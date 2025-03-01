@@ -17,11 +17,10 @@ export type NewsCardProps = {
 
 export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const pathname = usePathname();
-	const isArmbrokMedia = pathname === '/media';
+	const isArmbrokMedia = pathname === '/ru/media';
 
 	const { publishDate, title, description, author, category, poster, slug } =
 		data;
-
 	return (
 		<article
 			className={cx(css.root, className, {
@@ -54,7 +53,7 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 					{category && <p className={css.tag}>{category?.name}</p>}
 				</div>
 			</div>
-			<Link className={css.link} href={`/media/${slug}`} />
+			<Link className={css.link} href={`/ru/media/${slug}`} />
 		</article>
 	);
 };

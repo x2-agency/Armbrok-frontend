@@ -1,24 +1,25 @@
-import { Suspense } from 'react';
-
-import type { MediaProps } from '@/shared/types/media-page';
+import { getArticle } from '@/shared/api/get-article';
+import { getMediaPage } from '@/shared/api/get-media-page';
 import { Media } from '@/view/media';
 
 const MediaPage = async ({
 	searchParams,
 }: {
-	searchParams: { category?: string };
+	searchParams: { filter?: { category?: string } };
 }) => {
-	// const { category } = searchParams;
-	// const tag = category === 'all' ? undefined : category;
+	const { filter } = await searchParams;
+	const tag = filter && filter.category !== 'all' ? filter.category : undefined;
 
-	// let initialMediaData: MediaProps = {} as MediaProps;
-	// const filters = tag ? { category: { name: { $eq: tag } } } : undefined;
-	// initialMediaData = await getMediaPage(category);
+	const initialMediaData = await getMediaPage();
+	const initialArticles = await getArticle(
+		tag ? { filters: { category: tag } } : {}
+	);
 
 	return (
-		<Suspense>
-			<Media initialMediaData={{} as MediaProps} />
-		</Suspense>
+		<Media
+			initialMediaData={initialMediaData}
+			initialArticles={initialArticles}
+		/>
 	);
 };
 

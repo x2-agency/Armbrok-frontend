@@ -4,14 +4,13 @@
 
 .title,
 .description {
-	@mixin responsive width, 350, 1200, 1200;
+	@mixin responsive width, 335, 1200, 1200;
 
 	margin-inline: auto;
 	text-align: center;
 }
 
 .title {
-	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem;
 	@mixin font-h2;
 
 	font-weight: 700;
@@ -19,10 +18,15 @@
 
 .description {
 	@mixin font-text20;
+	@mixin responsive max-width, 335, 700, 700;
 
 	color: var(--gray-800-color);
 }
 
 .titleBlock {
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem;
+	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive gap, 8, 16, 16;
+
+	display: flex;
+	flex-direction: column;
 }

@@ -28,7 +28,6 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	documentsSection,
 	companyDetails,
 }) => {
-
 	return (
 		<>
 			<BannerSection
@@ -58,11 +57,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 				title={membershipSection?.title}
 				items={membershipSection?.companies}
 			/>
-			<CompaniesGroup
-				title={companiesSection?.title}
-				items={companiesSection?.companies}
-				className={css.companies}
-			/>
+			<CompaniesGroup data={companiesSection} className={css.companies} />
 			<SliderSection
 				title={significantProjectsSection?.title}
 				description={significantProjectsSection?.description}

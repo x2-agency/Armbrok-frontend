@@ -20,7 +20,7 @@
 }
 
 .title {
-	@mixin responsive padding-block-end, 16, 16, 16;
+	@mixin responsive padding-block-end, 8, 16, 16;
 	@mixin font-h2;
 
 	font-weight: 700;
@@ -35,7 +35,7 @@
 	@mixin responsive padding-inline, 20, 120, 120;
 
 	display: flex;
-	overflow-x: scroll;
+	overflow-x: auto;
 	scrollbar-width: none;
 
 	@media (min-width: 1441px) {
@@ -43,12 +43,18 @@
 		margin-inline: auto;
 		padding-inline: unset;
 	}
+
+	@media (max-width: 767px) {
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+	}
 }
 
 .listElement {
 	flex-shrink: 0;
 
 	@media (max-width: 767px) {
-		width: 89rem;
+		@mixin responsive width, 320;
+		scroll-snap-align: center;
 	}
 }

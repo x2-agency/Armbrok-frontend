@@ -22,7 +22,7 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 						bodyData.awards.map((award, index) => (
 							<li key={index}>
 								<BannerAward
-									place={award.number}
+									itemIndex={award.itemIndex}
 									title={award.title}
 									description={award.description}
 								/>

@@ -57,7 +57,7 @@ export const AssetManagement: NextPage<{
 			/>
 			<Review quote={initialData?.data.quoteSection} />
 			<AssetManagment
-				title={MOCK_DEFAULT_BANNER.title}
+				data={{ title: MOCK_DEFAULT_BANNER.title }}
 				// description={MOCK_DEFAULT_BANNER.description}
 				// mediaContent={initialData?.data.wealthManagementSection?.mediaContent}
 			/>

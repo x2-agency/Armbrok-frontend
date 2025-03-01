@@ -105,15 +105,15 @@
 	z-index: 3;
 }
 
-.armbrokMediaRoot {
-	@mixin responsive width, 336, 760, 760;
-	padding: unset;
-}
-
 .armbrokMediaTitle {
 	@mixin font-h3;
 	font-weight: 600;
 	@media (max-width: 767px) {
 		@mixin font-h5;
 	}
+}
+
+.armbrokMediaRoot {
+	@mixin responsive width, 336, 760, 760;
+	padding: unset;
 }
