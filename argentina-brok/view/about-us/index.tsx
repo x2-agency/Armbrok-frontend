@@ -40,7 +40,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					awards: heroSection?.factoids,
 				}}
 			/>
-			<HeroContainer>
+			<HeroContainer className={css.hero}>
 				<ExpertSolutionSection
 					items={valuesSection?.factoids}
 					title={valuesSection?.title}

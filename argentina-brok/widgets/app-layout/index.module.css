@@ -16,9 +16,9 @@
 }
 
 .backgroundColor {
-	top: 0;
+	/* top: 0;
 	@mixin responsive height, 80, 80, 80;
-	background-color: rgba(195, 195, 195, 0.6);
+	background-color: rgba(195, 195, 195, 0.6); */
 }
 
 .spacing {

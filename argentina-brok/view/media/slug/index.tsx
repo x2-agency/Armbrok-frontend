@@ -23,7 +23,7 @@ export const Blog: NextPage<{
 		author,
 		publishDate,
 	} = initialData.initialBlogPage ?? {};
-	console.log(initialData.initialBlogPage);
+
 	return (
 		<>
 			<div className={css.wrap}>

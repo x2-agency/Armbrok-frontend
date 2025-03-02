@@ -16,7 +16,6 @@ export type NewsSectionProps = {
 export const NewsSectionHome = ({ data, className }: NewsSectionProps) => {
 	const { title, description, moreButton, news } = data ?? {};
 
-	console.log(moreButton);
 	return (
 		<Container className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(title ?? '')}</h2>

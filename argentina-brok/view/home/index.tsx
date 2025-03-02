@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 
 import { MOCK_AWARDS } from '@/shared/model/mock-awards';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
+import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
 import { AssetManagment } from '@/widgets/asset-managment';
 import { AwardsSection } from '@/widgets/awards';
@@ -42,11 +43,14 @@ export const Home: NextPage<{ initialData?: HomePageData }> = ({
 					poster: heroSection?.background,
 				}}
 			/>
-			<ExpertSolutionSection
-				className={css.solution}
-				backgroundColor="gray"
-				items={advantages}
-			/>
+
+			<HeroContainer className={css.hero}>
+				<ExpertSolutionSection
+					className={css.solution}
+					backgroundColor="gray"
+					items={advantages}
+				/>
+			</HeroContainer>
 			<AppSection
 				content={brokerageAppCard}
 				image={brokerageAppCard?.phoneMockups}

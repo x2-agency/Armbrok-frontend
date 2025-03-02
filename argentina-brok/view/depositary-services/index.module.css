@@ -11,7 +11,7 @@
 }
 
 .hero {
-	@mixin responsive gap, 40, 80, 80;
+	padding-block: unset;
 
 	display: flex;
 	flex-direction: column;
