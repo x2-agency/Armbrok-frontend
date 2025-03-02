@@ -118,6 +118,11 @@ export type InterviewProps = {
 	secondaryButton?: ButtonType;
 	videoCaption?: string;
 	video?: MediaType;
+	videoPoster?: {
+		alternativeText?: string;
+		formats?: FormatsType;
+		url?: string;
+	};
 };
 
 // shared

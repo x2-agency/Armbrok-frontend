@@ -187,12 +187,14 @@ export type QuoteSection = {
 
 /* RUNNING TEXT SECTION */
 
-export type RunningTextSection = {
+export type RunningTextSectionProps = {
 	staticText: string;
-	textArray: Array<{
-		id: number;
-		value: string;
-	}>;
+	textArray: Array<TextArrayType>;
+};
+
+export type TextArrayType = {
+	id: number;
+	value: string;
 };
 
 /* COUNTRIES SECTION */

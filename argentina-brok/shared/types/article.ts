@@ -11,12 +11,16 @@ export interface Poster {
 export interface AuthorType {
 	id?: number;
 	name?: string;
+	fullName?: string;
+	XLink?: string;
+	facebookLink?: string;
+	linkedInLink?: string;
+	position?: string;
 	avatar?: {
 		alternativeText?: string;
 		formats?: null;
 		url?: string;
 	};
-	position?: string;
 	email?: string;
 	publishDate?: string;
 }
@@ -27,9 +31,9 @@ export interface Article {
 	publishDate: string;
 	description: string;
 	markup: string;
-	category: Category;
 	poster: Poster | null;
 	author: AuthorType;
+	category: Category;
 }
 
 export interface ArticleData {

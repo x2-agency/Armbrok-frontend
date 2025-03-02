@@ -21,6 +21,7 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 
 	const { publishDate, title, description, author, category, poster, slug } =
 		data;
+
 	return (
 		<article
 			className={cx(css.root, className, {
@@ -44,10 +45,10 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 							<img
 								className={css.avatar}
 								src={author.avatar?.url ?? ''}
-								alt=""
+								alt={author.avatar?.alternativeText ?? ''}
 							/>
 						</div>
-						<span className={css.name}>{parser(author?.name ?? '')}</span>
+						<span className={css.name}>{parser(author.fullName ?? '')}</span>
 					</div>
 
 					{category && <p className={css.tag}>{category?.name}</p>}

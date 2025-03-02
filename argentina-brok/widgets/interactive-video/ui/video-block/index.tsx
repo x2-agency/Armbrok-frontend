@@ -13,7 +13,7 @@ export type VideoBlockProps = {
 };
 
 export const VideoBlock = ({ data }: VideoBlockProps) => {
-	const { videoCaption, video } = data;
+	const { videoCaption, video, videoPoster } = data;
 
 	const videoUrl = video?.url;
 
@@ -32,7 +32,7 @@ export const VideoBlock = ({ data }: VideoBlockProps) => {
 					ref={videoRef}
 					className={css.video}
 					src={video?.url}
-					// poster={poster?.src}
+					poster={videoPoster?.url}
 					controls={isPlaying}
 				/>
 				{!isPlaying && (

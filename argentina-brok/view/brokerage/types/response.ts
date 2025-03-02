@@ -7,7 +7,7 @@ import type {
 	Factoid,
 	HeroSection,
 	QuoteSection,
-	RunningTextSection,
+	RunningTextSectionProps,
 } from '@/shared/types/global.types';
 import type { InvestingStepsSectionProps } from '@/view/home/types/response';
 import type { InstrumentsSectionProps } from '@/widgets/instruments-section';
@@ -20,7 +20,7 @@ export type BrokeragePageData = {
 	mobileAppSection: MobileAppSectionProps;
 	portfolioSection: Array<PortfolioSectionType>;
 	quoteSection?: QuoteSection;
-	runningTextSection?: RunningTextSection;
+	runningTextSection?: RunningTextSectionProps;
 	countriesSection?: CountriesSection;
 	investingStepsSection?: InvestingStepsSectionProps;
 	documentsSection?: DocumentsSection;

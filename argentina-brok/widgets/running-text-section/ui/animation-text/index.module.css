@@ -1,0 +1,16 @@
+.text {
+	@mixin font-h2;
+	font-weight: 600;
+	display: inline-flex;
+}
+
+.cursor {
+	display: inline-block;
+	animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}

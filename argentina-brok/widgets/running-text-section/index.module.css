@@ -1,0 +1,14 @@
+.root {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	@mixin responsive padding-block, 36, 72, 72;
+}
+
+.serve {
+	display: flex;
+	width: 100%;
+	justify-content: end;
+	align-items: center;
+	@mixin font-h2;
+	font-weight: 600;
+}
