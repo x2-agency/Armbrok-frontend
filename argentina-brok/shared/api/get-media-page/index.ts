@@ -5,6 +5,6 @@ export const getMediaPage = async () => {
 		const response = await apiClient.get(`/media`);
 		return response.data;
 	} catch (error) {
-		console.log(error);
+		console.error(error);
 	}
 };

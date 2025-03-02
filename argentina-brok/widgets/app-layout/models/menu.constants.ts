@@ -14,7 +14,7 @@ export const MENU_LINKS = [
 	},
 	{
 		label: 'Investor Relations',
-		href: '/',
+		href: '/investor-relations',
 	},
 	{
 		label: 'Media',
@@ -22,6 +22,6 @@ export const MENU_LINKS = [
 	},
 	{
 		label: 'Contact us',
-		href: '/',
+		href: '/armbrok-contact-page',
 	},
 ];

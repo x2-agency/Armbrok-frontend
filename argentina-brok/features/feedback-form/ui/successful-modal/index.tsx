@@ -1,11 +1,5 @@
 import parser from 'html-react-parser';
-import {
-	useEffect,
-	useRef,
-	useState,
-	type Dispatch,
-	type SetStateAction,
-} from 'react';
+import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react';
 
 import { SUCCESSFUL_MODAL } from '@/features/feedback-form/model/feedback-form.constants';
 import CrossSVG from '@/public/assets/icons/cross.svg';

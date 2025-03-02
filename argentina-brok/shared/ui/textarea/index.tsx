@@ -34,6 +34,9 @@ const TextareaComponent = (
 				required={required}
 				{...props}
 			/>
+			{props['aria-errormessage'] && props['aria-invalid'] && (
+				<span>{parser(props['aria-errormessage'])} *</span>
+			)}
 		</label>
 	);
 };

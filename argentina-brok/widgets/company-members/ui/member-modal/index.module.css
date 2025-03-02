@@ -1,7 +1,7 @@
 .modal {
 	@mixin transition;
-	@mixin responsive width, 360, 648, 648;
-	@mixin responsive padding, 16, 32, 32;
+	@mixin responsive width, 350, 648, 648;
+	@mixin responsive padding, 10, 32, 32;
 	@mixin responsive border-radius, 24, 24, 24;
 
 	transition-property: all;
@@ -15,10 +15,6 @@
 	scrollbar-width: none;
 	opacity: 0;
 	visibility: hidden;
-
-	@media (max-width: 767px) {
-		width: 100vw;
-	}
 
 	&.open,
 	&.open::backdrop {

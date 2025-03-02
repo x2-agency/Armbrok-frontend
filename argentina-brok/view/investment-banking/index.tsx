@@ -53,10 +53,9 @@ export const InvestmentBanking: NextPage<
 				items={securityPapers}
 			/>
 			<StatutoryDocuments
-				title={documentsSection?.title}
-				documents={documentsSection?.documents}
-				columns={2}
+				documentsSection={documentsSection}
 				fileDirection="column"
+				columns={2}
 			/>
 		</>
 	);
