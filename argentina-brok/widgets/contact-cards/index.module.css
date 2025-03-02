@@ -1,0 +1,14 @@
+.root {
+	@mixin responsive padding-block-end, 60, 120, 120;
+}
+
+.list {
+	@mixin responsive gap, 12, 24, 24;
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
+}
