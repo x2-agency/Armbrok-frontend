@@ -27,7 +27,6 @@ export const SearchForm = ({
 	const handleSearch = async (e: React.FormEvent) => {
 		e.preventDefault();
 
-		// Проверка переменных среды
 		const apiKey = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_API_KEY ?? '';
 		const searchEngineId =
 			process.env.NEXT_PUBLIC_GOOGLE_SEARCH_ENGINE_ID ?? '';
