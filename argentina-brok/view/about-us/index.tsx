@@ -71,10 +71,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 				title={corporateEventsSection?.title}
 				events={corporateEventsSection?.events}
 			/>
-			<StatutoryDocuments
-				title={documentsSection?.title}
-				documents={documentsSection?.documents}
-			/>
+			<StatutoryDocuments documentsSection={documentsSection} />
 			<CompanyDetailsSection
 				title={companyDetails?.title ?? ''}
 				items={companyDetails?.items}

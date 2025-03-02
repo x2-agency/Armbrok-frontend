@@ -4,53 +4,42 @@ import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
-import { AssetManagment } from '@/widgets/asset-managment';
+import { TITLE_SECTION_ASSET } from '@/view/asset-management/model/asset-managment.constants';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
-import { Review } from '@/widgets/review';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
-import { TITLE_SECTION_ASSET } from './model/asset-managment.constants';
-import type { AssetManagementPageResponse } from './types/response';
+import type { FundsPageResponse } from './types/response';
 
-export const AssetManagement: NextPage<{
-	initialData?: AssetManagementPageResponse;
-}> = ({ initialData }) => {
-	if (!initialData?.data) {
-		throw new Error();
-	}
-
+export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
+	initialFundsPageData,
+}) => {
 	const {
 		heroSection,
 		experienceSection,
 		benefitsSection,
-		quoteSection,
 		wealthManagementSection,
-		assetManagementCard,
 		howWeAreWorking,
 		documentsSection,
 		infoSection,
-	} = initialData?.data ?? {};
-
+	} = initialFundsPageData?.data ?? {};
+	console.log(initialFundsPageData?.data.experienceSection);
 	return (
 		<>
 			<BannerSection
 				type="default"
+				alignContent="end"
 				banner={{
 					title: heroSection?.title ?? '',
 					description: heroSection?.description ?? '',
 					button: heroSection?.button,
 					poster: heroSection?.background,
 				}}
-				alignContent="start"
 			/>
 			{experienceSection && (
 				<HeroContainer className={css.hero}>
-					<TitleSection
-						title={experienceSection.title ?? ''}
-						description={experienceSection.description}
-					/>
+					<TitleSection title={experienceSection.title ?? ''} />
 					<ExperienceSection
 						className={css.experience}
 						experience={TITLE_SECTION_ASSET}
@@ -64,8 +53,6 @@ export const AssetManagement: NextPage<{
 				backgroundColor="white"
 				className={css.experts}
 			/>
-			<Review quote={quoteSection} />
-			<AssetManagment data={assetManagementCard} />
 			<ExpertSolutionSection
 				className={css.managementSection}
 				gridClass={css.management}

@@ -60,10 +60,7 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				title={exchangesSection?.title}
 				items={exchangesSection?.exchanges}
 			/>
-			<InstrumentsSection
-				title={instrumentsSection?.title ?? ''}
-				instruments={instrumentsSection?.instruments ?? []}
-			/>
+			<InstrumentsSection instrumentsSection={instrumentsSection} />
 			<AppMobileSection data={mobileAppSection} />
 			<PortfolioSection cards={portfolioSection} />
 
@@ -72,22 +69,14 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				interval={350}
 				runningTextSection={runningTextSection}
 			/>
-			<CountriesSection
-				title={countriesSection?.title}
-				additionalText={countriesSection?.additionalText}
-				countries={countriesSection?.countries}
-			/>
+			<CountriesSection residenceCountriesSection={countriesSection} />
 			<Start data={investingStepsSection} />
 			<StatutoryDocuments
-				title={documentsSection?.title}
-				documents={documentsSection?.documents}
+				documentsSection={documentsSection}
 				columns={2}
 				fileDirection="column"
 			/>
-			<HelpfulInformation
-				title={infoSection?.title}
-				items={infoSection?.accordions}
-			/>
+			<HelpfulInformation accordionSection={infoSection} />
 		</>
 	);
 };

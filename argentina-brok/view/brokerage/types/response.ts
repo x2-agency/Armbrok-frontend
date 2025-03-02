@@ -1,30 +1,32 @@
 import type {
-	AccordionSection,
+	AccordionSectionProps,
 	BaseResponse,
 	CountriesSection,
-	DocumentsSection,
+	DocumentsSectionProps,
 	ExchangesSection,
 	Factoid,
 	HeroSection,
 	QuoteSection,
 	RunningTextSectionProps,
 } from '@/shared/types/global.types';
-import type { InvestingStepsSectionProps } from '@/view/home/types/response';
-import type { InstrumentsSectionProps } from '@/widgets/instruments-section';
+import type {
+	InstrumentType,
+	InvestingStepsSectionProps,
+} from '@/view/home/types/response';
 
 export type BrokeragePageData = {
 	heroSection?: HeroSection;
 	advantages?: Array<Factoid>;
 	exchangesSection?: ExchangesSection;
-	instrumentsSection?: InstrumentsSectionProps;
+	instrumentsSection?: InstrumentsProps;
 	mobileAppSection: MobileAppSectionProps;
 	portfolioSection: Array<PortfolioSectionType>;
 	quoteSection?: QuoteSection;
 	runningTextSection?: RunningTextSectionProps;
 	countriesSection?: CountriesSection;
 	investingStepsSection?: InvestingStepsSectionProps;
-	documentsSection?: DocumentsSection;
-	infoSection: AccordionSection;
+	documentsSection?: DocumentsSectionProps;
+	infoSection: AccordionSectionProps;
 };
 
 export type MobileAppSectionProps = {
@@ -56,6 +58,12 @@ export type PortfolioSectionType = {
 	title: string;
 	description: string;
 	mediaContent?: { url?: string; alternativeText?: string };
+};
+
+export type InstrumentsProps = {
+	title: string;
+	description?: string;
+	instruments: Array<InstrumentType>;
 };
 
 export type BrokeragePageResponse = BaseResponse<BrokeragePageData>;

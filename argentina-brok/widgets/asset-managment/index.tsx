@@ -6,11 +6,12 @@ import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 import type { AssetManagementCardProps } from '@/view/home/types/response';
 
+import css from './index.module.css';
+
 export type AssetManagmentProps = {
 	data?: AssetManagementCardProps;
 };
 
-import css from './index.module.css';
 export const AssetManagment = ({ data }: AssetManagmentProps) => {
 	const { title, description, mediaContent, button } = data ?? {};
 	return (
@@ -31,11 +32,13 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 					</Button>
 				</div>
 				<div className={css.imgWrap}>
-					<img
-						className={css.image}
-						src={mediaContent?.url ?? ''}
-						alt={mediaContent?.alternativeText ?? ''}
-					/>
+					{mediaContent?.url && (
+						<img
+							className={css.image}
+							src={mediaContent?.url ?? ''}
+							alt={mediaContent?.alternativeText ?? ''}
+						/>
+					)}
 				</div>
 			</article>
 		</Container>

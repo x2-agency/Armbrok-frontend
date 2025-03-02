@@ -1,9 +1,9 @@
 import type {
+	AccordionSectionProps,
 	BaseResponse,
-	HeroSection,
 	BenefitsSection,
+	HeroSection,
 	QuoteSection,
-	AccordionSection,
 } from '@/shared/types/global.types';
 
 export type DepositaryServicesPageData = {
@@ -12,7 +12,7 @@ export type DepositaryServicesPageData = {
 	supplementaryServices?: BenefitsSection;
 	benefitsSection?: BenefitsSection;
 	quoteSection?: QuoteSection;
-	infoSection?: AccordionSection;
+	infoSection?: AccordionSectionProps;
 };
 
 export type DepositaryServicesPageResponse =

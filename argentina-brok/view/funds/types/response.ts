@@ -7,18 +7,16 @@ import type {
 	HeroSection,
 	QuoteSection,
 } from '@/shared/types/global.types';
-import type { AssetManagementCardProps } from '@/view/home/types/response';
 
-export type AssetManagementPageData = {
+export type FundsPageData = {
 	heroSection?: HeroSection;
 	experienceSection?: ExperienceSection;
 	benefitsSection?: BenefitsSection;
 	quoteSection?: QuoteSection;
-	assetManagementCard?: AssetManagementCardProps;
 	wealthManagementSection?: BenefitsSection;
 	howWeAreWorking?: BenefitsSection;
 	documentsSection?: DocumentsSectionProps;
 	infoSection?: AccordionSectionProps;
 };
 
-export type AssetManagementPageResponse = BaseResponse<AssetManagementPageData>;
+export type FundsPageResponse = BaseResponse<FundsPageData>;
