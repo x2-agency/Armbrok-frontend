@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { Captcha } from '@/features/contact-form/ui/captcha';
+import { SuccessfulModal } from '@/features/contact-form/ui/successful-modal';
 import { postContactUsForm } from '@/shared/api/post-contact-us-form';
 import type { ContactForm } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
@@ -33,6 +34,7 @@ export const Form = ({
 	className,
 }: ContactForm & { className?: string }) => {
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
+	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 
 	const {
 		formState: { isValid, errors },
@@ -46,72 +48,76 @@ export const Form = ({
 
 		if (response === 201) {
 			reset();
+			toggleSuccess(true);
 		}
 	};
 
 	return (
-		<form
-			className={cx(css.root, className)}
-			onSubmit={handleSubmit(data => handleSubmitForm(data))}
-		>
-			<div className={css.titleBlock}>
-				{title && <h3 className={css.title}>{parser(title)}</h3>}
-				{description && (
-					<p className={css.description}>{parser(description)}</p>
-				)}
-			</div>
-			<div className={css.inputs}>
-				<Input
-					placeholder={nameField.placeholder}
-					type="text"
-					label={nameField.label}
-					required={nameField.required}
-					{...register('name')}
-					aria-invalid={Boolean(errors.name)}
-				/>
-				<Input
-					placeholder={emailField.placeholder}
-					type="email"
-					label={emailField.label}
-					required={emailField.required}
-					{...register('email', {
-						required: emailField.required,
-						pattern: {
-							value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-							message: emailField.errorMessage ?? '',
-						},
-					})}
-					aria-invalid={Boolean(errors.email)}
-				/>
-				<Input
-					placeholder={subjectField.placeholder}
-					type="text"
-					label={subjectField.label}
-					required={subjectField.required}
-					{...register('subject')}
-					aria-invalid={Boolean(errors.subject)}
-				/>
-				<Textarea
-					placeholder={messageField.placeholder}
-					label={messageField.label}
-					required={messageField.required}
-					{...register('message')}
-					aria-invalid={Boolean(errors.message)}
-				/>
-			</div>
-			<Captcha
-				onChange={() => toggleCaptcha(true)}
-				subtitle={captchaCaption}
-				className={css.captcha}
-			/>
-			<Button
-				disabled={!isValid || !isCaptchaChecked}
-				type="submit"
-				variant="filled"
-				category="big"
+		<>
+			<form
+				className={cx(css.root, className)}
+				onSubmit={handleSubmit(data => handleSubmitForm(data))}
 			>
-				{parser(sendButtonText ?? 'Send message')}
-			</Button>
-		</form>
+				<div className={css.titleBlock}>
+					{title && <h3 className={css.title}>{parser(title)}</h3>}
+					{description && (
+						<p className={css.description}>{parser(description)}</p>
+					)}
+				</div>
+				<div className={css.inputs}>
+					<Input
+						placeholder={nameField.placeholder}
+						type="text"
+						label={nameField.label}
+						required={nameField.required}
+						{...register('name')}
+						aria-invalid={Boolean(errors.name)}
+					/>
+					<Input
+						placeholder={emailField.placeholder}
+						type="email"
+						label={emailField.label}
+						required={emailField.required}
+						{...register('email', {
+							required: emailField.required,
+							pattern: {
+								value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+								message: emailField.errorMessage ?? '',
+							},
+						})}
+						aria-invalid={Boolean(errors.email)}
+					/>
+					<Input
+						placeholder={subjectField.placeholder}
+						type="text"
+						label={subjectField.label}
+						required={subjectField.required}
+						{...register('subject')}
+						aria-invalid={Boolean(errors.subject)}
+					/>
+					<Textarea
+						placeholder={messageField.placeholder}
+						label={messageField.label}
+						required={messageField.required}
+						{...register('message')}
+						aria-invalid={Boolean(errors.message)}
+					/>
+				</div>
+				<Captcha
+					onChange={() => toggleCaptcha(true)}
+					subtitle={captchaCaption}
+					className={css.captcha}
+				/>
+				<Button
+					disabled={!isValid || !isCaptchaChecked}
+					type="submit"
+					variant="filled"
+					category="big"
+				>
+					{parser(sendButtonText ?? 'Send message')}
+				</Button>
+			</form>
+			<SuccessfulModal isOpened={isSuccess} toggleOpen={toggleSuccess} />
+		</>
 	);
 };
