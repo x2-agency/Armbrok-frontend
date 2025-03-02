@@ -1,7 +1,10 @@
 .root {
+	@mixin responsive padding-block-start, 64, 80, 80;
+
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .root.default[data-align='start'] {
@@ -14,12 +17,12 @@
 }
 
 .root.default[data-align='end'] {
+	@mixin responsive padding-block-end, 32, 100, 100;
 	justify-content: end;
-	@mixin res padding-block-end, 8.533rem, 6.944rem, 6.25rem; /* 100px */
 }
 
 .root.default {
-	height: 100vh;
+	min-height: 100vh;
 
 	.head {
 		@mixin responsive width, 335, 863, 863;

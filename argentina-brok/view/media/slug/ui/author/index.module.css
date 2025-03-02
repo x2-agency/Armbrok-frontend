@@ -1,0 +1,61 @@
+.root {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	@mixin responsive max-width, unset, 497, 497;
+
+	@media (max-width: 767px) {
+		max-width: 100%;
+	}
+}
+
+.extraRoot {
+	@mixin responsive max-width, unset, 800, 800;
+	@mixin responsive padding-inline, 0, unset, unset;
+	margin: 0 auto;
+	@media (max-width: 767px) {
+		width: 100%;
+		padding-inline: 5.33rem;
+	}
+}
+
+.avatarWrap {
+	display: flex;
+	flex-direction: row;
+}
+
+.avatar {
+	@mixin responsive width, 56, 56, 56;
+	@mixin responsive height, 56, 56, 56;
+	@mixin responsive margin-inline-end, 10, 16, 16;
+	overflow: hidden;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+}
+
+.textContent {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	@mixin responsive gap, 4, 6, 6;
+	@mixin responsive padding-inline-end, 30, 64, 64;
+}
+
+.name {
+	@mixin font-h6;
+}
+
+.position {
+	@mixin font-text16;
+	color: var(--gray-500-color);
+}
+
+.date {
+	@mixin font-text16;
+	color: var(--gray-600-color);
+}

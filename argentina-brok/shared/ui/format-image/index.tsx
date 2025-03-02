@@ -1,6 +1,6 @@
 import cx from 'clsx';
 
-import type { MediaData } from '@/shared/types/global.types';
+import type { PosterImageProps } from '@/shared/types/poster';
 
 import css from './index.module.css';
 
@@ -8,7 +8,7 @@ export const FormatImage = ({
 	poster,
 	className,
 }: {
-	poster?: MediaData;
+	poster?: PosterImageProps;
 	className?: string;
 }) => {
 	if (!poster) {
@@ -17,14 +17,15 @@ export const FormatImage = ({
 
 	return (
 		<picture className={cx(css.image, className)}>
-			<source srcSet={poster.formats?.small?.url} media="(max-width: 767px)" />
-			<source
-				srcSet={poster.formats?.medium?.url}
-				media="(max-width: 1024px)"
-			/>
-			<source srcSet={poster.formats?.large?.url} />
+			{poster.mobile && (
+				<source srcSet={poster.mobile?.url} media="(max-width: 767px)" />
+			)}
+			{poster.tablet && (
+				<source srcSet={poster.tablet?.url} media="(max-width: 1024px)" />
+			)}
+			{poster.desktop && <source srcSet={poster.desktop?.url} />}
 			<img
-				src={poster.formats?.medium?.url}
+				src={poster.desktop?.url ?? poster.tablet?.url ?? poster.mobile?.url}
 				alt="block"
 				loading="lazy"
 				draggable="false"

@@ -1,12 +1,7 @@
-interface ImageProps {
-	src?: string;
-	src2x?: string;
-	tablet?: string;
-	mobile?: string;
-}
+import type { MediaData } from './global.types';
 
-export interface PosterImageProps {
-	image?: ImageProps;
-	webp?: ImageProps;
-	avif?: ImageProps;
-}
+export type PosterImageProps = {
+	desktop?: MediaData;
+	tablet?: MediaData;
+	mobile?: MediaData;
+};

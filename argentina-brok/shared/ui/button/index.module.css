@@ -9,6 +9,11 @@
 	cursor: pointer;
 }
 
+.root:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
 .filled,
 .outline {
 	@mixin responsive padding-block, 8, 8, 8;
@@ -17,15 +22,15 @@
 }
 
 .filled {
-	color: white;
-	background-color: #df2c29;
+	color: var(--gray-100-color);
+	background-color: var(--red-500-color);
 	&:not(:disabled) {
 		opacity: 1;
 		cursor: pointer;
 
 		@media (hover: hover) {
 			&:hover {
-				background-color: #bf1d29;
+				background-color: var(--red-600-color);
 			}
 		}
 	}
@@ -40,8 +45,8 @@
 
 		@media (hover: hover) {
 			&:hover {
-				color: #bf1d29;
-				border: #bf1d29 solid 0.063rem;
+				color: var(--red-600-color);
+				border: var(--red-600-color) solid 0.063rem;
 			}
 		}
 	}
@@ -57,7 +62,7 @@
 		@media (hover: hover) {
 			&:hover {
 				background-color: transparent;
-				color: #bf1d29;
+				color: var(--red-600-color);
 			}
 		}
 	}
@@ -65,11 +70,11 @@
 
 .next {
 	@mixin responsive gap, 8, 8, 8;
-
-	color: #bf1d29;
+	@mixin responsive max-width, unset, 204, 204;
+	color: var(--red-600-color);
 
 	.icon path {
-		fill: #bf1d29;
+		fill: var(--red-600-color);
 	}
 
 	background-color: transparent;
@@ -80,7 +85,7 @@
 		@media (hover: hover) {
 			&:hover {
 				background-color: transparent;
-				color: #bf1d29;
+				color: var(--red-600-color);
 			}
 		}
 	}
@@ -90,7 +95,7 @@
 	@mixin responsive gap, 8, 8, 8;
 
 	background-color: transparent;
-	color: gray;
+	color: #808080;
 }
 
 .icon {

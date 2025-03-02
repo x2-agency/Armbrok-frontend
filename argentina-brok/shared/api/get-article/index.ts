@@ -1,31 +1,25 @@
 import apiClient from '@/shared/api/api-client';
-import type { ArticleData } from '@/shared/types/article';
+import type { ArticlesData } from '@/shared/types/article';
 
-export type GetArticleProps = {
+export type GetArticlesparams = {
 	limit?: number;
-	start?: number;
-	fields?: Array<string>;
-	populate?: object;
-	filters?: object;
+	offset?: number;
+	filters?: { category?: string };
 	page?: number;
-	pageSize?: number;
 };
 
 export const getArticle = async (
-	queryParams?: GetArticleProps
-): Promise<ArticleData> => {
-	const params = {
-		pagination: {
-			limit: queryParams?.limit,
-			start: queryParams?.start,
-			page: queryParams?.page,
-			pageSize: queryParams?.pageSize,
+	params?: GetArticlesparams
+): Promise<ArticlesData> => {
+	const { limit = 5, page = 1, filters } = params || {};
+	const response = await apiClient.get('/articles', {
+		params: {
+			...(filters && { 'filters[category]': filters.category }),
+			pagination: {
+				page,
+				pageSize: limit,
+			},
 		},
-		fields: queryParams?.fields,
-		populate: queryParams?.populate,
-		filters: queryParams?.filters,
-	};
-
-	const response = await apiClient.get('/articles', { params });
-	return response.data;
+	});
+	return response.data as ArticlesData;
 };

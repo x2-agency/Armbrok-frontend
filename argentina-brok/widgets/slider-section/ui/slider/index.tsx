@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+
+import cx from 'clsx';
 import parser from 'html-react-parser';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -21,7 +23,10 @@ export const Slider = ({
 		<Swiper
 			effect="coverflow"
 			slidesPerView="auto"
-			className={css.swiper}
+			className={cx(css.swiper, {
+				[css.withSummary]: Array.isArray(slider),
+				[css.withoutSummary]: slider.files,
+			})}
 			centeredSlides={true}
 			spaceBetween={50}
 			slideToClickedSlide
@@ -43,13 +48,17 @@ export const Slider = ({
 			{slider.files &&
 				slider?.files.map((value, index) => (
 					<SwiperSlide key={index} className={css.slide}>
-						<img src={value.url} alt="image" className={css.image} />
+						<div className={css.imageWrapper}>
+							<img src={value.url} alt="image" className={css.image} />
+						</div>
 					</SwiperSlide>
 				))}
 			{Array.isArray(slider) &&
 				slider?.map((value, index) => (
 					<SwiperSlide key={index} className={css.slide}>
-						<img src={value.media?.url} alt="image" className={css.image} />
+						<div className={css.imageWrapper}>
+							<img src={value.media?.url} alt="image" className={css.image} />
+						</div>
 						{value.title && (
 							<h4 className={css.title}>{parser(value.title)}</h4>
 						)}

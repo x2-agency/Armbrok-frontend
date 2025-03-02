@@ -21,7 +21,9 @@ export const Member = ({
 	return (
 		<>
 			<button className={css.card} onClick={() => toggleModalOpen(true)}>
-				<img src={avatar?.url} alt="company member" className={css.image} />
+				<div className={css.imageWrapper}>
+					<img src={avatar?.url} alt="company member" className={css.image} />
+				</div>
 				<div>
 					{fullName && <h3 className={css.name}>{parser(fullName)}</h3>}
 					{position && <p className={css.position}>{parser(position)}</p>}

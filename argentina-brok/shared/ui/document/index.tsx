@@ -2,6 +2,7 @@
 'use client';
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import Link from 'next/link';
 
 import type { MediaData } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
@@ -21,7 +22,7 @@ export const Document = ({
 		<article className={cx(css.root, css[direction])}>
 			<div className={css.leftPart}>
 				<img src="/assets/icon/file/file.svg" alt="file" className={css.icon} />
-				<header className={css.header}>
+				<div className={css.header}>
 					{name && <h3 className={css.name}>{parser(name)}</h3>}
 					{file.ext && file.size && (
 						<div className={css.info}>
@@ -34,12 +35,12 @@ export const Document = ({
 							{file.size && <p className={css.size}>{file.size * 10}KB</p>}
 						</div>
 					)}
-				</header>
+				</div>
 			</div>
 			<Button variant="next" iconRotate={270} className={css.button}>
 				Download
 			</Button>
-			<a href={file.url} className={css.downloadLink} download />
+			<Link href={file.url ?? '#'} className={css.downloadLink} download />
 		</article>
 	);
 };

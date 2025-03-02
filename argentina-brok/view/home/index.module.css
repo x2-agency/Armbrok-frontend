@@ -1,0 +1,7 @@
+.solution {
+	@mixin responsive padding-block-start, 20, 48, 48;
+}
+
+.hero {
+	padding-block: unset;
+}

@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive gap, 30, 40, 40;
+	@mixin responsive gap, 15, 40, 40;
 	@mixin responsive padding-block-end, 16, 16, 16;
 	@mixin responsive border-width, 2, 2, 2;
 	@mixin responsive margin-block-end, 16, 16, 16;
@@ -35,10 +35,13 @@
 }
 
 .imageWrap {
-	@mixin responsive width, 150, 200, 200;
-	@mixin responsive height, 150, 200, 200;
+	@mixin responsive width, 130, 200, 200;
+	@mixin responsive height, 130, 200, 200;
+	@mixin responsive border-radius, 32, 32, 32;
 
 	position: relative;
+	flex-shrink: 0;
+	overflow: hidden;
 }
 
 .image {

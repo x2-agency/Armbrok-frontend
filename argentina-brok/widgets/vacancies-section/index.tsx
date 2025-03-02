@@ -4,6 +4,7 @@ import parser from 'html-react-parser';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
+import { Vacancy } from './ui/vacancy';
 import type { VacanciesSectionProps } from './vacancies.types';
 
 export const VacanciesSection = ({

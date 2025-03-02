@@ -2,30 +2,37 @@ import cx from 'clsx';
 
 import { NewsCard } from '@/entities/news-card';
 import type { Article } from '@/shared/types/article';
-import { Button } from '@/shared/ui/button';
+import { LoadNext } from '@/shared/ui/load-next';
 
 import css from './index.module.css';
 
 export const NewsPage = ({
 	newsCard,
 	className,
-	isHasMore,
+	hasNextPage,
+	fetchNextPage,
+	isFetching,
 }: {
-	newsCard: Array<Article>;
+	newsCard?: Array<Article>;
 	className?: string;
-	isHasMore: boolean;
+	hasNextPage?: boolean;
+	fetchNextPage: () => void;
+	isFetching: boolean;
 }) => {
 	return (
 		<div className={css.root}>
 			<div className={cx(css.news, className)}>
-				{newsCard.map((news, index) => (
+				{newsCard?.map((news, index) => (
 					<NewsCard className={css.card} key={index} data={news} />
 				))}
 			</div>
-			{isHasMore && (
-				<Button iconRotate={270} variant="next">
-					Show more
-				</Button>
+			{!hasNextPage && (
+				<LoadNext
+					className={css.spacing}
+					fetchNextPage={fetchNextPage}
+					isFetching={isFetching}
+					hasNextPage={hasNextPage}
+				/>
 			)}
 		</div>
 	);

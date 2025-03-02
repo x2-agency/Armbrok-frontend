@@ -14,14 +14,14 @@ export const MENU_LINKS = [
 	},
 	{
 		label: 'Investor Relations',
-		href: '/',
+		href: '/investor-relations',
 	},
 	{
 		label: 'Media',
-		href: '/armbrok-media',
+		href: '/media',
 	},
 	{
 		label: 'Contact us',
-		href: '/',
+		href: '/armbrok-contact-page',
 	},
 ];

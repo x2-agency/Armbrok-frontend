@@ -14,7 +14,7 @@ export const TopCards = ({ cards }: TopCardsProps) => {
 	return (
 		<div className={css.root}>
 			{cards.map((card, index) => (
-				<Card data={card} showLink={index === 0} />
+				<Card data={card} showLink={index === 0} key={index} />
 			))}
 		</div>
 	);

@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { Dispatch, PropsWithChildren } from 'react';
 
 interface BaseButtonProps extends PropsWithChildren {
 	className?: string;
@@ -20,6 +20,9 @@ type ClickButtonProps = BaseButtonProps & {
 	disabled?: boolean;
 	type?: 'button' | 'submit' | 'reset';
 	href?: never;
+	setLoadMore?: Dispatch<undefined | boolean>;
+	isFetching?: boolean;
+	isHasMore?: boolean;
 };
 
 export type ButtonProps = LinkButtonProps | ClickButtonProps;

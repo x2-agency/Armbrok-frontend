@@ -14,3 +14,13 @@
 	@mixin responsive height, 1, 1, 1;
 	background-color: var(--gray-600-color);
 }
+
+.backgroundColor {
+	/* top: 0;
+	@mixin responsive height, 80, 80, 80;
+	background-color: rgba(195, 195, 195, 0.6); */
+}
+
+.spacing {
+	@mixin responsive margin-block-start, 20, 20, 20;
+}

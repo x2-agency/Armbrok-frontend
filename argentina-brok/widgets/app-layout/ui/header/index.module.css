@@ -10,9 +10,9 @@
 
 	@mixin res width, unset, 96.667vw, 87.438rem;
 	@mixin res margin-inline, unset, auto, auto;
-	@mixin res left, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px 24px */
-	@mixin res right, 5.333rem, 1.667rem, 1.5rem; /* 20px 24px 24px */
-	@mixin res top, 5.867rem, 1.389rem, 1.25rem; /* 22px */
+	@mixin responsive left, 20, 24, 24;
+	@mixin responsive right, 20, 24, 24;
+	@mixin responsive top, 22, 22, 22;
 
 	@media (max-width: 767px) {
 		align-items: flex-start;
@@ -28,11 +28,11 @@
 }
 
 .leftBlock {
-	gap: 5.556rem; /* 80px */
+	@mixin responsive gap, 80, 80, 80;
 }
 
 .rightBlock {
-	gap: 2.778rem; /* 40px */
+	@mixin responsive gap, 40, 40, 40;
 }
 
 .burger {
@@ -41,5 +41,20 @@
 
 	@media (min-width: 768px) {
 		display: none;
+	}
+}
+
+html[data-header-top-color='white'] {
+	.root {
+		color: var(--gray-100-color);
+	}
+}
+
+html[data-header-top-color='dark'] {
+	.root {
+		top: 0;
+		@mixin responsive height, 80, 80, 80;
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(6px);
 	}
 }

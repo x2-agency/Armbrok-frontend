@@ -1,22 +1,24 @@
 import type {
+	AccordionSectionProps,
 	BaseResponse,
-	HeroSection,
-	ExperienceSection,
 	BenefitsSection,
+	DocumentsSectionProps,
+	ExperienceSection,
+	HeroSection,
 	QuoteSection,
-	DocumentsSection,
-	AccordionSection,
 } from '@/shared/types/global.types';
+import type { AssetManagementCardProps } from '@/view/home/types/response';
 
 export type AssetManagementPageData = {
 	heroSection?: HeroSection;
 	experienceSection?: ExperienceSection;
 	benefitsSection?: BenefitsSection;
 	quoteSection?: QuoteSection;
+	assetManagementCard?: AssetManagementCardProps;
 	wealthManagementSection?: BenefitsSection;
 	howWeAreWorking?: BenefitsSection;
-	documentsSection?: DocumentsSection;
-	infoSection?: AccordionSection;
+	documentsSection?: DocumentsSectionProps;
+	infoSection?: AccordionSectionProps;
 };
 
 export type AssetManagementPageResponse = BaseResponse<AssetManagementPageData>;

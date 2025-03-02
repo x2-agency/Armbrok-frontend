@@ -1,55 +1,52 @@
-export interface Category {
-	id: number;
-	name: string;
-}
+import type { FormatsType } from '@/view/home/types/response';
+
+import type { Category } from './media-page';
 
 export interface Poster {
-	alternativeText: string | null;
-	formats: {
-		small: {
-			url: string;
-			name: string;
-		};
-		medium: {
-			url: string;
-			name: string;
-		};
-		thumbnail: {
-			url: string;
-			name: string;
-		};
-	};
+	alternativeText: string;
+	formats: FormatsType;
 	url: string;
 }
 
 export interface AuthorType {
 	id?: number;
 	name?: string;
+	fullName?: string;
+	XLink?: string;
+	facebookLink?: string;
+	linkedInLink?: string;
+	position?: string;
 	avatar?: {
-		alternativeText?: string | null;
+		alternativeText?: string;
 		formats?: null;
 		url?: string;
 	};
-	position?: string;
 	email?: string;
 	publishDate?: string;
+	socialMedias: Array<SocialMediasType>;
 }
 
+export type SocialMediasType = {
+	link?: string;
+	icon?: {
+		alternativeText?: string;
+		url?: string;
+	};
+};
+
 export interface Article {
-	title: string;
 	slug: string;
+	title: string;
 	publishDate: string;
 	description: string;
 	markup: string;
-	readTimeInMinutes: number;
-	category: Category;
 	poster: Poster | null;
 	author: AuthorType;
+	category: Category;
 }
 
 export interface ArticleData {
 	title?: string;
-	// moreButton?: { text: string; link: string };
 	data: Array<Article>;
 }
 
@@ -59,17 +56,28 @@ export interface BlogData {
 
 export interface PaginationMeta {
 	pagination: {
-		page: number;
+		page?: number | null;
 		pageCount: number;
 		total: number;
 	};
 }
 
 export interface GetArticlesResponse {
-	initialData: Array<Article>;
+	articles: Array<Article>;
 	meta?: PaginationMeta;
 }
 
 export interface ArticleSlug {
 	data?: Article;
 }
+
+export interface ArticlesData {
+	data?: Array<Article>;
+	categories?: Array<Category>;
+	meta?: PaginationMeta;
+}
+
+export type InfiniteQueryPage<T> = {
+	pageParams: Array<number>;
+	pages: Array<T>;
+};

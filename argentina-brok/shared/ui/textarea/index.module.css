@@ -1,0 +1,40 @@
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	@mixin font-text14;
+	@mixin responsive padding-block-end, 6, 6, 6;
+
+	display: block;
+	font-weight: 700;
+}
+
+.error,
+.required {
+	color: var(--red-600-color);
+}
+
+.textarea {
+	@mixin responsive padding-inline, 10, 14, 14;
+	@mixin responsive padding-block, 10, 10, 10;
+	@mixin responsive border-width, 1, 1, 1;
+	@mixin responsive border-radius, 8, 8, 8;
+	@mixin font-text16;
+
+	resize: none;
+	border-style: solid;
+	border-color: var(--gray-300-color);
+	outline: none;
+	width: auto;
+	height: auto;
+}
+
+.error {
+	@mixin font-text14;
+	@mixin responsive padding-block-start, 6, 6, 6;
+	display: block;
+
+	font-weight: 600;
+}

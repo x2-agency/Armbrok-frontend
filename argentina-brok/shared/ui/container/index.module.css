@@ -1,7 +1,7 @@
 .p-32 {
 	@mixin responsive border-radius, 20, 32, 32;
-	@mixin responsive padding-inline, 32, 32, 32;
-	@mixin responsive padding-block, 32, 32, 32;
+	@mixin responsive padding-inline, 22, 32, 32;
+	@mixin responsive padding-block, 22, 32, 32;
 }
 
 .p-40 {

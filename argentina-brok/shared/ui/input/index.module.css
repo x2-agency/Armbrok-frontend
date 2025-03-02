@@ -9,7 +9,7 @@
 	@mixin font-text16;
 
 	border-style: solid;
-	border-color: var(--gray-600-color);
+	border-color: var(--gray-300-color);
 	outline: none;
 
 	&:-webkit-autofill,
@@ -33,4 +33,25 @@
 	position: absolute;
 	top: 50%;
 	translate: 0% -50%;
+}
+
+.label {
+	@mixin font-text14;
+	@mixin responsive padding-block-end, 6, 6, 6;
+
+	display: block;
+	font-weight: 700;
+}
+
+.error,
+.required {
+	color: var(--red-600-color);
+}
+
+.error {
+	@mixin font-text14;
+	@mixin responsive padding-block-start, 6, 6, 6;
+	display: block;
+
+	font-weight: 600;
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = INVESTOR_RELATIONS_META;
 const InvestorRelationsPage = async () => {
 	const initialInvestorRelationsPageData = await getInvestorRelations();
 
-	return <InvestorRelations {...initialInvestorRelationsPageData.data} />;
+	return <InvestorRelations {...initialInvestorRelationsPageData?.data} />;
 };
 
 export default InvestorRelationsPage;

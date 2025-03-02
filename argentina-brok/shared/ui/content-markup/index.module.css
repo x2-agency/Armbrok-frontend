@@ -291,11 +291,20 @@
 } */
 
 .markup {
+	@mixin responsive width, unset, 800, 800;
+	@mixin responsive padding-inline, 0, unset, unset;
 	border-bottom: 1px solid var(--gray-300-color);
+	margin: 0 auto;
+	@media (max-width: 767px) {
+		width: 100%;
+		padding-inline: 5.33rem;
+	}
+
 	ul,
 	ol,
 	h2,
 	h3,
+	div,
 	figure,
 	p {
 		@mixin responsive width, unset, 800, 800;
@@ -364,7 +373,7 @@
 		&::before {
 			content: '';
 			position: absolute;
-			@mixin responsive left, 20, 322, 322;
+			left: 0;
 			top: 0;
 			height: 100%;
 			@mixin responsive width, 2, 2, 2;
@@ -395,5 +404,16 @@
 	ul:has(+ h2),
 	p:has(+ h2) {
 		@mixin responsive padding-block-end, 35, 48, 48;
+	}
+
+	div {
+		@mixin responsive padding, 22, 32, 32;
+		@mixin responsive border-radius, 16, 16, 16;
+		@mixin responsive margin-block, 24, 48, 48;
+		background-color: var(--gray-200-color);
+	}
+
+	div > p {
+		width: unset;
 	}
 }

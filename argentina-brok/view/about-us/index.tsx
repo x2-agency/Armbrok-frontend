@@ -28,7 +28,6 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	documentsSection,
 	companyDetails,
 }) => {
-
 	return (
 		<>
 			<BannerSection
@@ -41,7 +40,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					awards: heroSection?.factoids,
 				}}
 			/>
-			<HeroContainer>
+			<HeroContainer className={css.hero}>
 				<ExpertSolutionSection
 					items={valuesSection?.factoids}
 					title={valuesSection?.title}
@@ -58,11 +57,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 				title={membershipSection?.title}
 				items={membershipSection?.companies}
 			/>
-			<CompaniesGroup
-				title={companiesSection?.title}
-				items={companiesSection?.companies}
-				className={css.companies}
-			/>
+			<CompaniesGroup data={companiesSection} className={css.companies} />
 			<SliderSection
 				title={significantProjectsSection?.title}
 				description={significantProjectsSection?.description}
@@ -76,10 +71,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 				title={corporateEventsSection?.title}
 				events={corporateEventsSection?.events}
 			/>
-			<StatutoryDocuments
-				title={documentsSection?.title}
-				documents={documentsSection?.documents}
-			/>
+			<StatutoryDocuments documentsSection={documentsSection} />
 			<CompanyDetailsSection
 				title={companyDetails?.title ?? ''}
 				items={companyDetails?.items}

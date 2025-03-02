@@ -1,11 +1,16 @@
-import type { InvestingStepsSection } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
+import type { InvestingStepsSectionProps } from '@/view/home/types/response';
 
 import css from './index.module.css';
 import { CardsNumber } from './ui/cards-number';
 
-export const Start = ({ title, button, steps }: InvestingStepsSection) => {
+export type StartProps = {
+	data?: InvestingStepsSectionProps;
+};
+
+export const Start = ({ data }: StartProps) => {
+	const { title, button, steps } = data ?? {};
 	if (!steps) {
 		return null;
 	}

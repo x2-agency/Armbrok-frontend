@@ -4,15 +4,15 @@ import type { MouseEvent } from 'react';
 import css from './index.module.css';
 
 type TabProps = {
-	title: string;
+	name: string;
 	handleClick: (e: MouseEvent<HTMLButtonElement>) => void;
 	className?: string;
 };
 
-export const Tab = ({ title, className, handleClick, ...props }: TabProps) => {
+export const Tab = ({ name, className, handleClick, ...props }: TabProps) => {
 	return (
 		<button onClick={handleClick} className={cx(css.tab, className)} {...props}>
-			{title}
+			{name}
 		</button>
 	);
 };

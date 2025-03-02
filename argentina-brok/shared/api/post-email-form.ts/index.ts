@@ -1,13 +1,15 @@
 import apiClient from '@/shared/api/api-client';
 
 export type PostEmailFormData = {
-	email: string;
-	locale?: string;
+	data: {
+		email: string;
+		locale?: string;
+	};
 };
 
-export const postEmailForm = async ({ email }: PostEmailFormData) => {
+export const postEmailForm = async ({ data }: PostEmailFormData) => {
 	try {
-		const response = await apiClient.post('/email-forms', { email});
+		const response = await apiClient.post('/email-forms', { data });
 
 		return response.status;
 	} catch (error) {

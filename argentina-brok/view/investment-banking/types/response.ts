@@ -1,10 +1,10 @@
 import type {
 	BaseResponse,
+	DocumentsSectionProps,
+	ExperienceSection,
 	HeroSectionAboutUs,
 	ItemDetail,
-	ExperienceSection,
 	QuoteSection,
-	DocumentsSection,
 	SecurityPaperItem,
 } from '@/shared/types/global.types';
 
@@ -14,7 +14,7 @@ export type InvestmentBankingPageData = {
 	ourServicesSection?: ExperienceSection;
 	quoteSection?: QuoteSection;
 	latestSecuritiesPlacementsSection?: ItemDetail;
-	documentsSection?: DocumentsSection;
+	documentsSection?: DocumentsSectionProps;
 	securityPapers?: Array<SecurityPaperItem>;
 };
 

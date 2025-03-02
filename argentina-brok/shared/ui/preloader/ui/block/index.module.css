@@ -1,0 +1,16 @@
+.block {
+	display: flex;
+	gap: 10px;
+	height: 20px;
+	align-items: center;
+}
+
+.blockLeft {
+	@mixin animation turning-left;
+	will-change: transform;
+}
+
+.blockRight {
+	@mixin animation turning-right;
+	will-change: transform;
+}

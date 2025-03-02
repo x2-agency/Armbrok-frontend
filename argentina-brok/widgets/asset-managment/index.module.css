@@ -94,3 +94,11 @@
 		object-fit: contain;
 	}
 }
+
+.title:has(+ .description) {
+	@mixin responsive padding-block-end, 10, 16, 16;
+}
+
+.title:has(+ .button) {
+	@mixin responsive padding-block-end, 40, 62, 62;
+}

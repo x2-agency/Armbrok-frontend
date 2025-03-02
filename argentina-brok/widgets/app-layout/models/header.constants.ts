@@ -11,9 +11,9 @@ export const HOME_LINK = '/';
 export const NAVIGATION_LINKS = [
 	{ text: 'Services', href: '/services' },
 	{ text: 'Investor Relations', href: '/investor-relations' },
-	{ text: 'Media', href: '/armbrok-media' },
+	{ text: 'Media', href: '/media' },
 	{ text: 'About us', href: '/about-us' },
-	{ text: 'Contact us', href: '/contact-us' },
+	{ text: 'Contact us', href: '/armbrok-contact-page' },
 ];
 
 export const LANGUAGES = ['EN', 'AM', 'RU'];

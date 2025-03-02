@@ -20,12 +20,24 @@ type PropsWithType = {
 } & Props;
 
 const InputComponent = (
-	{ className, placeholder, type, label, leftIcon, ...props }: PropsWithType,
+	{
+		className,
+		placeholder,
+		type,
+		label,
+		leftIcon,
+		required,
+		...props
+	}: PropsWithType,
 	ref: ForwardedRef<HTMLInputElement>
 ) => {
 	return (
 		<label className={cx(className, css.root)}>
-			{label && <span className={css.label}>{parser(label)}</span>}
+			{label && (
+				<span className={css.label}>
+					{parser(label)} {required && <span className={css.required}>*</span>}
+				</span>
+			)}
 			{leftIcon && <img className={css.leftIcon} src={leftIcon} />}
 			<input
 				type={type}
@@ -34,6 +46,11 @@ const InputComponent = (
 				placeholder={placeholder}
 				{...props}
 			/>
+			{props['aria-invalid'] && props['aria-errormessage'] && (
+				<span className={css.error}>
+					{parser(props['aria-errormessage'])} *
+				</span>
+			)}
 		</label>
 	);
 };

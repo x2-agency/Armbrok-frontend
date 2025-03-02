@@ -12,12 +12,11 @@
 	-ms-overflow-style: none;
 
 	&::-webkit-scrollbar {
-		display: none; 
+		display: none;
 	}
 }
 
 .white {
-	color: red;
 	background-color: var(--gray-100-color);
 
 	&:hover {

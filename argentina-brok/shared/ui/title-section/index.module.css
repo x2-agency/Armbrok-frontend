@@ -17,21 +17,27 @@
 }
 
 .title {
-	@mixin res max-width, 100%, 55.556rem, 50rem; /* 800px */
-}
-
-.description {
-	@mixin res max-width, 100%, 48.611rem, 43.75rem; /* 700px */
-}
-
-.title {
-	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin responsive max-width, 0, 800, 800;
+	@mixin responsive padding-block-end, 12, 24, 24;
 	@mixin font-h2;
 
 	font-weight: 700;
 	line-height: 1.2;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+
+		max-width: 100%;
+	}
 }
 
 .description {
 	@mixin font-text20;
+	@mixin responsive max-width, 0, 700, 700;
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+
+		max-width: 100%;
+	}
 }

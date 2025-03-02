@@ -1,0 +1,13 @@
+.root {
+	@mixin responsive gap, 12, 12, 12;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.subtitle {
+	@mixin font-text14;
+
+	color: var(--gray-500-color);
+	font-weight: 600;
+}

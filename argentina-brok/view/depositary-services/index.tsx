@@ -53,10 +53,7 @@ export const DepositaryServices: NextPage<
 				items={benefitsSection?.factoids}
 			/>
 			<Review quote={quoteSection} />
-			<HelpfulInformation
-				title={infoSection?.title}
-				items={infoSection?.accordions}
-			/>
+			<HelpfulInformation accordionSection={infoSection} />
 		</>
 	);
 };

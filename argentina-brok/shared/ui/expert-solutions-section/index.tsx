@@ -35,7 +35,7 @@ export const ExpertSolutionSection = ({
 		: '';
 
 	return (
-		<Container category="div" className={cx(css.root, className)}>
+		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.sectionTitle}>{parser(title ?? '')}</h2>}
 			{items.length === 5 ? (
 				<div className={css.flexCards}>

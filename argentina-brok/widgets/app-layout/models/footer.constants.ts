@@ -17,7 +17,7 @@ export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 		column: [
 			{ id: 1, text: 'Brokerage', href: '/brokerage' },
 			{ id: 2, text: 'Asset Management', href: '/asset-management' },
-			{ id: 3, text: 'Investment Funds', href: '#' },
+			{ id: 3, text: 'Investment Funds', href: '/funds' },
 			{ id: 4, text: 'Investment Banking', href: '/investment-banking' },
 			{
 				id: 5,

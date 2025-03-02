@@ -16,6 +16,9 @@ export const Button = ({
 	onClick,
 	iconRotate,
 	disabled,
+	// setLoadMore,
+	// isFetching,
+	// isHasMore,
 }: ButtonProps) => {
 	if (href) {
 		return (

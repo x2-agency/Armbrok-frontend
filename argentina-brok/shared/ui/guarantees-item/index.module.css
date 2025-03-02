@@ -11,6 +11,10 @@
 	text-align: center;
 }
 
+.title:has(+ .description) {
+	@mixin responsive padding-block-end, 12, 12, 12;
+}
+
 .icon {
 	@mixin res width, 12.8rem, 3.333rem, 3rem; /* 48px */
 	@mixin res margin-block-end, 4.267rem, 1.111rem, 1rem;

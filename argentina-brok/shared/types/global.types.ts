@@ -1,3 +1,5 @@
+import type { PosterImageProps } from './poster';
+
 export type BaseResponse<T> = {
 	data: T & { updatedAt: string; locale?: string; seo?: SeoType | null };
 };
@@ -14,7 +16,7 @@ export type SeoType = {
 
 export type HeroSection = ItemDetail & {
 	button?: LinkItem;
-	background: MediaData;
+	background: PosterImageProps;
 };
 
 export type LinkItem = {
@@ -176,23 +178,23 @@ export type MobileAppSection = ItemDetail & {
 /* QUOTE SECTION */
 
 export type QuoteSection = {
-	quote: {
-		content: string;
-		authorFullName: string;
-		authorPosition: string;
-		authorExtraInfo: string;
-	};
+	content: string;
+	authorFullName: string;
+	authorPosition: string;
+	authorExtraInfo: string;
 	authorPhoto?: MediaData | null;
 };
 
 /* RUNNING TEXT SECTION */
 
-export type RunningTextSection = {
+export type RunningTextSectionProps = {
 	staticText: string;
-	textArray: Array<{
-		id: number;
-		value: string;
-	}>;
+	textArray: Array<TextArrayType>;
+};
+
+export type TextArrayType = {
+	id: number;
+	value: string;
 };
 
 /* COUNTRIES SECTION */
@@ -205,7 +207,7 @@ export type CountriesSection = {
 
 /* DOCUMENTS SECTION */
 
-export type DocumentsSection = ItemDetail & {
+export type DocumentsSectionProps = ItemDetail & {
 	documents: Array<MediaData>;
 };
 
@@ -216,7 +218,7 @@ export type Accordion = {
 	description: string;
 };
 
-export type AccordionSection = {
+export type AccordionSectionProps = {
 	title: string;
 	accordions: Array<Accordion>;
 };
@@ -237,7 +239,7 @@ export type BenefitsSection = {
 /* ABOUT US HERO SECTION */
 
 export type HeroFactoid = {
-	number?: number;
+	place?: string;
 	title?: string;
 	description?: string;
 };
@@ -245,8 +247,8 @@ export type HeroFactoid = {
 export type HeroSectionAboutUs = ItemDetail & {
 	titleLabel?: string;
 	button?: LinkItem;
-	background?: MediaData;
-	factoids?: Array<HeroFactoid>;
+	background?: PosterImageProps;
+	factoids?: Array<HeroFactoid & { itemIndex?: string }>;
 };
 
 /* VALUES SECTION */
@@ -369,7 +371,7 @@ export type SubscribeEmailForm = ItemDetail & {
 
 /* RESIDENCE COUNTRIES */
 
-export type ResidenceCountriesSection = {
+export type ResidenceCountriesSectionProps = {
 	title?: string;
 	additionalText?: string;
 	countries?: Array<FlagType>;
@@ -423,4 +425,29 @@ export type SecurityPaperItem = {
 
 export type SecurityPapers = {
 	data: Array<SecurityPaperItem>;
+};
+
+/* CONTACT CARDS */
+
+export type ContactCardItem = Factoid & {
+	contacts?: Array<{ text?: string; link?: string | null }>;
+};
+
+/* CONTACT FORM */
+
+export type ContactInput = {
+	placeholder?: string;
+	required: boolean;
+	errorMessage?: string;
+	label?: string;
+	type: string;
+};
+
+export type ContactForm = ItemDetail & {
+	captchaCaption?: string;
+	sendButtonText?: string;
+	nameField: ContactInput;
+	emailField: ContactInput;
+	subjectField: ContactInput;
+	messageField: ContactInput;
 };

@@ -27,11 +27,11 @@ export const Review = ({ quote, className }: ReviewProps) => {
 					className={css.image}
 				/>
 				<div className={css.review}>
-					<ReviewHead review={quote.quote.content} />
+					<ReviewHead review={quote.content} />
 					<ReviewFooter
-						fullName={quote.quote.authorFullName}
-						position={quote.quote.authorPosition}
-						experience={quote.quote.authorExtraInfo}
+						fullName={quote.authorFullName}
+						position={quote.authorPosition}
+						experience={quote.authorExtraInfo}
 					/>
 				</div>
 			</article>

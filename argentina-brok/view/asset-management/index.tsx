@@ -11,10 +11,7 @@ import { Review } from '@/widgets/review';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
-import {
-	MOCK_DEFAULT_BANNER,
-	TITLE_SECTION_ASSET,
-} from './model/asset-managment.constants';
+import { TITLE_SECTION_ASSET } from './model/asset-managment.constants';
 import type { AssetManagementPageResponse } from './types/response';
 
 export const AssetManagement: NextPage<{
@@ -24,23 +21,35 @@ export const AssetManagement: NextPage<{
 		throw new Error();
 	}
 
+	const {
+		heroSection,
+		experienceSection,
+		benefitsSection,
+		quoteSection,
+		wealthManagementSection,
+		assetManagementCard,
+		howWeAreWorking,
+		documentsSection,
+		infoSection,
+	} = initialData?.data ?? {};
+
 	return (
 		<>
 			<BannerSection
 				type="default"
 				banner={{
-					title: initialData?.data.heroSection?.title ?? '',
-					description: initialData?.data.heroSection?.description ?? '',
-					button: initialData?.data.heroSection?.button,
-					poster: initialData?.data.heroSection?.background,
+					title: heroSection?.title ?? '',
+					description: heroSection?.description ?? '',
+					button: heroSection?.button,
+					poster: heroSection?.background,
 				}}
 				alignContent="start"
 			/>
-			{initialData.data.experienceSection && (
+			{experienceSection && (
 				<HeroContainer className={css.hero}>
 					<TitleSection
-						title={initialData.data.experienceSection.title ?? ''}
-						description={initialData.data.experienceSection.description}
+						title={experienceSection.title ?? ''}
+						description={experienceSection.description}
 					/>
 					<ExperienceSection
 						className={css.experience}
@@ -49,42 +58,34 @@ export const AssetManagement: NextPage<{
 				</HeroContainer>
 			)}
 			<ExpertSolutionSection
-				items={initialData.data.benefitsSection?.factoids}
-				title={initialData.data.benefitsSection?.title}
+				items={benefitsSection?.factoids}
+				title={benefitsSection?.title}
 				withShell
 				backgroundColor="white"
 				className={css.experts}
 			/>
-			<Review quote={initialData?.data.quoteSection} />
-			<AssetManagment
-				title={MOCK_DEFAULT_BANNER.title}
-				// description={MOCK_DEFAULT_BANNER.description}
-				// mediaContent={initialData?.data.wealthManagementSection?.mediaContent}
+			<Review quote={quoteSection} />
+			<AssetManagment data={assetManagementCard} />
+			<ExpertSolutionSection
+				className={css.managementSection}
+				gridClass={css.management}
+				withShell
+				title={wealthManagementSection?.title}
+				items={wealthManagementSection?.factoids}
 			/>
 			<ExpertSolutionSection
 				className={css.managementSection}
 				gridClass={css.management}
 				withShell
-				title={initialData.data.wealthManagementSection?.title}
-				items={initialData.data.wealthManagementSection?.factoids}
-			/>
-			<ExpertSolutionSection
-				className={css.managementSection}
-				gridClass={css.management}
-				withShell
-				title={initialData.data.howWeAreWorking?.title}
-				items={initialData.data.howWeAreWorking?.factoids}
+				title={howWeAreWorking?.title}
+				items={howWeAreWorking?.factoids}
 			/>
 			<StatutoryDocuments
-				title={initialData?.data.documentsSection?.title}
-				documents={initialData?.data.documentsSection?.documents}
+				documentsSection={documentsSection}
 				columns={2}
 				fileDirection="column"
 			/>
-			<HelpfulInformation
-				title={initialData.data.infoSection?.title}
-				items={initialData.data.infoSection?.accordions}
-			/>
+			<HelpfulInformation accordionSection={infoSection} />
 		</>
 	);
 };
