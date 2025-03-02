@@ -14,9 +14,10 @@ export const getArticle = async (
 	const { limit = 5, page = 1, filters } = params || {};
 	const response = await apiClient.get('/articles', {
 		params: {
-			...(filters?.category && {
-				'filters[category][slug][$eq]': filters.category,
-			}),
+			...(filters?.category &&
+				filters.category !== 'all' && {
+					'filters[category][slug][$eq]': filters.category,
+				}),
 			'pagination[page]': page,
 			'pagination[pageSize]': limit,
 		},

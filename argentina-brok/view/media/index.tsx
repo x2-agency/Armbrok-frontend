@@ -28,14 +28,8 @@ export const Media: NextPage<{
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	const {
-		data,
-		fetchNextPage,
-		isFetching,
-		hasNextPage,
-		isFetchingNextPage,
-		refetch,
-	} = useGetArticles({ filters: { category: currentTag } }, initialArticles);
+	const { data, fetchNextPage, isFetching, hasNextPage } =
+		useGetArticles({ filters: { category: currentTag } }, initialArticles);
 
 	const filteredNews = data?.pages.flatMap(page => page.data) ?? [];
 
@@ -59,10 +53,6 @@ export const Media: NextPage<{
 		},
 		[router, pathname, createQueryString]
 	);
-
-	useEffect(() => {
-		refetch();
-	}, [currentTag, refetch]);
 
 	return (
 		<section className={css.root}>
