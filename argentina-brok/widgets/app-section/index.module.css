@@ -1,7 +1,7 @@
 .root {
 	@media (max-width: 767px) {
 		width: 100%;
-		padding-inline: 5rem;
+		padding-inline: 5.333rem;
 	}
 }
 
@@ -18,14 +18,12 @@
 	@mixin responsive margin-block-start, 40, 64, 64;
 	@mixin responsive margin-block-end, 20, 24, 24;
 
-	/* @mixin responsive height, 794.5, 496, 496; */
-
 	@media (max-width: 767px) {
 		height: 211.867rem; /* 794px */
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		padding-inline: 5rem;
+		padding-inline: 5.333rem;
 	}
 }
 

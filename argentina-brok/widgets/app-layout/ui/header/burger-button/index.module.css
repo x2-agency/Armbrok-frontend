@@ -1,6 +1,15 @@
+.root {
+	@mixin responsive width, 24, 24, 24;
+	@mixin responsive height, 24, 24, 24;
+}
+
+.burger {
+	width: 100%;
+	height: 100%;
+}
+
 .burger path {
 	@mixin transition;
-
 	transition-property: fill;
 }
 
