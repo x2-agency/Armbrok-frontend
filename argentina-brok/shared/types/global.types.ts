@@ -424,3 +424,28 @@ export type SecurityPaperItem = {
 export type SecurityPapers = {
 	data: Array<SecurityPaperItem>;
 };
+
+/* CONTACT CARDS */
+
+export type ContactCardItem = Factoid & {
+	contacts?: Array<{ text?: string; link?: string | null }>;
+};
+
+/* CONTACT FORM */
+
+export type ContactInput = {
+	placeholder?: string;
+	required: boolean;
+	errorMessage?: string;
+	label?: string;
+	type: string;
+};
+
+export type ContactForm = ItemDetail & {
+	captchaCaption?: string;
+	sendButtonText?: string;
+	nameField: ContactInput;
+	emailField: ContactInput;
+	subjectField: ContactInput;
+	messageField: ContactInput;
+};

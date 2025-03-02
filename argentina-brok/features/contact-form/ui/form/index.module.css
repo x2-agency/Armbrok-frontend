@@ -1,0 +1,41 @@
+.inputs,
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.root {
+	@mixin responsive width, 320, 480, 480;
+	@mixin responsive padding-block-start, 0, 72, 72;
+}
+
+.titleBlock {
+	@mixin responsive padding-block-end, 24, 48, 48;
+}
+
+.title {
+	@mixin font-h2;
+	@mixin responsive padding-block-end, 16, 24, 24;
+
+	font-weight: 700;
+}
+
+.description {
+	@mixin font-text18;
+
+	color: var(--gray-600-color);
+}
+
+.inputs {
+	@mixin responsive gap, 24, 24, 24;
+	@mixin responsive padding-block-end, 16, 32, 32;
+
+	input,
+	textarea {
+		width: 100%;
+	}
+}
+
+.captcha {
+	@mixin responsive padding-block-end, 16, 32, 32;
+}
