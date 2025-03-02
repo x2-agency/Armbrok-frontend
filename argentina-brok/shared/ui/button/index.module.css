@@ -9,6 +9,11 @@
 	cursor: pointer;
 }
 
+.root:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
 .filled,
 .outline {
 	@mixin responsive padding-block, 8, 8, 8;
