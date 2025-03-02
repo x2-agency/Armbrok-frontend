@@ -22,8 +22,6 @@ export const InvestmentBanking: NextPage<
 	securityPapers,
 	latestSecuritiesPlacementsSection,
 }) => {
-	console.log(documentsSection);
-
 	return (
 		<>
 			<BannerSection

@@ -24,7 +24,6 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 		documentsSection,
 		infoSection,
 	} = initialFundsPageData?.data ?? {};
-	console.log(initialFundsPageData?.data.experienceSection);
 	return (
 		<>
 			<BannerSection

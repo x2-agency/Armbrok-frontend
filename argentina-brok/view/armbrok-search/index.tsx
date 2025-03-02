@@ -1,7 +1,7 @@
 'use client';
 
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { TitleSection } from '@/shared/ui/title-section';
 
@@ -22,10 +22,6 @@ export const ArmbrokSearch: NextPage<ArmbrokSearchPageResponse> = ({
 	const [newsData, setNewsData] = useState<Array<SearchDataItem> | undefined>(
 		undefined
 	);
-
-	useEffect(() => {
-		console.log(newsData);
-	}, [newsData]);
 
 	return (
 		<div className={css.root}>
