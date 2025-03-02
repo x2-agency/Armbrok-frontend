@@ -3,11 +3,10 @@ import type { NextPage } from 'next';
 import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
-import { TitleSection } from '@/shared/ui/title-section';
 import { TITLE_SECTION_ASSET } from '@/view/asset-management/model/asset-managment.constants';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
-import { StatutoryDocuments } from '@/widgets/statutory-documents';
+import { HowWeAreWorkingSection } from '@/widgets/how-we-are-working-section';
 
 import css from './index.module.css';
 import type { FundsPageResponse } from './types/response';
@@ -18,13 +17,13 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	const {
 		heroSection,
 		experienceSection,
-		benefitsSection,
-		wealthManagementSection,
-		howWeAreWorking,
-		documentsSection,
+		investingAdvantages,
+		howFundWorksSection,
+		howWeAreWorkingSection,
+		disclaimerSection,
 		infoSection,
 	} = initialFundsPageData?.data ?? {};
-	console.log(initialFundsPageData?.data.experienceSection);
+
 	return (
 		<>
 			<BannerSection
@@ -39,7 +38,6 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 			/>
 			{experienceSection && (
 				<HeroContainer className={css.hero}>
-					<TitleSection title={experienceSection.title ?? ''} />
 					<ExperienceSection
 						className={css.experience}
 						experience={TITLE_SECTION_ASSET}
@@ -47,32 +45,21 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				</HeroContainer>
 			)}
 			<ExpertSolutionSection
-				items={benefitsSection?.factoids}
-				title={benefitsSection?.title}
+				items={investingAdvantages?.factoids}
+				title={investingAdvantages?.title}
 				withShell
 				backgroundColor="white"
-				className={css.experts}
 			/>
 			<ExpertSolutionSection
-				className={css.managementSection}
-				gridClass={css.management}
 				withShell
-				title={wealthManagementSection?.title}
-				items={wealthManagementSection?.factoids}
+				backgroundColor="white"
+				title={howFundWorksSection?.title}
+				items={howFundWorksSection?.factoids}
 			/>
-			<ExpertSolutionSection
-				className={css.managementSection}
-				gridClass={css.management}
-				withShell
-				title={howWeAreWorking?.title}
-				items={howWeAreWorking?.factoids}
-			/>
-			<StatutoryDocuments
-				documentsSection={documentsSection}
-				columns={2}
-				fileDirection="column"
-			/>
+			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
 			<HelpfulInformation accordionSection={infoSection} />
+
+			<HowWeAreWorkingSection data={disclaimerSection} oneCard />
 		</>
 	);
 };

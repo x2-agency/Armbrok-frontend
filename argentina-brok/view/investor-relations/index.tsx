@@ -36,16 +36,11 @@ export const InvestorRelations: NextPage<
 					description={transparencySection?.description}
 				/>
 			</HeroContainer>
-			<CountriesSection
-				title={residenceCountries?.title}
-				countries={residenceCountries?.countries}
-				additionalText={residenceCountries?.additionalText}
-			/>
+			<CountriesSection residenceCountriesSection={residenceCountries} />
 			<StatutoryDocuments
-				title={shareholdersMeetingsSection?.title}
+				documentsSection={shareholdersMeetingsSection}
 				columns={2}
 				fileDirection="row"
-				documents={shareholdersMeetingsSection?.documents}
 			/>
 			<TitleSection
 				className={css.dividend}
