@@ -52,8 +52,9 @@ export const useGetArticles = (
 		initialPageParam: 1,
 		queryFn: ({ pageParam }) => getArticle({ ...params, page: pageParam }),
 		getNextPageParam: (lastPage: ArticlesData) => {
-			const { page, total } = lastPage.meta?.pagination ?? {};
-			return page && total && page < total ? page + 1 : undefined;
+			const { page, pageCount } = lastPage.meta?.pagination ?? {};
+
+			return page && pageCount && page < pageCount ? page + 1 : undefined;
 		},
 	});
 };

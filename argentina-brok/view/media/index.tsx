@@ -28,12 +28,16 @@ export const Media: NextPage<{
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	const { fetchNextPage, isFetching, hasNextPage, isFetchingNextPage } =
-		useGetArticles({ filters: { category: currentTag } }, initialArticles);
+	const {
+		data,
+		fetchNextPage,
+		isFetching,
+		hasNextPage,
+		isFetchingNextPage,
+		refetch,
+	} = useGetArticles({ filters: { category: currentTag } }, initialArticles);
 
-	const filteredNews = initialArticles?.data?.filter(
-		article => currentTag === 'all' || article.category === currentTag
-	);
+	const filteredNews = data?.pages.flatMap(page => page.data) ?? [];
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
@@ -57,8 +61,8 @@ export const Media: NextPage<{
 	);
 
 	useEffect(() => {
-		fetchNextPage();
-	}, [currentTag, fetchNextPage]);
+		refetch();
+	}, [currentTag, refetch]);
 
 	return (
 		<section className={css.root}>
@@ -67,19 +71,19 @@ export const Media: NextPage<{
 				className={css.tabs}
 				onChangeTab={onChangeTab}
 				currentTag={currentTag}
-				tags={initialArticles?.categories}
+				tags={initialArticles?.categories ?? []}
 				isCasesExists
 				initialTag="all"
 			/>
-			{!isFetchingNextPage ? (
+			{isFetching ? (
+				<Preloader className={css.loader} />
+			) : (
 				<NewsPage
 					newsCard={filteredNews}
 					isFetching={isFetching}
 					hasNextPage={hasNextPage}
 					fetchNextPage={fetchNextPage}
 				/>
-			) : (
-				<Preloader className={css.loader} />
 			)}
 			<Vacancy className={css.vacancy} data={glossaryCard} />
 			<FeedbackForm
