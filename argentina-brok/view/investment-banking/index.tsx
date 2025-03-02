@@ -22,6 +22,8 @@ export const InvestmentBanking: NextPage<
 	securityPapers,
 	latestSecuritiesPlacementsSection,
 }) => {
+	console.log(documentsSection);
+
 	return (
 		<>
 			<BannerSection
@@ -53,10 +55,9 @@ export const InvestmentBanking: NextPage<
 				items={securityPapers}
 			/>
 			<StatutoryDocuments
-				title={documentsSection?.title}
-				documents={documentsSection?.documents}
-				columns={2}
+				documentsSection={documentsSection}
 				fileDirection="column"
+				columns={2}
 			/>
 		</>
 	);
