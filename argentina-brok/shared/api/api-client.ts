@@ -3,7 +3,6 @@ import Cookies from 'js-cookie';
 
 const apiClient = axios.create({
 	baseURL: process.env.NEXT_PUBLIC_API_URL || '',
-	timeout: 10000,
 });
 
 apiClient.interceptors.request.use(
