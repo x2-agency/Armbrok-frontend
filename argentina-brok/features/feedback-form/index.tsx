@@ -73,7 +73,7 @@ export const FeedbackForm = ({
 						disabled={!isValid}
 						className={css.button}
 					>
-						{parser(subscribeButtonText ?? '')}
+						{parser(subscribeButtonText ?? 'Subscribe')}
 					</Button>
 				</form>
 			)}
