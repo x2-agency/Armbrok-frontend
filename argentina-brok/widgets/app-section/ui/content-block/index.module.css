@@ -16,11 +16,13 @@
 	font-weight: 600;
 	color: var(--gray-100-color);
 	@mixin responsive padding-block-end, 10, 16, 16;
+	word-break: break-word;
 }
 
 .description {
 	@mixin font-text16;
 	color: var(--gray-200-color);
+	@mixin responsive padding-block-end, unset, 128, 128;
 }
 
 .bottomWrap {
@@ -68,6 +70,7 @@
 .preview {
 	@mixin font-text12;
 	color: var(--gray-100-color);
+	@mixin responsive max-width, unset, 70, 70;
 
 	@media (max-width: 767px) {
 		order: 2;

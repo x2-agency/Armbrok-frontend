@@ -296,6 +296,7 @@
 	ol,
 	h2,
 	h3,
+	div,
 	figure,
 	p {
 		@mixin responsive width, unset, 800, 800;
@@ -395,5 +396,16 @@
 	ul:has(+ h2),
 	p:has(+ h2) {
 		@mixin responsive padding-block-end, 35, 48, 48;
+	}
+
+	div {
+		@mixin responsive padding, 22, 32, 32;
+		@mixin responsive border-radius, 16, 16, 16;
+		@mixin responsive margin-block, 24, 48, 48;
+		background-color: var(--gray-200-color);
+	}
+
+	div > p {
+		width: unset;
 	}
 }

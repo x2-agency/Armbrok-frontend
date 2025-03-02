@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
+import Link from 'next/link';
 
-import type { AppStoreLogosType } from '@/view/brokerage/types/response';
+import type { AppStoreLogosType } from '@/view/home/types/response';
 
 import css from './index.module.css';
 
@@ -14,13 +15,14 @@ export const Social = ({ appStoreLogos, className }: SocialType) => {
 	return (
 		<div className={cx(css.root, className)}>
 			{appStoreLogos?.map((link, index) => (
-				<a className={css.link} href="#" key={index}>
+				<Link className={css.link} href={link.url} key={index}>
 					<img
+						key={index}
 						className={cx(css.icon, className)}
-						src={link.url}
-						alt="icon media"
+						src={link.media.url}
+						alt={link.alternativeText}
 					/>
-				</a>
+				</Link>
 			))}
 		</div>
 	);

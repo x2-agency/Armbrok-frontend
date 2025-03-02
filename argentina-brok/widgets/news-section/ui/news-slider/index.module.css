@@ -6,8 +6,25 @@
 	@mixin responsive gap, 24, 24, 24;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
+
+	@media (max-width: 767px) {
+		display: flex;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		gap: 1rem;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
-.card {
+.root > * {
 	flex: 0 0 auto;
+	@media (max-width: 767px) {
+		flex: 0 0 100%;
+		scroll-snap-align: center;
+	}
 }

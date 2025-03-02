@@ -1,19 +1,19 @@
 import type {
 	BaseResponse,
+	DocumentsSectionProps,
 	HeroSection,
 	ItemDetail,
-	ResidenceCountriesSection,
-	DocumentsSection,
+	ResidenceCountriesSectionProps,
 	ShareholdersSection,
 } from '@/shared/types/global.types';
 
 export type InvestorRelationsPageData = {
 	heroSection?: HeroSection;
 	transparencySection?: ItemDetail;
-	residenceCountries?: ResidenceCountriesSection;
-	shareholdersMeetingsSection?: DocumentsSection;
+	residenceCountries?: ResidenceCountriesSectionProps;
+	shareholdersMeetingsSection?: DocumentsSectionProps;
 	dividendPolicySection?: ItemDetail;
-	remunerationSection?: DocumentsSection;
+	remunerationSection?: DocumentsSectionProps;
 	shareholdersSection?: ShareholdersSection;
 };
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-export const useVideoPlayer = (src: string, poster: string) => {
+export const useVideoPlayer = (src?: string, poster?: string) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const videoRef = useRef<HTMLVideoElement>(null);
 

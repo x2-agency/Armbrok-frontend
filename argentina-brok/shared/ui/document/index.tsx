@@ -22,20 +22,18 @@ export const Document = ({
 		<article className={cx(css.root, css[direction])}>
 			<div className={css.leftPart}>
 				<img src="/assets/icon/file/file.svg" alt="file" className={css.icon} />
-				<header className={css.header}>
-					{name && <h3 className={css.name}>{parser(name)}</h3>}
-					{file.ext && file.size && (
-						<div className={css.info}>
-							{file.ext && (
-								<p className={css.type}>
-									{parser(file.ext.slice(1).toUpperCase())}
-								</p>
-							)}
-							<div className={css.circle} />
-							{file.size && <p className={css.size}>{file.size * 10}KB</p>}
-						</div>
-					)}
-				</header>
+				{name && <h3 className={css.name}>{parser(name)}</h3>}
+				{file.ext && file.size && (
+					<div className={css.info}>
+						{file.ext && (
+							<p className={css.type}>
+								{parser(file.ext.slice(1).toUpperCase())}
+							</p>
+						)}
+						<div className={css.circle} />
+						{file.size && <p className={css.size}>{file.size * 10}KB</p>}
+					</div>
+				)}
 			</div>
 			<Button variant="next" iconRotate={270} className={css.button}>
 				Download

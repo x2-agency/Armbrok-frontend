@@ -187,12 +187,14 @@ export type QuoteSection = {
 
 /* RUNNING TEXT SECTION */
 
-export type RunningTextSection = {
+export type RunningTextSectionProps = {
 	staticText: string;
-	textArray: Array<{
-		id: number;
-		value: string;
-	}>;
+	textArray: Array<TextArrayType>;
+};
+
+export type TextArrayType = {
+	id: number;
+	value: string;
 };
 
 /* COUNTRIES SECTION */
@@ -205,7 +207,7 @@ export type CountriesSection = {
 
 /* DOCUMENTS SECTION */
 
-export type DocumentsSection = ItemDetail & {
+export type DocumentsSectionProps = ItemDetail & {
 	documents: Array<MediaData>;
 };
 
@@ -216,7 +218,7 @@ export type Accordion = {
 	description: string;
 };
 
-export type AccordionSection = {
+export type AccordionSectionProps = {
 	title: string;
 	accordions: Array<Accordion>;
 };
@@ -369,7 +371,7 @@ export type SubscribeEmailForm = ItemDetail & {
 
 /* RESIDENCE COUNTRIES */
 
-export type ResidenceCountriesSection = {
+export type ResidenceCountriesSectionProps = {
 	title?: string;
 	additionalText?: string;
 	countries?: Array<FlagType>;

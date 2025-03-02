@@ -10,14 +10,14 @@ import type { Article } from '@/shared/types/article';
 
 import css from './index.module.css';
 
-export type NewsCard = {
+export type NewsCardProps = {
 	data: Article;
 	className: string;
 };
 
-export const NewsCard = ({ data, className }: NewsCard) => {
+export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const pathname = usePathname();
-	const isArmbrokMedia = pathname === '/armbrok-media';
+	const isArmbrokMedia = pathname === '/ru/media';
 
 	const { publishDate, title, description, author, category, poster, slug } =
 		data;
@@ -45,16 +45,16 @@ export const NewsCard = ({ data, className }: NewsCard) => {
 							<img
 								className={css.avatar}
 								src={author.avatar?.url ?? ''}
-								alt=""
+								alt={author.avatar?.alternativeText ?? ''}
 							/>
 						</div>
-						<span className={css.name}>{parser(author?.name ?? '')}</span>
+						<span className={css.name}>{parser(author.fullName ?? '')}</span>
 					</div>
 
-					<p className={css.tag}>{category?.name}</p>
+					{category && <p className={css.tag}>{category?.name}</p>}
 				</div>
 			</div>
-			<Link className={css.link} href={`/armbrok-media/${slug}`} />
+			<Link className={css.link} href={`/ru/media/${slug}`} />
 		</article>
 	);
 };

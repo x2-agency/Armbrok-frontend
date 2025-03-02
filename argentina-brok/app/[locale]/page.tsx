@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import { getArticle } from '@/shared/api/get-article';
 import { getHomePage } from '@/shared/api/get-homepage';
 import { Home } from '@/view/home';
 import { HOME_OG } from '@/view/home/types/meta.constants';
@@ -16,14 +15,8 @@ export const metadata: Metadata = {
 
 const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();
-	const initialNewsCard = await getArticle();
 
-	return (
-		<Home
-			initialData={initialHomePageData || undefined}
-			initialNewsCard={initialNewsCard}
-		/>
-	);
+	return <Home initialData={initialHomePageData} />;
 };
 
 export default IndexPage;

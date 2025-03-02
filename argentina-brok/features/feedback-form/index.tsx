@@ -14,15 +14,20 @@ import { SUCCESSFUL_FORM } from './model/feedback-form.constants';
 import { SuccessfulModal } from './ui/successful-modal';
 
 export type FeedbackFormProps = {
-	title: string;
+	title?: string;
 	description?: string;
+	subscribeButtonText?: string;
 };
 
 type FeedbackInputs = {
 	email: string;
 };
 
-export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
+export const FeedbackForm = ({
+	title,
+	description,
+	subscribeButtonText,
+}: FeedbackFormProps) => {
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const {
 		formState: { isValid },
@@ -41,7 +46,7 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 	return (
 		<section className={css.root}>
 			<h2 className={css.title}>
-				{isSuccess ? parser(SUCCESSFUL_FORM.title) : parser(title)}
+				{isSuccess ? parser(SUCCESSFUL_FORM.title) : parser(title ?? '')}
 			</h2>
 			{description && (
 				<p className={css.description}>
@@ -68,7 +73,7 @@ export const FeedbackForm = ({ title, description }: FeedbackFormProps) => {
 						disabled={!isValid}
 						className={css.button}
 					>
-						Subscribe
+						{parser(subscribeButtonText ?? '')}
 					</Button>
 				</form>
 			)}
