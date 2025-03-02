@@ -23,7 +23,16 @@ export interface AuthorType {
 	};
 	email?: string;
 	publishDate?: string;
+	socialMedias: Array<SocialMediasType>;
 }
+
+export type SocialMediasType = {
+	link?: string;
+	icon?: {
+		alternativeText?: string;
+		url?: string;
+	};
+};
 
 export interface Article {
 	slug: string;

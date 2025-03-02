@@ -1,0 +1,28 @@
+.root {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	@mixin responsive gap, 10, 12, 12;
+}
+
+.wrap {
+	position: relative;
+	border: 1px solid var(--gray-500-color);
+	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive padding, 10, 10, 10;
+}
+
+.img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}

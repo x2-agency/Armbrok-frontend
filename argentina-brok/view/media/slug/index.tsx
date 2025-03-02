@@ -9,19 +9,32 @@ import ContentMarkup from '@/shared/ui/content-markup';
 import { NewsSectionHome } from '@/widgets/news-section';
 
 import css from './index.module.css';
+import { Author } from './ui/author';
 
 export const Blog: NextPage<{
 	initialBlogPage: Data;
 }> = initialData => {
-	const { title, description, poster, markup, latestNewsSection } =
-		initialData.initialBlogPage ?? {};
+	const {
+		title,
+		description,
+		poster,
+		markup,
+		latestNewsSection,
+		author,
+		publishDate,
+	} = initialData.initialBlogPage ?? {};
+	console.log(initialData.initialBlogPage);
 	return (
 		<>
 			<div className={css.wrap}>
-				<h1 className={css.title}>{parser(title)}</h1>
+				<h1 className={css.title}>{parser(title ?? '')}</h1>
 				<p className={css.description}>{parser(description)}</p>
 
-				{/* <Author data={[initialData.initialBlogPage.data.author]} /> */}
+				<Author
+					className={css.authorTop}
+					data={author}
+					publishDate={publishDate}
+				/>
 			</div>
 			{poster?.url && (
 				<div className={css.imageWrap}>
@@ -32,8 +45,14 @@ export const Blog: NextPage<{
 			<article className={css.root}>
 				<ContentMarkup extraClass={css.markup} html={markup}></ContentMarkup>
 			</article>
-			{/* <Author data={[initialData.initialBlogPage.data.author]} /> */}
-			<NewsSectionHome data={latestNewsSection} />
+			<Author className={css.authorBottom} data={author} visivleSocial />
+			<NewsSectionHome
+				data={{
+					news: latestNewsSection.articles,
+					title: latestNewsSection.title,
+					description: latestNewsSection.description,
+				}}
+			/>
 		</>
 	);
 };

@@ -15,19 +15,23 @@ export type NewsSectionProps = {
 
 export const NewsSectionHome = ({ data, className }: NewsSectionProps) => {
 	const { title, description, moreButton, news } = data ?? {};
+
+	console.log(moreButton);
 	return (
 		<Container className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(title ?? '')}</h2>
 			{description && <p className={css.description}>{parser(description)}</p>}
 			<NewsSlider className={css.slider} newsSlider={news ?? []} />
-			<Button
-				variant="next"
-				iconRotate={180}
-				className={css.button}
-				href={moreButton?.link}
-			>
-				{moreButton?.text}
-			</Button>
+			{moreButton?.text && (
+				<Button
+					variant="next"
+					iconRotate={180}
+					className={css.button}
+					href={moreButton?.link}
+				>
+					{moreButton?.text}
+				</Button>
+			)}
 		</Container>
 	);
 };

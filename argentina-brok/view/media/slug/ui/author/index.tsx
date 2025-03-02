@@ -1,24 +1,48 @@
 /* eslint-disable @next/next/no-img-element */
+import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import type { AuthorType } from '@/shared/types/article';
+import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
+import { Social } from './social';
 
 export type AuthorData = {
-	data: Array<AuthorType>;
+	data?: AuthorType;
+	publishDate?: string;
+	className?: string;
+	visivleSocial?: boolean;
 };
-export const Author = ({ data }: AuthorData) => {
+
+export const Author = ({
+	data,
+	publishDate,
+	className,
+	visivleSocial = false,
+}: AuthorData) => {
+	const { avatar, fullName, name, position, socialMedias } = data ?? {};
 	return (
-		<div className={css.root}>
-			<div className={css.avatar}>
-				<img className={css.img} src={data[0].avatar?.url} alt="image author" />
+		<Container
+			className={cx(css.root, className, { [css.extraRoot]: visivleSocial })}
+		>
+			<div className={css.avatarWrap}>
+				<div className={css.avatar}>
+					<img
+						className={css.img}
+						src={avatar?.url ?? ''}
+						alt={avatar?.alternativeText ?? ''}
+					/>
+				</div>
+				<div className={css.textContent}>
+					<p className={css.name}>{parser(fullName ?? '')}</p>
+
+					<p className={css.name}>{parser(name ?? '')}</p>
+					<p className={css.position}>{parser(position ?? '')}</p>
+				</div>
 			</div>
-			<div className={css.textContent}>
-				<p className={css.name}>{parser(data[0].name ?? '')}</p>
-				<p className={css.position}>{parser(data[0].position ?? '')}</p>
-			</div>
-			<time className={css.date}>{data[0].publishDate} </time>
-		</div>
+			<time className={css.date}>{parser(publishDate ?? '')} </time>
+			{visivleSocial && <Social social={socialMedias} />}
+		</Container>
 	);
 };

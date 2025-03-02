@@ -19,7 +19,9 @@ export const TitleSection = ({
 	return (
 		<Container category="div" className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(title)}</h2>
-			{description && <p className={css.description}>{parser(description)}</p>}
+			{description && (
+				<div className={css.description}>{parser(description)}</div>
+			)}
 		</Container>
 	);
 };
