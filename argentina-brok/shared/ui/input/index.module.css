@@ -43,6 +43,15 @@
 	font-weight: 700;
 }
 
+.error,
 .required {
 	color: var(--red-600-color);
+}
+
+.error {
+	@mixin font-text14;
+	@mixin responsive padding-block-start, 6, 6, 6;
+	display: block;
+
+	font-weight: 600;
 }

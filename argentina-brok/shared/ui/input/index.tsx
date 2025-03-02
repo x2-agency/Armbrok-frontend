@@ -46,6 +46,11 @@ const InputComponent = (
 				placeholder={placeholder}
 				{...props}
 			/>
+			{props['aria-invalid'] && props['aria-errormessage'] && (
+				<span className={css.error}>
+					{parser(props['aria-errormessage'])} *
+				</span>
+			)}
 		</label>
 	);
 };

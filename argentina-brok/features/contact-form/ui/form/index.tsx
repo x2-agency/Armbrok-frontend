@@ -72,6 +72,7 @@ export const Form = ({
 						required={nameField.required}
 						{...register('name')}
 						aria-invalid={Boolean(errors.name)}
+						aria-errormessage={nameField.errorMessage}
 					/>
 					<Input
 						placeholder={emailField.placeholder}
@@ -86,6 +87,7 @@ export const Form = ({
 							},
 						})}
 						aria-invalid={Boolean(errors.email)}
+						aria-errormessage={emailField.errorMessage}
 					/>
 					<Input
 						placeholder={subjectField.placeholder}
@@ -94,6 +96,7 @@ export const Form = ({
 						required={subjectField.required}
 						{...register('subject')}
 						aria-invalid={Boolean(errors.subject)}
+						aria-errormessage={subjectField.errorMessage}
 					/>
 					<Textarea
 						placeholder={messageField.placeholder}
@@ -101,6 +104,7 @@ export const Form = ({
 						required={messageField.required}
 						{...register('message')}
 						aria-invalid={Boolean(errors.message)}
+						aria-errormessage={messageField.errorMessage}
 					/>
 				</div>
 				<Captcha
