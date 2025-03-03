@@ -45,7 +45,6 @@
 
 .button {
 	@mixin transition;
-	@mixin responsive margin-block-start, 20, 40, 40;
 
 	display: flex;
 	width: 100%;
@@ -54,6 +53,10 @@
 
 	svg path {
 		@mixin transition;
+	}
+
+	&.close {
+		@mixin responsive margin-block-start, 20, 40, 40;
 	}
 
 	@media (hover: hover) {

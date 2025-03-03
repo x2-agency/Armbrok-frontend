@@ -108,7 +108,7 @@ export const AwardsSection = ({
 				<Button
 					variant="next"
 					iconRotate={180}
-					className={css.button}
+					className={cx(css.button, css.close)}
 					onClick={() => toggleOpen(false)}
 				>
 					Сlose awards
