@@ -15,12 +15,24 @@
 	background-color: var(--gray-600-color);
 }
 
-.backgroundColor {
-	/* top: 0;
-	@mixin responsive height, 80, 80, 80;
-	background-color: rgba(195, 195, 195, 0.6); */
-}
-
 .spacing {
 	@mixin responsive margin-block-start, 20, 20, 20;
+}
+
+html[data-header-top-color='white'] {
+	.divider {
+	}
+}
+
+html[data-header-top-color='dark'] {
+	.divider {
+		top: 0;
+		@mixin responsive height, 70, 80, 80;
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(6px);
+
+		@media (max-width: 767px) {
+			align-items: center;
+		}
+	}
 }

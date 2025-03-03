@@ -14,11 +14,12 @@ export const getArticle = async (
 	const { limit = 5, page = 1, filters } = params || {};
 	const response = await apiClient.get('/articles', {
 		params: {
-			...(filters && { 'filters[category]': filters.category }),
-			pagination: {
-				page,
-				pageSize: limit,
-			},
+			...(filters?.category &&
+				filters.category !== 'all' && {
+					'filters[category][slug][$eq]': filters.category,
+				}),
+			'pagination[page]': page,
+			'pagination[pageSize]': limit,
 		},
 	});
 	return response.data as ArticlesData;

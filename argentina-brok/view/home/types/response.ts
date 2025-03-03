@@ -1,6 +1,7 @@
 import type { Article } from '@/shared/types/article';
 import type {
-	AwardSection,
+	AwardsResponse,
+	AwardsSection,
 	BaseResponse,
 	Factoid,
 	HeroSection,
@@ -14,10 +15,11 @@ export type HomePageData = {
 		assetManagementCard?: AssetManagementCardProps;
 		financialSolutionsSection?: FinancialSolutionsSectionProps;
 		investingStepsSection?: InvestingStepsSectionProps;
-		awardSection?: AwardSection;
+		awardSection?: AwardsSection;
 		companiesSection?: CompaniesSectionProps;
 		newsSection?: NewsProps;
 		interviewSection?: InterviewProps;
+		awards?: AwardsResponse;
 	};
 };
 

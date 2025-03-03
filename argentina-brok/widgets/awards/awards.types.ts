@@ -1,11 +1,8 @@
-export type AwardItemProps = {
-	age: string;
-	about: string;
-};
+import type { Award } from '@/shared/types/global.types';
 
 export type AwardSectionProps = {
-	awards: Array<AwardItemProps>;
-	withViewAll?: boolean;
+	awards?: Array<Award>;
 	title?: string;
 	className?: string;
+	buttonText?: string;
 };

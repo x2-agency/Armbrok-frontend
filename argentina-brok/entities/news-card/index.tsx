@@ -17,7 +17,9 @@ export type NewsCardProps = {
 
 export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const pathname = usePathname();
-	const isArmbrokMedia = pathname === '/ru/media';
+	const locale = pathname.split('/')[1];
+
+	const isArmbrokMedia = pathname === `/${locale}/media`;
 
 	const { publishDate, title, description, author, category, poster, slug } =
 		data;

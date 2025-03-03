@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 
-import { MOCK_AWARDS } from '@/shared/model/mock-awards';
 import type { SliderItemWithText } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -27,6 +26,8 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	corporateEventsSection,
 	documentsSection,
 	companyDetails,
+	awardsSection,
+	awards,
 }) => {
 	return (
 		<>
@@ -48,11 +49,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					backgroundColor="white"
 				/>
 			</HeroContainer>
-			<AwardsSection
-				title={MOCK_AWARDS.title}
-				awards={MOCK_AWARDS.awards}
-				withViewAll
-			/>
+			<AwardsSection title={awardsSection?.title} awards={awards?.data} />
 			<MembershipSection
 				title={membershipSection?.title}
 				items={membershipSection?.companies}

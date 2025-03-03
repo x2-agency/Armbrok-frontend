@@ -70,7 +70,6 @@
 
 .next {
 	@mixin responsive gap, 8, 8, 8;
-	@mixin responsive max-width, unset, 204, 204;
 	color: var(--red-600-color);
 
 	.icon path {

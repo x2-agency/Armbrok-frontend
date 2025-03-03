@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { getAwards } from '@/shared/api/get-awards';
 import { getHomePage } from '@/shared/api/get-homepage';
 import { Home } from '@/view/home';
 import { HOME_OG } from '@/view/home/types/meta.constants';
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
 
 const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();
+	const initialAwards = await getAwards({ pageSize: 4 });
+
+	initialHomePageData.data.awards = initialAwards;
 
 	return <Home initialData={initialHomePageData} />;
 };
