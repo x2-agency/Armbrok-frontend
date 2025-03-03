@@ -69,6 +69,10 @@
 
 .button {
 	height: fit-content;
+
+	@media (max-width: 767px) {
+		margin-inline: auto;
+	}
 }
 
 .root.column {

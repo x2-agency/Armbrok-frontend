@@ -40,4 +40,9 @@
 
 		max-width: 100%;
 	}
+
+	a {
+		color: var(--red-500-color);
+		text-decoration: underline;
+	}
 }

@@ -19,6 +19,7 @@ export const InvestorRelations: NextPage<
 	shareholdersMeetingsSection,
 	dividendPolicySection,
 	disclaimer,
+	remunerationSection,
 }) => {
 	return (
 		<>
@@ -49,6 +50,7 @@ export const InvestorRelations: NextPage<
 				title={dividendPolicySection?.title ?? ''}
 				description={dividendPolicySection?.description}
 			/>
+			<StatutoryDocuments columns={1} documentsSection={remunerationSection} />
 			<Disclaimer disclaimerMarkup={disclaimer} />
 		</>
 	);
