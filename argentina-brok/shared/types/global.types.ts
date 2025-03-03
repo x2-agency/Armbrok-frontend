@@ -451,3 +451,20 @@ export type ContactForm = ItemDetail & {
 	subjectField: ContactInput;
 	messageField: ContactInput;
 };
+
+/* AWARDS */
+
+export type AwardsSection = {
+	title?: string;
+	buttonText?: string;
+};
+
+export type Award = {
+	startYear: number;
+	endYear?: number;
+	description: string;
+};
+
+export type AwardsResponse = {
+	data: Array<Award>;
+};

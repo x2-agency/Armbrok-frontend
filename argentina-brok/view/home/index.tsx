@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 
-import { MOCK_AWARDS } from '@/shared/model/mock-awards';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
@@ -29,6 +28,8 @@ export const Home: NextPage<{ initialData?: HomePageData }> = ({
 		companiesSection,
 		newsSection,
 		interviewSection,
+		awardSection,
+		awards,
 	} = initialData?.data ?? {};
 
 	return (
@@ -58,11 +59,7 @@ export const Home: NextPage<{ initialData?: HomePageData }> = ({
 			<AssetManagment data={assetManagementCard} />
 			<Corporate cards={financialSolutionsSection} />
 			<Start data={investingStepsSection} />
-			<AwardsSection
-				title={companiesSection?.title}
-				awards={MOCK_AWARDS.awards}
-				withViewAll
-			/>
+			<AwardsSection title={awardSection?.title} awards={awards?.data} />
 			<CompaniesGroup data={companiesSection} />
 			<NewsSectionHome data={newsSection} />
 			<InteractiveVideo data={interviewSection} />

@@ -7,9 +7,11 @@ import type {
 	CompanyDetailsSection,
 	MembershipSection,
 	CompanyStructureSection,
-	DocumentsSection,
+	DocumentsSectionProps,
 	ProjectsSection,
 	OfficeSliderSection,
+	AwardSection,
+	AwardsResponse,
 } from '@/shared/types/global.types';
 
 export type AboutUsPageData = {
@@ -17,12 +19,14 @@ export type AboutUsPageData = {
 	valuesSection?: ValuesSection;
 	companiesSection?: CompaniesSection;
 	corporateEventsSection?: CorporateEventsSection;
-	documentsSection?: DocumentsSection;
+	documentsSection?: DocumentsSectionProps;
 	companyDetails?: CompanyDetailsSection;
 	membershipSection?: MembershipSection;
 	projectsSection?: ProjectsSection;
 	companyStructureSection?: CompanyStructureSection;
 	significantProjectsSection?: OfficeSliderSection;
+	awardsSection?: AwardSection;
+	awards?: AwardsResponse;
 };
 
 export type AboutUsPageResponse = BaseResponse<AboutUsPageData>;
