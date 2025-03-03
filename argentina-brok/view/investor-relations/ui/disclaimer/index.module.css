@@ -1,0 +1,33 @@
+.root {
+	@mixin responsive padding-block-start, 36, 72, 72;
+	@mixin responsive padding-block-end, 60, 120, 120;
+	@mixin responsive max-width, 320, 700, 700;
+
+	margin-inline: auto;
+
+	* {
+		@mixin font-text16;
+	}
+
+	p:has(+ p),
+	p:has(+ ul),
+	p:has(+ ol),
+	p:has(+ h1),
+	p:has(+ h2),
+	p:has(+ h3),
+	p:has(+ h4),
+	p:has(+ h5),
+	p:has(+ h6) {
+		@mixin responsive padding-block-end, 16, 24, 24;
+	}
+
+	ul,
+	ol {
+		@mixin responsive padding-inline-start, 25, 25, 25;
+		@mixin responsive gap, 10, 15, 15;
+
+		list-style: disc;
+		display: flex;
+		flex-direction: column;
+	}
+}
