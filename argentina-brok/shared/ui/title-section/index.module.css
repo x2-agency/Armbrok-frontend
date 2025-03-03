@@ -42,7 +42,15 @@
 	}
 
 	a {
+		@mixin transition;
+
 		color: var(--red-500-color);
 		text-decoration: underline;
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--red-600-color);
+			}
+		}
 	}
 }
