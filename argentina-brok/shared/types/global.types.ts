@@ -460,6 +460,7 @@ export type AwardsSection = {
 };
 
 export type Award = {
+	id: number;
 	startYear: number;
 	endYear?: number;
 	description: string;

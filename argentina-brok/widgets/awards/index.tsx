@@ -43,8 +43,11 @@ export const AwardsSection = ({
 		if (isOpen && !isFetched) {
 			const fetchData = async () => {
 				try {
-					const response = await getAllAwards();
-					setAllAwards(response.data);
+					const response: { data: Array<Award> } = await getAllAwards();
+					const filteredAwards = response.data.filter(
+						award => !awards?.some(a => a.id === award.id)
+					);
+					setAllAwards(filteredAwards);
 					toggleFetched(true);
 				} catch (error) {
 					console.error(error);
