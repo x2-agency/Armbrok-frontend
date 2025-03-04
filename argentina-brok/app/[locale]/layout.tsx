@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 
 const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 	const messages = await getMessages();
-	const locale = (await params).locale.toLowerCase();
+	const locale = (await params).locale;
 	setRequestLocale(locale);
 
 	return (

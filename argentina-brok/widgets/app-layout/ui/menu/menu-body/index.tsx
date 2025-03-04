@@ -1,3 +1,6 @@
+import { useTranslations } from 'next-intl';
+
+import { LOCALE_KEYS } from '@/i18n/locale-keys';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 import type { MenuBodyProps } from '@/widgets/app-layout/types/menu.types';
@@ -5,6 +8,9 @@ import type { MenuBodyProps } from '@/widgets/app-layout/types/menu.types';
 import css from './index.module.css';
 
 export const MenuBody = ({ links }: MenuBodyProps) => {
+	const { header } = LOCALE_KEYS;
+	const t = useTranslations(header.root);
+
 	return (
 		<Container className={css.root}>
 			<nav className={css.links}>
@@ -21,7 +27,7 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 			</nav>
 			<ul className={css.buttons}>
 				<Button href="#" variant="subtle" className={css.login}>
-					Log in
+					{t(`${header.loginButton.root}.text`)}
 				</Button>
 				<Button
 					href="#"
@@ -29,7 +35,7 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 					category="big"
 					className={css.account}
 				>
-					Open account
+					{t(`${header.openAccountButton.root}.text`)}
 				</Button>
 			</ul>
 		</Container>

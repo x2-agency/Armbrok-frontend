@@ -1,3 +1,120 @@
 {
-
+  "header": {
+    "loginButton": {
+      "text": "Log in",
+      "link": "#"
+    },
+    "openAccountButton": {
+      "text": "Open account",
+      "link": "#"
+    },
+    "services": {
+      "text": "Services",
+      "link": "/services"
+    },
+    "investorRelations": {
+      "text": "Investor Relations",
+      "link": "/investor-relations"
+    },
+    "media": {
+      "text": "Media",
+      "link": "/media"
+    },
+    "aboutUs": {
+      "text": "About us",
+      "link": "/about-us"
+    },
+    "contactUs": {
+      "text": "Contact us",
+      "link": "/armbrok-contact-page"
+    }
+  },
+  "footer": {
+    "links": {
+      "productsAndServices": {
+        "text": "Products&nbsp;and&nbsp;Services",
+        "brokerage": {
+          "text": "Brokerage",
+          "link": "/brokerage"
+        },
+        "assetManagement": {
+          "text": "Asset Management",
+          "link": "/asset-management"
+        },
+        "investmentFunds": {
+          "text": "Investment Funds",
+          "link": "/funds"
+        },
+        "investmentBanking": {
+          "text": "Investment Banking",
+          "link": "/investment-banking"
+        },
+        "depositoryRegistrar": {
+          "text": "Depositary &amp;&nbsp;Registrar",
+          "link": "/depositary-services"
+        }
+      },
+      "aboutUs": {
+        "text": "About us",
+        "generalInformation": {
+          "text": "General Information",
+          "link": "#"
+        },
+        "career": {
+          "text": "Career",
+          "link": "/career-at-armbrock"
+        }
+      },
+      "investorRelations": {
+        "text": "Investor relations"
+      },
+      "media": {
+        "text": "Media",
+        "articles": {
+          "text": "Articles",
+          "link": "/media?category=articles"
+        },
+        "investmentIdeas": {
+          "text": "Investment Ideas",
+          "link": "/media?category=invest-ideas"
+        },
+        "companyNews": {
+          "text": "Company News",
+          "link": "/media?category=company-news"
+        }
+      },
+      "regulation": {
+        "text": "Regulation",
+        "lawsLegalActs": {
+          "text": "Laws &amp;&nbsp;Legal Acts",
+          "link": "#"
+        },
+        "internalRules": {
+          "text": "Internal Rules",
+          "link": "#"
+        },
+        "stockExchangeRules": {
+          "text": "Stock Exchange and Central Depositary Rules",
+          "link": "#"
+        }
+      },
+      "contactUs": {
+        "text": "Contact Us"
+      }
+    },
+    "disclaimer": "<p>Armbrok is&nbsp;not responsible for the accuracy and reliability of&nbsp;the information and/or advertisements presented on&nbsp;the third party websites linked from this website and assumes no&nbsp;responsibility for the consequences arising from the use of&nbsp;the said information.</p><p>In&nbsp;case of&nbsp;any discrepancy between the information published in&nbsp;English and Russian, the Armenian version shall prevail.</p><p>Helpful links: cba.am, abcfinance.am, fininfo.am, fsm.am</p><p>Armbrok is&nbsp;regulated by&nbsp;the Central Bank of&nbsp;Republic of&nbsp;Armenia.</p><p>License Number: 10, issued on&nbsp;04.11.2008.</p>",
+    "updateLabel": "Last update:"
+  },
+  "notFound": {
+    "title": "Oops!<br /> Page Not Found \uD83D\uDE15",
+    "description": "It&nbsp;looks like the page you&rsquo;re looking for doesn&rsquo;t exist or&nbsp;has been moved.<br /> Please check the URL or&nbsp;head back to&nbsp;the homepage. We&rsquo;re here to&nbsp;help<br /> you find your way!",
+    "button": {
+      "text": "Go to homepage",
+      "link": "/"
+    }
+  },
+  "serverError": {
+    "title": "Something Went Wrong \uD83D\uDE35",
+    "description": "We&rsquo;re experiencing a&nbsp;server issue right now. Please try refreshing the page<br /> or&nbsp;come back later. If&nbsp;the problem persists, contact support&nbsp;&mdash; we&rsquo;re<br /> working to&nbsp;fix it&nbsp;as&nbsp;soon as&nbsp;possible!"
+  }
 }
