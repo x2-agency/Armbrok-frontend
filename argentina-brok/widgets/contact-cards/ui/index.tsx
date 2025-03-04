@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import type { ContactCardItem } from '@/shared/types/global.types';
 
 import css from './index.module.css';

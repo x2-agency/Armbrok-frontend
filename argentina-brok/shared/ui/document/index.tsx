@@ -2,8 +2,8 @@
 'use client';
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import type { MediaData } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 

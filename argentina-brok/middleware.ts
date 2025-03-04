@@ -58,6 +58,8 @@ export const config = {
 		 * - Static files (e.g., /_next/static/...)
 		 * - Files in the public folder (e.g., /favicon.ico)
 		 */
+		'/', '/(ru|hy|en)/:path*',
 		'/((?!api|_next/static|_next/image|favicon.ico|images|assets).*)',
+
 	],
 };

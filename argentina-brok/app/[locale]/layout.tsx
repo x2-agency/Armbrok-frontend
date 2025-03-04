@@ -1,46 +1,48 @@
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import type { PropsWithChildren } from 'react';
 
+import { Locales } from '@/i18n/routing';
 import { RobotoFonts } from '@/shared/config/localFont';
 import { LayoutProvider } from '@/shared/hooks/use-layout-context';
 import '@/shared/styles/mixins/mixin.css';
 import { Favicons } from '@/view/documents/ui/favicons';
 import { AppLayout } from '@/widgets/app-layout';
 import { Providers } from '@/widgets/app-layout/providers';
+
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import './global.css';
-
-export const LOCALE_CODES = {
-	EN: 'en',
-	RU: 'ru',
-	HY: 'hy',
-};
+import '@/app/[locale]/global.css';
 
 type RootLayoutProps = PropsWithChildren & {
-	params: { locale: keyof typeof LOCALE_CODES };
+	params: { locale: keyof typeof Locales };
 };
 
 export async function generateStaticParams() {
-	return Object.values(LOCALE_CODES).map(locale => ({ locale }));
+	return Object.values(Locales).map(locale => ({ locale }));
 }
 
-const RootLayout = ({
+const RootLayout = async ({
 	children,
 	params: { locale },
 }: Readonly<RootLayoutProps>) => {
+	const messages = await getMessages();
+
 	return (
 		<html lang={locale}>
 			<head>
 				<Favicons />
 			</head>
 			<body className={RobotoFonts.className}>
-				<LayoutProvider>
-					<Providers>
-						<AppLayout>{children}</AppLayout>
-					</Providers>
-				</LayoutProvider>
+				<NextIntlClientProvider locale={locale} messages={messages}>
+					<LayoutProvider>
+						<Providers>
+							<AppLayout>{children}</AppLayout>
+						</Providers>
+					</LayoutProvider>
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	);

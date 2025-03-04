@@ -1,6 +1,6 @@
 import cx from 'clsx';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import SearchSvg from '@/public/assets/icons/header/search.svg';
 
 import css from './index.module.css';

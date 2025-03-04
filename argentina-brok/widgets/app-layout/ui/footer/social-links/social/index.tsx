@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import type { AppStoreLogosType } from '@/view/home/types/response';
 
 import css from './index.module.css';

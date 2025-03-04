@@ -1,11 +1,12 @@
 'use client';
 
 import type { NextPage } from 'next';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
 
 import { FeedbackForm } from '@/features/feedback-form';
 import { useGetArticles } from '@/features/get-articles/api/use-get-articles';
+import { usePathname, useRouter } from '@/i18n/navigation';
 import type { ArticlesData } from '@/shared/types/article';
 import type { MediaPageProps } from '@/shared/types/media-page';
 import { Preloader } from '@/shared/ui/preloader';
