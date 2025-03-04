@@ -7,6 +7,8 @@ export const metadata: Metadata = {
 	title: 'Asset Management',
 };
 
+export const revalidate = 10;
+
 const AssetManagementPage = async () => {
 	try {
 		const inititalAssetManagementPageData = await getAssetManagementPage();

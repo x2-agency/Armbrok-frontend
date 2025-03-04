@@ -1,27 +1,16 @@
-/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 
 import { Link } from '@/i18n/navigation';
-import type { AppStoreLogosType } from '@/view/home/types/response';
+import type { IconListProps } from '@/widgets/app-layout/model/social.constants';
 
 import css from './index.module.css';
 
-export type SocialType = {
-	appStoreLogos?: Array<AppStoreLogosType>;
-	className: string;
-};
-
-export const Social = ({ appStoreLogos, className }: SocialType) => {
+export const Social = ({ items, className }: IconListProps) => {
 	return (
 		<div className={cx(css.root, className)}>
-			{appStoreLogos?.map((link, index) => (
-				<Link className={css.link} href={link.url} key={index}>
-					<img
-						key={index}
-						className={cx(css.icon, className)}
-						src={link.media.url}
-						alt={link.alternativeText}
-					/>
+			{items?.map((link, index) => (
+				<Link key={index} target="_blank" href={link.href || '#'}>
+					{link.SvgIcon && <link.SvgIcon className={css.svg} />}
 				</Link>
 			))}
 		</div>

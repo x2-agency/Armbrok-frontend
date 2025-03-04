@@ -19,7 +19,7 @@
 .title {
 	@mixin font-h6;
 	font-weight: 600;
-
+	justify-content: flex-start;
 	@mixin res padding-block-end, 2.667rem, 1.667rem, 1.5rem;
 }
 

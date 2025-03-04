@@ -14,11 +14,15 @@
 	}
 }
 
-.store {
-	@mixin res gap, 2.667rem, 0.556rem, 0.5rem; /* 10px 8px 8px */
-	img {
-		@mixin res height, 10.133rem, 2.639rem, 2.375rem; /* 38px 108 */
-	}
+.appStore {
+	display: flex;
+	flex-direction: row;
+	@mixin responsive gap, 8, 8, 8;
+	@mixin responsive height, 38, 38, 38;
+}
+
+.svg {
+	height: 100%;
 }
 
 .media {

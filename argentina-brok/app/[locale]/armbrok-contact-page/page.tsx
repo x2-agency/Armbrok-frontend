@@ -7,6 +7,8 @@ import type { ArmbrokContactPageResponse } from '@/view/armbrok-contact/types/re
 
 export const metadata: Metadata = ARMBROK_CONTACT_META;
 
+export const revalidate = 10;
+
 const ArmbrokContactPage = async () => {
 	const inititalContactPageData: ArmbrokContactPageResponse =
 		await getContactPage();

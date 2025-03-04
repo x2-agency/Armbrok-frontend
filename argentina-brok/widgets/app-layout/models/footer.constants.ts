@@ -1,19 +1,22 @@
 export interface NavigationType {
 	id: number;
-	title: string;
+	title: ItemType;
 	column?: Array<ItemType>;
 }
 
 export interface ItemType {
-	id: number;
-	text: string;
+	id?: number;
+	text?: string;
 	href?: string;
 }
 
 export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 	{
 		id: 1,
-		title: 'Products&nbsp;and&nbsp;Services',
+		title: {
+			text: 'Products&nbsp;and&nbsp;Services',
+			href: '/depositary-services',
+		},
 		column: [
 			{ id: 1, text: 'Brokerage', href: '/brokerage' },
 			{ id: 2, text: 'Asset Management', href: '/asset-management' },
@@ -28,8 +31,10 @@ export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 	},
 	{
 		id: 2,
-		title: 'About us',
-
+		title: {
+			text: 'About us',
+			href: '/about-us',
+		},
 		column: [
 			{ id: 1, text: 'General Information', href: '#' },
 			{ id: 2, text: 'Career', href: '/careers-at-armbrock' },
@@ -37,12 +42,15 @@ export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 	},
 	{
 		id: 3,
-		title: 'Investor relations',
+		title: {
+			text: 'Investor relations',
+			href: 'investor-relations',
+		},
 		column: [],
 	},
 	{
 		id: 4,
-		title: 'Media',
+		title: { text: 'Media', href: 'media' },
 		column: [
 			{
 				id: 1,
@@ -55,16 +63,24 @@ export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 	},
 	{
 		id: 5,
-		title: 'Regulation',
+		title: { text: 'Regulation', href: '/careers-at-armbrock' },
 		column: [
-			{ id: 1, text: 'Laws &amp;&nbsp;Legal Acts', href: '#' },
-			{ id: 2, text: 'Internal Rules', href: '#' },
-			{ id: 3, text: 'Stock Exchange and Central Depositary Rules', href: '#' },
+			{
+				id: 1,
+				text: 'Laws &amp;&nbsp;Legal Acts',
+				href: '/careers-at-armbrock',
+			},
+			{ id: 2, text: 'Internal Rules', href: '/careers-at-armbrock' },
+			{
+				id: 3,
+				text: 'Stock Exchange and Central Depositary Rules',
+				href: '/careers-at-armbrock',
+			},
 		],
 	},
 	{
 		id: 6,
-		title: 'Contact Us',
+		title: { text: 'Contact us', href: '/armbrok-contact-page' },
 		column: [],
 	},
 ];

@@ -7,6 +7,8 @@ import { CAREERS_AT_ARMBROK_META } from '@/view/careers-at-armbrock/models/caree
 
 export const metadata: Metadata = CAREERS_AT_ARMBROK_META;
 
+export const revalidate = 10;
+
 const CareersAtArmbrockPage = async () => {
 	const initialCareersAtArmbrockPageData = await getCareersAtArmbrockPage();
 	const initalVacanciesData = await getVacancies();

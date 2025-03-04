@@ -7,6 +7,8 @@ import { INVESTMENT_BANKING_META } from '@/view/investment-banking/models/invest
 
 export const metadata: Metadata = INVESTMENT_BANKING_META;
 
+export const revalidate = 10;
+
 const InvestmentBankingPage = async () => {
 	const initialInvestmentBankingPageData = await getInvestmentBankingPage();
 	const initialSecurityPapersData = await getSecurityPapers();

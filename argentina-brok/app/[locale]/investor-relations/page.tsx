@@ -6,6 +6,8 @@ import { INVESTOR_RELATIONS_META } from '@/view/investor-relations/models/invest
 
 export const metadata: Metadata = INVESTOR_RELATIONS_META;
 
+export const revalidate = 10;
+
 const InvestorRelationsPage = async () => {
 	const initialInvestorRelationsPageData = await getInvestorRelations();
 
