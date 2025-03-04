@@ -63,18 +63,18 @@ export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 	},
 	{
 		id: 5,
-		title: { text: 'Regulation', href: '/careers-at-armbrock' },
+		title: { text: 'Regulation', href: '#' },
 		column: [
 			{
 				id: 1,
 				text: 'Laws &amp;&nbsp;Legal Acts',
-				href: '/careers-at-armbrock',
+				href: '#',
 			},
-			{ id: 2, text: 'Internal Rules', href: '/careers-at-armbrock' },
+			{ id: 2, text: 'Internal Rules', href: '#' },
 			{
 				id: 3,
 				text: 'Stock Exchange and Central Depositary Rules',
-				href: '/careers-at-armbrock',
+				href: '#',
 			},
 		],
 	},

@@ -9,7 +9,12 @@ export const Social = ({ items, className }: IconListProps) => {
 	return (
 		<div className={cx(css.root, className)}>
 			{items?.map((link, index) => (
-				<Link key={index} target="_blank" href={link.href || '#'}>
+				<Link
+					className={css.link}
+					key={index}
+					target="_blank"
+					href={link.href || '#'}
+				>
 					{link.SvgIcon && <link.SvgIcon className={css.svg} />}
 				</Link>
 			))}

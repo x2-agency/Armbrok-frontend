@@ -7,7 +7,7 @@
 }
 
 @media (hover: hover) {
-	.svg:hover rect:hover {
+	.link:hover rect {
 		color: var(--gray-500-color);
 		transition: color 0.3s ease;
 	}

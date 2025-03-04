@@ -6,5 +6,11 @@ export const RobotoFonts = localFont({
 			weight: '400',
 			style: 'normal',
 		},
+
+		{
+			path: '../../../public/fonts/Roboto-medium.woff2',
+			weight: '500',
+			style: 'normal',
+		},
 	],
 });
