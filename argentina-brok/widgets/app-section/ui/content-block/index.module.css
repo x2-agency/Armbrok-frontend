@@ -1,7 +1,6 @@
 .root {
 	display: flex;
 	flex-direction: column;
-	@mixin responsive max-width, unset, 525, 525;
 	height: 100%;
 }
 
@@ -20,15 +19,24 @@
 }
 
 .description {
-	@mixin font-text16;
-	color: var(--gray-200-color);
+	@mixin responsive max-width, 336, 336, 336;
 	@mixin responsive padding-block-end, unset, 128, 128;
+	@mixin font-text16;
+
+	color: var(--gray-100-color);
+	opacity: 0.7;
+
+	@media (max-width: 767px) {
+		padding-block-end: unset;
+		max-width: unset;
+	}
 }
 
 .bottomWrap {
+	@mixin responsive gap, 16, 24, 24;
+
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	margin-block-start: auto;
 
 	@media (max-width: 767px) {
@@ -50,11 +58,13 @@
 	align-items: center;
 	justify-content: space-between;
 	@mixin responsive gap, 4, 12, 12;
-	@mixin responsive padding-block, 4, 9, 9;
-	@mixin responsive padding-inline, 4, 9, 9;
+	@mixin responsive padding-block, 4, 12, 12;
+	@mixin responsive padding-inline, 4, 12, 12;
 	@mixin responsive border-radius, 12, 12, 12;
+	@mixin responsive border-width, 1, 1, 1;
 	background-color: #ffffff26;
-	border: 1px solid var(--gray-200-color);
+	border-color: #ffffff33;
+	border-style: solid;
 
 	@media (max-width: 767px) {
 		flex-direction: column;
@@ -69,11 +79,13 @@
 
 .preview {
 	@mixin font-text12;
+
 	color: var(--gray-100-color);
-	@mixin responsive max-width, unset, 70, 70;
+	opacity: 0.7;
 
 	@media (max-width: 767px) {
 		order: 2;
+		max-width: unset;
 	}
 }
 

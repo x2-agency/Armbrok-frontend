@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { getAwards } from '@/shared/api/get-awards';
 import { getHomePage } from '@/shared/api/get-homepage';
+import { REVALIDATE_VALUE } from '@/shared/config/revalidate';
 import { Home } from '@/view/home';
 import { HOME_OG } from '@/view/home/types/meta.constants';
 
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
 	description: HOME_OG.description,
 	openGraph: HOME_OG,
 };
+
+export const revalidate = REVALIDATE_VALUE;
 
 const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();

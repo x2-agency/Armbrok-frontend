@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 
 import { getInvestorRelations } from '@/shared/api/get-investor-relations';
+import { REVALIDATE_VALUE } from '@/shared/config/revalidate';
 import { InvestorRelations } from '@/view/investor-relations';
 import { INVESTOR_RELATIONS_META } from '@/view/investor-relations/models/investor-relations.constants';
 
 export const metadata: Metadata = INVESTOR_RELATIONS_META;
+
+export const revalidate = REVALIDATE_VALUE;
 
 const InvestorRelationsPage = async () => {
 	const initialInvestorRelationsPageData = await getInvestorRelations();
