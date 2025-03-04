@@ -11,7 +11,7 @@ import type { Article } from '@/shared/types/article';
 import css from './index.module.css';
 
 export type NewsCardProps = {
-	data: Article;
+	data?: Article;
 	className: string;
 };
 
@@ -20,9 +20,13 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const locale = pathname.split('/')[1];
 
 	const isArmbrokMedia = pathname === `/${locale}/media`;
+	const isHomePage = pathname === `/${locale}`;
 
 	const { publishDate, title, description, author, category, poster, slug } =
-		data;
+		data ?? {};
+
+	const truncatedDescription =
+		isHomePage && description ? `${description.slice(0, 253)}...` : description;
 
 	return (
 		<article
@@ -34,23 +38,23 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 				<img src={poster.url} className={css.poster} />
 			)}
 			<div className={css.textWrap}>
-				<time className={css.time}>{publishDate}</time>
+				<time className={css.time}>{publishDate ?? ''}</time>
 				<h5
 					className={cx(css.title, { [css.armbrokMediaTitle]: isArmbrokMedia })}
 				>
 					{parser(title ?? '')}
 				</h5>
-				<p className={css.description}>{parser(description ?? '')}</p>
+				<p className={css.description}>{parser(truncatedDescription ?? '')}</p>
 				<div className={css.wrap}>
 					<div className={css.authorWrap}>
 						<div className={css.imgWrap}>
 							<img
 								className={css.avatar}
-								src={author.avatar?.url ?? ''}
-								alt={author.avatar?.alternativeText ?? ''}
+								src={author?.avatar?.url ?? ''}
+								alt={author?.avatar?.alternativeText ?? ''}
 							/>
 						</div>
-						<span className={css.name}>{parser(author.fullName ?? '')}</span>
+						<span className={css.name}>{parser(author?.fullName ?? '')}</span>
 					</div>
 
 					{category && <p className={css.tag}>{category?.name}</p>}

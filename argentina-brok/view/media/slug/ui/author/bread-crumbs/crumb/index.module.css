@@ -1,0 +1,9 @@
+.title,
+.link {
+	@mixin font-text14;
+}
+
+.arrow {
+	@mixin responsive width, 16, 16, 16;
+	@mixin responsive height, 16, 16, 16;
+}

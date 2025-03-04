@@ -12,9 +12,26 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './global.css';
 
-const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
+export const LOCALE_CODES = {
+	EN: 'en',
+	RU: 'ru',
+	HY: 'hy',
+};
+
+type RootLayoutProps = PropsWithChildren & {
+	params: { locale: keyof typeof LOCALE_CODES };
+};
+
+export async function generateStaticParams() {
+	return Object.values(LOCALE_CODES).map(locale => ({ locale }));
+}
+
+const RootLayout = ({
+	children,
+	params: { locale },
+}: Readonly<RootLayoutProps>) => {
 	return (
-		<html lang="en">
+		<html lang={locale}>
 			<head>
 				<Favicons />
 			</head>

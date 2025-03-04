@@ -44,9 +44,13 @@ export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 		id: 4,
 		title: 'Media',
 		column: [
-			{ id: 1, text: 'Articles', href: '#' },
-			{ id: 2, text: 'Investment Ideas', href: '#' },
-			{ id: 3, text: 'Company News', href: '#' },
+			{
+				id: 1,
+				text: 'Articles',
+				href: `/media?category=articles`,
+			},
+			{ id: 2, text: 'Investment Ideas', href: '/media?category=invest-ideas' },
+			{ id: 3, text: 'Company News', href: '/media?category=company-news' },
 		],
 	},
 	{

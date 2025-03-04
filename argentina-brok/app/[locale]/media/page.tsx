@@ -1,6 +1,11 @@
+import type { Metadata } from 'next';
+
 import { getArticle } from '@/shared/api/get-article';
 import { getMediaPage } from '@/shared/api/get-media-page';
 import { Media } from '@/view/media';
+import { MEDIA_META } from '@/view/media/model/media.constants';
+
+export const metadata: Metadata = MEDIA_META;
 
 const MediaPage = async ({
 	searchParams,
