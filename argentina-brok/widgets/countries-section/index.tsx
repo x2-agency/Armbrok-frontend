@@ -25,7 +25,7 @@ export const CountriesSection = ({
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<ul className={css.countries}>
 				{countries.map((country, index) => (
-					<li key={index}>
+					<li key={index} className={css.countryItem}>
 						<CountryItem name={country.name} flag={country.flag} />
 					</li>
 				))}

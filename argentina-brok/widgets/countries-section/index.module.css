@@ -22,7 +22,7 @@
 	justify-content: space-between;
 
 	@media (max-width: 767px) {
-        @mixin responsive gap, 20;
+		@mixin responsive gap, 20;
 
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -33,4 +33,8 @@
 	@mixin font-text16;
 
 	color: var(--gray-600-color);
+}
+
+.countryItem {
+	@mixin responsive width, 150, 150, 150;
 }

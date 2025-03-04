@@ -15,6 +15,7 @@ export type InvestorRelationsPageData = {
 	dividendPolicySection?: ItemDetail;
 	remunerationSection?: DocumentsSectionProps;
 	shareholdersSection?: ShareholdersSection;
+	disclaimer?: string;
 };
 
 export type InvestorRelationsPageResponse =
