@@ -9,7 +9,7 @@ export const OPEN_ACC_BUTTON = 'Open account';
 export const HOME_LINK = '/';
 
 export const NAVIGATION_LINKS = [
-	{ text: 'Services', href: '/services' },
+	{ text: 'Services', href: '/depositary-services' },
 	{ text: 'Investor Relations', href: '/investor-relations' },
 	{ text: 'Media', href: '/media' },
 	{ text: 'About us', href: '/about-us' },

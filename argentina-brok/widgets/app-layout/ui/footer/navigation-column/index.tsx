@@ -10,7 +10,13 @@ export const NavigationColumn = () => {
 		<nav className={css.root}>
 			{NAVIGATION_TABLE_DATA.map(item => (
 				<div key={item.id} className={css.column}>
-					<h6 className={css.title}>{parser(item.title)}</h6>
+					<Button
+						variant="subtle"
+						href={item.title.href ?? ''}
+						className={css.title}
+					>
+						{parser(item.title.text ?? '')}
+					</Button>
 
 					{item.column && (
 						<ul className={css.list}>
@@ -21,7 +27,7 @@ export const NavigationColumn = () => {
 										href={subItem.href ?? ''}
 										className={css.listItem}
 									>
-										{parser(subItem.text)}
+										{parser(subItem?.text ?? '')}
 									</Button>
 								</li>
 							))}
