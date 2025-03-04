@@ -8,7 +8,7 @@
 
 .divider {
 	position: fixed;
-	@mixin responsive top, 64, 80, 80;
+	@mixin responsive top, 84, 80, 80;
 	width: 100%;
 	z-index: 101;
 	@mixin responsive height, 1, 1, 1;
