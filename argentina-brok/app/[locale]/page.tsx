@@ -18,7 +18,7 @@ const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();
 	const initialAwards = await getAwards({ pageSize: 4 });
 
-	initialHomePageData.data.awards = initialAwards;
+	initialHomePageData.awards = initialAwards;
 
 	return <Home initialData={initialHomePageData} />;
 };

@@ -1,15 +1,15 @@
-export const APP_STORE_SVG = '/assets/social/app_store.svg';
-export const GOOGLE_PLAY_SVG = '/assets/social/google_play.svg';
-export const FACEBOOK_SVG = '/assets/social/facebook.svg';
-export const INSTAGRAM_SVG = '/assets/social/instagram.svg';
-export const LINKEDIN_SVG = '/assets/social/linkedin.svg';
-export const TELEGRAM_SVG = '/assets/social/telegram.svg';
-export const YOUTUBE_SVG = '/assets/social/youtube.svg';
+import AppStoreIcon from '@/public/assets/social/app_store.svg';
+import FacebookIcon from '@/public/assets/social/facebook.svg';
+import GooglePlayIcon from '@/public/assets/social/google_play.svg';
+import InstagramIcon from '@/public/assets/social/instagram.svg';
+import LinkedInIcon from '@/public/assets/social/linkedin.svg';
+import TelegramIcon from '@/public/assets/social/telegram.svg';
+import YouTubeIcon from '@/public/assets/social/youtube.svg';
 
 export interface Icon {
-	src: string;
 	href: string;
 	width?: number;
+	SvgIcon?: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
 }
 
 export type IconListProps = {
@@ -18,14 +18,42 @@ export type IconListProps = {
 };
 
 export const STORE_LINKS: Array<Icon> = [
-	{ src: GOOGLE_PLAY_SVG, href: '#' },
-	{ src: APP_STORE_SVG, href: '#' },
+	{
+		width: 100,
+		href: 'https://play.google.com/store/games',
+		SvgIcon: GooglePlayIcon,
+	},
+	{
+		width: 100,
+		href: 'https://www.apple.com/app-store',
+		SvgIcon: AppStoreIcon,
+	},
 ];
 
 export const SOCIAL_MEDIA_LINKS: Array<Icon> = [
-	{ src: FACEBOOK_SVG, width: 24, href: '#' },
-	{ src: INSTAGRAM_SVG, width: 24, href: '#' },
-	{ src: LINKEDIN_SVG, width: 24, href: '#' },
-	{ src: TELEGRAM_SVG, width: 24, href: '#' },
-	{ src: YOUTUBE_SVG, width: 24, href: '#' },
+	{
+		width: 24,
+		href: 'https://www.facebook.com/',
+		SvgIcon: FacebookIcon,
+	},
+	{
+		width: 24,
+		href: 'https://www.instagram.com/',
+		SvgIcon: InstagramIcon,
+	},
+	{
+		width: 24,
+		href: 'https://www.linkedin.com/',
+		SvgIcon: LinkedInIcon,
+	},
+	{
+		width: 24,
+		href: 'https://web.telegram.org/a/',
+		SvgIcon: TelegramIcon,
+	},
+	{
+		width: 24,
+		href: 'https://www.youtube.com/',
+		SvgIcon: YouTubeIcon,
+	},
 ];
