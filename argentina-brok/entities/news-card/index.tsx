@@ -11,7 +11,7 @@ import type { Article } from '@/shared/types/article';
 import css from './index.module.css';
 
 export type NewsCardProps = {
-	data: Article;
+	data?: Article;
 	className: string;
 };
 
@@ -22,7 +22,7 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const isArmbrokMedia = pathname === `/${locale}/media`;
 
 	const { publishDate, title, description, author, category, poster, slug } =
-		data;
+		data ?? {};
 
 	return (
 		<article
@@ -34,7 +34,7 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 				<img src={poster.url} className={css.poster} />
 			)}
 			<div className={css.textWrap}>
-				<time className={css.time}>{publishDate}</time>
+				<time className={css.time}>{publishDate ?? ''}</time>
 				<h5
 					className={cx(css.title, { [css.armbrokMediaTitle]: isArmbrokMedia })}
 				>
@@ -46,11 +46,11 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 						<div className={css.imgWrap}>
 							<img
 								className={css.avatar}
-								src={author.avatar?.url ?? ''}
-								alt={author.avatar?.alternativeText ?? ''}
+								src={author?.avatar?.url ?? ''}
+								alt={author?.avatar?.alternativeText ?? ''}
 							/>
 						</div>
-						<span className={css.name}>{parser(author.fullName ?? '')}</span>
+						<span className={css.name}>{parser(author?.fullName ?? '')}</span>
 					</div>
 
 					{category && <p className={css.tag}>{category?.name}</p>}

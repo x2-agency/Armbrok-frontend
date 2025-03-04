@@ -13,7 +13,7 @@ export const NewsPage = ({
 	fetchNextPage,
 	isFetching,
 }: {
-	newsCard?: Array<Article>;
+	newsCard?: Array<Article | undefined>;
 	className?: string;
 	hasNextPage?: boolean;
 	fetchNextPage: () => void;

@@ -17,12 +17,34 @@
 	@mixin responsive margin-block-end, 50, 72, 72;
 }
 
+.tabs-container {
+	display: flex;
+	border: 1px solid var(--gray-400-color);
+	@mixin responsive border-radius, 10, 10, 10;
+	background-color: var(--gray-300-color);
+	scrollbar-width: 0;
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	@mixin responsive width, unset, 760, 760;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
 .tabs {
 	@media (max-width: 767px) {
-		align-items: center;
-		flex-direction: column;
-		display: flex;
-		overflow-x: scroll;
+		overflow-x: visible;
 		flex-wrap: nowrap;
 		white-space: nowrap;
 		scrollbar-width: none;
@@ -30,4 +52,8 @@
 			display: none;
 		}
 	}
+}
+
+.loader {
+	@mixin responsive padding-block, 50, 200, 200;
 }
