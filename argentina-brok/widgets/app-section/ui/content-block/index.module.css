@@ -21,7 +21,7 @@
 
 .description {
 	@mixin font-text16;
-	color: var(--gray-200-color);
+	color: #f8f8f89b;
 	@mixin responsive padding-block-end, unset, 128, 128;
 }
 
