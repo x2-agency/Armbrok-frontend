@@ -15,5 +15,3 @@ export const NAVIGATION_LINKS = [
 	{ text: 'About us', href: '/about-us' },
 	{ text: 'Contact us', href: '/armbrok-contact-page' },
 ];
-
-export const LANGUAGES = ['EN', 'AM', 'RU'];

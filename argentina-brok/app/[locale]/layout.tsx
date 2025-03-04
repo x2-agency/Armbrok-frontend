@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import type { PropsWithChildren } from 'react';
 
 import { Locales } from '@/i18n/routing';
@@ -24,11 +24,10 @@ export async function generateStaticParams() {
 	return Object.values(Locales).map(locale => ({ locale }));
 }
 
-const RootLayout = async ({
-	children,
-	params: { locale },
-}: Readonly<RootLayoutProps>) => {
+const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 	const messages = await getMessages();
+	const locale = (await params).locale.toLowerCase();
+	setRequestLocale(locale);
 
 	return (
 		<html lang={locale}>
