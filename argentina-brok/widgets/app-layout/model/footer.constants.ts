@@ -4,7 +4,7 @@ export type LinkGroupsProps = {
 };
 
 export interface linkGroupsType {
-	id?: number;
+	id: number;
 	group?: string;
 	links?: Array<linksType | undefined>;
 }
