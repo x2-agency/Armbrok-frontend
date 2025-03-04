@@ -19,17 +19,32 @@ export const SignificantShareholders = ({
 		return null;
 	}
 
+	const sortedShareholders = shareholders.sort((a, b) => b.share - a.share);
+
 	return (
 		<article className={css.root}>
 			{title && <h4 className={css.title}>{parser(title)}</h4>}
 			<ul className={css.list}>
-				{shareholders.map((shareholder, index) => (
+				{sortedShareholders.map((shareholder, index) => (
 					<Fragment key={index}>
 						<li className={css.listItem}>
-							<div className={css.imageWrap}>
-								<img src={shareholder.photo.url} className={css.icon} />
+							<div className={css.leftPart}>
+								<div className={css.imageWrap}>
+									<img src={shareholder.photo.url} className={css.icon} />
+								</div>
+								<p className={css.name}>{parser(shareholder.name)}</p>
 							</div>
-							<p>{parser(shareholder.name)}</p>
+							<div
+								className={css.percent}
+								style={{
+									width:
+										index === 0
+											? '100%'
+											: `${(shareholder.share / sortedShareholders[0].share) * 100}%`,
+								}}
+							>
+								<span className={css.percentLabel}>{shareholder.share}%</span>
+							</div>
 						</li>
 						{index !== shareholders.length - 1 && (
 							<div className={css.divider} />
