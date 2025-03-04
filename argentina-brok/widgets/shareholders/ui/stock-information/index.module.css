@@ -1,0 +1,52 @@
+.root {
+	@mixin responsive gap, 24, 24, 24;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	@mixin responsive font-size, 24, 24, 24;
+
+	font-weight: 600;
+}
+
+.list {
+	@mixin responsive gap, 20, 20, 20;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.listItem {
+	@mixin responsive gap, 12, 12, 12;
+
+	display: flex;
+}
+
+.label,
+.value {
+	@mixin font-text16;
+}
+
+.label {
+	color: var(--gray-700-color);
+}
+
+.value {
+	font-weight: 600;
+}
+
+.lines {
+	@mixin res margin-block-end, 1.333rem, 0.347rem, 0.313rem; /* 5px */
+
+	line-height: 0;
+	flex-grow: 1;
+	border-bottom: 1px solid transparent;
+	border-image: repeating-linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.3) 0 1px,
+		transparent 5px 10px
+	);
+	border-image-slice: 1;
+}

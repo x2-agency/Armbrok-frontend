@@ -394,7 +394,7 @@ export type ShareholdersSection = {
 	stockInfoTitle?: string;
 	shareholdersTitle?: string;
 	stockInfo?: Array<StockInfoType>;
-	shareholders?: ShareholdersItemType;
+	shareholders?: Array<ShareholdersItemType>;
 };
 
 /* Vacancies */

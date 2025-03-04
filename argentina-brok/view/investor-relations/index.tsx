@@ -4,6 +4,7 @@ import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { CountriesSection } from '@/widgets/countries-section';
+import { Shareholders } from '@/widgets/shareholders';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
@@ -20,6 +21,7 @@ export const InvestorRelations: NextPage<
 	dividendPolicySection,
 	disclaimer,
 	remunerationSection,
+	shareholdersSection,
 }) => {
 	return (
 		<>
@@ -39,6 +41,7 @@ export const InvestorRelations: NextPage<
 					description={transparencySection?.description}
 				/>
 			</HeroContainer>
+			<Shareholders {...shareholdersSection} />
 			<CountriesSection residenceCountriesSection={residenceCountries} />
 			<StatutoryDocuments
 				documentsSection={shareholdersMeetingsSection}

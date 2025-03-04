@@ -2,8 +2,8 @@
 	display: block;
 	position: relative;
 
-	@mixin res width, 32.2rem, 9.167rem, 8.25rem; /* 132px */
-	@mixin res height, 5.333rem, 1.389rem, 1.25rem; /* 20px */
+	@mixin responsive width, 167, 167, 167;
+	@mixin responsive height, 44, 44, 44;
 
 	:global(.logo_armbrok_svg__word) {
 		@mixin transition;
