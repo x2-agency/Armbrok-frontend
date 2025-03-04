@@ -12,7 +12,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const { slug } = await params;
 	const data = await getBlogPage(slug);
-	console.log(data);
 	return {
 		title: data.title,
 		description: data.description,

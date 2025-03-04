@@ -27,7 +27,12 @@
 }
 
 .slider {
+	@mixin responsive padding-inline-start, 20, 120, unset;
+	@mixin responsive padding-inline-end, 20, 120, unset;
 	@mixin responsive padding-block-end, 20, 40, 40;
+	@media (min-width: 1441px) {
+		width: 75rem !important;
+	}
 }
 
 .button {

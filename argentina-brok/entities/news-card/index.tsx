@@ -20,9 +20,13 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const locale = pathname.split('/')[1];
 
 	const isArmbrokMedia = pathname === `/${locale}/media`;
+	const isHomePage = pathname === `/${locale}`;
 
 	const { publishDate, title, description, author, category, poster, slug } =
 		data ?? {};
+
+	const truncatedDescription =
+		isHomePage && description ? `${description.slice(0, 253)}...` : description;
 
 	return (
 		<article
@@ -40,7 +44,7 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 				>
 					{parser(title ?? '')}
 				</h5>
-				<p className={css.description}>{parser(description ?? '')}</p>
+				<p className={css.description}>{parser(truncatedDescription ?? '')}</p>
 				<div className={css.wrap}>
 					<div className={css.authorWrap}>
 						<div className={css.imgWrap}>

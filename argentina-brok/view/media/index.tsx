@@ -55,7 +55,6 @@ export const Media: NextPage<{
 		},
 		[router, pathname, createQueryString]
 	);
-	console.log(initialArticles?.categories);
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />

@@ -2,7 +2,6 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import { Button } from '@/shared/ui/button';
-import { Container } from '@/shared/ui/container';
 import type { NewsProps } from '@/view/home/types/response';
 
 import css from './index.module.css';
@@ -17,7 +16,7 @@ export const NewsSectionHome = ({ data, className }: NewsSectionProps) => {
 	const { title, description, moreButton, news } = data ?? {};
 
 	return (
-		<Container className={cx(css.root, className)}>
+		<section className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(title ?? '')}</h2>
 			{description && <p className={css.description}>{parser(description)}</p>}
 			<NewsSlider className={css.slider} newsSlider={news ?? []} />
@@ -31,6 +30,6 @@ export const NewsSectionHome = ({ data, className }: NewsSectionProps) => {
 					{moreButton?.text}
 				</Button>
 			)}
-		</Container>
+		</section>
 	);
 };
