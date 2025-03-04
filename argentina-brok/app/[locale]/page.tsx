@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 	openGraph: HOME_OG,
 };
 
-export const revalidate = 60;
+export const revalidate = 30;
 
 const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();
