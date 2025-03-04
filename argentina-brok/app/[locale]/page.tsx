@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 
 import { getAwards } from '@/shared/api/get-awards';
 import { getHomePage } from '@/shared/api/get-homepage';
-import { REVALIDATE_VALUE } from '@/shared/config/revalidate';
 import { Home } from '@/view/home';
 import { HOME_OG } from '@/view/home/types/meta.constants';
+
 
 export const metadata: Metadata = {
 	metadataBase: process.env.NEXT_PUBLIC_HOST_URL
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 	openGraph: HOME_OG,
 };
 
-export const revalidate = REVALIDATE_VALUE;
+export const revalidate = 10;
 
 const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();

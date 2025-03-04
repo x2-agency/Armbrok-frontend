@@ -2,13 +2,12 @@ import type { Metadata } from 'next';
 
 import { getArticle } from '@/shared/api/get-article';
 import { getMediaPage } from '@/shared/api/get-media-page';
-import { REVALIDATE_VALUE } from '@/shared/config/revalidate';
 import { Media } from '@/view/media';
 import { MEDIA_META } from '@/view/media/model/media.constants';
 
 export const metadata: Metadata = MEDIA_META;
 
-export const revalidate = REVALIDATE_VALUE;
+export const revalidate = 10;
 
 const MediaPage = async ({
 	searchParams,

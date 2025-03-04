@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 
 import { getContactPage } from '@/shared/api/get-contact-page';
-import { REVALIDATE_VALUE } from '@/shared/config/revalidate';
 import { ArmbrokContact } from '@/view/armbrok-contact';
 import { ARMBROK_CONTACT_META } from '@/view/armbrok-contact/model/armbrok-contact.meta';
 import type { ArmbrokContactPageResponse } from '@/view/armbrok-contact/types/response';
 
 export const metadata: Metadata = ARMBROK_CONTACT_META;
 
-export const revalidate = REVALIDATE_VALUE;
+export const revalidate = 10;
 
 const ArmbrokContactPage = async () => {
 	const inititalContactPageData: ArmbrokContactPageResponse =
