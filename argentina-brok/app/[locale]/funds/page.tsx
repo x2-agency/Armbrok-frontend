@@ -6,6 +6,8 @@ import { FUNDS_META } from '@/view/funds/model/meta.constants';
 
 export const metadata: Metadata = FUNDS_META;
 
+export const revalidate = 10;
+
 const FundsPage = async () => {
 	const initialFundsPageData = await getFundsPage();
 

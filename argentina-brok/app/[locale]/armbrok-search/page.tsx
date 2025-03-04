@@ -6,6 +6,8 @@ import { ARMBROK_SEARCH_META } from '@/view/armbrok-search/models/armbrok-search
 
 export const metadata: Metadata = ARMBROK_SEARCH_META;
 
+export const revalidate = 10;
+
 const ArmbrokSearchPage = async () => {
 	const initialArmbrokSearchPageData = await getArmbrokSearchPage();
 

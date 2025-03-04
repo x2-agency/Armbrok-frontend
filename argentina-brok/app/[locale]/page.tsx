@@ -5,6 +5,7 @@ import { getHomePage } from '@/shared/api/get-homepage';
 import { Home } from '@/view/home';
 import { HOME_OG } from '@/view/home/types/meta.constants';
 
+
 export const metadata: Metadata = {
 	metadataBase: process.env.NEXT_PUBLIC_HOST_URL
 		? new URL(`${process.env.NEXT_PUBLIC_HOST_URL}`)
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
 	description: HOME_OG.description,
 	openGraph: HOME_OG,
 };
+
+export const revalidate = 10;
 
 const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();

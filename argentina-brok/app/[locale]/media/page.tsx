@@ -7,6 +7,8 @@ import { MEDIA_META } from '@/view/media/model/media.constants';
 
 export const metadata: Metadata = MEDIA_META;
 
+export const revalidate = 10;
+
 const MediaPage = async ({
 	searchParams,
 }: {

@@ -2,9 +2,12 @@ import type { Metadata } from 'next';
 
 import { getBrokeragePage } from '@/shared/api/get-brokerage';
 import { Brokerage } from '@/view/brokerage';
+
 export const metadata: Metadata = {
 	title: 'Brokerage',
 };
+
+export const revalidate = 10;
 
 const BrokeragePage = async () => {
 	const initialBrokeragePageData = await getBrokeragePage();

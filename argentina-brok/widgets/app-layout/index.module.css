@@ -8,7 +8,7 @@
 
 .divider {
 	position: fixed;
-	@mixin responsive top, 64, 80, 80;
+	@mixin responsive top, 84, 80, 80;
 	width: 100%;
 	z-index: 101;
 	@mixin responsive height, 1, 1, 1;
@@ -19,15 +19,10 @@
 	@mixin responsive margin-block-start, 20, 20, 20;
 }
 
-html[data-header-top-color='white'] {
-	.divider {
-	}
-}
-
 html[data-header-top-color='dark'] {
 	.divider {
 		top: 0;
-		@mixin responsive height, 70, 80, 80;
+		@mixin responsive height, 84, 80, 80;
 		background: rgba(255, 255, 255, 0.9);
 		backdrop-filter: blur(6px);
 

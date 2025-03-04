@@ -7,6 +7,8 @@ import { ABOUT_US_META } from '@/view/about-us/model/about-us.constants';
 
 export const metadata: Metadata = ABOUT_US_META;
 
+export const revalidate = 10;
+
 const AboutUsPage = async () => {
 	const initialAboutUsPageData = await getAboutUsPage();
 	const initialAwards = await getAwards({ pageSize: 7 });
