@@ -1,10 +1,10 @@
 .ball {
-	@mixin responsive width, 8, 9, 9;
-	@mixin responsive height, 8, 9, 9;
+	@mixin responsive width, 8, 15, 15;
+	@mixin responsive height, 8, 15, 15;
 	background-color: red;
 	border-radius: 50%;
 
-	@mixin animation scaleUpDown;
+	animation: bounce 1.2s infinite ease-in-out;
 }
 
 .first {
@@ -12,24 +12,19 @@
 }
 
 .second {
-	animation-delay: 0.25s;
+	animation-delay: 0.2s;
 }
 
 .third {
-	animation-delay: 0.5s;
+	animation-delay: 0.4s;
 }
 
-@keyframes scaleUpDown {
+@keyframes bounce {
 	0%,
 	100% {
-		@mixin translate 1;
-		opacity: 1;
-	}
-	25% {
-		@mixin translate 1.3;
+		transform: translateY(0);
 	}
 	50% {
-		@mixin translate 1;
-		opacity: 1;
+		transform: translateY(-15px);
 	}
 }

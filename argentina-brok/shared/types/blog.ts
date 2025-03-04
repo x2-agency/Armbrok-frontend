@@ -16,9 +16,9 @@ export interface ImageFormat {
 	name: string;
 }
 export interface Category {
-	name: string;
-	slug: string;
-	locale: string;
+	name?: string;
+	slug?: string;
+	locale?: string;
 }
 
 export interface LatestNewsSection {
@@ -37,7 +37,7 @@ export interface Data {
 	publishDate: string;
 	readTimeInMinutes: number;
 	markup: string;
-	category: Category;
+	category?: Category;
 	author: AuthorType;
 	poster: Image;
 	latestNewsSection: LatestNewsSection;

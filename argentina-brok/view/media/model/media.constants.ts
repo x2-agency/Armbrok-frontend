@@ -1,22 +1,13 @@
-export const MEDIA_TITLE = {
-	title: 'Armbrok Media',
-	description:
-		'Keep up&nbsp;to&nbsp;date with the latest news, read analyses from our experts and expand your knowledge of&nbsp;finance with our glossary of&nbsp;terms.',
-};
-export const MEDIA_VACANCIES = {
-	icon: '/assets/icons/bussiness-icons/book_library.svg',
-	title: 'Glossary of terms',
-	description:
-		'Сlear and understandable definitions of&nbsp;key financial terms <br/> used in&nbsp;the investment sphere.',
-};
+import type { Metadata } from 'next';
 
-export const MEDIA_EMAIL = {
-	title:
-		'Subscribe to&nbsp;our newsletter <br/> with interesting articles and news',
-};
-
-export const LAST_MEDIA_DATA = {
-	title: 'Lastest blog posts',
-	description:
-		'Tool and strategies modern teams need to&nbsp;help their companies grow.',
+export const MEDIA_META: Metadata = {
+	title: 'Media',
+	openGraph: {
+		title: 'Media',
+		images: '/assets/ogs/about-us.png',
+		type: 'website',
+	},
+	metadataBase: process.env.NEXT_PUBLIC_HOST_URL
+		? new URL(`${process.env.NEXT_PUBLIC_HOST_URL}`)
+		: undefined,
 };

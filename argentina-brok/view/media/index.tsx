@@ -2,7 +2,7 @@
 
 import type { NextPage } from 'next';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 
 import { FeedbackForm } from '@/features/feedback-form';
 import { useGetArticles } from '@/features/get-articles/api/use-get-articles';
@@ -28,8 +28,10 @@ export const Media: NextPage<{
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	const { data, fetchNextPage, isFetching, hasNextPage } =
-		useGetArticles({ filters: { category: currentTag } }, initialArticles);
+	const { data, fetchNextPage, isFetching, hasNextPage } = useGetArticles(
+		{ filters: { category: currentTag } },
+		initialArticles
+	);
 
 	const filteredNews = data?.pages.flatMap(page => page.data) ?? [];
 
@@ -53,18 +55,19 @@ export const Media: NextPage<{
 		},
 		[router, pathname, createQueryString]
 	);
-
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
-			<Tabs
-				className={css.tabs}
-				onChangeTab={onChangeTab}
-				currentTag={currentTag}
-				tags={initialArticles?.categories ?? []}
-				isCasesExists
-				initialTag="all"
-			/>
+			<div className={css['tabs-container']}>
+				<Tabs
+					className={css.tabs}
+					onChangeTab={onChangeTab}
+					currentTag={currentTag}
+					tags={initialArticles?.categories ?? []}
+					isCasesExists
+					initialTag="all"
+				/>
+			</div>
 			{isFetching ? (
 				<Preloader className={css.loader} />
 			) : (

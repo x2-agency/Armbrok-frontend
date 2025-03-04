@@ -1,24 +1,10 @@
 .root {
 	display: flex;
-	overflow-x: scroll;
 	@mixin responsive gap, 4, 4, 4;
-	@mixin responsive padding, 4, 4, 4;
-	border:
-		1px,
-		solid var(--gray-400-color);
-	@mixin responsive border-radius, 10, 10, 10;
-	background-color: var(--gray-300-color);
-	scrollbar-width: 0;
-	-ms-overflow-style: none;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
 }
 
 .white {
 	background-color: var(--gray-100-color);
-
 	&:hover {
 		background-color: var(--gray-200-color);
 	}
