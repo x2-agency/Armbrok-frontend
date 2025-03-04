@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 
 import { getBlogPage } from '@/shared/api/get-blog-page';
-import { REVALIDATE_VALUE } from '@/shared/config/revalidate';
 import { Blog } from '@/view/media/slug';
 
-export const revalidate = REVALIDATE_VALUE;
+export const revalidate = 10;
 
 export async function generateMetadata({
 	params,
