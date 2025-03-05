@@ -19,6 +19,7 @@ export const Regulation: NextPage<RegulationPageData> = ({
 			<StatutoryDocuments
 				documentsSection={rulesDocumentsSection}
 				columns={2}
+				lineClamp={1}
 			/>
 			<TitleSection
 				className={css.titleSection}
