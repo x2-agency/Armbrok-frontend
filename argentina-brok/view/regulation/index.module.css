@@ -1,0 +1,24 @@
+.root {
+	@mixin responsive padding-block-start, 80, 160, 160;
+}
+
+.title {
+	@mixin font-h1;
+	@mixin responsive max-width, 320, 600, 600;
+
+	text-align: center;
+	margin-inline: auto;
+	font-weight: 700;
+}
+
+.titleSection h2 {
+	@mixin responsive width, 320, 640, 640;
+}
+
+.titleSection p {
+	@mixin responsive width, 320, 700, 700;
+}
+
+.titleSection {
+	@mixin responsive padding-block-end, 20, 40, 40;
+}

@@ -63,7 +63,7 @@ export const NAVIGATION_TABLE_DATA: Array<NavigationType> = [
 	},
 	{
 		id: 5,
-		title: { text: 'Regulation', href: '/careers-at-armbrock' },
+		title: { text: 'Regulation', href: '/regulation' },
 		column: [
 			{
 				id: 1,
