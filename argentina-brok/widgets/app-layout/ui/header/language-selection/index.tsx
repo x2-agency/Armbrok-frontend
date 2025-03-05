@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
 
 import { usePathname, useRouter } from '@/i18n/navigation';
-import { LANGUAGES } from '@/i18n/routing';
+import { getLocalePseudonim, Locales } from '@/i18n/routing';
 import TriangleSVG from '@/public/assets/icons/header/triangle.svg';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import useMediaQuery from '@/shared/hooks/use-media-query';
@@ -64,7 +64,7 @@ export const LanguageSelection = ({
 				className={cx(css.selected, css[theme])}
 				onClick={() => setIsOpened(prev => !prev)}
 			>
-				{selectedLanguage.toUpperCase()}
+				{getLocalePseudonim(selectedLanguage)?.toUpperCase()}
 				<TriangleSVG className={cx(css.svg, { [css.open]: isOpened })} />
 			</button>
 			<ul
@@ -73,18 +73,20 @@ export const LanguageSelection = ({
 					[css.close]: !isOpened,
 				})}
 			>
-				{LANGUAGES.map(lang => lang.toUpperCase()).map((value, index) => (
-					<li key={index} className={css.language}>
-						<button
-							onClick={() => handleSelectLanguage(value)}
-							className={cx(css.languageButton, {
-								[css.selectedLang]: value === selectedLanguage,
-							})}
-						>
-							{value}
-						</button>
-					</li>
-				))}
+				{Object.entries(Locales)
+					// .map(lang => lang.valueOf())
+					.map(([key, value], index) => (
+						<li key={index} className={css.language}>
+							<button
+								onClick={() => handleSelectLanguage(value)}
+								className={cx(css.languageButton, {
+									[css.selectedLang]: value === selectedLanguage,
+								})}
+							>
+								{key}
+							</button>
+						</li>
+					))}
 			</ul>
 		</div>
 	);

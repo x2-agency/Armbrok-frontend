@@ -10,6 +10,13 @@ export const DEFAULT_LOCALE = Locales.EN;
 
 export const LANGUAGES = Object.values(Locales);
 
+export const getLocalePseudonim = (localeValue: string) => {
+	const entries = Object.entries(Locales);
+	return entries.find(([_, value]) => {
+		return value === localeValue;
+	})?.[0];
+};
+
 export const routing = defineRouting({
 	// A list of all locales that are supported
 	locales: Object.values(Locales),
