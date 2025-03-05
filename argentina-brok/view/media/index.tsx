@@ -39,6 +39,7 @@ export const Media: NextPage<{
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
 			const params = new URLSearchParams(searchParams.toString());
+
 			if (value && value !== 'all') {
 				params.set(name, value);
 			} else {
@@ -56,6 +57,7 @@ export const Media: NextPage<{
 		},
 		[router, pathname, createQueryString]
 	);
+
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
@@ -65,7 +67,7 @@ export const Media: NextPage<{
 					onChangeTab={onChangeTab}
 					currentTag={currentTag}
 					tags={initialArticles?.categories ?? []}
-					isCasesExists
+					areCasesExist
 					initialTag="all"
 				/>
 			</div>

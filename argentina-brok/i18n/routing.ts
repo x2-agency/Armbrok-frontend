@@ -6,6 +6,8 @@ export enum Locales {
 	AM = 'hy',
 }
 
+export const DEFAULT_LOCALE = Locales.EN;
+
 export const LANGUAGES = Object.values(Locales);
 
 export const routing = defineRouting({
