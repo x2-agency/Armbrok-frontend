@@ -469,3 +469,17 @@ export type Award = {
 export type AwardsResponse = {
 	data: Array<Award>;
 };
+
+/* Document Tabs */
+
+export type DocumentTabs = {
+	title?: string;
+	tabs: Array<{
+		tabName: string;
+		files: Array<MediaData>;
+		childrenTabs: Array<{
+			tabName: string;
+			files: Array<MediaData>;
+		}>;
+	}>;
+};
