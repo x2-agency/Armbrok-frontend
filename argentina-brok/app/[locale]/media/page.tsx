@@ -12,10 +12,12 @@ export const revalidate = 10;
 const MediaPage = async ({
 	searchParams,
 }: {
-	searchParams: { filter?: { category?: string } };
+	searchParams: { category?: string };
 }) => {
-	const { filter } = await searchParams;
-	const tag = filter && filter.category !== 'all' ? filter.category : undefined;
+	const tag =
+		searchParams.category && searchParams.category !== 'all'
+			? searchParams.category
+			: undefined;
 
 	const initialMediaData = await getMediaPage();
 	const initialArticles = await getArticle(
