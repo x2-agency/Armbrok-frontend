@@ -13,6 +13,14 @@
 	gap: 2.778rem; /* 40px */
 }
 
+.linksHy {
+	gap: 1.778rem;
+}
+
+.li {
+	width: fit-content !important;
+}
+
 .link {
 	@mixin font-text16;
 	font-weight: 500;
