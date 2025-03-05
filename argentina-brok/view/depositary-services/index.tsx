@@ -1,5 +1,8 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { GuaranteesSection } from '@/shared/ui/guarantees-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -13,6 +16,7 @@ import type { DepositaryServicesPageResponse } from './types/response';
 export const DepositaryServices: NextPage<
 	DepositaryServicesPageResponse['data']
 > = ({
+	publishedAt,
 	heroSection,
 	infoSection,
 	primaryServicesSection,
@@ -20,6 +24,7 @@ export const DepositaryServices: NextPage<
 	benefitsSection,
 	quoteSection,
 }) => {
+	useUpdateFooterData(publishedAt);
 	return (
 		<>
 			<BannerSection

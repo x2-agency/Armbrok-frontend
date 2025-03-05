@@ -52,6 +52,7 @@ export type ImageFormat = {
 /* ADVANTAGES SECTION */
 
 export type ItemDetail = {
+	publishedAt?: string;
 	title?: string;
 	description?: string;
 };

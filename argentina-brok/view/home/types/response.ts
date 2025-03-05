@@ -9,6 +9,7 @@ import type {
 
 export type HomePageData = {
 	data: {
+		publishedAt?: string;
 		heroSection?: HeroSection;
 		advantages?: Array<Factoid>;
 		brokerageAppCard?: BrokerageAppCardProps;

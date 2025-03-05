@@ -8,6 +8,7 @@ import type {
 } from '@/shared/types/global.types';
 
 export type InvestorRelationsPageData = {
+	publishedAt?: string;
 	heroSection?: HeroSection;
 	transparencySection?: ItemDetail;
 	residenceCountries?: ResidenceCountriesSectionProps;

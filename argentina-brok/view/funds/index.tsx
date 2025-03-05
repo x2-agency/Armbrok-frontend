@@ -1,5 +1,8 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -15,6 +18,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	initialFundsPageData,
 }) => {
 	const {
+		publishedAt,
 		heroSection,
 		experienceSection,
 		investingAdvantages,
@@ -23,6 +27,8 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 		disclaimerSection,
 		infoSection,
 	} = initialFundsPageData?.data ?? {};
+
+	useUpdateFooterData(publishedAt);
 
 	return (
 		<>

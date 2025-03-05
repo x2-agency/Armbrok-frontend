@@ -1,5 +1,8 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
@@ -14,6 +17,7 @@ import { Disclaimer } from './ui/disclaimer';
 export const InvestorRelations: NextPage<
 	InvestorRelationsPageResponse['data']
 > = ({
+	publishedAt,
 	heroSection,
 	transparencySection,
 	residenceCountries,
@@ -23,6 +27,8 @@ export const InvestorRelations: NextPage<
 	remunerationSection,
 	shareholdersSection,
 }) => {
+	useUpdateFooterData(publishedAt);
+
 	return (
 		<>
 			<BannerSection

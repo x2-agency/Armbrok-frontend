@@ -9,6 +9,7 @@ import type {
 } from '@/shared/types/global.types';
 
 export type InvestmentBankingPageData = {
+	publishedAt?: string;
 	heroSection?: HeroSectionAboutUs;
 	offerSolutionSection?: ItemDetail;
 	ourServicesSection?: ExperienceSection;

@@ -3,6 +3,7 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { TitleSection } from '@/shared/ui/title-section';
 
 import css from './index.module.css';
@@ -14,6 +15,7 @@ import { SearchForm } from './ui/search-form';
 import { SearchedNews } from './ui/searched-news';
 
 export const ArmbrokSearch: NextPage<ArmbrokSearchPageResponse> = ({
+	publishedAt,
 	title,
 	description,
 	inputPlaceholder,
@@ -22,7 +24,7 @@ export const ArmbrokSearch: NextPage<ArmbrokSearchPageResponse> = ({
 	const [newsData, setNewsData] = useState<Array<SearchDataItem> | undefined>(
 		undefined
 	);
-
+	useUpdateFooterData(publishedAt);
 	return (
 		<div className={css.root}>
 			<TitleSection

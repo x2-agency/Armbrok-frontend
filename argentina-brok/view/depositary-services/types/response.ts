@@ -7,6 +7,7 @@ import type {
 } from '@/shared/types/global.types';
 
 export type DepositaryServicesPageData = {
+	publishedAt?: string;
 	heroSection?: HeroSection;
 	primaryServicesSection?: BenefitsSection;
 	supplementaryServices?: BenefitsSection;

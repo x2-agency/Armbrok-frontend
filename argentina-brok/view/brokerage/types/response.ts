@@ -15,6 +15,7 @@ import type {
 } from '@/view/home/types/response';
 
 export type BrokeragePageData = {
+	publishedAt?: string;
 	heroSection?: HeroSection;
 	advantages?: Array<Factoid>;
 	exchangesSection?: ExchangesSection;

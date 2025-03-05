@@ -1,5 +1,8 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
@@ -19,6 +22,7 @@ export const Home: NextPage<{ initialData?: HomePageData }> = ({
 	initialData,
 }) => {
 	const {
+		publishedAt,
 		heroSection,
 		advantages,
 		brokerageAppCard,
@@ -31,6 +35,8 @@ export const Home: NextPage<{ initialData?: HomePageData }> = ({
 		awardSection,
 		awards,
 	} = initialData?.data ?? {};
+
+	useUpdateFooterData(publishedAt);
 
 	return (
 		<>

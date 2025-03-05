@@ -15,6 +15,7 @@ const ArmbrokContactPage = async () => {
 
 	return (
 		<ArmbrokContact
+			publishedAt={inititalContactPageData.data.publishedAt}
 			title={inititalContactPageData.data.title}
 			description={inititalContactPageData.data.description}
 			contactCards={inititalContactPageData.data.contactCards}

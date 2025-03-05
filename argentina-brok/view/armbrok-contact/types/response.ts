@@ -1,8 +1,8 @@
 import type {
 	BaseResponse,
-	ItemDetail,
 	ContactCardItem,
 	ContactForm,
+	ItemDetail,
 } from '@/shared/types/global.types';
 
 export type ArmbrokContactPageData = ItemDetail & {

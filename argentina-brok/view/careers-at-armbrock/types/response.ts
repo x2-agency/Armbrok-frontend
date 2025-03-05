@@ -1,15 +1,16 @@
 import type {
 	BaseResponse,
-	HeroSection,
-	ExperienceSection,
 	EmployeeStorySection,
-	OfficeSliderSection,
+	ExperienceSection,
+	HeroSection,
 	ItemDetail,
+	OfficeSliderSection,
 	SubscribeEmailForm,
 	Vacancies,
 } from '@/shared/types/global.types';
 
 export type CareersAtArmbrockPageData = {
+	publishedAt?: string;
 	heroSection?: HeroSection;
 	workAdvantagesSection?: ExperienceSection;
 	employeeStorySection?: EmployeeStorySection;

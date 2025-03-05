@@ -1,6 +1,9 @@
+'use client';
+
 import type { NextPage } from 'next';
 
 import { FeedbackForm } from '@/features/feedback-form';
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import type { SliderItem } from '@/shared/types/global.types';
 import { GuaranteesSection } from '@/shared/ui/guarantees-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -17,6 +20,7 @@ import type { CareersAtArmbrockPageResponse } from './types/response';
 export const CareersAtArmbrock: NextPage<
 	CareersAtArmbrockPageResponse['data']
 > = ({
+	publishedAt,
 	heroSection,
 	hobbyClubsSlider,
 	workAdvantagesSection,
@@ -26,6 +30,7 @@ export const CareersAtArmbrock: NextPage<
 	vacanciesSection,
 	vacancies,
 }) => {
+	useUpdateFooterData(publishedAt);
 	return (
 		<>
 			<BannerSection
