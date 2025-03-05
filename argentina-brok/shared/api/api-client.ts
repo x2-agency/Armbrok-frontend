@@ -21,8 +21,6 @@ apiClient.interceptors.request.use(
 			locale = Cookies.get(LOCALE_COOKIE) ?? DEFAULT_LOCALE;
 		}
 
-		console.log(locale);
-
 		config.params = { ...config.params, locale };
 
 		const token = Cookies.get('token');
