@@ -1,5 +1,6 @@
 .root {
 	@mixin responsive padding-block, 36, 72, 72;
+	position: relative;
 }
 
 .title {
@@ -11,15 +12,12 @@
 }
 
 .placements {
-	@mixin res padding-inline, 5.333rem, 7.778rem, 7.063rem;
+	@mixin responsive padding-inline, 20, 120, unset;
 	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
 
 	@media (min-width: 1441px) {
-		width: 90rem;
-		margin-inline: auto;
-		padding-inline: 7.4rem;
+		padding-inline: calc(8rem + (100vw - 1440px) / 2);
 	}
-
 	@media (max-width: 767px) {
 		scroll-behavior: smooth;
 		scroll-snap-type: x mandatory;
@@ -44,49 +42,40 @@
 	}
 }
 
-.rightOverlay {
-	right: 0;
-	background: linear-gradient(
-		to left,
-		rgba(243, 244, 245, 1) 0%,
-		rgba(243, 244, 245, 0) 100%
-	);
-}
-
-.leftOverlay,
-.rightOverlay {
-	@mixin responsive width, 74, 74, 74;
-
-	height: 100%;
-	z-index: 100;
+.root::before,
+.root::after {
+	content: '';
 	position: absolute;
 	top: 0;
-
-	@media (min-width: 1441px) {
-		display: none;
-	}
-
-	@media (max-width: 767px) {
-		display: none;
-	}
-}
-
-.leftOverlay {
-	left: 0;
+	bottom: 0;
+	width: 7rem;
+	z-index: 2;
+	pointer-events: none;
 	background: linear-gradient(
 		to right,
-		rgba(243, 244, 245, 1) 0%,
-		rgba(243, 244, 245, 0) 100%
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0)
 	);
 }
 
-.rightOverlay {
+.root::before {
+	left: 0;
+}
+
+.root::after {
 	right: 0;
 	background: linear-gradient(
 		to left,
-		rgba(243, 244, 245, 1) 0%,
-		rgba(243, 244, 245, 0) 100%
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0)
 	);
+}
+
+@media (min-width: 1441px) {
+	.root::before,
+	.root::after {
+		width: calc(7rem + (100vw - 1440px) / 2);
+	}
 }
 
 .container {
