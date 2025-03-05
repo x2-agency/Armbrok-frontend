@@ -1,6 +1,6 @@
 import cx from 'clsx';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import BackSVG from '@/public/assets/back.svg';
 
 import css from './index.module.css';

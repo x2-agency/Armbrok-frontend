@@ -4,7 +4,7 @@ import type { UseInfiniteQueryResult } from '@tanstack/react-query';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 
-import type { GetArticlesparams } from '@/shared/api/get-article';
+import type { GetArticlesParams } from '@/shared/api/get-article';
 import { getArticle } from '@/shared/api/get-article';
 import type { ArticlesData } from '@/shared/types/article';
 
@@ -30,7 +30,7 @@ export const QUERY_KEYS = {
 };
 
 export const useGetArticles = (
-	params?: GetArticlesparams,
+	params?: GetArticlesParams,
 	initialData?: ArticlesData
 ): UseInfiniteQueryResult<InfiniteQueryPage<ArticlesData>, Error> => {
 	const stableFilters = useMemo(() => params?.filters, [params?.filters]);

@@ -1,6 +1,6 @@
 import cx from 'clsx';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import type { IconListProps } from '@/widgets/app-layout/model/social.constants';
 
 import css from './index.module.css';

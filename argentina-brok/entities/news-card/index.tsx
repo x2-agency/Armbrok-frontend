@@ -3,9 +3,8 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
+import { Link, usePathname } from '@/i18n/navigation';
 import type { Article } from '@/shared/types/article';
 
 import css from './index.module.css';
@@ -17,10 +16,9 @@ export type NewsCardProps = {
 
 export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const pathname = usePathname();
-	const locale = pathname.split('/')[1];
 
-	const isArmbrokMedia = pathname === `/${locale}/media`;
-	const isHomePage = pathname === `/${locale}`;
+	const isArmbrokMedia = pathname === `/media`;
+	const isHomePage = pathname === `/`;
 
 	const { publishDate, title, description, author, category, poster, slug } =
 		data ?? {};
@@ -60,7 +58,7 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 					{category && <p className={css.tag}>{category?.name}</p>}
 				</div>
 			</div>
-			<Link className={css.link} href={`/ru/media/${slug}`} />
+			<Link className={css.link} href={`/media/${slug}`} />
 		</article>
 	);
 };

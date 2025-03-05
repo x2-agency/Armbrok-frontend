@@ -1,5 +1,5 @@
-@import '../shared/styles/main/reset.css';
-@import '../shared/styles/mixins/colors.css';
+@import '../../shared/styles/main/reset.css';
+@import '../../shared/styles/mixins/colors.css';
 
 :root {
 	--h1: 4.444rem; /* 64px */

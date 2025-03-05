@@ -1,36 +1,33 @@
 'use client';
 
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 
+import { LOCALE_KEYS } from '@/i18n/locale-keys';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
-import { TEXT_BLOCK_FOOT } from '@/widgets/app-layout/models/text-block.constants';
+import { useFormattedDate } from '@/widgets/app-layout/hooks/use-formated-date';
 
 import css from './index.module.css';
 
 export const Disclaimer = () => {
+	const { footer } = LOCALE_KEYS;
+	const t = useTranslations(footer.root);
+
+	const disclaimerContent = t.markup(footer.disclaimer, {
+		p: chunks => `<p class="${css.text}">${chunks}</p>`,
+	});
+
+	const lastUpdateLabel = t(footer.updateLabel);
 	const { footerData } = useLayoutContext();
-	const formattedDate = footerData.publishedAt
-		? new Date(footerData.publishedAt).toLocaleString('ru-RU', {
-				day: '2-digit',
-				month: '2-digit',
-				year: 'numeric',
-				hour: '2-digit',
-				minute: '2-digit',
-				hour12: false,
-			})
-		: null;
+
+	const formattedDate = useFormattedDate(footerData?.publishedAt ?? '');
+
 	return (
 		<>
-			<div className={css.root}>
-				{TEXT_BLOCK_FOOT.map((item, index) => (
-					<p key={index} className={css.text}>
-						{parser(item.text)}
-					</p>
-				))}
-			</div>
+			<div className={css.root}>{parser(disclaimerContent)}</div>
 			{footerData.publishedAt && (
 				<time className={css.time}>
-					Last update: {formattedDate ?? 'DD.MM.YYYY HH:mm'}
+					{`${lastUpdateLabel} ${formattedDate}`}
 				</time>
 			)}
 		</>

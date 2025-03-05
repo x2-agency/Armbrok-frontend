@@ -1,23 +1,23 @@
 import cx from 'clsx';
 
 import { Button } from '@/shared/ui/button';
-import type { NavigationProps } from '@/widgets/app-layout/types/nav-types';
+import { useHeaderLinks } from '@/widgets/app-layout/hooks/use-header-links';
 
 import css from './index.module.css';
 
-export const Navigation = ({ navLinks }: NavigationProps) => {
+export const Navigation = () => {
+	const links = useHeaderLinks();
+
 	return (
 		<nav className={cx(css.root)}>
 			<ul className={css.links}>
-				{navLinks.map((link, index) => {
-					return (
-						<li key={index}>
-							<Button href={link.href} className={css.link} variant="subtle">
-								{link.text}
-							</Button>
-						</li>
-					);
-				})}
+				{links.map((item, index) => (
+					<li key={index}>
+						<Button href={item.href} className={css.link} variant="subtle">
+							{item.label}
+						</Button>
+					</li>
+				))}
 			</ul>
 		</nav>
 	);

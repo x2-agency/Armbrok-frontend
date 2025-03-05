@@ -1,6 +1,6 @@
 import cx from 'clsx';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import LogoSVG from '@/public/assets/icons/header/logo_armbrok.svg';
 import type { LogoProps } from '@/widgets/app-layout/types/logo-types';
 

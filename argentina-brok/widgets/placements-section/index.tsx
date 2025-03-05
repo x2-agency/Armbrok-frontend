@@ -17,15 +17,14 @@ export const PlacementsSection = ({
 	return (
 		<section className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
-			<div className={css.container}>
-				<ul className={css.placements}>
-					{items.map((value, index) => (
-						<li key={index} className={css.placement}>
-							<PlacementItem {...value} />
-						</li>
-					))}
-				</ul>
-			</div>
+
+			<ul className={css.placements}>
+				{items.map((value, index) => (
+					<li key={index} className={css.placement}>
+						<PlacementItem {...value} />
+					</li>
+				))}
+			</ul>
 		</section>
 	);
 };
