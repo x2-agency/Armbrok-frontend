@@ -20,7 +20,6 @@ export const ContentBlock = ({ data }: ContentProp) => {
 		button,
 		appStoreLogos,
 	} = data ?? {};
-	console.log(appStoreLogos);
 	return (
 		<div className={css.root}>
 			{armbrokLogo && (

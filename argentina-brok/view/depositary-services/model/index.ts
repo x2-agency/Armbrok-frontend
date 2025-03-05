@@ -7,7 +7,7 @@ export const DEPOSITARY_SERVICES_META: Metadata = {
 		images: '/assets/ogs/depositary-services.png',
 		type: 'website',
 	},
-	metadataBase: process.env.NEXT_PUBLIC_HOST_URL
-		? new URL(`${process.env.NEXT_PUBLIC_HOST_URL}`)
+	metadataBase: process.env.WEBSITE_DOMAIN
+		? new URL(`${process.env.WEBSITE_DOMAIN}`)
 		: undefined,
 };

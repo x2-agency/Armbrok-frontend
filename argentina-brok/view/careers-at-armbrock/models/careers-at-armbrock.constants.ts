@@ -14,7 +14,7 @@ export const CAREERS_AT_ARMBROK_META: Metadata = {
 		images: '/assets/ogs/careers-at-armbrok.png',
 		type: 'website',
 	},
-	metadataBase: process.env.NEXT_PUBLIC_HOST_URL
-		? new URL(`${process.env.NEXT_PUBLIC_HOST_URL}`)
+	metadataBase: process.env.WEBSITE_DOMAIN
+		? new URL(`${process.env.WEBSITE_DOMAIN}`)
 		: undefined,
 };

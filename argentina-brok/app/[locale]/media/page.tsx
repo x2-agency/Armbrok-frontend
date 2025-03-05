@@ -23,7 +23,6 @@ const MediaPage = async ({
 	const initialArticles = await getArticle(
 		tag ? { filters: { category: tag } } : {}
 	);
-
 	return (
 		<Media
 			initialMediaData={initialMediaData}

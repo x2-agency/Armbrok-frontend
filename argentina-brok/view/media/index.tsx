@@ -59,7 +59,6 @@ export const Media: NextPage<{
 		[router, pathname, createQueryString]
 	);
 	useUpdateFooterData(publishedAt);
-
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
