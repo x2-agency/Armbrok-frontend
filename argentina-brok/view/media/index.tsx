@@ -1,11 +1,13 @@
 'use client';
 
 import type { NextPage } from 'next';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
 
 import { FeedbackForm } from '@/features/feedback-form';
 import { useGetArticles } from '@/features/get-articles/api/use-get-articles';
+import { usePathname, useRouter } from '@/i18n/navigation';
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import type { ArticlesData } from '@/shared/types/article';
 import type { MediaPageProps } from '@/shared/types/media-page';
 import { Preloader } from '@/shared/ui/preloader';
@@ -20,7 +22,7 @@ export const Media: NextPage<{
 	initialMediaData?: MediaPageProps;
 	initialArticles?: ArticlesData;
 }> = ({ initialMediaData, initialArticles }) => {
-	const { glossaryCard, emailForm, title, description } =
+	const { glossaryCard, emailForm, title, description, publishedAt } =
 		initialMediaData?.data ?? {};
 
 	const router = useRouter();
@@ -38,6 +40,7 @@ export const Media: NextPage<{
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
 			const params = new URLSearchParams(searchParams.toString());
+
 			if (value && value !== 'all') {
 				params.set(name, value);
 			} else {
@@ -55,6 +58,7 @@ export const Media: NextPage<{
 		},
 		[router, pathname, createQueryString]
 	);
+	useUpdateFooterData(publishedAt);
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
@@ -64,7 +68,7 @@ export const Media: NextPage<{
 					onChangeTab={onChangeTab}
 					currentTag={currentTag}
 					tags={initialArticles?.categories ?? []}
-					isCasesExists
+					areCasesExist
 					initialTag="all"
 				/>
 			</div>

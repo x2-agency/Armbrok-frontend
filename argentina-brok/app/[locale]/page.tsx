@@ -5,10 +5,9 @@ import { getHomePage } from '@/shared/api/get-homepage';
 import { Home } from '@/view/home';
 import { HOME_OG } from '@/view/home/types/meta.constants';
 
-
 export const metadata: Metadata = {
-	metadataBase: process.env.NEXT_PUBLIC_HOST_URL
-		? new URL(`${process.env.NEXT_PUBLIC_HOST_URL}`)
+	metadataBase: process.env.WEBSITE_DOMAIN
+		? new URL(`${process.env.WEBSITE_DOMAIN}`)
 		: undefined,
 	title: HOME_OG.title,
 	description: HOME_OG.description,
@@ -21,7 +20,9 @@ const IndexPage = async () => {
 	const initialHomePageData = await getHomePage();
 	const initialAwards = await getAwards({ pageSize: 4 });
 
-	initialHomePageData.awards = initialAwards;
+	if (initialHomePageData?.data) {
+		initialHomePageData.awards = initialAwards;
+	}
 
 	return <Home initialData={initialHomePageData} />;
 };

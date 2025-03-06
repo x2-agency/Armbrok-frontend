@@ -1,16 +1,16 @@
 .root {
-	@mixin res padding-block-end, 32rem, 8.333rem, 7.5rem; /* 120px */
+	@mixin responsive padding-block-end, 120, 120, 120;
 
 	display: flex;
 	flex-direction: column;
 }
 
 .title:has(+ .description) {
-	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive padding-block-end, 10, 16, 16;
 }
 
 .title:has(+ .form) {
-	@mixin res padding-block-end, 8.533rem, 2.222rem, 2rem; /* 32px */
+	@mixin responsive padding-block-end, 22, 32, 32;
 }
 
 .title,
@@ -38,7 +38,7 @@
 
 .description {
 	@mixin font-text16;
-	@mixin responsive padding-block-end, 32, 32, 32;
+	@mixin responsive padding-block-end, 22, 32, 32;
 
 	@media (max-width: 767px) {
 		br {
@@ -48,7 +48,7 @@
 }
 
 .form {
-	@mixin res gap, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive gap, 10, 16, 16;
 
 	display: flex;
 	justify-content: center;
@@ -68,7 +68,17 @@
 	}
 
 	input {
-		@mixin res width, 100%, 22.222rem, 20rem; /* 320px */
+		@mixin responsive width, unset, 320, 320;
+	}
+}
+
+.input {
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+
+	input {
+		@mixin responsive width, unset, 320, 320;
 	}
 }
 
@@ -79,7 +89,7 @@
 
 	@media (hover: hover) {
 		&:not(:disabled):hover {
-			background-color: #bf1d29;
+			background-color: var(--red-600-color);
 		}
 	}
 

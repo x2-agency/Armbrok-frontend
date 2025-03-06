@@ -1,0 +1,12 @@
+.root {
+	display: flex;
+	@mixin responsive gap, 8, 8, 8;
+}
+
+.link {
+	@mixin responsive height, 38, 38, 38;
+}
+
+.svg {
+	height: 100%;
+}

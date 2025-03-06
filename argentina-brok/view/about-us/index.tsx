@@ -1,5 +1,8 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import type { SliderItemWithText } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -17,6 +20,7 @@ import css from './index.module.css';
 import type { AboutUsPageResponse } from './types/response';
 
 export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
+	publishedAt,
 	heroSection,
 	valuesSection,
 	membershipSection,
@@ -29,6 +33,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	awardsSection,
 	awards,
 }) => {
+	useUpdateFooterData(publishedAt);
 	return (
 		<>
 			<BannerSection

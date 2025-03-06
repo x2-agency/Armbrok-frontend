@@ -1,8 +1,8 @@
 // components/Crumb.tsx
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import Arrow from '@/public/assets/icon/arrow/arrow_right.svg';
 
 import css from './index.module.css';

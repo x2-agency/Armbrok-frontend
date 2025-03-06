@@ -139,6 +139,17 @@
 }
 
 .circleTop {
+	top: 0%;
+	left: 50%;
+}
+
+.circleLeft {
+	top: 50%;
+	left: 100%;
+}
+
+.circleLeft,
+.circleTop {
 	@mixin responsive width, 12, 12, 12;
 	@mixin responsive height, 12, 12, 12;
 
@@ -147,32 +158,6 @@
 	background-color: #fff;
 	top: 0%;
 	left: 50%;
-	translate: -50% -50%;
-
-	&::after {
-		@mixin responsive width, 4, 4, 4;
-		@mixin responsive height, 4, 4, 4;
-		@mixin responsive --border, 1.5, 1.5, 1.5;
-
-		position: absolute;
-		content: '';
-		border: var(--border) solid var(--gray-700-color);
-		left: 50%;
-		top: 50%;
-		border-radius: 100%;
-		translate: -50% -50%;
-	}
-}
-
-.circleLeft {
-	@mixin responsive width, 12, 12, 12;
-	@mixin responsive height, 12, 12, 12;
-
-	position: absolute;
-	border-radius: 100%;
-	background-color: #fff;
-	top: 50%;
-	left: 100%;
 	translate: -50% -50%;
 
 	&::after {

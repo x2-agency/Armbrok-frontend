@@ -1,5 +1,8 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
@@ -14,6 +17,7 @@ import type { InvestmentBankingPageResponse } from './types/response';
 export const InvestmentBanking: NextPage<
 	InvestmentBankingPageResponse['data']
 > = ({
+	publishedAt,
 	heroSection,
 	offerSolutionSection,
 	ourServicesSection,
@@ -22,6 +26,8 @@ export const InvestmentBanking: NextPage<
 	securityPapers,
 	latestSecuritiesPlacementsSection,
 }) => {
+	useUpdateFooterData(publishedAt);
+
 	return (
 		<>
 			<BannerSection

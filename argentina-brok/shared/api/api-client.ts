@@ -1,12 +1,29 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { getLocale } from 'next-intl/server';
+
+import { DEFAULT_LOCALE } from '@/i18n/routing';
 
 const apiClient = axios.create({
 	baseURL: process.env.NEXT_PUBLIC_API_URL || '',
 });
 
+const LOCALE_COOKIE = 'NEXT_LOCALE';
+
 apiClient.interceptors.request.use(
-	config => {
+	async config => {
+		const isServer = typeof window === 'undefined';
+		let locale: string;
+
+		if (isServer) {
+			locale = await getLocale();
+		} else {
+			locale = Cookies.get(LOCALE_COOKIE) ?? DEFAULT_LOCALE;
+		}
+
+		config.params = { ...config.params, locale };
+
+		config.headers['ngrok-skip-browser-warning'] = 'true';
 		const token = Cookies.get('token');
 		if (token) {
 			config.headers.Authorization = `Bearer ${token}`;

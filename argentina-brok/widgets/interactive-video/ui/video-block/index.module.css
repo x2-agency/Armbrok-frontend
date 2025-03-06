@@ -13,15 +13,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 100%;
+	@mixin responsive width, unset, 612, 612;
+	@mixin responsive height, auto, 420, 420;
 	overflow: hidden;
 	@mixin responsive border-radius, 20, 32, 32;
 }
 
 .video {
-	@mixin responsive width, unset, 612, 612;
-	@mixin responsive height, auto, 420, 420;
+	width: 100%;
+	height: 100%;
 
 	@media (max-width: 767px) {
 		width: 100%;

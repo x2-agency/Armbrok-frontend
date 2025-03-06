@@ -1,51 +1,20 @@
 import type { NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
+import createMiddleware from 'next-intl/middleware';
 
-import { LOCALES, DEFAULT_LOCALE } from './website-locale';
+import { routing } from '@/i18n/routing';
 
-export function middleware(req: NextRequest) {
-	const { pathname } = req.nextUrl; // Extracts the pathname from the request URL.
+const LANGUAGE_HEADER = 'Accept-Language';
+const CURRENT_PATH_HEADER = 'x-current-path';
 
-	// Check if the pathname already starts with a supported locale.
-	if (LOCALES.some(locale => pathname.startsWith(`/${locale}`))) {
-		return NextResponse.next(); // If the locale is already in the URL, proceed without changes.
-	}
+export function middleware(request: NextRequest) {
+	const handleI18nRouting = createMiddleware(routing);
+	const response = handleI18nRouting(request);
 
-	// Get the locale from cookies (if set by the user).
-	const cookieLocale = req.cookies.get('locale')?.value;
+	response.headers.set(CURRENT_PATH_HEADER, request.nextUrl.pathname);
 
-	// Validate the cookie locale: if it's not in LOCALES, use the default locale.
-	const validCookieLocale =
-		cookieLocale && LOCALES.includes(cookieLocale) ? cookieLocale : null;
+	const language = request.cookies.get(LANGUAGE_HEADER);
 
-	// Get the browser's language from the 'Accept-Language' header.
-	const acceptLanguage = req.headers.get('accept-language');
-	const browserLocale = acceptLanguage
-		? acceptLanguage.split(',')[0].split('-')[0] // Get the primary language (e.g., 'en' from 'en-US').
-		: DEFAULT_LOCALE;
-
-	// Determine the locale to use:
-	// 1. Use the valid locale from cookies if it exists.
-	// 2. Otherwise, use the browser's locale if it's supported.
-	// 3. Fallback to the default locale.
-	const locale =
-		validCookieLocale ||
-		(LOCALES.includes(browserLocale) ? browserLocale : DEFAULT_LOCALE);
-
-	// Redirect the user to the corresponding localized URL (e.g., '/en', '/fr', etc.).
-	const response = NextResponse.redirect(
-		new URL(`/${locale}${pathname}`, req.url)
-	);
-
-	// Set the locale in cookies if it's not already set or if the current cookie is invalid.
-	if (!validCookieLocale) {
-		response.cookies.set('locale', locale, {
-			path: '/', // Cookie is available for all paths.
-			maxAge: 60 * 60 * 24 * 365, // 1 year expiration.
-			sameSite: 'strict', // Prevents the cookie from being sent with cross-site requests.
-			httpOnly: true, // Prevents client-side JavaScript from accessing the cookie.
-		});
-	}
+	if (language) response.headers.set(LANGUAGE_HEADER, language.value);
 
 	return response;
 }
@@ -58,6 +27,8 @@ export const config = {
 		 * - Static files (e.g., /_next/static/...)
 		 * - Files in the public folder (e.g., /favicon.ico)
 		 */
+		'/',
+		'/(ru|hy|en)/:path*',
 		'/((?!api|_next/static|_next/image|favicon.ico|images|assets).*)',
 	],
 };

@@ -2,16 +2,20 @@
 
 import type {
 	Dispatch,
-	SetStateAction,
-	PropsWithChildren,
 	MutableRefObject,
+	PropsWithChildren,
+	SetStateAction,
 } from 'react';
-import { createContext, useContext, useState, useRef } from 'react';
+import { createContext, useContext, useRef, useState } from 'react';
 
 type LayoutContextType = {
 	toggleMenuOpen: Dispatch<SetStateAction<boolean>>;
 	isMenuOpen: boolean;
 	menuRef: MutableRefObject<HTMLDialogElement | null>;
+	footerData: {
+		publishedAt: string | null;
+	};
+	setFooterData: (data: { publishedAt: string | null }) => void;
 };
 
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
@@ -20,12 +24,18 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const [isMenuOpen, toggleMenuOpen] = useState<boolean>(false);
 	const menuRef = useRef<HTMLDialogElement | null>(null);
 
+	const [footerData, setFooterData] = useState<{ publishedAt: string | null }>({
+		publishedAt: null,
+	});
+
 	return (
 		<LayoutContext.Provider
 			value={{
 				isMenuOpen,
 				toggleMenuOpen,
 				menuRef,
+				footerData,
+				setFooterData,
 			}}
 		>
 			{children}
@@ -36,7 +46,7 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 export const useLayoutContext = () => {
 	const context = useContext(LayoutContext);
 	if (!context) {
-		throw new Error();
+		throw new Error('useLayoutContext must be used within a LayoutProvider');
 	}
 	return context;
 };

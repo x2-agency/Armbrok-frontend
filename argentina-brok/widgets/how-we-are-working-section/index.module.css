@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@mixin responsive padding-block, 50, 72, 72;
+	@mixin responsive padding-block, 36, 72, 72;
 }
 
 .title {

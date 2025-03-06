@@ -1,12 +1,18 @@
+import { useTranslations } from 'next-intl';
+
+import { LOCALE_KEYS } from '@/i18n/locale-keys';
 import { Button } from '@/shared/ui/button';
-import { OPEN_ACC_BUTTON } from '@/widgets/app-layout/models/header.constants';
 
 import css from './index.module.css';
+
 export const LogIn = () => {
+	const { header } = LOCALE_KEYS;
+	const t = useTranslations(header.root);
+
 	return (
 		<div className={css.root}>
 			<Button className={css.button} variant="filled" href="/">
-				{OPEN_ACC_BUTTON}
+				{t(`${header.openAccountButton.root}.text`)}
 			</Button>
 		</div>
 	);

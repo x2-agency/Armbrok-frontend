@@ -10,6 +10,7 @@ import type {
 import type { AssetManagementCardProps } from '@/view/home/types/response';
 
 export type AssetManagementPageData = {
+	publishedAt?: string;
 	heroSection?: HeroSection;
 	experienceSection?: ExperienceSection;
 	benefitsSection?: BenefitsSection;

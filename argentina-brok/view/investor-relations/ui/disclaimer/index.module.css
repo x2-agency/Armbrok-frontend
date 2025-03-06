@@ -23,7 +23,7 @@
 
 	ul,
 	ol {
-		@mixin responsive padding-inline-start, 25, 25, 25;
+		@mixin responsive padding-inline-start, 15, 25, 25;
 		@mixin responsive gap, 10, 15, 15;
 
 		list-style: disc;

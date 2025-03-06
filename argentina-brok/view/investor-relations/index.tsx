@@ -1,8 +1,12 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
+import { CorporateReporting } from '@/widgets/corporate-reporting';
 import { CountriesSection } from '@/widgets/countries-section';
 import { Shareholders } from '@/widgets/shareholders';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
@@ -14,6 +18,7 @@ import { Disclaimer } from './ui/disclaimer';
 export const InvestorRelations: NextPage<
 	InvestorRelationsPageResponse['data']
 > = ({
+	publishedAt,
 	heroSection,
 	transparencySection,
 	residenceCountries,
@@ -22,7 +27,10 @@ export const InvestorRelations: NextPage<
 	disclaimer,
 	remunerationSection,
 	shareholdersSection,
+	documentTabsSection,
 }) => {
+	useUpdateFooterData(publishedAt);
+
 	return (
 		<>
 			<BannerSection
@@ -43,6 +51,7 @@ export const InvestorRelations: NextPage<
 			</HeroContainer>
 			<Shareholders {...shareholdersSection} />
 			<CountriesSection residenceCountriesSection={residenceCountries} />
+			{documentTabsSection && <CorporateReporting {...documentTabsSection} />}
 			<StatutoryDocuments
 				documentsSection={shareholdersMeetingsSection}
 				columns={2}

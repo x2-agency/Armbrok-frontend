@@ -1,20 +1,21 @@
 import type {
-	BaseResponse,
-	HeroSectionAboutUs,
-	CompaniesSection,
-	ValuesSection,
-	CorporateEventsSection,
-	CompanyDetailsSection,
-	MembershipSection,
-	CompanyStructureSection,
-	DocumentsSectionProps,
-	ProjectsSection,
-	OfficeSliderSection,
 	AwardSection,
 	AwardsResponse,
+	BaseResponse,
+	CompaniesSection,
+	CompanyDetailsSection,
+	CompanyStructureSection,
+	CorporateEventsSection,
+	DocumentsSectionProps,
+	HeroSectionAboutUs,
+	MembershipSection,
+	OfficeSliderSection,
+	ProjectsSection,
+	ValuesSection,
 } from '@/shared/types/global.types';
 
 export type AboutUsPageData = {
+	publishedAt?: string;
 	heroSection?: HeroSectionAboutUs;
 	valuesSection?: ValuesSection;
 	companiesSection?: CompaniesSection;

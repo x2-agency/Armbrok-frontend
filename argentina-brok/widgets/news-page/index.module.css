@@ -2,7 +2,7 @@
 .news {
 	display: flex;
 	flex-direction: column;
-	@mixin responsive padding-block-end, 50, 72, 72;
+	@mixin responsive padding-block-end, 36, 72, 72;
 }
 
 .news {

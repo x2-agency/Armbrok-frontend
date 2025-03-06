@@ -14,7 +14,7 @@
 }
 
 .vacancy {
-	@mixin responsive margin-block-end, 50, 72, 72;
+	@mixin responsive margin-block-end, 36, 72, 72;
 }
 
 .tabs-container {

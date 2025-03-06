@@ -1,7 +1,7 @@
 import cx from 'clsx';
 
+import { AppStore } from '@/shared/ui/app-store';
 import type { CardType } from '@/view/brokerage/types/response';
-import { Social } from '@/widgets/app-layout/ui/footer/social-links/social';
 import { Iphone } from '@/widgets/app-section/ui/iphone';
 
 import css from './index.module.css';
@@ -18,9 +18,7 @@ export const Card = ({ data, showLink }: TopCardType) => {
 
 			<h2 className={css.title}>{data.title ?? ''}</h2>
 			<p className={css.description}>{data.description ?? ''}</p>
-			{showLink && (
-				<Social className={css.store} appStoreLogos={data?.appStoreLogos} />
-			)}
+			{showLink && <AppStore className={css.store} data={data} />}
 		</article>
 	);
 };

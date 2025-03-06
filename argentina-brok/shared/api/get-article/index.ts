@@ -1,7 +1,7 @@
 import apiClient from '@/shared/api/api-client';
 import type { ArticlesData } from '@/shared/types/article';
 
-export type GetArticlesparams = {
+export type GetArticlesParams = {
 	limit?: number;
 	offset?: number;
 	filters?: { category?: string };
@@ -9,18 +9,29 @@ export type GetArticlesparams = {
 };
 
 export const getArticle = async (
-	params?: GetArticlesparams
+	params?: GetArticlesParams
 ): Promise<ArticlesData> => {
 	const { limit = 5, page = 1, filters } = params || {};
-	const response = await apiClient.get('/articles', {
-		params: {
-			...(filters?.category &&
-				filters.category !== 'all' && {
-					'filters[category][slug][$eq]': filters.category,
-				}),
-			'pagination[page]': page,
-			'pagination[pageSize]': limit,
-		},
-	});
-	return response.data as ArticlesData;
+
+	try {
+		const response = await apiClient.get('/articles', {
+			params: {
+				...(filters?.category &&
+					filters.category !== 'all' && {
+						'filters[category][slug][$eq]': filters.category,
+					}),
+				'pagination[page]': page,
+				'pagination[pageSize]': limit,
+			},
+		});
+
+		return response.data as ArticlesData;
+	} catch (error) {
+		console.error(error);
+		return {
+			data: [],
+			categories: [],
+			meta: { pagination: { page: 1, pageCount: 0, total: 0 } },
+		};
+	}
 };

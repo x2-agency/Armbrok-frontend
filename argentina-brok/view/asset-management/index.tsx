@@ -1,5 +1,8 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -22,6 +25,7 @@ export const AssetManagement: NextPage<{
 	}
 
 	const {
+		publishedAt,
 		heroSection,
 		experienceSection,
 		benefitsSection,
@@ -32,7 +36,7 @@ export const AssetManagement: NextPage<{
 		documentsSection,
 		infoSection,
 	} = initialData?.data ?? {};
-
+	useUpdateFooterData(publishedAt);
 	return (
 		<>
 			<BannerSection

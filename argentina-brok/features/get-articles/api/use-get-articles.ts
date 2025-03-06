@@ -2,8 +2,9 @@
 
 import type { UseInfiniteQueryResult } from '@tanstack/react-query';
 import { useInfiniteQuery } from '@tanstack/react-query';
+import { useMemo } from 'react';
 
-import type { GetArticlesparams } from '@/shared/api/get-article';
+import type { GetArticlesParams } from '@/shared/api/get-article';
 import { getArticle } from '@/shared/api/get-article';
 import type { ArticlesData } from '@/shared/types/article';
 
@@ -13,15 +14,15 @@ export type InfiniteQueryPage<T> = {
 };
 
 export type PagedResponse = {
-	page: number;
-	totalPages: number;
-	totalItems: number;
+	page?: number | null;
+	pageCount: number;
+	total: number;
 };
 
 export const DEFAULT_PAGED_RESPONSE: PagedResponse = {
 	page: 1,
-	totalPages: 0,
-	totalItems: 0,
+	pageCount: 0,
+	total: 0,
 };
 
 export const QUERY_KEYS = {
@@ -29,9 +30,11 @@ export const QUERY_KEYS = {
 };
 
 export const useGetArticles = (
-	params?: GetArticlesparams,
+	params?: GetArticlesParams,
 	initialData?: ArticlesData
 ): UseInfiniteQueryResult<InfiniteQueryPage<ArticlesData>, Error> => {
+	const stableFilters = useMemo(() => params?.filters, [params?.filters]);
+
 	const initialPageParams = initialData?.meta?.pagination.page
 		? Array.from({ length: initialData.meta.pagination.page }, (_, i) => i + 1)
 		: [];
@@ -40,21 +43,27 @@ export const useGetArticles = (
 		pages: [
 			initialData ?? {
 				data: [],
-				...DEFAULT_PAGED_RESPONSE,
+				meta: {
+					pagination: DEFAULT_PAGED_RESPONSE,
+				},
 			},
 		],
 		pageParams: initialPageParams,
 	};
 
 	return useInfiniteQuery({
-		queryKey: [QUERY_KEYS.articles, params?.filters],
+		queryKey: [QUERY_KEYS.articles, stableFilters],
 		initialData: params?.filters ? undefined : initialInfinitePage,
 		initialPageParam: 1,
 		queryFn: ({ pageParam }) => getArticle({ ...params, page: pageParam }),
 		getNextPageParam: (lastPage: ArticlesData) => {
 			const { page, pageCount } = lastPage.meta?.pagination ?? {};
 
-			return page && pageCount && page < pageCount ? page + 1 : undefined;
+			if (page && pageCount && page < pageCount) {
+				return page + 1;
+			}
+			return undefined;
 		},
+		staleTime: 1000 * 60 * 5,
 	});
 };

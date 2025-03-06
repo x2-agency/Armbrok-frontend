@@ -4,8 +4,7 @@ import useMediaQuery from '@/shared/hooks/use-media-query';
 import {
 	HOME_LINK,
 	LOGO_HEADER,
-	NAVIGATION_LINKS,
-} from '@/widgets/app-layout/models/header.constants';
+} from '@/widgets/app-layout/model/header.constants';
 import { Logo } from '@/widgets/app-layout/ui/logo';
 import { Search } from '@/widgets/app-layout/ui/search';
 
@@ -22,7 +21,7 @@ export const Header = () => {
 		<header className={css.root}>
 			<div className={css.leftBlock}>
 				<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
-				<Navigation navLinks={NAVIGATION_LINKS} />
+				<Navigation />
 			</div>
 
 			<div className={css.rightBlock}>

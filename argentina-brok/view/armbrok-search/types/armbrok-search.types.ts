@@ -6,6 +6,7 @@ export type ArmbrokSearchPageResponse = ItemDetail & {
 };
 
 export type SearchDataItem = {
+	publishedAt?: string;
 	kind: string;
 	title: string;
 	htmlTitle: string;

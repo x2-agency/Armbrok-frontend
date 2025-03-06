@@ -1,8 +1,8 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { createContext, useContext, useEffect, useRef } from 'react';
 
+import { usePathname } from '@/i18n/navigation';
 import type {
 	MultiObserverContext,
 	MultiObserverOptions,

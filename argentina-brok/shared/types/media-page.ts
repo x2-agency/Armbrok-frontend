@@ -37,6 +37,7 @@ export type MediaProps = {
 
 export type MediaPageProps = {
 	data: {
+		publishedAt?: string;
 		title?: string;
 		description?: string;
 		moreButton?: {

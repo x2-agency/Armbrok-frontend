@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import NotSearchedIcon from '@/public/assets/icons/news-not-searched-icon.svg';
 import type { SearchDataItem } from '@/view/armbrok-search/types/armbrok-search.types';
 

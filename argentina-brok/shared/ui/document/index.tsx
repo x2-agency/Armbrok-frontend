@@ -2,8 +2,8 @@
 'use client';
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import type { MediaData } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 
@@ -13,7 +13,9 @@ export const Document = ({
 	direction,
 	file,
 	name,
-}: MediaData & { direction: string }) => {
+	columns,
+	lineClamp,
+}: MediaData & { direction: string; columns?: number; lineClamp: number }) => {
 	if (!file) {
 		return null;
 	}
@@ -23,7 +25,16 @@ export const Document = ({
 			<div className={css.leftPart}>
 				<img src="/assets/icon/file/file.svg" alt="file" className={css.icon} />
 				<div className={css.header}>
-					{name && <h3 className={css.name}>{parser(name)}</h3>}
+					{name && (
+						<h3
+							className={cx(css.name, {
+								[css.bigWidth]: columns && columns < 3,
+							})}
+							style={{ WebkitLineClamp: lineClamp }}
+						>
+							{parser(name)}
+						</h3>
+					)}
 					{file.ext && file.size && (
 						<div className={css.info}>
 							{file.ext && (

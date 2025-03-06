@@ -1,5 +1,5 @@
 .root {
 	@mixin responsive height, 300, 746, 746;
 
-	background-color: gray;
+	background-color: var(--gray-300-color);
 }

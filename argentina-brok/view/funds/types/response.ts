@@ -9,6 +9,7 @@ import type {
 } from '@/shared/types/global.types';
 
 export type FundsPageData = {
+	publishedAt?: string;
 	heroSection?: HeroSection;
 	experienceSection?: ExperienceSection;
 	investingAdvantages?: BenefitsSection;

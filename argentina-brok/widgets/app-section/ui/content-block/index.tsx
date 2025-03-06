@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
 
+import { AppStore } from '@/shared/ui/app-store';
 import { Button } from '@/shared/ui/button';
 import type { BrokerageAppCardProps } from '@/view/home/types/response';
-import { Social } from '@/widgets/app-layout/ui/footer/social-links/social';
 
 import css from './index.module.css';
 
@@ -20,7 +20,6 @@ export const ContentBlock = ({ data }: ContentProp) => {
 		button,
 		appStoreLogos,
 	} = data ?? {};
-
 	return (
 		<div className={css.root}>
 			{armbrokLogo && (
@@ -48,7 +47,7 @@ export const ContentBlock = ({ data }: ContentProp) => {
 						<p className={css.preview}>{parser(appStoreCaption)}</p>
 					)}
 					{appStoreLogos && (
-						<Social className={css.store} appStoreLogos={appStoreLogos} />
+						<AppStore className={css.store} data={{ appStoreLogos }} />
 					)}
 				</div>
 			</div>
