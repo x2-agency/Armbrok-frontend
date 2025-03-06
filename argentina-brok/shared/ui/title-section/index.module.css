@@ -21,7 +21,7 @@
 	@mixin responsive padding-block-end, 12, 24, 24;
 	@mixin font-h2;
 
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 1.2;
 	scroll-margin-top: 50vh;
 

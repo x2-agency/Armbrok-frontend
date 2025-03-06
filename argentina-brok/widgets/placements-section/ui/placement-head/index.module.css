@@ -17,7 +17,7 @@
 	@mixin font-text20;
 	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem;
 
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .date,
