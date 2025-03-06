@@ -25,6 +25,7 @@ export const InvestorRelations: NextPage<
 	shareholdersSection,
 	documentTabsSection,
 }) => {
+	console.log(documentTabsSection);
 	return (
 		<>
 			<BannerSection

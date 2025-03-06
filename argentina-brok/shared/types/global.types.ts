@@ -472,14 +472,18 @@ export type AwardsResponse = {
 
 /* Document Tabs */
 
+export type ChildrenTab = {
+	tabName: string;
+	files: Array<MediaData>;
+};
+
+export type DocumentMainTab = {
+	tabName: string;
+	files: Array<MediaData>;
+	childrenTabs: Array<ChildrenTab>;
+};
+
 export type DocumentTabs = {
 	title?: string;
-	tabs: Array<{
-		tabName: string;
-		files: Array<MediaData>;
-		childrenTabs: Array<{
-			tabName: string;
-			files: Array<MediaData>;
-		}>;
-	}>;
+	tabs: Array<DocumentMainTab>;
 };
