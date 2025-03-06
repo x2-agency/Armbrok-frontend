@@ -16,6 +16,7 @@ module.exports = {
 		{ path: '/armbrok-search', priority: 0.3, changefreq: 'weekly' },
 		{ path: '/funds', priority: 0.7, changefreq: 'daily' },
 		{ path: '/media', priority: 0.7, changefreq: 'daily' },
+		{ path: '/regulation', priority: 0.2, changefreq: 'weekly' },
 	],
 	EXCLUDED_PATHS: ['/error', '/not-found'],
 };

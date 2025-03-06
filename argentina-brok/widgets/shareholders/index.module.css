@@ -5,4 +5,9 @@
 
 	display: grid;
 	grid-template-columns: 32.92% auto;
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
 }

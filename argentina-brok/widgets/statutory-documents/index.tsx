@@ -12,6 +12,7 @@ export type StatutoryDocumentsProps = {
 	documentsSection?: DocumentsSectionProps;
 	columns?: number;
 	fileDirection?: 'row' | 'column';
+	lineClamp?: number;
 };
 
 export const StatutoryDocuments = ({
@@ -19,6 +20,7 @@ export const StatutoryDocuments = ({
 	className,
 	columns = 3,
 	fileDirection = 'row',
+	lineClamp = 3,
 }: StatutoryDocumentsProps) => {
 	const { title, documents, description } = documentsSection ?? {};
 
@@ -51,10 +53,12 @@ export const StatutoryDocuments = ({
 				{documents.map((document, key) => (
 					<li key={key}>
 						<Document
+							columns={columns}
 							name={document.name}
 							file={document.file}
 							alternativeText={document.alternativeText}
 							direction={fileDirection}
+							lineClamp={lineClamp}
 						/>
 					</li>
 				))}

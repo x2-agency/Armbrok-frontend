@@ -20,6 +20,8 @@
 	@mixin responsive padding-block, 8, 8, 8;
 
 	border-color: var(--gray-200-color) !important;
+	display: flex;
+	justify-content: center;
 
 	&.active {
 		background-color: var(--gray-100-color);

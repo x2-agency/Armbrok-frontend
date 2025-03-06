@@ -108,9 +108,9 @@
 	@mixin responsive max-width, 0, 130, 135;
 
 	@media (min-width: 768px) {
-		display: -webkit-box; 
+		display: -webkit-box;
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3; 
+		-webkit-line-clamp: 3;
 		overflow: hidden;
 		word-break: break-word;
 		overflow-wrap: break-word;
@@ -119,6 +119,14 @@
 
 	@media (max-width: 767px) {
 		max-width: unset;
+	}
+
+	&.bigWidth {
+		@mixin responsive max-width, 332, 332, 332;
+
+		@media (max-width: 767px) {
+			max-width: unset;
+		}
 	}
 }
 

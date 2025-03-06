@@ -1,0 +1,48 @@
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.tabs {
+	@mixin responsive margin-block-end, 20, 40, 40;
+	@mixin responsive padding, 4, 4, 4;
+	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive gap, 4, 4, 4;
+
+	display: flex;
+	margin-inline: auto;
+	background-color: var(--gray-200-color);
+}
+
+.button {
+	@mixin font-text16;
+	@mixin responsive width, 160, 200, 200;
+	@mixin responsive border-radius, 4, 4, 4;
+
+	font-weight: 500;
+	border: none;
+	padding-inline: unset;
+	display: flex;
+	justify-content: center;
+
+	&.selected {
+		background-color: var(--gray-100-color);
+	}
+
+	@media (max-width: 767px) {
+		width: auto;
+		@mixin responsive padding-inline, 8;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			border: none !important;
+			color: black !important;
+			background-color: var(--gray-100-color);
+		}
+	}
+}
+
+.files {
+	@mixin responsive padding-block-start, 55, 55, 55;
+}

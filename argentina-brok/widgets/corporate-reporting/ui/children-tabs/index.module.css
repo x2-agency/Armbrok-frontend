@@ -1,0 +1,32 @@
+.tabs {
+	@mixin responsive gap, 8, 8, 8;
+	@mixin responsive padding-block-end, 20, 20, 20;
+
+	display: flex;
+}
+
+.button {
+	@mixin font-text14;
+	@mixin responsive padding-inline, 16, 16, 16;
+	@mixin responsive padding-block, 8, 8, 8;
+
+	font-weight: 500;
+	border: none;
+	display: flex;
+	justify-content: center;
+	background-color: var(--gray-200-color);
+	color: var(--gray-500-color);
+
+	&.selected {
+		background-color: var(--gray-900-color);
+		color: var(--gray-100-color);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			border: none !important;
+			color: var(--gray-100-color) !important;
+			background-color: var(--gray-900-color);
+		}
+	}
+}

@@ -14,7 +14,9 @@ export const NavigationColumn = () => {
 		<nav className={css.root}>
 			{footer.links.items.map((item, index) => (
 				<div key={index} className={css.column}>
-					<h6 className={css.title}>{parser(t(`${item.root}.text`))}</h6>
+					<Button variant="subtle" href={item.root ?? ''} className={css.title}>
+						{parser(t(`${item.root}.text`))}
+					</Button>
 					<ul className={css.list}>
 						{item.items?.map((link, index) => (
 							<li key={index}>

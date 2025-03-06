@@ -20,6 +20,19 @@
 
 .listItem {
 	@mixin responsive gap, 12, 12, 12;
+	@mixin responsive --leftPartWidth, 320, 306, 306;
+
+	display: grid;
+	grid-template-columns: var(--leftPartWidth) auto;
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.leftPart {
+	@mixin responsive gap, 12, 12, 12;
 
 	display: flex;
 	align-items: center;
@@ -39,6 +52,7 @@
 	position: relative;
 	overflow: hidden;
 	border-radius: 100%;
+	align-self: center;
 }
 
 .icon {
@@ -46,4 +60,28 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.name {
+	@mixin font-text16;
+
+	align-self: center;
+}
+
+.percent {
+	@mixin responsive height, 40, 58, 58;
+
+	background-color: var(--red-500-color);
+	position: relative;
+}
+
+.percentLabel {
+	@mixin responsive padding-inline-start, 16, 24, 24;
+	@mixin font-text20;
+
+	font-weight: 500;
+	position: absolute;
+	top: 50%;
+	translate: 0% -50%;
+	color: var(--gray-100-color);
 }
