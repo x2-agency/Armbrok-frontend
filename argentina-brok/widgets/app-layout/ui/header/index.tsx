@@ -4,7 +4,7 @@ import useMediaQuery from '@/shared/hooks/use-media-query';
 import {
 	HOME_LINK,
 	LOGO_HEADER,
-} from '@/widgets/app-layout/models/header.constants';
+} from '@/widgets/app-layout/model/header.constants';
 import { Logo } from '@/widgets/app-layout/ui/logo';
 import { Search } from '@/widgets/app-layout/ui/search';
 

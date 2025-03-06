@@ -4,7 +4,7 @@ import parser from 'html-react-parser';
 import { useEffect, useRef, useState } from 'react';
 
 import { Button } from '@/shared/ui/button';
-import { COOKIE_PANEL_INFO } from '@/widgets/app-layout/models/cookie-panel.constants';
+import { COOKIE_PANEL_INFO } from '@/widgets/app-layout/model/cookie-panel.constants';
 
 import css from './index.module.css';
 

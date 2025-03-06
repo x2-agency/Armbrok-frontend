@@ -10,7 +10,7 @@
 }
 
 .column {
-	@mixin res padding-block-end, 4rem, unset, unset; /* 15px */
+	@mixin responsive padding-block-end, 15, unset, unset;
 	&:last-of-type {
 		padding-block-end: unset;
 	}

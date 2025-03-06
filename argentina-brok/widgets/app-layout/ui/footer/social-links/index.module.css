@@ -3,8 +3,8 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	@mixin res padding-block-end, 8rem, 2.778rem, 2.5rem; /* 30px 40px */
-	border-bottom: 1px solid #ebebeb;
+	@mixin responsive padding-block-end, 25, 40, 40;
+	border-bottom: 1px solid var(--gray-300-color);
 
 	@media (max-width: 767px) {
 		flex-direction: column;
@@ -26,9 +26,9 @@
 }
 
 .media {
-	@mixin res gap, 2.667rem, 1.111rem, 1rem; /* 10px, 16px, 16px */
+	@mixin responsive gap, 10, 16, 16;
 	img {
-		@mixin res width, 6.4rem, 1.667rem, 1.5rem; /* 24px */
-		@mixin res height, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+		@mixin responsive width, 24, 24, 24;
+		@mixin responsive height, 24, 24, 24;
 	}
 }

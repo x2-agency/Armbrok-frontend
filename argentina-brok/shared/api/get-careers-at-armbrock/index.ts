@@ -1,6 +1,6 @@
 import apiClient from '@/shared/api/api-client';
 
-export const getCareersAtArmbrockPage = async () => {
+export const getCareersAtArmbrokPage = async () => {
 	try {
 		const response = await apiClient.get('/careers-at-armbrok');
 

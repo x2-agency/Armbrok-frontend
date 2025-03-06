@@ -1,7 +1,7 @@
 .root {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	@mixin responsive column-gap, unset, 40, 40; /* 20px 40px */
+	@mixin responsive column-gap, unset, 40, 40;
 
 	@media (max-width: 767px) {
 		display: flex;

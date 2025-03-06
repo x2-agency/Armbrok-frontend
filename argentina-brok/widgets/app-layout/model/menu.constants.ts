@@ -1,4 +1,4 @@
 export const MENU_HEADER = {
 	src: '/assets/icons/header/logo-armbrok-black.svg',
-	alt: 'Логотип компании',
+	alt: 'logo company',
 };

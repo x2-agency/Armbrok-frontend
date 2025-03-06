@@ -14,11 +14,11 @@ import { SliderSection } from '@/widgets/slider-section';
 import { VacanciesSection } from '@/widgets/vacancies-section';
 
 import css from './index.module.css';
-import { FEEDBACK_FORM } from './models/careers-at-armbrock.constants';
-import type { CareersAtArmbrockPageResponse } from './types/response';
+import { FEEDBACK_FORM } from './models/careers-at-armbrok.constants';
+import type { CareersAtArmbrokPageResponse } from './types/response';
 
-export const CareersAtArmbrock: NextPage<
-	CareersAtArmbrockPageResponse['data']
+export const CareersAtArmbrok: NextPage<
+	CareersAtArmbrokPageResponse['data']
 > = ({
 	publishedAt,
 	heroSection,

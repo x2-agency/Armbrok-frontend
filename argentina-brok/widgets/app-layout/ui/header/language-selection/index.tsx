@@ -2,7 +2,7 @@
 
 import cx from 'clsx';
 import { useLocale } from 'next-intl';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { getLocalePseudonim, Locales } from '@/i18n/routing';
@@ -73,20 +73,18 @@ export const LanguageSelection = ({
 					[css.close]: !isOpened,
 				})}
 			>
-				{Object.entries(Locales)
-					// .map(lang => lang.valueOf())
-					.map(([key, value], index) => (
-						<li key={index} className={css.language}>
-							<button
-								onClick={() => handleSelectLanguage(value)}
-								className={cx(css.languageButton, {
-									[css.selectedLang]: value === selectedLanguage,
-								})}
-							>
-								{key}
-							</button>
-						</li>
-					))}
+				{Object.entries(Locales).map(([key, value], index) => (
+					<li key={index} className={css.language}>
+						<button
+							onClick={() => handleSelectLanguage(value)}
+							className={cx(css.languageButton, {
+								[css.selectedLang]: value === selectedLanguage,
+							})}
+						>
+							{key}
+						</button>
+					</li>
+				))}
 			</ul>
 		</div>
 	);

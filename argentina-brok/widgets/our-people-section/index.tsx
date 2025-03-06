@@ -15,7 +15,6 @@ export const OurPeopleSection = ({
 	if (!employeeStories || employeeStories.length === 0) {
 		return null;
 	}
-
 	return (
 		<section className={css.root}>
 			<div className={css.titleBlock}>

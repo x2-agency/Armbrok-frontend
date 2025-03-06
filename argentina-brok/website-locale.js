@@ -8,7 +8,7 @@ module.exports = {
 		{ path: '/media', priority: 0.7, changefreq: 'daily' },
 		{ path: '/asset-management', priority: 0.7, changefreq: 'daily' },
 		{ path: '/brokerage', priority: 0.7, changefreq: 'daily' },
-		{ path: '/careers-at-armbrock', priority: 0.7, changefreq: 'daily' },
+		{ path: '/careers-at-armbrok', priority: 0.7, changefreq: 'daily' },
 		{ path: '/depositary-services', priority: 0.7, changefreq: 'daily' },
 		{ path: '/investment-banking', priority: 0.7, changefreq: 'daily' },
 		{ path: '/investor-relations', priority: 0.7, changefreq: 'daily' },

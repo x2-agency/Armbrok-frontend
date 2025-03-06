@@ -3,23 +3,57 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	@mixin res padding-block-start, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
+	position: relative;
+	@mixin responsive padding-block, 36, 72, 72;
 }
 
 .title {
 	@mixin font-h2;
 	font-weight: 600;
-	@mixin res padding-block-end, 8rem, 3.333rem, 3rem; /* 30px 48px */
+	@mixin responsive padding-block-end, 30, 48, 48;
 }
 
 .event {
-	@mixin res padding-inline-start, 5.333rem, 8.333rem, unset; /* 20px 120px */
-	@mixin res padding-block-end, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
+	position: relative;
+	@mixin responsive padding-inline, 20, 120, unset;
+
+	@media (min-width: 1441px) {
+		padding-inline: calc(8rem + (100vw - 1440px) / 2);
+	}
 }
 
-.fullWidth {
-	width: 100%;
-	padding-inline: 0;
-	max-width: unset;
-	margin-inline: unset;
+.root::before,
+.root::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 7rem;
+	z-index: 2;
+	pointer-events: none;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0)
+	);
+}
+
+.root::before {
+	left: 0;
+}
+
+.root::after {
+	right: 0;
+	background: linear-gradient(
+		to left,
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0)
+	);
+}
+
+@media (min-width: 1441px) {
+	.root::before,
+	.root::after {
+		width: calc(7rem + (100vw - 1440px) / 2);
+	}
 }

@@ -9,7 +9,7 @@ import type {
 	Vacancies,
 } from '@/shared/types/global.types';
 
-export type CareersAtArmbrockPageData = {
+export type CareersAtArmbrokPageData = {
 	publishedAt?: string;
 	heroSection?: HeroSection;
 	workAdvantagesSection?: ExperienceSection;
@@ -22,5 +22,5 @@ export type CareersAtArmbrockPageData = {
 	vacancies?: Vacancies;
 };
 
-export type CareersAtArmbrockPageResponse =
-	BaseResponse<CareersAtArmbrockPageData>;
+export type CareersAtArmbrokPageResponse =
+	BaseResponse<CareersAtArmbrokPageData>;

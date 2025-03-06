@@ -1,123 +1,123 @@
 {
-  "header": {
-    "loginButton": {
-      "text": "Մուտք գործել",
-      "link": "#"
-    },
-    "openAccountButton": {
-      "text": "Բաց հաշիվ",
-      "link": "#"
-    },
-    "services": {
-      "text": "Ծառայություններ",
-      "link": "/services"
-    },
-    "investorRelations": {
-      "text": "Ներդրողների հետ հարաբերություններ",
-      "link": "/investor-relations"
-    },
-    "media": {
-      "text": "Մեդիա",
-      "link": "/media"
-    },
-    "aboutUs": {
-      "text": "Մեր մասին",
-      "link": "/about-us"
-    },
-    "contactUs": {
-      "text": "Կապը մեզ հետ",
-      "link": "/armbrok-contact-page"
-    }
-  },
-  "footer": {
-    "links": {
-      "productsAndServices": {
-        "text": "Ապրանքներ և Ծառայություններ",
-        "brokerage": {
-          "text": "Բրոքերային ծառայություններ",
-          "link": "/brokerage"
-        },
-        "assetManagement": {
-          "text": "Գույքի կառավարում",
-          "link": "/asset-management"
-        },
-        "investmentFunds": {
-          "text": "Ներդրումային ֆոնդեր",
-          "link": "/funds"
-        },
-        "investmentBanking": {
-          "text": "Ներդրումային բանկինգ",
-          "link": "/investment-banking"
-        },
-        "depositoryRegistrar": {
-          "text": "Դեպոզիտարի և ռեգիստրատոր",
-          "link": "/depositary-services"
-        }
-      },
-      "aboutUs": {
-        "text": "Մեր մասին",
-        "generalInformation": {
-          "text": "Ընդհանուր տեղեկություն",
-          "link": "#"
-        },
-        "career": {
-          "text": "Կարիերա",
-          "link": "/career-at-armbrock"
-        }
-      },
-      "investorRelations": {
-        "text": "Ներդրողների հետ կապ"
-      },
-      "media": {
-        "text": "Մեդիա",
-        "articles": {
-          "text": "Հոդվածներ",
-          "link": "/media?category=articles"
-        },
-        "investmentIdeas": {
-          "text": "Ներդրումային գաղափարներ",
-          "link": "/media?category=invest-ideas"
-        },
-        "companyNews": {
-          "text": "Ընկերության նորություններ",
-          "link": "/media?category=company-news"
-        }
-      },
-      "regulation": {
-        "text": "Կանոնակարգ",
-        "lawsLegalActs": {
-          "text": "Օրենքներ և իրավական ակտեր",
-          "link": "#"
-        },
-        "internalRules": {
-          "text": "Ներքին կանոններ",
-          "link": "#"
-        },
-        "stockExchangeRules": {
-          "text": "Ֆոնդային բորսայի և կենտրոնական դեպոզիտարի կանոններ",
-          "link": "#"
-        }
-      },
-      "contactUs": {
-        "text": "Կապ մեզ հետ"
-      }
-    },
-    "disclaimer": "<p>Armbrok-ը պատասխանատվություն չի կրում այս կայքում տեղադրված երրորդ կողմի վեբ կայքերում ներկայացված տեղեկատվության և/կամ գովազդների ճշգրտության և հուսալիության համար և չի կրում որևէ պատասխանատվություն նշված տեղեկատվության օգտագործման հետևանքների համար:</p><p>Եթե անգլերեն և ռուսերեն հրապարակված տեղեկատվության միջև որևէ հակասություն առաջանա, գերակշռող է համարվում հայերեն տարբերակը:</p><p>Օգտակար հղումներ՝ cba.am, abcfinance.am, fininfo.am, fsm.am</p>  <p>Armbrok-ը կարգավորվում է Հայաստանի Հանրապետության Կենտրոնական Բանկի կողմից:</p><p>Լիցենզիայի համարը՝ 10, տրված է 04.11.2008 թվականին:</p>",
-    "updateLabel": "Վերջին թարմացում:"
-  },
-  "notFound": {
-    "title": "Վա՜յ!<br /> Էջը չի գտնվել \uD83D\uDE15",
-    "description": "Թվում է, թե այն էջը, որը փնտրում եք, գոյություն չունի կամ տեղափոխվել է։<br /> Ստուգեք URL-ը կամ վերադարձեք գլխավոր էջ։ Մենք այստեղ ենք,<br /> որպեսզի օգնենք ձեզ գտնել ճիշտ ճանապարհը։",
-    "button": {
-      "text": "Վերադառնալ գլխավոր էջ",
-      "link": "/"
-    }
-  },
-  "serverError": {
-    "title": "Ինչ-որ բան սխալ գնաց \uD83D\uDE35",
-    "description": "Մենք այժմ սերվերի խնդիր ունենք։ Խնդրում ենք փորձել թարմացնել էջը<br /> կամ&nbsp;վերադառնալ ավելի ուշ։ Եթե&nbsp;խնդիրը շարունակվի, կապ հաստատեք աջակցության հետ&nbsp;&mdash; մենք<br /> աշխատում ենք այն&nbsp;շտկելու հնարավորինս արագ!"
-  },
-  "media": {
-    "allTab": "Բոլորը"
-  }
+	"header": {
+		"loginButton": {
+			"text": "Մուտք գործել",
+			"link": "#"
+		},
+		"openAccountButton": {
+			"text": "Բաց հաշիվ",
+			"link": "#"
+		},
+		"services": {
+			"text": "Ծառայություններ",
+			"link": "/services"
+		},
+		"investorRelations": {
+			"text": "Ներդրողների հետ հարաբերություններ",
+			"link": "/investor-relations"
+		},
+		"media": {
+			"text": "Մեդիա",
+			"link": "/media"
+		},
+		"aboutUs": {
+			"text": "Մեր մասին",
+			"link": "/about-us"
+		},
+		"contactUs": {
+			"text": "Կապը մեզ հետ",
+			"link": "/armbrok-contact-page"
+		}
+	},
+	"footer": {
+		"links": {
+			"productsAndServices": {
+				"text": "Ապրանքներ և Ծառայություններ",
+				"brokerage": {
+					"text": "Բրոքերային ծառայություններ",
+					"link": "/brokerage"
+				},
+				"assetManagement": {
+					"text": "Գույքի կառավարում",
+					"link": "/asset-management"
+				},
+				"investmentFunds": {
+					"text": "Ներդրումային ֆոնդեր",
+					"link": "/funds"
+				},
+				"investmentBanking": {
+					"text": "Ներդրումային բանկինգ",
+					"link": "/investment-banking"
+				},
+				"depositoryRegistrar": {
+					"text": "Դեպոզիտարի և ռեգիստրատոր",
+					"link": "/depositary-services"
+				}
+			},
+			"aboutUs": {
+				"text": "Մեր մասին",
+				"generalInformation": {
+					"text": "Ընդհանուր տեղեկություն",
+					"link": "#"
+				},
+				"career": {
+					"text": "Կարիերա",
+					"link": "/careers-at-armbrok"
+				}
+			},
+			"investorRelations": {
+				"text": "Ներդրողների հետ կապ"
+			},
+			"media": {
+				"text": "Մեդիա",
+				"articles": {
+					"text": "Հոդվածներ",
+					"link": "/media?category=articles"
+				},
+				"investmentIdeas": {
+					"text": "Ներդրումային գաղափարներ",
+					"link": "/media?category=invest-ideas"
+				},
+				"companyNews": {
+					"text": "Ընկերության նորություններ",
+					"link": "/media?category=company-news"
+				}
+			},
+			"regulation": {
+				"text": "Կանոնակարգ",
+				"lawsLegalActs": {
+					"text": "Օրենքներ և իրավական ակտեր",
+					"link": "#"
+				},
+				"internalRules": {
+					"text": "Ներքին կանոններ",
+					"link": "#"
+				},
+				"stockExchangeRules": {
+					"text": "Ֆոնդային բորսայի և կենտրոնական դեպոզիտարի կանոններ",
+					"link": "#"
+				}
+			},
+			"contactUs": {
+				"text": "Կապ մեզ հետ"
+			}
+		},
+		"disclaimer": "<p>Armbrok-ը պատասխանատվություն չի կրում այս կայքում տեղադրված երրորդ կողմի վեբ կայքերում ներկայացված տեղեկատվության և/կամ գովազդների ճշգրտության և հուսալիության համար և չի կրում որևէ պատասխանատվություն նշված տեղեկատվության օգտագործման հետևանքների համար:</p><p>Եթե անգլերեն և ռուսերեն հրապարակված տեղեկատվության միջև որևէ հակասություն առաջանա, գերակշռող է համարվում հայերեն տարբերակը:</p><p>Օգտակար հղումներ՝ cba.am, abcfinance.am, fininfo.am, fsm.am</p>  <p>Armbrok-ը կարգավորվում է Հայաստանի Հանրապետության Կենտրոնական Բանկի կողմից:</p><p>Լիցենզիայի համարը՝ 10, տրված է 04.11.2008 թվականին:</p>",
+		"updateLabel": "Վերջին թարմացում:"
+	},
+	"notFound": {
+		"title": "Վա՜յ!<br /> Էջը չի գտնվել \uD83D\uDE15",
+		"description": "Թվում է, թե այն էջը, որը փնտրում եք, գոյություն չունի կամ տեղափոխվել է։<br /> Ստուգեք URL-ը կամ վերադարձեք գլխավոր էջ։ Մենք այստեղ ենք,<br /> որպեսզի օգնենք ձեզ գտնել ճիշտ ճանապարհը։",
+		"button": {
+			"text": "Վերադառնալ գլխավոր էջ",
+			"link": "/"
+		}
+	},
+	"serverError": {
+		"title": "Ինչ-որ բան սխալ գնաց \uD83D\uDE35",
+		"description": "Մենք այժմ սերվերի խնդիր ունենք։ Խնդրում ենք փորձել թարմացնել էջը<br /> կամ&nbsp;վերադառնալ ավելի ուշ։ Եթե&nbsp;խնդիրը շարունակվի, կապ հաստատեք աջակցության հետ&nbsp;&mdash; մենք<br /> աշխատում ենք այն&nbsp;շտկելու հնարավորինս արագ!"
+	},
+	"media": {
+		"allTab": "Բոլորը"
+	}
 }

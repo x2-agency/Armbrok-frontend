@@ -26,11 +26,15 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 				))}
 			</nav>
 			<ul className={css.buttons}>
-				<Button href="#" variant="subtle" className={css.login}>
+				<Button
+					href="https://example.com/"
+					variant="subtle"
+					className={css.login}
+				>
 					{t(`${header.loginButton.root}.text`)}
 				</Button>
 				<Button
-					href="#"
+					href="https://example.com/"
 					variant="filled"
 					category="big"
 					className={css.account}
