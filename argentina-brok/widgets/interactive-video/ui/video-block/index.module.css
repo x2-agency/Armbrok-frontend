@@ -40,18 +40,25 @@
 	@mixin responsive padding-inline, 20, 24, 24;
 	cursor: pointer;
 }
-
 .playButton {
 	display: flex;
 	align-items: center;
 	@mixin responsive width, 48, 48, 48;
 	@mixin responsive height, 48, 48, 48;
 	cursor: pointer;
+	transition:
+		transform 0.3s ease,
+		opacity 0.3s ease;
 }
 
 .svg {
 	width: 100%;
 	height: auto;
+
+	circle,
+	path {
+		transition: fill 0.4s ease;
+	}
 	circle {
 		fill: var(--gray-100-color);
 	}
@@ -61,6 +68,10 @@
 }
 
 @media (hover: hover) {
+	.videoWrapper:hover .playButton {
+		transform: scale(1.1);
+		opacity: 0.9;
+	}
 	.videoWrapper:hover svg {
 		circle {
 			fill: var(--red-500-color);

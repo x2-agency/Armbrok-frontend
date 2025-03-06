@@ -10,6 +10,7 @@ import { NewsSectionHome } from '@/widgets/news-section';
 
 import css from './index.module.css';
 import { Author } from './ui/author';
+import { Breadcrumbs } from './ui/author/bread-crumbs';
 
 export const Blog: NextPage<{
 	initialBlogPage: Data;
@@ -22,11 +23,12 @@ export const Blog: NextPage<{
 		latestNewsSection,
 		author,
 		publishDate,
+		category,
 	} = initialData.initialBlogPage ?? {};
-
 	return (
 		<>
 			<div className={css.wrap}>
+				<Breadcrumbs title={title} category={category ?? {}} />
 				<h1 className={css.title}>{parser(title ?? '')}</h1>
 				<p className={css.description}>{parser(description)}</p>
 

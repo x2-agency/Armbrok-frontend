@@ -9,3 +9,13 @@
 	@mixin responsive gap, 24, 24, 24;
 	@mixin responsive padding-block-end, 30, 40, 40;
 }
+
+.card {
+	transition: box-shadow 0.4s ease;
+}
+
+@media (hover: hover) {
+	.card:hover {
+		box-shadow: -5px 20px 30px #0000001a;
+	}
+}

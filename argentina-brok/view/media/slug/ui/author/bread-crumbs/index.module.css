@@ -1,0 +1,28 @@
+.root {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	@mixin responsive gap, 10, 12, 12;
+	@mixin responsive padding-block-end, 10, 16, 16;
+}
+
+.title,
+.link {
+	@mixin font-text14;
+	letter-spacing: -1%;
+	font-weight: 500;
+	color: var(--gray-700-color);
+	transition: color 0.5s ease;
+}
+
+@media (hover: hover) {
+	.link:hover {
+		color: var(--red-500-color);
+	}
+}
+
+.arrow {
+	@mixin responsive width, 16, 16, 16;
+	@mixin responsive height, 16, 16, 16;
+}
