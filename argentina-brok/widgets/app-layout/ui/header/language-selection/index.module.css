@@ -72,7 +72,7 @@
 	overflow: hidden;
 	opacity: 0;
 	visibility: hidden;
-	transition-property: opacity visibility;
+	transition-property: opacity visibility translate;
 }
 
 .languagesList.open {
@@ -83,6 +83,7 @@
 .languagesList.close {
 	opacity: 0;
 	visibility: hidden;
+	translate: 0% -10%;
 }
 
 .languageButton {
