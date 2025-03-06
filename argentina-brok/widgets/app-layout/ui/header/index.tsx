@@ -1,4 +1,6 @@
 'use client';
+import cx from 'clsx';
+import { usePathname } from 'next/navigation';
 
 import useMediaQuery from '@/shared/hooks/use-media-query';
 import {
@@ -15,6 +17,8 @@ import { LogIn } from './log-in';
 import { Navigation } from './navigation';
 
 export const Header = () => {
+	const pathname = usePathname();
+	const isHyLocale = pathname.startsWith('/hy');
 	const isMobile = useMediaQuery('(max-width: 767px)');
 
 	return (
@@ -24,7 +28,7 @@ export const Header = () => {
 				<Navigation />
 			</div>
 
-			<div className={css.rightBlock}>
+			<div className={cx(css.rightBlock, { [css.rightBlockHy]: isHyLocale })}>
 				{isMobile && <BurgerButton />}
 				{!isMobile && (
 					<>

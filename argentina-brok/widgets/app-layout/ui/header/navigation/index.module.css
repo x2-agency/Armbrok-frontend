@@ -14,7 +14,10 @@
 }
 
 .linksHy {
-	gap: 1.778rem;
+	@mixin responsive gap, unset, 20, 20;
+	@media (min-width: 1441px) {
+		font-size: 1rem;
+	}
 }
 
 .li {
