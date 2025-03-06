@@ -20,11 +20,15 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const isArmbrokMedia = pathname === `/media`;
 	const isHomePage = pathname === `/`;
 
+	const isMediaSlug = pathname.startsWith(`/media`);
+
 	const { publishDate, title, description, author, category, poster, slug } =
 		data ?? {};
 
 	const truncatedDescription =
-		isHomePage && description ? `${description.slice(0, 253)}...` : description;
+		(isMediaSlug || isHomePage) && description
+			? `${description.slice(0, 253)}...`
+			: description;
 
 	return (
 		<article

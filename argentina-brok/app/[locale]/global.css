@@ -14,6 +14,18 @@
 	--text14: 0.972rem; /* 14px */
 	--text12: 0.833rem; /* 12px */
 
+	--h1-font-weight: 400;
+	--h2-font-weight: 400;
+	--h3-font-weight: 400;
+	--h4-font-weight: 400;
+	--h5-font-weight: 400;
+	--h6-font-weight: 400;
+	--text20-font-weight: 400;
+	--text18-font-weight: 400;
+	--text16-font-weight: 400;
+	--text14-font-weight: 400;
+	--text12-font-weight: 400;
+
 	--h1-line-height: 1.12; /* 72px */
 	--h2-line-height: 1.2; /* 48px */
 	--h3-line-height: 1.25; /* 40px */
