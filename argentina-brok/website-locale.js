@@ -12,7 +12,7 @@ module.exports = {
 		{ path: '/depositary-services', priority: 0.7, changefreq: 'daily' },
 		{ path: '/investment-banking', priority: 0.7, changefreq: 'daily' },
 		{ path: '/investor-relations', priority: 0.7, changefreq: 'daily' },
-		{ path: '/armbrok-contact-page', priority: 0.3, changefreq: 'weekly' },
+		{ path: '/contact-us', priority: 0.3, changefreq: 'weekly' },
 		{ path: '/armbrok-search', priority: 0.3, changefreq: 'weekly' },
 		{ path: '/funds', priority: 0.7, changefreq: 'daily' },
 		{ path: '/media', priority: 0.7, changefreq: 'daily' },
