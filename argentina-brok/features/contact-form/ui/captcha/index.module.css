@@ -9,5 +9,5 @@
 	@mixin font-text14;
 
 	color: var(--gray-500-color);
-	font-weight: 600;
+	font-weight: 500;
 }
