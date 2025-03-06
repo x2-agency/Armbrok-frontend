@@ -10,7 +10,7 @@
 	z-index: 1000;
 	bottom: 1%;
 	left: 50%;
-	translate: -50% -50%;
+	translate: -50% 0%;
 	background-color: var(--gray-100-color);
 	display: flex;
 	align-items: center;
@@ -39,6 +39,7 @@
 	transition-property: all;
 	opacity: 1;
 	pointer-events: auto;
+	translate: -50% -50%;
 }
 
 .about {

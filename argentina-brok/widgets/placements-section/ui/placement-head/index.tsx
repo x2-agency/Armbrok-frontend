@@ -2,6 +2,7 @@
 import parser from 'html-react-parser';
 
 import type { SecurityPaperItem } from '@/shared/types/global.types';
+import { formatDate } from '@/widgets/placements-section/helpers/format-date';
 
 import css from './index.module.css';
 
@@ -20,7 +21,9 @@ export const PlacementHead = ({
 					{launchDateLabel && (
 						<p className={css.time}>{parser(launchDateLabel)}</p>
 					)}
-					{launchDate && <time className={css.date}>{launchDate}</time>}
+					{launchDate && (
+						<time className={css.date}>{formatDate(launchDate)}</time>
+					)}
 				</div>
 			</div>
 		</header>

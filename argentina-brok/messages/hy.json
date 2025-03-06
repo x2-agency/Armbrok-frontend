@@ -10,7 +10,7 @@
 		},
 		"services": {
 			"text": "Ծառայություններ",
-			"link": "/services"
+			"link": "/depositary-services"
 		},
 		"investorRelations": {
 			"text": "Ներդրողների հետ հարաբերություններ",
@@ -87,15 +87,15 @@
 				"text": "Կանոնակարգ",
 				"lawsLegalActs": {
 					"text": "Օրենքներ և իրավական ակտեր",
-					"link": "#"
+					"link": "/regulation#laws"
 				},
 				"internalRules": {
 					"text": "Ներքին կանոններ",
-					"link": "#"
+					"link": "/regulation#internal-rules"
 				},
 				"stockExchangeRules": {
 					"text": "Ֆոնդային բորսայի և կենտրոնական դեպոզիտարի կանոններ",
-					"link": "#"
+					"link": "/regulation#exchange-rules"
 				}
 			},
 			"contactUs": {

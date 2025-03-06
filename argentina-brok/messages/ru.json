@@ -10,7 +10,7 @@
     },
     "services": {
       "text": "Услуги",
-      "link": "/services"
+      "link": "/depositary-services"
     },
     "investorRelations": {
       "text": "Отношения с инвесторами",
@@ -87,15 +87,15 @@
         "text": "Регулирование",
         "lawsLegalActs": {
           "text": "Законы и нормативные акты",
-          "link": "#"
+          "link": "/regulation#laws"
         },
         "internalRules": {
           "text": "Внутренние правила",
-          "link": "#"
+          "link": "/regulation#internal-rules"
         },
         "stockExchangeRules": {
           "text": "Правила фондовой биржи и центрального депозитария",
-          "link": "#"
+          "link": "/regulation#exchange-rules"
         }
       },
       "contactUs": {

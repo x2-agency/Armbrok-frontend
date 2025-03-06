@@ -20,6 +20,7 @@ const ArmbrokContactPage = async () => {
 			description={inititalContactPageData.data.description}
 			contactCards={inititalContactPageData.data.contactCards}
 			contactForm={inititalContactPageData.data.contactForm}
+			mapCoords={inititalContactPageData.data.mapCoords}
 		/>
 	);
 };

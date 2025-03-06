@@ -10,7 +10,7 @@
 		},
 		"services": {
 			"text": "Services",
-			"link": "/services"
+			"link": "/depositary-services"
 		},
 		"investorRelations": {
 			"text": "Investor Relations",
@@ -87,15 +87,15 @@
 				"text": "Regulation",
 				"lawsLegalActs": {
 					"text": "Laws &amp;&nbsp;Legal Acts",
-					"link": "#"
+					"link": "/regulation#laws"
 				},
 				"internalRules": {
 					"text": "Internal Rules",
-					"link": "#"
+					"link": "/regulation#internal-rules"
 				},
 				"stockExchangeRules": {
 					"text": "Stock Exchange and Central Depositary Rules",
-					"link": "#"
+					"link": "/regulation#exchange-rules"
 				}
 			},
 			"contactUs": {
