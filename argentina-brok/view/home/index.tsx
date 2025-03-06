@@ -3,6 +3,7 @@
 import type { NextPage } from 'next';
 
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
+import type { AwardsResponse } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
@@ -18,9 +19,10 @@ import { Start } from '@/widgets/start';
 import css from './index.module.css';
 import type { HomePageData } from './types/response';
 
-export const Home: NextPage<{ initialData?: HomePageData }> = ({
-	initialData,
-}) => {
+export const Home: NextPage<{
+	initialData?: HomePageData;
+	initialAwards?: AwardsResponse;
+}> = ({ initialData, initialAwards }) => {
 	const {
 		publishedAt,
 		heroSection,
@@ -33,9 +35,7 @@ export const Home: NextPage<{ initialData?: HomePageData }> = ({
 		newsSection,
 		interviewSection,
 		awardSection,
-		awards,
 	} = initialData?.data ?? {};
-
 	useUpdateFooterData(publishedAt);
 
 	return (
@@ -65,7 +65,7 @@ export const Home: NextPage<{ initialData?: HomePageData }> = ({
 			<AssetManagment data={assetManagementCard} />
 			<Corporate cards={financialSolutionsSection} />
 			<Start data={investingStepsSection} />
-			<AwardsSection title={awardSection?.title} awards={awards?.data} />
+			<AwardsSection title={awardSection?.title} awards={initialAwards?.data} />
 			<CompaniesGroup data={companiesSection} />
 			<NewsSectionHome data={newsSection} />
 			<InteractiveVideo data={interviewSection} />

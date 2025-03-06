@@ -45,7 +45,6 @@ export const VideoBlock = ({ data }: VideoBlockProps) => {
 						</span>
 					</div>
 				)}
-				<div className={css.overlay} />
 			</div>
 		</div>
 	);

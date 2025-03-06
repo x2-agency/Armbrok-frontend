@@ -24,7 +24,9 @@ const IndexPage = async () => {
 		initialHomePageData.awards = initialAwards;
 	}
 
-	return <Home initialData={initialHomePageData} />;
+	return (
+		<Home initialData={initialHomePageData} initialAwards={initialAwards} />
+	);
 };
 
 export default IndexPage;
