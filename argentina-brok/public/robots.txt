@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://example.website.com
+Host: https://argentina-brok.vercel.app/
 
 # Sitemaps
-Sitemap: https://example.website.com/sitemap.xml
+Sitemap: https://argentina-brok.vercel.app/sitemap.xml
