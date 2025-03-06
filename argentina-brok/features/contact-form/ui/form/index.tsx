@@ -117,6 +117,7 @@ export const Form = ({
 					type="submit"
 					variant="filled"
 					category="big"
+					className={css.button}
 				>
 					{parser(sendButtonText ?? 'Send message')}
 				</Button>

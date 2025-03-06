@@ -39,3 +39,7 @@
 .captcha {
 	@mixin responsive padding-block-end, 16, 32, 32;
 }
+
+.button {
+	justify-content: center;
+}
