@@ -11,13 +11,13 @@ export const NewsPage = ({
 	className,
 	hasNextPage,
 	fetchNextPage,
-	isFetching,
+	isFetchingNextPage,
 }: {
 	newsCard?: Array<Article | undefined>;
 	className?: string;
 	hasNextPage?: boolean;
 	fetchNextPage: () => void;
-	isFetching: boolean;
+	isFetchingNextPage: boolean;
 }) => {
 	return (
 		<div className={css.root}>
@@ -26,11 +26,11 @@ export const NewsPage = ({
 					<NewsCard className={css.card} key={index} data={news} />
 				))}
 			</div>
-			{!hasNextPage && (
+			{hasNextPage && (
 				<LoadNext
 					className={css.spacing}
 					fetchNextPage={fetchNextPage}
-					isFetching={isFetching}
+					isFetching={isFetchingNextPage}
 					hasNextPage={hasNextPage}
 				/>
 			)}

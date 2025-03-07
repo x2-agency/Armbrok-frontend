@@ -19,9 +19,9 @@
 
 .tabs-container {
 	display: flex;
-	border: 1px solid var(--gray-400-color);
+	border: 1px solid var(--gray-300-color);
 	@mixin responsive border-radius, 10, 10, 10;
-	background-color: var(--gray-300-color);
+	background-color: var(--gray-200-color);
 	scrollbar-width: 0;
 	-ms-overflow-style: none;
 

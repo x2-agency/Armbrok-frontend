@@ -30,10 +30,8 @@ export const Media: NextPage<{
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	const { data, fetchNextPage, isFetching, hasNextPage } = useGetArticles(
-		{ filters: { category: currentTag } },
-		initialArticles
-	);
+	const { data, fetchNextPage, isFetchingNextPage, hasNextPage } =
+		useGetArticles({ filters: { category: currentTag } }, initialArticles);
 
 	const filteredNews = data?.pages.flatMap(page => page.data) ?? [];
 
@@ -72,16 +70,13 @@ export const Media: NextPage<{
 					initialTag="all"
 				/>
 			</div>
-			{isFetching ? (
-				<Preloader className={css.loader} />
-			) : (
-				<NewsPage
-					newsCard={filteredNews}
-					isFetching={isFetching}
-					hasNextPage={hasNextPage}
-					fetchNextPage={fetchNextPage}
-				/>
-			)}
+			<NewsPage
+				newsCard={filteredNews}
+				isFetchingNextPage={isFetchingNextPage}
+				hasNextPage={hasNextPage}
+				fetchNextPage={fetchNextPage}
+			/>
+			{isFetchingNextPage && <Preloader className={css.loader} />}
 			<Vacancy className={css.vacancy} data={glossaryCard} />
 			<FeedbackForm
 				title={emailForm?.title}
