@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import Link from 'next/link';
 
 import type { GlossaryCardType } from '@/shared/types/media-page';
 import { Button } from '@/shared/ui/button';
@@ -29,14 +30,10 @@ export const Vacancy = ({ data, className }: VacancyProps) => {
 					)}
 				</div>
 			</div>
-			<Button
-				variant="next"
-				iconRotate={180}
-				href={link?.link}
-				className={css.button}
-			>
+			<Button variant="next" iconRotate={180} className={css.button}>
 				{parser(link?.text ?? '')}
 			</Button>
+			<Link href={link?.link ?? '#'} className={css.link} target="_blank" />
 		</article>
 	);
 };

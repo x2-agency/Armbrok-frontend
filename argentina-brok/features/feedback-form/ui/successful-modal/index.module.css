@@ -12,7 +12,7 @@
 	position: fixed;
 	bottom: 5%;
 	left: 50%;
-	translate: -50% -5%;
+	translate: -50% 5%;
 	display: flex;
 	max-width: unset;
 	max-height: unset;
@@ -27,6 +27,7 @@
 .root[open] {
 	opacity: 1;
 	visibility: visible;
+	translate: -50% -5%;
 }
 
 .successfulIconWrapper {

@@ -67,6 +67,13 @@
 	}
 }
 
+.svg circle,
+.svg path {
+	@mixin transition;
+
+	transition-property: fill;
+}
+
 @media (hover: hover) {
 	.videoWrapper:hover .playButton {
 		transform: scale(1.1);
