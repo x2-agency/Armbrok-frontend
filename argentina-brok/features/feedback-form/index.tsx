@@ -30,7 +30,7 @@ export const FeedbackForm = ({
 }: FeedbackFormProps) => {
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const {
-		formState: { isValid },
+		formState: { isValid, errors },
 		register,
 		handleSubmit,
 	} = useForm<FeedbackInputs>({ mode: 'onChange' });
@@ -65,6 +65,8 @@ export const FeedbackForm = ({
 						type="email"
 						placeholder="name@mail.com"
 						{...register('email', getValidationRules('email'))}
+						aria-invalid={Boolean(errors.email)}
+						aria-errormessage="Incorrect email"
 					/>
 					<Button
 						variant="filled"
