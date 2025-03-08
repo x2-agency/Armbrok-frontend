@@ -21,6 +21,7 @@ export const Slider = ({
 
 	return (
 		<Swiper
+			grabCursor
 			effect="coverflow"
 			slidesPerView="auto"
 			className={cx(css.swiper, {
