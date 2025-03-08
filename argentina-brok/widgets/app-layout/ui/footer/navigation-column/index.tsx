@@ -14,7 +14,15 @@ export const NavigationColumn = () => {
 		<nav className={css.root}>
 			{footer.links.items.map((item, index) => (
 				<div key={index} className={css.column}>
-					<Button variant="subtle" href={item.root ?? ''} className={css.title}>
+					<Button
+						variant="subtle"
+						href={
+							item.root === 'products-and-services'
+								? 'depositary-services'
+								: item.root
+						}
+						className={css.title}
+					>
 						{parser(t(`${item.root}.text`))}
 					</Button>
 					<ul className={css.list}>

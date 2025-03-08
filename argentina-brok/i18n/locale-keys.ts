@@ -17,7 +17,7 @@ export const LOCALE_KEYS = {
 			root: 'links',
 			items: [
 				{
-					root: 'productsAndServices',
+					root: 'products-and-services',
 					items: [
 						'brokerage',
 						'assetManagement',
@@ -28,7 +28,7 @@ export const LOCALE_KEYS = {
 				},
 				{
 					root: 'about-us',
-					items: ['generalInformation', 'career'],
+					items: ['general-information', 'career'],
 				},
 				{
 					root: 'investor-relations',

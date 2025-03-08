@@ -31,8 +31,9 @@
 	},
 	"footer": {
 		"links": {
-			"productsAndServices": {
+			"products-and-services": {
 				"text": "Products&nbsp;and&nbsp;Services",
+				"link": "/depositary-services",
 				"brokerage": {
 					"text": "Brokerage",
 					"link": "/brokerage"
@@ -56,9 +57,9 @@
 			},
 			"about-us": {
 				"text": "About us",
-				"generalInformation": {
+				"general-information": {
 					"text": "General Information",
-					"link": "#"
+					"link": "/about-us"
 				},
 				"career": {
 					"text": "Career",

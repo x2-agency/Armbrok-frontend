@@ -31,8 +31,9 @@
 	},
 	"footer": {
 		"links": {
-			"productsAndServices": {
+			"products-and-services": {
 				"text": "Ապրանքներ և Ծառայություններ",
+				"link": "/depositary-services",
 				"brokerage": {
 					"text": "Բրոքերային ծառայություններ",
 					"link": "/brokerage"

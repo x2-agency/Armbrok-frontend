@@ -1,123 +1,124 @@
 {
-  "header": {
-    "loginButton": {
-      "text": "Войти в аккаунт",
-      "link": "#"
-    },
-    "openAccountButton": {
-      "text": "Открыть счет",
-      "link": "#"
-    },
-    "services": {
-      "text": "Услуги",
-      "link": "/depositary-services"
-    },
-    "investor-relations": {
-      "text": "Отношения с инвесторами",
-      "link": "/investor-relations"
-    },
-    "media": {
-      "text": "Медиа",
-      "link": "/media"
-    },
-    "about-us": {
-      "text": "О нас",
-      "link": "/about-us"
-    },
-    "contact-us": {
-      "text": "Связаться с нами",
-      "link": "/contact-us"
-    }
-  },
-  "footer": {
-    "links": {
-      "productsAndServices": {
-        "text": "Продукты и услуги",
-        "brokerage": {
-          "text": "Брокерские услуги",
-          "link": "/brokerage"
-        },
-        "assetManagement": {
-          "text": "Управление активами",
-          "link": "/asset-management"
-        },
-        "investmentFunds": {
-          "text": "Инвестиционные фонды",
-          "link": "/funds"
-        },
-        "investmentBanking": {
-          "text": "Инвестиционный банкинг",
-          "link": "/investment-banking"
-        },
-        "depositoryRegistrar": {
-          "text": "Депозитарий и регистратор",
-          "link": "/depositary-services"
-        }
-      },
-      "about-us": {
-        "text": "О нас",
-        "generalInformation": {
-          "text": "Общая информация",
-          "link": "#"
-        },
-        "career": {
-          "text": "Карьера",
-          "link": "/careers-at-armbrok"
-        }
-      },
-      "investor-relations": {
-        "text": "Отношения с инвесторами"
-      },
-      "media": {
-        "text": "Медиа",
-        "articles": {
-          "text": "Статьи",
-          "link": "/media?category=articles"
-        },
-        "investmentIdeas": {
-          "text": "Инвестиционные идеи",
-          "link": "/media?category=invest-ideas"
-        },
-        "companyNews": {
-          "text": "Новости компании",
-          "link": "/media?category=company-news"
-        }
-      },
-      "regulation": {
-        "text": "Регулирование",
-        "lawsLegalActs": {
-          "text": "Законы и нормативные акты",
-          "link": "/regulation#laws"
-        },
-        "internalRules": {
-          "text": "Внутренние правила",
-          "link": "/regulation#internal-rules"
-        },
-        "stockExchangeRules": {
-          "text": "Правила фондовой биржи и центрального депозитария",
-          "link": "/regulation#exchange-rules"
-        }
-      },
-      "contact-us": {
-        "text": "Свяжитесь с нами"
-      }
-    },
-    "disclaimer": "<p>Armbrok не несет ответственности за точность и надежность информации и/или рекламных материалов, представленных на сторонних веб-сайтах, на которые ведут ссылки с данного сайта, и не несет ответственности за последствия, возникающие в результате использования указанной информации.</p>  <p>В случае любых расхождений между информацией, опубликованной на английском и русском языках, приоритет имеет армянская версия.</p><p>Полезные ссылки: cba.am, abcfinance.am, fininfo.am, fsm.am</p><p>Armbrok регулируется Центральным банком Республики Армения.</p><p>Номер лицензии: 10, выдан 04.11.2008.</p>",
-    "updateLabel": "Последнее обновление:"
-  },
-  "notFound": {
-    "title": "Ой!<br /> Страница не найдена \uD83D\uDE15",
-    "description": "Похоже, страница, которую вы ищете, не существует или была перемещена.<br /> Проверьте URL или вернитесь на главную страницу. Мы здесь,<br /> чтобы помочь вам найти нужное!",
-    "button": {
-      "text": "Перейти на главную",
-      "link": "/"
-    }
-  },
-  "serverError": {
-    "title": "Что-то пошло не так \uD83D\uDE35",
-    "description": "В настоящий момент у&nbsp;нас возникла проблема с&nbsp;сервером. Попробуйте обновить страницу<br /> или&nbsp;зайдите позже. Если проблема не&nbsp;исчезнет, свяжитесь с&nbsp;поддержкой&nbsp;&mdash; мы<br /> работаем над её&nbsp;устранением как можно скорее!"
-  },
-  "media": {
-    "allTab": "Все"
-  }
+	"header": {
+		"loginButton": {
+			"text": "Войти в аккаунт",
+			"link": "#"
+		},
+		"openAccountButton": {
+			"text": "Открыть счет",
+			"link": "#"
+		},
+		"services": {
+			"text": "Услуги",
+			"link": "/depositary-services"
+		},
+		"investor-relations": {
+			"text": "Отношения с инвесторами",
+			"link": "/investor-relations"
+		},
+		"media": {
+			"text": "Медиа",
+			"link": "/media"
+		},
+		"about-us": {
+			"text": "О нас",
+			"link": "/about-us"
+		},
+		"contact-us": {
+			"text": "Связаться с нами",
+			"link": "/contact-us"
+		}
+	},
+	"footer": {
+		"links": {
+			"products-and-services": {
+				"text": "Продукты и услуги",
+				"link": "/depositary-services",
+				"brokerage": {
+					"text": "Брокерские услуги",
+					"link": "/brokerage"
+				},
+				"assetManagement": {
+					"text": "Управление активами",
+					"link": "/asset-management"
+				},
+				"investmentFunds": {
+					"text": "Инвестиционные фонды",
+					"link": "/funds"
+				},
+				"investmentBanking": {
+					"text": "Инвестиционный банкинг",
+					"link": "/investment-banking"
+				},
+				"depositoryRegistrar": {
+					"text": "Депозитарий и регистратор",
+					"link": "/depositary-services"
+				}
+			},
+			"about-us": {
+				"text": "О нас",
+				"generalInformation": {
+					"text": "Общая информация",
+					"link": "#"
+				},
+				"career": {
+					"text": "Карьера",
+					"link": "/careers-at-armbrok"
+				}
+			},
+			"investor-relations": {
+				"text": "Отношения с инвесторами"
+			},
+			"media": {
+				"text": "Медиа",
+				"articles": {
+					"text": "Статьи",
+					"link": "/media?category=articles"
+				},
+				"investmentIdeas": {
+					"text": "Инвестиционные идеи",
+					"link": "/media?category=invest-ideas"
+				},
+				"companyNews": {
+					"text": "Новости компании",
+					"link": "/media?category=company-news"
+				}
+			},
+			"regulation": {
+				"text": "Регулирование",
+				"lawsLegalActs": {
+					"text": "Законы и нормативные акты",
+					"link": "/regulation#laws"
+				},
+				"internalRules": {
+					"text": "Внутренние правила",
+					"link": "/regulation#internal-rules"
+				},
+				"stockExchangeRules": {
+					"text": "Правила фондовой биржи и центрального депозитария",
+					"link": "/regulation#exchange-rules"
+				}
+			},
+			"contact-us": {
+				"text": "Свяжитесь с нами"
+			}
+		},
+		"disclaimer": "<p>Armbrok не несет ответственности за точность и надежность информации и/или рекламных материалов, представленных на сторонних веб-сайтах, на которые ведут ссылки с данного сайта, и не несет ответственности за последствия, возникающие в результате использования указанной информации.</p>  <p>В случае любых расхождений между информацией, опубликованной на английском и русском языках, приоритет имеет армянская версия.</p><p>Полезные ссылки: cba.am, abcfinance.am, fininfo.am, fsm.am</p><p>Armbrok регулируется Центральным банком Республики Армения.</p><p>Номер лицензии: 10, выдан 04.11.2008.</p>",
+		"updateLabel": "Последнее обновление:"
+	},
+	"notFound": {
+		"title": "Ой!<br /> Страница не найдена \uD83D\uDE15",
+		"description": "Похоже, страница, которую вы ищете, не существует или была перемещена.<br /> Проверьте URL или вернитесь на главную страницу. Мы здесь,<br /> чтобы помочь вам найти нужное!",
+		"button": {
+			"text": "Перейти на главную",
+			"link": "/"
+		}
+	},
+	"serverError": {
+		"title": "Что-то пошло не так \uD83D\uDE35",
+		"description": "В настоящий момент у&nbsp;нас возникла проблема с&nbsp;сервером. Попробуйте обновить страницу<br /> или&nbsp;зайдите позже. Если проблема не&nbsp;исчезнет, свяжитесь с&nbsp;поддержкой&nbsp;&mdash; мы<br /> работаем над её&nbsp;устранением как можно скорее!"
+	},
+	"media": {
+		"allTab": "Все"
+	}
 }
