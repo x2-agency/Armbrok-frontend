@@ -12,7 +12,7 @@
 			"text": "Ծառայություններ",
 			"link": "/depositary-services"
 		},
-		"investorRelations": {
+		"investor-relations": {
 			"text": "Ներդրողների հետ հարաբերություններ",
 			"link": "/investor-relations"
 		},
@@ -20,11 +20,11 @@
 			"text": "Մեդիա",
 			"link": "/media"
 		},
-		"aboutUs": {
+		"about-us": {
 			"text": "Մեր մասին",
 			"link": "/about-us"
 		},
-		"contactUs": {
+		"contact-us": {
 			"text": "Կապը մեզ հետ",
 			"link": "/contact-us"
 		}
@@ -54,7 +54,7 @@
 					"link": "/depositary-services"
 				}
 			},
-			"aboutUs": {
+			"about-us": {
 				"text": "Մեր մասին",
 				"generalInformation": {
 					"text": "Ընդհանուր տեղեկություն",
@@ -65,7 +65,7 @@
 					"link": "/careers-at-armbrok"
 				}
 			},
-			"investorRelations": {
+			"investor-relations": {
 				"text": "Ներդրողների հետ կապ"
 			},
 			"media": {
@@ -98,7 +98,7 @@
 					"link": "/regulation#exchange-rules"
 				}
 			},
-			"contactUs": {
+			"contact-us": {
 				"text": "Կապ մեզ հետ"
 			}
 		},

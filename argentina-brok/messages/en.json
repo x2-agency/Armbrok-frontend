@@ -12,7 +12,7 @@
 			"text": "Services",
 			"link": "/depositary-services"
 		},
-		"investorRelations": {
+		"investor-relations": {
 			"text": "Investor Relations",
 			"link": "/investor-relations"
 		},
@@ -20,11 +20,11 @@
 			"text": "Media",
 			"link": "/media"
 		},
-		"aboutUs": {
+		"about-us": {
 			"text": "About us",
 			"link": "/about-us"
 		},
-		"contactUs": {
+		"contact-us": {
 			"text": "Contact us",
 			"link": "/contact-us"
 		}
@@ -54,7 +54,7 @@
 					"link": "/depositary-services"
 				}
 			},
-			"aboutUs": {
+			"about-us": {
 				"text": "About us",
 				"generalInformation": {
 					"text": "General Information",
@@ -65,7 +65,7 @@
 					"link": "/careers-at-armbrok"
 				}
 			},
-			"investorRelations": {
+			"investor-relations": {
 				"text": "Investor relations"
 			},
 			"media": {
@@ -98,7 +98,7 @@
 					"link": "/regulation#exchange-rules"
 				}
 			},
-			"contactUs": {
+			"contact-us": {
 				"text": "Contact Us"
 			}
 		},
