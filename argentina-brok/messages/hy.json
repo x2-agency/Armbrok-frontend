@@ -57,9 +57,9 @@
 			},
 			"about-us": {
 				"text": "Մեր մասին",
-				"generalInformation": {
+				"general-information": {
 					"text": "Ընդհանուր տեղեկություն",
-					"link": "#"
+					"link": "/about-us"
 				},
 				"career": {
 					"text": "Կարիերա",

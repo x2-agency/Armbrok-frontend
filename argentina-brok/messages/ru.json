@@ -57,9 +57,9 @@
 			},
 			"about-us": {
 				"text": "О нас",
-				"generalInformation": {
+				"general-information": {
 					"text": "Общая информация",
-					"link": "#"
+					"link": "/about-us"
 				},
 				"career": {
 					"text": "Карьера",
