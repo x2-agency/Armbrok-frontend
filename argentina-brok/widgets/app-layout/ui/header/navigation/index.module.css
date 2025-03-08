@@ -13,6 +13,10 @@
 	gap: 2.778rem; /* 40px */
 }
 
+.active {
+	border-bottom: var(--gray-100-color) solid 1px;
+}
+
 .linksHy {
 	@mixin responsive gap, unset, 20, 20;
 	@media (min-width: 1441px) {
@@ -35,4 +39,12 @@ html[data-header-top-color='white'] .link {
 
 html[data-header-top-color='dark'] .link {
 	color: var(--black-color);
+}
+
+html[data-header-top-color='white'] .active {
+	border-bottom: var(--gray-100-color) solid 1px;
+}
+
+html[data-header-top-color='dark'] .active {
+	border-bottom: var(--black-color) solid 1px;
 }

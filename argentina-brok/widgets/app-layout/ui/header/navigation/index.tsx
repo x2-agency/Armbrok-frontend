@@ -12,16 +12,32 @@ export const Navigation = () => {
 	const isHyLocale = pathname.startsWith('/hy');
 	const links = useHeaderLinks();
 
+	const normalizedPathname = pathname.replace(/^\/(hy|en|ru)/, '') || '/';
+
 	return (
 		<nav className={cx(css.root)}>
 			<ul className={cx(css.links, { [css.linksHy]: isHyLocale })}>
-				{links.map((item, index) => (
-					<li className={css.li} key={index}>
-						<Button href={item.href} className={css.link} variant="subtle">
-							{parser(item.label)}
-						</Button>
-					</li>
-				))}
+				{links.map(item => {
+					const normalizedHref = item.href.replace(/^\/(hy|en|ru)/, '') || '/';
+					const isActive =
+						normalizedPathname === normalizedHref ||
+						normalizedPathname.startsWith(normalizedHref + '/');
+
+					return (
+						<li
+							className={cx(css.li, { [css.active]: isActive })}
+							key={item.href}
+						>
+							<Button
+								href={item.href}
+								className={cx(css.link)}
+								variant="subtle"
+							>
+								{parser(item.label)}
+							</Button>
+						</li>
+					);
+				})}
 			</ul>
 		</nav>
 	);
