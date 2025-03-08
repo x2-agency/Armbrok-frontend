@@ -3,9 +3,30 @@ import type { Metadata } from 'next';
 import { getInvestmentBankingPage } from '@/shared/api/get-investment-banking';
 import { getSecurityPapers } from '@/shared/api/security-papers';
 import { InvestmentBanking } from '@/view/investment-banking';
-import { INVESTMENT_BANKING_META } from '@/view/investment-banking/models/investment-banking.constants';
 
-export const metadata: Metadata = INVESTMENT_BANKING_META;
+export async function generateMetadata(): Promise<Metadata> {
+	const initialInvestmentBankingPageData = await getInvestmentBankingPage();
+	const seo = initialInvestmentBankingPageData?.data?.seo;
+
+	if (!seo) {
+		return {
+			title: 'Investment Banking',
+		};
+	}
+
+	return {
+		metadataBase: process.env.WEBSITE_DOMAIN
+			? new URL(process.env.WEBSITE_DOMAIN)
+			: undefined,
+		title: seo.metaTitle,
+		description: seo.metaDescription,
+		openGraph: {
+			title: seo.metaTitle,
+			description: seo.metaDescription,
+			images: seo.shareImage ? [seo.shareImage.url] : [],
+		},
+	};
+}
 
 export const revalidate = 10;
 

@@ -3,9 +3,30 @@ import type { Metadata } from 'next';
 import { getArticle } from '@/shared/api/get-article';
 import { getMediaPage } from '@/shared/api/get-media-page';
 import { Media } from '@/view/media';
-import { MEDIA_META } from '@/view/media/model/media.constants';
 
-export const metadata: Metadata = MEDIA_META;
+export async function generateMetadata(): Promise<Metadata> {
+	const initialMediaPageData = await getMediaPage();
+	const seo = initialMediaPageData?.data?.seo;
+
+	if (!seo) {
+		return {
+			title: 'Home',
+		};
+	}
+
+	return {
+		metadataBase: process.env.WEBSITE_DOMAIN
+			? new URL(process.env.WEBSITE_DOMAIN)
+			: undefined,
+		title: seo.metaTitle,
+		description: seo.metaDescription,
+		openGraph: {
+			title: seo.metaTitle,
+			description: seo.metaDescription,
+			images: seo.shareImage ? [seo.shareImage.url] : [],
+		},
+	};
+}
 
 export const revalidate = 10;
 
