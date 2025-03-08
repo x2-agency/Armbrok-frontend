@@ -8,6 +8,7 @@ import { getAwards } from '@/shared/api/get-awards';
 import type { Award } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
+import { Preloader } from '@/shared/ui/preloader';
 
 import type { AwardSectionProps } from './awards.types';
 import css from './index.module.css';
@@ -26,6 +27,7 @@ export const AwardsSection = ({
 	);
 	const [contentHeight, setContentHeight] = useState<number>(0);
 	const contentRef = useRef<HTMLUListElement>(null);
+	const [isLoading, toggleLoading] = useState<boolean>(false);
 
 	const getAllAwards = async () => {
 		const response = await getAwards({});
@@ -43,6 +45,7 @@ export const AwardsSection = ({
 		if (isOpen && !isFetched) {
 			const fetchData = async () => {
 				try {
+					toggleLoading(true);
 					const response: { data: Array<Award> } = await getAllAwards();
 					const filteredAwards = response.data.filter(
 						award => !awards?.some(a => a.id === award.id)
@@ -51,12 +54,14 @@ export const AwardsSection = ({
 					toggleFetched(true);
 				} catch (error) {
 					console.error(error);
+				} finally {
+					toggleLoading(false);
 				}
 			};
 
 			fetchData();
 		}
-	}, [isFetched, isOpen, allAwards]);
+	}, [isFetched, isOpen, allAwards, awards]);
 
 	if (!awards || awards.length === 0) {
 		return null;
@@ -107,24 +112,30 @@ export const AwardsSection = ({
 					</li>
 				))}
 			</ul>
-			{isOpen ? (
-				<Button
-					variant="next"
-					iconRotate={180}
-					className={cx(css.button, css.close)}
-					onClick={() => toggleOpen(false)}
-				>
-					Сlose awards
-				</Button>
+			{isLoading ? (
+				<Preloader className={css.loading} />
 			) : (
-				<Button
-					variant="next"
-					iconRotate={180}
-					className={css.button}
-					onClick={() => toggleOpen(true)}
-				>
-					{buttonText ? parser(buttonText) : 'View all awards'}
-				</Button>
+				<>
+					{isOpen ? (
+						<Button
+							variant="next"
+							iconRotate={180}
+							className={cx(css.button, css.close)}
+							onClick={() => toggleOpen(false)}
+						>
+							Сlose awards
+						</Button>
+					) : (
+						<Button
+							variant="next"
+							iconRotate={180}
+							className={css.button}
+							onClick={() => toggleOpen(true)}
+						>
+							{buttonText ? parser(buttonText) : 'View all awards'}
+						</Button>
+					)}
+				</>
 			)}
 		</Container>
 	);
