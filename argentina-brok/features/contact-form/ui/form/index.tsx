@@ -119,8 +119,8 @@ export const Form = ({
 						{...register('message', {
 							required: messageField.required,
 							minLength: {
-								value: 4,
-								message: 'Message must be at least 4 characters long',
+								value: 10,
+								message: 'Message must be at least 10 characters long',
 							},
 						})}
 						aria-invalid={Boolean(errors.message)}
