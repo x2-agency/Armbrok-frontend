@@ -42,7 +42,7 @@ export const LoadNext = ({
 				onClick={handleClick}
 				disabled={isFetching}
 			>
-				{isFetching ? <Preloader isDark /> : 'Show more'}
+				{isFetching ? <Preloader /> : 'Show more'}
 			</Button>
 		</div>
 	);

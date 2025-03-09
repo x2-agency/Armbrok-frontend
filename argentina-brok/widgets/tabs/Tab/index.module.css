@@ -1,6 +1,7 @@
 .tab {
 	@mixin font-text16;
 	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive margin-block, 4, 4, 4;
 	@mixin responsive padding-block, 8, 8, 8;
 	@mixin responsive width, 150, 185, 185;
 	@mixin transition background-color;

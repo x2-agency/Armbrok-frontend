@@ -3,6 +3,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useEffect, useState } from 'react';
 
 import { Link, usePathname } from '@/i18n/navigation';
 import type { Article } from '@/shared/types/article';
@@ -25,6 +26,17 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 	const { publishDate, title, description, author, category, poster, slug } =
 		data ?? {};
 
+	// Форматируем дату
+	const [formattedDate, setFormattedDate] = useState('');
+
+	useEffect(() => {
+		if (publishDate) {
+			const date = new Date(publishDate);
+			const formatted = new Intl.DateTimeFormat('en-GB').format(date);
+			setFormattedDate(formatted);
+		}
+	}, [publishDate]);
+
 	const truncatedDescription =
 		(isMediaSlug || isHomePage) && description
 			? `${description.slice(0, 253)}...`
@@ -40,7 +52,7 @@ export const NewsCard = ({ data, className }: NewsCardProps) => {
 				<img src={poster.url} className={css.poster} />
 			)}
 			<div className={css.textWrap}>
-				<time className={css.time}>{publishDate ?? ''}</time>
+				<time className={css.time}>{formattedDate ?? ''}</time>
 				<h5
 					className={cx(css.title, { [css.armbrokMediaTitle]: isArmbrokMedia })}
 				>

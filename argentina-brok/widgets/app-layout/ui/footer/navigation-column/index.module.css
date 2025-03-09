@@ -31,3 +31,7 @@
 
 	@mixin responsive gap, 10, 16, 16;
 }
+
+.listItem {
+	font-weight: 400 !important;
+}
