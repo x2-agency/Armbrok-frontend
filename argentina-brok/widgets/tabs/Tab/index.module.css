@@ -1,14 +1,15 @@
 .tab {
 	@mixin font-text16;
 	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive margin-block, 4, 4, 4;
 	@mixin responsive padding-block, 8, 8, 8;
 	@mixin responsive width, 150, 185, 185;
 	@mixin transition background-color;
 	border: transparent;
 	cursor: pointer;
-	color: var(--gray-800-color);
+	color: var(--gray-500-color);
 
 	&:hover {
-		background-color: var(--gray-200-color);
+		background-color: var(--gray-100-color);
 	}
 }

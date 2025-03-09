@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import type { Key } from 'react';
 
 import { NewsCard } from '@/entities/news-card';
 import type { Article } from '@/shared/types/article';
@@ -11,26 +12,33 @@ export const NewsPage = ({
 	className,
 	hasNextPage,
 	fetchNextPage,
-	isFetching,
+	isFetchingNextPage,
+	animationKey,
 }: {
 	newsCard?: Array<Article | undefined>;
 	className?: string;
 	hasNextPage?: boolean;
 	fetchNextPage: () => void;
-	isFetching: boolean;
+	isFetchingNextPage: boolean;
+	animationKey?: Key;
 }) => {
 	return (
 		<div className={css.root}>
 			<div className={cx(css.news, className)}>
 				{newsCard?.map((news, index) => (
-					<NewsCard className={css.card} key={index} data={news} />
+					<NewsCard
+						className={css.card}
+						key={index}
+						data={news}
+						animationKey={animationKey}
+					/>
 				))}
 			</div>
-			{!hasNextPage && (
+			{hasNextPage && (
 				<LoadNext
 					className={css.spacing}
 					fetchNextPage={fetchNextPage}
-					isFetching={isFetching}
+					isFetching={isFetchingNextPage}
 					hasNextPage={hasNextPage}
 				/>
 			)}

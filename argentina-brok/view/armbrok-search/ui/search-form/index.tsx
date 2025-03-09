@@ -1,8 +1,8 @@
 'use client';
 
 import parser from 'html-react-parser';
+import type { Dispatch, SetStateAction } from 'react';
 import { useState } from 'react';
-import type { SetStateAction, Dispatch } from 'react';
 
 import { Button } from '@/shared/ui/button';
 import { Input } from '@/shared/ui/input';
@@ -11,7 +11,7 @@ import type { SearchDataItem } from '@/view/armbrok-search/types/armbrok-search.
 
 import css from './index.module.css';
 
-type SearchFormProps = {
+export type SearchFormProps = {
 	inputPlaceholder?: string;
 	searchButtonText?: string;
 	setNewsData: Dispatch<SetStateAction<Array<SearchDataItem> | undefined>>;

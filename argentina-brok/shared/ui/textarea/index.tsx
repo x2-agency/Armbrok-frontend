@@ -35,7 +35,9 @@ const TextareaComponent = (
 				{...props}
 			/>
 			{props['aria-errormessage'] && props['aria-invalid'] && (
-				<span>{parser(props['aria-errormessage'])} *</span>
+				<span className={css.error}>
+					{parser(props['aria-errormessage'])} *
+				</span>
 			)}
 		</label>
 	);

@@ -26,7 +26,7 @@
 	justify-content: center;
 
 	&.selected {
-		background-color: var(--gray-100-color);
+		background-color: var(--gray-100-color) !important;
 	}
 
 	@media (max-width: 767px) {
@@ -38,7 +38,7 @@
 		&:hover {
 			border: none !important;
 			color: black !important;
-			background-color: var(--gray-100-color);
+			background-color: var(--gray-100-color) !important;
 		}
 	}
 }

@@ -53,7 +53,7 @@ export const useGetArticles = (
 
 	return useInfiniteQuery({
 		queryKey: [QUERY_KEYS.articles, stableFilters],
-		initialData: params?.filters ? undefined : initialInfinitePage,
+		initialData: initialInfinitePage,
 		initialPageParam: 1,
 		queryFn: ({ pageParam }) => getArticle({ ...params, page: pageParam }),
 		getNextPageParam: (lastPage: ArticlesData) => {
@@ -65,5 +65,6 @@ export const useGetArticles = (
 			return undefined;
 		},
 		staleTime: 1000 * 60 * 5,
+		placeholderData: prevData => prevData ?? initialInfinitePage,
 	});
 };

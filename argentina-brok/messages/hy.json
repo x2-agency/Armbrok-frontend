@@ -10,9 +10,9 @@
 		},
 		"services": {
 			"text": "Ծառայություններ",
-			"link": "/services"
+			"link": "/depositary-services"
 		},
-		"investorRelations": {
+		"investor-relations": {
 			"text": "Ներդրողների հետ հարաբերություններ",
 			"link": "/investor-relations"
 		},
@@ -20,19 +20,20 @@
 			"text": "Մեդիա",
 			"link": "/media"
 		},
-		"aboutUs": {
+		"about-us": {
 			"text": "Մեր մասին",
 			"link": "/about-us"
 		},
-		"contactUs": {
+		"contact-us": {
 			"text": "Կապը մեզ հետ",
-			"link": "/armbrok-contact-page"
+			"link": "/contact-us"
 		}
 	},
 	"footer": {
 		"links": {
-			"productsAndServices": {
+			"products-and-services": {
 				"text": "Ապրանքներ և Ծառայություններ",
+				"link": "/depositary-services",
 				"brokerage": {
 					"text": "Բրոքերային ծառայություններ",
 					"link": "/brokerage"
@@ -54,18 +55,18 @@
 					"link": "/depositary-services"
 				}
 			},
-			"aboutUs": {
+			"about-us": {
 				"text": "Մեր մասին",
-				"generalInformation": {
+				"general-information": {
 					"text": "Ընդհանուր տեղեկություն",
-					"link": "#"
+					"link": "/about-us"
 				},
 				"career": {
 					"text": "Կարիերա",
 					"link": "/careers-at-armbrok"
 				}
 			},
-			"investorRelations": {
+			"investor-relations": {
 				"text": "Ներդրողների հետ կապ"
 			},
 			"media": {
@@ -87,18 +88,18 @@
 				"text": "Կանոնակարգ",
 				"lawsLegalActs": {
 					"text": "Օրենքներ և իրավական ակտեր",
-					"link": "#"
+					"link": "/regulation#laws"
 				},
 				"internalRules": {
 					"text": "Ներքին կանոններ",
-					"link": "#"
+					"link": "/regulation#internal-rules"
 				},
 				"stockExchangeRules": {
 					"text": "Ֆոնդային բորսայի և կենտրոնական դեպոզիտարի կանոններ",
-					"link": "#"
+					"link": "/regulation#exchange-rules"
 				}
 			},
-			"contactUs": {
+			"contact-us": {
 				"text": "Կապ մեզ հետ"
 			}
 		},

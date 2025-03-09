@@ -64,8 +64,6 @@ export const AssetManagement: NextPage<{
 			<ExpertSolutionSection
 				items={benefitsSection?.factoids}
 				title={benefitsSection?.title}
-				withShell
-				backgroundColor="white"
 				className={css.experts}
 			/>
 			<Review quote={quoteSection} />

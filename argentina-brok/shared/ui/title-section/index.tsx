@@ -18,7 +18,9 @@ export const TitleSection = ({
 }: TitleSectionProps) => {
 	return (
 		<Container category="div" className={cx(css.root, className)}>
-			<h2 className={css.title}>{parser(title)}</h2>
+			<h2 className={css.title} id="internal-rules">
+				{parser(title)}
+			</h2>
 			{description && (
 				<div className={css.description}>{parser(description)}</div>
 			)}

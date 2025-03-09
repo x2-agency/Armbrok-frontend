@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	@mixin responsive max-width, unset, 497, 497;
+	@mixin responsive max-width, unset, 546, 560;
 
 	@media (max-width: 767px) {
 		max-width: 100%;

@@ -14,19 +14,19 @@
 	border: none;
 	display: flex;
 	justify-content: center;
-	background-color: var(--gray-200-color);
-	color: var(--gray-500-color);
+	background-color: var(--gray-200-color) !important;
+	color: var(--gray-500-color) !important;
 
 	&.selected {
-		background-color: var(--gray-900-color);
-		color: var(--gray-100-color);
+		background-color: var(--gray-900-color) !important;
+		color: var(--gray-100-color) !important;
 	}
 
 	@media (hover: hover) {
 		&:hover {
 			border: none !important;
 			color: var(--gray-100-color) !important;
-			background-color: var(--gray-900-color);
+			background-color: var(--gray-900-color) !important;
 		}
 	}
 }

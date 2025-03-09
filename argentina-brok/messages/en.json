@@ -10,9 +10,9 @@
 		},
 		"services": {
 			"text": "Services",
-			"link": "/services"
+			"link": "/depositary-services"
 		},
-		"investorRelations": {
+		"investor-relations": {
 			"text": "Investor Relations",
 			"link": "/investor-relations"
 		},
@@ -20,19 +20,20 @@
 			"text": "Media",
 			"link": "/media"
 		},
-		"aboutUs": {
+		"about-us": {
 			"text": "About us",
 			"link": "/about-us"
 		},
-		"contactUs": {
+		"contact-us": {
 			"text": "Contact us",
-			"link": "/armbrok-contact-page"
+			"link": "/contact-us"
 		}
 	},
 	"footer": {
 		"links": {
-			"productsAndServices": {
+			"products-and-services": {
 				"text": "Products&nbsp;and&nbsp;Services",
+				"link": "/depositary-services",
 				"brokerage": {
 					"text": "Brokerage",
 					"link": "/brokerage"
@@ -54,18 +55,18 @@
 					"link": "/depositary-services"
 				}
 			},
-			"aboutUs": {
+			"about-us": {
 				"text": "About us",
-				"generalInformation": {
+				"general-information": {
 					"text": "General Information",
-					"link": "#"
+					"link": "/about-us"
 				},
 				"career": {
 					"text": "Career",
 					"link": "/careers-at-armbrok"
 				}
 			},
-			"investorRelations": {
+			"investor-relations": {
 				"text": "Investor relations"
 			},
 			"media": {
@@ -87,18 +88,18 @@
 				"text": "Regulation",
 				"lawsLegalActs": {
 					"text": "Laws &amp;&nbsp;Legal Acts",
-					"link": "#"
+					"link": "/regulation#laws"
 				},
 				"internalRules": {
 					"text": "Internal Rules",
-					"link": "#"
+					"link": "/regulation#internal-rules"
 				},
 				"stockExchangeRules": {
 					"text": "Stock Exchange and Central Depositary Rules",
-					"link": "#"
+					"link": "/regulation#exchange-rules"
 				}
 			},
-			"contactUs": {
+			"contact-us": {
 				"text": "Contact Us"
 			}
 		},

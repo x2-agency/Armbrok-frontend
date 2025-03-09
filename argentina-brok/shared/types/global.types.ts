@@ -488,3 +488,10 @@ export type DocumentTabs = {
 	title?: string;
 	tabs: Array<DocumentMainTab>;
 };
+
+/* CORDS */
+
+export type Cords = {
+	latitude: string;
+	longitude: string;
+};

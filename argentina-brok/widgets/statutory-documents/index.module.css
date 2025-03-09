@@ -25,6 +25,7 @@
 	@mixin font-h2;
 	@mixin responsive max-width, 320, 640, 640;
 
+	scroll-margin-top: 50vh;
 	font-weight: 600;
 	text-align: center;
 }

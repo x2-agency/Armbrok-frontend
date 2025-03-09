@@ -3,9 +3,30 @@ import type { Metadata } from 'next';
 import { getCareersAtArmbrokPage } from '@/shared/api/get-careers-at-armbrock';
 import { getVacancies } from '@/shared/api/get-vacancies';
 import { CareersAtArmbrok } from '@/view/careers-at-armbrok';
-import { CAREERS_AT_ARMBROK_META } from '@/view/careers-at-armbrok/models/careers-at-armbrok.constants';
 
-export const metadata: Metadata = CAREERS_AT_ARMBROK_META;
+export async function generateMetadata(): Promise<Metadata> {
+	const initialCareersAtArmbrokPageData = await getCareersAtArmbrokPage();
+	const seo = initialCareersAtArmbrokPageData?.data?.seo;
+
+	if (!seo) {
+		return {
+			title: 'Careers at Armbrok',
+		};
+	}
+
+	return {
+		metadataBase: process.env.WEBSITE_DOMAIN
+			? new URL(process.env.WEBSITE_DOMAIN)
+			: undefined,
+		title: seo.metaTitle,
+		description: seo.metaDescription,
+		openGraph: {
+			title: seo.metaTitle,
+			description: seo.metaDescription,
+			images: seo.shareImage ? [seo.shareImage.url] : [],
+		},
+	};
+}
 
 export const revalidate = 10;
 

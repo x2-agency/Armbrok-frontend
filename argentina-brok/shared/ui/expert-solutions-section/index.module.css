@@ -13,6 +13,7 @@
 .cards {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	@mixin responsive gap, 32, 64, 64;
 
 	@media (max-width: 767px) {
 		@mixin responsive row-gap, 16;

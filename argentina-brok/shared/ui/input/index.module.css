@@ -2,10 +2,14 @@
 	position: relative;
 }
 
+.inputWrap {
+	position: relative;
+}
+
 .input {
-	@mixin res padding, 4.267rem, 1.111rem, 1rem; /* 16px */
-	@mixin res border-width, 0.267rem, 0.069rem, 0.063rem; /* 1px */
-	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin responsive padding, 16, 16, 16;
+	@mixin responsive border-width, 1, 1, 1;
+	@mixin responsive border-radius, 12, 12, 12;
 	@mixin font-text16;
 
 	border-style: solid;
@@ -43,6 +47,10 @@
 	font-weight: 700;
 }
 
+.input::placeholder {
+	color: transparent;
+}
+
 .error,
 .required {
 	color: var(--red-600-color);
@@ -54,4 +62,26 @@
 	display: block;
 
 	font-weight: 600;
+}
+
+.placeholder {
+	@mixin font-text14;
+	@mixin transitionOptions 0.2s;
+	position: absolute;
+	@mixin responsive left, 16, 16, 16;
+	top: 50%;
+	translate: 0% -50%;
+
+	color: var(--gray-500-color);
+	transition-property: transform, transform-origin;
+}
+
+.input:where(:focus, :not(:placeholder-shown)) + .placeholder,
+label:has([data-lastpass-icon-root]) .placeholder {
+	transform-origin: 0 0;
+	transform: translateY(-1rem) scale(0.75);
+
+	@media (max-width: 767px) {
+		transform: translateY(-4rem) scale(0.75);
+	}
 }

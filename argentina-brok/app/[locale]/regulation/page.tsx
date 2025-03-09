@@ -2,10 +2,31 @@ import type { Metadata } from 'next';
 
 import { getRegulation } from '@/shared/api/get-regulation';
 import { Regulation } from '@/view/regulation';
-import { REGULATION_META } from '@/view/regulation/model/regulation.meta';
 import type { RegulationPageResponse } from '@/view/regulation/types/response';
 
-export const metadata: Metadata = REGULATION_META;
+export async function generateMetadata(): Promise<Metadata> {
+	const initialRegulationPageData = await getRegulation();
+	const seo = initialRegulationPageData?.data?.seo;
+
+	if (!seo) {
+		return {
+			title: 'Regulation',
+		};
+	}
+
+	return {
+		metadataBase: process.env.WEBSITE_DOMAIN
+			? new URL(process.env.WEBSITE_DOMAIN)
+			: undefined,
+		title: seo.metaTitle,
+		description: seo.metaDescription,
+		openGraph: {
+			title: seo.metaTitle,
+			description: seo.metaDescription,
+			images: seo.shareImage ? [seo.shareImage.url] : [],
+		},
+	};
+}
 
 export const revalidate = 10;
 

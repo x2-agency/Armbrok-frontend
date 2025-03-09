@@ -10,7 +10,6 @@
 	@mixin responsive width, 40, 40, 40;
 	@mixin responsive height, 40, 40, 40;
 	@mixin responsive margin-block-end, 32, 64, 64;
-
 	position: relative;
 }
 
@@ -45,6 +44,6 @@
 .contact {
 	@mixin font-text16;
 
-    font-weight: 700;
+	font-weight: 700;
 	color: var(--red-600-color);
 }

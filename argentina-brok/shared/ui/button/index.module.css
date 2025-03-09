@@ -1,5 +1,6 @@
 .root {
 	@mixin font-text16;
+	font-weight: 500;
 	@mixin transition;
 
 	transition-property: background-color color;
@@ -26,7 +27,6 @@
 	&:not(:disabled) {
 		opacity: 1;
 		cursor: pointer;
-
 		@media (hover: hover) {
 			&:hover {
 				background-color: var(--red-600-color);
@@ -46,6 +46,7 @@
 			&:hover {
 				color: var(--red-600-color);
 				border: var(--red-600-color) solid 0.063rem;
+				background-color: #ff5e6917;
 			}
 		}
 	}
@@ -53,7 +54,7 @@
 
 .subtle {
 	background-color: transparent;
-
+	color: var(--gray-700-color);
 	&:not(:disabled) {
 		opacity: 1;
 		cursor: pointer;
@@ -98,10 +99,6 @@
 
 .icon {
 	@mixin res width, 6.4rem, 1.667rem, 1.5rem;
-}
-
-.root.default {
-	/* padding-block: unset; 8px */
 }
 
 .root.big {

@@ -6,10 +6,12 @@ import type { NextPage } from 'next';
 
 import type { Data } from '@/shared/types/blog';
 import ContentMarkup from '@/shared/ui/content-markup';
+import { useFormattedDate } from '@/widgets/app-layout/hooks/use-formated-date';
 import { NewsSectionHome } from '@/widgets/news-section';
 
 import css from './index.module.css';
 import { Author } from './ui/author';
+import { Breadcrumbs } from './ui/author/bread-crumbs';
 
 export const Blog: NextPage<{
 	initialBlogPage: Data;
@@ -22,18 +24,21 @@ export const Blog: NextPage<{
 		latestNewsSection,
 		author,
 		publishDate,
+		category,
 	} = initialData.initialBlogPage ?? {};
 
+	const formattedDate = useFormattedDate(publishDate ?? '', true, true);
 	return (
 		<>
 			<div className={css.wrap}>
+				<Breadcrumbs title={title} category={category ?? {}} />
 				<h1 className={css.title}>{parser(title ?? '')}</h1>
 				<p className={css.description}>{parser(description)}</p>
 
 				<Author
 					className={css.authorTop}
 					data={author}
-					publishDate={publishDate}
+					publishDate={formattedDate ?? ''}
 				/>
 			</div>
 			{poster?.url && (

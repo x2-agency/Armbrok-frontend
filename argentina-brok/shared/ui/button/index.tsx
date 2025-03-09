@@ -16,15 +16,14 @@ export const Button = ({
 	onClick,
 	iconRotate,
 	disabled,
-	// setLoadMore,
-	// isFetching,
-	// isHasMore,
+	target = '_self',
 }: ButtonProps) => {
 	if (href) {
 		return (
 			<Link
 				className={cx(css.root, className, css[variant], css[category])}
 				href={href}
+				target={target}
 			>
 				{variant === 'back' && <BackSVG className={css.icon} />}
 				{children}

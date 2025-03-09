@@ -35,7 +35,7 @@ export const CookiePanel = () => {
 			setTimeout(() => {
 				currentRef.close();
 				setIsMounted(false);
-			}, 300);
+			}, 700);
 		}
 	}, [isClosed]);
 

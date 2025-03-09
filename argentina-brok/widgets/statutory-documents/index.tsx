@@ -32,7 +32,11 @@ export const StatutoryDocuments = ({
 		<Container className={cx(css.root, className)}>
 			{(title || description) && (
 				<div className={css.titleBlock}>
-					{title && <h2 className={css.title}>{parser(title)}</h2>}
+					{title && (
+						<h2 className={css.title} id="laws">
+							{parser(title)}
+						</h2>
+					)}
 					{description && (
 						<p className={css.description}>{parser(description)}</p>
 					)}

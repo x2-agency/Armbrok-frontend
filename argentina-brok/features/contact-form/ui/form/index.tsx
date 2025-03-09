@@ -70,9 +70,15 @@ export const Form = ({
 						type="text"
 						label={nameField.label}
 						required={nameField.required}
-						{...register('name')}
+						{...register('name', {
+							required: nameField.required,
+							minLength: {
+								value: 4,
+								message: 'Name must be at least 4 characters long',
+							},
+						})}
 						aria-invalid={Boolean(errors.name)}
-						aria-errormessage={nameField.errorMessage}
+						aria-errormessage={errors.name?.message || nameField.errorMessage}
 					/>
 					<Input
 						placeholder={emailField.placeholder}
@@ -80,31 +86,47 @@ export const Form = ({
 						label={emailField.label}
 						required={emailField.required}
 						{...register('email', {
-							required: emailField.required,
+							required: emailField.required ? 'Email is required' : false,
 							pattern: {
 								value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-								message: emailField.errorMessage ?? '',
+								message: 'Please enter a valid email address',
 							},
 						})}
 						aria-invalid={Boolean(errors.email)}
-						aria-errormessage={emailField.errorMessage}
+						aria-errormessage={errors.email?.message || emailField.errorMessage}
 					/>
 					<Input
 						placeholder={subjectField.placeholder}
 						type="text"
 						label={subjectField.label}
 						required={subjectField.required}
-						{...register('subject')}
+						{...register('subject', {
+							required: subjectField.required,
+							minLength: {
+								value: 4,
+								message: 'Subject must be at least 4 characters long',
+							},
+						})}
 						aria-invalid={Boolean(errors.subject)}
-						aria-errormessage={subjectField.errorMessage}
+						aria-errormessage={
+							errors.subject?.message || subjectField.errorMessage
+						}
 					/>
 					<Textarea
 						placeholder={messageField.placeholder}
 						label={messageField.label}
 						required={messageField.required}
-						{...register('message')}
+						{...register('message', {
+							required: messageField.required,
+							minLength: {
+								value: 10,
+								message: 'Message must be at least 10 characters long',
+							},
+						})}
 						aria-invalid={Boolean(errors.message)}
-						aria-errormessage={messageField.errorMessage}
+						aria-errormessage={
+							errors.message?.message || messageField.errorMessage
+						}
 					/>
 				</div>
 				<Captcha
@@ -117,6 +139,7 @@ export const Form = ({
 					type="submit"
 					variant="filled"
 					category="big"
+					className={css.button}
 				>
 					{parser(sendButtonText ?? 'Send message')}
 				</Button>

@@ -29,8 +29,9 @@ export const ExpertSolutionCard = ({
 
 	return (
 		<article
-			className={cx(css.card, className, cardBackgroundColor, 'p-32', {
+			className={cx(css.card, className, cardBackgroundColor, {
 				[css.withShell]: withShell,
+				['p-32']: withShell,
 			})}
 		>
 			{media?.url && <img src={media?.url} alt="icon" className={css.icon} />}

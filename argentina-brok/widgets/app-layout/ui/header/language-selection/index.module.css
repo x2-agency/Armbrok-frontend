@@ -12,8 +12,11 @@
 
 .selected {
 	@mixin transition;
-	position: relative;
+	@mixin responsive gap, 6, 6, 6;
 
+	display: flex;
+	align-items: center;
+	position: relative;
 	transition-property: color;
 
 	&.white {
@@ -41,12 +44,9 @@
 
 .svg {
 	@mixin transition;
-	@mixin res width, 2.4rem, 0.625rem, 0.563rem; /* 9px */
-	@mixin res height, 1.333rem, 0.347rem, 0.313rem; /* 5px */
+	@mixin responsive width, 9, 9, 9;
+	@mixin responsive height, 5, 5, 5;
 
-	position: absolute;
-	top: 40%;
-	right: -50%;
 	transition-property: rotate;
 	rotate: 180deg;
 
@@ -71,8 +71,9 @@
 	position: absolute;
 	overflow: hidden;
 	opacity: 0;
+	top: 102%;
 	visibility: hidden;
-	transition-property: opacity visibility;
+	transition-property: opacity visibility translate;
 }
 
 .languagesList.open {
@@ -83,6 +84,7 @@
 .languagesList.close {
 	opacity: 0;
 	visibility: hidden;
+	translate: 0% -10%;
 }
 
 .languageButton {
@@ -116,6 +118,10 @@ html[data-header-top-color='white'] {
 html[data-header-top-color='dark'] {
 	.selected {
 		color: var(--black-color);
+	}
+
+	.languagesList {
+		box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
 	}
 
 	.svg path {

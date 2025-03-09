@@ -16,6 +16,7 @@ export const ArmbrokContact: NextPage<ArmbrokContactPageData> = ({
 	description,
 	contactCards,
 	contactForm,
+	mapCoords,
 }) => {
 	useUpdateFooterData(publishedAt);
 
@@ -27,7 +28,13 @@ export const ArmbrokContact: NextPage<ArmbrokContactPageData> = ({
 				className={css.titleSection}
 			/>
 			<ContactCardsSection contacts={contactCards} />
-			{contactForm && <ContactFormSection {...contactForm} />}
+			{contactForm && (
+				<ContactFormSection
+					{...contactForm}
+					latitude={mapCoords?.latitude}
+					longitude={mapCoords?.longitude}
+				/>
+			)}
 		</div>
 	);
 };

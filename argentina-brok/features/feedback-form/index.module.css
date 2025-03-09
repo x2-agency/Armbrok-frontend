@@ -52,7 +52,7 @@
 
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: start;
 
 	@media (max-width: 767px) {
 		@mixin responsive width, 330;
@@ -79,6 +79,10 @@
 
 	input {
 		@mixin responsive width, unset, 320, 320;
+
+		@media (max-width: 767px) {
+			width: 100%;
+		}
 	}
 }
 
@@ -86,6 +90,9 @@
 	@mixin transition;
 
 	transition-property: background-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	@media (hover: hover) {
 		&:not(:disabled):hover {
