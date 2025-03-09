@@ -17,6 +17,7 @@ import RunningTextSection from '@/widgets/running-text-section';
 import { Start } from '@/widgets/start';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
+import css from './index.module.css';
 import type { BrokeragePageResponse } from './types/response';
 
 export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
@@ -58,7 +59,7 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 			/>
 			{advantages && advantages.length !== 0 && (
 				<HeroContainer>
-					<ExpertSolutionSection items={advantages} />
+					<ExpertSolutionSection items={advantages} className={css.solution} />
 				</HeroContainer>
 			)}
 
