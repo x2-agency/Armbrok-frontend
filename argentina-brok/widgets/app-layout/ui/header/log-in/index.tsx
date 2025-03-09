@@ -11,7 +11,12 @@ export const LogIn = () => {
 
 	return (
 		<div className={css.root}>
-			<Button className={css.button} variant="filled" href="/">
+			<Button
+				className={css.button}
+				variant="filled"
+				href="https://example.com"
+				target="_blank"
+			>
 				{t(`${header.openAccountButton.root}.text`)}
 			</Button>
 		</div>
