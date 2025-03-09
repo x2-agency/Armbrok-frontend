@@ -27,7 +27,7 @@ export const Blog: NextPage<{
 		category,
 	} = initialData.initialBlogPage ?? {};
 
-	const formattedDate = useFormattedDate(publishDate ?? '', true);
+	const formattedDate = useFormattedDate(publishDate ?? '', true, true);
 	return (
 		<>
 			<div className={css.wrap}>

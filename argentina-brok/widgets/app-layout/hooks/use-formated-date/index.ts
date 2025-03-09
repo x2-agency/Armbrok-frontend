@@ -25,6 +25,7 @@ const getTimeAgo = (timeDifferenceInMs: number) => {
 
 export const useFormattedDate = (
 	dateString: string | undefined,
+	useAlternateFormat: boolean = false,
 	includeTimeAgo: boolean = false
 ) => {
 	return useMemo(() => {
@@ -33,25 +34,34 @@ export const useFormattedDate = (
 		const publicationDate = new Date(dateString);
 		const currentDate = new Date();
 
-		const formattedDateTime = publicationDate
-			.toLocaleString('ru-RU', {
-				day: '2-digit',
-				month: '2-digit',
-				year: 'numeric',
-				hour: '2-digit',
-				minute: '2-digit',
-				hour12: false,
-			})
-			.replace(',', '');
+		let formattedDate;
 
-		if (!includeTimeAgo) {
-			return formattedDateTime;
+		if (useAlternateFormat) {
+			formattedDate = publicationDate.toLocaleString('en-GB', {
+				day: '2-digit',
+				month: 'short',
+				year: 'numeric',
+			});
+		} else {
+			formattedDate = publicationDate
+				.toLocaleString('ru-RU', {
+					day: '2-digit',
+					month: '2-digit',
+					year: 'numeric',
+					hour: '2-digit',
+					minute: '2-digit',
+					hour12: false,
+				})
+				.replace(',', '');
 		}
 
-		const timeDifferenceInMs =
-			currentDate.getTime() - publicationDate.getTime();
-		const timeAgo = getTimeAgo(timeDifferenceInMs);
+		if (includeTimeAgo) {
+			const timeDifferenceInMs =
+				currentDate.getTime() - publicationDate.getTime();
+			const timeAgo = getTimeAgo(timeDifferenceInMs);
+			return `${formattedDate} • ${timeAgo} read`;
+		}
 
-		return `${formattedDateTime} • ${timeAgo} read`;
-	}, [dateString, includeTimeAgo]);
+		return formattedDate;
+	}, [dateString, useAlternateFormat, includeTimeAgo]);
 };

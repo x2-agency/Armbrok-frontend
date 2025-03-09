@@ -20,7 +20,7 @@ export const Disclaimer = () => {
 	const lastUpdateLabel = t(footer.updateLabel);
 	const { footerData } = useLayoutContext();
 
-	const formattedDate = useFormattedDate(footerData?.publishedAt ?? '');
+	const formattedDate = useFormattedDate(footerData?.publishedAt ?? '', false);
 
 	return (
 		<>
