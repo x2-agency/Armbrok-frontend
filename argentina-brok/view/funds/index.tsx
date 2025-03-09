@@ -56,13 +56,13 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				withShell
 				backgroundColor="white"
 			/>
+			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
 			<ExpertSolutionSection
 				withShell
 				backgroundColor="white"
 				title={howFundWorksSection?.title}
 				items={howFundWorksSection?.factoids}
 			/>
-			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
 			<HelpfulInformation accordionSection={infoSection} />
 
 			<HowWeAreWorkingSection data={disclaimerSection} oneCard />
