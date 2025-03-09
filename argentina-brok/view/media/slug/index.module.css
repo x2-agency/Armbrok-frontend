@@ -8,7 +8,7 @@
 
 	@media (max-width: 767px) {
 		width: 100%;
-		padding-inline: 5.33rem;
+		padding-inline: unset;
 	}
 }
 
@@ -50,6 +50,7 @@
 .root {
 	@mixin responsive padding-block-start, 36, 72, 72;
 	@mixin responsive padding-block-end, 30, 48, 48;
+	padding-inline: unset;
 }
 
 .news {

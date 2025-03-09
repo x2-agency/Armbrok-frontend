@@ -5,7 +5,6 @@ import cx from 'clsx';
 import { motion } from 'framer-motion';
 import parser from 'html-react-parser';
 import type { Key } from 'react';
-import { useEffect, useState } from 'react';
 
 import { Link, usePathname } from '@/i18n/navigation';
 import { GRID_ANIMATION } from '@/shared/model/animation-grid';
@@ -30,15 +29,11 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 	const { publishDate, title, description, author, category, poster, slug } =
 		data ?? {};
 
-	const [formattedDate, setFormattedDate] = useState('');
-
-	useEffect(() => {
-		if (publishDate) {
-			const date = new Date(publishDate);
-			const formatted = new Intl.DateTimeFormat('en-GB').format(date);
-			setFormattedDate(formatted);
-		}
-	}, [publishDate]);
+	const formattedDate = new Intl.DateTimeFormat('ru-RU', {
+		day: '2-digit',
+		month: '2-digit',
+		year: 'numeric',
+	}).format(new Date(publishDate ?? ''));
 
 	const truncatedDescription =
 		(isMediaSlug || isHomePage) && description

@@ -25,6 +25,11 @@
 	@mixin font-text20;
 	color: var(--gray-700-color);
 	@mixin responsive padding-block-end, 30, 64, 64;
+
+	@media (max-width: 767px) {
+		width: 100%;
+		padding-inline: 5.33rem;
+	}
 }
 
 .slider {
