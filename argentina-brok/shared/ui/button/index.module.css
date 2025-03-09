@@ -46,6 +46,7 @@
 			&:hover {
 				color: var(--red-600-color);
 				border: var(--red-600-color) solid 0.063rem;
+				background-color: #ff5e6917;
 			}
 		}
 	}

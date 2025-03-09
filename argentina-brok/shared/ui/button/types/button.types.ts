@@ -13,6 +13,7 @@ type LinkButtonProps = BaseButtonProps & {
 	onClick?: never;
 	type?: never;
 	disabled?: never;
+	target?: '_self' | '_blank';
 };
 
 type ClickButtonProps = BaseButtonProps & {
@@ -23,6 +24,7 @@ type ClickButtonProps = BaseButtonProps & {
 	setLoadMore?: Dispatch<undefined | boolean>;
 	isFetching?: boolean;
 	isHasMore?: boolean;
+	target?: never;
 };
 
 export type ButtonProps = LinkButtonProps | ClickButtonProps;
