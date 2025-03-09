@@ -22,7 +22,7 @@ export const StockInformation = ({ title, stockInfo }: StockInformation) => {
 					<li key={index} className={css.listItem}>
 						<p className={css.label}>{parser(info.label)}</p>
 						<span className={css.lines} />
-						<p className={css.value}>{info.value}</p>
+						<p className={css.value}>{info.value.toLocaleString('en-US')}</p>
 					</li>
 				))}
 			</ul>
