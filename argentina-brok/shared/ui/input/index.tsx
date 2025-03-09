@@ -39,16 +39,19 @@ const InputComponent = (
 				</span>
 			)}
 			{leftIcon && <img className={css.leftIcon} src={leftIcon} />}
-			<input
-				type={type}
-				ref={ref}
-				className={cx(css.input, { [css.withIcon]: leftIcon })}
-				placeholder={placeholder}
-				{...props}
-			/>
+			<div className={css.inputWrap}>
+				<input
+					type={type}
+					ref={ref}
+					className={cx(css.input, { [css.withIcon]: leftIcon })}
+					placeholder={placeholder}
+					{...props}
+				/>
+				<span className={css.placeholder}>{placeholder}</span>
+			</div>
 			{props['aria-invalid'] && props['aria-errormessage'] && (
 				<span className={css.error}>
-					{parser(props['aria-errormessage'])} {required && "*"}
+					{parser(props['aria-errormessage'])} {required && '*'}
 				</span>
 			)}
 		</label>
