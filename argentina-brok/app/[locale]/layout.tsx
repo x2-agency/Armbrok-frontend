@@ -28,7 +28,7 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const messages = await getMessages({ locale }); // Загружаем сообщения для конкретной локали
+	const messages = await getMessages({ locale });
 
 	return (
 		<html lang={locale}>

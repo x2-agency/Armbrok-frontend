@@ -4,7 +4,6 @@ import { getArticle } from '@/shared/api/get-article';
 import { getMediaPage } from '@/shared/api/get-media-page';
 import { Media } from '@/view/media';
 
-// Генерация метаданных
 export async function generateMetadata(): Promise<Metadata> {
 	const initialMediaPageData = await getMediaPage();
 	const seo = initialMediaPageData?.data?.seo;
