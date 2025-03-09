@@ -105,7 +105,7 @@
 }
 
 .root.row .name {
-	@mixin responsive max-width, 0, 130, 135;
+	@mixin responsive max-width, 0, 128, 128;
 
 	@media (min-width: 768px) {
 		display: -webkit-box;
