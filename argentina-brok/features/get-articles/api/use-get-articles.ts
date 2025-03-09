@@ -65,5 +65,6 @@ export const useGetArticles = (
 			return undefined;
 		},
 		staleTime: 1000 * 60 * 5,
+		placeholderData: prevData => prevData ?? initialInfinitePage,
 	});
 };

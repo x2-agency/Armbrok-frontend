@@ -1,18 +1,30 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Input } from '@/shared/ui/input';
 import { SEARCH_FORM_NULL_DATA } from '@/view/armbrok-search/models/form.constants';
 
 import css from './index.module.css';
 
-const debounce = (func: (query: string) => void, delay: number) => {
-	let timer: NodeJS.Timeout;
-	return (query: string) => {
-		clearTimeout(timer);
-		timer = setTimeout(() => func(query), delay);
-	};
+const useDebounce = (callback: (query: string) => void, delay: number) => {
+	const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+	const debouncedFunction = useCallback(
+		(query: string) => {
+			if (timer.current) clearTimeout(timer.current);
+			timer.current = setTimeout(() => callback(query), delay);
+		},
+		[callback, delay]
+	);
+
+	useEffect(() => {
+		return () => {
+			if (timer.current) clearTimeout(timer.current);
+		};
+	}, []);
+
+	return debouncedFunction;
 };
 
 type SearchInputProps = {
@@ -21,13 +33,7 @@ type SearchInputProps = {
 
 export const SearchNews = ({ onSearchChange }: SearchInputProps) => {
 	const [searchQuery, setSearchQuery] = useState('');
-
-	const debouncedSearch = useCallback(
-		debounce((query: string) => {
-			onSearchChange(query);
-		}, 300),
-		[onSearchChange]
-	);
+	const debouncedSearch = useDebounce(onSearchChange, 800);
 
 	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;

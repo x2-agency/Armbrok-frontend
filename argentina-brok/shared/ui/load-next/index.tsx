@@ -4,7 +4,6 @@ import cx from 'clsx';
 import { useRef } from 'react';
 
 import { Button } from '@/shared/ui/button';
-import { Preloader } from '@/shared/ui/preloader';
 
 import css from './index.module.css';
 
@@ -42,7 +41,7 @@ export const LoadNext = ({
 				onClick={handleClick}
 				disabled={isFetching}
 			>
-				{isFetching ? <Preloader /> : 'Show more'}
+				Show more
 			</Button>
 		</div>
 	);

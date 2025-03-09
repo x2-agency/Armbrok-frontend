@@ -3,7 +3,7 @@
 
 import type { NextPage } from 'next';
 import { useSearchParams } from 'next/navigation';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { FeedbackForm } from '@/features/feedback-form';
 import { useGetArticles } from '@/features/get-articles/api/use-get-articles';
@@ -25,6 +25,8 @@ export const Media: NextPage<{
 	initialArticles?: ArticlesData;
 }> = ({ initialMediaData, initialArticles }) => {
 	const [searchQuery, setSearchQuery] = useState('');
+	const [searchAnimationKey, setSearchAnimationKey] = useState('');
+
 	const { glossaryCard, emailForm, title, description, publishedAt } =
 		initialMediaData?.data ?? {};
 	const router = useRouter();
@@ -61,6 +63,10 @@ export const Media: NextPage<{
 
 	useUpdateFooterData(publishedAt);
 
+	useEffect(() => {
+		setSearchAnimationKey(searchQuery);
+	}, [searchQuery]);
+
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
@@ -78,6 +84,7 @@ export const Media: NextPage<{
 			</div>
 
 			<NewsPage
+				animationKey={`${currentTag}-${searchAnimationKey}`}
 				newsCard={filteredBySearch}
 				isFetchingNextPage={isFetchingNextPage}
 				hasNextPage={hasNextPage}
