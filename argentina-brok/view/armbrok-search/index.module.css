@@ -6,6 +6,8 @@
 	h2 {
 		@mixin font-h1;
 		@mixin responsive padding-block-end, 10, 16, 16;
+
+		font-weight: 700;
 	}
 
 	p {
