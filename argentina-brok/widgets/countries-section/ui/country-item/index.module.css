@@ -15,4 +15,5 @@
     @mixin font-text18;
 
     font-weight: 700;
+	text-align: center;
 }
