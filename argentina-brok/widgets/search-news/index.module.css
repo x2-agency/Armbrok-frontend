@@ -1,0 +1,5 @@
+.searchInput {
+	input {
+		@mixin responsive width, unset, 760, 760;
+	}
+}

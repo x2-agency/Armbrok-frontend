@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 'use client';
 
 import type { NextPage } from 'next';
 import { useSearchParams } from 'next/navigation';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 import { FeedbackForm } from '@/features/feedback-form';
 import { useGetArticles } from '@/features/get-articles/api/use-get-articles';
@@ -13,6 +14,7 @@ import type { MediaPageProps } from '@/shared/types/media-page';
 import { Preloader } from '@/shared/ui/preloader';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
 import { NewsPage } from '@/widgets/news-page';
+import { SearchNews } from '@/widgets/search-news';
 import { Tabs } from '@/widgets/tabs';
 import { Vacancy } from '@/widgets/vacancies-section/ui/vacancy';
 
@@ -22,9 +24,9 @@ export const Media: NextPage<{
 	initialMediaData?: MediaPageProps;
 	initialArticles?: ArticlesData;
 }> = ({ initialMediaData, initialArticles }) => {
+	const [searchQuery, setSearchQuery] = useState('');
 	const { glossaryCard, emailForm, title, description, publishedAt } =
 		initialMediaData?.data ?? {};
-
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
@@ -34,16 +36,15 @@ export const Media: NextPage<{
 		useGetArticles({ filters: { category: currentTag } }, initialArticles);
 
 	const filteredNews = data?.pages.flatMap(page => page.data) ?? [];
+	const searchLower = searchQuery.toLowerCase();
+	const filteredBySearch = filteredNews.filter(news =>
+		news?.title.toLowerCase().includes(searchLower)
+	);
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
 			const params = new URLSearchParams(searchParams.toString());
-
-			if (value && value !== 'all') {
-				params.set(name, value);
-			} else {
-				params.delete(name);
-			}
+			value && value !== 'all' ? params.set(name, value) : params.delete(name);
 			return params.toString();
 		},
 		[searchParams]
@@ -51,15 +52,20 @@ export const Media: NextPage<{
 
 	const onChangeTab = useCallback(
 		(value: string) => {
-			const queryString = createQueryString('category', value);
-			router.push(`${pathname}?${queryString}`, { scroll: false });
+			router.push(`${pathname}?${createQueryString('category', value)}`, {
+				scroll: false,
+			});
 		},
 		[router, pathname, createQueryString]
 	);
+
 	useUpdateFooterData(publishedAt);
+
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
+			<SearchNews onSearchChange={setSearchQuery} />
+
 			<div className={css['tabs-container']}>
 				<Tabs
 					className={css.tabs}
@@ -70,14 +76,18 @@ export const Media: NextPage<{
 					initialTag="all"
 				/>
 			</div>
+
 			<NewsPage
-				newsCard={filteredNews}
+				newsCard={filteredBySearch}
 				isFetchingNextPage={isFetchingNextPage}
 				hasNextPage={hasNextPage}
 				fetchNextPage={fetchNextPage}
 			/>
+
 			{isFetchingNextPage && <Preloader className={css.loader} />}
+
 			<Vacancy className={css.vacancy} data={glossaryCard} />
+
 			<FeedbackForm
 				title={emailForm?.title}
 				description={emailForm?.description}
