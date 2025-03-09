@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { postEmailForm } from '@/shared/api/post-email-form.ts';
-import { getValidationRules } from '@/shared/lib/validation';
 import { Button } from '@/shared/ui/button';
 import { Input } from '@/shared/ui/input';
 
@@ -62,11 +61,18 @@ export const FeedbackForm = ({
 				>
 					<Input
 						className={css.input}
-						type="email"
 						placeholder="name@mail.com"
-						{...register('email', getValidationRules('email'))}
+						type="email"
+						required
+						{...register('email', {
+							required: 'Email is required',
+							pattern: {
+								value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+								message: 'Please enter a valid email address',
+							},
+						})}
 						aria-invalid={Boolean(errors.email)}
-						aria-errormessage="Incorrect email"
+						aria-errormessage={errors.email?.message}
 					/>
 					<Button
 						variant="filled"
