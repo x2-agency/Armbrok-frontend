@@ -29,16 +29,6 @@
 	}
 }
 
-.leftIcon {
-	@mixin responsive width, 16, 24, 24;
-	@mixin responsive height, 16, 24, 24;
-	@mixin responsive margin-inline-start, 16, 16, 16;
-
-	position: absolute;
-	top: 50%;
-	translate: 0% -50%;
-}
-
 .label {
 	@mixin font-text14;
 	@mixin responsive padding-block-end, 6, 6, 6;
@@ -76,6 +66,22 @@
 	transition-property: transform, transform-origin;
 }
 
+.leftIcon + .placeholder {
+	@mixin responsive left, 35, 52, 52;
+}
+
+.leftIcon {
+	@mixin responsive width, 16, 24, 24;
+	@mixin responsive height, 16, 24, 24;
+	@mixin responsive margin-inline-start, 10, 16, 16;
+	left: 0;
+	z-index: 20;
+	position: absolute;
+	top: 50%;
+	translate: 0% -50%;
+}
+
+.input:where(:focus, :not(:placeholder-shown)) + .leftIcon + .placeholder,
 .input:where(:focus, :not(:placeholder-shown)) + .placeholder,
 label:has([data-lastpass-icon-root]) .placeholder {
 	transform-origin: 0 0;

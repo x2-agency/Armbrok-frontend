@@ -1,6 +1,6 @@
 .ball {
-	@mixin responsive width, 8, 15, 15;
-	@mixin responsive height, 8, 15, 15;
+	@mixin responsive width, 8, 10, 10;
+	@mixin responsive height, 8, 10, 10;
 	background-color: red;
 	border-radius: 50%;
 
