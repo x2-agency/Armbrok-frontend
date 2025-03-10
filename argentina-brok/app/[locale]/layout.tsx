@@ -33,6 +33,10 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 	return (
 		<html lang={locale}>
 			<head>
+				<meta
+					name="google-site-verification"
+					content="0Wlr8IRw0xt8JY1dLmgtju5ROZXCWNqoJI7L2RqxwUA"
+				/>
 				<Favicons />
 			</head>
 			<body className={RobotoFonts.className}>
