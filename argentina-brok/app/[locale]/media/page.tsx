@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export const revalidate = 10;
+export const revalidate = 60;
 
 type SearchParams = {
 	category?: string;
@@ -40,10 +40,10 @@ const MediaPage = async ({ searchParams }: { searchParams: SearchParams }) => {
 			? searchParams.category
 			: undefined;
 
-	const initialMediaData = await getMediaPage();
-	const initialArticles = await getArticle(
-		tag ? { filters: { category: tag } } : {}
-	);
+	const [initialMediaData, initialArticles] = await Promise.all([
+		getMediaPage(),
+		getArticle(tag ? { filters: { category: tag }, limit: 1 } : {}),
+	]);
 
 	return (
 		<Media
