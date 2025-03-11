@@ -38,7 +38,7 @@ const InputComponent = (
 					{parser(label)} {required && <span className={css.required}>*</span>}
 				</span>
 			)}
-			{leftIcon && <img className={css.leftIcon} src={leftIcon} />}
+
 			<div className={css.inputWrap}>
 				<input
 					type={type}
@@ -47,6 +47,8 @@ const InputComponent = (
 					placeholder={placeholder}
 					{...props}
 				/>
+				{leftIcon && <img className={css.leftIcon} src={leftIcon} />}
+
 				<span className={css.placeholder}>{placeholder}</span>
 			</div>
 			{props['aria-invalid'] && props['aria-errormessage'] && (
