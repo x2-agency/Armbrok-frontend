@@ -48,7 +48,7 @@ export const Blog: NextPage<{
 			)}
 
 			<article className={css.root}>
-				<ContentMarkup extraClass={css.markup} html={markup}></ContentMarkup>
+				<ContentMarkup extraClass={css.markup} html={markup} />
 			</article>
 			<Author className={css.authorBottom} data={author} visivleSocial />
 			<NewsSectionHome
