@@ -23,7 +23,6 @@ export const NewsItem = ({
 						<NotSearchedIcon className={css.icon} />
 					)}
 				</div>
-				<p className={css.displayedLink}>{parser(link)}</p>
 			</header>
 			<h4 className={css.title}>
 				<Link href={link} className={css.link} target="_blank">
