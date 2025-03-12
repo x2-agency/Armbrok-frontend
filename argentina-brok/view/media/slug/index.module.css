@@ -12,6 +12,17 @@
 	}
 }
 
+.title,
+.description {
+	@mixin responsive max-width, 320, 960, 960;
+
+	margin-inline: auto;
+
+	@media (max-width: 767px) {
+		max-width: unset;
+	}
+}
+
 .title {
 	@mixin font-h1;
 	font-weight: 700;
@@ -20,9 +31,9 @@
 }
 
 .description {
+	@mixin responsive padding-block-end, 20, 40, 40;
 	@mixin font-h6;
 	color: var(--gray-600-color);
-	@mixin responsive padding-block-end, 20, 40, 40;
 }
 
 .wrap:has(+ .imageWrap) {
@@ -55,7 +66,4 @@
 
 .news {
 	@mixin responsive padding-block-end, 50, 120, 120;
-}
-
-.authorBottom {
 }
