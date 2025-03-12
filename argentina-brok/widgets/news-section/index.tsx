@@ -5,7 +5,7 @@ import { Button } from '@/shared/ui/button';
 import type { NewsProps } from '@/view/home/types/response';
 
 import css from './index.module.css';
-import { NewsSlider } from './ui/news-slider';
+import NewsSlider from './ui/news-slider';
 
 export type NewsSectionProps = {
 	data?: NewsProps;
@@ -14,7 +14,6 @@ export type NewsSectionProps = {
 
 export const NewsSectionHome = ({ data, className }: NewsSectionProps) => {
 	const { title, description, moreButton, news } = data ?? {};
-
 	return (
 		<section className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(title ?? '')}</h2>

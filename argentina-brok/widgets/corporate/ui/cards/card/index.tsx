@@ -2,6 +2,7 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import { Link } from '@/i18n/navigation';
 import type { InstrumentType } from '@/view/home/types/response';
 
 import css from './index.module.css';
@@ -22,6 +23,7 @@ export const Card = ({ card }: CardType) => {
 				/>
 			)}
 			{title && <p className={css.description}>{parser(title)}</p>}
+			<Link className={css.link} href={card?.link ?? ''} />
 		</article>
 	);
 };

@@ -14,7 +14,7 @@
 }
 
 .active {
-	border-bottom: var(--gray-100-color) solid 1px;
+	color: var(--red--600-color);
 }
 
 .linksHy {
@@ -42,9 +42,9 @@ html[data-header-top-color='dark'] .link {
 }
 
 html[data-header-top-color='white'] .active {
-	border-bottom: var(--gray-100-color) solid 1px;
+	color: var(--red-500-color);
 }
 
 html[data-header-top-color='dark'] .active {
-	border-bottom: var(--black-color) solid 1px;
+	color: var(--red-500-color);
 }

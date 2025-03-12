@@ -1,4 +1,4 @@
-import type { PosterImageProps } from './poster';
+import type { PosterImageProps, VideoProps } from './poster';
 
 export type BaseResponse<T> = {
 	data: T & { updatedAt: string; locale?: string; seo?: SeoType | null };
@@ -17,6 +17,7 @@ export type SeoType = {
 export type HeroSection = ItemDetail & {
 	button?: LinkItem;
 	background: PosterImageProps;
+	backgroundVideo?: VideoProps;
 };
 
 export type LinkItem = {
@@ -341,6 +342,7 @@ export type EmployeeStoriesItem = {
 		career?: string;
 		avatar?: MediaData;
 	};
+	className?: string;
 };
 
 export type EmployeeStorySection = ItemDetail & {
@@ -422,6 +424,7 @@ export type SecurityPaperItem = {
 	sharePriceValue?: string;
 	logo?: MediaData;
 	infoBlock?: Array<ItemDetail>;
+	className?: string;
 };
 
 export type SecurityPapers = {

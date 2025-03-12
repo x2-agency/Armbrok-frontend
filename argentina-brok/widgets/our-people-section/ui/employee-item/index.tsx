@@ -6,9 +6,13 @@ import type { EmployeeStoriesItem } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-export const EmployeeItem = ({ story, employee }: EmployeeStoriesItem) => {
+export const EmployeeItem = ({
+	story,
+	employee,
+	className,
+}: EmployeeStoriesItem) => {
 	return (
-		<article className={cx(css.root, 'p-32')}>
+		<article className={cx(css.root, 'p-32', className)}>
 			<header className={css.titleBlock}>
 				<div className={css.avatarWrapper}>
 					<img

@@ -1,4 +1,4 @@
-import type { LinkItem, HeroFactoid } from '@/shared/types/global.types';
+import type { HeroFactoid, LinkItem } from '@/shared/types/global.types';
 import type { PosterImageProps } from '@/shared/types/poster';
 
 export interface PanelProps {
@@ -50,6 +50,7 @@ type ProfixBannerProps = BaseBannerProps & {
 
 type DefaultBannerProps = BaseBannerProps & {
 	type: 'default';
+
 	banner: BaseBannerProps['banner'] & {
 		button?: LinkItem;
 	};

@@ -3,7 +3,7 @@ import parser from 'html-react-parser';
 
 import css from './index.module.css';
 import type { PlacementSectionProps } from './placements.types';
-import { PlacementItem } from './ui/placement-item';
+import PlacementSlider from './ui/placement-slider';
 
 export const PlacementsSection = ({
 	title,
@@ -18,13 +18,7 @@ export const PlacementsSection = ({
 		<section className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 
-			<ul className={css.placements}>
-				{items.map((value, index) => (
-					<li key={index} className={css.placement}>
-						<PlacementItem {...value} />
-					</li>
-				))}
-			</ul>
+			<PlacementSlider className={css.card} items={items} />
 		</section>
 	);
 };

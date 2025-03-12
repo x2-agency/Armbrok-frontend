@@ -2,17 +2,20 @@ import cx from 'clsx';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { NewsCard } from '@/entities/news-card';
-import type { Article } from '@/shared/types/article';
+import type { SecurityPaperItem } from '@/shared/types/global.types';
+import { PlacementItem } from '@/widgets/placements-section/ui/placement-item';
 
 import css from './index.module.css';
 
-export type NewsSliderProps = {
-	newsSlider: Array<Article>;
-	className: string;
+export type PlacementSliderProps = {
+	items?: Array<SecurityPaperItem>;
+	className?: string;
 };
 
-const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
+const PlacementSlider: React.FC<PlacementSliderProps> = ({
+	items,
+	className,
+}) => {
 	return (
 		<Swiper
 			className={cx(css.root, className)}
@@ -32,13 +35,13 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 				},
 			}}
 		>
-			{newsSlider?.map((news, index) => (
-				<SwiperSlide key={news.slug} className={css.sliderItem}>
-					<NewsCard className={css.card} key={index} data={news} />
+			{items?.map((value, index) => (
+				<SwiperSlide key={index} className={css.sliderItem}>
+					<PlacementItem className={css.card} {...value} />
 				</SwiperSlide>
 			))}
 		</Swiper>
 	);
 };
 
-export default NewsSlider;
+export default PlacementSlider;

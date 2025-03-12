@@ -20,7 +20,7 @@
 			display: block;
 			width: 100%;
 			margin-inline-start: unset;
-			bottom: 0% !important; /* 48px */
+			bottom: 4% !important; /* 48px */
 		}
 	}
 	:global(.swiper-pagination-bullet) {
@@ -41,6 +41,6 @@
 
 .card {
 	box-sizing: border-box;
-	@mixin responsive width, 330, 384, 384;
-	@mixin responsive height, 322, 365, 400;
+	@mixin responsive width, 330, 588, 588;
+	@mixin responsive min-height, 400, 386, 430;
 }

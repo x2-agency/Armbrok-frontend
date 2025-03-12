@@ -78,6 +78,7 @@ export type InstrumentType = {
 	title?: string;
 	description?: string;
 	media?: MediaType;
+	link?: string;
 };
 
 // StepsSection
