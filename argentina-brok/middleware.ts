@@ -10,7 +10,10 @@ export function middleware(request: NextRequest) {
 	const handleI18nRouting = createMiddleware(routing);
 	const response = handleI18nRouting(request);
 
-	if (!request.nextUrl.pathname.startsWith('/sitemap.xml')) {
+	if (
+		!request.nextUrl.pathname.startsWith('/sitemap.xml') ||
+		!request.nextUrl.pathname.startsWith('/robots.txt')
+	) {
 		response.headers.set(CURRENT_PATH_HEADER, request.nextUrl.pathname);
 
 		const language = request.cookies.get(LANGUAGE_HEADER);
@@ -25,6 +28,6 @@ export const config = {
 	matcher: [
 		'/',
 		'/(ru|hy|en)/:path*',
-		'/((?!api|_next/static|_next/image|favicon.ico|images|assets|sitemap.xml).*)',
+		'/((?!api|_next/static|_next/image|favicon.ico|images|assets|sitemap.xml|robots.txt).*)',
 	],
 };
