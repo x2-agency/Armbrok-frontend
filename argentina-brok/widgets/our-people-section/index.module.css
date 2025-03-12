@@ -31,26 +31,10 @@
 	@mixin font-text20;
 }
 
-.employees {
+.card {
 	@mixin responsive padding-inline, 20, 120, unset;
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
-
 	@media (min-width: 1441px) {
 		padding-inline: calc(8rem + (100vw - 1440px) / 2);
-	}
-	@media (max-width: 767px) {
-		scroll-behavior: smooth;
-		scroll-snap-type: x mandatory;
-	}
-
-	position: relative;
-	display: flex;
-	overflow: scroll;
-	scrollbar-width: none; /* Firefox */
-	-ms-overflow-style: none; /* Internet Explorer & Edge */
-
-	&::-webkit-scrollbar {
-		display: none; /* Chrome, Safari */
 	}
 }
 

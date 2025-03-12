@@ -5,7 +5,7 @@ import parser from 'html-react-parser';
 import type { EmployeeStorySection } from '@/shared/types/global.types';
 
 import css from './index.module.css';
-import { EmployeeItem } from './ui/employee-item';
+import EmployeeSlider from './ui/employee-slider';
 
 export const OurPeopleSection = ({
 	title,
@@ -23,13 +23,12 @@ export const OurPeopleSection = ({
 					<p className={css.description}>{parser(description)}</p>
 				)}
 			</div>
-			<ul className={css.employees} dir="ltr">
-				{employeeStories.map((value, index) => (
-					<li key={index} className={css.listElement}>
-						<EmployeeItem employee={value.employee} story={value.story} />
-					</li>
-				))}
-			</ul>
+			<div dir="ltr">
+				<EmployeeSlider
+					className={css.card}
+					employeeStories={employeeStories}
+				/>
+			</div>
 		</section>
 	);
 };

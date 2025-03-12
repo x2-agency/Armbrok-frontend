@@ -37,7 +37,7 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 
 	const truncatedDescription =
 		(isMediaSlug || isHomePage) && description
-			? `${description.slice(0, 253)}...`
+			? `${description.slice(0, 180)}...`
 			: description;
 
 	return (

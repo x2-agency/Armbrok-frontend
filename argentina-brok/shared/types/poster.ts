@@ -5,3 +5,10 @@ export type PosterImageProps = {
 	tablet?: MediaData;
 	mobile?: MediaData;
 };
+
+export type VideoProps = {
+	poster: MediaData;
+	mobilePoster: MediaData;
+	video: { url: string };
+	mobileVideo: { url: string };
+};

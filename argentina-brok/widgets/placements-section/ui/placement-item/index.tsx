@@ -17,9 +17,10 @@ export const PlacementItem = ({
 	sharePriceValue,
 	logo,
 	infoBlock,
+	className,
 }: SecurityPaperItem) => {
 	return (
-		<article className={cx(css.root, 'p-32')}>
+		<article className={cx(css.root, 'p-32', className)}>
 			<PlacementHead
 				logo={logo}
 				name={name}

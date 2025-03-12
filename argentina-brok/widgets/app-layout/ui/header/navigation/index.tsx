@@ -24,13 +24,10 @@ export const Navigation = () => {
 						normalizedPathname.startsWith(normalizedHref + '/');
 
 					return (
-						<li
-							className={cx(css.li, { [css.active]: isActive })}
-							key={item.href}
-						>
+						<li className={cx(css.li)} key={item.href}>
 							<Button
 								href={item.href}
-								className={cx(css.link)}
+								className={cx(css.link, { [css.active]: isActive })}
 								variant="subtle"
 							>
 								{parser(item.label)}

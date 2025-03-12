@@ -9,9 +9,9 @@ import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
 import { AssetManagment } from '@/widgets/asset-managment';
 import { AwardsSection } from '@/widgets/awards';
-import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
 import { Corporate } from '@/widgets/corporate';
+import { HomePreview } from '@/widgets/home-preview/ui';
 import { InteractiveVideo } from '@/widgets/interactive-video';
 import { NewsSectionHome } from '@/widgets/news-section';
 import { Start } from '@/widgets/start';
@@ -37,19 +37,9 @@ export const Home: NextPage<{
 		awardSection,
 	} = initialData?.data ?? {};
 	useUpdateFooterData(publishedAt);
-
 	return (
 		<>
-			<BannerSection
-				type="default"
-				alignContent="end"
-				banner={{
-					title: heroSection?.title ?? '',
-					description: heroSection?.description ?? '',
-					button: heroSection?.button,
-					poster: heroSection?.background,
-				}}
-			/>
+			<HomePreview heroSection={heroSection} />
 
 			<HeroContainer className={css.hero}>
 				<ExpertSolutionSection
