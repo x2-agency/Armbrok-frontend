@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import Link from 'next/link';
 
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
@@ -41,6 +42,7 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 					)}
 				</div>
 			</article>
+			<Link className={css.link} href="/asset-management" />
 		</Container>
 	);
 };

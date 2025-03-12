@@ -52,7 +52,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 					/>
 				) : (
 					<img
-						alt="office"
+						alt="armbrok"
 						loading="eager"
 						src={poster?.url}
 						className={css.video}

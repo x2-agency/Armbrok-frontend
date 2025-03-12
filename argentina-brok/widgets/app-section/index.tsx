@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import Link from 'next/link';
 
 import { Container } from '@/shared/ui/container';
 import type {
@@ -25,6 +26,7 @@ export const AppSection = ({ image = [], content }: AppSectionProp) => {
 				<Iphone image={secondIphone} wrapperClass={css.secondIphone} />
 				<ContentBlock data={content} />
 			</div>
+			<Link href="/brokerage" className={css.link} />
 		</Container>
 	);
 };
