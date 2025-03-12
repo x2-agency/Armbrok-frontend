@@ -60,7 +60,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 				)}
 			</div>
 			<Container className={css.textWrap}>
-				<h1 className={css.title}>{parser(title ?? '')}</h1>
+				{parser(title ?? '')}
 				<p className={css.description}>{parser(description ?? '')}</p>
 				<Button
 					variant="filled"
