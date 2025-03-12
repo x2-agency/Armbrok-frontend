@@ -35,11 +35,7 @@ export const Blog: NextPage<{
 				<h1 className={css.title}>{parser(title ?? '')}</h1>
 				<p className={css.description}>{parser(description)}</p>
 
-				<Author
-					className={css.authorTop}
-					data={author}
-					publishDate={formattedDate ?? ''}
-				/>
+				<Author data={author} publishDate={formattedDate ?? ''} />
 			</div>
 			{poster?.url && (
 				<div className={css.imageWrap}>
