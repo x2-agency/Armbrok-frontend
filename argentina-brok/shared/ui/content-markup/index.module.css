@@ -14,7 +14,7 @@
 	div,
 	figure,
 	p {
-		@mixin responsive width, unset, 800, 800;
+		@mixin responsive width, unset, 960, 960;
 		@mixin responsive padding-inline, 0, unset, unset;
 		margin: 0 auto;
 		@media (max-width: 767px) {
