@@ -6,13 +6,15 @@
 
 	@media (max-width: 767px) {
 		max-width: 100%;
+		padding-inline: unset;
 	}
 }
 
 .extraRoot {
-	@mixin responsive max-width, unset, 800, 800;
+	@mixin responsive max-width, unset, 960, 960;
 	@mixin responsive padding-inline, 0, unset, unset;
 	margin: 0 auto;
+
 	@media (max-width: 767px) {
 		width: 100%;
 		padding-inline: 5.33rem;
@@ -22,6 +24,10 @@
 .avatarWrap {
 	display: flex;
 	flex-direction: row;
+
+	@media (max-width: 767px) {
+		align-items: center;
+	}
 }
 
 .avatar {
@@ -48,6 +54,8 @@
 
 .name {
 	@mixin font-h6;
+
+	text-align: start
 }
 
 .position {
@@ -58,4 +66,8 @@
 .date {
 	@mixin font-text16;
 	color: var(--gray-600-color);
+
+	@media (max-width: 767px) {
+		text-align: end;
+	}
 }

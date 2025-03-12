@@ -2,13 +2,13 @@
 	display: flex;
 	flex-direction: column;
 	margin-inline: auto;
-	@mixin responsive max-width, unset, 600, 600;
+	@mixin responsive max-width, unset, 960, 960;
 	@mixin responsive padding-block-start, 140, 160, 160;
 	text-align: center;
 
 	@media (max-width: 767px) {
+		@mixin responsive padding-inline, 20;
 		width: 100%;
-		padding-inline: unset;
 	}
 }
 
@@ -36,7 +36,7 @@
 .imageWrap {
 	margin-inline: auto;
 	overflow: hidden;
-	@mixin responsive width, 335, 920, 920;
+	@mixin responsive width, 335, 960, 960;
 	@mixin responsive height, 200, 560, 560;
 	@mixin responsive border-radius, 24, 24, 24;
 }
@@ -55,4 +55,7 @@
 
 .news {
 	@mixin responsive padding-block-end, 50, 120, 120;
+}
+
+.authorBottom {
 }
