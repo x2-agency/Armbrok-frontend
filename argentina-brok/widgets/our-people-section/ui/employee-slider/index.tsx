@@ -18,6 +18,7 @@ const EmployeeSlider: React.FC<EmployeeSliderProps> = ({
 }) => {
 	return (
 		<Swiper
+			grabCursor
 			className={cx(css.root, className)}
 			slidesPerView={2}
 			navigation

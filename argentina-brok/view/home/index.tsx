@@ -40,7 +40,6 @@ export const Home: NextPage<{
 	return (
 		<>
 			<HomePreview heroSection={heroSection} />
-
 			<HeroContainer className={css.hero}>
 				<ExpertSolutionSection
 					className={css.solution}

@@ -15,6 +15,7 @@ export type NewsSliderProps = {
 const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 	return (
 		<Swiper
+			grabCursor
 			className={cx(css.root, className)}
 			slidesPerView={3}
 			navigation
@@ -26,6 +27,9 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 			breakpoints={{
 				320: {
 					slidesPerView: 1,
+				},
+				768: {
+					slidesPerView: 3,
 				},
 				1440: {
 					slidesPerView: 3,

@@ -1,3 +1,7 @@
+.root {
+	position: relative;
+}
+
 .wrap {
 	display: flex;
 	position: relative;
@@ -101,4 +105,18 @@
 
 .title:has(+ .button) {
 	@mixin responsive padding-block-end, 40, 62, 62;
+}
+
+.button {
+	position: relative;
+	z-index: 2;
+}
+
+.link {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
 }
