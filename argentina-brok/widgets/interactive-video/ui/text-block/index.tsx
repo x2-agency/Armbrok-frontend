@@ -26,7 +26,7 @@ export const TextBlock = ({ data }: TextBlockProps) => {
 					{parser(primaryButton?.text ?? '')}
 				</Button>
 				<Button
-					className={css.button}
+					className={css.buttonRed}
 					href={primaryButton?.link ?? ''}
 					category="big"
 					variant="outline"
