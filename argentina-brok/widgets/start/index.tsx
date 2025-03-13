@@ -21,7 +21,7 @@ export const Start = ({ data }: StartProps) => {
 
 			<CardsNumber steps={steps} />
 			{button && (
-				<Button category="big" href={button.link} variant="filled">
+				<Button category="big" href={button.link} variant="filled" className={css.button}>
 					{button.text}
 				</Button>
 			)}

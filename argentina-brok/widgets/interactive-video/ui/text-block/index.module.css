@@ -31,4 +31,5 @@
 
 .button {
 	color: var(--red-500-color);
+	justify-content: center;
 }

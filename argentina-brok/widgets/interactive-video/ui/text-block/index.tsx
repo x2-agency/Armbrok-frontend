@@ -17,7 +17,12 @@ export const TextBlock = ({ data }: TextBlockProps) => {
 			<h2 className={css.title}>{parser(title ?? '')}</h2>
 			<p className={css.description}>{parser(description ?? '')}</p>
 			<div className={css.wrapButton}>
-				<Button href={primaryButton?.link} category="big" variant="filled">
+				<Button
+					href={primaryButton?.link}
+					category="big"
+					variant="filled"
+					className={css.button}
+				>
 					{parser(primaryButton?.text ?? '')}
 				</Button>
 				<Button
