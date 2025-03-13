@@ -126,23 +126,23 @@
 		"links": {
 			"brokerage": {
 				"text": "Բրոքերային&nbsp;ծառայություններ",
-				"link": "/brokerage"
+				"link": "/hy/brokerage"
 			},
 			"assetManagement": {
 				"text": "Գույքի&nbsp;կառավարում",
-				"link": "/asset-management"
+				"link": "/hy/asset-management"
 			},
 			"investmentFunds": {
 				"text": "Ներդրումային&nbsp;ֆոնդեր",
-				"link": "/funds"
+				"link": "/hy/funds"
 			},
 			"investmentBanking": {
 				"text": "Ներդրումային&nbsp;բանկինգ",
-				"link": "/investment-banking"
+				"link": "/hy/investment-banking"
 			},
 			"depositoryRegistrar": {
 				"text": "Դեպոզիտարի&nbsp;և&nbsp;ռեգիստրատոր",
-				"link": "/depositary-services"
+				"link": "/hy/depositary-services"
 			}
 		}
 	}

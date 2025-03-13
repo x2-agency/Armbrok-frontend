@@ -126,23 +126,23 @@
 		"links": {
 			"brokerage": {
 				"text": "Брокерские&nbsp;услуги",
-				"link": "/brokerage"
+				"link": "/ru/brokerage"
 			},
 			"assetManagement": {
 				"text": "Управление&nbsp;активами",
-				"link": "/asset-management"
+				"link": "/ru/asset-management"
 			},
 			"investmentFunds": {
 				"text": "Инвестиционные&nbsp;фонды",
-				"link": "/funds"
+				"link": "/ru/funds"
 			},
 			"investmentBanking": {
 				"text": "Инвестиционный&nbsp;банкинг",
-				"link": "/investment-banking"
+				"link": "/ru/investment-banking"
 			},
 			"depositoryRegistrar": {
 				"text": "Депозитарий&nbsp;и&nbsp;регистратор",
-				"link": "/depositary-services"
+				"link": "/ru/depositary-services"
 			}
 		}
 	}
