@@ -58,6 +58,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 						className={css.video}
 					/>
 				)}
+				<div className={css.overlay} />
 			</div>
 			<Container className={css.textWrap}>
 				{parser(title ?? '')}

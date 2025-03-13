@@ -32,7 +32,7 @@ export const InvestmentBanking: NextPage<
 		<>
 			<BannerSection
 				type="default"
-				alignContent="end"
+				alignContent="center"
 				banner={{
 					title: heroSection?.title ?? '',
 					description: heroSection?.description ?? '',
