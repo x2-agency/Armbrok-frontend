@@ -120,5 +120,30 @@
 	},
 	"media": {
 		"allTab": "All"
+	},
+	"services": {
+		"text": "Services",
+		"links": {
+			"brokerage": {
+				"text": "Brokerage",
+				"link": "/brokerage"
+			},
+			"assetManagement": {
+				"text": "Asset&nbsp;Management",
+				"link": "/asset-management"
+			},
+			"investmentFunds": {
+				"text": "Investment&nbsp;Funds",
+				"link": "/funds"
+			},
+			"investmentBanking": {
+				"text": "Investment&nbsp;Banking",
+				"link": "/investment-banking"
+			},
+			"depositoryRegistrar": {
+				"text": "Depositary&nbsp;&amp;&nbsp;Registrar",
+				"link": "/depositary-services"
+			}
+		}
 	}
 }
