@@ -18,7 +18,6 @@ export const ServicesLinks = () => {
 	const { servicesLinks } = LOCALE_KEYS;
 	const t = useTranslations(servicesLinks.root);
 	const path = usePathname();
-	const currentPath = path.split('/')[2];
 	const router = useRouter();
 
 	const listRef = useRef<HTMLDivElement>(null);
@@ -58,7 +57,7 @@ export const ServicesLinks = () => {
 						<Button
 							variant="subtle"
 							className={cx(css.link, {
-								[css.activeLink]: t(`links.${item}.link`) === `/${currentPath}`,
+								[css.activeLink]: t(`links.${item}.link`) === path,
 							})}
 							onClick={() => handleListItemClick(t(`links.${item}.link`))}
 						>
