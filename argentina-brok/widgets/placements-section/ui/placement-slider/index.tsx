@@ -18,6 +18,7 @@ const PlacementSlider: React.FC<PlacementSliderProps> = ({
 }) => {
 	return (
 		<Swiper
+			grabCursor
 			className={cx(css.root, className)}
 			slidesPerView={3}
 			navigation

@@ -12,9 +12,15 @@
 .textWrap {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 	@mixin responsive padding-inline, 22, 32, 32;
-	@mixin responsive padding-block, 22, 32, 32;
+	@mixin responsive padding-block-start, 22, 32, 32;
+}
+
+.wrap {
+	display: flex;
+	flex-direction: row;
+	@mixin responsive padding-inline, 22, 32, 32;
+	@mixin responsive padding-block-end, 22, 32, 32;
 }
 
 .poster {
@@ -76,9 +82,18 @@
 	@mixin responsive gap, 10, 8, 8;
 }
 
+.mediaAuthorWrap {
+	@mixin responsive gap, 10, 20, 20;
+}
+
 .imgWrap {
 	@mixin responsive width, 32, 32, 32;
 	@mixin responsive height, 32, 32, 32;
+}
+
+.mediaImgWrap {
+	@mixin responsive width, 32, 70, 70;
+	@mixin responsive height, 32, 70, 70;
 }
 
 .avatar {
@@ -89,7 +104,7 @@
 
 .name {
 	@mixin font-text14;
-	text-align: center;
+	text-align: start;
 }
 
 .tag {
@@ -109,6 +124,11 @@
 	width: 100%;
 	height: 100%;
 	z-index: 3;
+	cursor: grab;
+}
+
+.link:active {
+	cursor: grabbing;
 }
 
 .armbrokMediaTitle {

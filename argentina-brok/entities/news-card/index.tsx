@@ -61,20 +61,27 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 					{parser(title ?? '')}
 				</h5>
 				<p className={css.description}>{parser(truncatedDescription ?? '')}</p>
-				<div className={css.wrap}>
-					<div className={css.authorWrap}>
-						<div className={css.imgWrap}>
-							<img
-								className={css.avatar}
-								src={author?.avatar?.url ?? ''}
-								alt={author?.avatar?.alternativeText ?? ''}
-							/>
-						</div>
-						<span className={css.name}>{parser(author?.fullName ?? '')}</span>
-					</div>
+			</div>
 
-					{category && <p className={css.tag}>{category?.name}</p>}
+			<div className={css.wrap}>
+				<div
+					className={cx(css.authorWrap, {
+						[css.mediaAuthorWrap]: isArmbrokMedia,
+					})}
+				>
+					<div
+						className={cx(css.imgWrap, { [css.mediaImgWrap]: isArmbrokMedia })}
+					>
+						<img
+							className={css.avatar}
+							src={author?.avatar?.url ?? ''}
+							alt={author?.avatar?.alternativeText ?? ''}
+						/>
+					</div>
+					<span className={css.name}>{parser(author?.fullName ?? '')}</span>
 				</div>
+
+				{category && <p className={css.tag}>{category?.name}</p>}
 			</div>
 			<Link className={css.link} href={`/media/${slug}`} />
 		</motion.article>

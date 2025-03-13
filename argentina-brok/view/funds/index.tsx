@@ -34,7 +34,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 		<>
 			<BannerSection
 				type="default"
-				alignContent="end"
+				alignContent="center"
 				banner={{
 					title: heroSection?.title ?? '',
 					description: heroSection?.description ?? '',

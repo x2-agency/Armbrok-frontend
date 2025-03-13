@@ -4,6 +4,7 @@
 	width: 100%;
 	justify-content: center;
 	align-items: center;
+
 	@mixin responsive padding-block-end, 30, 56, 56;
 
 	@mixin responsive padding-block-start, 100, 160, 160;
@@ -13,6 +14,7 @@
 .title {
 	@mixin font-h1;
 	font-weight: 700;
+	text-align: center;
 	@mixin responsive padding-block-end, 10, 16, 16;
 }
 

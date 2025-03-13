@@ -1,5 +1,5 @@
 .root {
-	display: relative;
+	position: relative;
 }
 
 .selected,
@@ -93,6 +93,7 @@
 
 	width: 100%;
 	transition-property: background-color;
+	color: var(--black-color);
 
 	&.selectedLang {
 		background-color: var(--gray-300-color);

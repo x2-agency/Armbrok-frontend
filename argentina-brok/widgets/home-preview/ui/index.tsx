@@ -52,12 +52,13 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 					/>
 				) : (
 					<img
-						alt="office"
+						alt="armbrok"
 						loading="eager"
 						src={poster?.url}
 						className={css.video}
 					/>
 				)}
+				<div className={css.overlay} />
 			</div>
 			<Container className={css.textWrap}>
 				{parser(title ?? '')}

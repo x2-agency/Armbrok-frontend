@@ -24,6 +24,7 @@
 	padding-inline: unset;
 	display: flex;
 	justify-content: center;
+	color: var(--black-color);
 
 	&.selected {
 		background-color: var(--gray-100-color) !important;
