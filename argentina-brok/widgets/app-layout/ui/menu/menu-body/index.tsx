@@ -1,9 +1,11 @@
+import cx from 'clsx';
 import { useTranslations } from 'next-intl';
 
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 import type { MenuBodyProps } from '@/widgets/app-layout/types/menu.types';
+import { ServicesLinks } from '@/widgets/app-layout/ui/services-links';
 
 import css from './index.module.css';
 
@@ -14,6 +16,9 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 	return (
 		<Container className={css.root}>
 			<nav className={css.links}>
+				<div className={cx(css.li)}>
+					<ServicesLinks />
+				</div>
 				{links.map((link, index) => (
 					<Button
 						variant="subtle"
@@ -26,17 +31,17 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 				))}
 			</nav>
 			<ul className={css.buttons}>
-				<Button
+				{/* <Button
 					href="https://example.com/"
 					variant="subtle"
 					className={css.login}
 				>
 					{t(`${header.loginButton.root}.text`)}
-				</Button>
+				</Button> */}
 				<Button
 					href="https://example.com/"
 					variant="filled"
-					category="big"
+					category="default"
 					className={css.account}
 				>
 					{t(`${header.openAccountButton.root}.text`)}

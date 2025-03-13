@@ -72,3 +72,7 @@
 	top: 0;
 	object-fit: cover;
 }
+
+.poster img {
+	object-position: right;
+}
