@@ -120,5 +120,30 @@
 	},
 	"media": {
 		"allTab": "Все"
+	},
+	"services": {
+		"text": "Услуги",
+		"links": {
+			"brokerage": {
+				"text": "Брокерские&nbsp;услуги",
+				"link": "/ru/brokerage"
+			},
+			"assetManagement": {
+				"text": "Управление&nbsp;активами",
+				"link": "/ru/asset-management"
+			},
+			"investmentFunds": {
+				"text": "Инвестиционные&nbsp;фонды",
+				"link": "/ru/funds"
+			},
+			"investmentBanking": {
+				"text": "Инвестиционный&nbsp;банкинг",
+				"link": "/ru/investment-banking"
+			},
+			"depositoryRegistrar": {
+				"text": "Депозитарий&nbsp;и&nbsp;регистратор",
+				"link": "/ru/depositary-services"
+			}
+		}
 	}
 }

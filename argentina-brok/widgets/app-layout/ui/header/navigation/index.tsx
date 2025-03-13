@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 
 import { Button } from '@/shared/ui/button';
 import { useHeaderLinks } from '@/widgets/app-layout/hooks/use-header-links';
+import { ServicesLinks } from '@/widgets/app-layout/ui/services-links';
 
 import css from './index.module.css';
 
@@ -17,6 +18,9 @@ export const Navigation = () => {
 	return (
 		<nav className={cx(css.root)}>
 			<ul className={cx(css.links, { [css.linksHy]: isHyLocale })}>
+				<li className={cx(css.li)}>
+					<ServicesLinks />
+				</li>
 				{links.map(item => {
 					const normalizedHref = item.href.replace(/^\/(hy|en|ru)/, '') || '/';
 					const isActive =

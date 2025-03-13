@@ -120,5 +120,30 @@
 	},
 	"media": {
 		"allTab": "Բոլորը"
+	},
+	"services": {
+		"text": "Ծառայություններ",
+		"links": {
+			"brokerage": {
+				"text": "Բրոքերային&nbsp;ծառայություններ",
+				"link": "/hy/brokerage"
+			},
+			"assetManagement": {
+				"text": "Գույքի&nbsp;կառավարում",
+				"link": "/hy/asset-management"
+			},
+			"investmentFunds": {
+				"text": "Ներդրումային&nbsp;ֆոնդեր",
+				"link": "/hy/funds"
+			},
+			"investmentBanking": {
+				"text": "Ներդրումային&nbsp;բանկինգ",
+				"link": "/hy/investment-banking"
+			},
+			"depositoryRegistrar": {
+				"text": "Դեպոզիտարի&nbsp;և&nbsp;ռեգիստրատոր",
+				"link": "/hy/depositary-services"
+			}
+		}
 	}
 }

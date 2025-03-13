@@ -52,7 +52,7 @@
 
 	position: relative;
 	flex-shrink: 0;
-	background-color: #212121;
+	background: linear-gradient(87.86deg, #212121 0%, #444444 100%), #f8f8f8;
 	color: #fff;
 	font-weight: 500;
 	width: fit-content;
@@ -86,7 +86,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #212121;
+	background: linear-gradient(87.86deg, #212121 0%, #444444 100%), #f8f8f8;
 	color: #fff;
 	text-align: center;
 
@@ -133,7 +133,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #212121;
+	background: linear-gradient(87.86deg, #212121 0%, #444444 100%), #f8f8f8;
 	color: #fff;
 	text-align: center;
 }

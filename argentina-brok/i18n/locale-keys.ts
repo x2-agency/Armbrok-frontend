@@ -7,7 +7,12 @@ export const LOCALE_KEYS = {
 		openAccountButton: {
 			root: 'openAccountButton',
 		},
-		items: ['services', 'investor-relations', 'media', 'about-us', 'contact-us'],
+		items: [
+			'investor-relations',
+			'media',
+			'about-us',
+			'contact-us',
+		],
 	},
 	footer: {
 		root: 'footer',
@@ -50,5 +55,15 @@ export const LOCALE_KEYS = {
 	media: {
 		root: 'media',
 		allTab: 'allTab',
+	},
+	servicesLinks: {
+		root: 'services',
+		items: [
+			'brokerage',
+			'assetManagement',
+			'investmentFunds',
+			'investmentBanking',
+			'depositoryRegistrar',
+		],
 	},
 };

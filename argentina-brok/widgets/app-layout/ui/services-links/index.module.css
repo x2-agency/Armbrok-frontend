@@ -1,0 +1,92 @@
+.root {
+	position: relative;
+}
+
+.mainButton {
+	@mixin font-text16;
+	@mixin responsive gap, 6, 6, 6;
+
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+
+	@media (hover: hover) {
+		&:hover {
+			.svg path {
+				fill: var(--red-500-color);
+			}
+		}
+	}
+}
+
+.list {
+	@mixin transition;
+	@mixin responsive padding-block, 8, 8, 8;
+	@mixin responsive border-radius, 12, 12, 12;
+
+	opacity: 0;
+	transition-property: opacity visibility;
+	position: absolute;
+	visibility: hidden;
+	background-color: var(--gray-100-color);
+	top: 102%;
+	translate: 0% -2%;
+
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		translate: 0% 3%;
+	}
+}
+
+.svg {
+	@mixin transition;
+	@mixin responsive width, 9, 9, 9;
+	@mixin responsive height, 5, 5, 5;
+
+	transition-property: rotate;
+	rotate: 180deg;
+
+	&.open {
+		rotate: 0deg;
+	}
+
+	path {
+		@mixin transition;
+
+		transition-property: fill;
+	}
+}
+
+.link {
+	@mixin transition;
+	@mixin responsive padding-inline, 16, 16, 16;
+	@mixin responsive padding-block, 8, 8, 8;
+
+	transition-property: background-color;
+	color: var(--black-color);
+	width: 100%;
+
+	&.activeLink {
+		background-color: var(--gray-300-color);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--black-color) !important;
+			background-color: var(--gray-200-color) !important;
+		}
+	}
+}
+
+html[data-header-top-color='white'] {
+	.mainButton {
+		color: var(--gray-100-color);
+	}
+}
+
+html[data-header-top-color='dark'] {
+	.svg path {
+		fill: var(--black-color);
+	}
+}

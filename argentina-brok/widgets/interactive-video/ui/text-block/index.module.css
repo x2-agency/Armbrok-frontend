@@ -29,6 +29,11 @@
 	}
 }
 
+.buttonRed,
 .button {
+	justify-content: center;
+}
+
+.buttonRed {
 	color: var(--red-500-color);
 }
