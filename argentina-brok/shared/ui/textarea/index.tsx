@@ -13,10 +13,18 @@ type Props = Omit<ComponentPropsWithoutRef<'textarea'>, 'children'>;
 type PropsWithType = {
 	className?: string;
 	label?: string;
+	rows?: number;
 } & Props;
 
 const TextareaComponent = (
-	{ className, placeholder, label, required, ...props }: PropsWithType,
+	{
+		className,
+		placeholder,
+		label,
+		required,
+		rows = 4,
+		...props
+	}: PropsWithType,
 	ref: ForwardedRef<HTMLTextAreaElement>
 ) => {
 	return (
@@ -27,7 +35,7 @@ const TextareaComponent = (
 				</span>
 			)}
 			<textarea
-				rows={4}
+				rows={rows}
 				className={css.textarea}
 				ref={ref}
 				placeholder={placeholder}

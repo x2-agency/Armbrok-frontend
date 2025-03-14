@@ -1,0 +1,42 @@
+.root {
+	@mixin transition;
+	@mixin responsive width, 340, 890, 890;
+	@mixin responsive padding-inline, 20, 32, 32;
+	@mixin responsive border-radius, 12, 24, 24;
+	@mixin responsive padding-block, 25, 32, 32;
+
+	max-width: unset;
+	max-height: unset;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	outline: none;
+
+	opacity: 0; /* Начальное состояние */
+	visibility: hidden; /* Начальное состояние */
+	transition-property: opacity visibility;
+}
+
+.root.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.close {
+	@mixin responsive width, 24, 32, 32;
+	@mixin responsive height, 24, 32, 32;
+	@mixin responsive margin-block-start, 16, 24, 24;
+	@mixin responsive margin-inline-end, 16, 24, 24;
+
+	position: absolute;
+	right: 0;
+	top: 0;
+	outline: none;
+}
+
+@media (max-width: 768px) {
+	.root {
+		max-height: 85vh; /* На мобильных устройствах занимает всю высоту */
+	}
+}

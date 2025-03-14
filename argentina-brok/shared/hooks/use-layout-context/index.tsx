@@ -9,6 +9,8 @@ import type {
 import { createContext, useContext, useRef, useState } from 'react';
 
 type LayoutContextType = {
+	isAccountModalOpen: boolean;
+	toggleAccountModalOpen: Dispatch<SetStateAction<boolean>>;
 	toggleMenuOpen: Dispatch<SetStateAction<boolean>>;
 	isMenuOpen: boolean;
 	menuRef: MutableRefObject<HTMLDialogElement | null>;
@@ -22,6 +24,7 @@ const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
 
 export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const [isMenuOpen, toggleMenuOpen] = useState<boolean>(false);
+	const [isAccountModalOpen, toggleAccountModalOpen] = useState<boolean>(false);
 	const menuRef = useRef<HTMLDialogElement | null>(null);
 
 	const [footerData, setFooterData] = useState<{ publishedAt: string | null }>({
@@ -31,6 +34,8 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	return (
 		<LayoutContext.Provider
 			value={{
+				isAccountModalOpen,
+				toggleAccountModalOpen,
 				isMenuOpen,
 				toggleMenuOpen,
 				menuRef,
