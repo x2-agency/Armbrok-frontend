@@ -22,6 +22,7 @@
 	opacity: 0;
 	visibility: hidden;
 	transition-property: opacity visibility background;
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .root.visible::backdrop,
@@ -34,6 +35,12 @@
 	translate: -50% -50%;
 }
 
+.cross {
+	@mixin transition;
+
+	transition-property: scale;
+}
+
 .close {
 	@mixin responsive width, 24, 32, 32;
 	@mixin responsive height, 24, 32, 32;
@@ -44,6 +51,12 @@
 	right: 0;
 	top: 0;
 	outline: none;
+
+	@media (hover: hover) {
+		&:hover .cross {
+			scale: 1.2;
+		}
+	}
 }
 
 @media (max-width: 768px) {

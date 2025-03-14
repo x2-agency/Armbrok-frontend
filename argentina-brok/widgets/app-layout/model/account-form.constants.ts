@@ -78,3 +78,9 @@ export const ACCOUNT: AccountData = {
 		text: 'Get started',
 	},
 };
+
+export const SUCCESS_FORM = {
+	title: 'Thank You<br /> for Reaching Out!',
+	description:
+		'We&rsquo;ve received your message and will get back to&nbsp;you shortly.<br /> Our team is&nbsp;reviewing your inquiry and will contact you within 24&ndash;48&nbsp;hours.',
+};
