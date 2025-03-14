@@ -14,7 +14,7 @@ export const MenuHead = () => {
 		<header className={css.root} ref={ref}>
 			<div className={css.leftPart}>
 				<Logo href="https://example.com/" logo={MENU_HEADER} isDark />
-				<Search href="https://example.com/" className={css.search} isDark />
+				<Search href="/armbrok-search" className={css.search} isDark />
 			</div>
 			<div className={css.rightPart}>
 				<LanguageSelection theme="dark" className={css.lang} />
