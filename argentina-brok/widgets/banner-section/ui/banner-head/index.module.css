@@ -37,7 +37,7 @@
 	}
 
 	&.profix {
-		@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
+		@mixin responsive padding-block-end, 16, 16, 16;
 	}
 
 	&.about {
@@ -57,14 +57,14 @@
 
 	&.profix {
 		@mixin font-text18;
-		@mixin res padding-block-end, 10.067rem, 4.444rem, 4rem; /* 64px */
+		@mixin responsive padding-block-end, 64, 64, 64;
 
 		color: var(--gray-400-color);
 	}
 }
 
 .backButton {
-	@mixin res margin-block-end, 10.933rem, 2.847rem, 2.563rem; /* 41px */
+	@mixin responsive margin-block-end, 41, 41, 41;
 }
 
 .icon {
@@ -72,8 +72,8 @@
 	right: 0;
 	top: 0;
 
-	@mixin res width, 53.333rem, 13.889rem, 12.5rem; /* 200px */
-	@mixin res height, 53.333rem, 13.889rem, 12.5rem; /* 200px */
+	@mixin responsive width, 200, 200, 200;
+	@mixin responsive height, 200, 200, 200;
 
 	@media (max-width: 767px) {
 		position: static;
@@ -84,11 +84,11 @@
 
 .established {
 	@mixin font-text14;
-	@mixin res padding-inline, 2.133rem, 0.556rem, 0.5rem; /* 8px */
-	@mixin res padding-block, 1.067rem, 0.278rem, 0.25rem; /* 4px */
-	@mixin res border, 0.063rem, 0.063rem, 0.063rem; /* 1px */
-	@mixin res border-radius, 1.067rem, 0.278rem, 0.25rem; /* 4px */
-	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem; /* 24px */
+	@mixin responsive padding-inline, 8, 8, 8;
+	@mixin responsive padding-block, 4, 4, 4;
+	@mixin responsive border, 1, 1, 1;
+	@mixin responsive border-radius, 4, 4, 4;
+	@mixin responsive margin-block-end, 24, 24, 24;
 
 	border-color: var(--gray-100-color);
 	border-style: solid;

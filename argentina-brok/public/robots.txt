@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://argentina-brok.vercel.app/
+Host: http://16.170.43.172/api/
 
 # Sitemaps
-Sitemap: https://argentina-brok.vercel.app/sitemap.xml
+Sitemap: http://16.170.43.172/api/sitemap.xml

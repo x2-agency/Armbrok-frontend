@@ -4,15 +4,23 @@
 
 	color: var(--gray-700-color);
 	opacity: 0.7;
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }
 
 .position {
-	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem;
+	@mixin responsive padding-block-end, 10, 16, 16;
 }
 
 .fullName {
-	@mixin res padding-block-end, 1.067rem, 0.278rem, 0.25rem;
+	@mixin responsive padding-block-end, 4, 4, 4;
 	@mixin font-text18;
-
 	font-weight: 600;
+
+	@media (max-width: 767px) {
+		font-weight: 600 !important;
+		@mixin font-text16;
+	}
 }

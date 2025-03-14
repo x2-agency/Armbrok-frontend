@@ -34,7 +34,7 @@
 
 .review {
 	@mixin res padding-inline-start, 10.667rem, 29.25rem, 29.25rem;
-	@mixin res gap, 10.667rem, 0.694rem, 0.625rem;
+	@mixin responsive gap, 20, 46, 46;
 
 	display: flex;
 	flex-direction: column;
