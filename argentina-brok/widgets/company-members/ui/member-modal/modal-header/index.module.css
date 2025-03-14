@@ -17,9 +17,12 @@
 }
 
 .name {
-	@mixin responsive font-size, 20, 24, 24;
-
+	@mixin responsive font-size, 18, 24, 24;
 	font-weight: 700;
+
+	@media (max-width: 767px) {
+		font-weight: 600;
+	}
 }
 
 .position {
@@ -32,6 +35,10 @@
 	background-color: var(--gray-300-color);
 	color: var(--gray-700-color);
 	width: fit-content;
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }
 
 .imageWrap {
