@@ -10,17 +10,28 @@
 	position: fixed;
 	left: 50%;
 	top: 50%;
-	translate: -50% -50%;
+	translate: -50% -45%;
 	outline: none;
 
-	opacity: 0; /* Начальное состояние */
-	visibility: hidden; /* Начальное состояние */
+	opacity: 0;
+	visibility: hidden;
 	transition-property: opacity visibility;
 }
 
+.root::backdrop {
+	opacity: 0;
+	visibility: hidden;
+	transition-property: opacity visibility background;
+}
+
+.root.visible::backdrop,
 .root.visible {
 	opacity: 1;
 	visibility: visible;
+}
+
+.root.visible {
+	translate: -50% -50%;
 }
 
 .close {
