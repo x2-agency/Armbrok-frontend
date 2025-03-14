@@ -8,12 +8,22 @@
 
 .icon {
 	@mixin responsive padding-block-end, 20, 40, 40;
+
+	@media (max-width: 767px) {
+		width: 13rem;
+		height: 13rem;
+	}
 }
 
 .description {
 	@mixin font-h4;
 	font-weight: 700;
 	color: var(--gray-100-color);
+
+	@media (max-width: 767px) {
+		@mixin font-h6;
+		font-weight: 700 !important;
+	}
 }
 
 .link {

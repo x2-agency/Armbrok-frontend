@@ -16,6 +16,7 @@
 
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	position: relative;
 	transition-property: color;
 
@@ -63,9 +64,9 @@
 
 .languagesList {
 	@mixin transition;
-	@mixin res border-radius, 3.2rem, 0.833rem, 0.75rem; /* 12px */
-	@mixin res width, 17.067rem, 4.444rem, 4rem; /* 64px */
-	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive border-radius, 12, 12, 12;
+	@mixin responsive width, 64, 64, 64;
+	@mixin responsive padding-block, 8, 8, 8;
 
 	background-color: var(--gray-100-color);
 	position: absolute;
@@ -88,13 +89,13 @@
 }
 
 .languageButton {
-	@mixin res padding-block, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive padding-block, 8, 8, 8;
 	@mixin transition;
 
 	width: 100%;
 	transition-property: background-color;
 	color: var(--black-color);
-
+	text-align: center;
 	&.selectedLang {
 		background-color: var(--gray-300-color);
 	}
@@ -103,6 +104,10 @@
 		&:hover {
 			background-color: var(--gray-200-color);
 		}
+	}
+
+	@media (max-width: 767px) {
+		@mixin font-text14 !important;
 	}
 }
 
@@ -122,7 +127,7 @@ html[data-header-top-color='dark'] {
 	}
 
 	.languagesList {
-		box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 4px 50px #0000001a;
 	}
 
 	.svg path {

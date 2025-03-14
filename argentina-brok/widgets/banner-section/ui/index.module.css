@@ -14,6 +14,11 @@
 
 .root.default[data-align='center'] {
 	justify-content: center;
+	@mixin responsive padding-block-end, 80, unset, unset;
+
+	@media (max-width: 767px) {
+		justify-content: end;
+	}
 }
 
 .root.default[data-align='end'] {

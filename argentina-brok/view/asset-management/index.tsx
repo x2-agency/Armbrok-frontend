@@ -47,7 +47,7 @@ export const AssetManagement: NextPage<{
 					button: heroSection?.button,
 					poster: heroSection?.background,
 				}}
-				alignContent="center"
+				alignContent='center'
 			/>
 			{experienceSection && (
 				<HeroContainer className={css.hero}>

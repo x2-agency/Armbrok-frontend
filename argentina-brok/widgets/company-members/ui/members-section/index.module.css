@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive gap, 10, 24, 24;
+	@mixin responsive gap, 6, 24, 24;
 
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
