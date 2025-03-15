@@ -12,7 +12,7 @@ import { ServicesLinks } from '@/widgets/app-layout/ui/services-links';
 
 import css from './index.module.css';
 
-export const MenuBody = ({ links, closeMenu }: MenuBodyProps) => {
+export const MenuBody = ({ links }: MenuBodyProps) => {
 	const { header } = LOCALE_KEYS;
 	const t = useTranslations(header.root);
 	const { toggleAccountModalOpen } = useLayoutContext();
@@ -21,7 +21,7 @@ export const MenuBody = ({ links, closeMenu }: MenuBodyProps) => {
 		<Container className={css.root}>
 			<nav className={css.links}>
 				<div className={cx(css.li)}>
-					<ServicesLinks className={css.services} closeMenu={closeMenu} />
+					<ServicesLinks className={css.services} />
 				</div>
 				{links.map((link, index) => (
 					<Button

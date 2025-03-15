@@ -12,13 +12,13 @@ import { MenuHead } from './menu-head';
 
 export const Menu = () => {
 	const { menuRef } = useLayoutContext();
-	const { isVisible, closeMenu } = useToggleMenu();
+	const { isVisible } = useToggleMenu();
 	const links = useHeaderLinks();
 
 	return (
 		<dialog className={cx(css.root, { [css.open]: isVisible })} ref={menuRef}>
 			<MenuHead />
-			<MenuBody links={links} closeMenu={closeMenu} />
+			<MenuBody links={links} />
 		</dialog>
 	);
 };

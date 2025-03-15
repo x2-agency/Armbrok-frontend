@@ -21,6 +21,27 @@ export const useDropdown = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		const handleClick = (event: MouseEvent) => {
+			const target = event.target as HTMLElement;
+
+			if (target.tagName === 'A' || target.closest('.close-menu-button')) {
+				setIsOpen(false);
+			}
+		};
+
+		const currentRef = dropdownRef.current;
+		if (currentRef) {
+			currentRef.addEventListener('click', handleClick);
+		}
+
+		return () => {
+			if (currentRef) {
+				currentRef.removeEventListener('click', handleClick);
+			}
+		};
+	}, [dropdownRef, setIsOpen]);
+
 	const toggleDropdown = () => {
 		setIsOpen(prev => !prev);
 	};
@@ -31,8 +52,8 @@ export const useDropdown = () => {
 
 	return {
 		isOpen,
+		dropdownRef,
 		toggleDropdown,
 		closeDropdown,
-		dropdownRef,
 	};
 };

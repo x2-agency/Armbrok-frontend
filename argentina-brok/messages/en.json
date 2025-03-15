@@ -126,23 +126,23 @@
 		"links": {
 			"brokerage": {
 				"text": "Brokerage",
-				"link": "/en/brokerage"
+				"link": "/brokerage"
 			},
 			"assetManagement": {
 				"text": "Asset&nbsp;Management",
-				"link": "/en/asset-management"
+				"link": "/asset-management"
 			},
 			"investmentFunds": {
 				"text": "Investment&nbsp;Funds",
-				"link": "/en/funds"
+				"link": "/funds"
 			},
 			"investmentBanking": {
 				"text": "Investment&nbsp;Banking",
-				"link": "/en/investment-banking"
+				"link": "/investment-banking"
 			},
 			"depositoryRegistrar": {
 				"text": "Depositary&nbsp;&amp;&nbsp;Registrar",
-				"link": "/en/depositary-services"
+				"link": "/depositary-services"
 			}
 		}
 	},

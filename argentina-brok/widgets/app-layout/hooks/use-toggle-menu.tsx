@@ -51,7 +51,7 @@ export const useToggleMenu = () => {
 				currentRef.removeEventListener('click', handleClick);
 			}
 		};
-	}, [menuRef, closeMenu]);
+	}, [menuRef, closeMenu, toggleMenuOpen]);
 
 	return {
 		isVisible,
