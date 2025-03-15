@@ -12,7 +12,11 @@ import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
 
-export const ServicesLinks = () => {
+type ServicesLinksProps = {
+	className?: string;
+};
+
+export const ServicesLinks = ({ className }: ServicesLinksProps) => {
 	const { servicesLinks } = LOCALE_KEYS;
 	const t = useTranslations(servicesLinks.root);
 	const path = usePathname();
@@ -26,7 +30,7 @@ export const ServicesLinks = () => {
 	};
 
 	return (
-		<div className={css.root} ref={dropdownRef}>
+		<div className={cx(css.root, className)} ref={dropdownRef}>
 			<Button
 				variant="subtle"
 				onClick={toggleDropdown}

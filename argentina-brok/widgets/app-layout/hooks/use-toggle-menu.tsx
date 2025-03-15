@@ -32,7 +32,7 @@ export const useToggleMenu = () => {
 		const handleClick = (event: MouseEvent) => {
 			const target = event.target as HTMLElement;
 
-			if (target.tagName === 'A') {
+			if (target.tagName === 'A' || target.closest('.close-menu-button')) {
 				toggleMenuOpen(false);
 			}
 		};
@@ -49,7 +49,7 @@ export const useToggleMenu = () => {
 		};
 	}, [menuRef, toggleMenuOpen]);
 
-    return {
-        isVisible
-    }
+	return {
+		isVisible,
+	};
 };
