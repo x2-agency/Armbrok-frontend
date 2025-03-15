@@ -11,14 +11,12 @@ import { Captcha } from '@/shared/ui/captcha';
 import { Checkbox } from '@/shared/ui/checkbox';
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
-import {
-	ACCOUNT,
-	SUCCESS_FORM,
-} from '@/widgets/app-layout/model/account-form.constants';
+import { ACCOUNT } from '@/widgets/app-layout/model/account-form.constants';
 import {
 	HOME_LINK,
 	LOGO_HEADER,
 } from '@/widgets/app-layout/model/header.constants';
+import { SuccessForm } from '@/widgets/app-layout/ui/account-modal/success-form';
 import { Logo } from '@/widgets/app-layout/ui/logo';
 
 import css from './index.module.css';
@@ -70,12 +68,7 @@ export const AccountForm = () => {
 			<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
 			<h3 className={css.title}>{parser(title)}</h3>
 			{isSuccess ? (
-				<div className={css.success}>
-					<h4 className={css.successTitle}>{parser(SUCCESS_FORM.title)}</h4>
-					<p className={css.successDescription}>
-						{parser(SUCCESS_FORM.description)}
-					</p>
-				</div>
+				<SuccessForm />
 			) : (
 				<form
 					className={css.form}
