@@ -1,5 +1,5 @@
 .root {
-	@mixin res padding-block, 9.6rem, 5rem, 4.5rem; /* 36px 72px */
+	@mixin responsive padding-block, 30, 72, 72;
 }
 
 .documents {
@@ -50,4 +50,8 @@
 
 	text-align: center;
 	color: var(--gray-700-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+	}
 }
