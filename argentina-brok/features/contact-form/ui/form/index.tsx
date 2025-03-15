@@ -5,11 +5,11 @@ import parser from 'html-react-parser';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { Captcha } from '@/features/contact-form/ui/captcha';
 import { SuccessfulModal } from '@/features/contact-form/ui/successful-modal';
 import { postContactUsForm } from '@/shared/api/post-contact-us-form';
 import type { ContactForm } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
+import { Captcha } from '@/shared/ui/captcha';
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
 

@@ -53,7 +53,7 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				banner={{
 					title: heroSection?.title ?? '',
 					description: heroSection?.description ?? '',
-					button: heroSection?.button,
+					button: { ...heroSection?.button, isLoginButton: true },
 					poster: heroSection?.background,
 				}}
 			/>

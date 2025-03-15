@@ -3,6 +3,7 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 import Link from 'next/link';
 
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 import type { AssetManagementCardProps } from '@/view/home/types/response';
@@ -15,6 +16,13 @@ export type AssetManagmentProps = {
 
 export const AssetManagment = ({ data }: AssetManagmentProps) => {
 	const { title, description, mediaContent, button, link } = data ?? {};
+	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
+
+	const handleClick = (subject: string) => {
+		setSubjectForm(subject);
+		toggleAccountModalOpen(true);
+	};
+
 	return (
 		<Container className={css.root}>
 			<article className={cx(css.wrap, 'hybrid')}>
@@ -26,8 +34,8 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 					<Button
 						className={css.button}
 						category="big"
-						href={button?.link}
 						variant="filled"
+						onClick={() => handleClick(button?.text ?? 'Open account')}
 					>
 						{parser(button?.text ?? '')}
 					</Button>

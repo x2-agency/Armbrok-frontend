@@ -5,6 +5,7 @@ import type { PropsWithChildren } from 'react';
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 
 import css from './index.module.css';
+import { AccountModal } from './ui/account-modal';
 import { CookiePanel } from './ui/cookie-panel';
 import { Footer } from './ui/footer';
 import { Header } from './ui/header';
@@ -16,6 +17,7 @@ export const AppLayout = ({ children }: Readonly<PropsWithChildren>) => {
 			<Header />
 			<span className={css.divider} />
 			<Menu />
+			<AccountModal />
 			<CookiePanel />
 			<main>{children}</main>
 			<Footer />

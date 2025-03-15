@@ -1,7 +1,10 @@
+'use client';
+
 import cx from 'clsx';
 import { useTranslations } from 'next-intl';
 
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 import type { MenuBodyProps } from '@/widgets/app-layout/types/menu.types';
@@ -9,15 +12,16 @@ import { ServicesLinks } from '@/widgets/app-layout/ui/services-links';
 
 import css from './index.module.css';
 
-export const MenuBody = ({ links, closeMenu }: MenuBodyProps) => {
+export const MenuBody = ({ links }: MenuBodyProps) => {
 	const { header } = LOCALE_KEYS;
 	const t = useTranslations(header.root);
+	const { toggleAccountModalOpen } = useLayoutContext();
 
 	return (
 		<Container className={css.root}>
 			<nav className={css.links}>
 				<div className={cx(css.li)}>
-					<ServicesLinks closeMenu={closeMenu} />
+					<ServicesLinks className={css.services} />
 				</div>
 				{links.map((link, index) => (
 					<Button
@@ -31,17 +35,10 @@ export const MenuBody = ({ links, closeMenu }: MenuBodyProps) => {
 				))}
 			</nav>
 			<ul className={css.buttons}>
-				{/* <Button
-					href="https://example.com/"
-					variant="subtle"
-					className={css.login}
-				>
-					{t(`${header.loginButton.root}.text`)}
-				</Button> */}
 				<Button
-					href="https://example.com/"
+					onClick={() => toggleAccountModalOpen(true)}
 					variant="filled"
-					category="default"
+					category="big"
 					className={css.account}
 				>
 					{t(`${header.openAccountButton.root}.text`)}

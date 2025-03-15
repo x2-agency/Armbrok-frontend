@@ -1,3 +1,4 @@
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 import type { InvestingStepsSectionProps } from '@/view/home/types/response';
@@ -11,9 +12,16 @@ export type StartProps = {
 
 export const Start = ({ data }: StartProps) => {
 	const { title, button, steps } = data ?? {};
+	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
+
 	if (!steps) {
 		return null;
 	}
+
+	const handleClick = (subject: string) => {
+		setSubjectForm(subject);
+		toggleAccountModalOpen(true);
+	};
 
 	return (
 		<Container className={css.root}>
@@ -21,7 +29,12 @@ export const Start = ({ data }: StartProps) => {
 
 			<CardsNumber steps={steps} />
 			{button && (
-				<Button category="big" href={button.link} variant="filled" className={css.button}>
+				<Button
+					category="big"
+					variant="filled"
+					className={css.button}
+					onClick={() => handleClick(button.text ?? 'Open account')}
+				>
 					{button.text}
 				</Button>
 			)}

@@ -7,8 +7,9 @@
 	transition-property: all;
 	left: 50%;
 	top: 50%;
-	translate: -50% -50%;
+	translate: -50% -45%;
 	outline: none;
+	max-height: calc(100% - 2em - 6px);
 	max-width: unset;
 	overflow: -moz-scrollbars-none;
 	-ms-overflow-style: none;
@@ -20,6 +21,13 @@
 	&.open::backdrop {
 		opacity: 1;
 	}
+
+	@media (max-width: 767px) {
+		height: 100%;
+		width: 100%;
+		max-height: unset;
+		border-radius: unset;
+	}
 }
 
 .modal::backdrop {
@@ -27,16 +35,20 @@
 
 	transition-property: all;
 	opacity: 0;
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .modal.open {
 	opacity: 1;
 	visibility: visible;
+	translate: -50% -50%;
 }
 
 .modal::backdrop {
+	@mixin transition;
+
+	transition-property: opacity;
 	opacity: 0;
-	transition: opacity 0.3s ease;
 }
 
 .modal.open::backdrop {

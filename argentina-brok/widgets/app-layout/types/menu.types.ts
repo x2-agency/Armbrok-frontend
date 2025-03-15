@@ -5,5 +5,4 @@ type LinkData = {
 
 export type MenuBodyProps = {
 	links: Array<LinkData>;
-  closeMenu: ()=> void
 };

@@ -126,24 +126,65 @@
 		"links": {
 			"brokerage": {
 				"text": "Брокерские&nbsp;услуги",
-				"link": "/ru/brokerage"
+				"link": "/brokerage"
 			},
 			"assetManagement": {
 				"text": "Управление&nbsp;активами",
-				"link": "/ru/asset-management"
+				"link": "/asset-management"
 			},
 			"investmentFunds": {
 				"text": "Инвестиционные&nbsp;фонды",
-				"link": "/ru/funds"
+				"link": "/funds"
 			},
 			"investmentBanking": {
 				"text": "Инвестиционный&nbsp;банкинг",
-				"link": "/ru/investment-banking"
+				"link": "/investment-banking"
 			},
 			"depositoryRegistrar": {
 				"text": "Депозитарий&nbsp;и&nbsp;регистратор",
-				"link": "/ru/depositary-services"
+				"link": "/depositary-services"
 			}
 		}
+	},
+	"openAccount": {
+		"title": "Открыть счет",
+		"nameInput": {
+			"label": "Ваше имя",
+			"placeholder": "Имя",
+			"errorMessage": "Пожалуйста, заполните это поле",
+			"secondErrorMessage": "Имя должно содержать не менее 4 символов"
+		},
+		"phoneInput": {
+			"label": "Ваш номер телефона",
+			"placeholder": "Номер телефона",
+			"errorMessage": "Пожалуйста, заполните это поле",
+			"secondErrorMessage": "Пожалуйста, введите действительный номер телефона"
+		},
+		"emailInput": {
+			"label": "Ваш адрес электронной почты",
+			"placeholder": "Адрес электронной почты",
+			"errorMessage": "Пожалуйста, заполните это поле",
+			"secondErrorMessage": "Пожалуйста, введите действительный адрес электронной почты"
+		},
+		"subjectInput": {
+			"label": "Тема",
+			"placeholder": "Тема",
+			"errorMessage": "Пожалуйста, заполните это поле",
+			"secondErrorMessage": "Тема должна содержать не менее 4 символов",
+			"value": "Открыть счет"
+		},
+		"messageInput": {
+			"label": "Сообщение",
+			"placeholder": "Оставьте нам сообщение...",
+			"errorMessage": "Пожалуйста, заполните это поле",
+			"secondErrorMessage": "Сообщение должно содержать не менее 10 символов"
+		},
+		"checkbox": "Я&nbsp;даю свое безусловное согласие с&nbsp;текстом публичного соглашения &laquo;ПОЛИТИКА ЗАЩИТЫ ПЕРСОНАЛЬНЫХ ДАННЫХ&raquo;, опубликованного на&nbsp;официальном сайте &laquo;АО&nbsp;АРМБРОК&raquo;, в&nbsp;разделе &laquo;Внутренние регламенты&raquo;, в&nbsp;части обработки данных, необходимой для использования этих услуг.",
+		"captcha": "Этот сайт защищен reCAPTCHA, и&nbsp;применяются Политика конфиденциальности<br /> и&nbsp;Условия использования Google.",
+		"button": "Начать"
+	},
+	"successAccountModal": {
+		"title": "Спасибо,<br /> что обратились к нам!",
+		"description": "Мы получили ваше сообщение и свяжемся с вами в ближайшее время.<br /> Наша команда рассматривает ваш запрос и свяжется с вами в течение 24–48 часов."
 	}
 }

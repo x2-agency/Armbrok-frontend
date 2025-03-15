@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
 
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { AppStore } from '@/shared/ui/app-store';
 import { Button } from '@/shared/ui/button';
 import type { BrokerageAppCardProps } from '@/view/home/types/response';
@@ -12,6 +13,7 @@ export type ContentProp = {
 };
 
 export const ContentBlock = ({ data }: ContentProp) => {
+	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 	const {
 		title,
 		description,
@@ -20,6 +22,12 @@ export const ContentBlock = ({ data }: ContentProp) => {
 		button,
 		appStoreLogos,
 	} = data ?? {};
+
+	const handleClick = (subject: string) => {
+		setSubjectForm(subject);
+		toggleAccountModalOpen(true);
+	};
+
 	return (
 		<div className={css.root}>
 			{armbrokLogo && (
@@ -37,7 +45,7 @@ export const ContentBlock = ({ data }: ContentProp) => {
 						className={css.button}
 						category="big"
 						variant="filled"
-						href={button.link}
+						onClick={() => handleClick(button.text ?? 'Open account')}
 					>
 						{parser(button.text ?? '')}
 					</Button>
