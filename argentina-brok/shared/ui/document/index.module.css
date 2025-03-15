@@ -1,8 +1,8 @@
 .root {
 	@mixin transition;
-	@mixin responsive border-radius, 24, 24, 24;
-	@mixin responsive padding-inline, 16, 32, 32;
-	@mixin responsive padding-block, 16, 19, 19;
+	@mixin responsive border-radius, 15, 24, 24;
+	@mixin responsive padding-inline, 10, 32, 32;
+	@mixin responsive padding-block, 10, 19, 19;
 
 	transition-property: background-color;
 	position: relative;
@@ -27,7 +27,7 @@
 }
 
 .icon {
-	@mixin responsive --size, 48, 48, 48;
+	@mixin responsive --size, 30, 48, 48;
 
 	width: var(--size);
 	height: var(--size);
