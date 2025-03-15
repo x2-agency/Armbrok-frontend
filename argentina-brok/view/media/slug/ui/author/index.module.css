@@ -5,6 +5,7 @@
 	@mixin responsive max-width, unset, 960, 960;
 
 	@media (max-width: 767px) {
+		flex-direction: column;
 		max-width: 100%;
 		padding-inline: unset;
 	}
@@ -17,6 +18,7 @@
 
 	@media (max-width: 767px) {
 		width: 100%;
+		flex-direction: column;
 		padding-inline: 5.33rem;
 	}
 }
@@ -26,14 +28,16 @@
 	flex-direction: row;
 
 	@media (max-width: 767px) {
+		padding-block-start: 3rem;
 		align-items: center;
+		order: 2;
 	}
 }
 
 .avatar {
 	@mixin responsive width, 56, 56, 56;
 	@mixin responsive height, 56, 56, 56;
-	@mixin responsive margin-inline-end, 10, 16, 16;
+	@mixin responsive margin-inline-end, 25, 16, 16;
 	overflow: hidden;
 	border-radius: 50%;
 	flex-shrink: 0;
@@ -44,33 +48,20 @@
 	height: 100%;
 }
 
-.textContent {
-	display: flex;
-	flex-direction: column;
-	align-items: baseline;
-	@mixin responsive gap, 4, 6, 6;
-	@mixin responsive padding-inline-end, unset, 64, 64;
-}
-
-.name {
-	@mixin font-h6;
-	text-align: start;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-	}
-}
-
-.position {
-	@mixin font-text16;
-	color: var(--gray-500-color);
-}
-
 .date {
 	@mixin font-text16;
 	color: var(--gray-600-color);
 
 	@media (max-width: 767px) {
+		text-align: center;
 		@mixin font-text14;
+	}
+}
+
+.social {
+	@media (max-width: 767px) {
+		padding-block-start: 10rem;
+		justify-content: end;
+		order: 2;
 	}
 }

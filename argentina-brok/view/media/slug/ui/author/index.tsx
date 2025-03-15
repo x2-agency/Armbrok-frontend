@@ -6,6 +6,7 @@ import type { AuthorType } from '@/shared/types/article';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
+import { NameAndPosition } from './name-and-position';
 import { Social } from './social';
 
 export type AuthorData = {
@@ -21,7 +22,7 @@ export const Author = ({
 	className,
 	visivleSocial = false,
 }: AuthorData) => {
-	const { avatar, fullName, name, position, socialMedias } = data ?? {};
+	const { avatar, socialMedias } = data ?? {};
 	return (
 		<Container
 			className={cx(css.root, className, { [css.extraRoot]: visivleSocial })}
@@ -34,15 +35,10 @@ export const Author = ({
 						alt={avatar?.alternativeText ?? ''}
 					/>
 				</div>
-				<div className={css.textContent}>
-					<p className={css.name}>{parser(fullName ?? '')}</p>
-
-					<p className={css.name}>{parser(name ?? '')}</p>
-					<p className={css.position}>{parser(position ?? '')}</p>
-				</div>
+				<NameAndPosition data={data} />
 			</div>
 			<time className={css.date}>{parser(publishDate ?? '')} </time>
-			{visivleSocial && <Social social={socialMedias} />}
+			{visivleSocial && <Social className={css.social} social={socialMedias} />}
 		</Container>
 	);
 };

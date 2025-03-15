@@ -23,7 +23,7 @@ export interface AuthorType {
 	};
 	email?: string;
 	publishDate?: string;
-	socialMedias: Array<SocialMediasType>;
+	socialMedias?: Array<SocialMediasType>;
 }
 
 export type SocialMediasType = {
