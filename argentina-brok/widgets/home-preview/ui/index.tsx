@@ -2,6 +2,7 @@
 import parser from 'html-react-parser';
 import { useEffect, useRef, useState } from 'react';
 
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import useMediaQuery from '@/shared/hooks/use-media-query';
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 import type { HeroSection } from '@/shared/types/global.types';
@@ -22,6 +23,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 	const { ref: relationsRef } = headerScrollObserver.useObserve('white');
 	const [videoError, setVideoError] = useState(false);
 	const videoRef = useRef<HTMLVideoElement>(null);
+	const { toggleAccountModalOpen } = useLayoutContext();
 
 	useEffect(() => {
 		if (videoRef.current) {
@@ -67,7 +69,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 					variant="filled"
 					category="big"
 					className={css.button}
-					href={button?.link ?? ''}
+					onClick={() => toggleAccountModalOpen(true)}
 				>
 					{button?.text ?? ''}
 				</Button>
