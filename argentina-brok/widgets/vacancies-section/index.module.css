@@ -1,5 +1,5 @@
 .root {
-    @mixin res padding-block-end, 19.2rem, 5rem, 4.5rem; /* 72px */
+	@mixin responsive padding-block-end, 40, 72, 72;
 }
 
 .title,
@@ -8,19 +8,28 @@
 }
 
 .title {
-	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive padding-block-end, 16, 16, 16;
 	@mixin font-h2;
 
 	font-weight: 600;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 600;
+	}
 }
 
 .description {
 	@mixin font-text20;
-	@mixin res padding-block-end, 10.667rem, 2.778rem, 2.5rem; /* 40px */
+	@mixin responsive padding-block-end, 40, 40, 40;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+	}
 }
 
 .vacancies {
-	@mixin res gap, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive gap, 10, 16, 16;
 
 	display: flex;
 	flex-direction: column;
