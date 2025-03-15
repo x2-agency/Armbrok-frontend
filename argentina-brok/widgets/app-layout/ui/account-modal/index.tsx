@@ -1,10 +1,8 @@
 'use state';
 
 import cx from 'clsx';
-import { useEffect, useRef, useState } from 'react';
 
 import CrossSVG from '@/public/assets/icons/cross.svg';
-import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { useAccountModal } from '@/widgets/app-layout/hooks/use-account-modal';
 
 import { AccountForm } from './account-form';
