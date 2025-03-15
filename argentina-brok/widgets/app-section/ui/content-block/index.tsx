@@ -13,7 +13,7 @@ export type ContentProp = {
 };
 
 export const ContentBlock = ({ data }: ContentProp) => {
-	const { toggleAccountModalOpen } = useLayoutContext();
+	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 	const {
 		title,
 		description,
@@ -22,6 +22,12 @@ export const ContentBlock = ({ data }: ContentProp) => {
 		button,
 		appStoreLogos,
 	} = data ?? {};
+
+	const handleClick = (subject: string) => {
+		setSubjectForm(subject);
+		toggleAccountModalOpen(true);
+	};
+
 	return (
 		<div className={css.root}>
 			{armbrokLogo && (
@@ -39,7 +45,7 @@ export const ContentBlock = ({ data }: ContentProp) => {
 						className={css.button}
 						category="big"
 						variant="filled"
-						onClick={() => toggleAccountModalOpen(true)}
+						onClick={() => handleClick(button.text ?? 'Open account')}
 					>
 						{parser(button.text ?? '')}
 					</Button>

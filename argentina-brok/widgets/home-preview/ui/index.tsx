@@ -23,7 +23,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 	const { ref: relationsRef } = headerScrollObserver.useObserve('white');
 	const [videoError, setVideoError] = useState(false);
 	const videoRef = useRef<HTMLVideoElement>(null);
-	const { toggleAccountModalOpen } = useLayoutContext();
+	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 
 	useEffect(() => {
 		if (videoRef.current) {
@@ -35,6 +35,11 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 				: (video?.url ?? '');
 		}
 	}, [isMobile, poster, mobilePoster, video, mobileVideo]);
+
+	const handleClick = () => {
+		setSubjectForm(button?.text ?? 'Open account');
+		toggleAccountModalOpen(true);
+	};
 
 	return (
 		<div
@@ -69,7 +74,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 					variant="filled"
 					category="big"
 					className={css.button}
-					onClick={() => toggleAccountModalOpen(true)}
+					onClick={handleClick}
 				>
 					{button?.text ?? ''}
 				</Button>

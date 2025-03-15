@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import parser from 'html-react-parser';
 
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
@@ -9,7 +10,12 @@ import { BannerPanel } from '@/widgets/banner-section/ui/banner-panel';
 import css from './index.module.css';
 
 export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
-	const { toggleAccountModalOpen } = useLayoutContext();
+	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
+
+	const handleClick = (subject: string) => {
+		setSubjectForm(subject);
+		toggleAccountModalOpen(true);
+	};
 
 	switch (type) {
 		case 'profix':
@@ -34,33 +40,19 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 				</ul>
 			);
 		case 'default':
-			if (bodyData.button.isLoginButton) {
-				return (
-					<div className={cx(css.root, className)}>
-						<Button
-							variant="filled"
-							onClick={() => toggleAccountModalOpen(true)}
-							category="big"
-							className={css.button}
-						>
-							{bodyData.button?.text}
-						</Button>
-					</div>
-				);
-			}
-
 			return (
 				<div className={cx(css.root, className)}>
 					<Button
 						variant="filled"
+						onClick={() => handleClick(bodyData.button.text ?? 'Open account')}
 						category="big"
 						className={css.button}
-						href={bodyData.button?.link}
 					>
-						{bodyData.button?.text}
+						{parser(bodyData.button?.text ?? '')}
 					</Button>
 				</div>
 			);
+
 		default:
 			return null;
 	}

@@ -13,7 +13,12 @@ export type TextBlockProps = {
 
 export const TextBlock = ({ data }: TextBlockProps) => {
 	const { title, description, primaryButton, secondaryButton } = data;
-	const { toggleAccountModalOpen } = useLayoutContext();
+	const { setSubjectForm, toggleAccountModalOpen } = useLayoutContext();
+
+	const handleClick = (subject: string) => {
+		setSubjectForm(subject);
+		toggleAccountModalOpen(true);
+	};
 
 	return (
 		<article className={cx(css.root)}>
@@ -21,7 +26,7 @@ export const TextBlock = ({ data }: TextBlockProps) => {
 			<p className={css.description}>{parser(description ?? '')}</p>
 			<div className={css.wrapButton}>
 				<Button
-					onClick={() => toggleAccountModalOpen(true)}
+					onClick={() => handleClick(primaryButton?.text ?? 'Open account')}
 					category="big"
 					variant="filled"
 					className={css.button}
@@ -30,7 +35,9 @@ export const TextBlock = ({ data }: TextBlockProps) => {
 				</Button>
 				<Button
 					className={css.buttonRed}
-					href={primaryButton?.link ?? ''}
+					onClick={() =>
+						handleClick(secondaryButton?.text ?? 'Request a consultation')
+					}
 					category="big"
 					variant="outline"
 				>

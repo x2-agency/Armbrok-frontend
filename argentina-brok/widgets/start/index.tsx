@@ -12,11 +12,16 @@ export type StartProps = {
 
 export const Start = ({ data }: StartProps) => {
 	const { title, button, steps } = data ?? {};
-	const { toggleAccountModalOpen } = useLayoutContext();
+	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 
 	if (!steps) {
 		return null;
 	}
+
+	const handleClick = (subject: string) => {
+		setSubjectForm(subject);
+		toggleAccountModalOpen(true);
+	};
 
 	return (
 		<Container className={css.root}>
@@ -28,7 +33,7 @@ export const Start = ({ data }: StartProps) => {
 					category="big"
 					variant="filled"
 					className={css.button}
-					onClick={() => toggleAccountModalOpen(true)}
+					onClick={() => handleClick(button.text ?? 'Open account')}
 				>
 					{button.text}
 				</Button>

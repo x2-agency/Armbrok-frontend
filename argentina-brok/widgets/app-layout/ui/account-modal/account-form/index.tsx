@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { postContactUsForm } from '@/shared/api/post-contact-us-form';
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Captcha } from '@/shared/ui/captcha';
 import { Checkbox } from '@/shared/ui/checkbox';
@@ -33,6 +34,7 @@ type FormValues = {
 
 export const AccountForm = () => {
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
+	const { subjectForm } = useLayoutContext();
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const {
 		nameInputTranslation,
@@ -63,14 +65,8 @@ export const AccountForm = () => {
 		}
 	};
 
-	const {
-		nameInput,
-		telInput,
-		emailInput,
-		messageTextArea,
-		title,
-		subjectInput,
-	} = ACCOUNT;
+	const { nameInput, telInput, emailInput, messageTextArea, subjectInput } =
+		ACCOUNT;
 
 	return (
 		<div className={css.root}>
@@ -146,7 +142,7 @@ export const AccountForm = () => {
 							placeholder={subjectInputTranslation.placeholder}
 							label={subjectInputTranslation.label}
 							required={subjectInput.required}
-							value={subjectInputTranslation.value}
+							value={subjectForm}
 							{...register('subject', {
 								required: nameInput.required,
 								minLength: {
