@@ -12,7 +12,7 @@ import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
 
-export const ServicesLinks = () => {
+export const ServicesLinks = ({ closeMenu }: { closeMenu: () => void }) => {
 	const { servicesLinks } = LOCALE_KEYS;
 	const t = useTranslations(servicesLinks.root);
 	const path = usePathname();
@@ -22,6 +22,7 @@ export const ServicesLinks = () => {
 
 	const handleListItemClick = (link: string) => {
 		closeDropdown();
+		closeMenu();
 		router.push(link);
 	};
 
