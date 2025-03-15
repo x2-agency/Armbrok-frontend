@@ -10,6 +10,11 @@
 	@mixin font-h2;
 	font-weight: 600;
 	@mixin responsive padding-block-end, 24, 48, 48;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 600;
+	}
 }
 
 .content {
@@ -43,4 +48,8 @@
 .description {
 	@mixin font-text16;
 	color: var(--gray-700-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }
