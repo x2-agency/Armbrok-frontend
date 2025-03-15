@@ -42,7 +42,7 @@ const MediaPage = async ({ searchParams }: { searchParams: SearchParams }) => {
 
 	const [initialMediaData, initialArticles] = await Promise.all([
 		getMediaPage(),
-		getArticle(tag ? { filters: { category: tag }, limit: 1 } : {}),
+		getArticle(tag ? { filters: { category: tag } } : {}),
 	]);
 
 	return (
