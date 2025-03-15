@@ -145,5 +145,45 @@
 				"link": "/en/depositary-services"
 			}
 		}
+	},
+	"openAccount": {
+		"title": "Open account",
+		"nameInput": {
+			"label": "Your name ",
+			"placeholder": "First name",
+			"errorMessage": "Please fill this field",
+			"secondErrorMessage": "Name must be at least 4 characters long"
+		},
+		"phoneInput": {
+			"label": "Your phone number",
+			"placeholder": "Phone number",
+			"errorMessage": "Please fill this field",
+			"secondErrorMessage": "Please enter a valid phone number"
+		},
+		"emailInput": {
+			"label": "Your e-mail address",
+			"placeholder": "E=mail address",
+			"errorMessage": "Please fill this field",
+			"secondErrorMessage": "Please enter a valid email address"
+		},
+		"subjectInput": {
+			"label": "Subject",
+			"placeholder": "Subject",
+			"errorMessage": "Please fill this field",
+			"secondErrorMessage": "Subject must be at least 4 characters long"
+		},
+		"messageInput": {
+			"label": "Message",
+			"placeholder": "Leave us a message...",
+			"errorMessage": "Please fill this field",
+			"secondErrorMessage": "Message must be at least 10 characters long"
+		},
+		"checkbox": "I&nbsp;hereby give my&nbsp;unconditional consent to&nbsp;the text of&nbsp;the public agreement &laquo;PERSONAL DATA PROTECTION POLICY&raquo; published on&nbsp;the official website of&nbsp;&laquo;ARMBROK OJSC&raquo;, in&nbsp;the &laquo;Internal Regulations&raquo; section, to&nbsp;the extent of&nbsp;data processing, which is&nbsp;necessary to&nbsp;use these services.",
+		"captcha": "This site is&nbsp;protected by&nbsp;reCAPTCHA, and the Google Privacy Policy<br /> and Terms of&nbsp;Service apply.",
+		"button": "Get started"
+	},
+	"successAccountModal": {
+		"title": "Thank You<br /> for Reaching Out!",
+		"description": "We&rsquo;ve received your message and will get back to&nbsp;you shortly.<br /> Our team is&nbsp;reviewing your inquiry and will contact you within 24&ndash;48&nbsp;hours."
 	}
 }
