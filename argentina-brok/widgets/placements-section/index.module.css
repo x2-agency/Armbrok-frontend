@@ -9,6 +9,11 @@
 
 	font-weight: 700;
 	text-align: center;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 700;
+	}
 }
 
 .card {
