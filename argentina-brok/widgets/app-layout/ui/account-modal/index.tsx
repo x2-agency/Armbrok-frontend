@@ -32,6 +32,25 @@ export const AccountModal = () => {
 		}
 	}, [isAccountModalOpen, toggleAccountModalOpen]);
 
+	useEffect(() => {
+		const currentRef = modalRef.current;
+
+		const handleClose = () => {
+			document.body.style.overflow = 'auto';
+			toggleAccountModalOpen(false);
+		};
+
+		if (currentRef) {
+			currentRef.addEventListener('close', handleClose);
+		}
+
+		return () => {
+			if (currentRef) {
+				currentRef.removeEventListener('close', handleClose);
+			}
+		};
+	}, [toggleAccountModalOpen]);
+
 	return (
 		<dialog
 			className={cx(css.root, { [css.visible]: isVisible })}
