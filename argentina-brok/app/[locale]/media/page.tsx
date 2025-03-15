@@ -48,14 +48,13 @@ type SearchParams = {
 };
 
 const MediaPage = async ({ searchParams }: { searchParams: SearchParams }) => {
-	const tag =
-		searchParams.category && searchParams.category !== 'all'
-			? searchParams.category
-			: undefined;
+	const { category } = await searchParams;
+
+	const tag = category && category !== 'all' ? category : undefined;
 
 	const [initialMediaData, initialArticles] = await Promise.all([
 		getMediaPage(),
-		getArticle(tag ? { filters: { category: tag }, limit: 1 } : {}),
+		getArticle(tag ? { filters: { category: tag } } : {}),
 	]);
 
 	return (

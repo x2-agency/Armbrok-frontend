@@ -8,6 +8,10 @@ export const useToggleMenu = () => {
 	const { isMenuOpen, menuRef, toggleMenuOpen } = useLayoutContext();
 	const [isVisible, setIsVisible] = useState(false);
 
+	const closeMenu = () => {
+		toggleMenuOpen(false);
+	};
+
 	useEffect(() => {
 		const currentRef = menuRef.current;
 		if (!currentRef) return;
@@ -47,7 +51,7 @@ export const useToggleMenu = () => {
 				currentRef.removeEventListener('click', handleClick);
 			}
 		};
-	}, [menuRef, toggleMenuOpen]);
+	}, [menuRef, closeMenu]);
 
 	return {
 		isVisible,
