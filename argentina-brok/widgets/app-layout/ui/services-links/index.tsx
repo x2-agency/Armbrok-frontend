@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
 import TriangleSVG from '@/public/assets/icons/header/triangle.svg';
 import { useDropdown } from '@/shared/hooks/use-drop-down';
+import useMediaQuery from '@/shared/hooks/use-media-query';
 import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
@@ -17,12 +18,17 @@ export const ServicesLinks = ({ closeMenu }: { closeMenu: () => void }) => {
 	const t = useTranslations(servicesLinks.root);
 	const path = usePathname();
 	const router = useRouter();
+	const isMobile = useMediaQuery('(max-width: 767px)');
 
 	const { isOpen, toggleDropdown, closeDropdown, dropdownRef } = useDropdown();
 
 	const handleListItemClick = (link: string) => {
 		closeDropdown();
-		closeMenu();
+
+		if (isMobile) {
+			closeMenu();
+		}
+
 		router.push(link);
 	};
 
