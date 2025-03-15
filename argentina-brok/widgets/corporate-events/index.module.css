@@ -13,6 +13,11 @@
 
 	text-align: center;
 	font-weight: 600;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 600;
+	}
 }
 
 .event {

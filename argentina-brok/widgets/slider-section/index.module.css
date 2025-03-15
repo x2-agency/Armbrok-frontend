@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive margin-block, 36, 72, 72;
+	@mixin responsive margin-block, 30, 72, 72;
 }
 
 .title,
@@ -14,6 +14,11 @@
 	@mixin font-h2;
 
 	font-weight: 700;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 700;
+	}
 }
 
 .description {
@@ -21,6 +26,10 @@
 	@mixin responsive max-width, 335, 700, 700;
 
 	color: var(--gray-800-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+	}
 }
 
 .titleBlock {

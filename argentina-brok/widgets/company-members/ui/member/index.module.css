@@ -44,6 +44,11 @@
 	@mixin res padding-block-end, 1.067rem, 0.278rem, 0.25rem;
 
 	font-weight: 700;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+		font-weight: 700;
+	}
 }
 
 .position {
