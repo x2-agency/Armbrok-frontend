@@ -9,10 +9,15 @@
 
 	font-weight: 600;
 	text-align: center;
+
+	@media (max-width: 767px) {
+		@mixin font-h3;
+		font-weight: 600;
+	}
 }
 
 .accordions {
-	@mixin res gap, 4.267rem, 1.111rem, 1rem; /* 16px */
+	@mixin responsive gap, 16, 16, 16;
 
 	display: flex;
 	flex-direction: column;

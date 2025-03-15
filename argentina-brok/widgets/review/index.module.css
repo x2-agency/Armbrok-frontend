@@ -1,8 +1,8 @@
 .root {
 	position: relative;
 
-	@mixin res padding-block-start, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
-	@mixin res margin-block-end, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
+	@mixin responsive padding-block-start, 30, 72, 72;
+	@mixin responsive margin-block-end, 30, 72, 72;
 }
 
 .card {
