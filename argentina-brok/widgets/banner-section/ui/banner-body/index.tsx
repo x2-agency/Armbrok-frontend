@@ -40,19 +40,35 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 				</ul>
 			);
 		case 'default':
+			if (bodyData.button.isLoginButton) {
+				return (
+					<div className={cx(css.root, className)}>
+						<Button
+							variant="filled"
+							onClick={() =>
+								handleClick(bodyData.button.text ?? 'Open account')
+							}
+							category="big"
+							className={css.button}
+						>
+							{parser(bodyData.button?.text ?? '')}
+						</Button>
+					</div>
+				);
+			}
+
 			return (
 				<div className={cx(css.root, className)}>
 					<Button
 						variant="filled"
-						onClick={() => handleClick(bodyData.button.text ?? 'Open account')}
 						category="big"
 						className={css.button}
+						href={bodyData.button?.link}
 					>
 						{parser(bodyData.button?.text ?? '')}
 					</Button>
 				</div>
 			);
-
 		default:
 			return null;
 	}
