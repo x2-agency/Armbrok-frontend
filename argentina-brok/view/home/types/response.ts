@@ -32,6 +32,7 @@ export type BrokerageAppCardProps = {
 	title?: string;
 	description?: string;
 	appStoreCaption?: string;
+	link?: string;
 	armbrokLogo?: {
 		alternativeText?: string;
 		url?: string;
@@ -58,6 +59,7 @@ export type AppStoreLogosType = {
 export type AssetManagementCardProps = {
 	title?: string;
 	description?: string;
+	link?: string;
 	mediaContent?: {
 		url?: string;
 		alternativeText?: string;

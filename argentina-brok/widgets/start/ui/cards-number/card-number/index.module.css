@@ -11,8 +11,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@mixin responsive width, 88, 88, 88;
-	@mixin responsive height, 88, 88, 88;
+	@mixin responsive width, 55, 88, 88;
+	@mixin responsive height, 55, 88, 88;
 
 	border: 0.4rem solid var(--gray-300-color);
 
@@ -30,15 +30,15 @@
 	&::before {
 		content: '';
 		position: absolute;
-		@mixin responsive top, -2, -5, -5;
-		@mixin responsive left, -2, -5, -5;
-		@mixin responsive right, -2, -5, -5;
-		@mixin responsive bottom, -2, -5, -5;
+		@mixin responsive top, -3, -5, -5;
+		@mixin responsive left, -3, -5, -5;
+		@mixin responsive right, -3, -5, -5;
+		@mixin responsive bottom, -3, -5, -5;
 		border-radius: 50%;
 		border: 0.3rem solid var(--red-500-color);
 
 		@media (max-width: 767px) {
-			border: 0.7rem solid var(--red-500-color);
+			border: 0.8rem solid var(--red-500-color);
 		}
 	}
 }
@@ -61,17 +61,17 @@
 	&::after {
 		content: '';
 		position: absolute;
-		@mixin responsive top, -2, -5, -5;
-		@mixin responsive left, -2, -5, -5;
-		@mixin responsive right, -2, -5, -5;
-		@mixin responsive bottom, -2, -5, -5;
+		@mixin responsive top, -3, -5, -5;
+		@mixin responsive left, -3, -5, -5;
+		@mixin responsive right, -3, -5, -5;
+		@mixin responsive bottom, -3, -5, -5;
 		border-radius: 50%;
 		border: 0.278rem solid var(--red-500-color);
 		clip-path: inset(0 0% 0 0);
 		transform: rotate(160deg);
 
 		@media (max-width: 767px) {
-			border: 0.7rem solid var(--red-500-color);
+			border: 0.8rem solid var(--red-500-color);
 		}
 	}
 }
@@ -80,6 +80,11 @@
 .title {
 	@mixin font-h4;
 	font-weight: 700;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+		font-weight: 700;
+	}
 }
 
 .number {
@@ -87,12 +92,16 @@
 }
 
 .title {
-	@mixin responsive padding-block-end, 5, 8, 8;
+	@mixin responsive padding-block-end, 1, 8, 8;
 }
 
 .description {
 	@mixin font-text16;
 	color: var(--gray-600-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }
 
 .wrapNumber {

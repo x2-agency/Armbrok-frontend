@@ -21,4 +21,10 @@
 
 	font-weight: 700;
 	text-align: center;
+
+	@media (max-width: 767px) {
+		@mixin font-h3;
+
+		font-weight: 700;
+	}
 }

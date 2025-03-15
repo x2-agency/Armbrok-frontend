@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive padding-block, 36, 72, 72;
+	@mixin responsive padding-block, 30, 72, 72;
 }
 
 .title {
@@ -8,4 +8,9 @@
 
 	font-weight: 600;
 	text-align: center;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 600;
+	}
 }

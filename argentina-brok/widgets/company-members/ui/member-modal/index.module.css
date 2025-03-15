@@ -81,7 +81,7 @@
 }
 
 .content:last-child {
-	padding-block-end: unset;
+	@mixin responsive padding-block-end, 30, unset, unset;
 	border: unset;
 	margin-block-end: unset;
 }

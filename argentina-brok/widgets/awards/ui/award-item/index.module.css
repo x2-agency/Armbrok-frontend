@@ -6,12 +6,12 @@
 }
 
 .wreath {
-	@mixin responsive height, 95, 95, 95;
+	@mixin responsive height, 80, 95, 95;
 	align-self: end;
 }
 
 .content {
-	@mixin responsive width, 170, 170, 170;
+	@mixin responsive width, 150, 170, 170;
 
 	display: flex;
 	flex-direction: column;
@@ -35,11 +35,21 @@
 	@mixin font-text16;
 
 	font-weight: 500;
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+		font-weight: 500;
+	}
 }
 
 .age {
 	@mixin font-text18;
-	@mixin responsive padding-block-end, 4, 4, 4;
+	@mixin responsive padding-block-end, 1, 4, 4;
 
 	font-weight: 600;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+		font-weight: 600;
+	}
 }

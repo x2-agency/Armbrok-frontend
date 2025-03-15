@@ -87,8 +87,8 @@
 }
 
 .imgWrap {
-	@mixin responsive width, 32, 32, 32;
-	@mixin responsive height, 32, 32, 32;
+	@mixin responsive width, 40, 32, 32;
+	@mixin responsive height, 40, 32, 32;
 }
 
 .mediaImgWrap {

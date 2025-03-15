@@ -68,6 +68,7 @@
 		}
 
 		@media (max-width: 767px) {
+			@mixin font-text14;
 			padding-block: 2rem;
 			padding-inline-start: 0;
 			display: flex;
@@ -79,14 +80,18 @@
 
 .title {
 	@mixin font-text20;
-
 	font-weight: 500;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+		font-weight: 500;
+	}
 }
 
 .icon {
 	@mixin transition;
-	@mixin res width, 6.933rem, 1.806rem, 1.625rem; /* 26px */
-	@mixin res height, 6.933rem, 1.806rem, 1.625rem; /* 26px */
+	@mixin responsive width, 26, 26, 26;
+	@mixin responsive height, 26, 26, 26;
 
 	rotate: 0;
 	flex-shrink: 0;

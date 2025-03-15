@@ -11,6 +11,12 @@
 .account,
 .button {
 	width: fit-content;
+	font-weight: 600 !important;
+	letter-spacing: -1% !important;
+}
+
+.button {
+	@mixin responsive padding-block, 8, unset, unset;
 }
 
 .links {
@@ -23,4 +29,26 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4.267rem; /* 16px */
+}
+
+.li {
+	width: fit-content !important;
+	button {
+		color: var(--gray-700-color) !important;
+		font-weight: 600;
+		@mixin responsive padding-block, 8, unset, unset;
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--red-500-color) !important;
+			}
+		}
+	}
+	svg {
+		path {
+			@mixin transition;
+			fill: var(--black-color);
+			transition-property: fill;
+		}
+	}
 }

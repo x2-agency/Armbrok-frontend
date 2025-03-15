@@ -13,12 +13,12 @@ export const MenuHead = () => {
 	return (
 		<header className={css.root} ref={ref}>
 			<div className={css.leftPart}>
-				<CloseMenuButton />
 				<Logo href="https://example.com/" logo={MENU_HEADER} isDark />
+				<Search href="/armbrok-search" className={css.search} isDark />
 			</div>
 			<div className={css.rightPart}>
-				<Search href="https://example.com/" className={css.search} isDark />
 				<LanguageSelection theme="dark" className={css.lang} />
+				<CloseMenuButton />
 			</div>
 		</header>
 	);

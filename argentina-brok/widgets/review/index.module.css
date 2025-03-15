@@ -1,8 +1,8 @@
 .root {
 	position: relative;
 
-	@mixin res padding-block-start, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
-	@mixin res margin-block-end, 13.333rem, 5rem, 4.5rem; /* 50px 72px */
+	@mixin responsive padding-block-start, 30, 72, 72;
+	@mixin responsive margin-block-end, 30, 72, 72;
 }
 
 .card {
@@ -34,7 +34,7 @@
 
 .review {
 	@mixin res padding-inline-start, 10.667rem, 29.25rem, 29.25rem;
-	@mixin res gap, 10.667rem, 0.694rem, 0.625rem;
+	@mixin responsive gap, 20, 46, 46;
 
 	display: flex;
 	flex-direction: column;

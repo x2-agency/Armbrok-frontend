@@ -7,13 +7,23 @@
 }
 
 .icon {
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 10, 40, 40;
+
+	@media (max-width: 767px) {
+		width: 8rem;
+		height: 8rem;
+	}
 }
 
 .description {
 	@mixin font-h4;
 	font-weight: 700;
 	color: var(--gray-100-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+		font-weight: 700 !important;
+	}
 }
 
 .link {

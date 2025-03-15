@@ -27,7 +27,7 @@
 		justify-content: end;
 		padding: 5rem;
 		border-radius: 4rem;
-		height: 133.333rem; /* 500px */
+		height: 100.333rem; /* 500px */
 
 		background: radial-gradient(
 				circle at 88% 9%,
@@ -67,11 +67,20 @@
 	@mixin font-h2;
 	font-weight: 700;
 	@mixin responsive padding-block-end, 10, 16, 16;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 700;
+	}
 }
 
 .description {
 	@mixin font-text20;
-	@mixin responsive padding-block-end, 40, 62, 62;
+	@mixin responsive padding-block-end, 20, 62, 62;
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }
 
 .imgWrap {
@@ -85,7 +94,7 @@
 	@media (max-width: 767px) {
 		right: -16rem;
 		width: 132rem;
-		top: -34rem;
+		top: -22rem;
 	}
 }
 

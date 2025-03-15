@@ -14,7 +14,7 @@ export type AssetManagmentProps = {
 };
 
 export const AssetManagment = ({ data }: AssetManagmentProps) => {
-	const { title, description, mediaContent, button } = data ?? {};
+	const { title, description, mediaContent, button, link } = data ?? {};
 	return (
 		<Container className={css.root}>
 			<article className={cx(css.wrap, 'hybrid')}>
@@ -42,7 +42,7 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 					)}
 				</div>
 			</article>
-			<Link className={css.link} href="/asset-management" />
+			<Link className={css.link} href={link ?? ''} />
 		</Container>
 	);
 };

@@ -26,7 +26,7 @@ export const AppSection = ({ image = [], content }: AppSectionProp) => {
 				<Iphone image={secondIphone} wrapperClass={css.secondIphone} />
 				<ContentBlock data={content} />
 			</div>
-			<Link href="/brokerage" className={css.link} />
+			<Link href={content?.link ?? ''} className={css.link} />
 		</Container>
 	);
 };

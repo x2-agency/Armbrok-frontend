@@ -1,7 +1,15 @@
 .root {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	@mixin responsive padding-block, 36, 72, 72;
+	@mixin responsive padding-block, 30, 72, 72;
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 3rem;
+	}
 }
 
 .serve {
@@ -11,4 +19,16 @@
 	align-items: center;
 	@mixin font-h2;
 	font-weight: 600;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 600;
+		justify-content: center;
+	}
+}
+
+.animationText {
+	@media (max-width: 767px) {
+		min-height: 11rem;
+	}
 }

@@ -17,4 +17,8 @@
 
 .text {
 	@mixin font-text20;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+	}
 }

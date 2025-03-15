@@ -20,7 +20,7 @@
 	@mixin responsive margin-block-end, 20, 24, 24;
 
 	@media (max-width: 767px) {
-		height: 211.867rem; /* 794px */
+		height: 175.867rem;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -33,12 +33,12 @@
 	@mixin responsive width, unset, 290, 290;
 	@mixin responsive right, unset, 327, 327;
 	@mixin responsive top, unset, 72, 72;
-	z-index: 2;
 
 	@media (max-width: 767px) {
-		height: 88.867rem; /* 247px */
+		height: 72rem; /* 247px */
 		margin-inline: auto;
-		bottom: 54rem;
+		bottom: 60rem;
+		left: 42rem;
 	}
 }
 
@@ -49,10 +49,10 @@
 	@mixin responsive top, unset, 98, 98;
 
 	@media (max-width: 767px) {
-		height: 88.867rem; /* 247px */
+		height: 72rem; /* 247px */
 		margin-inline: auto;
-		bottom: 62rem;
-		right: 4rem;
+		bottom: 49rem;
+		right: 42rem;
 	}
 }
 
