@@ -48,6 +48,7 @@ export const Blog: NextPage<{
 			</article>
 			<Author className={css.authorBottom} data={author} visivleSocial />
 			<NewsSectionHome
+				className={css.news}
 				data={{
 					news: latestNewsSection.articles,
 					title: latestNewsSection.title,

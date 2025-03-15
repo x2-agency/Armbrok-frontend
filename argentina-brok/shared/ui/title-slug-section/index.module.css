@@ -16,10 +16,19 @@
 	font-weight: 700;
 	text-align: center;
 	@mixin responsive padding-block-end, 10, 16, 16;
+
+	@media (max-width: 767px) {
+		@mixin font-h2;
+		font-weight: 700;
+	}
 }
 
 .description {
 	@mixin font-text18;
 	color: var(--gray-600-color);
 	text-align: center;
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }

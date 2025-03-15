@@ -49,13 +49,16 @@
 	flex-direction: column;
 	align-items: baseline;
 	@mixin responsive gap, 4, 6, 6;
-	@mixin responsive padding-inline-end, 30, 64, 64;
+	@mixin responsive padding-inline-end, unset, 64, 64;
 }
 
 .name {
 	@mixin font-h6;
+	text-align: start;
 
-	text-align: start
+	@media (max-width: 767px) {
+		@mixin font-text16;
+	}
 }
 
 .position {
@@ -68,6 +71,6 @@
 	color: var(--gray-600-color);
 
 	@media (max-width: 767px) {
-		text-align: end;
+		@mixin font-text14;
 	}
 }
