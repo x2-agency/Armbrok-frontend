@@ -2,7 +2,6 @@
 'use client';
 
 import parser from 'html-react-parser';
-import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
