@@ -1,16 +1,16 @@
 import parser from 'html-react-parser';
 
-import { SUCCESS_FORM } from '@/widgets/app-layout/model/account-form.constants';
+import { useSuccessAccountTranslations } from '@/widgets/app-layout/hooks/use-success-account-translations';
 
 import css from './index.module.css';
 
 export const SuccessForm = () => {
+	const { title, description } = useSuccessAccountTranslations();
+
 	return (
 		<div className={css.success}>
-			<h4 className={css.successTitle}>{parser(SUCCESS_FORM.title)}</h4>
-			<p className={css.successDescription}>
-				{parser(SUCCESS_FORM.description)}
-			</p>
+			<h4 className={css.successTitle}>{parser(title)}</h4>
+			<p className={css.successDescription}>{parser(description)}</p>
 		</div>
 	);
 };
