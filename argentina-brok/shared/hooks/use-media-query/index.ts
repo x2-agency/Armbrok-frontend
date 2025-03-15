@@ -1,35 +1,34 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-function useMediaQuery(query: string): boolean {
-	const getMatches = (query: string): boolean => {
-		if (typeof window !== 'undefined') {
-			return window.matchMedia(query).matches;
-		}
-		return false;
-	};
-
-	const [matches, setMatches] = useState<boolean>(() => {
-		// Initialize with an initial value
-		// (to avoid hydration and SSR issues)
-		return getMatches(query);
-	});
+/**
+ * Hook for working with media queries.
+ * @param query - Media query (e.g., '(max-width: 767px)').
+ * @param defaultMatches - Initial value for `matches` (default is `false`).
+ * @returns Returns `true` if the media query matches, and `false` otherwise.
+ */
+function useMediaQuery(
+	query: string,
+	defaultMatches: boolean = false
+): boolean {
+	const [matches, setMatches] = useState<boolean>(defaultMatches);
 
 	useEffect(() => {
-		const matchMedia = window.matchMedia(query);
+		if (typeof window !== 'undefined') {
+			const matchMedia = window.matchMedia(query);
 
-		// Update state on mount
-		const handleChange = () => {
-			setMatches(matchMedia.matches);
-		};
+			const handleChange = () => {
+				setMatches(matchMedia.matches);
+			};
 
-		// Add event listener
-		matchMedia.addEventListener('change', handleChange);
+			handleChange();
 
-		// Clean up event listener on unmount
-		return () => {
-			matchMedia.removeEventListener('change', handleChange);
-		};
+			matchMedia.addEventListener('change', handleChange);
+
+			return () => {
+				matchMedia.removeEventListener('change', handleChange);
+			};
+		}
 	}, [query]);
 
 	return matches;
