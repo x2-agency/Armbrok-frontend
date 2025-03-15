@@ -6,10 +6,26 @@
 	background-color: var(--gray-200-color);
 }
 
+.contentWrap {
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: row;
+		gap: 4rem;
+	}
+}
+
+.textWrap {
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+}
+
 .iconWrapper {
 	@mixin responsive width, 40, 40, 40;
 	@mixin responsive height, 40, 40, 40;
-	@mixin responsive margin-block-end, 32, 64, 64;
+	@mixin responsive margin-block-end, 20, 64, 64;
 	position: relative;
 }
 
@@ -22,23 +38,34 @@
 
 .title {
 	@mixin font-text20;
-	@mixin responsive padding-block-end, 8, 8, 8;
-
+	@mixin responsive padding-block-end, 2, 8, 8;
 	font-weight: 700;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+		font-weight: 700;
+	}
 }
 
 .description {
 	@mixin font-text16;
-
 	color: var(--gray-600-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }
 
 .contacts {
 	@mixin responsive padding-block-start, 20, 20, 20;
-	@mixin responsive gap, 8, 8, 8;
+	@mixin responsive gap, 15, 8, 8;
 
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: 767px) {
+		flex-direction: row;
+	}
 }
 
 .contact {
@@ -46,4 +73,10 @@
 
 	font-weight: 700;
 	color: var(--red-600-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+
+		font-weight: 700;
+	}
 }
