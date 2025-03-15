@@ -170,7 +170,8 @@
 			"label": "Subject",
 			"placeholder": "Subject",
 			"errorMessage": "Please fill this field",
-			"secondErrorMessage": "Subject must be at least 4 characters long"
+			"secondErrorMessage": "Subject must be at least 4 characters long",
+			"value": "Open account"
 		},
 		"messageInput": {
 			"label": "Message",

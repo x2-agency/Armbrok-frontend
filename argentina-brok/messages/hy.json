@@ -170,7 +170,8 @@
 			"label": "Թեմա",
 			"placeholder": "Թեմա",
 			"errorMessage": "Խնդրում ենք լրացնել այս դաշտը",
-			"secondErrorMessage": "Թեման պետք է պարունակի առնվազն 4 նիշ"
+			"secondErrorMessage": "Թեման պետք է պարունակի առնվազն 4 նիշ",
+			"value": "Բացել հաշիվ"
 		},
 		"messageInput": {
 			"label": "Հաղորդագրություն",

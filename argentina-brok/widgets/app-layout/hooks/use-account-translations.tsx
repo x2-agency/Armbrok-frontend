@@ -28,6 +28,7 @@ export const useAccountTranslations = () => {
 			placeholder: t('subjectInput.placeholder'),
 			errorMessage: t('subjectInput.errorMessage'),
 			secondErrorMessage: t('subjectInput.secondErrorMessage'),
+			value: t('subjectInput.value'),
 		},
 		messageInputTranslation: {
 			label: t('messageInput.label'),

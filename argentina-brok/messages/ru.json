@@ -170,7 +170,8 @@
 			"label": "Тема",
 			"placeholder": "Тема",
 			"errorMessage": "Пожалуйста, заполните это поле",
-			"secondErrorMessage": "Тема должна содержать не менее 4 символов"
+			"secondErrorMessage": "Тема должна содержать не менее 4 символов",
+			"value": "Открыть счет"
 		},
 		"messageInput": {
 			"label": "Сообщение",

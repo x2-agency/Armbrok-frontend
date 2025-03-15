@@ -147,7 +147,7 @@ export const AccountForm = () => {
 							placeholder={subjectInputTranslation.placeholder}
 							label={subjectInputTranslation.label}
 							required={subjectInput.required}
-							value={'Open account'}
+							value={subjectInputTranslation.value}
 							{...register('subject', {
 								required: nameInput.required,
 								minLength: {
