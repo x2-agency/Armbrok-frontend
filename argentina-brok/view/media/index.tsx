@@ -14,7 +14,6 @@ import type { MediaPageProps } from '@/shared/types/media-page';
 import { Preloader } from '@/shared/ui/preloader';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
 import { NewsPage } from '@/widgets/news-page';
-import { SearchNews } from '@/widgets/search-news';
 import { Tabs } from '@/widgets/tabs';
 import { Vacancy } from '@/widgets/vacancies-section/ui/vacancy';
 
@@ -70,7 +69,7 @@ export const Media: NextPage<{
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
-			<SearchNews onSearchChange={setSearchQuery} />
+			{/* <SearchNews onSearchChange={setSearchQuery} /> */}
 
 			<div className={css['tabs-container']}>
 				<Tabs
