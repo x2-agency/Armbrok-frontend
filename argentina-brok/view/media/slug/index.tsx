@@ -33,7 +33,7 @@ export const Blog: NextPage<{
 			<div className={css.wrap}>
 				<Breadcrumbs title={title} category={category ?? {}} />
 				<h1 className={css.title}>{parser(title ?? '')}</h1>
-				<p className={css.description}>{parser(description)}</p>
+				<p className={css.description}>{parser(description ?? '')}</p>
 
 				<Author data={author} publishDate={formattedDate ?? ''} />
 			</div>
