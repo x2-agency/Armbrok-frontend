@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive padding-block, 36, 72, 72;
+	@mixin responsive padding-block, 30, 72, 72;
 }
 
 .sectionTitle {
@@ -8,6 +8,10 @@
 
 	font-weight: 600;
 	text-align: center;
+
+	@media (max-width: 767px) {
+		@mixin font-h3;
+	}
 }
 
 .cards {
@@ -16,7 +20,7 @@
 	@mixin responsive gap, 32, 64, 64;
 
 	@media (max-width: 767px) {
-		@mixin responsive row-gap, 16;
+		@mixin responsive row-gap, 20;
 		grid-template-columns: 1fr;
 	}
 }
@@ -26,7 +30,7 @@
 }
 
 .flexCards {
-	@mixin responsive gap, 24, 24, 24;
+	@mixin responsive gap, 12, 24, 24;
 
 	display: flex;
 	flex-direction: column;

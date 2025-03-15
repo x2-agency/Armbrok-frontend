@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive padding-block, 36, 72, 72;
+	@mixin responsive padding-block, 30, 72, 72;
 }
 
 .title {
@@ -10,6 +10,11 @@
 	font-weight: 600;
 	text-align: center;
 	margin-inline: auto;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 600;
+	}
 }
 
 .awardWrap {
@@ -38,9 +43,9 @@
 		align-items: center;
 		justify-content: unset;
 		gap: 10rem; /* 38px */
-
+		@mixin responsive padding-block-end, 30, unset, unset;
 		&.centered {
-			gap: 10rem; /* 38px */
+			gap: 7rem; /* 38px */
 		}
 	}
 }

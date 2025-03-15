@@ -3,9 +3,9 @@
 }
 
 .icon {
-	@mixin responsive width, 48, 48, 48;
-	@mixin responsive height, 48, 48, 48;
-	@mixin responsive margin-block-end, 15, 24, 24;
+	@mixin responsive width, 30, 48, 48;
+	@mixin responsive height, 30, 48, 48;
+	@mixin responsive margin-block-end, 10, 24, 24;
 }
 
 .wrap {
@@ -18,14 +18,19 @@
 
 	font-weight: 600;
 	color: var(--black-color);
+
+	@media (max-width: 767px) {
+		@mixin font-h5;
+		font-weight: 600;
+	}
 }
 
 .title:has(+ .description) {
-	@mixin responsive padding-block-end, 12, 12, 12;
+	@mixin responsive padding-block-end, 3, 12, 12;
 }
 
 .description {
-	@mixin font-text16;
+	@mixin font-text14;
 	color: var(--gray-700-color);
 }
 

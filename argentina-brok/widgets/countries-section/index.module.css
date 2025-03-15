@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive padding-block, 36, 72, 72;
+	@mixin responsive padding-block, 30, 72, 72;
 
 	display: flex;
 	flex-direction: column;

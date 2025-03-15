@@ -68,6 +68,11 @@
 
 		color: var(--gray-100-color);
 		font-weight: 700;
+
+		@media (max-width: 767px) {
+			@mixin font-h2;
+			font-weight: 700;
+		}
 	}
 }
 
@@ -78,7 +83,8 @@
 	@mixin responsive padding-block-end, 20, 40, 40;
 
 	@media (max-width: 767px) {
-		@mixin font-text16;
+		width: 100%;
+		@mixin font-text14;
 	}
 }
 
