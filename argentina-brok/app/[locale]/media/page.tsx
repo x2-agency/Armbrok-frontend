@@ -28,7 +28,20 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export const revalidate = 60;
+export async function getStaticParams() {
+	const [initialMediaData, initialArticles] = await Promise.all([
+		getMediaPage(),
+		getArticle(),
+	]);
+
+	return {
+		props: {
+			initialMediaData,
+			initialArticles,
+		},
+		revalidate: 60,
+	};
+}
 
 type SearchParams = {
 	category?: string;
