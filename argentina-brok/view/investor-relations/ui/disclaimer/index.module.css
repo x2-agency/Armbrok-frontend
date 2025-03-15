@@ -7,6 +7,10 @@
 
 	* {
 		@mixin font-text16;
+
+		@media (max-width: 767px) {
+			@mixin font-text14;
+		}
 	}
 
 	p:has(+ p),
