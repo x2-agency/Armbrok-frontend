@@ -20,12 +20,10 @@ export const AppSection = ({ image = [], content }: AppSectionProp) => {
 	const [firstIphone, secondIphone] = image || [];
 
 	return (
-		<Container className={css.root}>
-			<div className={cx(css.wrap, 'hybrid')}>
-				<Iphone image={firstIphone} wrapperClass={css.firstIphone} />
-				<Iphone image={secondIphone} wrapperClass={css.secondIphone} />
-				<ContentBlock data={content} />
-			</div>
+		<Container className={cx(css.root, 'hybrid')}>
+			<Iphone image={firstIphone} wrapperClass={css.firstIphone} />
+			<Iphone image={secondIphone} wrapperClass={css.secondIphone} />
+			<ContentBlock data={content} />
 			<Link href={content?.link ?? ''} className={css.link} />
 		</Container>
 	);
