@@ -37,7 +37,7 @@
 	}
 
 	&.profix {
-		@mixin responsive padding-block-end, 16, 16, 16;
+		@mixin responsive padding-block-end, 5, 16, 16;
 	}
 
 	&.about {
@@ -46,7 +46,7 @@
 
 	&.default,
 	&.about {
-		@mixin responsive padding-block-end, 16, 24, 24;
+		@mixin responsive padding-block-end, 5, 24, 24;
 	}
 }
 

@@ -24,6 +24,8 @@
 .button {
 	@mixin responsive height, 57, 57, 57;
 
+	justify-content: center;
+
 	@media (max-width: 767px) {
 		@mixin responsive width, 320;
 	}

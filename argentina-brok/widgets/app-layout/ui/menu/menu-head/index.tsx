@@ -1,3 +1,5 @@
+import cx from 'clsx';
+
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 import { MENU_HEADER } from '@/widgets/app-layout/model/menu.constants';
 import { LanguageSelection } from '@/widgets/app-layout/ui/header/language-selection';
@@ -13,8 +15,17 @@ export const MenuHead = () => {
 	return (
 		<header className={css.root} ref={ref}>
 			<div className={css.leftPart}>
-				<Logo href="https://example.com/" logo={MENU_HEADER} isDark />
-				<Search href="https://example.com/" className={css.search} isDark />
+				<Logo
+					href="/"
+					logo={MENU_HEADER}
+					isDark
+					className="close-menu-button"
+				/>
+				<Search
+					href="/armbrok-search"
+					className={cx(css.search, 'close-menu-button')}
+					isDark
+				/>
 			</div>
 			<div className={css.rightPart}>
 				<LanguageSelection theme="dark" className={css.lang} />

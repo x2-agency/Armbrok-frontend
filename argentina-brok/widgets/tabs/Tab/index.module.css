@@ -3,7 +3,8 @@
 	@mixin responsive border-radius, 8, 8, 8;
 	@mixin responsive margin-block, 4, 4, 4;
 	@mixin responsive padding-block, 8, 8, 8;
-	@mixin responsive width, 150, 185, 185;
+
+	@mixin responsive width, 110, 185, 185;
 	@mixin transition background-color;
 	border: transparent;
 	cursor: pointer;
@@ -12,4 +13,13 @@
 	&:hover {
 		background-color: var(--gray-100-color);
 	}
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
+}
+
+.hyTab {
+	width: unset;
+	@mixin responsive padding-inline, 20, 31, 31;
 }

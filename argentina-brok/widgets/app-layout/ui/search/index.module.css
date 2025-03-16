@@ -13,8 +13,8 @@ html[data-header-top-color='dark'] .svg path {
 	justify-content: center;
 	align-items: center;
 
-	@mixin res width, 5.067rem, 1.319rem, 1.188rem;
-	@mixin res height, 5.067rem, 1.319rem, 1.188rem;
+	@mixin responsive width, 24, 24, 24;
+	@mixin responsive height, 24, 24, 24;
 
 	&.dark path {
 		fill: var(--black-color) !important;

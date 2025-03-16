@@ -22,12 +22,11 @@
 	@mixin font-h2;
 
 	font-weight: 600;
-	line-height: 1.2;
 	scroll-margin-top: 50vh;
 
 	@media (max-width: 767px) {
 		@mixin font-h4;
-
+		font-weight: 600;
 		max-width: 100%;
 	}
 }

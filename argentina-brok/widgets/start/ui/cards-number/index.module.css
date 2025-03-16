@@ -2,11 +2,11 @@
 	align-items: baseline;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	@mixin responsive padding-block-end, 40, 40, 40;
+	@mixin responsive padding-block-end, 30, 40, 40;
 
 	@media (max-width: 767px) {
 		display: flex;
 		flex-direction: column;
-		gap: 13.333rem; /* 50px */
+		gap: 7.333rem;
 	}
 }

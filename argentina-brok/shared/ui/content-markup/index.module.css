@@ -27,18 +27,32 @@
 		@mixin font-h3;
 		@mixin responsive padding-block-end, 7, 13, 13;
 		font-weight: 600;
+
+		@media (max-width: 767px) {
+			@mixin font-h4;
+			font-weight: 600;
+		}
 	}
 
 	h3 {
 		@mixin font-h4;
 		@mixin responsive padding-block-end, 10, 16, 16;
 		font-weight: 600;
+
+		@media (max-width: 767px) {
+			@mixin font-h5;
+			font-weight: 600;
+		}
 	}
 
 	p {
 		@mixin font-text18;
 		@mixin responsive padding-block-end, 10, 10, 10;
 		color: var(--gray-600-color);
+
+		@media (max-width: 767px) {
+			@mixin font-text16;
+		}
 	}
 
 	figure {
@@ -54,6 +68,10 @@
 		@mixin font-text18;
 		@mixin responsive padding-inline-start, 50, 30, 30;
 		color: var(--gray-600-color);
+
+		@media (max-width: 767px) {
+			@mixin font-text16;
+		}
 	}
 
 	li {
@@ -96,6 +114,11 @@
 			font-weight: 600;
 			@mixin responsive padding-inline-start, 40, 20, 20;
 			@mixin responsive padding-block-end, 15, 24, 24;
+
+			@media (max-width: 767px) {
+				@mixin font-h5;
+				font-weight: 600;
+			}
 		}
 		p:last-of-type {
 			@mixin font-text14;

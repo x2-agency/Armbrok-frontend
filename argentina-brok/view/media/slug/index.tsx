@@ -4,6 +4,7 @@
 import parser from 'html-react-parser';
 import type { NextPage } from 'next';
 
+import useMediaQuery from '@/shared/hooks/use-media-query';
 import type { Data } from '@/shared/types/blog';
 import ContentMarkup from '@/shared/ui/content-markup';
 import { useFormattedDate } from '@/widgets/app-layout/hooks/use-formated-date';
@@ -27,13 +28,21 @@ export const Blog: NextPage<{
 		category,
 	} = initialData.initialBlogPage ?? {};
 
+	const isMobile = useMediaQuery('(max-width: 767px)');
+
 	const formattedDate = useFormattedDate(publishDate ?? '', true, true);
+
+	const abbreviatedText = title.slice(0, 24) + `...`;
+
 	return (
 		<>
 			<div className={css.wrap}>
-				<Breadcrumbs title={title} category={category ?? {}} />
+				<Breadcrumbs
+					title={isMobile ? abbreviatedText : title}
+					category={category ?? {}}
+				/>
 				<h1 className={css.title}>{parser(title ?? '')}</h1>
-				<p className={css.description}>{parser(description)}</p>
+				<p className={css.description}>{parser(description ?? '')}</p>
 
 				<Author data={author} publishDate={formattedDate ?? ''} />
 			</div>
@@ -48,6 +57,7 @@ export const Blog: NextPage<{
 			</article>
 			<Author className={css.authorBottom} data={author} visivleSocial />
 			<NewsSectionHome
+				className={css.news}
 				data={{
 					news: latestNewsSection.articles,
 					title: latestNewsSection.title,

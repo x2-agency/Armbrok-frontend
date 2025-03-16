@@ -20,7 +20,7 @@
 			display: block;
 			width: 100%;
 			margin-inline-start: unset;
-			bottom: 0% !important; /* 48px */
+			bottom: 1% !important;
 		}
 	}
 	:global(.swiper-pagination-bullet) {

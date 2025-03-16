@@ -14,11 +14,17 @@ export const ContactCard = ({
 }: ContactCardItem) => {
 	return (
 		<article className={css.root}>
-			<div className={css.iconWrapper}>
-				{icon && <img src={icon?.url} className={css.icon} />}
+			<div className={css.contentWrap}>
+				<div className={css.iconWrapper}>
+					{icon && <img src={icon?.url} className={css.icon} />}
+				</div>
+				<div className={css.textWrap}>
+					{title && <h4 className={css.title}>{parser(title)}</h4>}
+					{description && (
+						<p className={css.description}>{parser(description)}</p>
+					)}
+				</div>
 			</div>
-			{title && <h4 className={css.title}>{parser(title)}</h4>}
-			{description && <p className={css.description}>{parser(description)}</p>}
 			{contacts?.length && (
 				<ul className={css.contacts}>
 					{contacts.map((contact, index) => (

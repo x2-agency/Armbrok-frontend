@@ -36,7 +36,7 @@
 }
 
 .rightBlockHy {
-	@mixin responsive gap, 40, 40, 25;
+	@mixin responsive gap, 40, 40, 13;
 }
 
 .burger {

@@ -25,10 +25,19 @@
 	@mixin font-h2;
 
 	font-weight: 700;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 700;
+	}
 }
 
 .description {
 	@mixin font-text20;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+	}
 }
 
 .card {

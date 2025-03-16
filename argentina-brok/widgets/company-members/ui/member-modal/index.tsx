@@ -65,6 +65,25 @@ export const MemberModal = ({
 		};
 	}, [isModalOpen]);
 
+	useEffect(() => {
+		const modal = ref.current;
+
+		const handleClose = () => {
+			toggleModalOpen(false);
+			document.body.style.overflow = '';
+		};
+
+		if (modal) {
+			modal.addEventListener('close', handleClose);
+		}
+
+		return () => {
+			if (modal) {
+				modal.removeEventListener('close', handleClose);
+			}
+		};
+	}, [toggleModalOpen]);
+
 	return (
 		<dialog
 			className={cx(css.modal, {

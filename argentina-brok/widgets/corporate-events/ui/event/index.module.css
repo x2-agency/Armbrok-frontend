@@ -34,4 +34,8 @@
 .description {
 	@mixin font-text16;
 	color: var(--gray-800-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }

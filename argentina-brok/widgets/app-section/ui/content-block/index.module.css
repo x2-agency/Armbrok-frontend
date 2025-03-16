@@ -6,7 +6,7 @@
 
 .icon {
 	height: auto;
-	@mixin responsive width, 60, 80, 80;
+	@mixin responsive width, 30, 80, 80;
 	@mixin responsive padding-block-end, 20, 40, 40;
 }
 
@@ -16,6 +16,11 @@
 	color: var(--gray-100-color);
 	@mixin responsive padding-block-end, 10, 16, 16;
 	word-break: break-word;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 600;
+	}
 }
 
 .description {
@@ -27,6 +32,7 @@
 	opacity: 0.7;
 
 	@media (max-width: 767px) {
+		@mixin font-text14;
 		padding-block-end: unset;
 		max-width: unset;
 	}

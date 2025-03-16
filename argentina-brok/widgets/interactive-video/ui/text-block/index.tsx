@@ -1,6 +1,7 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import type { InterviewProps } from '@/view/home/types/response';
 
@@ -12,13 +13,20 @@ export type TextBlockProps = {
 
 export const TextBlock = ({ data }: TextBlockProps) => {
 	const { title, description, primaryButton, secondaryButton } = data;
+	const { setSubjectForm, toggleAccountModalOpen } = useLayoutContext();
+
+	const handleClick = (subject: string) => {
+		setSubjectForm(subject);
+		toggleAccountModalOpen(true);
+	};
+
 	return (
 		<article className={cx(css.root)}>
 			<h2 className={css.title}>{parser(title ?? '')}</h2>
 			<p className={css.description}>{parser(description ?? '')}</p>
 			<div className={css.wrapButton}>
 				<Button
-					href={primaryButton?.link}
+					onClick={() => handleClick(primaryButton?.text ?? 'Open account')}
 					category="big"
 					variant="filled"
 					className={css.button}
@@ -27,7 +35,9 @@ export const TextBlock = ({ data }: TextBlockProps) => {
 				</Button>
 				<Button
 					className={css.buttonRed}
-					href={primaryButton?.link ?? ''}
+					onClick={() =>
+						handleClick(secondaryButton?.text ?? 'Request a consultation')
+					}
 					category="big"
 					variant="outline"
 				>

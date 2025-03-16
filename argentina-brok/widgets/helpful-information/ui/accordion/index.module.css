@@ -1,23 +1,16 @@
 .root {
 	background-color: var(--gray-200-color);
+	@mixin responsive border-radius, 15, 32, 32;
 }
 
 .details[open] + .accordionContent {
+	@mixin responsive padding-block-end, 15, 32, 32;
 	grid-template-rows: 1fr;
 	opacity: 1;
 }
 
 .details[open] .icon {
 	rotate: 180deg;
-}
-
-.accordionContent {
-	@mixin transition;
-
-	display: grid;
-	grid-template-rows: 0fr;
-	opacity: 0;
-	transition-property: grid-template-rows opacity;
 }
 
 .accordionContentBody {
@@ -35,6 +28,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@mixin responsive padding-inline, 15, 32, 32;
+	@mixin responsive padding-block-start, 15, 32, 32;
+	@mixin responsive padding-block-end, 15, 32, 32;
 
 	&:active {
 		background: none;
@@ -55,10 +52,19 @@
 	}
 }
 
+.accordionContent {
+	@mixin transition;
+
+	display: grid;
+	grid-template-rows: 0fr;
+	opacity: 0;
+	transition-property: grid-template-rows opacity;
+	@mixin responsive padding-inline, 15, 32, 32;
+	padding-block-start: unset !important;
+}
+
 .accordionInnerContent {
 	@mixin font-text16;
-	@mixin res padding-block-start, 6.4rem, 1.667rem, 1.5rem; /* 24px */
-
 	ul {
 		list-style: inside;
 		padding-inline-start: 0.7rem;
@@ -68,6 +74,7 @@
 		}
 
 		@media (max-width: 767px) {
+			@mixin font-text14;
 			padding-block: 2rem;
 			padding-inline-start: 0;
 			display: flex;
@@ -75,18 +82,28 @@
 			gap: 2rem;
 		}
 	}
+
+	span {
+		@media (max-width: 767px) {
+			@mixin font-text14;
+		}
+	}
 }
 
 .title {
 	@mixin font-text20;
-
 	font-weight: 500;
+
+	@media (max-width: 767px) {
+		@mixin font-text16;
+		font-weight: 500;
+	}
 }
 
 .icon {
 	@mixin transition;
-	@mixin res width, 6.933rem, 1.806rem, 1.625rem; /* 26px */
-	@mixin res height, 6.933rem, 1.806rem, 1.625rem; /* 26px */
+	@mixin responsive width, 26, 26, 26;
+	@mixin responsive height, 26, 26, 26;
 
 	rotate: 0;
 	flex-shrink: 0;

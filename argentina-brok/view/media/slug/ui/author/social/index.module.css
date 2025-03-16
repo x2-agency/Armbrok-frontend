@@ -10,6 +10,9 @@
 	border: 1px solid var(--gray-500-color);
 	@mixin responsive border-radius, 8, 8, 8;
 	@mixin responsive padding, 10, 10, 10;
+
+	@mixin responsive width, 40, 40, 40;
+	@mixin responsive height, 40, 40, 40;
 }
 
 .img {

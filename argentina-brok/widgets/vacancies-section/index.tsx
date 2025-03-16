@@ -21,7 +21,7 @@ export const VacanciesSection = ({
 		<Container className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(title)}</h2>
 			<p className={css.description}>{parser(description)}</p>
-			<ul className={css.vacancies}>
+			<ul className={css.vacancies} id="vacancies">
 				{vacancies.map((vacancy, index) => (
 					<li key={index}>
 						<Vacancy

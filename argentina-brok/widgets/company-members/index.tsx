@@ -27,7 +27,9 @@ export const CompanyMembers = ({ tabs, title }: CompanyStructureSection) => {
 			| EmployeeList
 			| undefined;
 
-		return tab.tabName === 'Team'
+		return tab.tabName === 'Team' ||
+			tab.tabName === 'Команда' ||
+			tab.tabName === 'Թիմ'
 			? {
 					label: tab.tabName,
 					content: employeesList ? (

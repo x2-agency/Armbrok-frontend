@@ -1,6 +1,7 @@
 .logoHeader {
 	display: block;
 	position: relative;
+	outline: none;
 
 	@mixin responsive width, 167, 167, 167;
 	@mixin responsive height, 44, 44, 44;

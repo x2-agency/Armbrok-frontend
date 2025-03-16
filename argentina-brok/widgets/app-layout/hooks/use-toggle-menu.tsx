@@ -8,6 +8,10 @@ export const useToggleMenu = () => {
 	const { isMenuOpen, menuRef, toggleMenuOpen } = useLayoutContext();
 	const [isVisible, setIsVisible] = useState(false);
 
+	const closeMenu = () => {
+		toggleMenuOpen(false);
+	};
+
 	useEffect(() => {
 		const currentRef = menuRef.current;
 		if (!currentRef) return;
@@ -32,7 +36,7 @@ export const useToggleMenu = () => {
 		const handleClick = (event: MouseEvent) => {
 			const target = event.target as HTMLElement;
 
-			if (target.tagName === 'A') {
+			if (target.tagName === 'A' || target.closest('.close-menu-button')) {
 				toggleMenuOpen(false);
 			}
 		};
@@ -47,9 +51,9 @@ export const useToggleMenu = () => {
 				currentRef.removeEventListener('click', handleClick);
 			}
 		};
-	}, [menuRef, toggleMenuOpen]);
+	}, [menuRef, closeMenu, toggleMenuOpen]);
 
-    return {
-        isVisible
-    }
+	return {
+		isVisible,
+	};
 };

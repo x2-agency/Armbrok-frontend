@@ -1,0 +1,49 @@
+.root {
+	@mixin responsive gap, 10, 16, 16;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	@mixin responsive padding-block-end, 16, 24, 24;
+	@mixin font-h2;
+
+	font-weight: 600;
+}
+
+.inputGroup {
+	@mixin responsive gap, 20, 20, 20;
+	@mixin responsive padding-block-end, 16, 24, 24;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.input input {
+	width: 100%;
+}
+
+.logo :global(.logo_armbrok_svg__word) {
+	fill: var(--black-color) !important;
+}
+
+.textarea {
+	@mixin responsive margin-block-end, 16, 24, 24;
+}
+
+.captcha,
+.checkbox {
+	@mixin responsive padding-block-end, 16, 24, 24;
+}
+
+.button {
+	@media (max-width: 767px) {
+		width: 100%;
+		justify-content: center;
+	}
+}

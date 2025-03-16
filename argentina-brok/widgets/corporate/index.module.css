@@ -11,11 +11,20 @@
 .title {
 	@mixin font-h2;
 	font-weight: 700;
-	@mixin responsive padding-block-end, 10, 16, 16;
+	@mixin responsive padding-block-end, 5, 16, 16;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 700;
+	}
 }
 
 .description {
 	color: var(--gray-600-color);
 	@mixin font-text20;
 	@mixin responsive padding-block-end, 20, 40, 40;
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
 }

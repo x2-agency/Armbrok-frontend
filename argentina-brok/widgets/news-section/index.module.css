@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@mixin responsive padding-block, 36, 72, 72;
+	@mixin responsive padding-block, 30, 72, 72;
 	position: relative;
 }
 
@@ -19,6 +19,11 @@
 	@mixin font-h2;
 	font-weight: 600;
 	text-align: center;
+
+	@media (max-width: 767px) {
+		@mixin font-h4;
+		font-weight: 600;
+	}
 }
 
 .description {
@@ -27,6 +32,7 @@
 	@mixin responsive padding-block-end, 30, 64, 64;
 
 	@media (max-width: 767px) {
+		@mixin font-text16;
 		width: 100%;
 		padding-inline: 5.33rem;
 	}
@@ -35,7 +41,7 @@
 .slider {
 	position: relative;
 	@mixin responsive padding-inline, 20, 120, unset;
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 35, 40, 40;
 
 	@media (min-width: 1441px) {
 		padding-inline: calc(8rem + (100vw - 1440px) / 2);
