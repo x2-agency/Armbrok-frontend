@@ -16,6 +16,7 @@ export type FeedbackFormProps = {
 	title?: string;
 	description?: string;
 	subscribeButtonText?: string;
+	endpoint: string;
 };
 
 type FeedbackInputs = {
@@ -26,6 +27,7 @@ export const FeedbackForm = ({
 	title,
 	description,
 	subscribeButtonText,
+	endpoint,
 }: FeedbackFormProps) => {
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const {
@@ -35,7 +37,7 @@ export const FeedbackForm = ({
 	} = useForm<FeedbackInputs>({ mode: 'onChange' });
 
 	const handleSubmitForm = async ({ email }: FeedbackInputs) => {
-		const response = await postEmailForm({ data: { email } });
+		const response = await postEmailForm({ data: { email } }, endpoint);
 
 		if (response === 201) {
 			toggleSuccess(true);

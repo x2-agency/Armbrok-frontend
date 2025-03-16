@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 
 import { FeedbackForm } from '@/features/feedback-form';
+import { ENDPOINTS } from '@/features/feedback-form/model/feedback-form.constants';
 import { useGetArticles } from '@/features/get-articles/api/use-get-articles';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
@@ -95,6 +96,7 @@ export const Media: NextPage<{
 			<Vacancy className={css.vacancy} data={glossaryCard} />
 
 			<FeedbackForm
+				endpoint={ENDPOINTS.newsSubscription}
 				title={emailForm?.title}
 				description={emailForm?.description}
 				subscribeButtonText={emailForm?.subscribeButtonText}
