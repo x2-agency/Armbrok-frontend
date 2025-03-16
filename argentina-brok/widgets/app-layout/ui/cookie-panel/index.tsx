@@ -29,7 +29,7 @@ export const CookiePanel = () => {
 			setIsMounted(true);
 			setTimeout(() => {
 				currentRef.setAttribute('open', '');
-			}, 10);
+			}, 1000);
 		} else if (currentRef) {
 			currentRef.removeAttribute('open');
 			setTimeout(() => {
