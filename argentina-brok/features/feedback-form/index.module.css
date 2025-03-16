@@ -109,3 +109,36 @@
 		opacity: 0.5;
 	}
 }
+
+.button {
+	position: relative;
+	justify-content: center;
+
+	&.loading {
+		span {
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.loader {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.loader {
+	@mixin responsive width, 24, 24, 24;
+	@mixin responsive height, 24, 16, 24;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	visibility: hidden;
+	opacity: 0;
+}

@@ -4,7 +4,7 @@
 	@mixin responsive margin-block, 4, 4, 4;
 	@mixin responsive padding-block, 8, 8, 8;
 
-	@mixin responsive width, 110, 185, 185;
+	@mixin responsive width, unset, 185, 185;
 	@mixin transition background-color;
 	border: transparent;
 	cursor: pointer;
@@ -16,6 +16,7 @@
 
 	@media (max-width: 767px) {
 		@mixin font-text14;
+		@mixin responsive padding-inline, 20, 31, 31;
 	}
 }
 

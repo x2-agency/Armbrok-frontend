@@ -3,6 +3,7 @@
 import type { NextPage } from 'next';
 
 import { FeedbackForm } from '@/features/feedback-form';
+import { ENDPOINTS } from '@/features/feedback-form/model/feedback-form.constants';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import type { SliderItem } from '@/shared/types/global.types';
 import { GuaranteesSection } from '@/shared/ui/guarantees-section';
@@ -75,7 +76,7 @@ export const CareersAtArmbrok: NextPage<
 				description={vacanciesSection?.description ?? ''}
 				vacancies={vacancies?.data}
 			/>
-			<FeedbackForm {...FEEDBACK_FORM} />
+			<FeedbackForm endpoint={ENDPOINTS.jobSubscription} {...FEEDBACK_FORM} />
 		</>
 	);
 };

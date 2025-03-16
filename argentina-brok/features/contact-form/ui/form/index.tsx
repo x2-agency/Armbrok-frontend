@@ -5,17 +5,19 @@ import parser from 'html-react-parser';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import { usePostContactUsForm } from '@/features/contact-form/hooks/use-post-contact-us-form';
 import { SuccessfulModal } from '@/features/contact-form/ui/successful-modal';
-import { postContactUsForm } from '@/shared/api/post-contact-us-form';
+import LoaderSVG from '@/public/assets/icons/loader.svg';
 import type { ContactForm } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Captcha } from '@/shared/ui/captcha';
+import { ErrorModal } from '@/shared/ui/error-modal';
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
 
 import css from './index.module.css';
 
-type FormValues = {
+export type FormValues = {
 	email: string;
 	name: string;
 	subject: string;
@@ -35,6 +37,7 @@ export const Form = ({
 }: ContactForm & { className?: string }) => {
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
+	const [isError, toggleError] = useState<boolean>(false);
 
 	const {
 		formState: { isValid, errors },
@@ -42,14 +45,10 @@ export const Form = ({
 		reset,
 		handleSubmit,
 	} = useForm<FormValues>({ mode: 'onChange' });
+	const mutation = usePostContactUsForm({ toggleSuccess, toggleError, reset });
 
 	const handleSubmitForm = async (formData: FormValues) => {
-		const response = await postContactUsForm({ data: { ...formData } });
-
-		if (response === 201) {
-			reset();
-			toggleSuccess(true);
-		}
+		mutation.mutate({ data: { ...formData } });
 	};
 
 	return (
@@ -139,11 +138,13 @@ export const Form = ({
 					type="submit"
 					variant="filled"
 					category="big"
-					className={css.button}
+					className={cx(css.button, { [css.loading]: mutation.isPending })}
 				>
-					{parser(sendButtonText ?? 'Send message')}
+					<span>{parser(sendButtonText ?? 'Send message')}</span>
+					<LoaderSVG className={css.loader} />
 				</Button>
 			</form>
+			<ErrorModal toggleOpen={toggleError} isOpen={isError} withHidden />
 			<SuccessfulModal isOpened={isSuccess} toggleOpen={toggleSuccess} />
 		</>
 	);

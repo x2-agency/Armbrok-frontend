@@ -18,6 +18,8 @@
 	box-shadow: 0 0 var(--shadow) -12px #101828;
 	opacity: 0;
 	pointer-events: none;
+	max-width: unset;
+	max-height: unset;
 
 	&::backdrop {
 		background: unset;
@@ -26,20 +28,28 @@
 	}
 
 	@media (max-width: 767px) {
+		@mixin responsive --border-radius, 16;
+		@mixin responsive padding-block-end, 32;
+
+		border-radius: var(--border-radius) var(--border-radius) 0 0;
 		flex-direction: column;
-		width: 89rem;
+		width: 100%;
 		bottom: 0;
-		translate: -50% -20%;
+		translate: -50% 100%;
 	}
 }
 
 .root[open] {
 	@mixin transition;
-	
+
 	transition-property: all;
 	opacity: 1;
 	pointer-events: auto;
 	translate: -50% -50%;
+
+	@media (max-width: 767px) {
+		translate: -50% 0%;
+	}
 }
 
 .about {
@@ -62,8 +72,19 @@
 	}
 }
 
-.button {
+.summary {
 	@media (max-width: 767px) {
+		max-width: 85%;
+	}
+}
+
+.button {
+	justify-content: center;
+
+	@media (max-width: 767px) {
+		@mixin responsive --padding-block, 12;
+
+		padding-block: var(--padding-block) !important;
 		width: 100%;
 	}
 }
