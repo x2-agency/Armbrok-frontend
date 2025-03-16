@@ -77,7 +77,7 @@ export const AccountForm = () => {
 	return (
 		<div className={css.root}>
 			<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
-			<h3 className={css.title}>{parser(titleTranslation)}</h3>
+			<h3 className={css.title}>{parser(subjectForm)}</h3>
 			<ErrorModal isOpen={isError} toggleOpen={toggleError} />
 			{isSuccess ? (
 				<SuccessForm />
