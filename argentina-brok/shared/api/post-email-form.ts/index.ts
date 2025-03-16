@@ -7,9 +7,12 @@ export type PostEmailFormData = {
 	};
 };
 
-export const postEmailForm = async ({ data }: PostEmailFormData) => {
+export const postEmailForm = async (
+	{ data }: PostEmailFormData,
+	endpoint: string
+) => {
 	try {
-		const response = await apiClient.post('/email-forms', { data });
+		const response = await apiClient.post(endpoint, { data });
 
 		return response.status;
 	} catch (error) {

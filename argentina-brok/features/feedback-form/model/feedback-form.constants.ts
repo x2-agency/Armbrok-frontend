@@ -7,3 +7,8 @@ export const SUCCESSFUL_FORM = {
 export const SUCCESSFUL_MODAL = {
 	description: 'You have successfully subscribed to&nbsp;the newsletter.',
 };
+
+export const ENDPOINTS = {
+	jobSubscription: '/job-subscription-forms',
+	newsSubscription: '/news-subscription-forms',
+};
