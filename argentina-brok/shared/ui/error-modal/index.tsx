@@ -13,9 +13,14 @@ import css from './index.module.css';
 type ErrorModalProps = {
 	isOpen: boolean;
 	toggleOpen: Dispatch<SetStateAction<boolean>>;
+	withHidden?: boolean;
 };
 
-export const ErrorModal = ({ isOpen, toggleOpen }: ErrorModalProps) => {
+export const ErrorModal = ({
+	isOpen,
+	withHidden,
+	toggleOpen,
+}: ErrorModalProps) => {
 	const modalRef = useRef<HTMLDialogElement | null>(null);
 	const [isVisible, setIsVisible] = useState<boolean>(false);
 	const t = useTranslations('errorModal');
@@ -29,19 +34,28 @@ export const ErrorModal = ({ isOpen, toggleOpen }: ErrorModalProps) => {
 			setIsVisible(true);
 		} else {
 			setIsVisible(false);
+
+			if (withHidden) {
+				document.body.style.overflow = 'auto';
+			}
+
 			setTimeout(() => {
 				if (currentRef) {
 					currentRef.close();
 				}
 			}, 300);
 		}
-	}, [isOpen, setIsVisible]);
+	}, [isOpen, setIsVisible, withHidden]);
 
 	useEffect(() => {
 		const currentRef = modalRef.current;
 
 		const handleClose = () => {
 			toggleOpen(false);
+
+			if (withHidden) {
+				document.body.style.overflow = 'auto';
+			}
 		};
 
 		if (currentRef) {
@@ -53,7 +67,7 @@ export const ErrorModal = ({ isOpen, toggleOpen }: ErrorModalProps) => {
 				currentRef.removeEventListener('close', handleClose);
 			}
 		};
-	}, [toggleOpen]);
+	}, [toggleOpen, withHidden]);
 
 	useEffect(() => {
 		const currentRef = modalRef.current;
@@ -61,6 +75,10 @@ export const ErrorModal = ({ isOpen, toggleOpen }: ErrorModalProps) => {
 		const handleBackdropClick = (event: MouseEvent) => {
 			if (event.target === currentRef) {
 				toggleOpen(false);
+
+				if (withHidden) {
+					document.body.style.overflow = 'auto';
+				}
 			}
 		};
 
@@ -73,7 +91,7 @@ export const ErrorModal = ({ isOpen, toggleOpen }: ErrorModalProps) => {
 				currentRef.removeEventListener('click', handleBackdropClick);
 			}
 		};
-	}, [toggleOpen]);
+	}, [toggleOpen, withHidden]);
 
 	return (
 		<dialog
