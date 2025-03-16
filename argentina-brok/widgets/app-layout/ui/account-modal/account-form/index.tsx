@@ -2,10 +2,9 @@
 'use client';
 
 import parser from 'html-react-parser';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { postContactUsForm } from '@/shared/api/post-contact-us-form';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Captcha } from '@/shared/ui/captcha';
@@ -56,8 +55,15 @@ export const AccountForm = () => {
 		register,
 		reset,
 		handleSubmit,
+		setValue,
 	} = useForm<AccountFormValuesData>({ mode: 'onChange' });
 	const mutation = usePostAccountForm({ toggleSuccess, toggleError, reset });
+
+	useEffect(() => {
+		if (subjectForm) {
+			setValue('subject', subjectForm);
+		}
+	}, [subjectForm, setValue]);
 
 	const handleSubmitForm = async (formData: AccountFormValuesData) => {
 		const { checkbox, ...restData } = formData;
@@ -178,7 +184,7 @@ export const AccountForm = () => {
 						label={checkboxTranslation}
 						required={true}
 						className={css.checkbox}
-						{...register('checkbox')}
+						{...register('checkbox', { required: true })}
 					/>
 					<Captcha
 						subtitle={captchaTranslation}

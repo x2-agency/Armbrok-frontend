@@ -162,7 +162,7 @@
 		},
 		"emailInput": {
 			"label": "Your e-mail address",
-			"placeholder": "E=mail address",
+			"placeholder": "E-mail address",
 			"errorMessage": "Please fill this field",
 			"secondErrorMessage": "Please enter a valid email address"
 		},
