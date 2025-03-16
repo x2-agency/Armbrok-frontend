@@ -31,6 +31,12 @@ const InputComponent = (
 	}: PropsWithType,
 	ref: ForwardedRef<HTMLInputElement>
 ) => {
+	const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+		if (type === 'tel') {
+			event.target.value = event.target.value.replace(/[^0-9+\-()\s]/g, '');
+		}
+	};
+
 	return (
 		<label className={cx(className, css.root)}>
 			{label && (
@@ -45,6 +51,7 @@ const InputComponent = (
 					ref={ref}
 					className={cx(css.input, { [css.withIcon]: leftIcon })}
 					placeholder={placeholder}
+					onInput={handleInput}
 					{...props}
 				/>
 				{leftIcon && <img className={css.leftIcon} src={leftIcon} />}
