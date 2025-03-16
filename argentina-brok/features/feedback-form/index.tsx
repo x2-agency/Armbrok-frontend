@@ -1,13 +1,16 @@
 'use client';
 
+import cx from 'clsx';
 import parser from 'html-react-parser';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { postEmailForm } from '@/shared/api/post-email-form.ts';
+import LoaderSVG from '@/public/assets/icons/loader.svg';
 import { Button } from '@/shared/ui/button';
+import { ErrorModal } from '@/shared/ui/error-modal';
 import { Input } from '@/shared/ui/input';
 
+import { usePostFeedbackForm } from './hooks/use-post-feedback-form';
 import css from './index.module.css';
 import { SUCCESSFUL_FORM } from './model/feedback-form.constants';
 import { SuccessfulModal } from './ui/successful-modal';
@@ -19,7 +22,7 @@ export type FeedbackFormProps = {
 	endpoint: string;
 };
 
-type FeedbackInputs = {
+export type FeedbackInputs = {
 	email: string;
 };
 
@@ -30,18 +33,22 @@ export const FeedbackForm = ({
 	endpoint,
 }: FeedbackFormProps) => {
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
+	const [isError, toggleError] = useState<boolean>(false);
 	const {
 		formState: { isValid, errors },
 		register,
+		reset,
 		handleSubmit,
 	} = useForm<FeedbackInputs>({ mode: 'onChange' });
+	const mutation = usePostFeedbackForm({
+		endpoint,
+		toggleSuccess,
+		reset,
+		toggleError,
+	});
 
 	const handleSubmitForm = async ({ email }: FeedbackInputs) => {
-		const response = await postEmailForm({ data: { email } }, endpoint);
-
-		if (response === 201) {
-			toggleSuccess(true);
-		}
+		mutation.mutate({ data: { email } });
 	};
 
 	return (
@@ -81,13 +88,15 @@ export const FeedbackForm = ({
 						category="big"
 						type="submit"
 						disabled={!isValid}
-						className={css.button}
+						className={cx(css.button, { [css.loading]: mutation.isPending })}
 					>
-						{parser(subscribeButtonText ?? 'Subscribe')}
+						<span>{parser(subscribeButtonText ?? 'Subscribe')}</span>
+						<LoaderSVG className={css.loader} />
 					</Button>
 				</form>
 			)}
 			<SuccessfulModal toggleOpen={toggleSuccess} isOpened={isSuccess} />
+			<ErrorModal isOpen={isError} toggleOpen={toggleError} withHidden />
 		</section>
 	);
 };
