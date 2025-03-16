@@ -1,0 +1,115 @@
+.root {
+	@mixin transition;
+	@mixin responsive padding-inline, 16, 24, 24;
+	@mixin responsive padding-block, 32, 32, 32;
+	@mixin responsive border-radius, 24, 24, 24;
+	@mixin responsive width, 320, 690, 690;
+
+	transition-property: opacity visibility translate;
+
+	max-width: unset;
+	max-height: unset;
+	position: fixed;
+
+	left: 50%;
+	top: 50%;
+	translate: -50% -45%;
+
+	opacity: 0;
+	visibility: hidden;
+}
+
+.root::backdrop {
+	opacity: 0;
+	visibility: hidden;
+	transition-property: opacity visibility background;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.root.visible::backdrop,
+.root.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.root.visible {
+	translate: -50% -50%;
+}
+.cross {
+	@mixin transition;
+
+	transition-property: scale;
+}
+
+.close {
+	@mixin responsive width, 24, 32, 32;
+	@mixin responsive height, 24, 32, 32;
+	@mixin responsive margin-block-start, 16, 24, 24;
+	@mixin responsive margin-inline-end, 16, 24, 24;
+
+	position: absolute;
+	right: 0;
+	top: 0;
+	outline: none;
+
+	@media (hover: hover) {
+		&:hover .cross {
+			scale: 1.2;
+		}
+	}
+}
+
+.title {
+	@mixin font-h3;
+	@mixin responsive padding-block-end, 16, 24, 24;
+
+	font-weight: 600;
+	text-align: center;
+}
+
+.description {
+	@mixin responsive padding-block-end, 16, 32, 32;
+	@mixin font-text18;
+
+	text-align: center;
+	color: var(--gray-600-color);
+}
+
+.contacts {
+	@mixin responsive gap, 16, 56, 56;
+
+	display: flex;
+	justify-content: space-around;
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+	}
+}
+
+.paragraph {
+	@mixin responsive gap, 12, 12, 12;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	@mixin font-text18;
+
+	font-weight: 600;
+}
+
+.link {
+	@mixin transition;
+	@mixin font-text14;
+
+	transition-property: color;
+	font-weight: 700;
+	color: var(--red-600-color);
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--red-500-color);
+		}
+	}
+}

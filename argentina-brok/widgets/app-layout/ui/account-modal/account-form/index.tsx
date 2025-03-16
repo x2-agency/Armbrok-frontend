@@ -10,9 +10,11 @@ import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Captcha } from '@/shared/ui/captcha';
 import { Checkbox } from '@/shared/ui/checkbox';
+import { ErrorModal } from '@/shared/ui/error-modal';
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
 import { useAccountTranslations } from '@/widgets/app-layout/hooks/use-account-translations';
+import { usePostAccountForm } from '@/widgets/app-layout/hooks/use-post-account-form';
 import { ACCOUNT } from '@/widgets/app-layout/model/account-form.constants';
 import {
 	HOME_LINK,
@@ -23,7 +25,7 @@ import { Logo } from '@/widgets/app-layout/ui/logo';
 
 import css from './index.module.css';
 
-type FormValues = {
+export type AccountFormValuesData = {
 	email: string;
 	name: string;
 	subject: string;
@@ -33,9 +35,10 @@ type FormValues = {
 };
 
 export const AccountForm = () => {
+	const [isSuccess, toggleSuccess] = useState<boolean>(false);
+	const [isError, toggleError] = useState<boolean>(false);
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
 	const { subjectForm } = useLayoutContext();
-	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const {
 		nameInputTranslation,
 		messageInputTranslation,
@@ -53,18 +56,13 @@ export const AccountForm = () => {
 		register,
 		reset,
 		handleSubmit,
-	} = useForm<FormValues>({ mode: 'onChange' });
+	} = useForm<AccountFormValuesData>({ mode: 'onChange' });
+	const mutation = usePostAccountForm({ toggleSuccess, toggleError, reset });
 
-	const handleSubmitForm = async (formData: FormValues) => {
+	const handleSubmitForm = async (formData: AccountFormValuesData) => {
 		const { checkbox, ...restData } = formData;
-		const response = await postContactUsForm({ data: { ...restData } });
-
-		if (response === 201) {
-			reset();
-			toggleSuccess(true);
-		}
+		mutation.mutate({ data: { ...restData } });
 	};
-
 	const { nameInput, telInput, emailInput, messageTextArea, subjectInput } =
 		ACCOUNT;
 
@@ -72,6 +70,7 @@ export const AccountForm = () => {
 		<div className={css.root}>
 			<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
 			<h3 className={css.title}>{parser(titleTranslation)}</h3>
+			<ErrorModal isOpen={isError} toggleOpen={toggleError} />
 			{isSuccess ? (
 				<SuccessForm />
 			) : (

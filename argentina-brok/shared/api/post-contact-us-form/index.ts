@@ -1,6 +1,6 @@
 import apiClient from '@/shared/api/api-client';
 
-type PostContactUsFormProps = {
+export type PostContactUsFormProps = {
 	data: {
 		email: string;
 		name: string;
