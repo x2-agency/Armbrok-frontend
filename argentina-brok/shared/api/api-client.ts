@@ -23,7 +23,6 @@ apiClient.interceptors.request.use(
 
 		config.params = { ...config.params, locale };
 
-		config.headers['ngrok-skip-browser-warning'] = 'true';
 		const token = Cookies.get('token');
 		if (token) {
 			config.headers.Authorization = `Bearer ${token}`;
