@@ -49,7 +49,6 @@ export const AccountForm = () => {
 		checkboxTranslation,
 		captchaTranslation,
 		buttonTranslation,
-		titleTranslation,
 	} = useAccountTranslations();
 
 	const {
