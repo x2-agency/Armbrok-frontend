@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
+import cx from 'clsx';
 import parser from 'html-react-parser';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import LoaderSVG from '@/public/assets/icons/loader.svg';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Captcha } from '@/shared/ui/captcha';
@@ -196,9 +198,10 @@ export const AccountForm = () => {
 						disabled={!isValid || !isCaptchaChecked}
 						variant="filled"
 						category="big"
-						className={css.button}
+						className={cx(css.button, { [css.loading]: mutation.isPending })}
 					>
-						{parser(buttonTranslation)}
+						<span>{parser(buttonTranslation)}</span>
+						<LoaderSVG className={css.loader} />
 					</Button>
 				</form>
 			)}
