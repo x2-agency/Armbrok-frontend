@@ -26,6 +26,7 @@ export const Media: NextPage<{
 }> = ({ initialMediaData, initialArticles }) => {
 	const [searchQuery, setSearchQuery] = useState('');
 	const [searchAnimationKey, setSearchAnimationKey] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { glossaryCard, emailForm, title, description, publishedAt } =
 		initialMediaData?.data ?? {};
@@ -53,10 +54,13 @@ export const Media: NextPage<{
 	);
 
 	const onChangeTab = useCallback(
-		(value: string) => {
+		async (value: string) => {
+			setIsLoading(true);
 			router.push(`${pathname}?${createQueryString('category', value)}`, {
 				scroll: false,
 			});
+			await new Promise(resolve => setTimeout(resolve, 500));
+			setIsLoading(false);
 		},
 		[router, pathname, createQueryString]
 	);
@@ -83,13 +87,17 @@ export const Media: NextPage<{
 				/>
 			</div>
 
-			<NewsPage
-				animationKey={`${currentTag}-${searchAnimationKey}`}
-				newsCard={filteredBySearch}
-				isFetchingNextPage={isFetchingNextPage}
-				hasNextPage={hasNextPage}
-				fetchNextPage={fetchNextPage}
-			/>
+			{isLoading ? (
+				<Preloader className={css.loader} />
+			) : (
+				<NewsPage
+					animationKey={`${currentTag}-${searchAnimationKey}`}
+					newsCard={filteredBySearch}
+					isFetchingNextPage={isFetchingNextPage}
+					hasNextPage={hasNextPage}
+					fetchNextPage={fetchNextPage}
+				/>
+			)}
 
 			{isFetchingNextPage && <Preloader className={css.loader} />}
 
