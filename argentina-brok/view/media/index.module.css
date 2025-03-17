@@ -57,7 +57,3 @@
 .loader {
 	@mixin responsive padding-block, 50, 200, 200;
 }
-
-.loaderNew {
-	@mixin responsive padding-block, 20, 50, 50;
-}
