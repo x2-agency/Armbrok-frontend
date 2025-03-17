@@ -51,7 +51,11 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 			transition={transition}
 		>
 			{poster && isArmbrokMedia && (
-				<img src={poster.url} className={css.poster} />
+				<img
+					src={poster.url}
+					className={css.poster}
+					alt={poster.alternativeText}
+				/>
 			)}
 			<div className={css.textWrap}>
 				<time className={css.time}>{formattedDate ?? ''}</time>

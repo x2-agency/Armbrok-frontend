@@ -48,7 +48,11 @@ export const Blog: NextPage<{
 			</div>
 			{poster?.url && (
 				<div className={css.imageWrap}>
-					<img className={css.img} src={poster?.url} />
+					<img
+						className={css.img}
+						src={poster?.url}
+						alt={poster?.alternativeText ?? ''}
+					/>
 				</div>
 			)}
 
