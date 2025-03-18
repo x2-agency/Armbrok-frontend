@@ -43,7 +43,9 @@ export const Document = ({
 								</p>
 							)}
 							<div className={css.circle} />
-							{file.size && <p className={css.size}>{file.size * 10}KB</p>}
+							{file.size && (
+								<p className={css.size}>{Math.floor(file.size)}KB</p>
+							)}
 						</div>
 					)}
 				</div>
