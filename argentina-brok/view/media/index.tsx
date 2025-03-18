@@ -26,7 +26,6 @@ export const Media: NextPage<{
 }> = ({ initialMediaData, initialArticles }) => {
 	const [searchQuery, setSearchQuery] = useState('');
 	const [searchAnimationKey, setSearchAnimationKey] = useState('');
-	const [isLoading, setIsLoading] = useState(false);
 
 	const { glossaryCard, emailForm, title, description, publishedAt } =
 		initialMediaData?.data ?? {};
@@ -35,7 +34,7 @@ export const Media: NextPage<{
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	const { data, fetchNextPage, isFetchingNextPage, hasNextPage } =
+	const { data, fetchNextPage, isFetchingNextPage, hasNextPage, isLoading } =
 		useGetArticles({ filters: { category: currentTag } }, initialArticles);
 
 	const filteredNews = data?.pages.flatMap(page => page.data) ?? [];
@@ -55,12 +54,9 @@ export const Media: NextPage<{
 
 	const onChangeTab = useCallback(
 		async (value: string) => {
-			setIsLoading(true);
 			router.push(`${pathname}?${createQueryString('category', value)}`, {
 				scroll: false,
 			});
-			await new Promise(resolve => setTimeout(resolve, 500));
-			setIsLoading(false);
 		},
 		[router, pathname, createQueryString]
 	);
