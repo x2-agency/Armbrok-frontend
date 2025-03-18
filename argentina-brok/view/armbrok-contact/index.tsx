@@ -1,9 +1,11 @@
 'use client';
 
 import type { NextPage } from 'next';
+import { useRef } from 'react';
 
 import { ContactFormSection } from '@/features/contact-form';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
+import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 import { TitleSection } from '@/shared/ui/title-section';
 import { ContactCardsSection } from '@/widgets/contact-cards';
 
@@ -20,8 +22,11 @@ export const ArmbrokContact: NextPage<ArmbrokContactPageData> = ({
 }) => {
 	useUpdateFooterData(publishedAt);
 
+	const ref = useRef<HTMLDivElement>(null);
+	headerScrollObserver.useObserve('dark');
+
 	return (
-		<div className={css.root}>
+		<div ref={ref} className={css.root}>
 			<TitleSection
 				title={title ?? ''}
 				description={description}

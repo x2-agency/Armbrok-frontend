@@ -1,5 +1,6 @@
 'use client';
 
+import Head from 'next/head';
 import type { PropsWithChildren } from 'react';
 
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
@@ -13,14 +14,23 @@ import { Menu } from './ui/menu';
 
 export const AppLayout = ({ children }: Readonly<PropsWithChildren>) => {
 	return (
-		<headerScrollObserver.ScrollObserverProvider>
-			<Header />
-			<span className={css.divider} />
-			<Menu />
-			<AccountModal />
-			<CookiePanel />
-			<main>{children}</main>
-			<Footer />
-		</headerScrollObserver.ScrollObserverProvider>
+		<>
+			<Head>
+				<meta
+					name="viewport"
+					content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+					key="viewport"
+				/>
+			</Head>
+			<headerScrollObserver.ScrollObserverProvider>
+				<Header />
+				<span className={css.divider} />
+				<Menu />
+				<AccountModal />
+				<CookiePanel />
+				<main>{children}</main>
+				<Footer />
+			</headerScrollObserver.ScrollObserverProvider>
+		</>
 	);
 };
