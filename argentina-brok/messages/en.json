@@ -192,5 +192,11 @@
 		"description": "We&nbsp;were unable to&nbsp;send your message. Please check the entered data and try again. If&nbsp;the issue persists, contact&nbsp;us by&nbsp;phone or&nbsp;email.",
 		"phoneNumberLabel": "Our phone numbers",
 		"emailLabel": "Our e-mail"
+	},
+	"cookiePanel": {
+		"summary": "We use third-party cookies in order to personalise your experience.",
+		"about": "Read our",
+		"link": "Cookie Policy",
+		"button": "Allow Cookies"
 	}
 }
