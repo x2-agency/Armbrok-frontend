@@ -19,7 +19,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@mixin responsive width, 170, 170, 288;
+	@mixin responsive width, 170, 170, 170;
 
 	@media (min-width: 1441px) {
 		br {
