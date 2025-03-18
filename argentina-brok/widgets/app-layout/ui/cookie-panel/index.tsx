@@ -1,10 +1,11 @@
 'use client';
 
 import parser from 'html-react-parser';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
 import { Button } from '@/shared/ui/button';
-import { COOKIE_PANEL_INFO } from '@/widgets/app-layout/model/cookie-panel.constants';
 
 import css from './index.module.css';
 
@@ -12,6 +13,7 @@ export const CookiePanel = () => {
 	const ref = useRef<HTMLDialogElement | null>(null);
 	const [isClosed, setIsClosed] = useState<boolean>(true);
 	const [isMounted, setIsMounted] = useState<boolean>(false);
+	const t = useTranslations('cookiePanel');
 
 	useEffect(() => {
 		const isAccepted = localStorage.getItem('isAccepted') === 'true';
@@ -49,11 +51,13 @@ export const CookiePanel = () => {
 	return (
 		<dialog className={css.root} ref={ref} role="dialog" aria-modal="true">
 			<div className={css.about}>
-				<p className={css.summary}>{parser(COOKIE_PANEL_INFO.summary)}</p>
-				<p className={css.aboutCookies}>{parser(COOKIE_PANEL_INFO.about)}</p>
+				<p className={css.summary}>{parser(t('summary'))}</p>
+				<p className={css.aboutCookies}>
+					{parser(t('about'))} <Link href="#">{parser(t('link'))}</Link>
+				</p>
 			</div>
 			<Button variant="filled" onClick={handleClick} className={css.button}>
-				{parser(COOKIE_PANEL_INFO.button)}
+				{parser(t('button'))}
 			</Button>
 		</dialog>
 	);

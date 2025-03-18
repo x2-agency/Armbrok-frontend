@@ -11,6 +11,10 @@ export const EmployeeItem = ({
 	employee,
 	className,
 }: EmployeeStoriesItem) => {
+	if (!employee) {
+		return null;
+	}
+
 	return (
 		<article className={cx(css.root, 'p-32', className)}>
 			<header className={css.titleBlock}>

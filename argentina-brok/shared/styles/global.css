@@ -1,6 +1,3 @@
-@import '../../shared/styles/main/reset.css';
-@import '../../shared/styles/mixins/colors.css';
-
 :root {
 	--h1: 4.444rem; /* 64px */
 	--h2: 2.778rem; /* 40px */
@@ -89,6 +86,38 @@
 	}
 }
 
+:root {
+	--gray-100-color: #ffffff;
+	--black-color: #212121;
+	--gray-200-color: #f8f8f8;
+	--gray-300-color: #ebebeb;
+	--gray-400-color: #b9b9b9;
+	--gray-500-color: #777777;
+	--gray-600-color: #6b6b6b;
+	--gray-700-color: #3e3e3e;
+	--gray-800-color: #212121;
+	--gray-900-color: #131313;
+	--gray-1000-color: #000000;
+
+	--red-50-color: #fef1e9;
+	--red-100-color: #fde2d4;
+	--red-200-color: #fbc0a9;
+	--red-300-color: #f5937d;
+	--red-400-color: #eb6a5b;
+	--red-500-color: #df2c29;
+	--red-600-color: #bf1d29;
+	--red-700-color: #1f0808;
+
+	--green-50-color: #eefde7;
+	--green-100-color: #ddfbcf;
+	--green-200-color: #b4f7a1;
+	--green-300-color: #7fe86e;
+	--green-400-color: #4fd148;
+	--green-500-color: #17b31d;
+	--green-550-color: #34ca2f;
+	--green-600-color: #109922;
+}
+
 html {
 	scroll-behavior: smooth;
 	-webkit-font-smoothing: antialiased;
@@ -160,4 +189,42 @@ button {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+body {
+	font-size: 17px;
+	line-height: 1.76;
+	font-family: sans-serif;
+}
+
+ol,
+ul {
+	list-style: none;
+	line-height: normal;
+}
+
+a {
+	color: unset;
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	background: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	font: inherit;
+	vertical-align: initial;
+}
+
+a,
+button,
+input,
+label {
+	-webkit-tap-highlight-color: transparent;
 }

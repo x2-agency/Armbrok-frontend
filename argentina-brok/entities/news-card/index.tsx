@@ -76,11 +76,13 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 					<div
 						className={cx(css.imgWrap, { [css.mediaImgWrap]: isArmbrokMedia })}
 					>
-						<img
-							className={css.avatar}
-							src={author?.avatar?.url ?? ''}
-							alt={author?.avatar?.alternativeText ?? ''}
-						/>
+						{author?.avatar?.url && (
+							<img
+								className={css.avatar}
+								src={author?.avatar?.url ?? ''}
+								alt={author?.avatar?.alternativeText ?? ''}
+							/>
+						)}
 					</div>
 					<span className={css.name}>{parser(author?.fullName ?? '')}</span>
 				</div>

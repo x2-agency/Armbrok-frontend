@@ -1,4 +1,5 @@
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react';
 
 import { SUCCESSFUL_MODAL } from '@/features/feedback-form/model/feedback-form.constants';
@@ -17,6 +18,7 @@ export const SuccessfulModal = ({
 	toggleOpen,
 }: SuccessfulModalProps) => {
 	const ref = useRef<HTMLDialogElement | null>(null);
+	const t = useTranslations('successfullyFeedbackModal');
 
 	useEffect(() => {
 		const currentRef = ref.current;
@@ -40,7 +42,7 @@ export const SuccessfulModal = ({
 			<div className={css.successfulIconWrapper}>
 				<SuccessfulIcon className={css.icon} />
 			</div>
-			<p>{parser(SUCCESSFUL_MODAL.description)}</p>
+			<p>{parser(t('title'))}</p>
 			<button className={css.close} onClick={handleClose}>
 				<CrossSVG className={css.cross} />
 			</button>

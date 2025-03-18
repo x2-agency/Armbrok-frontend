@@ -192,5 +192,28 @@
 		"description": "We&nbsp;were unable to&nbsp;send your message. Please check the entered data and try again. If&nbsp;the issue persists, contact&nbsp;us by&nbsp;phone or&nbsp;email.",
 		"phoneNumberLabel": "Our phone numbers",
 		"emailLabel": "Our e-mail"
+	},
+	"cookiePanel": {
+		"summary": "We use third-party cookies in order to personalise your experience.",
+		"about": "Read our",
+		"link": "Cookie Policy",
+		"button": "Allow Cookies"
+	},
+	"feedbackForm": {
+		"input": {
+			"placeholder": "name@mail.com",
+			"error": "Please enter a valid email address",
+			"secondError": "Email is required"
+		},
+		"button": "Subscribe",
+		"title": "You&rsquo;re Subscribed! 🎉",
+		"description": "Thank you for subscribing to&nbsp;our newsletter! 🚀<br /> We&rsquo;ll keep you updated with the latest and most relevant job<br /> opportunities, sent straight to&nbsp;your inbox. Keep an&nbsp;eye out&nbsp;&mdash;<br /> your next big career move could be&nbsp;just one email away!"
+	},
+	"successfullyFeedbackModal": {
+		"title": "You have successfully subscribed to the newsletter."
+	},
+	"feedbackSuccess": {
+		"title": "You&rsquo;re Subscribed! 🎉",
+		"description": "Thank you for subscribing to&nbsp;our newsletter! 🚀<br /> We&rsquo;ll keep you updated with the latest and most relevant job<br /> opportunities, sent straight to&nbsp;your inbox. Keep an&nbsp;eye out&nbsp;&mdash;<br /> your next big career move could be&nbsp;just one email away!"
 	}
 }
