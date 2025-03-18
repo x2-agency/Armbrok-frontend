@@ -15,7 +15,6 @@ import { SliderSection } from '@/widgets/slider-section';
 import { VacanciesSection } from '@/widgets/vacancies-section';
 
 import css from './index.module.css';
-import { FEEDBACK_FORM } from './models/careers-at-armbrok.constants';
 import type { CareersAtArmbrokPageResponse } from './types/response';
 
 export const CareersAtArmbrok: NextPage<
@@ -30,6 +29,7 @@ export const CareersAtArmbrok: NextPage<
 	eventsSlider,
 	vacanciesSection,
 	vacancies,
+	subscribeEmailForm,
 }) => {
 	useUpdateFooterData(publishedAt);
 	return (
@@ -76,7 +76,10 @@ export const CareersAtArmbrok: NextPage<
 				description={vacanciesSection?.description ?? ''}
 				vacancies={vacancies?.data}
 			/>
-			<FeedbackForm endpoint={ENDPOINTS.jobSubscription} {...FEEDBACK_FORM} />
+			<FeedbackForm
+				endpoint={ENDPOINTS.jobSubscription}
+				{...subscribeEmailForm}
+			/>
 		</>
 	);
 };

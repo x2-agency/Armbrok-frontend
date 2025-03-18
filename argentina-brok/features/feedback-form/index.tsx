@@ -2,6 +2,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -12,7 +13,6 @@ import { Input } from '@/shared/ui/input';
 
 import { usePostFeedbackForm } from './hooks/use-post-feedback-form';
 import css from './index.module.css';
-import { SUCCESSFUL_FORM } from './model/feedback-form.constants';
 import { SuccessfulModal } from './ui/successful-modal';
 
 export type FeedbackFormProps = {
@@ -32,6 +32,8 @@ export const FeedbackForm = ({
 	subscribeButtonText,
 	endpoint,
 }: FeedbackFormProps) => {
+	const t = useTranslations('feedbackForm');
+	const successfulT = useTranslations('feedbackSuccess');
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const [isError, toggleError] = useState<boolean>(false);
 	const {
@@ -54,13 +56,11 @@ export const FeedbackForm = ({
 	return (
 		<section className={css.root}>
 			<h2 className={css.title}>
-				{isSuccess ? parser(SUCCESSFUL_FORM.title) : parser(title ?? '')}
+				{isSuccess ? parser(successfulT('title')) : parser(title ?? '')}
 			</h2>
 			{description && (
 				<p className={css.description}>
-					{isSuccess
-						? parser(SUCCESSFUL_FORM.description)
-						: parser(description)}
+					{isSuccess ? parser(successfulT('description')) : parser(description)}
 				</p>
 			)}
 			{!isSuccess && (
@@ -74,10 +74,10 @@ export const FeedbackForm = ({
 						type="email"
 						required
 						{...register('email', {
-							required: 'Email is required',
+							required: t('input.secondError'),
 							pattern: {
 								value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-								message: 'Please enter a valid email address',
+								message: t('input.error'),
 							},
 						})}
 						aria-invalid={Boolean(errors.email)}
