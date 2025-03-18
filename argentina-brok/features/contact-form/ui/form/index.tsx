@@ -2,6 +2,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -38,6 +39,7 @@ export const Form = ({
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const [isError, toggleError] = useState<boolean>(false);
+	const t = useTranslations('openAccount');
 
 	const {
 		formState: { isValid, errors },
@@ -73,7 +75,7 @@ export const Form = ({
 							required: nameField.required,
 							minLength: {
 								value: 4,
-								message: 'Name must be at least 4 characters long',
+								message: t('nameInput.secondErrorMessage'),
 							},
 						})}
 						aria-invalid={Boolean(errors.name)}
@@ -85,10 +87,10 @@ export const Form = ({
 						label={emailField.label}
 						required={emailField.required}
 						{...register('email', {
-							required: emailField.required ? 'Email is required' : false,
+							required: emailField.required,
 							pattern: {
 								value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-								message: 'Please enter a valid email address',
+								message: t('emailInput.secondErrorMessage'),
 							},
 						})}
 						aria-invalid={Boolean(errors.email)}
@@ -103,7 +105,7 @@ export const Form = ({
 							required: subjectField.required,
 							minLength: {
 								value: 4,
-								message: 'Subject must be at least 4 characters long',
+								message: t('subjectInput.secondErrorMessage'),
 							},
 						})}
 						aria-invalid={Boolean(errors.subject)}
@@ -119,7 +121,7 @@ export const Form = ({
 							required: messageField.required,
 							minLength: {
 								value: 10,
-								message: 'Message must be at least 10 characters long',
+								message: t('messageInput.secondErrorMessage'),
 							},
 						})}
 						aria-invalid={Boolean(errors.message)}
