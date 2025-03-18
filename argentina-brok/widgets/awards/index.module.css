@@ -35,7 +35,7 @@
 	justify-content: space-between;
 
 	&.centered {
-		@mixin responsive gap, 36, 10, 10;
+		@mixin responsive gap, 36, 40, 40;
 
 		justify-content: center;
 	}
