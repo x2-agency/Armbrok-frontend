@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
 import { createContext, useContext, useEffect, useRef } from 'react';
@@ -52,6 +53,14 @@ export function createMultiObserver<Value extends string>(
 				});
 
 				function handleScroll() {
+					const scrollY = window.scrollY;
+					const maxScrollY =
+						document.documentElement.scrollHeight - window.innerHeight;
+
+					if (scrollY < 0 || scrollY > maxScrollY) {
+						return;
+					}
+
 					actions.forEach(({ findNewValue, setValue }, i) => {
 						const newValue = findNewValue();
 
@@ -70,9 +79,7 @@ export function createMultiObserver<Value extends string>(
 						{ passive: true }
 					);
 				};
-				// eslint-disable-next-line react-hooks/exhaustive-deps
 			}, [pathname, contextRef.current.elements, ...deps]);
-
 			return <context.Provider value={contextRef}>{children}</context.Provider>;
 		},
 	};

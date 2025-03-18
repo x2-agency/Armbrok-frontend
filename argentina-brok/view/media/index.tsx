@@ -34,7 +34,7 @@ export const Media: NextPage<{
 	const pathname = usePathname();
 	const currentTag = searchParams?.get('category') ?? 'all';
 
-	const { data, fetchNextPage, isFetchingNextPage, hasNextPage } =
+	const { data, fetchNextPage, isFetchingNextPage, hasNextPage, isLoading } =
 		useGetArticles({ filters: { category: currentTag } }, initialArticles);
 
 	const filteredNews = data?.pages.flatMap(page => page.data) ?? [];
@@ -53,7 +53,7 @@ export const Media: NextPage<{
 	);
 
 	const onChangeTab = useCallback(
-		(value: string) => {
+		async (value: string) => {
 			router.push(`${pathname}?${createQueryString('category', value)}`, {
 				scroll: false,
 			});
@@ -83,13 +83,17 @@ export const Media: NextPage<{
 				/>
 			</div>
 
-			<NewsPage
-				animationKey={`${currentTag}-${searchAnimationKey}`}
-				newsCard={filteredBySearch}
-				isFetchingNextPage={isFetchingNextPage}
-				hasNextPage={hasNextPage}
-				fetchNextPage={fetchNextPage}
-			/>
+			{isLoading ? (
+				<Preloader className={css.loader} />
+			) : (
+				<NewsPage
+					animationKey={`${currentTag}-${searchAnimationKey}`}
+					newsCard={filteredBySearch}
+					isFetchingNextPage={isFetchingNextPage}
+					hasNextPage={hasNextPage}
+					fetchNextPage={fetchNextPage}
+				/>
+			)}
 
 			{isFetchingNextPage && <Preloader className={css.loader} />}
 

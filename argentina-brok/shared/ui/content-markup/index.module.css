@@ -7,6 +7,10 @@
 		width: 100%;
 	}
 
+	strong {
+		font-weight: 600;
+	}
+
 	ul,
 	ol,
 	h2,

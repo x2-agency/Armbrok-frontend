@@ -118,6 +118,10 @@ h6 {
 	font-weight: 400;
 }
 
+.body {
+	overscroll-behavior: none;
+}
+
 .p-32 {
 	@mixin responsive border-radius, 15, 32, 32;
 	@mixin responsive padding-inline, 15, 32, 32;
