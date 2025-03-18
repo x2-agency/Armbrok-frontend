@@ -16,6 +16,10 @@ const EmployeeSlider: React.FC<EmployeeSliderProps> = ({
 	employeeStories,
 	className,
 }) => {
+	if (!employeeStories || !employeeStories.length) {
+		return null;
+	}
+
 	return (
 		<Swiper
 			grabCursor
