@@ -1,13 +1,5 @@
 .root {
 	position: relative;
-	@media (max-width: 767px) {
-		width: 100%;
-		padding-inline: 5.333rem;
-	}
-}
-
-.wrap {
-	position: relative;
 	overflow: hidden;
 	background: radial-gradient(
 			circle at 70% center,
@@ -20,11 +12,12 @@
 	@mixin responsive margin-block-end, 20, 24, 24;
 
 	@media (max-width: 767px) {
+		@mixin responsive width, 320;
 		height: 175.867rem;
 		display: flex;
 		flex-direction: column;
-		width: 100%;
 		padding-inline: 5.333rem;
+		margin-inline: auto;
 	}
 }
 
