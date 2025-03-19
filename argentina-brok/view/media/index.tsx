@@ -16,7 +16,6 @@ import { Preloader } from '@/shared/ui/preloader';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
 import { NewsPage } from '@/widgets/news-page';
 import { Tabs } from '@/widgets/tabs';
-import { Vacancy } from '@/widgets/vacancies-section/ui/vacancy';
 
 import css from './index.module.css';
 
@@ -97,7 +96,7 @@ export const Media: NextPage<{
 
 			{isFetchingNextPage && <Preloader className={css.loader} />}
 
-			<Vacancy className={css.vacancy} data={glossaryCard} />
+			{/* <Vacancy className={css.vacancy} data={glossaryCard} /> */}
 
 			<FeedbackForm
 				endpoint={ENDPOINTS.newsSubscription}
