@@ -20,7 +20,7 @@
 
 .listItem {
 	@mixin responsive gap, 12, 12, 12;
-	@mixin responsive --leftPartWidth, 320, 306, 306;
+	@mixin responsive --leftPartWidth, 320, 284, 286;
 
 	display: grid;
 	grid-template-columns: var(--leftPartWidth) auto;
@@ -71,13 +71,12 @@
 
 .percent {
 	@mixin responsive height, 40, 58, 58;
-
 	background-color: var(--red-500-color);
 	position: relative;
 }
 
 .percentLabel {
-	@mixin responsive padding-inline-start, 16, 24, 24;
+	@mixin responsive padding-inline-start, 16, 20, 20;
 	@mixin font-text20;
 
 	font-weight: 500;
