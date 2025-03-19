@@ -58,6 +58,10 @@
 	}
 }
 
+.listElement {
+	@mixin responsive margin-inline, 7, 7, 7;
+}
+
 .link {
 	@mixin transition;
 	@mixin responsive padding-inline, 16, 16, 16;
