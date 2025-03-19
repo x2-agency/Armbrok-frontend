@@ -45,6 +45,11 @@
 	}
 }
 
+.hyAbout {
+	@mixin font-text14;
+	font-weight: 500;
+}
+
 .age {
 	@mixin font-text18;
 	@mixin responsive padding-block-end, 1, 4, 4;

@@ -7,12 +7,12 @@
 	@mixin font-h2;
 	@mixin responsive padding-block-end, 20, 24, 24;
 
-	font-weight: 700;
+	font-weight: 600;
 	text-align: center;
 
 	@media (max-width: 767px) {
 		@mixin font-h4;
-		font-weight: 700;
+		font-weight: 600;
 	}
 }
 
@@ -27,14 +27,19 @@
 }
 
 .company {
-	@mixin responsive padding-block, 20, 40, 40;
-	@mixin responsive padding-inline, 10, 17, 17;
+	@mixin responsive padding-block, 20, 48, 48;
+	@mixin responsive padding-inline, 10, 67, 67;
 	@mixin responsive gap, 10, 16, 16;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
+}
+
+.homePageCompany {
+	@mixin responsive padding-block, 20, 40, 40;
+	@mixin responsive padding-inline, 10, 17, 17;
 }
 
 .companyIcon {

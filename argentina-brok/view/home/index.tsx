@@ -61,7 +61,7 @@ export const Home: NextPage<{
 				buttonLimit={4}
 				awardsTotal={initialAwards?.meta.pagination.total ?? 4}
 			/>
-			<CompaniesGroup data={companiesSection} />
+			<CompaniesGroup homePage data={companiesSection} />
 			<NewsSectionHome data={newsSection} />
 			<InteractiveVideo data={interviewSection} />
 		</>

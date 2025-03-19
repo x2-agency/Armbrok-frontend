@@ -10,9 +10,14 @@ import css from './index.module.css';
 type CompaniesGroupProps = {
 	data?: CompaniesSectionProps;
 	className?: string;
+	homePage?: boolean;
 };
 
-export const CompaniesGroup = ({ data, className }: CompaniesGroupProps) => {
+export const CompaniesGroup = ({
+	data,
+	className,
+	homePage = false,
+}: CompaniesGroupProps) => {
 	const { title, companies = [] } = data ?? {};
 	if (!companies || companies.length === 0) {
 		return null;
@@ -23,7 +28,10 @@ export const CompaniesGroup = ({ data, className }: CompaniesGroupProps) => {
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<ul className={css.companies}>
 				{companies.map((value, index) => (
-					<li key={index} className={css.company}>
+					<li
+						key={index}
+						className={cx(css.company, { [css.homePageCompany]: homePage })}
+					>
 						<img
 							src={value.url}
 							alt={value.alternativeText}

@@ -1,15 +1,48 @@
 .root {
-	overflow-x: auto;
-	white-space: wrap;
-	width: 100%;
 	display: flex;
-	@mixin responsive gap, 24, 24, 24;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
+	width: 100%;
+	overflow-x: hidden;
+	position: relative;
+	:global(.swiper-button-next),
+	:global(.swiper-button-prev) {
+		&:after,
+		&::before {
+			display: none;
+		}
+	}
+
+	:global(.swiper-pagination) {
+		display: none;
+		@media (max-width: 1024px) {
+			display: none;
+		}
+		@media (max-width: 767px) {
+			display: none;
+			width: 100%;
+			margin-inline-start: unset;
+			bottom: 2% !important;
+		}
+	}
+	:global(.swiper-pagination-bullet) {
+		background-color: var(--gray-600-color);
+
+		@media (max-width: 767px) {
+			width: 1.867rem; /* 7px */
+			height: 1.867rem; /* 7px */
+			--swiper-pagination-bullet-horizontal-gap: 0.5rem;
+		}
+	}
+
+	:global(.swiper-pagination-bullet-active) {
+		background-color: var(--gray-800-color);
+		opacity: 1;
+	}
 }
 
 .event {
-	flex: 0 0 auto;
+	box-sizing: border-box;
+	/* @mixin responsive width, 330, 384, 384; */
+	/* @mixin responsive min-height, 322, 414, 410; */
 }
 
 .firstEvent span:first-of-type {
