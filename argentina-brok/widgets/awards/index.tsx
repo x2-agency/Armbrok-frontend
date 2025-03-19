@@ -2,6 +2,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
 import { getAwards } from '@/shared/api/get-awards';
@@ -28,12 +29,15 @@ export const AwardsSection = ({
 	const [contentHeight, setContentHeight] = useState<number>(0);
 	const contentRef = useRef<HTMLUListElement>(null);
 	const [isLoading, toggleLoading] = useState<boolean>(false);
+	const t = useTranslations('closeAwardButton');
 
 	const getAllAwards = async () => {
 		const response = await getAwards({});
 
 		return response;
 	};
+
+	console.log(buttonText)
 
 	useEffect(() => {
 		if (contentRef.current) {
@@ -123,7 +127,7 @@ export const AwardsSection = ({
 							className={cx(css.button, css.close)}
 							onClick={() => toggleOpen(false)}
 						>
-							Сlose awards
+							{t('text')}
 						</Button>
 					) : (
 						<Button

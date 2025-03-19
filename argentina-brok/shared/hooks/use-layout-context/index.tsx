@@ -14,6 +14,8 @@ type LayoutContextType = {
 	setSubjectForm: Dispatch<SetStateAction<string>>;
 	toggleAccountModalOpen: Dispatch<SetStateAction<boolean>>;
 	toggleMenuOpen: Dispatch<SetStateAction<boolean>>;
+	headerPadding: number;
+	setHeaderPadding: Dispatch<SetStateAction<number>>;
 	isMenuOpen: boolean;
 	menuRef: MutableRefObject<HTMLDialogElement | null>;
 	footerData: {
@@ -29,6 +31,7 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const [isAccountModalOpen, toggleAccountModalOpen] = useState<boolean>(false);
 	const menuRef = useRef<HTMLDialogElement | null>(null);
 	const [subjectForm, setSubjectForm] = useState<string>('');
+	const [headerPadding, setHeaderPadding] = useState<number>(0);
 
 	const [footerData, setFooterData] = useState<{ publishedAt: string | null }>({
 		publishedAt: null,
@@ -42,6 +45,8 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 				isMenuOpen,
 				menuRef,
 				footerData,
+				headerPadding,
+				setHeaderPadding,
 				toggleAccountModalOpen,
 				setSubjectForm,
 				toggleMenuOpen,

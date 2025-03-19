@@ -34,6 +34,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	awards,
 }) => {
 	useUpdateFooterData(publishedAt);
+	console.log(awardsSection);
 	return (
 		<>
 			<BannerSection
@@ -54,7 +55,11 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					backgroundColor="white"
 				/>
 			</HeroContainer>
-			<AwardsSection title={awardsSection?.title} awards={awards?.data} />
+			<AwardsSection
+				title={awardsSection?.title}
+				buttonText={awardsSection?.buttonText}
+				awards={awards?.data}
+			/>
 			<MembershipSection
 				title={membershipSection?.title}
 				items={membershipSection?.companies}

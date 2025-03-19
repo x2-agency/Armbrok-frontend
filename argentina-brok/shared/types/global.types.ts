@@ -94,7 +94,7 @@ export type InvestingStepsSection = {
 
 export type AwardSection = {
 	title?: string;
-	textButton?: string;
+	buttonText?: string;
 	awards: Array<AwardType>;
 };
 
