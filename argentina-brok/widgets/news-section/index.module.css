@@ -30,11 +30,16 @@
 	@mixin font-text20;
 	color: var(--gray-700-color);
 	@mixin responsive padding-block-end, 30, 64, 64;
+	text-align: center;
 
 	@media (max-width: 767px) {
 		@mixin font-text16;
 		width: 100%;
 		padding-inline: 5.33rem;
+	}
+
+	@media (min-width: 1441px) {
+		padding-inline: calc(8rem + (100vw - 1440px) / 2);
 	}
 }
 

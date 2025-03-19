@@ -5,7 +5,7 @@
 }
 
 .white {
-	color: var(--gray-800-color);
+	color: var(--gray-800-color) !important;
 	background-color: var(--gray-100-color);
 	transition: background-color 0.4s ease;
 	box-shadow: 0px 2px 2px #0000000d;

@@ -39,11 +39,16 @@
 	@mixin responsive margin-block-end, 10, 16, 16;
 }
 
+.header {
+	position: relative;
+	@mixin responsive padding-block-end, 10, 12, 12;
+}
+
 .title {
 	@mixin font-h5;
 	font-weight: 600;
+
 	color: var(--gray-800-color);
-	@mixin responsive padding-block-end, 10, 12, 12;
 }
 
 .description {
@@ -100,6 +105,7 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
+	object-fit: cover;
 }
 
 .name {
@@ -114,21 +120,38 @@
 	@mixin responsive padding-block, 4, 4, 4;
 	@mixin responsive padding-inline, 8, 8, 8;
 	@mixin responsive border-radius, 8, 8, 8;
-	border: 0.069rem solid var(--gray-500-color);
+	border: 0.069rem solid var(--gray-300-color);
 }
 
+.linkTitle,
+.cursor,
 .link {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 3;
-	cursor: grab;
 }
 
 .link:active {
 	cursor: grabbing;
+}
+
+.link {
+	z-index: 3;
+
+	cursor: grab;
+}
+
+.cursor {
+	z-index: 3;
+
+	cursor: pointer;
+}
+
+.linkTitle {
+	z-index: 4;
+	cursor: pointer;
 }
 
 .armbrokMediaTitle {
