@@ -23,8 +23,8 @@
 }
 
 .iconWrapper {
-	@mixin responsive width, 55, 40, 40;
-	@mixin responsive height, 45, 40, 40;
+	@mixin responsive width, 20, 40, 40;
+	@mixin responsive height, 22, 40, 40;
 	@mixin responsive margin-block-end, 20, 64, 64;
 	position: relative;
 }
