@@ -9,7 +9,6 @@ import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
 import { AssetManagment } from '@/widgets/asset-managment';
 import { AwardsSection } from '@/widgets/awards';
-import { CompaniesGroup } from '@/widgets/companies-group';
 import { Corporate } from '@/widgets/corporate';
 import { HomePreview } from '@/widgets/home-preview/ui';
 import { InteractiveVideo } from '@/widgets/interactive-video';
@@ -31,7 +30,7 @@ export const Home: NextPage<{
 		assetManagementCard,
 		financialSolutionsSection,
 		investingStepsSection,
-		companiesSection,
+		// companiesSection,
 		newsSection,
 		interviewSection,
 		awardSection,
@@ -61,7 +60,7 @@ export const Home: NextPage<{
 				buttonLimit={4}
 				awardsTotal={initialAwards?.meta.pagination.total ?? 4}
 			/>
-			<CompaniesGroup homePage data={companiesSection} />
+			{/* <CompaniesGroup homePage data={companiesSection} /> */}
 			<NewsSectionHome data={newsSection} />
 			<InteractiveVideo data={interviewSection} />
 		</>
