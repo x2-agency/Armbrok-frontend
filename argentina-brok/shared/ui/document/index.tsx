@@ -15,15 +15,27 @@ export const Document = ({
 	name,
 	columns,
 	lineClamp,
-}: MediaData & { direction: string; columns?: number; lineClamp: number }) => {
+}: MediaData & {
+	direction: string;
+	columns?: number;
+	lineClamp: number;
+}) => {
 	if (!file) {
 		return null;
 	}
 
+	const defineIcon = () => {
+		if (file.ext === '.xlsx') {
+			return '/assets/icon/file/excel.svg';
+		} else {
+			return '/assets/icon/file/file.svg';
+		}
+	};
+
 	return (
 		<article className={cx(css.root, css[direction])}>
 			<div className={css.leftPart}>
-				<img src="/assets/icon/file/file.svg" alt="file" className={css.icon} />
+				<img src={defineIcon()} alt="file" className={css.icon} />
 				<div className={css.header}>
 					{name && (
 						<h3
