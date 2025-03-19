@@ -81,7 +81,7 @@
 
 .awardWrap.allAwards {
 	@mixin transition;
-	@mixin responsive padding-block-start, 20, 40, 40;
+	@mixin responsive padding-block-start, unset, 40, 40;
 
 	opacity: 0;
 	max-height: 0;
