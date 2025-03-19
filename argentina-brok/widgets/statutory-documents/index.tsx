@@ -3,7 +3,7 @@ import parser from 'html-react-parser';
 
 import type { DocumentsSectionProps } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
-import { Document } from '@/shared/ui/document';
+// import { Document } from '@/shared/ui/document';
 
 import css from './index.module.css';
 
@@ -18,9 +18,9 @@ export type StatutoryDocumentsProps = {
 export const StatutoryDocuments = ({
 	documentsSection,
 	className,
-	columns = 3,
-	fileDirection = 'row',
-	lineClamp = 3,
+	// columns = 3,
+	// fileDirection = 'row',
+	// lineClamp = 3,
 }: StatutoryDocumentsProps) => {
 	const { title, documents, description } = documentsSection ?? {};
 
@@ -42,7 +42,7 @@ export const StatutoryDocuments = ({
 					)}
 				</div>
 			)}
-			<ul
+			{/* <ul
 				className={cx(css.documents, {
 					[css.centered]: documents.length === 1,
 				})}
@@ -66,7 +66,7 @@ export const StatutoryDocuments = ({
 						/>
 					</li>
 				))}
-			</ul>
+			</ul> */}
 		</Container>
 	);
 };

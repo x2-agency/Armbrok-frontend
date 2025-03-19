@@ -35,9 +35,12 @@
 	}
 }
 
+.titleBlock:has(+ .documents) {
+	@mixin responsive padding-block-end, 20, 40, 40;
+}
+
 .titleBlock {
 	@mixin responsive gap, 10, 16, 16;
-	@mixin responsive padding-block-end, 20, 40, 40;
 
 	display: flex;
 	flex-direction: column;
