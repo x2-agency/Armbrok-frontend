@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 
 export const useAccountModal = () => {
-	const { isAccountModalOpen, toggleAccountModalOpen } = useLayoutContext();
+	const { isAccountModalOpen, toggleAccountModalOpen, setHeaderPadding } =
+		useLayoutContext();
 	const modalRef = useRef<HTMLDialogElement | null>(null);
 	const [isVisible, setIsVisible] = useState(false);
 
@@ -11,9 +12,13 @@ export const useAccountModal = () => {
 		const currentRef = modalRef.current;
 
 		if (currentRef && isAccountModalOpen) {
-			currentRef.showModal();
+			// const scrollbarWidth =
+			// 	window.innerWidth - document.documentElement.clientWidth;
 			document.body.style.overflow = 'hidden';
+			// document.body.style.paddingRight = `${scrollbarWidth}px`;
+			currentRef.showModal();
 			setIsVisible(true);
+			// setHeaderPadding(scrollbarWidth);
 		} else {
 			setIsVisible(false);
 			setTimeout(() => {
@@ -21,9 +26,11 @@ export const useAccountModal = () => {
 					currentRef.close();
 				}
 				document.body.style.overflow = 'auto';
+				document.body.style.paddingRight = '';
+				setHeaderPadding(0);
 			}, 300);
 		}
-	}, [isAccountModalOpen]);
+	}, [isAccountModalOpen, setHeaderPadding]);
 
 	useEffect(() => {
 		const currentRef = modalRef.current;

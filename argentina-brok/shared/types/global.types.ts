@@ -94,7 +94,7 @@ export type InvestingStepsSection = {
 
 export type AwardSection = {
 	title?: string;
-	textButton?: string;
+	buttonText?: string;
 	awards: Array<AwardType>;
 };
 
@@ -473,6 +473,14 @@ export type Award = {
 
 export type AwardsResponse = {
 	data: Array<Award>;
+	meta: {
+		pagination: {
+			page: number;
+			pageSize: number;
+			pageCount: number;
+			total: number;
+		};
+	};
 };
 
 /* Document Tabs */

@@ -53,6 +53,7 @@
 	overflow: hidden;
 	border-radius: 100%;
 	align-self: center;
+	flex-shrink: 0;
 }
 
 .icon {
