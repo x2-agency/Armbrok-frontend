@@ -49,6 +49,11 @@
 	font-weight: 600;
 
 	color: var(--gray-800-color);
+
+	@media (min-width: 1441px) {
+		@mixin font-h6;
+		font-weight: 600 !important;
+	}
 }
 
 .description {
@@ -57,6 +62,10 @@
 	@mixin responsive margin-block-end, 20, 24, 24;
 
 	@media (max-width: 767px) {
+		@mixin font-text14;
+	}
+
+	@media (min-width: 1441px) {
 		@mixin font-text14;
 	}
 }
