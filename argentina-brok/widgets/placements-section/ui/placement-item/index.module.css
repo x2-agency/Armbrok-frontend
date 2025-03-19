@@ -3,4 +3,30 @@
 
 	background-color: var(--gray-200-color);
 	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+		border-radius: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@mixin transition;
+
+		transition-property: background;
+		background: var(--gray-400-color);
+		border-radius: 4px;
+
+		@media (hover: hover) {
+			&:hover {
+				background: var(--gray-500-color);
+			}
+		}
+	}
+
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
 }

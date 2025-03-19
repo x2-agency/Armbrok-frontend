@@ -2,7 +2,6 @@ import parser from 'html-react-parser';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react';
 
-import { SUCCESSFUL_MODAL } from '@/features/feedback-form/model/feedback-form.constants';
 import CrossSVG from '@/public/assets/icons/cross.svg';
 import SuccessfulIcon from '@/public/assets/icons/successful-icon.svg';
 
