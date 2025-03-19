@@ -39,7 +39,7 @@ export type MediaData = {
 		name?: string;
 		url?: string;
 		size?: number;
-		ext?: string;
+		ext?: '.pdf' | '.xlsx';
 	};
 	url?: string;
 };
