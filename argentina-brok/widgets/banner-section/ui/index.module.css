@@ -27,7 +27,7 @@
 }
 
 .root.default {
-	min-height: 100vh;
+	min-height: 100svh;
 
 	.head {
 		@mixin responsive width, 335, 863, 863;
