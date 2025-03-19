@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import { usePathname } from 'next/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -13,6 +14,10 @@ export type NewsSliderProps = {
 };
 
 const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
+	const pathname = usePathname();
+	const isHyLocale = pathname.startsWith('/hy');
+	const isRuLocale = pathname.startsWith('/ru');
+
 	return (
 		<Swiper
 			grabCursor
@@ -38,7 +43,15 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 		>
 			{newsSlider?.map((news, index) => (
 				<SwiperSlide key={news.slug} className={css.sliderItem}>
-					<NewsCard className={css.card} key={index} data={news} />
+					<NewsCard
+						className={cx(
+							css.card,
+							{ [css.hyCard]: isHyLocale },
+							{ [css.ruCard]: isRuLocale }
+						)}
+						key={index}
+						data={news}
+					/>
 				</SwiperSlide>
 			))}
 		</Swiper>

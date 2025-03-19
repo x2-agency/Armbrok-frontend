@@ -20,8 +20,8 @@ export type NewsCardProps = {
 
 export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 	const pathname = usePathname();
-	const isArmbrokMedia = pathname === `/media`;
 
+	const isArmbrokMedia = pathname === `/media`;
 	const isMediaSlug = pathname.startsWith(`/media`);
 	const { hidden, visible, transition } = GRID_ANIMATION;
 	const { publishDate, title, description, author, category, poster, slug } =
