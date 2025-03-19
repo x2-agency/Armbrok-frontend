@@ -90,7 +90,7 @@
 	@mixin responsive border-radius, 4, 4, 4;
 	@mixin responsive margin-block-end, 24, 24, 24;
 
-	border-color: var(--gray-100-color);
+	border-color: #ffffff99;
 	border-style: solid;
 	color: var(--gray-100-color);
 	font-weight: 500;

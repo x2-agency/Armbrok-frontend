@@ -54,7 +54,13 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					backgroundColor="white"
 				/>
 			</HeroContainer>
-			<AwardsSection title={awardsSection?.title} awards={awards?.data} />
+			<AwardsSection
+				title={awardsSection?.title}
+				buttonText={awardsSection?.buttonText}
+				awards={awards?.data}
+				buttonLimit={7}
+				awardsTotal={awards?.meta.pagination.total ?? 7}
+			/>
 			<MembershipSection
 				title={membershipSection?.title}
 				items={membershipSection?.companies}

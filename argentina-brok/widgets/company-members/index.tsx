@@ -22,25 +22,29 @@ export const CompanyMembers = ({ tabs, title }: CompanyStructureSection) => {
 		return null;
 	}
 
-	const tabsElem = tabs.map(tab => {
-		const employeesList = tab.content.find(item => 'employees' in item) as
-			| EmployeeList
-			| undefined;
+	const tabsElem = tabs
+		.map(tab => {
+			const employeesList = tab.content.find(item => 'employees' in item) as
+				| EmployeeList
+				| undefined;
 
-		return tab.tabName === 'Team' ||
-			tab.tabName === 'Команда' ||
-			tab.tabName === 'Թիմ'
-			? {
-					label: tab.tabName,
-					content: employeesList ? (
+			const isTeamTab = ['Team', 'Команда', 'Թիմ'].includes(tab.tabName);
+
+			return {
+				label: tab.tabName,
+				content: isTeamTab ? (
+					employeesList ? (
 						<CompanyMembersSection employees={employeesList.employees} />
-					) : null,
-				}
-			: {
-					label: tab.tabName,
-					content: isMobile ? <TreeMobile /> : <TreeDesktop />,
-				};
-	});
+					) : null
+				) : isMobile ? (
+					<TreeMobile />
+				) : (
+					<TreeDesktop />
+				),
+				isTeamTab, // Добавляем флаг для сортировки
+			};
+		})
+		.sort(a => (a.isTeamTab ? -1 : 1)); // Перемещаем "Команду" вверх
 
 	return (
 		<Container className={css.root}>

@@ -66,6 +66,26 @@ export const MemberModal = ({
 	}, [isModalOpen]);
 
 	useEffect(() => {
+		const currentRef = ref.current;
+
+		const handleBackdropClick = (event: MouseEvent) => {
+			if (event.target === currentRef) {
+				toggleModalOpen(false);
+			}
+		};
+
+		if (currentRef) {
+			currentRef.addEventListener('click', handleBackdropClick);
+		}
+
+		return () => {
+			if (currentRef) {
+				currentRef.removeEventListener('click', handleBackdropClick);
+			}
+		};
+	}, [toggleModalOpen]);
+
+	useEffect(() => {
 		const modal = ref.current;
 
 		const handleClose = () => {
@@ -99,12 +119,8 @@ export const MemberModal = ({
 				fullName={fullName}
 				position={position}
 			/>
-			<ModalContent
-				className={css.content}
-				title={'Qualifications summary'}
-				content={qualification}
-			/>
-			<ModalContent className={css.content} title={'Career'} content={career} />
+			<ModalContent className={css.content} content={qualification} />
+			<ModalContent className={css.content} content={career} />
 		</dialog>
 	);
 };

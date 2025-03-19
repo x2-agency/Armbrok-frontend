@@ -2,6 +2,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
 import { getAwards } from '@/shared/api/get-awards';
@@ -19,6 +20,8 @@ export const AwardsSection = ({
 	awards,
 	className,
 	buttonText,
+	awardsTotal,
+	buttonLimit,
 }: AwardSectionProps) => {
 	const [isOpen, toggleOpen] = useState<boolean>(false);
 	const [isFetched, toggleFetched] = useState<boolean>(false);
@@ -28,6 +31,7 @@ export const AwardsSection = ({
 	const [contentHeight, setContentHeight] = useState<number>(0);
 	const contentRef = useRef<HTMLUListElement>(null);
 	const [isLoading, toggleLoading] = useState<boolean>(false);
+	const t = useTranslations('closeAwardButton');
 
 	const getAllAwards = async () => {
 		const response = await getAwards({});
@@ -112,28 +116,32 @@ export const AwardsSection = ({
 					</li>
 				))}
 			</ul>
-			{isLoading ? (
-				<Preloader className={css.loading} />
-			) : (
+			{awardsTotal > buttonLimit && (
 				<>
-					{isOpen ? (
-						<Button
-							variant="next"
-							iconRotate={180}
-							className={cx(css.button, css.close)}
-							onClick={() => toggleOpen(false)}
-						>
-							Сlose awards
-						</Button>
+					{isLoading ? (
+						<Preloader className={css.loading} />
 					) : (
-						<Button
-							variant="next"
-							iconRotate={180}
-							className={css.button}
-							onClick={() => toggleOpen(true)}
-						>
-							{buttonText ? parser(buttonText) : 'View all awards'}
-						</Button>
+						<>
+							{isOpen ? (
+								<Button
+									variant="next"
+									iconRotate={180}
+									className={cx(css.button, css.close)}
+									onClick={() => toggleOpen(false)}
+								>
+									{t('text')}
+								</Button>
+							) : (
+								<Button
+									variant="next"
+									iconRotate={180}
+									className={css.button}
+									onClick={() => toggleOpen(true)}
+								>
+									{buttonText ? parser(buttonText) : 'View all awards'}
+								</Button>
+							)}
+						</>
 					)}
 				</>
 			)}

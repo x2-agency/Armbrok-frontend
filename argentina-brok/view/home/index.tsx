@@ -54,7 +54,13 @@ export const Home: NextPage<{
 			<AssetManagment data={assetManagementCard} />
 			<Corporate cards={financialSolutionsSection} />
 			<Start data={investingStepsSection} />
-			<AwardsSection title={awardSection?.title} awards={initialAwards?.data} />
+			<AwardsSection
+				title={awardSection?.title}
+				awards={initialAwards?.data}
+				buttonText={awardSection?.buttonText}
+				buttonLimit={4}
+				awardsTotal={initialAwards?.meta.pagination.total ?? 4}
+			/>
 			<CompaniesGroup data={companiesSection} />
 			<NewsSectionHome data={newsSection} />
 			<InteractiveVideo data={interviewSection} />
