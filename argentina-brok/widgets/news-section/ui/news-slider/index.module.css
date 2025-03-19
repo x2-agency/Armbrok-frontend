@@ -42,5 +42,5 @@
 .card {
 	box-sizing: border-box;
 	@mixin responsive width, 330, 384, 384;
-	@mixin responsive min-height, 322, 414, 472;
+	@mixin responsive min-height, 322, 410, 414;
 }

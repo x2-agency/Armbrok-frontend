@@ -20,9 +20,7 @@ export type NewsCardProps = {
 
 export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 	const pathname = usePathname();
-
 	const isArmbrokMedia = pathname === `/media`;
-	const isHomePage = pathname === `/`;
 
 	const isMediaSlug = pathname.startsWith(`/media`);
 	const { hidden, visible, transition } = GRID_ANIMATION;
@@ -36,8 +34,13 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 	}).format(new Date(publishDate ?? ''));
 
 	const truncatedDescription =
-		(isMediaSlug || isHomePage) && description
-			? `${description.slice(0, 180)}...`
+		description && description.length > 200
+			? `${description.slice(0, 200)}...`
+			: description;
+
+	const mediaDescription =
+		description && description.length > 250
+			? `${description.slice(0, 250)}...`
 			: description;
 
 	return (
@@ -59,12 +62,26 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 			)}
 			<div className={css.textWrap}>
 				<time className={css.time}>{formattedDate ?? ''}</time>
-				<h5
-					className={cx(css.title, { [css.armbrokMediaTitle]: isArmbrokMedia })}
-				>
-					{parser(title ?? '')}
-				</h5>
-				<p className={css.description}>{parser(truncatedDescription ?? '')}</p>
+				<header className={css.header}>
+					<h5
+						className={cx(css.title, {
+							[css.armbrokMediaTitle]: isArmbrokMedia,
+						})}
+					>
+						{parser(title ?? '')}
+					</h5>
+					<Link
+						className={cx(css.linkTitle, { [css.cursor]: isMediaSlug })}
+						href={`/media/${slug}`}
+					/>
+				</header>
+				<p className={css.description}>
+					{parser(
+						isArmbrokMedia
+							? (mediaDescription ?? '')
+							: (truncatedDescription ?? '')
+					)}
+				</p>
 			</div>
 
 			<div className={css.wrap}>
@@ -89,7 +106,10 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 
 				{category && <p className={css.tag}>{category?.name}</p>}
 			</div>
-			<Link className={css.link} href={`/media/${slug}`} />
+			<Link
+				className={cx(css.link, { [css.cursor]: isMediaSlug })}
+				href={`/media/${slug}`}
+			/>
 		</motion.article>
 	);
 };
