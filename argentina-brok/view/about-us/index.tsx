@@ -34,7 +34,6 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	awards,
 }) => {
 	useUpdateFooterData(publishedAt);
-	console.log(awardsSection);
 	return (
 		<>
 			<BannerSection
