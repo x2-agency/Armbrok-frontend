@@ -17,6 +17,10 @@
 		content: '—';
 	}
 
+	strong {
+		font-weight: 500;
+	}
+
 	@media (max-width: 767px) {
 		@mixin font-text14;
 	}
