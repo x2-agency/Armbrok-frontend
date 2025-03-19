@@ -5,4 +5,6 @@ export type AwardSectionProps = {
 	title?: string;
 	className?: string;
 	buttonText?: string;
+	buttonLimit: number;
+	awardsTotal: number;
 };

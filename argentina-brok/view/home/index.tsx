@@ -58,6 +58,8 @@ export const Home: NextPage<{
 				title={awardSection?.title}
 				awards={initialAwards?.data}
 				buttonText={awardSection?.buttonText}
+				buttonLimit={4}
+				awardsTotal={initialAwards?.meta.pagination.total ?? 4}
 			/>
 			<CompaniesGroup data={companiesSection} />
 			<NewsSectionHome data={newsSection} />

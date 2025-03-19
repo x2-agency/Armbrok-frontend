@@ -473,6 +473,14 @@ export type Award = {
 
 export type AwardsResponse = {
 	data: Array<Award>;
+	meta: {
+		pagination: {
+			page: number;
+			pageSize: number;
+			pageCount: number;
+			total: number;
+		};
+	};
 };
 
 /* Document Tabs */

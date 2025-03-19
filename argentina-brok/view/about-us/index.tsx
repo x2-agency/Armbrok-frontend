@@ -59,6 +59,8 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 				title={awardsSection?.title}
 				buttonText={awardsSection?.buttonText}
 				awards={awards?.data}
+				buttonLimit={7}
+				awardsTotal={awards?.meta.pagination.total ?? 7}
 			/>
 			<MembershipSection
 				title={membershipSection?.title}

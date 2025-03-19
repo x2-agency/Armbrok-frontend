@@ -20,6 +20,8 @@ export const AwardsSection = ({
 	awards,
 	className,
 	buttonText,
+	awardsTotal,
+	buttonLimit,
 }: AwardSectionProps) => {
 	const [isOpen, toggleOpen] = useState<boolean>(false);
 	const [isFetched, toggleFetched] = useState<boolean>(false);
@@ -37,7 +39,7 @@ export const AwardsSection = ({
 		return response;
 	};
 
-	console.log(buttonText)
+	console.log(buttonText);
 
 	useEffect(() => {
 		if (contentRef.current) {
@@ -116,28 +118,32 @@ export const AwardsSection = ({
 					</li>
 				))}
 			</ul>
-			{isLoading ? (
-				<Preloader className={css.loading} />
-			) : (
+			{awardsTotal > buttonLimit && (
 				<>
-					{isOpen ? (
-						<Button
-							variant="next"
-							iconRotate={180}
-							className={cx(css.button, css.close)}
-							onClick={() => toggleOpen(false)}
-						>
-							{t('text')}
-						</Button>
+					{isLoading ? (
+						<Preloader className={css.loading} />
 					) : (
-						<Button
-							variant="next"
-							iconRotate={180}
-							className={css.button}
-							onClick={() => toggleOpen(true)}
-						>
-							{buttonText ? parser(buttonText) : 'View all awards'}
-						</Button>
+						<>
+							{isOpen ? (
+								<Button
+									variant="next"
+									iconRotate={180}
+									className={cx(css.button, css.close)}
+									onClick={() => toggleOpen(false)}
+								>
+									{t('text')}
+								</Button>
+							) : (
+								<Button
+									variant="next"
+									iconRotate={180}
+									className={css.button}
+									onClick={() => toggleOpen(true)}
+								>
+									{buttonText ? parser(buttonText) : 'View all awards'}
+								</Button>
+							)}
+						</>
 					)}
 				</>
 			)}
