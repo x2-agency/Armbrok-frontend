@@ -10,17 +10,19 @@ export const PlacementHead = ({
 	logo,
 	name,
 	launchDate,
+	launchDateLabel,
 }: SecurityPaperItem) => {
 	return (
 		<header className={css.header}>
 			<img src={logo?.url} alt="icon" className={css.icon} />
 			<div className={css.titleBlock}>
 				{name && <h2 className={css.title}>{parser(name)}</h2>}
-				<div className={css.dateLabel}>
-					{launchDate && (
+				{launchDate && launchDateLabel && (
+					<div className={css.dateLabel}>
+						<p className={css.date}>{parser(launchDateLabel ?? '')}</p>
 						<time className={css.date}>{formatDate(launchDate)}</time>
-					)}
-				</div>
+					</div>
+				)}
 			</div>
 		</header>
 	);
