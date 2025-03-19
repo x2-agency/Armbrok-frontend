@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
-	@mixin responsive gap, 4, 6, 6;
+	@mixin responsive gap, 1, 1, 1;
 	@mixin responsive padding-inline-end, unset, 64, 64;
 }
 
