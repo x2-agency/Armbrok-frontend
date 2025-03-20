@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import { getArticle } from '@/shared/api/get-article';
 import { getMediaPage } from '@/shared/api/get-media-page';
@@ -28,40 +29,21 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export async function getStaticParams() {
+export const revalidate = 60;
+
+const MediaPage = async () => {
 	const [initialMediaData, initialArticles] = await Promise.all([
 		getMediaPage(),
-		getArticle(),
-	]);
-
-	return {
-		props: {
-			initialMediaData,
-			initialArticles,
-		},
-		revalidate: 60,
-	};
-}
-
-type SearchParams = {
-	category?: string;
-};
-
-const MediaPage = async ({ searchParams }: { searchParams: SearchParams }) => {
-	const { category } = await searchParams;
-
-	const tag = category && category !== 'all' ? category : undefined;
-
-	const [initialMediaData, initialArticles] = await Promise.all([
-		getMediaPage(),
-		getArticle(tag ? { filters: { category: tag } } : {}),
+		getArticle({ limit: 0 }),
 	]);
 
 	return (
-		<Media
-			initialMediaData={initialMediaData}
-			initialArticles={initialArticles}
-		/>
+		<Suspense>
+			<Media
+				initialMediaData={initialMediaData}
+				initialArticles={initialArticles}
+			/>
+		</Suspense>
 	);
 };
 

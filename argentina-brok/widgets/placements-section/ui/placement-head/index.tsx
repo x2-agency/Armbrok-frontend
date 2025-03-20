@@ -17,14 +17,12 @@ export const PlacementHead = ({
 			<img src={logo?.url} alt="icon" className={css.icon} />
 			<div className={css.titleBlock}>
 				{name && <h2 className={css.title}>{parser(name)}</h2>}
-				<div className={css.dateLabel}>
-					{launchDateLabel && (
-						<p className={css.time}>{parser(launchDateLabel)}</p>
-					)}
-					{launchDate && (
+				{launchDate && launchDateLabel && (
+					<div className={css.dateLabel}>
+						<p className={css.date}>{parser(launchDateLabel ?? '')}</p>
 						<time className={css.date}>{formatDate(launchDate)}</time>
-					)}
-				</div>
+					</div>
+				)}
 			</div>
 		</header>
 	);

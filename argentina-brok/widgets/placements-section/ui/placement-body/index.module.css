@@ -1,3 +1,33 @@
+.root {
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	@mixin responsive height, 430, 400, 400;
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+		border-radius: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@mixin transition;
+
+		transition-property: background;
+		background: var(--gray-400-color);
+		border-radius: 4px;
+
+		@media (hover: hover) {
+			&:hover {
+				background: var(--gray-500-color);
+			}
+		}
+	}
+
+	&::-webkit-scrollbar {
+		@mixin responsive width, 6, 6, 6;
+		@mixin responsive height, 4, 4, 4;
+	}
+}
+
 .placementArticle {
 	@mixin res padding-block, 3.2rem, 0.833rem, 0.75rem;
 

@@ -12,6 +12,8 @@
 
 	@media (max-width: 767px) {
 		@mixin font-h4;
+		@mixin responsive width, 320;
+		margin-inline: auto;
 		font-weight: 700;
 	}
 }
