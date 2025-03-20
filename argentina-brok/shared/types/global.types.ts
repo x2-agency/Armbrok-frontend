@@ -211,7 +211,7 @@ export type CountriesSection = {
 /* DOCUMENTS SECTION */
 
 export type DocumentsSectionProps = ItemDetail & {
-	documents: Array<MediaData>;
+	documents?: Array<MediaData>;
 };
 
 /* ACCORDION SECTION */
