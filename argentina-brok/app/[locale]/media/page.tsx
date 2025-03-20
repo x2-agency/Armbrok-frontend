@@ -28,6 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
+export const revalidate = 60;
+
 type SearchParams = {
 	category?: string;
 };
