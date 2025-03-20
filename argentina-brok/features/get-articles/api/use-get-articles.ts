@@ -2,6 +2,7 @@
 
 import type { UseInfiniteQueryResult } from '@tanstack/react-query';
 import { useInfiniteQuery } from '@tanstack/react-query';
+import { useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
 
 import type { GetArticlesParams } from '@/shared/api/get-article';
@@ -33,38 +34,24 @@ export const useGetArticles = (
 	params?: GetArticlesParams,
 	initialData?: ArticlesData
 ): UseInfiniteQueryResult<InfiniteQueryPage<ArticlesData>, Error> => {
-	const stableFilters = useMemo(() => params?.filters, [params?.filters]);
+	const searchParams = useSearchParams();
+	const category = searchParams.get('category') || 'all';
 
-	const initialPageParams = initialData?.meta?.pagination.page
-		? Array.from({ length: initialData.meta.pagination.page }, (_, i) => i + 1)
-		: [];
-
-	const initialInfinitePage: InfiniteQueryPage<ArticlesData> = {
-		pages: [
-			initialData ?? {
-				data: [],
-				meta: {
-					pagination: DEFAULT_PAGED_RESPONSE,
-				},
-			},
-		],
-		pageParams: initialPageParams,
-	};
+	const stableFilters = useMemo(
+		() => ({ ...params?.filters, category }),
+		[params, category]
+	);
 
 	return useInfiniteQuery({
 		queryKey: [QUERY_KEYS.articles, stableFilters],
-		initialData: initialInfinitePage,
 		initialPageParam: 1,
-		queryFn: ({ pageParam }) => getArticle({ ...params, page: pageParam }),
+		queryFn: ({ pageParam }) =>
+			getArticle({ ...params, page: pageParam, filters: stableFilters }),
 		getNextPageParam: (lastPage: ArticlesData) => {
 			const { page, pageCount } = lastPage.meta?.pagination ?? {};
-
-			if (page && pageCount && page < pageCount) {
-				return page + 1;
-			}
-			return undefined;
+			return page && pageCount && page < pageCount ? page + 1 : undefined;
 		},
 		staleTime: 1000 * 60 * 5,
-		placeholderData: prevData => prevData ?? initialInfinitePage,
+		gcTime: 1000 * 60 * 60,
 	});
 };

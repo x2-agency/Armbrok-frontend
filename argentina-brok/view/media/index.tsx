@@ -26,7 +26,7 @@ export const Media: NextPage<{
 	const [searchQuery, setSearchQuery] = useState('');
 	const [searchAnimationKey, setSearchAnimationKey] = useState('');
 
-	const { glossaryCard, emailForm, title, description, publishedAt } =
+	const { emailForm, title, description, publishedAt } =
 		initialMediaData?.data ?? {};
 	const router = useRouter();
 	const searchParams = useSearchParams();

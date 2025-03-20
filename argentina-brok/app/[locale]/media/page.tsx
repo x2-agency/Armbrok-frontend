@@ -28,21 +28,6 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export async function getStaticParams() {
-	const [initialMediaData, initialArticles] = await Promise.all([
-		getMediaPage(),
-		getArticle(),
-	]);
-
-	return {
-		props: {
-			initialMediaData,
-			initialArticles,
-		},
-		revalidate: 60,
-	};
-}
-
 type SearchParams = {
 	category?: string;
 };
@@ -54,7 +39,7 @@ const MediaPage = async ({ searchParams }: { searchParams: SearchParams }) => {
 
 	const [initialMediaData, initialArticles] = await Promise.all([
 		getMediaPage(),
-		getArticle(tag ? { filters: { category: tag } } : {}),
+		getArticle(tag ? { filters: { category: tag }, limit: 0 } : {}),
 	]);
 
 	return (
