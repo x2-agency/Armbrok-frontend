@@ -28,21 +28,12 @@
 	font-weight: 700;
 	color: var(--gray-800-color);
 	@mixin responsive padding-block-end, 10, 16, 16;
-
-	@media (max-width: 767px) {
-		@mixin font-h4;
-		font-weight: 700;
-	}
 }
 
 .description {
 	@mixin responsive padding-block-end, 50, 40, 40;
 	@mixin font-h6;
 	color: var(--gray-600-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }
 
 .wrap:has(+ .imageWrap) {

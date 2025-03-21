@@ -10,11 +10,6 @@
 	font-weight: 600;
 	text-align: center;
 	margin-inline: auto;
-
-	@media (max-width: 767px) {
-		@mixin font-h4;
-		font-weight: 600;
-	}
 }
 
 .awardWrap {

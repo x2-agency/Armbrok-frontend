@@ -91,6 +91,7 @@
 
 .description {
 	@mixin font-text16;
+	font-weight: 500;
 	color: var(--gray-100-color);
 	@mixin responsive margin-inline-start, 16, 16, 16;
 }

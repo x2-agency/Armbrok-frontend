@@ -31,8 +31,6 @@
 	}
 
 	@media (max-width: 767px) {
-		@mixin font-text14;
-		font-weight: 500;
 		width: auto;
 		@mixin responsive padding-inline, 8;
 	}

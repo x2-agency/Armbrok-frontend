@@ -61,10 +61,6 @@
 	color: var(--gray-700-color);
 	@mixin responsive margin-block-end, 20, 24, 24;
 
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
-
 	@media (min-width: 1441px) {
 		@mixin font-text14;
 	}
@@ -105,11 +101,6 @@
 	@mixin responsive height, 40, 32, 32;
 }
 
-.mediaImgWrap {
-	@mixin responsive width, 32, 70, 70;
-	@mixin responsive height, 32, 70, 70;
-}
-
 .avatar {
 	width: 100%;
 	height: 100%;
@@ -118,6 +109,7 @@
 }
 
 .name {
+	font-weight: 500 !important;
 	@mixin font-text14;
 	text-align: start;
 }
@@ -171,12 +163,10 @@
 .armbrokMediaTitle {
 	@mixin font-h3;
 	font-weight: 600;
-	@media (max-width: 767px) {
-		@mixin font-h5;
-	}
 }
 
 .armbrokMediaRoot {
+	cursor: pointer;
 	@mixin responsive width, 336, 760, 760;
 	padding: unset;
 }

@@ -11,18 +11,9 @@
 	@mixin font-h3;
 	font-weight: 600;
 	color: var(--gray-100-color);
-
-	@media (max-width: 767px) {
-		@mixin font-h5;
-		font-weight: 600;
-	}
 }
 
 .description {
 	@mixin font-text16;
 	color: var(--gray-300-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }

@@ -2,11 +2,6 @@
 	@mixin font-h2;
 	font-weight: 600;
 	display: inline-flex;
-
-	@media (max-width: 767px) {
-		@mixin font-h4;
-		font-weight: 600;
-	}
 }
 
 .cursor {

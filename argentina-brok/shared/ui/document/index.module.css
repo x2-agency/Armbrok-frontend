@@ -38,10 +38,6 @@
 	@mixin responsive padding-block-end, 4, 4, 4;
 
 	font-weight: 600;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-	}
 }
 
 .info {
@@ -70,7 +66,8 @@
 	height: fit-content;
 
 	@media (max-width: 767px) {
-		margin-inline: auto;
+		width: 100%;
+		justify-content: end;
 	}
 }
 

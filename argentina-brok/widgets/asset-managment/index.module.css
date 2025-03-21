@@ -65,22 +65,13 @@
 
 .title {
 	@mixin font-h2;
-	font-weight: 700;
+	font-weight: 600;
 	@mixin responsive padding-block-end, 10, 16, 16;
-
-	@media (max-width: 767px) {
-		@mixin font-h4;
-		font-weight: 700;
-	}
 }
 
 .description {
 	@mixin font-text20;
 	@mixin responsive padding-block-end, 20, 62, 62;
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }
 
 .imgWrap {

@@ -38,11 +38,6 @@
 	@mixin font-text16;
 
 	font-weight: 500;
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-		font-weight: 500;
-	}
 }
 
 .hyAbout {
@@ -55,9 +50,4 @@
 	@mixin responsive padding-block-end, 1, 4, 4;
 
 	font-weight: 600;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-		font-weight: 600;
-	}
 }

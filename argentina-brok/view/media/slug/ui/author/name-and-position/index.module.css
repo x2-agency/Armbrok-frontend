@@ -8,11 +8,8 @@
 
 .name {
 	@mixin font-h6;
+	font-weight: 500;
 	text-align: start;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-	}
 }
 
 .position {

@@ -43,7 +43,7 @@
 .fullName {
 	@mixin font-text20;
 
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .position {
@@ -54,10 +54,5 @@
 
 .story {
 	@mixin font-text18;
-
 	color: var(--gray-700-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }

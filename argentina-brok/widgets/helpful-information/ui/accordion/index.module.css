@@ -74,7 +74,6 @@
 		}
 
 		@media (max-width: 767px) {
-			@mixin font-text14;
 			padding-block: 2rem;
 			padding-inline-start: 0;
 			display: flex;
@@ -82,24 +81,11 @@
 			gap: 2rem;
 		}
 	}
-
-	p,
-	li,
-	span {
-		@media (max-width: 767px) {
-			@mixin font-text14;
-		}
-	}
 }
 
 .title {
 	@mixin font-text20;
 	font-weight: 500;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-		font-weight: 500;
-	}
 }
 
 .icon {

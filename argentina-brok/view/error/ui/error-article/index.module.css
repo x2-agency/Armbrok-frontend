@@ -24,4 +24,12 @@
 	&.withButton {
 		@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem;
 	}
+
+	@media (max-width: 767px) {
+		padding-inline: 5.33rem;
+
+		br {
+			display: none;
+		}
+	}
 }
