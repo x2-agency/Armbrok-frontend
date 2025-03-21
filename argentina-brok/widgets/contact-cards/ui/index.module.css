@@ -41,20 +41,11 @@
 	@mixin font-text20;
 	@mixin responsive padding-block-end, 2, 8, 8;
 	font-weight: 500;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-		font-weight: 500;
-	}
 }
 
 .description {
 	@mixin font-text16;
 	color: var(--gray-600-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }
 
 .contacts {
@@ -74,10 +65,4 @@
 
 	font-weight: 500;
 	color: var(--red-600-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-
-		font-weight: 500;
-	}
 }

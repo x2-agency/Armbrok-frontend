@@ -68,23 +68,17 @@
 
 		color: var(--gray-100-color);
 		font-weight: 700;
-
-		@media (max-width: 767px) {
-			@mixin font-h2;
-			font-weight: 700;
-		}
 	}
 }
 
 .description {
-	@mixin font-h4;
+	@mixin font-h5;
 	color: var(--gray-100-color);
 	@mixin responsive max-width, unset, 680, 680;
 	@mixin responsive padding-block-end, 20, 40, 40;
 
 	@media (max-width: 767px) {
 		width: 100%;
-		@mixin font-text14;
 	}
 }
 

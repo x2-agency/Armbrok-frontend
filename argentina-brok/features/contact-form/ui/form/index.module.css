@@ -16,23 +16,12 @@
 .title {
 	@mixin font-h2;
 	@mixin responsive padding-block-end, 10, 24, 24;
-
 	font-weight: 600;
-
-	@media (max-width: 767px) {
-		@mixin font-h3;
-		font-weight: 600;
-	}
 }
 
 .description {
 	@mixin font-text18;
-
 	color: var(--gray-600-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-	}
 }
 
 .inputs {

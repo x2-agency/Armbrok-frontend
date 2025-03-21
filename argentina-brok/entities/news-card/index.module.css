@@ -61,10 +61,6 @@
 	color: var(--gray-700-color);
 	@mixin responsive margin-block-end, 20, 24, 24;
 
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
-
 	@media (min-width: 1441px) {
 		@mixin font-text14;
 	}
@@ -167,9 +163,6 @@
 .armbrokMediaTitle {
 	@mixin font-h3;
 	font-weight: 600;
-	@media (max-width: 767px) {
-		@mixin font-h5;
-	}
 }
 
 .armbrokMediaRoot {

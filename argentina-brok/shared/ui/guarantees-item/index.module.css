@@ -9,11 +9,6 @@
 
 	font-weight: 600;
 	text-align: center;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-		font-weight: 600;
-	}
 }
 
 .title:has(+ .description) {
@@ -30,8 +25,4 @@
 
 	color: var(--gray-700-color);
 	text-align: center;
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }

@@ -54,10 +54,5 @@
 
 .story {
 	@mixin font-text18;
-
 	color: var(--gray-700-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }

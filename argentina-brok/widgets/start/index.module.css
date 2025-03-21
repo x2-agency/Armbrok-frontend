@@ -16,8 +16,6 @@
 	@mixin responsive padding-block-end, 20, 40, 40;
 
 	@media (max-width: 767px) {
-		@mixin font-h4;
-		font-weight: 600;
 		text-align: center;
 	}
 }

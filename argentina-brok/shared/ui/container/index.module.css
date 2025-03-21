@@ -22,6 +22,7 @@
 	width: 83.33vw;
 	@mixin res margin-inline, unset, auto, auto;
 	@mixin res width, 100%, 83.33vw, 75rem; /* 1200px */
+
 	@media (max-width: 767px) {
 		padding-inline: 5.333rem;
 	}

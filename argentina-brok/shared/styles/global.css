@@ -11,18 +11,6 @@
 	--text14: 0.972rem; /* 14px */
 	--text12: 0.833rem; /* 12px */
 
-	--h1-font-weight: 400;
-	--h2-font-weight: 400;
-	--h3-font-weight: 400;
-	--h4-font-weight: 400;
-	--h5-font-weight: 400;
-	--h6-font-weight: 400;
-	--text20-font-weight: 400;
-	--text18-font-weight: 400;
-	--text16-font-weight: 400;
-	--text14-font-weight: 400;
-	--text12-font-weight: 400;
-
 	--h1-line-height: 1.12; /* 72px */
 	--h2-line-height: 1.2; /* 48px */
 	--h3-line-height: 1.25; /* 40px */
@@ -72,17 +60,17 @@
 	}
 
 	@media screen and (max-width: 767px) {
-		--h1: clamp(8.533rem, 1rem, 4.172rem);
-		--h2: clamp(8.533rem, 1rem, 4.172rem);
-		--h3: clamp(8.533rem, 1rem, 4.172rem);
-		--h4: clamp(6.4rem, 1rem, 3.129rem);
-		--h5: clamp(5.333rem, 1rem, 2.608rem);
-		--h6: clamp(4.8rem, 1rem, 2.347rem);
-		--text20: clamp(4.267rem, 1rem, 2.086rem);
-		--text18: clamp(4.8rem, 1rem, 2.347rem);
-		--text16: clamp(4.267rem, 1rem, 2.086rem);
-		--text14: clamp(3.733rem, 1rem, 1.825rem);
-		--text12: clamp(3.2rem, 1rem, 1.565rem);
+		--h1: 8.533rem; /* 32px */
+		--h2: 6.4rem; /* 24px */
+		--h3: 5.333rem; /* 20px */
+		--h4: 4.8rem; /* 18px */
+		--h5: 4.267rem; /* 16px */
+		--h6: 4.267rem; /* 16px */
+		--text20: 4.267rem; /* 16px */
+		--text18: 4.267rem; /* 16px */
+		--text16: 3.733rem; /* 14px */
+		--text14: 3.733rem; /* 14px */
+		--text12: 3.2rem; /* 12px */
 	}
 }
 
@@ -175,6 +163,7 @@ h6 {
 	width: 83.33vw;
 	@mixin res margin-inline, unset, auto, auto;
 	@mixin res width, 100%, 83.33vw, 75rem; /* 1200px */
+
 	@media (max-width: 767px) {
 		padding-inline: 5.333rem;
 	}

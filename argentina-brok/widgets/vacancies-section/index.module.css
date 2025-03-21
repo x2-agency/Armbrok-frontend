@@ -12,20 +12,11 @@
 	@mixin font-h2;
 
 	font-weight: 600;
-
-	@media (max-width: 767px) {
-		@mixin font-h4;
-		font-weight: 600;
-	}
 }
 
 .description {
 	@mixin font-text20;
 	@mixin responsive padding-block-end, 40, 40, 40;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-	}
 }
 
 .vacancies {

@@ -4,10 +4,6 @@
 
 	color: var(--gray-700-color);
 	opacity: 0.7;
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }
 
 .position {
@@ -18,9 +14,4 @@
 	@mixin responsive padding-block-end, 4, 4, 4;
 	@mixin font-text18;
 	font-weight: 600;
-
-	@media (max-width: 767px) {
-		font-weight: 600 !important;
-		@mixin font-text16;
-	}
 }

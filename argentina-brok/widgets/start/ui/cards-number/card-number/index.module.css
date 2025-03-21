@@ -80,11 +80,6 @@
 .title {
 	@mixin font-h4;
 	font-weight: 500;
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-		font-weight: 500;
-	}
 }
 
 .number {
@@ -98,10 +93,6 @@
 .description {
 	@mixin font-text16;
 	color: var(--gray-600-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text14;
-	}
 }
 
 .wrapNumber {

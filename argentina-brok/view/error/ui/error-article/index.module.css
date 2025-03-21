@@ -14,12 +14,6 @@
 	@mixin font-h1;
 
 	font-weight: 700;
-
-	@media (max-width: 767px) {
-		@mixin font-h2;
-
-		font-weight: 700;
-	}
 }
 
 .description {
@@ -33,7 +27,6 @@
 
 	@media (max-width: 767px) {
 		padding-inline: 5.33rem;
-		@mixin font-text14;
 
 		br {
 			display: none;

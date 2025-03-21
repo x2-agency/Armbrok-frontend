@@ -19,11 +19,6 @@
 	@mixin font-h4;
 	font-weight: 600;
 	color: var(--gray-100-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-		font-weight: 600 !important;
-	}
 }
 
 .link {

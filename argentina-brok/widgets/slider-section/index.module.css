@@ -12,13 +12,7 @@
 
 .title {
 	@mixin font-h2;
-
 	font-weight: 600;
-
-	@media (max-width: 767px) {
-		@mixin font-h4;
-		font-weight: 600;
-	}
 }
 
 .description {
@@ -26,10 +20,6 @@
 	@mixin responsive max-width, 335, 700, 700;
 
 	color: var(--gray-800-color);
-
-	@media (max-width: 767px) {
-		@mixin font-text16;
-	}
 }
 
 .titleBlock {
