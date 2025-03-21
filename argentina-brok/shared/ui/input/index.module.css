@@ -34,7 +34,7 @@
 	@mixin responsive padding-block-end, 6, 6, 6;
 
 	display: block;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 .input::placeholder {
@@ -51,7 +51,7 @@
 	@mixin responsive padding-block-start, 6, 6, 6;
 	display: block;
 
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .placeholder {

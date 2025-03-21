@@ -90,9 +90,7 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 						[css.mediaAuthorWrap]: isArmbrokMedia,
 					})}
 				>
-					<div
-						className={cx(css.imgWrap, { [css.mediaImgWrap]: isArmbrokMedia })}
-					>
+					<div className={cx(css.imgWrap)}>
 						{author?.avatar?.url && (
 							<img
 								className={css.avatar}

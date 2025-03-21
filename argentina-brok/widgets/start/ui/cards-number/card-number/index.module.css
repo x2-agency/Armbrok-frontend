@@ -79,11 +79,11 @@
 .number,
 .title {
 	@mixin font-h4;
-	font-weight: 700;
+	font-weight: 500;
 
 	@media (max-width: 767px) {
 		@mixin font-text16;
-		font-weight: 700;
+		font-weight: 500;
 	}
 }
 

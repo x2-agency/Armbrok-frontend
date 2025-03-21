@@ -104,7 +104,7 @@
 	@mixin font-text14;
 
 	transition-property: color;
-	font-weight: 700;
+	font-weight: 600;
 	color: var(--red-600-color);
 
 	@media (hover: hover) {

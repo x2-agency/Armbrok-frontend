@@ -10,12 +10,12 @@
 
 .title {
 	@mixin font-h2;
-	font-weight: 700;
+	font-weight: 600;
 	@mixin responsive padding-block-end, 5, 16, 16;
 
 	@media (max-width: 767px) {
 		@mixin font-h4;
-		font-weight: 700;
+		font-weight: 600;
 	}
 }
 
