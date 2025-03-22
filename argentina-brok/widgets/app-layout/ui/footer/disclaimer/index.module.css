@@ -6,8 +6,15 @@
 	@mixin responsive padding-block-end, 30, 40, 40;
 }
 
-.text,
-.time {
-	color: var(--gray-500-color);
+.time,
+.text {
 	@mixin font-text14;
+}
+
+.text {
+	color: var(--gray-500-color);
+}
+
+.time {
+	color: var(--gray-400-color);
 }

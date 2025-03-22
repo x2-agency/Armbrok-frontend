@@ -22,7 +22,7 @@ export const InvestorRelations: NextPage<
 	heroSection,
 	transparencySection,
 	residenceCountries,
-	// shareholdersMeetingsSection,
+	shareholdersMeetingsSection,
 	dividendPolicySection,
 	disclaimer,
 	remunerationSection,
@@ -52,11 +52,11 @@ export const InvestorRelations: NextPage<
 			<Shareholders {...shareholdersSection} />
 			<CountriesSection residenceCountriesSection={residenceCountries} />
 			{documentTabsSection && <CorporateReporting {...documentTabsSection} />}
-			{/* <StatutoryDocuments
+			<StatutoryDocuments
 				documentsSection={shareholdersMeetingsSection}
 				columns={2}
 				fileDirection="row"
-			/> */}
+			/>
 			<TitleSection
 				className={css.dividend}
 				title={dividendPolicySection?.title ?? ''}

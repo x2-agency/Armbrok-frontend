@@ -12,5 +12,9 @@
 }
 
 .form {
-	margin-inline: auto;
+	@mixin responsive padding-inline, 20, 120, 120;
+
+	@media (min-width: 1441px) {
+		padding-inline-start: calc(8rem + (100vw - 1440px) / 2);
+	}
 }

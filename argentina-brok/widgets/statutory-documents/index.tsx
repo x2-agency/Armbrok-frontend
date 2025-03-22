@@ -24,10 +24,6 @@ export const StatutoryDocuments = ({
 }: StatutoryDocumentsProps) => {
 	const { title, documents, description } = documentsSection ?? {};
 
-	if (!documents || documents.length === 0) {
-		return null;
-	}
-
 	return (
 		<Container className={cx(css.root, className)}>
 			{(title || description) && (
@@ -42,31 +38,33 @@ export const StatutoryDocuments = ({
 					)}
 				</div>
 			)}
-			<ul
-				className={cx(css.documents, {
-					[css.centered]: documents.length === 1,
-				})}
-				style={
-					documents.length !== 1
-						? {
-								gridTemplateColumns: `repeat(${columns}, 1fr)`,
-							}
-						: undefined
-				}
-			>
-				{documents.map((document, key) => (
-					<li key={key}>
-						<Document
-							columns={columns}
-							name={document.name}
-							file={document.file}
-							alternativeText={document.alternativeText}
-							direction={fileDirection}
-							lineClamp={lineClamp}
-						/>
-					</li>
-				))}
-			</ul>
+			{documents && (
+				<ul
+					className={cx(css.documents, {
+						[css.centered]: documents?.length === 1,
+					})}
+					style={
+						documents?.length !== 1
+							? {
+									gridTemplateColumns: `repeat(${columns}, 1fr)`,
+								}
+							: undefined
+					}
+				>
+					{documents?.map((document, key) => (
+						<li key={key}>
+							<Document
+								columns={columns}
+								name={document.name}
+								file={document.file}
+								alternativeText={document.alternativeText}
+								direction={fileDirection}
+								lineClamp={lineClamp}
+							/>
+						</li>
+					))}
+				</ul>
+			)}
 		</Container>
 	);
 };
