@@ -49,10 +49,10 @@
 	@mixin responsive height, 5, 5, 5;
 
 	transition-property: rotate;
-	rotate: 180deg;
+	rotate: 0deg;
 
 	&.open {
-		rotate: 0deg;
+		rotate: 180deg;
 	}
 
 	path {
