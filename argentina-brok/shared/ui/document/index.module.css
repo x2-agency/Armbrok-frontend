@@ -54,7 +54,7 @@
 }
 
 .circle {
-	@mixin responsive --size, 4, 4, 4;
+	@mixin responsive --size, 3, 3, 3;
 
 	width: var(--size);
 	height: var(--size);
