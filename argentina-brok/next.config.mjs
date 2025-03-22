@@ -13,6 +13,19 @@ const nextConfig = {
 	typescript: {
 		ignoreBuildErrors: true,
 	},
+	async headers() {
+		return [
+			{
+				source: '/(.*)',
+				headers: [
+					{
+						key: 'Content-Security-Policy',
+						value: "frame-ancestors 'self' https://www.google.com;",
+					},
+				],
+			},
+		];
+	},
 	/* config options here */
 	webpack(config) {
 		const fileLoaderRule = config.module.rules.find(rule =>
