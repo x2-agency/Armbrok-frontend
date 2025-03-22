@@ -2,30 +2,32 @@
 	display: flex;
 	flex-direction: column;
 	background-color: var(--gray-200-color);
-	@mixin res width, unset, 26.736rem, 24.063rem; /* 385px */
-	@mixin res height, unset, 37.083rem, 33.375rem; /* 534px */
+	@mixin responsive width, unset, 385, 385;
+	@mixin responsive padding, 16, 32, 32;
 }
 
 .title {
 	@mixin font-h4;
 	font-weight: 600;
-	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive padding-block-end, 8, 8, 8;
 }
 
 .description {
 	@mixin font-text16;
 	color: var(--gray-700-color);
-	@mixin res padding-block-end, 4rem, 1.667rem, 1.5rem; /* 15px 24px */
+	@mixin responsive padding-block-end, 15, 24, 24;
 }
 
 .imageWrap {
 	overflow: hidden;
-	@mixin res border-radius, 5.333rem, 1.667rem, 1.5rem; /* 20px  24px */
-	@mixin res width, 78.333rem, 22.292rem, 20.063rem; /* 320px 321px */
-	@mixin res height, 96rem, 25rem, 22.5rem; /* 360px */
+	@mixin responsive border-radius, 20, 24, 24;
+	@mixin responsive width, 300, 321, 321;
+	@mixin responsive height, 657, 689, 689;
+	margin-block-start: auto;
 }
 
 .image {
+	object-fit: fill;
 	width: 100%;
 	height: 100%;
 }
