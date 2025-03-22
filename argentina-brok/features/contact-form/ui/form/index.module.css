@@ -5,7 +5,6 @@
 }
 
 .root {
-	@mixin responsive width, 320, 480, 480;
 	@mixin responsive padding-block-start, 0, 72, 72;
 }
 

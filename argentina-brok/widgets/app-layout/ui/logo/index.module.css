@@ -4,7 +4,7 @@
 	outline: none;
 
 	@mixin responsive width, 167, 167, 167;
-	@mixin responsive height, 44, 44, 44;
+	@mixin responsive height, 44, 47, 47;
 
 	:global(.logo_armbrok_svg__word) {
 		@mixin transition;

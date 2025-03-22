@@ -66,6 +66,7 @@
 .close {
 	position: relative;
 	cursor: pointer;
+	outline: none;
 
 	@media (max-width: 767px) {
 		@mixin responsive width, 24;

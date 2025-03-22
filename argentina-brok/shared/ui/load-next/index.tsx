@@ -37,7 +37,7 @@ export const LoadNext = ({
 			<Button
 				type="button"
 				variant="next"
-				iconRotate={180}
+				iconRotate={270}
 				onClick={handleClick}
 				disabled={isFetching}
 			>

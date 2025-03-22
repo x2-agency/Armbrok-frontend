@@ -7,7 +7,7 @@ export const LOCALE_KEYS = {
 		openAccountButton: {
 			root: 'openAccountButton',
 		},
-		items: ['about-us', 'investor-relations', 'media', 'contact-us'],
+		items: ['investor-relations', 'media', 'about-us', 'contact-us'],
 	},
 	footer: {
 		root: 'footer',
