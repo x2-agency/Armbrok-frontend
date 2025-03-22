@@ -13,7 +13,7 @@
 }
 
 .awardWrap {
-	@mixin responsive gap, 20, 40, 40;
+	@mixin responsive gap, unset, 40, 40;
 
 	display: flex;
 	flex-direction: column;
@@ -40,7 +40,9 @@
 		align-items: center;
 		justify-content: unset;
 		gap: 10rem; /* 38px */
+
 		@mixin responsive padding-block-end, 30, unset, unset;
+
 		&.centered {
 			gap: 7rem; /* 38px */
 		}
