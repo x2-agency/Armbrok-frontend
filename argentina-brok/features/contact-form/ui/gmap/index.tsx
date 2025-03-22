@@ -22,7 +22,9 @@ export const GMap = ({ className, lat, lng }: GMapProps) => {
 
 	return (
 		<address className={cx(css.root, className)}>
-			<LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_API_KEY ?? ''}>
+			<LoadScript
+				googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY ?? ''}
+			>
 				<GoogleMap mapContainerStyle={containerStyle} center={center} zoom={18}>
 					<Marker position={center} />
 				</GoogleMap>
