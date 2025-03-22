@@ -23,7 +23,7 @@
 	--text14-line-height: 1.42; /* 20px */
 	--text12-line-height: 1.5; /* 18px */
 
-	@media screen and (max-width: 1440px) {
+	@media (max-width: 1440px) {
 		--h1: clamp(
 			2.222rem,
 			-0.317rem + 4.762vi,
@@ -45,7 +45,7 @@
 		--text12: clamp(0.833rem, 0.833rem + 0vi, 0.833rem); /* from 12px to 12px */
 	}
 
-	@media screen and (max-width: 767px) {
+	@media (max-width: 767px) {
 		--h1-line-height: 1.25; /* 40px */
 		--h2-line-height: 1.25; /* 40px */
 		--h3-line-height: 1.25; /* 40px */
@@ -59,7 +59,7 @@
 		--text12-line-height: 1.5; /* 18px */
 	}
 
-	@media screen and (max-width: 767px) {
+	@media (max-width: 767px) {
 		--h1: 8.533rem; /* 32px */
 		--h2: 6.4rem; /* 24px */
 		--h3: 5.333rem; /* 20px */
@@ -111,11 +111,11 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-o-font-smoothing: antialiased;
-	-webkit-text-size-adjust: 100%;
 
 	@media (max-width: 1440px) {
 		font-size: 1vw;
 	}
+
 	@media (min-width: 1441px) {
 		font-size: 16px;
 	}
@@ -131,7 +131,6 @@ h5,
 h6 {
 	color: #151515;
 	margin: 0;
-	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
 }
 
@@ -178,12 +177,6 @@ button {
 a {
 	text-decoration: none;
 	color: inherit;
-}
-
-body {
-	font-size: 17px;
-	line-height: 1.76;
-	font-family: sans-serif;
 }
 
 ol,
