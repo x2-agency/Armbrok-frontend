@@ -1,9 +1,5 @@
 import '@/shared/styles/global.css';
-import '@/shared/styles/mixins/mixin.css';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/swiper-bundle.css';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -15,7 +11,6 @@ import { LayoutProvider } from '@/shared/hooks/use-layout-context';
 import { Favicons } from '@/view/documents/ui/favicons';
 import { AppLayout } from '@/widgets/app-layout';
 import { Providers } from '@/widgets/app-layout/providers';
-
 
 type RootLayoutProps = PropsWithChildren & {
 	params: { locale: keyof typeof Locales };
