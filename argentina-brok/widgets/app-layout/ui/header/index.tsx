@@ -23,20 +23,22 @@ export const Header = () => {
 
 	return (
 		<header className={css.root}>
-			<div className={css.leftBlock}>
-				<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
-				<Navigation />
-			</div>
+			<div className={css.jumpedContainer}>
+				<div className={css.leftBlock}>
+					<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
+					<Navigation />
+				</div>
 
-			<div className={cx(css.rightBlock, { [css.rightBlockHy]: isHyLocale })}>
-				{isMobile && <BurgerButton />}
-				{!isMobile && (
-					<>
-						<Search href="/armbrok-search" />
-						<LanguageSelection />
-						<LogIn />
-					</>
-				)}
+				<div className={cx(css.rightBlock, { [css.rightBlockHy]: isHyLocale })}>
+					{isMobile && <BurgerButton />}
+					{!isMobile && (
+						<>
+							<Search href="/armbrok-search" />
+							<LanguageSelection />
+							<LogIn />
+						</>
+					)}
+				</div>
 			</div>
 		</header>
 	);
