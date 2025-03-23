@@ -10,7 +10,9 @@
 	@mixin res gap, 1.067rem, 0.278rem, 0.25rem;
 	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem;
 	@mixin res --grid, 38.4rem, 10rem, 9rem;
+	@mixin responsive --border, 1, 1, 1;
 
+	border: var(--border) solid var(--gray-300-color);
 	display: grid;
 	grid-template-columns: repeat(2, var(--grid));
 	background-color: var(--gray-200-color);
@@ -22,9 +24,10 @@
 	border-color: var(--gray-200-color) !important;
 	display: flex;
 	justify-content: center;
-	color: var(--black-color);
+	color: var(--gray-500-color);
 
 	&.active {
+		color: var(--gray-800-color);
 		background-color: var(--gray-100-color);
 		box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.1);
 	}

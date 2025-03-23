@@ -41,10 +41,10 @@ export const CompanyMembers = ({ tabs, title }: CompanyStructureSection) => {
 				) : (
 					<TreeDesktop />
 				),
-				isTeamTab, // Добавляем флаг для сортировки
+				isTeamTab,
 			};
 		})
-		.sort(a => (a.isTeamTab ? -1 : 1)); // Перемещаем "Команду" вверх
+		.sort(a => (a.isTeamTab ? -1 : 1));
 
 	return (
 		<Container className={css.root}>
