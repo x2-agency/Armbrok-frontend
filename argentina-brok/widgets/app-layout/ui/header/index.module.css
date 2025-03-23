@@ -12,7 +12,7 @@
 	@mixin res margin-inline, unset, auto, auto;
 	@mixin responsive left, 20, 24, 24;
 	@mixin responsive right, 20, 24, 24;
-	@mixin responsive top, 22, 22, 22;
+	@mixin responsive top, 21, 22, 22;
 
 	@media (max-width: 767px) {
 		align-items: center;

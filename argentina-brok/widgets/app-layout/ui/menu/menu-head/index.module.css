@@ -1,6 +1,6 @@
 .root {
-	padding-block: 4.267rem; /* 16px */
-	padding-inline: 5.333rem; /* 20px */
+	padding-block: 2.267rem;
+	padding-inline: 5.333rem;
 	border-bottom: 0.267rem solid var(--gray-200-color);
 	justify-content: space-between;
 }
@@ -13,11 +13,11 @@
 }
 
 .leftPart {
-	gap: 7.267rem; /* 16px */
+	gap: 5.267rem;
 }
 
 .rightPart {
-	gap: 6.533rem; /* 32px */
+	gap: 5.533rem;
 }
 
 .search {

@@ -21,13 +21,13 @@ export const MenuHead = () => {
 					isDark
 					className="close-menu-button"
 				/>
+			</div>
+			<div className={css.rightPart}>
 				<Search
 					href="/armbrok-search"
 					className={cx(css.search, 'close-menu-button')}
 					isDark
 				/>
-			</div>
-			<div className={css.rightPart}>
 				<LanguageSelection theme="dark" className={css.lang} />
 				<CloseMenuButton />
 			</div>

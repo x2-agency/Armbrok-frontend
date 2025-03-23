@@ -1,6 +1,6 @@
 .root {
-	@mixin responsive width, 24, 24, 24;
-	@mixin responsive height, 24, 24, 24;
+	@mixin responsive width, 20, 24, 24;
+	@mixin responsive height, 20, 24, 24;
 }
 
 .burger {
