@@ -420,9 +420,9 @@ export type SecurityPaperItem = {
 	launchDate?: string;
 	launchDateLabel?: string;
 	ipoVolumeLabel?: string;
-	ipoVolumeValue?: string;
+	ipoVolumeValue?: number;
 	sharePriceLabel?: string;
-	sharePriceValue?: string;
+	sharePriceValue?: number;
 	logo?: MediaData;
 	infoBlock?: Array<ItemDetail>;
 	className?: string;

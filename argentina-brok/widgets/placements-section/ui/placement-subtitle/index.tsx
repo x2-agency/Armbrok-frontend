@@ -15,15 +15,15 @@ export const PlacementSubtitle = ({
 				<li className={css.subtitleArticle}>
 					<PlacementArticle
 						title={ipoVolumeLabel}
-						description={ipoVolumeValue}
+						description={ipoVolumeValue.toLocaleString('en-US')}
 					/>
 				</li>
 			)}
 			{sharePriceLabel && sharePriceValue && (
 				<li className={css.subtitleArticle}>
 					<PlacementArticle
-						title={ipoVolumeLabel}
-						description={ipoVolumeValue}
+						title={sharePriceLabel}
+						description={sharePriceValue.toLocaleString('en-US')}
 					/>
 				</li>
 			)}
