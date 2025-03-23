@@ -5,7 +5,6 @@ interface BaseButtonProps extends PropsWithChildren {
 	variant?: 'back' | 'outline' | 'filled' | 'subtle' | 'next';
 	iconRotate?: number;
 	category?: 'default' | 'big';
-	download?: string;
 }
 
 type LinkButtonProps = BaseButtonProps & {

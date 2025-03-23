@@ -17,35 +17,13 @@ export const Button = ({
 	iconRotate,
 	disabled,
 	target = '_self',
-	download,
 }: ButtonProps) => {
 	if (href) {
 		return (
 			<Link
 				className={cx(css.root, className, css[variant], css[category])}
 				href={href}
-				download={download}
 				target={target}
-			>
-				{variant === 'back' && <BackSVG className={css.icon} />}
-				{children}
-				{variant === 'next' && (
-					<BackSVG
-						className={css.icon}
-						style={{ rotate: `${iconRotate}deg` }}
-					/>
-				)}
-			</Link>
-		);
-	}
-
-	if (download) {
-		return (
-			<Link
-				className={cx(css.root, className, css[variant], css[category])}
-				download={download}
-				target={'_blank'}
-				href={''}
 			>
 				{variant === 'back' && <BackSVG className={css.icon} />}
 				{children}
