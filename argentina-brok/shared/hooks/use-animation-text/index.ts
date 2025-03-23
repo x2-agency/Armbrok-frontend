@@ -32,6 +32,6 @@ export const useAnimatedText = (
 
 	return {
 		displayedText: currentText.slice(0, state.textIndex),
-		isCursorVisible: state.textIndex === currentText.length,
+		isCursorVisible: true,
 	};
 };
