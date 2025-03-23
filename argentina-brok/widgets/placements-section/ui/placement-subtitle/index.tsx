@@ -8,6 +8,8 @@ export const PlacementSubtitle = ({
 	ipoVolumeValue,
 	sharePriceLabel,
 	sharePriceValue,
+	shareIssuesNumberLabel,
+	shareIssuesNumberValue,
 }: SecurityPaperItem) => {
 	return (
 		<ul className={css.root}>
@@ -15,15 +17,23 @@ export const PlacementSubtitle = ({
 				<li className={css.subtitleArticle}>
 					<PlacementArticle
 						title={ipoVolumeLabel}
-						description={ipoVolumeValue}
+						description={ipoVolumeValue.toLocaleString('en-US')}
 					/>
 				</li>
 			)}
 			{sharePriceLabel && sharePriceValue && (
 				<li className={css.subtitleArticle}>
 					<PlacementArticle
-						title={ipoVolumeLabel}
-						description={ipoVolumeValue}
+						title={sharePriceLabel}
+						description={sharePriceValue.toLocaleString('en-US')}
+					/>
+				</li>
+			)}
+			{shareIssuesNumberLabel && shareIssuesNumberValue && (
+				<li className={css.subtitleArticle}>
+					<PlacementArticle
+						title={shareIssuesNumberLabel}
+						description={shareIssuesNumberValue.toLocaleString('en-US')}
 					/>
 				</li>
 			)}

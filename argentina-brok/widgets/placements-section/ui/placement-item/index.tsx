@@ -18,6 +18,8 @@ export const PlacementItem = ({
 	logo,
 	infoBlock,
 	className,
+	shareIssuesNumberLabel,
+	shareIssuesNumberValue,
 }: SecurityPaperItem) => {
 	return (
 		<article className={cx(css.root, 'p-32', className)}>
@@ -32,6 +34,8 @@ export const PlacementItem = ({
 				ipoVolumeValue={ipoVolumeValue}
 				sharePriceLabel={sharePriceLabel}
 				sharePriceValue={sharePriceValue}
+				shareIssuesNumberValue={shareIssuesNumberValue}
+				shareIssuesNumberLabel={shareIssuesNumberLabel}
 			/>
 			<PlacementBody infoBlock={infoBlock} />
 		</article>

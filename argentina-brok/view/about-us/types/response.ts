@@ -2,7 +2,6 @@ import type {
 	AwardSection,
 	AwardsResponse,
 	BaseResponse,
-	CompaniesSection,
 	CompanyDetailsSection,
 	CompanyStructureSection,
 	CorporateEventsSection,
@@ -13,12 +12,13 @@ import type {
 	ProjectsSection,
 	ValuesSection,
 } from '@/shared/types/global.types';
+import type { CompaniesSectionProps } from '@/view/home/types/response';
 
 export type AboutUsPageData = {
 	publishedAt?: string;
 	heroSection?: HeroSectionAboutUs;
 	valuesSection?: ValuesSection;
-	companiesSection?: CompaniesSection;
+	companiesSection?: CompaniesSectionProps;
 	corporateEventsSection?: CorporateEventsSection;
 	documentsSection?: DocumentsSectionProps;
 	companyDetails?: CompanyDetailsSection;

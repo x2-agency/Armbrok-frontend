@@ -1,7 +1,10 @@
+'use client';
+
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import Link from 'next/link';
 
+import { downloadFile } from '@/shared/helpers/download-file';
 import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
@@ -15,7 +18,12 @@ export const Document = ({ name, url }: DocumentProps) => {
 	return (
 		<article className={cx(css.root, 'p-32')}>
 			<p className={css.title}>{parser(name)}</p>
-			<Button href="#" variant="next" iconRotate={270} className={css.button}>
+			<Button
+				variant="next"
+				iconRotate={270}
+				className={css.button}
+				onClick={() => downloadFile(url, name)}
+			>
 				Download
 			</Button>
 			<Link href={url} className={css.link} target="_blank" download />

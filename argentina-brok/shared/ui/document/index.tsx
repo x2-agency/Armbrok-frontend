@@ -4,6 +4,7 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import { Link } from '@/i18n/navigation';
+import { downloadFile } from '@/shared/helpers/download-file';
 import type { MediaData } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 
@@ -62,13 +63,17 @@ export const Document = ({
 					)}
 				</div>
 			</div>
-			<Button variant="next" iconRotate={270} className={css.button}>
+			<Button
+				variant="next"
+				iconRotate={270}
+				className={css.button}
+				onClick={() => downloadFile(file.url ?? '', name || 'file')}
+			>
 				Download
 			</Button>
 			<Link
 				href={file.url ?? '#'}
 				className={css.downloadLink}
-				download
 				target="_blank"
 			/>
 		</article>

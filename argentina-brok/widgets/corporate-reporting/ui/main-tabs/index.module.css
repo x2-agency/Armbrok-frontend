@@ -24,10 +24,11 @@
 	padding-inline: unset;
 	display: flex;
 	justify-content: center;
-	color: var(--black-color);
+	color: var(--gray-600-color);
 
 	&.selected {
 		background-color: var(--gray-100-color) !important;
+		color: var(--gray-800-color);
 	}
 
 	@media (max-width: 767px) {

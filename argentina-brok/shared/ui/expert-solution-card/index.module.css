@@ -6,6 +6,8 @@
 	@mixin responsive width, 30, 48, 48;
 	@mixin responsive height, 30, 48, 48;
 	@mixin responsive margin-block-end, 10, 24, 24;
+
+	display: block;
 }
 
 .wrap {
@@ -14,7 +16,7 @@
 }
 
 .title {
-	@mixin font-text20;
+	@mixin font-h5;
 
 	font-weight: 600;
 	color: var(--black-color);

@@ -8,6 +8,7 @@
 @define-mixin font-h2 {
 	font-size: var(--h2);
 	line-height: var(--h2-line-height);
+	letter-spacing: var(--h2-letter-spacing);
 }
 
 @define-mixin font-h3 {

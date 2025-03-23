@@ -54,7 +54,7 @@
 }
 
 .circle {
-	@mixin responsive --size, 4, 4, 4;
+	@mixin responsive --size, 3, 3, 3;
 
 	width: var(--size);
 	height: var(--size);
@@ -64,6 +64,7 @@
 
 .button {
 	height: fit-content;
+	z-index: 100;
 
 	@media (max-width: 767px) {
 		width: 100%;
@@ -126,25 +127,6 @@
 	}
 }
 
-.button {
-	@mixin transition;
-
-	pointer-events: none;
-
-	svg path {
-		@mixin transition;
-	}
-
-	@media (hover: hover) {
-		&:hover {
-			color: var(--black-color) !important;
-
-			svg path {
-				fill: var(--black-color);
-			}
-		}
-	}
-}
 
 .root {
 	@media (hover: hover) {

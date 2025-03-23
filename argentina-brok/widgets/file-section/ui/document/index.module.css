@@ -25,6 +25,10 @@
 	top: 0;
 }
 
+.button {
+	z-index: 100;
+}
+
 .title {
 	@mixin font-text20;
 

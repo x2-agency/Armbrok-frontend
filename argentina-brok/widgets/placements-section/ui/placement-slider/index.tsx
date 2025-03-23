@@ -22,7 +22,7 @@ const PlacementSlider: React.FC<PlacementSliderProps> = ({
 			className={cx(css.root, className)}
 			slidesPerView={3}
 			navigation
-			spaceBetween={0}
+			spaceBetween={20}
 			pagination={{ clickable: true }}
 			modules={[Navigation, Pagination]}
 			resizeObserver
