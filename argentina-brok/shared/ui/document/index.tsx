@@ -62,13 +62,17 @@ export const Document = ({
 					)}
 				</div>
 			</div>
-			<Button variant="next" iconRotate={270} className={css.button}>
+			<Button
+				variant="next"
+				iconRotate={270}
+				className={css.button}
+				download={file.url}
+			>
 				Download
 			</Button>
 			<Link
 				href={file.url ?? '#'}
 				className={css.downloadLink}
-				download
 				target="_blank"
 			/>
 		</article>
