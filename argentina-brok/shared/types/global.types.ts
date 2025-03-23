@@ -423,6 +423,8 @@ export type SecurityPaperItem = {
 	ipoVolumeValue?: number;
 	sharePriceLabel?: string;
 	sharePriceValue?: number;
+	shareIssuesNumberLabel?: string;
+	shareIssuesNumberValue?: number;
 	logo?: MediaData;
 	infoBlock?: Array<ItemDetail>;
 	className?: string;
