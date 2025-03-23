@@ -8,7 +8,7 @@ export const RobotoFonts = localFont({
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/roboto-medium.woff2',
+			path: '../../../public/fonts/roboto-m.woff2',
 			weight: '500',
 			style: 'normal',
 		},
