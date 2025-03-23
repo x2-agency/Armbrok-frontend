@@ -1,5 +1,9 @@
 import '@/shared/styles/global.css';
-import 'swiper/swiper-bundle.css';
+import '@/shared/styles/mixins/mixin.css';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
