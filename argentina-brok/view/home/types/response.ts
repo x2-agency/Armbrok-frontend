@@ -16,7 +16,7 @@ export type HomePageData = {
 		assetManagementCard?: AssetManagementCardProps;
 		financialSolutionsSection?: FinancialSolutionsSectionProps;
 		investingStepsSection?: InvestingStepsSectionProps;
-		awardSection?: AwardsSection;
+		awardsSection?: AwardsSection;
 		companiesSection?: CompaniesSectionProps;
 		newsSection?: NewsProps;
 		interviewSection?: InterviewProps;
