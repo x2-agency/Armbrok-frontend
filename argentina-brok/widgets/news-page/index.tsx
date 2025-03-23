@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import type { Key } from 'react';
+import { type Key } from 'react';
 
 import { NewsCard } from '@/entities/news-card';
 import type { Article } from '@/shared/types/article';
@@ -8,7 +8,7 @@ import { LoadNext } from '@/shared/ui/load-next';
 import css from './index.module.css';
 
 export const NewsPage = ({
-	newsCard,
+	newsCard = [],
 	className,
 	hasNextPage,
 	fetchNextPage,
@@ -22,10 +22,18 @@ export const NewsPage = ({
 	isFetchingNextPage: boolean;
 	animationKey?: Key;
 }) => {
+	const sortedNewsSlider = (newsCard || [])
+		.filter((news): news is Article => news !== undefined)
+		.sort((a, b) => {
+			const dateA = new Date(a.publishDate).getTime();
+			const dateB = new Date(b.publishDate).getTime();
+			return dateB - dateA;
+		});
+
 	return (
 		<div className={css.root}>
 			<div className={cx(css.news, className)}>
-				{newsCard?.map((news, index) => (
+				{sortedNewsSlider?.map((news, index) => (
 					<NewsCard
 						className={css.card}
 						key={index}
