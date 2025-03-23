@@ -6,11 +6,11 @@
 }
 
 .figure {
-	@mixin res width, 7.467rem, 1.944rem, 1.75rem;
-	@mixin res height, 6.4rem, 1.667rem, 1.5rem;
+	@mixin responsive width, 24, 30, 30;
+	@mixin responsive height, 24, 24, 24;
 
 	&.rotated {
-		rotate: 180deg;
+		transform: scaleX(-1);
 		align-self: end;
 	}
 }

@@ -20,7 +20,7 @@
 }
 
 .items {
-	@mixin responsive gap, 10, 20, 20;
+	@mixin responsive gap, 10, 24, 24;
 
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);

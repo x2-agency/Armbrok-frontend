@@ -15,3 +15,7 @@
 	@mixin font-text18;
 	font-weight: 600;
 }
+
+.experience {
+	@mixin responsive max-width, unset, 274, 274;
+}

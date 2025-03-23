@@ -7,7 +7,7 @@
 		display: flex;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
-		gap: 1rem;
+		gap: 5.33rem;
 		scrollbar-width: none;
 		-ms-overflow-style: none;
 	}

@@ -1,12 +1,12 @@
 .text {
 	@mixin font-text16;
-	@mixin responsive max-width, 170, 479, 560;
+	@mixin responsive max-width, unset, 479, 560;
 	height: fit-content;
 
 	color: var(--gray-800-color);
 
 	@media (max-width: 767px) {
-		font-size: 10px;
+		font-size: 8px;
 	}
 }
 

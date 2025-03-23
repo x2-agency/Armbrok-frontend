@@ -18,6 +18,12 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 	const isHyLocale = pathname.startsWith('/hy');
 	const isRuLocale = pathname.startsWith('/ru');
 
+	const sortedNewsSlider = newsSlider.sort((a, b) => {
+		const dateA = new Date(a.publishDate).getTime();
+		const dateB = new Date(b.publishDate).getTime();
+		return dateB - dateA;
+	});
+
 	return (
 		<Swiper
 			grabCursor
@@ -41,7 +47,7 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 				},
 			}}
 		>
-			{newsSlider?.map((news, index) => (
+			{sortedNewsSlider?.map((news, index) => (
 				<SwiperSlide key={news.slug} className={css.sliderItem}>
 					<NewsCard
 						className={cx(
