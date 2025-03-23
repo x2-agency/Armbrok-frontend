@@ -12,13 +12,13 @@ export const useAccountModal = () => {
 		const currentRef = modalRef.current;
 
 		if (currentRef && isAccountModalOpen) {
-			// const scrollbarWidth =
-			// 	window.innerWidth - document.documentElement.clientWidth;
+			const scrollbarWidth =
+				window.innerWidth - document.documentElement.clientWidth;
 			document.body.style.overflow = 'hidden';
-			// document.body.style.paddingRight = `${scrollbarWidth}px`;
+			document.body.style.paddingRight = `${scrollbarWidth}px`;
 			currentRef.showModal();
 			setIsVisible(true);
-			// setHeaderPadding(scrollbarWidth);
+			setHeaderPadding(scrollbarWidth);
 		} else {
 			setIsVisible(false);
 			setTimeout(() => {
