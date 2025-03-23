@@ -16,31 +16,49 @@
 	justify-content: space-between;
 
 	@media (max-width: 767px) {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		flex-direction: column;
+		align-items: center;
 	}
 }
 
-.company {
-	@mixin responsive padding-block, 20, 48, 48;
-	@mixin responsive padding-inline, 10, 67, 67;
-	@mixin responsive gap, 10, 16, 16;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+.link {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
 }
 
-.homePageCompany {
-	@mixin responsive padding-block, 20, 40, 40;
-	@mixin responsive padding-inline, 10, 17, 17;
+.company {
+	@mixin responsive width, 282, 282, 282;
+	@mixin responsive height, 125, 125, 125;
+
+	position: relative;
+	cursor: pointer;
+
+	@media (hover: hover) {
+		&:hover {
+			.hoverIcon {
+				opacity: 1;
+			}
+		}
+	}
 }
 
 .companyIcon {
 	width: 100%;
+	height: 100%;
+}
 
-	@media (max-width: 767px) {
-		width: 25rem;
-	}
+.hoverIcon {
+	@mixin transition;
+
+	transition-property: opacity;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
 }

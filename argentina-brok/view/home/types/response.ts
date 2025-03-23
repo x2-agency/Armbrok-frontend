@@ -103,7 +103,11 @@ export type StepsType = {
 
 export type CompaniesSectionProps = {
 	title?: string;
-	companies?: Array<MediaType>;
+	companies?: Array<{
+		link?: string | null;
+		logo: MediaType;
+		colorLogo?: MediaType;
+	}>;
 };
 
 // news
