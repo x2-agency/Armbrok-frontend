@@ -33,7 +33,7 @@ export const Home: NextPage<{
 		// companiesSection,
 		newsSection,
 		interviewSection,
-		awardSection,
+		awardsSection,
 	} = initialData?.data ?? {};
 	useUpdateFooterData(publishedAt);
 	return (
@@ -54,9 +54,9 @@ export const Home: NextPage<{
 			<Corporate cards={financialSolutionsSection} />
 			<Start data={investingStepsSection} />
 			<AwardsSection
-				title={awardSection?.title}
+				title={awardsSection?.title}
 				awards={initialAwards?.data}
-				buttonText={awardSection?.buttonText}
+				buttonText={awardsSection?.buttonText}
 				buttonLimit={4}
 				awardsTotal={initialAwards?.meta.pagination.total ?? 4}
 			/>

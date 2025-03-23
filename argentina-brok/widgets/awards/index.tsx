@@ -39,6 +39,7 @@ export const AwardsSection = ({
 		return response;
 	};
 
+
 	useEffect(() => {
 		if (contentRef.current) {
 			setContentHeight(contentRef.current.scrollHeight);

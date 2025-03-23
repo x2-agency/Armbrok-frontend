@@ -22,6 +22,7 @@ export const getArticle = async (
 					}),
 				'pagination[page]': page,
 				'pagination[pageSize]': limit,
+				sort: 'publishDate:desc',
 			},
 		});
 
