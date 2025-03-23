@@ -15,7 +15,12 @@ export const Document = ({ name, url }: DocumentProps) => {
 	return (
 		<article className={cx(css.root, 'p-32')}>
 			<p className={css.title}>{parser(name)}</p>
-			<Button href="#" variant="next" iconRotate={270} className={css.button}>
+			<Button
+				download={url}
+				variant="next"
+				iconRotate={270}
+				className={css.button}
+			>
 				Download
 			</Button>
 			<Link href={url} className={css.link} target="_blank" download />
