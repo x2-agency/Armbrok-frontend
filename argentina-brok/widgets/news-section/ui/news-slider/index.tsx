@@ -30,7 +30,7 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 			className={cx(css.root, className)}
 			slidesPerView={3}
 			navigation
-			spaceBetween={0}
+			spaceBetween={24}
 			pagination={{ clickable: true }}
 			modules={[Navigation, Pagination]}
 			resizeObserver
@@ -40,10 +40,7 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 					slidesPerView: 1,
 				},
 				768: {
-					slidesPerView: 3,
-				},
-				1440: {
-					slidesPerView: 3,
+					slidesPerView: 2.985,
 				},
 			}}
 		>
