@@ -98,10 +98,12 @@
 	text-align: center;
 	&.selectedLang {
 		background-color: var(--gray-300-color);
+		@mixin responsive border-radius, 8, 8, 8;
 	}
 
 	@media (hover: hover) {
 		&:hover {
+			@mixin responsive border-radius, 8, 8, 8;
 			background-color: var(--gray-200-color);
 		}
 	}
