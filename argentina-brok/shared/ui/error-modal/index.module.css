@@ -20,6 +20,8 @@
 }
 
 .root::backdrop {
+	@mixin transition;
+
 	opacity: 0;
 	visibility: hidden;
 	transition-property: opacity visibility background;
