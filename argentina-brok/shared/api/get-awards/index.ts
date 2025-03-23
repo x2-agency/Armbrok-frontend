@@ -7,7 +7,7 @@ type AwardsRequestProps = {
 
 export const getAwards = async ({ page, pageSize }: AwardsRequestProps) => {
 	try {
-		const response = await apiClient.get('/awards', {
+		const response = await apiClient.get('/awards?sort=rank:asc', {
 			params: {
 				pagination: {
 					page,
