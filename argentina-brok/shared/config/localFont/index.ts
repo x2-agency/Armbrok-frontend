@@ -3,7 +3,7 @@ import localFont from 'next/font/local';
 export const RobotoFonts = localFont({
 	src: [
 		{
-			path: '../../../public/fonts/roboto-regular.woff2',
+			path: '../../../public/fonts/roboto-r.woff2',
 			weight: '400',
 			style: 'normal',
 		},
@@ -13,12 +13,12 @@ export const RobotoFonts = localFont({
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/roboto-semibold.woff2',
+			path: '../../../public/fonts/roboto-sb.woff2',
 			weight: '600',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/roboto-bold.woff2',
+			path: '../../../public/fonts/roboto-b.woff2',
 			weight: '700',
 			style: 'normal',
 		},
