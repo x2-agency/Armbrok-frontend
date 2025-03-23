@@ -72,11 +72,13 @@
 	width: 100%;
 
 	&.activeLink {
+		@mixin responsive border-radius, 8, 8, 8;
 		background-color: var(--gray-300-color);
 	}
 
 	@media (hover: hover) {
 		&:hover {
+			@mixin responsive border-radius, 8, 8, 8;
 			color: var(--black-color) !important;
 			background-color: var(--gray-200-color) !important;
 		}

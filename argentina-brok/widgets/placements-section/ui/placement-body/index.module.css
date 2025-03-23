@@ -1,7 +1,7 @@
 .root {
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
-	@mixin responsive height, 430, 400, 400;
+	@mixin responsive height, 430, 405, 405;
 
 	&::-webkit-scrollbar-track {
 		background: transparent;
