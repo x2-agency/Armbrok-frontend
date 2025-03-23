@@ -5,6 +5,7 @@
 .title {
 	@mixin responsive padding-block-end, 20, 40, 40;
 	@mixin font-h2;
+	letter-spacing: -1%;
 
 	font-weight: 600;
 	text-align: center;

@@ -23,6 +23,8 @@
 	--text14-line-height: 1.42; /* 20px */
 	--text12-line-height: 1.5; /* 18px */
 
+	--h2-letter-spacing: -1%;
+
 	@media (max-width: 1440px) {
 		--h1: clamp(
 			2.222rem,
@@ -57,6 +59,8 @@
 		--text16-line-height: 1.5; /* 24px */
 		--text14-line-height: 1.42; /* 20px */
 		--text12-line-height: 1.5; /* 18px */
+
+		--h2-letter-spacing: -1%;
 	}
 
 	@media (max-width: 767px) {
