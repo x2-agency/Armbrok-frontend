@@ -50,5 +50,5 @@
 }
 
 .ruCard {
-	@mixin responsive min-height, 322, 390, 390;
+	@mixin responsive min-height, 322, 414, 390;
 }

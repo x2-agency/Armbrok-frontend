@@ -23,7 +23,7 @@
 	}
 
 	&::-webkit-scrollbar {
-		@mixin responsive width, 6, 6, 6;
+		@mixin responsive width, 0, 0, 0;
 		@mixin responsive height, 4, 4, 4;
 	}
 }

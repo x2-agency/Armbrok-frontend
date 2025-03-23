@@ -10,6 +10,7 @@ import {
 } from 'react';
 
 import CrossSVG from '@/public/assets/icons/cross.svg';
+import { usePreventScrollJump } from '@/shared/hooks/use-prevent-scroll-jump';
 import type { Employee } from '@/shared/types/global.types';
 
 import css from './index.module.css';
@@ -32,6 +33,7 @@ export const MemberModal = ({
 }: MemberModalProps) => {
 	const ref = useRef<HTMLDialogElement | null>(null);
 	const [isAnimating, setIsAnimating] = useState(false);
+	usePreventScrollJump(isModalOpen);
 
 	useEffect(() => {
 		const modal = ref.current;

@@ -1,21 +1,26 @@
 .root {
+	@mixin responsive height, 55, 85, 85;
 	position: fixed;
-	top: 0;
-	color: var(--gray-100-color);
 	z-index: 10000;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-inline-end: var(--scrollbar-width, 0px);
+}
+
+.jumpedContainer {
+	color: var(--gray-100-color);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	pointer-events: all;
 
 	@mixin res width, unset, 96.667vw, 87.438rem;
-	@mixin res margin-inline, unset, auto, auto;
-	@mixin responsive left, 20, 24, 24;
-	@mixin responsive right, 20, 24, 24;
-	@mixin responsive top, 22, 22, 22;
 
 	@media (max-width: 767px) {
-		align-items: center;
+		@mixin responsive padding-inline, 20;
+
+		width: 100%;
 	}
 }
 

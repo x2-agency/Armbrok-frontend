@@ -20,7 +20,7 @@ html[data-header-top-color='dark'] .divider {
 	width: 100%;
 	z-index: 101;
 
-	@mixin responsive height, 84, 85, 85;
+	@mixin responsive height, 55, 85, 85;
 	background: rgba(255, 255, 255, 0.9);
 	backdrop-filter: blur(6px);
 

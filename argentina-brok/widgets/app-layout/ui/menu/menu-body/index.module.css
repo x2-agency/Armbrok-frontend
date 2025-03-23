@@ -16,7 +16,7 @@
 }
 
 .button {
-	@mixin responsive padding-block, 8, unset, unset;
+	@mixin responsive padding-block, 2, unset, unset;
 }
 
 .links {
@@ -36,7 +36,7 @@
 	button {
 		color: var(--gray-700-color) !important;
 		font-weight: 600;
-		@mixin responsive padding-block, 8, unset, unset;
+		@mixin responsive padding-block, 2, unset, unset;
 
 		@media (hover: hover) {
 			&:hover {

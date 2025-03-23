@@ -6,12 +6,12 @@
 	color: var(--gray-800-color);
 
 	@media (max-width: 767px) {
-		font-size: 8px;
+		font-size: 6px;
 	}
 }
 
 .dotted {
-	@mixin responsive margin-block-end, 5, 5, 5;
+	@mixin responsive margin-block-end, 4, 5, 5;
 
 	line-height: 0;
 	flex-grow: 1;
@@ -19,7 +19,8 @@
 	border-image: repeating-linear-gradient(
 		to right,
 		rgba(0, 0, 0, 0.3) 0 5px,
-		transparent 5px 10px
+		transparent 5px 7px
 	);
+
 	border-image-slice: 1;
 }
