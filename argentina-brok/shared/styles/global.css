@@ -76,6 +76,20 @@
 		--text14: 3.733rem; /* 14px */
 		--text12: 3.2rem; /* 12px */
 	}
+
+	@media (min-width: 1441px) {
+		--h1: 4.444rem; /* 64px */
+		--h2: 2.778rem; /* 40px */
+		--h3: 2.222rem; /* 32px */
+		--h4: 1.667rem; /* 24px */
+		--h5: 1.389rem; /* 20px */
+		--h6: 1.25rem; /* 18px */
+		--text20: 1.389rem; /* 20px */
+		--text18: 1.25rem; /* 18px */
+		--text16: 1.111; /* 16px */
+		--text14: 0.972rem; /* 14px */
+		--text12: 0.833rem; /* 12px */
+	}
 }
 
 :root {

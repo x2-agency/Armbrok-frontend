@@ -10,18 +10,11 @@
 .links {
 	display: flex;
 	flex-direction: row;
-	gap: 2.778rem; /* 40px */
+	@mixin responsive gap, unset, 40, 40;
 }
 
 .active {
 	color: var(--red--600-color);
-}
-
-.linksHy {
-	@mixin responsive gap, unset, 20, 20;
-	@media (min-width: 1441px) {
-		font-size: 1rem;
-	}
 }
 
 .li {
