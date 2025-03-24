@@ -24,3 +24,14 @@
 .spacing {
 	width: fit-content;
 }
+
+.noNews {
+	@mixin font-h5;
+	font-weight: 500;
+	@mixin responsive padding-block-start, 30, 100, 100;
+	@mixin responsive padding-block-end, 50, 300, 300;
+
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+}

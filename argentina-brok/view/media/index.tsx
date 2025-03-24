@@ -66,6 +66,8 @@ export const Media: NextPage<{
 		setSearchAnimationKey(searchQuery);
 	}, [searchQuery]);
 
+	const isNoNews = !isLoading && filteredBySearch.length === 0;
+
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
@@ -91,6 +93,7 @@ export const Media: NextPage<{
 					isFetchingNextPage={isFetchingNextPage}
 					hasNextPage={hasNextPage}
 					fetchNextPage={fetchNextPage}
+					isNoNews={isNoNews}
 				/>
 			)}
 

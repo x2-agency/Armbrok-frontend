@@ -24,10 +24,6 @@
 			"text": "Media",
 			"link": "/media"
 		},
-		"about-us": {
-			"text": "About Us",
-			"link": "/about-us"
-		},
 		"contact-us": {
 			"text": "Contact Us",
 			"link": "/contact-us"
@@ -123,7 +119,8 @@
 		"description": "We&rsquo;re experiencing a&nbsp;server issue right now. Please try refreshing the page<br /> or&nbsp;come back later. If&nbsp;the problem persists, contact support&nbsp;&mdash; we&rsquo;re<br /> working to&nbsp;fix it&nbsp;as&nbsp;soon as&nbsp;possible!"
 	},
 	"media": {
-		"allTab": "All"
+		"allTab": "All",
+		"noNews": "News will appear in this category in the near future"
 	},
 	"services": {
 		"text": "Services",

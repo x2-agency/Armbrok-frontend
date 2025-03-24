@@ -50,6 +50,7 @@ export const LOCALE_KEYS = {
 	media: {
 		root: 'media',
 		allTab: 'allTab',
+		noNews: 'noNews',
 	},
 	servicesLinks: {
 		root: 'services',
