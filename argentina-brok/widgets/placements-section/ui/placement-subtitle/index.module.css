@@ -1,6 +1,6 @@
 .root {
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
-	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res gap, 6.4rem, 1.667rem, 1.667rem;
+	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.667rem;
 
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
