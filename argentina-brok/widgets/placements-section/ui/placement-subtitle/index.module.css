@@ -7,7 +7,7 @@
 }
 
 .subtitleArticle {
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem;
+	@mixin res gap, 2.133rem, 0.556rem, 0.556rem;
 
 	display: flex;
 	flex-direction: column;
