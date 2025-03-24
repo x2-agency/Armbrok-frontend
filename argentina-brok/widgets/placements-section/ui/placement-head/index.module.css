@@ -8,6 +8,7 @@
 
 .icon {
 	@mixin res --size, 19.2rem, 5rem, 4.5rem;
+	@mixin responsive border-radius, 12, 12, 12;
 
 	width: var(--size);
 	height: var(--size);
