@@ -40,8 +40,6 @@ export const NewsPage = ({
 			return dateB - dateA;
 		});
 
-	console.log(media);
-
 	return (
 		<div className={css.root}>
 			{isNoNews ? (
