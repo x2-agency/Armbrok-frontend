@@ -121,7 +121,7 @@ html {
 	}
 
 	@media (min-width: 1441px) {
-		font-size: 16px;
+		font-size: 14.4px;
 	}
 }
 
@@ -158,14 +158,14 @@ h6 {
 	@mixin responsive border-radius, 15, 32, 32;
 	@mixin responsive padding-block, 20, 40, 40;
 	@mixin responsive padding-inline, 20, 40, 40;
-	@mixin res width, 100%, 83.33vw, 75rem; /* 1200px */
+	@mixin res width, 100%, 83.33vw, 83.3rem; /* 1200px */
 	@mixin res margin-inline, unset, auto, auto;
 }
 
 .default {
 	width: 83.33vw;
 	@mixin res margin-inline, unset, auto, auto;
-	@mixin res width, 100%, 83.33vw, 75rem; /* 1200px */
+	@mixin res width, 100%, 83.33vw, 83.3rem; /* 1200px */
 
 	@media (max-width: 767px) {
 		padding-inline: 5.333rem;
