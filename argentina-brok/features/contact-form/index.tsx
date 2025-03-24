@@ -7,13 +7,13 @@ import { GMap } from './ui/gmap';
 export const ContactFormSection = (
 	props: ContactForm & { latitude?: string; longitude?: string }
 ) => {
-	const lat = parseFloat(props.latitude ?? '0');
-	const lng = parseFloat(props.longitude ?? '0');
+	// const lat = parseFloat(props.latitude ?? '0');
+	// const lng = parseFloat(props.longitude ?? '0');
 
 	return (
 		<section className={css.root}>
 			<Form {...props} className={css.form} />
-			<GMap lat={lat} lng={lng} />
+			<GMap />
 		</section>
 	);
 };
