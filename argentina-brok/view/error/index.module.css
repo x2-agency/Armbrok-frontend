@@ -1,6 +1,6 @@
 .errorWrap {
-	@mixin res padding-block-start, 42.667rem, 11.111rem, 10rem;
-	@mixin res padding-block-end, 38.4rem, 10rem, 9rem;
+	@mixin res padding-block-start, 42.667rem, 11.111rem, 11.111rem;
+	@mixin res padding-block-end, 38.4rem, 10rem, 10rem;
 
 	display: flex;
 	justify-content: center;

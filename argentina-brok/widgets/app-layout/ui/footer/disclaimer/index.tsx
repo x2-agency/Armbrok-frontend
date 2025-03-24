@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { useFormattedDate } from '@/widgets/app-layout/hooks/use-formated-date';
+import { FOOTER_DISCLAIMER_LINKS } from '@/widgets/app-layout/model/footer-links';
 
 import css from './index.module.css';
 
@@ -15,6 +16,8 @@ export const Disclaimer = () => {
 
 	const disclaimerContent = t.markup(footer.disclaimer, {
 		p: chunks => `<p class="${css.text}">${chunks}</p>`,
+		a: (chunks: string) =>
+			`<a class="${css.link}" target="_blank" href="${FOOTER_DISCLAIMER_LINKS[chunks] ?? '#'}">${chunks}</a>`,
 	});
 
 	const lastUpdateLabel = t(footer.updateLabel);

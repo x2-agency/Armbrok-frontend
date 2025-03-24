@@ -46,5 +46,5 @@
 }
 
 .firstEvent span:first-of-type {
-	@mixin res margin-inline-start, 2.667rem, 0.694rem, 0.625rem; /* 10px */
+	@mixin res margin-inline-start, 2.667rem, 0.694rem, 0.694rem; /* 10px */
 }

@@ -1,13 +1,14 @@
 .header {
-	@mixin res gap, 4.267rem, 1.111rem, 1rem;
-	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res gap, 4.267rem, 1.111rem, 1.111rem;
+	@mixin res padding-block-end, 6.4rem, 1.667rem, 1.667rem;
 
 	display: flex;
 	align-items: start;
 }
 
 .icon {
-	@mixin res --size, 19.2rem, 5rem, 4.5rem;
+	@mixin res --size, 19.2rem, 5rem, 5rem;
+	@mixin responsive border-radius, 12, 12, 12;
 
 	width: var(--size);
 	height: var(--size);
@@ -15,7 +16,7 @@
 
 .title {
 	@mixin font-text20;
-	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.5rem;
+	@mixin res padding-block-end, 2.133rem, 0.556rem, 0.556rem;
 
 	font-weight: 600;
 }

@@ -6,9 +6,9 @@
 }
 
 .card {
-	@mixin res padding, 4.267rem, 2.778rem, 2.5rem;
-	@mixin res gap, 10.667rem, 2.778rem, 2.5rem;
-	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+	@mixin res padding, 4.267rem, 2.778rem, 2.778rem;
+	@mixin res gap, 10.667rem, 2.778rem, 2.778rem;
+	@mixin res border-radius, 6.4rem, 1.667rem, 1.667rem;
 
 	background-color: var(--gray-200-color);
 	display: flex;
@@ -19,7 +19,7 @@
 }
 
 .image {
-	@mixin res height, 121.867rem, 31.736rem, 28.563rem; /* 348px */
+	@mixin res height, 121.867rem, 31.736rem, 31.736rem; /* 348px */
 
 	bottom: 0;
 	align-self: end;

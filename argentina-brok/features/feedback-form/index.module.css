@@ -17,12 +17,12 @@
 .description {
 	@mixin responsive max-width, 320, 640, 640;
 
+	margin-inline: auto;
 	color: var(--gray-800-color);
 	text-align: center;
 
 	@media (max-width: 767px) {
 		@mixin responsive width, 330;
-		margin-inline: auto;
 	}
 }
 
