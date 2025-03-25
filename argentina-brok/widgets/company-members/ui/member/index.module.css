@@ -42,7 +42,7 @@
 
 .name {
 	@mixin font-text20;
-	@mixin res padding-block-end, 1.067rem, 0.278rem, 0.25rem;
+	@mixin responsive padding-block-end, 4, 4, 4;
 
 	font-weight: 600;
 }

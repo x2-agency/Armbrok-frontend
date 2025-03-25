@@ -14,8 +14,8 @@
 }
 
 .awards {
-	@mixin res column-gap, 14.933rem, 3.889rem, 3.9rem;
-	@mixin res --column-width, 80rem, 20.833rem, 18.75rem;
+	@mixin responsive column-gap, 56, 56, 56;
+	@mixin responsive --column-width, 300, 300, 300;
 
 	display: grid;
 	grid-template-columns: repeat(3, var(--column-width)); /* 300px */

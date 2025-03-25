@@ -13,6 +13,10 @@
 	@mixin responsive gap, unset, 40, 40;
 }
 
+.hyLinks {
+	@mixin responsive gap, unset, 20, 20;
+}
+
 .active {
 	color: var(--red--600-color);
 }

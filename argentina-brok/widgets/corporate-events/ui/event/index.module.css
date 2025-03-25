@@ -1,7 +1,7 @@
 .root {
 	display: flex;
 	flex-direction: column;
-	@mixin res width, 75.2rem, 19.583rem, 17.625rem; /* 282px */
+	@mixin responsive width, 282, 282, 282;
 }
 
 .date {
@@ -13,21 +13,21 @@
 	display: flex;
 	align-items: center;
 	position: relative;
-	@mixin res width, 83.733rem, 21.806rem, 19.625rem; /* 314px */
+	@mixin responsive width, 314, 314, 314;
 }
 
 .ball {
 	display: block;
 	border-radius: 50%;
-	@mixin res margin-block, 8rem, 1.806rem, 1.625rem; /* 30px */
-	@mixin res width, 2.667rem, 0.694rem, 0.625rem; /* 10px */
-	@mixin res height, 2.667rem, 0.694rem, 0.625rem; /* 10px */
+	@mixin responsive margin-block, 30, 26, 26;
+	@mixin responsive width, 10, 10, 10;
+	@mixin responsive height, 10, 10, 10;
 	background-color: var(--red-500-color);
 }
 
 .line {
 	flex-grow: 1;
-	@mixin res height, 0.533rem, 0.139rem, 0.125rem; /* 2px */
+	@mixin responsive height, 2, 2, 2;
 	background-color: var(--gray-300-color);
 }
 

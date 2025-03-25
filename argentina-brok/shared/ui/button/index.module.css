@@ -105,7 +105,7 @@
 }
 
 .icon {
-	@mixin res width, 6.4rem, 1.667rem, 1.667rem;
+	@mixin responsive width, 24, 24, 24;
 }
 
 .root.big {

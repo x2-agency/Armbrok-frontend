@@ -19,7 +19,7 @@
 .card {
 	@mixin responsive padding-inline, 20, 120, unset;
 	@media (min-width: 1441px) {
-		padding-inline: calc(8rem + (100vw - 1440px) / 2);
+		padding-inline: calc(8.333rem + (100vw - 1440px) / 2);
 	}
 }
 

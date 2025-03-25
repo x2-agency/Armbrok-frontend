@@ -4,12 +4,13 @@
 }
 
 .titleBlock {
-	@mixin res width, 100%, 83.33vw, 83.33rem;
+	@mixin responsive width, unset, 1200, 1200;
 	@mixin responsive padding-block-end, 20, 40, 40;
 
 	margin-inline: auto;
 
 	@media (max-width: 767px) {
+		width: 100%;
 		margin-inline: unset;
 		padding-inline: 5.333rem;
 	}
@@ -33,7 +34,7 @@
 .card {
 	@mixin responsive padding-inline, 20, 120, unset;
 	@media (min-width: 1441px) {
-		padding-inline: calc(8rem + (100vw - 1440px) / 2);
+		padding-inline: calc(8.333rem + (100vw - 1440px) / 2);
 	}
 }
 

@@ -48,8 +48,8 @@
 	position: absolute;
 	height: auto;
 	@mixin responsive width, unset, 274, 274;
-	@mixin responsive right, unset, 20, 16;
-	@mixin responsive top, unset, 18.5, 19.2;
+	@mixin responsive right, unset, 20, 20;
+	@mixin responsive top, unset, 18.5, 18.5;
 	@mixin responsive padding-block-end, 30, unset, unset;
 
 	z-index: 2;

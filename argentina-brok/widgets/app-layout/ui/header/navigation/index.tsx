@@ -10,14 +10,14 @@ import css from './index.module.css';
 
 export const Navigation = () => {
 	const pathname = usePathname();
-
+	const isHyLocale = pathname.startsWith('/hy');
 	const links = useHeaderLinks();
 
 	const normalizedPathname = pathname.replace(/^\/(hy|en|ru)/, '') || '/';
 
 	return (
 		<nav className={cx(css.root)}>
-			<ul className={cx(css.links)}>
+			<ul className={cx(css.links, { [css.hyLinks]: isHyLocale })}>
 				<li className={cx(css.li)}>
 					<ServicesLinks />
 				</li>

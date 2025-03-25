@@ -33,7 +33,7 @@
 	}
 
 	@media (min-width: 1441px) {
-		padding-inline: calc(8rem + (100vw - 1440px) / 2);
+		padding-inline: calc(8.333rem + (100vw - 1440px) / 2);
 	}
 }
 
@@ -43,7 +43,7 @@
 	@mixin responsive padding-block-end, 35, 40, 40;
 
 	@media (min-width: 1441px) {
-		padding-inline: calc(8rem + (100vw - 1440px) / 2);
+		padding-inline: calc(8.333rem + (100vw - 1440px) / 2);
 	}
 }
 
