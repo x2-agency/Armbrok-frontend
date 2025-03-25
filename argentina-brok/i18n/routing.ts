@@ -2,9 +2,9 @@
 import { defineRouting } from 'next-intl/routing';
 
 export enum Locales {
+	AM = 'hy',
 	EN = 'en',
 	RU = 'ru',
-	AM = 'hy',
 }
 
 export const DEFAULT_LOCALE = Locales.EN;
