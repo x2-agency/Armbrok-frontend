@@ -62,8 +62,7 @@
 	}
 }
 
-.title,
-.description {
+.title {
 	color: var(--gray-100-color);
 }
 
@@ -76,14 +75,16 @@
 .description {
 	@mixin font-text20;
 	@mixin responsive padding-block-end, 20, 62, 62;
+
+	color: var(--gray-400-color);
 }
 
 .imgWrap {
 	position: absolute;
 	@mixin responsive width, unset, 635, 635;
 	height: 100%;
-	@mixin res right, unset, 0, 0;
-	@mixin res top, unset, 0, 0;
+	@mixin responsive right, unset, 0, 0;
+	@mixin responsive top, unset, 0, 0;
 	z-index: 0;
 
 	@media (max-width: 767px) {

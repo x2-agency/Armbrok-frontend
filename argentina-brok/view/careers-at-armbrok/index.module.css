@@ -1,5 +1,5 @@
 .hero {
-	@mixin res gap, 17.067rem, 4.444rem, 4rem;/* 64px */
+	@mixin responsive gap, 64, 64, 64;
 
 	display: flex;
 	flex-direction: column;

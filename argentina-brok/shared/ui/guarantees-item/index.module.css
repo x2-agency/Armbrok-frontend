@@ -16,8 +16,8 @@
 }
 
 .icon {
-	@mixin res width, 12.8rem, 3.333rem, 3rem; /* 48px */
-	@mixin res margin-block-end, 4.267rem, 1.111rem, 1rem;
+	@mixin responsive width, 48, 48, 48;
+	@mixin responsive margin-block-end, 16, 16, 16;
 }
 
 .description {

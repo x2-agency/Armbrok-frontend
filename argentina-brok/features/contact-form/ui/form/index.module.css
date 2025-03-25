@@ -60,7 +60,7 @@
 
 .loader {
 	@mixin responsive width, 24, 24, 24;
-	@mixin responsive height, 24, 16, 24;
+	@mixin responsive height, 24, 16, 16;
 
 	position: absolute;
 	left: 50%;

@@ -10,7 +10,7 @@
 }
 
 .title {
-	@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem;
+	@mixin responsive padding-block-end, 16, 16, 16;
 	@mixin font-h1;
 
 	font-weight: 700;
@@ -22,7 +22,7 @@
 	color: var(--gray-600-color);
 
 	&.withButton {
-		@mixin res padding-block-end, 4.267rem, 1.111rem, 1rem;
+		@mixin responsive padding-block-end, 16, 16, 16;
 	}
 
 	@media (max-width: 767px) {

@@ -49,21 +49,12 @@
 	font-weight: 600;
 
 	color: var(--gray-800-color);
-
-	@media (min-width: 1441px) {
-		@mixin font-h6;
-		font-weight: 600 !important;
-	}
 }
 
 .description {
 	@mixin font-text16;
 	color: var(--gray-700-color);
 	@mixin responsive margin-block-end, 20, 24, 24;
-
-	@media (min-width: 1441px) {
-		@mixin font-text14;
-	}
 }
 
 .wrap {

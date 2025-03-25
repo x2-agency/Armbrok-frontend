@@ -17,9 +17,9 @@ export const Navigation = () => {
 
 	return (
 		<nav className={cx(css.root)}>
-			<ul className={cx(css.links, { [css.linksHy]: isHyLocale })}>
+			<ul className={cx(css.links, { [css.hyLinks]: isHyLocale })}>
 				<li className={cx(css.li)}>
-					<ServicesLinks closeMenu={() => {}} />
+					<ServicesLinks />
 				</li>
 				{links.map(item => {
 					const normalizedHref = item.href.replace(/^\/(hy|en|ru)/, '') || '/';

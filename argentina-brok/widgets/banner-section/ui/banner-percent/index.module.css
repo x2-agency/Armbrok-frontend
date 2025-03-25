@@ -1,12 +1,12 @@
 .percentData {
-	@mixin res gap, 3.2rem, 0.833rem, 0.75rem; /* 12px */
+	@mixin responsive gap, 12, 12, 12;
 
 	display: flex;
 	align-items: center;
 }
 
 .percent {
-	@mixin res font-size, 12.8rem, 3.333rem, 3rem; /* 48px */
+	@mixin responsive font-size, 48, 48, 48;
 
 	line-height: 0.95;
 	color: var(--green-550-color);

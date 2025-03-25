@@ -1,7 +1,7 @@
 .circle {
-	@mixin res width, 3.2rem, 0.833rem, 0.75rem; /* 12px */
-	@mixin res height, 3.2rem, 0.833rem, 0.75rem; /* 12px */
-	@mixin res margin-block, 1.867rem, 0.472rem, 0.438rem; /* 7px */
+	@mixin responsive width, 12, 12, 12;
+	@mixin responsive height, 12, 12, 12;
+	@mixin responsive margin-block, 7, 7, 7;
 
 	border-radius: 100%;
 	background-color: var(--gray-400-color);
@@ -12,7 +12,7 @@
 }
 
 .title {
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 8px */
+	@mixin responsive gap, 8, 8, 8;
 
 	display: flex;
 }
@@ -24,7 +24,7 @@
 }
 
 .list {
-	@mixin res gap, 2.133rem, 0.556rem, 0.5rem; /* 6px */
+	@mixin responsive gap, 8, 8, 8;
 
 	display: flex;
 	flex-direction: column;

@@ -22,7 +22,7 @@
 .description {
 	@mixin responsive max-width, 336, 336, 336;
 	@mixin responsive padding-block-end, unset, 128, 128;
-	@mixin font-text16;
+	@mixin font-text20;
 
 	color: var(--gray-100-color);
 	opacity: 0.7;

@@ -6,9 +6,9 @@
 }
 
 .card {
-	@mixin res padding, 4.267rem, 2.778rem, 2.5rem;
-	@mixin res gap, 10.667rem, 2.778rem, 2.5rem;
-	@mixin res border-radius, 6.4rem, 1.667rem, 1.5rem;
+	@mixin responsive padding, 16, 40, 40;
+	@mixin responsive gap, 40, 40, 40;
+	@mixin responsive border-radius, 24, 24, 24;
 
 	background-color: var(--gray-200-color);
 	display: flex;
@@ -19,7 +19,7 @@
 }
 
 .image {
-	@mixin res height, 121.867rem, 31.736rem, 28.563rem; /* 348px */
+	@mixin responsive height, 457, 456, 456;
 
 	bottom: 0;
 	align-self: end;
@@ -33,7 +33,7 @@
 }
 
 .review {
-	@mixin res padding-inline-start, 10.667rem, 29.25rem, 29.25rem;
+	@mixin responsive padding-inline-start, 40, 421, 421;
 	@mixin responsive gap, 20, 46, 46;
 
 	display: flex;

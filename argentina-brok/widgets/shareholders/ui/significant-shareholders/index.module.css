@@ -20,7 +20,7 @@
 
 .listItem {
 	@mixin responsive gap, 12, 12, 12;
-	@mixin responsive --leftPartWidth, 320, 284, 286;
+	@mixin responsive --leftPartWidth, 320, 284, 284;
 
 	display: grid;
 	grid-template-columns: var(--leftPartWidth) auto;

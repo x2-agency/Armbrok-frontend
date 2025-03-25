@@ -15,7 +15,7 @@
 	align-items: center;
 	pointer-events: all;
 
-	@mixin res width, unset, 96.667vw, 87.438rem;
+	@mixin responsive width, unset, 1392, 1392;
 
 	@media (max-width: 767px) {
 		@mixin responsive padding-inline, 20;
@@ -45,7 +45,7 @@
 }
 
 .rightBlockHy {
-	@mixin responsive gap, 40, 40, 13;
+	@mixin responsive gap, 40, 40, 40;
 }
 
 .burger {

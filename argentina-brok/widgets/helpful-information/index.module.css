@@ -1,6 +1,6 @@
 .root {
-	@mixin res padding-block-start, 9.6rem, 5rem, 4.5rem; /* 36px 72px */
-	@mixin res padding-block-end, 16rem, 8.333rem, 7.5rem; /* 60px 120px */
+	@mixin responsive padding-block-start, 36, 72, 72;
+	@mixin responsive padding-block-end, 60, 120, 120;
 }
 
 .title {

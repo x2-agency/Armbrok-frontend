@@ -6,10 +6,10 @@
 
 .tabButtons {
 	@mixin responsive padding, 4, 4, 4;
-	@mixin res border-radius, 2.667rem, 0.694rem, 0.625rem;
-	@mixin res gap, 1.067rem, 0.278rem, 0.25rem;
-	@mixin res margin-block-end, 6.4rem, 1.667rem, 1.5rem;
-	@mixin res --grid, 38.4rem, 10rem, 9rem;
+	@mixin responsive border-radius, 10, 10, 10;
+	@mixin responsive gap, 4, 4, 4;
+	@mixin responsive margin-block-end, 24, 24, 24;
+	@mixin responsive --grid, 144, 144, 144;
 	@mixin responsive --border, 1, 1, 1;
 
 	border: var(--border) solid var(--gray-300-color);

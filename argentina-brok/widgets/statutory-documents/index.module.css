@@ -3,7 +3,7 @@
 }
 
 .documents {
-	@mixin res gap, 6.4rem, 1.667rem, 1.5rem;
+	@mixin responsive gap, 24, 24, 24;
 
 	display: grid;
 

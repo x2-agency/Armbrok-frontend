@@ -7,7 +7,7 @@
 	--h6: 1.25rem; /* 18px */
 	--text20: 1.389rem; /* 20px */
 	--text18: 1.25rem; /* 18px */
-	--text16: 1rem; /* 16px */
+	--text16: 1.111rem; /* 16px */
 	--text14: 0.972rem; /* 14px */
 	--text12: 0.833rem; /* 12px */
 
@@ -24,28 +24,6 @@
 	--text12-line-height: 1.5; /* 18px */
 
 	--h2-letter-spacing: -1%;
-
-	@media (max-width: 1440px) {
-		--h1: clamp(
-			2.222rem,
-			-0.317rem + 4.762vi,
-			4.444rem
-		); /* from 32px to 64px */
-		--h2: clamp(2.222rem, 1.587rem + 1.19vi, 2.778rem); /* from 32px to 40px */
-		--h3: clamp(2.222rem, 2.222rem + 0vi, 2.222rem); /* from 32px to 32px */
-		--h4: clamp(1.667rem, 1.667rem + 0vi, 1.667rem); /* from 24px to 24px */
-		--h5: clamp(1.389rem, 1.389rem + 0vi, 1.389rem); /* from 20px to 20px */
-		--h6: clamp(1.25rem, 1.25rem + 0vi, 1.25rem); /* from 18px to 18px */
-		--text20: clamp(
-			1.111rem,
-			0.794rem + 0.595vi,
-			1.389rem
-		); /* from 16px to 20px */
-		--text18: clamp(1.25rem, 1.25rem + 0vi, 1.25rem); /* from 18px to 18px */
-		--text16: clamp(1.111rem, 1.111rem + 0vi, 1.111rem); /* from 16px to 16px */
-		--text14: clamp(0.972rem, 0.972rem + 0vi, 0.972rem); /* from 14px to 14px */
-		--text12: clamp(0.833rem, 0.833rem + 0vi, 0.833rem); /* from 12px to 12px */
-	}
 
 	@media (max-width: 767px) {
 		--h1-line-height: 1.25; /* 40px */
@@ -121,7 +99,7 @@ html {
 	}
 
 	@media (min-width: 1441px) {
-		font-size: 16px;
+		font-size: 14.4px;
 	}
 }
 
@@ -158,17 +136,23 @@ h6 {
 	@mixin responsive border-radius, 15, 32, 32;
 	@mixin responsive padding-block, 20, 40, 40;
 	@mixin responsive padding-inline, 20, 40, 40;
-	@mixin res width, 100%, 83.33vw, 75rem; /* 1200px */
-	@mixin res margin-inline, unset, auto, auto;
+	@mixin responsive width, unset, 1200, 1200; /* 1200px */
+	margin-inline: auto;
+
+	@media (max-width: 767px) {
+		margin-inline: unset;
+		width: 100%;
+	}
 }
 
 .default {
-	width: 83.33vw;
-	@mixin res margin-inline, unset, auto, auto;
-	@mixin res width, 100%, 83.33vw, 75rem; /* 1200px */
+	margin-inline: auto;
+	@mixin responsive width, unset, 1200, 1200; /* 1200px */
 
 	@media (max-width: 767px) {
 		padding-inline: 5.333rem;
+		margin-inline: unset;
+		width: 100%;
 	}
 }
 
