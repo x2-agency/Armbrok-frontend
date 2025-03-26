@@ -14,7 +14,6 @@ import { Review } from '@/widgets/review';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
-import { TITLE_SECTION_ASSET } from './model/asset-managment.constants';
 import type { AssetManagementPageResponse } from './types/response';
 
 export const AssetManagement: NextPage<{
@@ -37,6 +36,7 @@ export const AssetManagement: NextPage<{
 		infoSection,
 	} = initialData?.data ?? {};
 	useUpdateFooterData(publishedAt);
+
 	return (
 		<>
 			<BannerSection
@@ -57,7 +57,7 @@ export const AssetManagement: NextPage<{
 					/>
 					<ExperienceSection
 						className={css.experience}
-						experience={TITLE_SECTION_ASSET}
+						experience={experienceSection.factoids}
 					/>
 				</HeroContainer>
 			)}
