@@ -4,3 +4,10 @@ export const LOGO_HEADER = {
 };
 
 export const HOME_LINK = '/';
+
+export const EXCLUDED_URLS = [
+	'contact-us',
+	'media',
+	'armbrok-search',
+	'regulation',
+];
