@@ -23,3 +23,35 @@
 		scroll-snap-align: center;
 	}
 }
+
+.sliderWrapper {
+	display: flex;
+	min-height: 0;
+}
+
+.swiper {
+	width: 100%;
+	height: auto;
+
+	:global(.swiper-pagination) {
+		@mixin responsive margin-block-start, 10;
+
+		position: static !important;
+		overflow: visible !important;
+	}
+
+	:global(.swiper-pagination-bullet-active) {
+		background: var(--gray-800-color);
+	}
+}
+
+.slide {
+	display: flex !important;
+	height: auto !important;
+}
+
+.card {
+	@mixin responsive width, 335;
+
+	margin-inline: auto;
+}
