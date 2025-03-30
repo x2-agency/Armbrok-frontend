@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 export const useScrollObserver = (callback: (isScrolled: boolean) => void) => {
 	useEffect(() => {
 		const handleScroll = () => {
-			const isScrolled = window.scrollY > 0;
+			const isScrolled = window.scrollY > 80;
 			callback(isScrolled);
 		};
 

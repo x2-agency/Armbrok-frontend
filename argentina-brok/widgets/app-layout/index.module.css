@@ -11,6 +11,9 @@
 }
 
 .divider {
+	@mixin transition;
+
+	transition-property: background;
 	background: transparent;
 }
 
