@@ -1,7 +1,7 @@
 {
 	"header": {
 		"loginButton": {
-			"text": "Войти в аккаунт",
+			"text": "Войти",
 			"link": "#"
 		},
 		"openAccountButton": {
@@ -13,7 +13,7 @@
 			"link": "/depositary-services"
 		},
 		"investor-relations": {
-			"text": "Отношения с инвесторами",
+			"text": "Инвесторам",
 			"link": "/investor-relations"
 		},
 		"media": {
@@ -25,7 +25,7 @@
 			"link": "/about-us"
 		},
 		"contact-us": {
-			"text": "Связаться с нами",
+			"text": "Контакты",
 			"link": "/contact-us"
 		}
 	},
@@ -43,7 +43,7 @@
 					"link": "/asset-management"
 				},
 				"investmentFunds": {
-					"text": "Инвестиционные фонды",
+					"text": "Фонды",
 					"link": "/funds"
 				},
 				"investmentBanking": {
@@ -51,7 +51,7 @@
 					"link": "/investment-banking"
 				},
 				"depositoryRegistrar": {
-					"text": "Депозитарий и регистратор",
+					"text": "Депозитарий и&nbsp;регистратор",
 					"link": "/depositary-services"
 				}
 			},
@@ -67,7 +67,7 @@
 				}
 			},
 			"investor-relations": {
-				"text": "Отношения с инвесторами"
+				"text": "Инвесторам"
 			},
 			"media": {
 				"text": "Медиа",
@@ -76,7 +76,7 @@
 					"link": "/media?category=articles"
 				},
 				"investmentIdeas": {
-					"text": "Инвестиционные идеи",
+					"text": "Инвест идеи",
 					"link": "/media?category=invest-ideas"
 				},
 				"companyNews": {
@@ -85,22 +85,22 @@
 				}
 			},
 			"regulation": {
-				"text": "Регулирование",
+				"text": "Правовая информация",
 				"lawsLegalActs": {
-					"text": "Законы и нормативные акты",
+					"text": "Законы и правовые акты",
 					"link": "/regulation#laws"
 				},
 				"internalRules": {
-					"text": "Внутренние правила",
+					"text": "Внутренние регламенты",
 					"link": "/regulation#internal-rules"
 				},
 				"stockExchangeRules": {
-					"text": "Правила фондовой биржи и центрального депозитария",
+					"text": "Регламенты Биржи и&nbsp;Центрального депозитария",
 					"link": "/regulation#exchange-rules"
 				}
 			},
 			"contact-us": {
-				"text": "Свяжитесь с нами"
+				"text": "Контакты"
 			}
 		},
 		"disclaimer": "<p>Armbrok не несет ответственности за точность и надежность информации и/или рекламных материалов, представленных на сторонних веб-сайтах, на которые ведут ссылки с данного сайта, и не несет ответственности за последствия, возникающие в результате использования указанной информации.</p>  <p>В случае любых расхождений между информацией, опубликованной на английском и русском языках, приоритет имеет армянская версия.</p><p>Полезные ссылки: <a>cba.am</a>, <a>abcfinance.am</a>, <a>fininfo.am</a>, <a>fsm.am</a></p><p>Armbrok регулируется Центральным банком Республики Армения.</p><p>Номер лицензии: 10, выдан 04.11.2008.</p>",

@@ -1,11 +1,11 @@
 {
 	"header": {
 		"loginButton": {
-			"text": "Մուտք գործել",
+			"text": "Մտնել",
 			"link": "#"
 		},
 		"openAccountButton": {
-			"text": "Բաց հաշիվ",
+			"text": "Բացել հաշիվ",
 			"link": "#"
 		},
 		"services": {
@@ -25,7 +25,7 @@
 			"link": "/about-us"
 		},
 		"contact-us": {
-			"text": "Կապը մեզ հետ",
+			"text": "Կոնտակտներ",
 			"link": "/contact-us"
 		}
 	},
@@ -39,26 +39,26 @@
 					"link": "/brokerage"
 				},
 				"assetManagement": {
-					"text": "Գույքի կառավարում",
+					"text": "Ակտիվների կառավարում",
 					"link": "/asset-management"
 				},
 				"investmentFunds": {
-					"text": "Ներդրումային ֆոնդեր",
+					"text": "Ֆոնդեր",
 					"link": "/funds"
 				},
 				"investmentBanking": {
-					"text": "Ներդրումային բանկինգ",
+					"text": "Ներդրումային բանկ",
 					"link": "/investment-banking"
 				},
 				"depositoryRegistrar": {
-					"text": "Դեպոզիտարի և ռեգիստրատոր",
+					"text": "Դեպոզիտարիա և ռեեստրի վարում",
 					"link": "/depositary-services"
 				}
 			},
 			"about-us": {
 				"text": "Մեր մասին",
 				"general-information": {
-					"text": "Ընդհանուր տեղեկություն",
+					"text": "Ընդհանուր տեղեկություններ",
 					"link": "/about-us"
 				},
 				"career": {
@@ -67,7 +67,7 @@
 				}
 			},
 			"investor-relations": {
-				"text": "Ներդրողների հետ կապ"
+				"text": "Ներդրողների հետ հարաբերություններ"
 			},
 			"media": {
 				"text": "Մեդիա",
@@ -76,31 +76,31 @@
 					"link": "/media?category=articles"
 				},
 				"investmentIdeas": {
-					"text": "Ներդրումային գաղափարներ",
+					"text": "Ներդրումային իդեաներ",
 					"link": "/media?category=invest-ideas"
 				},
 				"companyNews": {
-					"text": "Ընկերության նորություններ",
+					"text": "Ընկերության լուրեր",
 					"link": "/media?category=company-news"
 				}
 			},
 			"regulation": {
-				"text": "Կանոնակարգ",
+				"text": "Կարգավորում",
 				"lawsLegalActs": {
-					"text": "Օրենքներ և իրավական ակտեր",
+					"text": "Օրենքներ",
 					"link": "/regulation#laws"
 				},
 				"internalRules": {
-					"text": "Ներքին կանոններ",
+					"text": "Ներքին կանոնակարգեր",
 					"link": "/regulation#internal-rules"
 				},
 				"stockExchangeRules": {
-					"text": "Ֆոնդային բորսայի և կենտրոնական դեպոզիտարի կանոններ",
+					"text": "Բորսայի և դեպոզիտարիայի կանոններ",
 					"link": "/regulation#exchange-rules"
 				}
 			},
 			"contact-us": {
-				"text": "Կապ մեզ հետ"
+				"text": "Կոնտակտներ"
 			}
 		},
 		"disclaimer": "<p>Armbrok-ը պատասխանատվություն չի կրում այս կայքում տեղադրված երրորդ կողմի վեբ կայքերում ներկայացված տեղեկատվության և/կամ գովազդների ճշգրտության և հուսալիության համար և չի կրում որևէ պատասխանատվություն նշված տեղեկատվության օգտագործման հետևանքների համար:</p><p>Եթե անգլերեն և ռուսերեն հրապարակված տեղեկատվության միջև որևէ հակասություն առաջանա, գերակշռող է համարվում հայերեն տարբերակը:</p><p>Օգտակար հղումներ՝ <a>cba.am</a>, <a>abcfinance.am</a>, <a>fininfo.am</a>, <a>fsm.am</a></p>  <p>Armbrok-ը կարգավորվում է Հայաստանի Հանրապետության Կենտրոնական Բանկի կողմից:</p><p>Լիցենզիայի համարը՝ 10, տրված է 04.11.2008 թվականին:</p>",
@@ -126,23 +126,23 @@
 		"text": "Ծառայություններ",
 		"links": {
 			"brokerage": {
-				"text": "Բրոքերային&nbsp;ծառայություններ",
+				"text": "Բրոքերային ծառայություններ",
 				"link": "/brokerage"
 			},
 			"assetManagement": {
-				"text": "Գույքի&nbsp;կառավարում",
+				"text": "Ակտիվների կառավարում",
 				"link": "/asset-management"
 			},
 			"investmentFunds": {
-				"text": "Ներդրումային&nbsp;ֆոնդեր",
+				"text": "Ֆոնդեր",
 				"link": "/funds"
 			},
 			"investmentBanking": {
-				"text": "Ներդրումային&nbsp;բանկինգ",
+				"text": "Ներդրումային բանկ",
 				"link": "/investment-banking"
 			},
 			"depositoryRegistrar": {
-				"text": "Դեպոզիտարի&nbsp;և&nbsp;ռեգիստրատոր",
+				"text": "Դեպոզիտարիա և ռեեստրի վարում",
 				"link": "/depositary-services"
 			}
 		}
