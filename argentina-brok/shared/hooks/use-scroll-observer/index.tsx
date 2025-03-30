@@ -9,6 +9,8 @@ export const useScrollObserver = (callback: (isScrolled: boolean) => void) => {
 			callback(isScrolled);
 		};
 
+		handleScroll();
+
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, [callback]);
