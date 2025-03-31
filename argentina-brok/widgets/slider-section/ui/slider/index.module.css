@@ -24,7 +24,7 @@
 
 		background: #fff !important;
 		color: var(--black-color);
-		top: 48.5%;
+		top: 49.7%;
 		translate: 0% -50%;
 
 		&::after {
@@ -46,7 +46,7 @@
 	}
 
 	:global(.swiper-button-prev) {
-		left: 24%;
+		left: 30%;
 
 		@media (max-width: 767px) {
 			left: 2%;
@@ -54,7 +54,7 @@
 	}
 
 	:global(.swiper-button-next) {
-		right: 24%;
+		right: 30%;
 		rotate: 180deg;
 
 		@media (max-width: 767px) {
@@ -93,17 +93,19 @@
 }
 
 .slide {
-	@mixin responsive width, 320, 800, 800;
+	@mixin responsive --width, 320, 640, 640;
 
 	position: relative;
 	overflow: hidden;
+	width: var(--width) !important;
 }
 
 .imageWrapper {
-	@mixin responsive width, 320, 800, 800;
-	@mixin responsive height, 250, 600, 600;
+	@mixin responsive width, 320, 640, 640;
+	@mixin responsive height, 250, 480, 480;
 	@mixin responsive border-radius, 24, 24, 24;
 
+	justify-self: center;
 	overflow: hidden;
 	position: relative;
 }

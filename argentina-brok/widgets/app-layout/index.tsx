@@ -1,10 +1,9 @@
 'use client';
 
 import Head from 'next/head';
-import type { PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
 
-import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
-
+import { useHeaderColor } from './hooks/use-header-color';
 import css from './index.module.css';
 import { AccountModal } from './ui/account-modal';
 import { CookiePanel } from './ui/cookie-panel';
@@ -13,6 +12,8 @@ import { Header } from './ui/header';
 import { Menu } from './ui/menu';
 
 export const AppLayout = ({ children }: Readonly<PropsWithChildren>) => {
+	useHeaderColor();
+	
 	return (
 		<>
 			<Head>
@@ -22,15 +23,13 @@ export const AppLayout = ({ children }: Readonly<PropsWithChildren>) => {
 					key="viewport"
 				/>
 			</Head>
-			<headerScrollObserver.ScrollObserverProvider>
-				<Header />
-				<span className={css.divider} />
-				<Menu />
-				<AccountModal />
-				<CookiePanel />
-				<main>{children}</main>
-				<Footer />
-			</headerScrollObserver.ScrollObserverProvider>
+			<Header />
+			<span className={css.divider} />
+			<Menu />
+			<AccountModal />
+			<CookiePanel />
+			<main>{children}</main>
+			<Footer />
 		</>
 	);
 };

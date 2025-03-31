@@ -1,4 +1,6 @@
 .root {
+	@mixin responsive padding-block, 20, 24, 24;
+
 	position: relative;
 }
 
@@ -6,8 +8,8 @@
 	display: flex;
 	position: relative;
 	overflow: hidden;
-	@mixin responsive margin-block, 20, 24, 24;
-	background: radial-gradient(
+	background:
+		radial-gradient(
 			circle at 92% 7%,
 			#ffffff -29%,
 			#ffffff -7%,
@@ -29,7 +31,8 @@
 		border-radius: 4rem;
 		height: 100.333rem; /* 500px */
 
-		background: radial-gradient(
+		background:
+			radial-gradient(
 				circle at 88% 9%,
 				#ffffff 1%,
 				#9e2e2c 22%,

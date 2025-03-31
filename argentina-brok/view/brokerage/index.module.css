@@ -1,3 +1,7 @@
 .solution {
 	padding-block: unset;
 }
+
+.quote {
+	@mixin responsive padding-block-start, 20, 86, 86;
+}

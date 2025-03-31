@@ -71,7 +71,7 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 			<AppMobileSection data={mobileAppSection} />
 			<PortfolioSection cards={portfolioSection} />
 
-			<Review quote={quoteSection} />
+			<Review quote={quoteSection} className={css.quote} />
 			<RunningTextSection
 				interval={350}
 				runningTextSection={runningTextSection}

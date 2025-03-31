@@ -8,11 +8,12 @@ import css from './index.module.css';
 
 export type CardType = {
 	data: PortfolioSectionType;
+	className?: string;
 };
 
-export const Card = ({ data }: CardType) => {
+export const Card = ({ data, className }: CardType) => {
 	return (
-		<article className={cx(css.root, 'hybrid')}>
+		<article className={cx(css.root, 'hybrid', className)}>
 			<h4 className={css.title}>{parser(data.title ?? '')}</h4>
 			<p className={css.description}>{parser(data.description ?? '')}</p>
 			<div className={css.imageWrap}>

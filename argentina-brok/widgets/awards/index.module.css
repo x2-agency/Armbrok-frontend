@@ -21,8 +21,6 @@
 	&.withButton {
 		@mixin responsive padding-block-end, 20, 40, 40;
 	}
-
-	@media;
 }
 
 .row {
@@ -63,16 +61,6 @@
 
 	&.close {
 		@mixin responsive margin-block-start, 20, 40, 40;
-	}
-
-	@media (hover: hover) {
-		&:hover {
-			color: var(--black-color) !important;
-
-			svg path {
-				fill: var(--black-color);
-			}
-		}
 	}
 }
 
