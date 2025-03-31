@@ -46,9 +46,9 @@
 }
 
 .hyCard {
-	@mixin responsive min-height, 322, 420, 410;
+	@mixin responsive min-height, 322, 475, 475;
 }
 
 .ruCard {
-	@mixin responsive min-height, 322, 414, 390;
+	@mixin responsive min-height, 322, 390, 390;
 }
