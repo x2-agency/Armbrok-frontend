@@ -4,31 +4,21 @@ import { useEffect } from 'react';
 import { useScrollObserver } from '@/shared/hooks/use-scroll-observer';
 import { EXCLUDED_URLS } from '@/widgets/app-layout/model/header.constants';
 
+export const setHeaderColorAttribute = (color: 'dark' | 'white') => {
+	document.documentElement.setAttribute('data-header-top-color', color);
+};
+
 export const useHeaderColor = () => {
 	const formattedUrl = usePathname().split('/')[2];
 	const isExcluded = EXCLUDED_URLS.includes(formattedUrl);
 
 	useEffect(() => {
-		const htmlElement = document.documentElement;
-
-		htmlElement.setAttribute('data-header-top-color', 'white');
-
-		if (isExcluded) {
-			htmlElement.setAttribute('data-header-top-color', 'dark');
-		}
+		setHeaderColorAttribute('white');
+		if (isExcluded) setHeaderColorAttribute('dark');
 	}, [isExcluded]);
 
 	useScrollObserver(isScrolled => {
-		const htmlElement = document.documentElement;
-
-		if (isExcluded) {
-			return;
-		}
-
-		if (isScrolled) {
-			htmlElement.setAttribute('data-header-top-color', 'dark');
-		} else {
-			htmlElement.setAttribute('data-header-top-color', 'white');
-		}
+		if (isExcluded) return;
+		setHeaderColorAttribute(isScrolled ? 'dark' : 'white');
 	});
 };
