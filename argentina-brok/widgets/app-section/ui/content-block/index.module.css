@@ -20,7 +20,7 @@
 }
 
 .description {
-	@mixin responsive max-width, 336, 336, 336;
+	@mixin responsive max-width, 336, 378, 378;
 	@mixin responsive padding-block-end, unset, 128, 128;
 	@mixin font-text20;
 
