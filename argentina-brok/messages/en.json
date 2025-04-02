@@ -150,19 +150,19 @@
 	"openAccount": {
 		"title": "Open account",
 		"nameInput": {
-			"label": "Your name ",
+			"label": "Name",
 			"placeholder": "First name",
 			"errorMessage": "Please fill this field",
 			"secondErrorMessage": "Name must be at least 4 characters long"
 		},
 		"phoneInput": {
-			"label": "Your phone number",
+			"label": "Phone number",
 			"placeholder": "Phone number",
 			"errorMessage": "Please fill this field",
 			"secondErrorMessage": "Please enter a valid phone number"
 		},
 		"emailInput": {
-			"label": "Your e-mail address",
+			"label": "E-mail address",
 			"placeholder": "E-mail address",
 			"errorMessage": "Please fill this field",
 			"secondErrorMessage": "Please enter a valid email address"

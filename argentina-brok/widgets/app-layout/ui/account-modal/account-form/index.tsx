@@ -13,16 +13,10 @@ import { Captcha } from '@/shared/ui/captcha';
 import { Checkbox } from '@/shared/ui/checkbox';
 import { ErrorModal } from '@/shared/ui/error-modal';
 import { Input } from '@/shared/ui/input';
-import { Textarea } from '@/shared/ui/textarea';
 import { useAccountTranslations } from '@/widgets/app-layout/hooks/use-account-translations';
 import { usePostAccountForm } from '@/widgets/app-layout/hooks/use-post-account-form';
 import { ACCOUNT } from '@/widgets/app-layout/model/account-form.constants';
-import {
-	HOME_LINK,
-	LOGO_HEADER,
-} from '@/widgets/app-layout/model/header.constants';
 import { SuccessForm } from '@/widgets/app-layout/ui/account-modal/success-form';
-import { Logo } from '@/widgets/app-layout/ui/logo';
 
 import css from './index.module.css';
 
@@ -32,6 +26,7 @@ export type AccountFormValuesData = {
 	subject: string;
 	message: string;
 	phoneNumber: string;
+	formSubject: string;
 	checkbox: boolean;
 };
 
@@ -42,13 +37,10 @@ export const AccountForm = () => {
 	const { subjectForm } = useLayoutContext();
 	const {
 		nameInputTranslation,
-		messageInputTranslation,
-		subjectInputTranslation,
 		phoneInputTranslation,
 		emailInputTranslation,
 		checkboxTranslation,
 		captchaTranslation,
-		buttonTranslation,
 	} = useAccountTranslations();
 
 	const {
@@ -62,7 +54,7 @@ export const AccountForm = () => {
 
 	useEffect(() => {
 		if (subjectForm) {
-			setValue('subject', subjectForm);
+			setValue('formSubject', subjectForm);
 		}
 	}, [subjectForm, setValue]);
 
@@ -75,7 +67,6 @@ export const AccountForm = () => {
 
 	return (
 		<div className={css.root}>
-			<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
 			<h3 className={css.title}>{parser(subjectForm)}</h3>
 			<ErrorModal isOpen={isError} toggleOpen={toggleError} />
 			{isSuccess ? (
@@ -106,26 +97,6 @@ export const AccountForm = () => {
 						/>
 						<Input
 							className={css.input}
-							type={telInput.type}
-							placeholder={phoneInputTranslation.placeholder}
-							label={phoneInputTranslation.label}
-							required={telInput.required}
-							{...register('phoneNumber', {
-								required: telInput.required,
-								pattern: {
-									value:
-										/^\+?[0-9]{1,4}?[-.\s]?(\([0-9]{1,4}\)|[0-9]{1,4})[-.\s]?[0-9]{1,4}[-.\s]?[0-9]{1,9}$/,
-									message: phoneInputTranslation.secondErrorMessage,
-								},
-							})}
-							aria-invalid={Boolean(errors.phoneNumber)}
-							aria-errormessage={
-								errors.phoneNumber?.message ||
-								phoneInputTranslation.errorMessage
-							}
-						/>
-						<Input
-							className={css.input}
 							type="email"
 							placeholder={emailInputTranslation.placeholder}
 							label={emailInputTranslation.label}
@@ -144,43 +115,25 @@ export const AccountForm = () => {
 						/>
 						<Input
 							className={css.input}
-							type={subjectInput.type}
-							placeholder={subjectInputTranslation.placeholder}
-							label={subjectInputTranslation.label}
-							required={subjectInput.required}
-							value={subjectForm}
-							{...register('subject', {
-								required: nameInput.required,
-								minLength: {
-									value: 4,
-									message: subjectInputTranslation.secondErrorMessage,
+							type={telInput.type}
+							placeholder={phoneInputTranslation.placeholder}
+							label={phoneInputTranslation.label}
+							required={telInput.required}
+							{...register('phoneNumber', {
+								required: telInput.required,
+								pattern: {
+									value:
+										/^\+?[0-9]{1,4}?[-.\s]?(\([0-9]{1,4}\)|[0-9]{1,4})[-.\s]?[0-9]{1,4}[-.\s]?[0-9]{1,9}$/,
+									message: phoneInputTranslation.secondErrorMessage,
 								},
 							})}
-							readOnly
-							aria-invalid={Boolean(errors.subject)}
+							aria-invalid={Boolean(errors.phoneNumber)}
 							aria-errormessage={
-								errors.name?.message || subjectInputTranslation.errorMessage
+								errors.phoneNumber?.message ||
+								phoneInputTranslation.errorMessage
 							}
 						/>
 					</div>
-					<Textarea
-						rows={3}
-						className={css.textarea}
-						placeholder={messageInputTranslation.placeholder}
-						label={messageInputTranslation.label}
-						required={messageTextArea.required}
-						{...register('message', {
-							required: messageTextArea.required,
-							minLength: {
-								value: 10,
-								message: messageInputTranslation.secondErrorMessage,
-							},
-						})}
-						aria-invalid={Boolean(errors.message)}
-						aria-errormessage={
-							errors.message?.message || messageInputTranslation.errorMessage
-						}
-					/>
 					<Checkbox
 						label={checkboxTranslation}
 						required={true}
@@ -199,7 +152,7 @@ export const AccountForm = () => {
 						category="big"
 						className={cx(css.button, { [css.loading]: mutation.isPending })}
 					>
-						<span>{parser(buttonTranslation)}</span>
+						<span>{parser(subjectForm)}</span>
 						<LoaderSVG className={css.loader} />
 					</Button>
 				</form>
