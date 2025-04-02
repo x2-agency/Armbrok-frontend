@@ -24,7 +24,7 @@ export const useAnimatedText = (
 					};
 				});
 			},
-			isTextComplete ? 3000 : interval
+			isTextComplete ? 1900 : interval
 		);
 
 		return () => clearTimeout(timeoutId);
