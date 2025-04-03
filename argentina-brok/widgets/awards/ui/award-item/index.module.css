@@ -3,6 +3,10 @@
 	position: relative;
 	display: flex;
 	@mixin responsive height, unset, 120, 120;
+
+	@media (min-width: 900px) and (max-width: 1023px) {
+		max-width: 40rem;
+	}
 }
 
 .wreath {
