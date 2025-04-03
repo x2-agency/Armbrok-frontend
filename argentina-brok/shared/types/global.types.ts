@@ -315,7 +315,19 @@ export interface TextItem {
 }
 
 export interface EmployeeList {
+	__component?: string;
 	employees: Array<Employee>;
+}
+
+export interface TreeItem {
+	id: number;
+	level: number;
+	value: string;
+	__component: string;
+}
+
+export interface TreeProps {
+	content: Array<TreeItem>;
 }
 
 export interface TextItemList {
@@ -324,7 +336,7 @@ export interface TextItemList {
 
 export interface Tab {
 	tabName: string;
-	content: Array<EmployeeList | TextItemList>;
+	content: Array<EmployeeList | TreeItem>;
 }
 
 export type CompanyStructureSection = {

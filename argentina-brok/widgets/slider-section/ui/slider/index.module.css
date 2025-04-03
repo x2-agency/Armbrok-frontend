@@ -48,6 +48,10 @@
 	:global(.swiper-button-prev) {
 		left: 30%;
 
+		@media (min-width: 1441px) {
+			left: calc(417px + (100vw - 1440px) / 2);
+		}
+
 		@media (max-width: 767px) {
 			left: 2%;
 		}
@@ -56,6 +60,10 @@
 	:global(.swiper-button-next) {
 		right: 30%;
 		rotate: 180deg;
+
+		@media (min-width: 1441px) {
+			right: calc(417px + (100vw - 1440px) / 2);
+		}
 
 		@media (max-width: 767px) {
 			right: 2%;

@@ -16,12 +16,8 @@
 	@mixin responsive gap, 20, 20, 20;
 	@mixin responsive padding-block-end, 16, 24, 24;
 
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-
-	@media (max-width: 767px) {
-		grid-template-columns: 1fr;
-	}
+	display: flex;
+	flex-direction: column;
 }
 
 .input input {
