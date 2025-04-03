@@ -44,6 +44,12 @@
 	@mixin responsive gap, 40, 40, 40;
 }
 
+.leftBlockHy {
+	@media (min-width: 818px) and (max-width: 1300px) {
+		gap: 1.7rem;
+	}
+}
+
 .rightBlockHy {
 	@mixin responsive gap, 40, 40, 40;
 }

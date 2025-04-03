@@ -10,6 +10,10 @@
 		column-gap: 2.6rem;
 		row-gap: 8.533rem; /* 32px */
 	}
+
+	@media (min-width: 1024px) and (max-width: 1300px) {
+		gap: 2.7rem;
+	}
 }
 
 .title {

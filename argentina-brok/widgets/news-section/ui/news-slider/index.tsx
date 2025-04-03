@@ -1,5 +1,4 @@
 import cx from 'clsx';
-import { usePathname } from 'next/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -14,10 +13,6 @@ export type NewsSliderProps = {
 };
 
 const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
-	const pathname = usePathname();
-	const isHyLocale = pathname.startsWith('/hy');
-	const isRuLocale = pathname.startsWith('/ru');
-
 	const sortedNewsSlider = newsSlider.sort((a, b) => {
 		const dateA = new Date(a.publishDate).getTime();
 		const dateB = new Date(b.publishDate).getTime();
@@ -46,15 +41,7 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ newsSlider, className }) => {
 		>
 			{sortedNewsSlider?.map((news, index) => (
 				<SwiperSlide key={news.slug} className={css.sliderItem}>
-					<NewsCard
-						className={cx(
-							css.card,
-							{ [css.hyCard]: isHyLocale },
-							{ [css.ruCard]: isRuLocale }
-						)}
-						key={index}
-						data={news}
-					/>
+					<NewsCard className={cx(css.card)} key={index} data={news} />
 				</SwiperSlide>
 			))}
 		</Swiper>

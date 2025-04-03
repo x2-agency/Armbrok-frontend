@@ -24,7 +24,7 @@ export const Header = () => {
 	return (
 		<header className={css.root}>
 			<div className={css.jumpedContainer}>
-				<div className={css.leftBlock}>
+				<div className={cx(css.leftBlock, { [css.leftBlockHy]: isHyLocale })}>
 					<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
 					<Navigation />
 				</div>
