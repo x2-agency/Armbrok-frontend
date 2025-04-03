@@ -6,6 +6,7 @@ export type PostContactUsFormProps = {
 		name: string;
 		subject: string;
 		message: string;
+		formSubject: string;
 	};
 };
 

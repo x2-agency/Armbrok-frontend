@@ -73,7 +73,7 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 
 			<Review quote={quoteSection} className={css.quote} />
 			<RunningTextSection
-				interval={350}
+				interval={60}
 				runningTextSection={runningTextSection}
 			/>
 			<CountriesSection residenceCountriesSection={countriesSection} />

@@ -32,6 +32,10 @@
 		padding-inline: 5.33rem;
 	}
 
+	@media (min-width: 768px) {
+		padding-inline: 8.25rem;
+	}
+
 	@media (min-width: 1441px) {
 		padding-inline: calc(8.333rem + (100vw - 1440px) / 2);
 	}

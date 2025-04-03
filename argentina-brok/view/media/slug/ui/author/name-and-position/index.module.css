@@ -14,5 +14,6 @@
 
 .position {
 	@mixin font-text16;
+	text-align: start;
 	color: var(--gray-500-color);
 }

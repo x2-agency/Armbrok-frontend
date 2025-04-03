@@ -36,7 +36,6 @@ export const AssetManagement: NextPage<{
 		infoSection,
 	} = initialData?.data ?? {};
 	useUpdateFooterData(publishedAt);
-
 	return (
 		<>
 			<BannerSection

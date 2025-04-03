@@ -39,16 +39,12 @@
 	}
 }
 
+.sliderItem {
+	height: auto;
+}
+
 .card {
 	box-sizing: border-box;
 	@mixin responsive width, 330, 384, 384;
-	@mixin responsive min-height, 322, 365, 365;
-}
-
-.hyCard {
-	@mixin responsive min-height, 322, 422, 475;
-}
-
-.ruCard {
-	@mixin responsive min-height, 322, 330, 390;
+	height: 100%;
 }

@@ -113,6 +113,7 @@
 	@mixin responsive padding-inline, 8, 8, 8;
 	@mixin responsive border-radius, 8, 8, 8;
 	border: 0.069rem solid var(--gray-300-color);
+	text-align: center;
 
 	@media (max-width: 767px) {
 		border: 0.569rem solid var(--gray-300-color);

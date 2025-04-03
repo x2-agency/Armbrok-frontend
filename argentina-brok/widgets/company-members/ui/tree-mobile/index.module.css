@@ -121,6 +121,11 @@
 		translate: -50% -50%;
 		background-color: var(--gray-700-color);
 	}
+
+	&.hy,
+	&.ru {
+		@mixin responsive font-size, 10;
+	}
 }
 
 .element:last-child::after {
@@ -140,6 +145,11 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+
+	&.hy,
+	&.ru {
+		@mixin responsive font-size, 10;
+	}
 }
 
 .circleTop {
