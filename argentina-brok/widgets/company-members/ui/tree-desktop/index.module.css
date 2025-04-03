@@ -119,6 +119,11 @@
 	&.ru {
 		@mixin responsive font-size, 12, 12, 12;
 	}
+
+	@media (min-width: 900px) and (max-width: 1023px) {
+		height: 8rem;
+		width: 9rem;
+	}
 }
 
 .underLevel {
@@ -147,6 +152,10 @@
 
 	&.hy {
 		@mixin responsive font-size, 10, 12, 12;
+	}
+
+	@media (min-width: 900px) and (max-width: 1023px) {
+		height: 8rem;
 	}
 }
 

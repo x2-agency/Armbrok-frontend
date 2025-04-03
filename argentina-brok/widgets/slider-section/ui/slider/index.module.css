@@ -24,8 +24,9 @@
 
 		background: #fff !important;
 		color: var(--black-color);
-		top: 49.7%;
+		top: 0 !important;
 		translate: 0% -50%;
+		@mixin responsive margin-block-start, 125, 240, 240;
 
 		&::after {
 			@mixin responsive width, 26, 26, 26;
@@ -46,7 +47,7 @@
 	}
 
 	:global(.swiper-button-prev) {
-		left: 30%;
+		left: 29.2%;
 
 		@media (min-width: 1441px) {
 			left: calc(417px + (100vw - 1440px) / 2);
@@ -58,7 +59,7 @@
 	}
 
 	:global(.swiper-button-next) {
-		right: 30%;
+		right: 29.2%;
 		rotate: 180deg;
 
 		@media (min-width: 1441px) {
