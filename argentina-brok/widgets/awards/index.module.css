@@ -51,9 +51,11 @@
 	@mixin transition;
 
 	display: flex;
+	position: relative;
 	width: fit-content;
 	outline: none;
 	margin-inline: auto;
+	z-index: 100;
 
 	svg path {
 		@mixin transition;

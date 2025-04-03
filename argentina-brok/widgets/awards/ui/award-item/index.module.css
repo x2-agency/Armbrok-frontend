@@ -42,11 +42,10 @@
 	@mixin font-text16;
 
 	font-weight: 500;
-}
 
-.hyAbout {
-	@mixin font-text14;
-	font-weight: 500;
+	@media (max-width: 1200px) {
+		@mixin font-text14;
+	}
 }
 
 .age {
