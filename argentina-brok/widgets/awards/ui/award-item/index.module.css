@@ -46,6 +46,9 @@
 	@media (max-width: 1200px) {
 		@mixin font-text14;
 	}
+	@media (min-width: 768px) and (max-width: 830px) {
+		font-size: 9px;
+	}
 }
 
 .age {
