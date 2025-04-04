@@ -1,6 +1,6 @@
 .root {
 	@mixin transition;
-	@mixin responsive width, 340, 890, 890;
+	@mixin responsive width, 340, 550, 550;
 	@mixin responsive padding-inline, 20, 32, 32;
 	@mixin responsive border-radius, 12, 24, 24;
 	@mixin responsive padding-block, 25, 32, 32;
