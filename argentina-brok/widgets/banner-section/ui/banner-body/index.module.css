@@ -25,4 +25,8 @@
 		flex-direction: column;
 		gap: 3.5rem; /* 56px */
 	}
+
+	@media (min-width: 768px) and (max-width: 899px) {
+		@mixin responsive --column-width, unset, 367, unset;
+	}
 }

@@ -31,7 +31,11 @@ export const Navigation = () => {
 						<li className={cx(css.li)} key={item.href}>
 							<Button
 								href={item.href}
-								className={cx(css.link, { [css.active]: isActive })}
+								className={cx(
+									css.link,
+									{ [css.active]: isActive },
+									{ [css.hy]: isHyLocale }
+								)}
 								variant="subtle"
 							>
 								{parser(item.label)}

@@ -84,7 +84,7 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 				</p>
 			</div>
 
-			<div className={css.wrap}>
+			<div className={cx(css.wrap, { [css.mediaPage]: isArmbrokMedia })}>
 				<div
 					className={cx(css.authorWrap, {
 						[css.mediaAuthorWrap]: isArmbrokMedia,
