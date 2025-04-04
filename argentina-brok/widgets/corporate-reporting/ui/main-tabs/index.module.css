@@ -43,6 +43,10 @@
 			background-color: var(--gray-100-color) !important;
 		}
 	}
+
+	@media (min-width: 768px) and (max-width: 899px) {
+		width: 20rem;
+	}
 }
 
 .files {

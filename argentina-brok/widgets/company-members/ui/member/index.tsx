@@ -1,6 +1,7 @@
 'use client';
 
 /* eslint-disable @next/next/no-img-element */
+import cx from 'clsx';
 import parser from 'html-react-parser';
 import { useState } from 'react';
 
@@ -20,7 +21,10 @@ export const Member = ({
 
 	return (
 		<>
-			<button className={css.card} onClick={() => toggleModalOpen(true)}>
+			<button
+				className={cx(css.card, 'p-32')}
+				onClick={() => toggleModalOpen(true)}
+			>
 				<div className={css.imageWrapper}>
 					<img src={avatar?.url} alt="company member" className={css.image} />
 				</div>

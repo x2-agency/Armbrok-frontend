@@ -17,6 +17,8 @@ type ServicesLinksProps = {
 };
 
 export const ServicesLinks = ({ className }: ServicesLinksProps) => {
+  const pathname = usePathname();
+	const isHyLocale = pathname.startsWith('/hy');
 	const { servicesLinks } = LOCALE_KEYS;
 	const t = useTranslations(servicesLinks.root);
 	const path = usePathname();
@@ -28,7 +30,7 @@ export const ServicesLinks = ({ className }: ServicesLinksProps) => {
 			<Button
 				variant="subtle"
 				onClick={toggleDropdown}
-				className={css.mainButton}
+				className={cx(css.mainButton, {[css.hy]: isHyLocale})}
 			>
 				{t('text')}
 				<TriangleSVG className={cx(css.svg, { [css.open]: isOpen })} />

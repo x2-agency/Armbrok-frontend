@@ -9,6 +9,7 @@ import { HeroContainer } from '@/shared/ui/hero-container';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { Review } from '@/widgets/review';
+import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
 import css from './index.module.css';
 import type { DepositaryServicesPageResponse } from './types/response';
@@ -22,6 +23,7 @@ export const DepositaryServices: NextPage<
 	primaryServicesSection,
 	supplementaryServices,
 	benefitsSection,
+	documentsSection,
 	quoteSection,
 }) => {
 	useUpdateFooterData(publishedAt);
@@ -58,6 +60,11 @@ export const DepositaryServices: NextPage<
 				items={benefitsSection?.factoids}
 			/>
 			<Review quote={quoteSection} />
+			<StatutoryDocuments
+				documentsSection={documentsSection}
+				columns={2}
+				fileDirection="column"
+			/>
 			<HelpfulInformation accordionSection={infoSection} />
 		</>
 	);
