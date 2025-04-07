@@ -8,6 +8,7 @@ import { HelpfulInformation } from '@/widgets/helpful-information';
 import { HowWeAreWorkingSection } from '@/widgets/how-we-are-working-section';
 import { Review } from '@/widgets/review';
 
+import css from './index.module.css';
 import type { FundPageData } from './types/response';
 
 export const Fund: NextPage<FundPageData> = ({
@@ -43,8 +44,12 @@ export const Fund: NextPage<FundPageData> = ({
 				centered
 			/>
 			<Review quote={quoteSection} />
-			<HelpfulInformation accordionSection={infoSection} />
+			<HelpfulInformation
+				accordionSection={infoSection}
+				className={css.accordionSection}
+			/>
 			<TitleSection
+				className={css.accordionSection}
 				title={disclaimer?.title ?? ''}
 				description={disclaimer?.description}
 			/>
