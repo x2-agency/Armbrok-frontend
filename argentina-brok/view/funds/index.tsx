@@ -28,7 +28,6 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	} = initialFundsPageData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
-	console.log(experienceSection);
 
 	return (
 		<>
@@ -60,7 +59,6 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				items={howFundWorksSection?.factoids}
 			/>
 			<HelpfulInformation accordionSection={infoSection} />
-
 			<HowWeAreWorkingSection data={disclaimerSection} oneCard />
 		</>
 	);
