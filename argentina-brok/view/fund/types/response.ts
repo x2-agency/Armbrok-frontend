@@ -1,6 +1,7 @@
 import type {
 	AccordionSectionProps,
 	BaseResponse,
+	BenefitsSection,
 	ItemDetail,
 	ProfixHeroSection,
 	QuoteSection,
@@ -11,6 +12,7 @@ export type FundPageData = {
 	quoteSection?: QuoteSection;
 	infoSection?: AccordionSectionProps;
 	disclaimer?: ItemDetail;
+	investReasonsSection?: BenefitsSection;
 };
 
 export type FundPageResponse = BaseResponse<FundPageData>;

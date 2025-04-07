@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 
+import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
@@ -12,7 +13,9 @@ export const Fund: NextPage<FundPageData> = ({
 	quoteSection,
 	infoSection,
 	disclaimer,
+	investReasonsSection,
 }) => {
+	console.log(investReasonsSection);
 	return (
 		<>
 			<BannerSection
@@ -23,6 +26,10 @@ export const Fund: NextPage<FundPageData> = ({
 					panel: heroSection?.infoCard,
 					icon: heroSection?.background.url ?? '',
 				}}
+			/>
+			<ExpertSolutionSection
+				title={investReasonsSection?.title}
+				items={investReasonsSection?.factoids}
 			/>
 			<Review quote={quoteSection} />
 			<HelpfulInformation accordionSection={infoSection} />
