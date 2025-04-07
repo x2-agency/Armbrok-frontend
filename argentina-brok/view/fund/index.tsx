@@ -40,6 +40,7 @@ export const Fund: NextPage<FundPageData> = ({
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}
 				items={investReasonsSection?.factoids}
+				centered
 			/>
 			<Review quote={quoteSection} />
 			<HelpfulInformation accordionSection={infoSection} />
