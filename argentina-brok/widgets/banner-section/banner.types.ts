@@ -1,26 +1,9 @@
-import type { HeroFactoid, LinkItem } from '@/shared/types/global.types';
+import type {
+	HeroFactoid,
+	InfoCard,
+	LinkItem,
+} from '@/shared/types/global.types';
 import type { PosterImageProps } from '@/shared/types/poster';
-
-export interface PanelProps {
-	className?: string;
-	averagePercent?: {
-		percent: number;
-		text: string;
-	};
-	amd?: {
-		subtext: string;
-		description: string;
-	};
-	riskLevel?: {
-		risk: number;
-		text: string;
-	};
-	period?: {
-		title: string;
-		description: string;
-	};
-	button?: LinkItem;
-}
 
 export interface AwardsData {
 	itemIndex?: string;
@@ -43,8 +26,8 @@ type ProfixBannerProps = BaseBannerProps & {
 	type: 'profix';
 	alignContent?: never;
 	banner: BaseBannerProps['banner'] & {
-		panel: PanelProps;
-		icon: string;
+		panel?: InfoCard;
+		icon?: string;
 	};
 };
 
@@ -117,7 +100,7 @@ interface BaseBannerBodyProps {
 export type ProfixBannerBodyProps = BaseBannerBodyProps & {
 	type: 'profix';
 	bodyData: {
-		panel: PanelProps;
+		panel: InfoCard;
 		awards?: never;
 		button?: never;
 	};

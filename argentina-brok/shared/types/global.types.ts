@@ -521,3 +521,46 @@ export type Cords = {
 	latitude: string;
 	longitude: string;
 };
+
+/** PROFIX HEROSECTION */
+
+export type AnnualReturn = {
+	value?: number;
+	label?: string;
+};
+
+export type RiskLevel = {
+	label?: string;
+	level: number;
+};
+
+export type MinInvestment = {
+	title?: string;
+	description?: string;
+};
+
+export type InvestmentPeriod = {
+	title?: string;
+	description?: string;
+};
+
+export type CardButton = {
+	text: string;
+	link: string;
+};
+
+export type InfoCard = {
+	annualReturn?: AnnualReturn;
+	minInvestment?: MinInvestment;
+	riskLevel?: RiskLevel;
+	investmentPeriod?: InvestmentPeriod;
+	button?: CardButton;
+};
+
+export type ProfixHeroSection = {
+	title?: string;
+	description?: string;
+	backButtonText?: string;
+	background: MediaData;
+	infoCard?: InfoCard;
+};

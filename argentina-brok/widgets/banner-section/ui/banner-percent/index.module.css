@@ -14,5 +14,6 @@
 
 .percentText {
 	@mixin font-text16;
+	width: fit-content;
 	color: var(--gray-400-color);
 }
