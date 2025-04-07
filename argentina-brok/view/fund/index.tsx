@@ -6,6 +6,7 @@ import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { HowWeAreWorkingSection } from '@/widgets/how-we-are-working-section';
+import { PortfolioStructure } from '@/widgets/portfolio-structure';
 import { Review } from '@/widgets/review';
 
 import css from './index.module.css';
@@ -18,6 +19,7 @@ export const Fund: NextPage<FundPageData> = ({
 	disclaimer,
 	investReasonsSection,
 	profixDescription,
+	portfolioStructureSection,
 }) => {
 	return (
 		<>
@@ -38,6 +40,7 @@ export const Fund: NextPage<FundPageData> = ({
 					}}
 				/>
 			)}
+			<PortfolioStructure {...portfolioStructureSection} />
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}
 				items={investReasonsSection?.factoids}

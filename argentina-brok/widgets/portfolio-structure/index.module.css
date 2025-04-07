@@ -1,0 +1,19 @@
+.root {
+	@mixin responsive padding-block, 36, 72, 72;
+}
+
+.title {
+	@mixin font-h2;
+	@mixin responsive padding-block-end, 20, 40, 40;
+
+	text-align: center;
+	font-weight: 600;
+}
+
+.content {
+	@mixin responsive gap, 32, 64, 64;
+	@mixin responsive --col-width, 568, 568, 568;
+
+	display: grid;
+	grid-template-columns: repeat(2, var(--col-width));
+}

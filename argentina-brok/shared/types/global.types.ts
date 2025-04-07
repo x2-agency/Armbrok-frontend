@@ -564,3 +564,23 @@ export type ProfixHeroSection = {
 	background: MediaData;
 	infoCard?: InfoCard;
 };
+
+/** Portfolio Structure */
+
+export type AssetTypesItemProps = {
+	label: string;
+	value: number;
+};
+
+export type AssetTypesSectionProps = {
+	title?: string;
+	items: Array<AssetTypesItemProps>;
+};
+
+export type PortfolioStructureProps = {
+	title?: string;
+	assetTypesSection?: AssetTypesSectionProps;
+	industriesSection?: AssetTypesSectionProps;
+	issuersSection?: AssetTypesSectionProps;
+	maturitySection?: AssetTypesSectionProps;
+};

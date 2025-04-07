@@ -1,0 +1,22 @@
+.root {
+	@mixin responsive gap, 16, 24, 24;
+
+	display: flex;
+	align-items: center;
+}
+
+.percent {
+	@mixin font-text18;
+
+	font-weight: 500;
+}
+
+.description {
+	@mixin font-text16;
+}
+
+.ring,
+.ring circle {
+	@mixin responsive width, 48, 64, 64;
+	@mixin responsive height, 48, 64, 64;
+}
