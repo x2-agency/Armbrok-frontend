@@ -6,7 +6,7 @@ import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 import { AssetTypes } from './ui/asset-types';
-import { ItemDetailSection } from './ui/item-detail';
+import { ItemDetailSection } from './ui/item-detail-section';
 import { Maturity } from './ui/maturity';
 
 export const PortfolioStructure = ({
@@ -22,8 +22,15 @@ export const PortfolioStructure = ({
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<div className={css.content}>
 				<div className={css.leftPart}>
-					{assetTypesSection && <AssetTypes {...assetTypesSection} />}
-					{industriesSection && <ItemDetailSection {...industriesSection} />}
+					{assetTypesSection && (
+						<AssetTypes {...assetTypesSection} className={css.assetTypes} />
+					)}
+					{industriesSection && (
+						<ItemDetailSection
+							{...industriesSection}
+							className={css.industries}
+						/>
+					)}
 					{issuersSection && <ItemDetailSection {...issuersSection} />}
 				</div>
 				<div className={css.rightPart}>

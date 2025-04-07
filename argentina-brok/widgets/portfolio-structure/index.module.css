@@ -16,4 +16,17 @@
 
 	display: grid;
 	grid-template-columns: repeat(2, var(--col-width));
+
+	@media (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.assetTypes {
+	@mixin responsive padding-block-end, 32, 48, 48;
+}
+
+.industries {
+	@mixin responsive padding-block-end, 16, 24, 24;
 }
