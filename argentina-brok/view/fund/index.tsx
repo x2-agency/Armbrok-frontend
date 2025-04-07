@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 
+import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { Review } from '@/widgets/review';
@@ -10,6 +11,7 @@ export const Fund: NextPage<FundPageData> = ({
 	heroSection,
 	quoteSection,
 	infoSection,
+	disclaimer,
 }) => {
 	return (
 		<>
@@ -24,6 +26,10 @@ export const Fund: NextPage<FundPageData> = ({
 			/>
 			<Review quote={quoteSection} />
 			<HelpfulInformation accordionSection={infoSection} />
+			<TitleSection
+				title={disclaimer?.title ?? ''}
+				description={disclaimer?.description}
+			/>
 		</>
 	);
 };
