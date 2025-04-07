@@ -17,7 +17,7 @@ export const BannerSection = (props: BannerProps) => {
 	const headContent = defineHeadContent(props);
 	const bodyContent = defineBodyContent(props);
 	const { ref } = headerScrollObserver.useObserve('white');
-	console.log(headContent);
+	
 	return (
 		<section
 			className={cx(css.root, css[type])}
