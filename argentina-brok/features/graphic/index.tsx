@@ -21,9 +21,6 @@ export const Graphic = ({ graphics }: GraphicProps) => {
 		.sort((a, b) => a[0] - b[0]);
 
 	const options: Highcharts.Options = {
-		title: {
-			text: fundKey,
-		},
 		rangeSelector: {
 			selected: 1,
 		},
