@@ -607,3 +607,31 @@ export type AboutFundProps = {
 	leftInfoBlock?: AboutFundItemProps;
 	rightInfoBlock?: AboutFundItemProps;
 };
+
+/** Performance */
+
+export type GraphicItem = {
+	date: string;
+	unitPrice: number;
+	nav: number;
+};
+
+export type GraphicProps = {
+	[key: string]: Array<GraphicItem>;
+};
+
+export type ProfitTableItemProps = {
+	[key: string]: string;
+};
+
+export type HeatMapItemProps = {
+	[key: string]: {
+		[key: string]: string;
+	};
+};
+
+export type PerformanceProps = {
+	graphics: GraphicProps;
+	profitTable: Array<ProfitTableItemProps>;
+	heatMap: Array<HeatMapItemProps>;
+};
