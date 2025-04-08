@@ -4,4 +4,8 @@
 	@mixin responsive --border-width, 1, 1, 1;
 
 	border: var(--border-width) solid var(--gray-300-color);
+
+	:global(.highcharts-credits) {
+		display: none;
+	}
 }
