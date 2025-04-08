@@ -1,6 +1,6 @@
 .root {
 	@mixin responsive padding-block, 10, 10, 10;
-	@mixin responsive padding-inline, 16, 16, 16;
+	@mixin responsive padding-inline, 0, 16, 16;
 	@mixin responsive gap, 12, 12, 12;
 
 	display: flex;

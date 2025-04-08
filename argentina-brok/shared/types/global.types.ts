@@ -594,3 +594,16 @@ export type FundFactsProps = {
 	financialIndicators?: Array<ItemDetail>;
 	fundDescription?: Array<ItemDetail>;
 };
+
+/** About Fund */
+
+export type AboutFundItemProps = {
+	title?: string;
+	items: Array<ItemDetail>;
+};
+
+export type AboutFundProps = {
+	title?: string;
+	leftInfoBlock?: AboutFundItemProps;
+	rightInfoBlock?: AboutFundItemProps;
+};

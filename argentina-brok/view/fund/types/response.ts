@@ -7,6 +7,7 @@ import type {
 	QuoteSection,
 	PortfolioStructureProps,
 	FundFactsProps,
+	AboutFundProps,
 } from '@/shared/types/global.types';
 import type { HowWeAreWorkingProps } from '@/view/funds/types/response';
 
@@ -19,6 +20,7 @@ export type FundPageData = {
 	profixDescription?: HowWeAreWorkingProps;
 	portfolioStructureSection?: PortfolioStructureProps;
 	fundFactsSection?: FundFactsProps;
+	aboutFundSection?: AboutFundProps;
 };
 
 export type FundPageResponse = BaseResponse<FundPageData>;

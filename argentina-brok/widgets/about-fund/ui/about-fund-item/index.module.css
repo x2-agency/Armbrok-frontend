@@ -1,0 +1,24 @@
+.root {
+	@mixin responsive gap, 16, 24, 24;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	@mixin font-h4;
+
+	font-weight: 600;
+}
+
+.item {
+	@mixin responsive padding-block-end, 16, 16, 16;
+
+	padding-block-start: unset;
+	padding-inline: unset;
+	cursor: default;
+
+	div {
+		display: none;
+	}
+}

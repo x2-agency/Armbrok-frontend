@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import type { Factoid } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { TitleSection } from '@/shared/ui/title-section';
+import { AboutFund } from '@/widgets/about-fund';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { FundFacts } from '@/widgets/fund-facts';
 import { HelpfulInformation } from '@/widgets/helpful-information';
@@ -22,6 +23,7 @@ export const Fund: NextPage<FundPageData> = ({
 	profixDescription,
 	portfolioStructureSection,
 	fundFactsSection,
+	aboutFundSection,
 }) => {
 	return (
 		<>
@@ -44,6 +46,7 @@ export const Fund: NextPage<FundPageData> = ({
 			)}
 			<PortfolioStructure {...portfolioStructureSection} />
 			<FundFacts {...fundFactsSection} />
+			<AboutFund {...aboutFundSection} />
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}
 				items={investReasonsSection?.factoids}
