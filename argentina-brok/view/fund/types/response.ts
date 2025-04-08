@@ -6,6 +6,7 @@ import type {
 	ProfixHeroSection,
 	QuoteSection,
 	PortfolioStructureProps,
+	FundFactsProps,
 } from '@/shared/types/global.types';
 import type { HowWeAreWorkingProps } from '@/view/funds/types/response';
 
@@ -17,6 +18,7 @@ export type FundPageData = {
 	investReasonsSection?: BenefitsSection;
 	profixDescription?: HowWeAreWorkingProps;
 	portfolioStructureSection?: PortfolioStructureProps;
+	fundFactsSection?: FundFactsProps;
 };
 
 export type FundPageResponse = BaseResponse<FundPageData>;

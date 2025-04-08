@@ -584,3 +584,13 @@ export type PortfolioStructureProps = {
 	issuersSection?: AssetTypesSectionProps;
 	maturitySection?: AssetTypesSectionProps;
 };
+
+/** Fund Facts */
+
+export type FundFactsProps = {
+	title?: string;
+	fundOverview?: Array<ItemDetail>;
+	portfolioMetrics?: Array<ItemDetail>;
+	financialIndicators?: Array<ItemDetail>;
+	fundDescription?: Array<ItemDetail>;
+};

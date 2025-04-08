@@ -4,6 +4,7 @@ import type { Factoid } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
+import { FundFacts } from '@/widgets/fund-facts';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { HowWeAreWorkingSection } from '@/widgets/how-we-are-working-section';
 import { PortfolioStructure } from '@/widgets/portfolio-structure';
@@ -20,6 +21,7 @@ export const Fund: NextPage<FundPageData> = ({
 	investReasonsSection,
 	profixDescription,
 	portfolioStructureSection,
+	fundFactsSection,
 }) => {
 	return (
 		<>
@@ -41,6 +43,7 @@ export const Fund: NextPage<FundPageData> = ({
 				/>
 			)}
 			<PortfolioStructure {...portfolioStructureSection} />
+			<FundFacts {...fundFactsSection} />
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}
 				items={investReasonsSection?.factoids}

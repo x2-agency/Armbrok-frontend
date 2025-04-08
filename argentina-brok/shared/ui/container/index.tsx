@@ -1,10 +1,9 @@
 import cx from 'clsx';
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import css from './index.module.css';
 
-type ContainerProps = {
-	children: ReactNode;
+type ContainerProps = PropsWithChildren & {
 	className?: string;
 	fullWidth?: boolean;
 	style?: React.CSSProperties;
