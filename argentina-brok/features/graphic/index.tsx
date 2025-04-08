@@ -41,10 +41,19 @@ export const Graphic = ({ graphics }: GraphicProps) => {
 				name: 'NAV',
 				data: seriesData,
 				type: 'line',
+				color: '#df2c29',
 			},
 		],
 		navigator: {
 			enabled: true,
+			maskFill: '#DF2C290D',
+			handles: {
+				backgroundColor: '#df2c29',
+				borderColor: '#df2c29',
+				width: 20,
+				height: 20, // по умолчанию 20x20
+				symbols: ['circle', 'circle'], // 👈 делает иконки кругами
+			},
 		},
 		scrollbar: {
 			enabled: true,

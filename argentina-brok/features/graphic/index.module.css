@@ -8,4 +8,12 @@
 	:global(.highcharts-credits) {
 		display: none;
 	}
+
+	svg {
+		overflow: visible !important;
+	}
+
+	div {
+		overflow: visible !important;
+	}
 }
