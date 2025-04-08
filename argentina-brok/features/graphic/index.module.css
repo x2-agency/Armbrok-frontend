@@ -3,6 +3,7 @@
 	@mixin responsive border-radius, 24, 24, 24;
 	@mixin responsive --border-width, 1, 1, 1;
 
+	overflow: hidden;
 	border: var(--border-width) solid var(--gray-300-color);
 
 	:global(.highcharts-credits) {
@@ -15,5 +16,13 @@
 
 	div {
 		overflow: visible !important;
+	}
+
+	:global(.highcharts-label) {
+		/* display: none; */
+	}
+
+	:global(.highcharts-button-box) {
+		@mixin responsive width, 16, 40, 40;
 	}
 }

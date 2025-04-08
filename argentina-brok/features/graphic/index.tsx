@@ -23,6 +23,29 @@ export const Graphic = ({ graphics }: GraphicProps) => {
 	const options: Highcharts.Options = {
 		rangeSelector: {
 			selected: 1,
+			buttons: [
+				{
+					type: 'all',
+					text: 'All time',
+				},
+				{
+					type: 'month',
+					count: 1,
+					text: 'Month',
+				},
+				{
+					type: 'year',
+					count: 1,
+					text: 'Year',
+				},
+				{
+					type: 'month',
+					count: 6,
+					text: 'Half year',
+				},
+			],
+			inputEnabled: false,
+			buttonSpacing: 5,
 		},
 		xAxis: {
 			type: 'datetime',
