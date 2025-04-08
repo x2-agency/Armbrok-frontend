@@ -1,0 +1,4 @@
+.root {
+	@mixin responsive padding-block-start, 40, 80, 80;
+	@mixin responsive padding-block-end, 36, 72, 72;
+}

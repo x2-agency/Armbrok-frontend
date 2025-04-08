@@ -6,6 +6,7 @@ import { TitleSection } from '@/shared/ui/title-section';
 import { AboutFund } from '@/widgets/about-fund';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { FundFacts } from '@/widgets/fund-facts';
+import { FundPerformance } from '@/widgets/fund-performance';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { HowWeAreWorkingSection } from '@/widgets/how-we-are-working-section';
 import { PortfolioStructure } from '@/widgets/portfolio-structure';
@@ -24,6 +25,7 @@ export const Fund: NextPage<FundPageData> = ({
 	portfolioStructureSection,
 	fundFactsSection,
 	aboutFundSection,
+	performanceData,
 }) => {
 	return (
 		<>
@@ -36,6 +38,7 @@ export const Fund: NextPage<FundPageData> = ({
 					icon: heroSection?.background.url ?? '',
 				}}
 			/>
+			{performanceData && <FundPerformance {...performanceData} />}
 			{profixDescription?.items && (
 				<HowWeAreWorkingSection
 					data={{
