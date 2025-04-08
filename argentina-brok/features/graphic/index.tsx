@@ -27,11 +27,7 @@ export const Graphic = ({ graphics }: GraphicProps) => {
 		xAxis: {
 			type: 'datetime',
 		},
-		yAxis: {
-			title: {
-				text: 'NAV',
-			},
-		},
+		yAxis: {},
 		tooltip: {
 			valueDecimals: 2,
 			valueSuffix: ' USD',
@@ -51,8 +47,8 @@ export const Graphic = ({ graphics }: GraphicProps) => {
 				backgroundColor: '#df2c29',
 				borderColor: '#df2c29',
 				width: 20,
-				height: 20, // по умолчанию 20x20
-				symbols: ['circle', 'circle'], // 👈 делает иконки кругами
+				height: 20,
+				symbols: ['circle', 'circle'],
 			},
 		},
 		scrollbar: {
