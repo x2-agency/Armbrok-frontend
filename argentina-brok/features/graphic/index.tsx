@@ -27,7 +27,14 @@ export const Graphic = ({ graphics }: GraphicProps) => {
 		xAxis: {
 			type: 'datetime',
 		},
-		yAxis: {},
+		yAxis: {
+			labels: {
+				formatter: function () {
+					return this.value + '%';
+				},
+			},
+			opposite: false,
+		},
 		tooltip: {
 			valueDecimals: 2,
 			valueSuffix: ' USD',
