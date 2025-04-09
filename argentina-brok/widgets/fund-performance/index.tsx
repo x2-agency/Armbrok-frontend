@@ -1,4 +1,5 @@
 import { Graphic } from '@/features/graphic';
+import { ProfitTable } from '@/features/profit-table';
 import type { PerformanceProps } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
@@ -12,6 +13,7 @@ export const FundPerformance = ({
 	return (
 		<Container className={css.root}>
 			<Graphic graphics={graphics} />
+			<ProfitTable table={profitTable} />
 		</Container>
 	);
 };

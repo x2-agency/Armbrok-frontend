@@ -1,0 +1,60 @@
+.root {
+	@mixin responsive margin-block-start, 24, 24, 24;
+	@mixin responsive margin-block-end, 32, 32, 32;
+
+	@mixin responsive border-radius, 16, 16, 16;
+	@mixin responsive --border, 1, 1, 1;
+
+	outline: var(--border) solid var(--gray-300-color);
+	width: 100%;
+	overflow: hidden;
+	border-spacing: 0;
+}
+
+.row {
+	display: flex;
+}
+
+.headRow {
+	background-color: var(--gray-200-color);
+}
+
+.theadValue,
+.tbodyValue {
+	@mixin responsive --border, 1, 1, 1;
+	@mixin responsive width, 109, 109, 109;
+	@mixin responsive height, 56, 56, 56;
+
+	border-left: var(--border) solid var(--gray-300-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.theadValue:first-of-type,
+.tbodyValue:first-of-type {
+	border: none;
+}
+
+.theadValue {
+	@mixin font-text14;
+
+	color: var(--gray-700-color);
+}
+
+.tbodyValue {
+	@mixin font-text16;
+
+	font-weight: 500;
+	color: var(--gray-800-color);
+}
+
+.tbodyValue {
+	&.green {
+		color: var(--green-500-color);
+	}
+
+	&.red {
+		color: var(--red-500-color);
+	}
+}
