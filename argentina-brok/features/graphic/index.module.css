@@ -1,4 +1,5 @@
 .root {
+	@mixin responsive margin-inline, 20;
 	@mixin responsive padding, 16, 24, 24;
 	@mixin responsive border-radius, 24, 24, 24;
 	@mixin responsive --border-width, 1, 1, 1;

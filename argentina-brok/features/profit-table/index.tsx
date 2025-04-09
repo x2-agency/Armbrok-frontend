@@ -31,31 +31,36 @@ export const ProfitTable = ({ table }: ProfitTableProps) => {
 	};
 
 	return (
-		<table className={css.root}>
-			<thead className={css.thead}>
-				<tr className={cx(css.row, css.headRow)}>
-					{keys.map((value, key) => (
-						<th key={key} className={css.theadValue}>
-							<span className={css.value}>{value}</span>
-						</th>
-					))}
-				</tr>
-			</thead>
-			<tbody className={css.tbody}>
-				<tr className={css.row}>
-					{values.map((value, key) => (
-						<td
-							key={key}
-							className={cx(css.tbodyValue, css[defineColor(value, key) ?? ''])}
-						>
-							<span className={css.value}>
-								{value > 0 && '+'}
-								{value}%
-							</span>
-						</td>
-					))}
-				</tr>
-			</tbody>
-		</table>
+		<div className={css.root}>
+			<table className={css.table}>
+				<thead className={css.thead}>
+					<tr className={cx(css.row, css.headRow)}>
+						{keys.map((value, key) => (
+							<th key={key} className={css.theadValue}>
+								<span className={css.value}>{value}</span>
+							</th>
+						))}
+					</tr>
+				</thead>
+				<tbody className={css.tbody}>
+					<tr className={css.row}>
+						{values.map((value, key) => (
+							<td
+								key={key}
+								className={cx(
+									css.tbodyValue,
+									css[defineColor(value, key) ?? '']
+								)}
+							>
+								<span className={css.value}>
+									{value > 0 && '+'}
+									{value}%
+								</span>
+							</td>
+						))}
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	);
 };
