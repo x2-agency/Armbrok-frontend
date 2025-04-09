@@ -48,7 +48,10 @@ export const ProfitTable = ({ table }: ProfitTableProps) => {
 							key={key}
 							className={cx(css.tbodyValue, css[defineColor(value, key) ?? ''])}
 						>
-							<span className={css.value}>{value}%</span>
+							<span className={css.value}>
+								{value > 0 && '+'}
+								{value}%
+							</span>
 						</td>
 					))}
 				</tr>
