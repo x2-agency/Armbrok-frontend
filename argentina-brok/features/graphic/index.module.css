@@ -19,11 +19,14 @@
 		overflow: visible !important;
 	}
 
-	:global(.highcharts-label) {
-		/* display: none; */
-	}
-
 	:global(.highcharts-button-box) {
 		@mixin responsive width, 16, 40, 40;
 	}
+}
+
+.controls {
+	@mixin responsive padding-block-end, 24, 24, 24;
+
+	display: flex;
+	justify-content: space-between;
 }

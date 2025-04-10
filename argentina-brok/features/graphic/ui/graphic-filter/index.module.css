@@ -1,0 +1,41 @@
+.root {
+	@mixin responsive gap, 12, 12, 12;
+
+	display: flex;
+	align-items: center;
+}
+
+.button {
+	@mixin transition background-color;
+	@mixin font-text14;
+	@mixin responsive padding, 12, 12, 12;
+	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive --border-width, 1.5, 1.5, 1.5;
+	@mixin responsive gap, 8, 8, 8;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	color: var(--gray-500-color);
+	font-weight: 500;
+	border: var(--border-width) solid var(--gray-300-color);
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--gray-200-color);
+		}
+	}
+}
+
+.arrow {
+	@mixin responsive width, 14, 14, 14;
+	@mixin responsive height, 14, 14, 14;
+}
+
+.label {
+	@mixin font-text14;
+
+	color: var(--gray-500-color);
+	font-weight: 500;
+}
