@@ -109,12 +109,6 @@
 }
 
 .root.big {
-	@mixin responsive padding-block, 16, 16, 16;
-	@mixin responsive padding-inline, 24, 24, 24;
-
-	@media (max-width: 767px) {
-		border-radius: 12px;
-		padding-block: 16px;
-		padding-inline: 24px;
-	}
+	@mixin responsive padding-block, 12, 16, 16;
+	@mixin responsive padding-inline, 16, 24, 24;
 }
