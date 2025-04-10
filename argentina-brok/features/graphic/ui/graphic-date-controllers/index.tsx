@@ -4,8 +4,6 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 import { useState } from 'react';
 
-import { Button } from '@/shared/ui/button';
-
 import css from './index.module.css';
 
 export type GraphicControllerProps = {
