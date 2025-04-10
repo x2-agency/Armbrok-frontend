@@ -11,7 +11,7 @@ import css from './index.module.css';
 export const FundPerformance = ({
 	graphics,
 	profitTable,
-	heatMap,
+	// heatMap,
 }: PerformanceProps) => {
 	const t = useTranslations('fundPerformance');
 

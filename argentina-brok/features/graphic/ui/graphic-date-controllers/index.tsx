@@ -8,9 +8,7 @@ import css from './index.module.css';
 
 export type GraphicControllerProps = {
 	text: string;
-	date: string;
-	number?: number;
-	setRange: (date: string, number?: number) => void;
+	setRange: () => void;
 };
 
 export type GraphicDateControllersProps = {
@@ -27,7 +25,7 @@ export const GraphicDateControllers = ({
 			{buttons.map((button, index) => (
 				<Button
 					className={css.button}
-					onClick={() => button.setRange(button.date, button.number)}
+					onClick={() => button.setRange()}
 					key={index}
 				>
 					{parser(button.text)}
