@@ -17,8 +17,11 @@ export const Graphic = ({ graphics }: { graphics: GraphicProps }) => {
 	const fundKey: string = Object.keys(graphics)[0];
 	const fundData = graphics[fundKey];
 
+	/** Graphic Line */
 	const seriesData = getSeriesData(fundData);
 	const options = graphicOptions(seriesData);
+
+	/** Graphic custom date controllers */
 	const { chartRef, setRange } = useDateControllers();
 	const dateControllers = getDateControllersOptions({ setRange });
 
