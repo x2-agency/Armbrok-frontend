@@ -6,3 +6,11 @@
 		padding-inline: unset;
 	}
 }
+
+.title {
+	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin font-h2;
+
+	text-align: center;
+	font-weight: 600;
+}

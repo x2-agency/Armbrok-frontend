@@ -8,8 +8,8 @@ import type { GraphicProps } from '@/shared/types/global.types';
 import css from './index.module.css';
 
 export const Graphic = ({ graphics }: GraphicProps) => {
-	const fundKey = Object.keys(graphics)[0];
-	const fundData = graphics[fundKey];
+	const fundKey: string = Object.keys(graphics)[0];
+	const fundData: GraphicProps = graphics[fundKey];
 
 	const seriesData = fundData
 		.map(item => {
