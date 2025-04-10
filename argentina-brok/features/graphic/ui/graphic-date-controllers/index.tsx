@@ -1,6 +1,8 @@
 'use client';
+
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useState } from 'react';
 
 import { Button } from '@/shared/ui/button';
 
@@ -20,16 +22,25 @@ export const GraphicDateControllers = ({
 	className,
 	buttons,
 }: GraphicDateControllersProps) => {
+	const [activeButtonIndex, setActiveButtonIndex] = useState<number>(0);
+
+	const toggleButton = (setRange: () => void, index: number) => {
+		setActiveButtonIndex(index);
+		setRange();
+	};
+
 	return (
 		<div className={cx(css.root, className)}>
 			{buttons.map((button, index) => (
-				<Button
-					className={css.button}
-					onClick={() => button.setRange()}
+				<button
+					className={cx(css.button, {
+						[css.active]: activeButtonIndex === index,
+					})}
+					onClick={() => toggleButton(button.setRange, index)}
 					key={index}
 				>
 					{parser(button.text)}
-				</Button>
+				</button>
 			))}
 		</div>
 	);
