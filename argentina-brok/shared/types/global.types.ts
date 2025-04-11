@@ -624,9 +624,15 @@ export type ProfitTableItemProps = {
 	[key: string]: string;
 };
 
+export type HeatMapItemData = {
+	value: string;
+	opacity: number;
+};
+
 export type HeatMapItemProps = {
-	[key: string]: {
-		[key: string]: string;
+	[year: string]: {
+		total: string;
+		[month: string]: HeatMapItemData | string;
 	};
 };
 

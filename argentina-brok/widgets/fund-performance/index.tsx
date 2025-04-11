@@ -2,6 +2,7 @@ import parser from 'html-react-parser';
 import { useTranslations } from 'next-intl';
 
 import { Graphic } from '@/features/graphic';
+import { HeatMap } from '@/features/heat-map';
 import { ProfitTable } from '@/features/profit-table';
 import type { PerformanceProps } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
@@ -11,7 +12,7 @@ import css from './index.module.css';
 export const FundPerformance = ({
 	graphics,
 	profitTable,
-	// heatMap,
+	heatMap,
 }: PerformanceProps) => {
 	const t = useTranslations('fundPerformance');
 
@@ -20,6 +21,7 @@ export const FundPerformance = ({
 			<h2 className={css.title}>{parser(t('title'))}</h2>
 			<Graphic graphics={graphics} />
 			<ProfitTable table={profitTable} />
+			<HeatMap heatMap={heatMap} />
 		</Container>
 	);
 };

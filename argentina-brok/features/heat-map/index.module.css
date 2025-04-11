@@ -1,0 +1,64 @@
+.root {
+	@mixin responsive border-radius, 16, 16, 16;
+
+	width: 100%;
+	overflow: hidden;
+	border-spacing: 0;
+}
+
+.tableRow {
+	display: flex;
+}
+
+.headRow {
+	background-color: var(--gray-200-color);
+}
+
+.theadValue,
+.tbodyValue {
+	@mixin responsive --border, 1, 1, 1;
+	@mixin responsive width, 85, 85, 85;
+	@mixin responsive height, 56, 56, 56;
+
+	border: var(--border) solid var(--gray-100-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.theadValue {
+	@mixin font-text14;
+
+	color: var(--gray-700-color);
+}
+
+.tbodyValue {
+	@mixin font-text16;
+
+	position: relative;
+	color: var(--gray-800-color);
+}
+
+.overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	&.green {
+		background-color: var(--green-500-color);
+	}
+
+	&.red {
+		background-color: var(--red-500-color);
+	}
+
+	&.hidden {
+		display: none;
+	}
+}
+
+.label {
+	z-index: 10;
+}
