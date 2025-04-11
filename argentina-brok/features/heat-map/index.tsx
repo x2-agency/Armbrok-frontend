@@ -3,9 +3,9 @@ import parser from 'html-react-parser';
 
 import type { HeatMapItemProps } from '@/shared/types/global.types';
 
-import { defineCellColor } from './helpers/define-cell-color';
 import { transformHeatMapData } from './helpers/transform-heat-map-data';
 import css from './index.module.css';
+import { CellValue } from './ui/cell-value';
 
 type HeatMapProps = {
 	heatMap: Array<HeatMapItemProps>;
@@ -30,23 +30,11 @@ export const HeatMap = ({ heatMap, className }: HeatMapProps) => {
 				{rows.map((row, rowIndex) => (
 					<tr key={rowIndex} className={css.tableRow}>
 						{row.map((value, valueKey) => (
-							<td key={valueKey} className={cx(css.tbodyValue)}>
-								<div
-									style={{
-										opacity: typeof value !== 'string' ? value.opacity : 1,
-									}}
-									className={cx(
-										css.overlay,
-										css[
-											defineCellColor(
-												typeof value !== 'string' ? value.value : value
-											)
-										]
-									)}
+							<td key={valueKey} className={css.tbodyValue}>
+								<CellValue
+									value={typeof value !== 'string' ? value.value : value}
+									opacity={typeof value !== 'string' ? value.opacity : 1}
 								/>
-								<span className={css.label}>
-									{parser(typeof value !== 'string' ? value.value : value)}
-								</span>
 							</td>
 						))}
 					</tr>
