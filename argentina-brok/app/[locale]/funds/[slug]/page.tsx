@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getFundPage } from '@/shared/api/get-fund-page';
+import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
 import { Fund } from '@/view/fund';
 
 export async function generateMetadata({
@@ -34,9 +35,28 @@ export async function generateMetadata({
 
 const FundPage = async ({ params }: { params: { slug: string } }) => {
 	const { slug } = await params;
-	const initialData = await getFundPage({ slug });
+	const [
+		initialData,
+		initialGraphicData,
+		initialHeatMapData,
+		initialProfitTableData,
+	] = await Promise.all([
+		getFundPage({ slug }),
+		getFundPerformanceEntity(slug, 'graphic'),
+		getFundPerformanceEntity(slug, 'heatmap'),
+		getFundPerformanceEntity(slug, 'profit-table'),
+	]);
 
-	return <Fund {...initialData.data} />;
+	return (
+		<Fund
+			{...initialData.data}
+			performanceData={{
+				heatMap: initialHeatMapData,
+				graphics: initialGraphicData,
+				profitTable: initialProfitTableData,
+			}}
+		/>
+	);
 };
 
 export default FundPage;
