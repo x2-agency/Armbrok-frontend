@@ -35,7 +35,6 @@ export const transformHeatMapData = (
 				};
 			}
 
-			// Пустые ячейки
 			return {
 				value: '0%',
 				opacity: 0,
