@@ -1,4 +1,5 @@
 .root {
+	@mixin transition height;
 	overflow: hidden;
 
 	@media (max-width: 767px) {

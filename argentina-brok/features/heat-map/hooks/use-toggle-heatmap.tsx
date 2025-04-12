@@ -9,6 +9,7 @@ export const useToggleHeatMap = ({ opened }: UseToggleHeatMapProps) => {
 	const [height, setHeight] = useState<string | number>(
 		opened ? 'auto' : '0px'
 	);
+	const isTransitioningRef = useRef(false);
 
 	useEffect(() => {
 		const el = tableRef.current;
@@ -17,24 +18,27 @@ export const useToggleHeatMap = ({ opened }: UseToggleHeatMapProps) => {
 		if (opened) {
 			const scrollHeight = el.scrollHeight;
 			setHeight(`${scrollHeight}px`);
+			isTransitioningRef.current = true;
 
 			const handleTransitionEnd = () => {
-				setHeight('auto');
+				if (opened) {
+					setHeight('auto');
+				}
 				el.removeEventListener('transitionend', handleTransitionEnd);
+				isTransitioningRef.current = false;
 			};
 			el.addEventListener('transitionend', handleTransitionEnd);
 		} else {
-			if (height === 'auto') {
-				const scrollHeight = el.scrollHeight;
-				setHeight(`${scrollHeight}px`);
-				requestAnimationFrame(() => {
-					setHeight('0px');
-				});
-			} else {
+			if (isTransitioningRef.current) return;
+
+			const currentHeight = el.offsetHeight;
+			setHeight(`${currentHeight}px`);
+
+			requestAnimationFrame(() => {
 				setHeight('0px');
-			}
+			});
 		}
-	}, [opened, height]);
+	}, [opened]);
 
 	return {
 		tableRef,
