@@ -16,30 +16,32 @@ export const HeatMap = ({ heatMap, className }: HeatMapProps) => {
 	const { headers, rows } = transformHeatMapData(heatMap);
 
 	return (
-		<table className={cx(css.root, className)}>
-			<thead className={css.tableHead}>
-				<tr className={cx(css.tableRow, css.headRow)}>
-					{headers.map((value, index) => (
-						<th key={index} className={css.theadValue}>
-							{parser(value)}
-						</th>
-					))}
-				</tr>
-			</thead>
-			<tbody className={css.tableBody}>
-				{rows.map((row, rowIndex) => (
-					<tr key={rowIndex} className={css.tableRow}>
-						{row.map((value, valueKey) => (
-							<td key={valueKey} className={css.tbodyValue}>
-								<CellValue
-									value={typeof value !== 'string' ? value.value : value}
-									opacity={typeof value !== 'string' ? value.opacity : 1}
-								/>
-							</td>
+		<div className={cx(css.root, className)}>
+			<table className={css.table}>
+				<thead className={css.tableHead}>
+					<tr className={cx(css.tableRow, css.headRow)}>
+						{headers.map((value, index) => (
+							<th key={index} className={css.theadValue}>
+								{parser(value)}
+							</th>
 						))}
 					</tr>
-				))}
-			</tbody>
-		</table>
+				</thead>
+				<tbody className={css.tableBody}>
+					{rows.map((row, rowIndex) => (
+						<tr key={rowIndex} className={css.tableRow}>
+							{row.map((value, valueKey) => (
+								<td key={valueKey} className={css.tbodyValue}>
+									<CellValue
+										value={typeof value !== 'string' ? value.value : value}
+										opacity={typeof value !== 'string' ? value.opacity : 1}
+									/>
+								</td>
+							))}
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
 	);
 };

@@ -2,7 +2,7 @@
 	@media (max-width: 767px) {
 		@mixin responsive padding-inline, 20;
 		overflow-y: scroll;
-		scrollbar-width: none; /* Для Firefox */
+		scrollbar-width: none;
 		-ms-overflow-style: none;
 	}
 }

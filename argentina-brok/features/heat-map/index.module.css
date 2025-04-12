@@ -1,4 +1,14 @@
 .root {
+	@media (max-width: 767px) {
+		@mixin responsive padding-inline, 20;
+
+		overflow-y: scroll;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+}
+
+.table {
 	@mixin responsive border-radius, 16, 16, 16;
 
 	width: 100%;
