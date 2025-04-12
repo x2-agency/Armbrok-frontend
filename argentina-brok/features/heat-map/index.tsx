@@ -26,7 +26,7 @@ export const HeatMap = ({
 
 	return (
 		<div
-			className={cx(css.root, className)}
+			className={cx(css.root, className, { [css.closed]: !opened })}
 			ref={tableRef}
 			style={{
 				height,

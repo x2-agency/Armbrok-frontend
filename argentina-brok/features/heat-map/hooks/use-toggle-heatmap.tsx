@@ -35,7 +35,9 @@ export const useToggleHeatMap = ({ opened }: UseToggleHeatMapProps) => {
 			setHeight(`${currentHeight}px`);
 
 			requestAnimationFrame(() => {
-				setHeight('0px');
+				requestAnimationFrame(() => {
+					setHeight('0px');
+				});
 			});
 		}
 	}, [opened]);

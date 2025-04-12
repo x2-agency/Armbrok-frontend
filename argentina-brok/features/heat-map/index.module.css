@@ -1,6 +1,8 @@
 .root {
-	@mixin transition height;
+	@mixin transition;
+
 	overflow: hidden;
+	transition-property: height opacity;
 
 	@media (max-width: 767px) {
 		@mixin responsive padding-inline, 20;
@@ -8,6 +10,10 @@
 		overflow-y: scroll;
 		scrollbar-width: none;
 		-ms-overflow-style: none;
+	}
+
+	&.closed {
+		opacity: 0;
 	}
 }
 
