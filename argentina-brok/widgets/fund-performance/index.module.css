@@ -14,3 +14,8 @@
 	text-align: center;
 	font-weight: 600;
 }
+
+.hideButton {
+	@mixin responsive margin-block-end, 32, 32, 32;
+	margin-inline: auto;
+}
