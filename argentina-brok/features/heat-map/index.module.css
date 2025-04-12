@@ -1,4 +1,6 @@
 .root {
+	overflow: hidden;
+
 	@media (max-width: 767px) {
 		@mixin responsive padding-inline, 20;
 

@@ -29,7 +29,6 @@ export const HeatMap = ({
 			className={cx(css.root, className)}
 			ref={tableRef}
 			style={{
-				overflow: 'hidden',
 				transition: 'height 0.3s ease',
 				height,
 			}}
