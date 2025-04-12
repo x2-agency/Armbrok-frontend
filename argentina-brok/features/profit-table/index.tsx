@@ -11,14 +11,16 @@ type ProfitTableProps = {
 export const ProfitTable = ({ table }: ProfitTableProps) => {
 	const keys: Array<string> = table.map(item => Object.keys(item)[0]);
 	const values: Array<number> = table.map(item =>
-		parseFloat(Object.values(item)[0].replace(',', '.'))
+		parseFloat(Object.values(item)[0].replace(',', '.').replace('-', '0%'))
 	);
-	const maxValue = Math.max(...values.slice(0, -1));
-	const minValue = Math.min(...values.slice(0, -1));
+	const filtered = values.slice(0, -1).filter(v => v !== 0);
+
+	const maxValue = filtered.length ? Math.max(...filtered) : 0;
+	const minValue = filtered.length ? Math.min(...filtered) : 0;
 
 	const defineColor = (value: number, key: number) => {
 		if (key === values.length - 1) {
-			return value !== 0 ? (value > 0 ? 'green' : 'red') : undefined;
+			return value !== 0 ? (value > 0 ? 'green' : 'red') : '';
 		}
 
 		if (value === maxValue) {
