@@ -29,7 +29,7 @@
 .tbodyValue {
 	@mixin responsive --border, 1, 1, 1;
 
-	/* @mixin responsive width, 85, 85, 85; */
+	@mixin responsive width, 85;
 	@mixin responsive height, 56, 56, 56;
 
 	border: var(--border) solid var(--gray-100-color);
