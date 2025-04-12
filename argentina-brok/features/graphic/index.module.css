@@ -3,6 +3,7 @@
 	@mixin responsive padding, 16, 24, 24;
 	@mixin responsive border-radius, 24, 24, 24;
 	@mixin responsive --border-width, 1, 1, 1;
+	@mixin responsive min-height, 0, 520, 520;
 
 	overflow: hidden;
 	border: var(--border-width) solid var(--gray-300-color);
