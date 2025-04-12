@@ -2,11 +2,11 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import { useEffect, useRef, useState } from 'react';
 
 import type { HeatMapItemProps } from '@/shared/types/global.types';
 
 import { transformHeatMapData } from './helpers/transform-heat-map-data';
+import { useToggleHeatMap } from './hooks/use-toggle-heatmap';
 import css from './index.module.css';
 import { CellValue } from './ui/cell-value';
 
@@ -22,36 +22,7 @@ export const HeatMap = ({
 	opened = true,
 }: HeatMapProps) => {
 	const { headers, rows } = transformHeatMapData(heatMap);
-	const tableRef = useRef<HTMLDivElement | null>(null);
-	const [height, setHeight] = useState<string | number>(
-		opened ? 'auto' : '0px'
-	);
-
-	useEffect(() => {
-		const el = tableRef.current;
-		if (!el) return;
-
-		if (opened) {
-			const scrollHeight = el.scrollHeight;
-			setHeight(`${scrollHeight}px`);
-
-			const handleTransitionEnd = () => {
-				setHeight('auto');
-				el.removeEventListener('transitionend', handleTransitionEnd);
-			};
-			el.addEventListener('transitionend', handleTransitionEnd);
-		} else {
-			if (height === 'auto') {
-				const scrollHeight = el.scrollHeight;
-				setHeight(`${scrollHeight}px`);
-				requestAnimationFrame(() => {
-					setHeight('0px');
-				});
-			} else {
-				setHeight('0px');
-			}
-		}
-	}, [opened, height]);
+	const { tableRef, height } = useToggleHeatMap({ opened });
 
 	return (
 		<div
