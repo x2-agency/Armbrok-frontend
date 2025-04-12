@@ -19,7 +19,12 @@ export const HeatMap = ({ heatMap, className }: HeatMapProps) => {
 		<div className={cx(css.root, className)}>
 			<table className={css.table}>
 				<thead className={css.tableHead}>
-					<tr className={cx(css.tableRow, css.headRow)}>
+					<tr
+						className={cx(css.tableRow, css.headRow)}
+						style={{
+							gridTemplateColumns: `repeat(${headers.length}, 1fr)`,
+						}}
+					>
 						{headers.map((value, index) => (
 							<th key={index} className={css.theadValue}>
 								{parser(value)}
@@ -29,7 +34,13 @@ export const HeatMap = ({ heatMap, className }: HeatMapProps) => {
 				</thead>
 				<tbody className={css.tableBody}>
 					{rows.map((row, rowIndex) => (
-						<tr key={rowIndex} className={css.tableRow}>
+						<tr
+							key={rowIndex}
+							className={css.tableRow}
+							style={{
+								gridTemplateColumns: `repeat(${headers.length}, 1fr)`,
+							}}
+						>
 							{row.map((value, valueKey) => (
 								<td key={valueKey} className={css.tbodyValue}>
 									<CellValue

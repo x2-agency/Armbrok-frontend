@@ -16,8 +16,9 @@
 	border-spacing: 0;
 }
 
+.headRow,
 .tableRow {
-	display: flex;
+	display: grid;
 }
 
 .headRow {
@@ -27,13 +28,18 @@
 .theadValue,
 .tbodyValue {
 	@mixin responsive --border, 1, 1, 1;
-	@mixin responsive width, 85, 85, 85;
+
+	/* @mixin responsive width, 85, 85, 85; */
 	@mixin responsive height, 56, 56, 56;
 
 	border: var(--border) solid var(--gray-100-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.theadValue:last-of-type {
+	border-right: unset;
 }
 
 .theadValue {
