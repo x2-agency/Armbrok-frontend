@@ -43,6 +43,8 @@ export const graphicOptions = (
 			},
 			borderRadius: 16,
 			borderWidth: 0,
+			padding: 0,
+			shadow: false,
 		},
 		series: [
 			{

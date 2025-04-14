@@ -18,16 +18,22 @@ export const CustomTooltipContent = ({
 		<ul className={css.root}>
 			{bankDeposit && (
 				<li className={css.paragraph}>
-					<Paragraph leftPart="Bank deposit" rightPart={bankDeposit} />
+					<Paragraph
+						leftPart="Bank deposit"
+						rightPart={bankDeposit.toFixed(2)}
+					/>
 				</li>
 			)}
 			{nav && (
 				<li className={css.paragraph}>
-					<Paragraph leftPart="NAV" rightPart={nav} />
+					<Paragraph leftPart="NAV" rightPart={nav.toFixed(2)} />
 				</li>
 			)}
 			<li className={css.paragraph}>
-				<Paragraph leftPart="Unit price" rightPart={'$' + unitPrice} />
+				<Paragraph
+					leftPart="Unit price"
+					rightPart={'$' + unitPrice.toFixed(2)}
+				/>
 			</li>
 			<li className={css.paragraph}>
 				<Paragraph leftPart="Date" rightPart={date} />
