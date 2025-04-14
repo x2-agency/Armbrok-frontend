@@ -41,8 +41,8 @@ export const graphicOptions = (
 				symbols: ['circle', 'circle'],
 			},
 		},
-		scrollbar: {
-			enabled: true,
+		chart: {
+			reflow: false,
 		},
 	};
 

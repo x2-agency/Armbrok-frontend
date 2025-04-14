@@ -28,7 +28,7 @@ export const FundPerformance = ({
 	return (
 		<Container className={css.root}>
 			<h2 className={css.title}>{parser(t('title'))}</h2>
-			<Graphic graphics={graphics} opened={heatMapOpened} />
+			<Graphic graphics={graphics} />
 			<ProfitTable table={profitTable} />
 			<HideButton
 				onClick={toggleHeatMapCallback}
