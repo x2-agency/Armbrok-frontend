@@ -42,7 +42,7 @@ const FundPage = async ({ params }: { params: { slug: string } }) => {
 		initialProfitTableData,
 	] = await Promise.all([
 		getFundPage({ slug }),
-		getFundPerformanceEntity(slug, 'graphic'),
+		getFundPerformanceEntity(slug, 'chart'),
 		getFundPerformanceEntity(slug, 'heatmap'),
 		getFundPerformanceEntity(slug, 'profit-table'),
 	]);

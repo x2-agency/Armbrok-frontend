@@ -1,6 +1,6 @@
 import apiClient from '@/shared/api/api-client';
 
-type RequestEntity = 'graphic' | 'heatmap' | 'profit-table';
+type RequestEntity = 'chart' | 'heatmap' | 'profit-table';
 
 export const getFundPerformanceEntity = async (
 	slug: string,
