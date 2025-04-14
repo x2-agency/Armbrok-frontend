@@ -2,6 +2,7 @@ import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 
 import type { GraphicMode, GraphicProps } from '@/shared/types/global.types';
+import { NAV_MODE } from '@/widgets/fund-performance/model/fund-performance.constants';
 
 import { getSeriesData } from './helpers/get-series-data';
 import { useDateControllers } from './hooks/use-date-controllers';
@@ -30,7 +31,7 @@ export const Graphic = ({ graphics, mode }: GraphicComponentProps) => {
 		<div className={css.root}>
 			<section className={css.controls}>
 				<GraphicDateControllers buttons={dateControllers} />
-				<GraphicFilter />
+				<GraphicFilter disabled={mode === NAV_MODE} />
 			</section>
 			<HighchartsReact
 				highcharts={Highcharts}

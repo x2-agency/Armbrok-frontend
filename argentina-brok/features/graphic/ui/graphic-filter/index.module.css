@@ -25,6 +25,14 @@
 		&:hover {
 			background-color: var(--gray-200-color);
 		}
+
+		&:disabled:hover {
+			background-color: initial;
+		}
+	}
+
+	&:disabled {
+		cursor: not-allowed;
 	}
 }
 
