@@ -11,6 +11,8 @@ import type { PerformanceProps } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
+import { GRAPHIC_TABS } from './model/fund-performance.constants';
+import { GraphicTabs } from './ui/graphic-tabs';
 import { HideButton } from './ui/hide-button';
 
 export const FundPerformance = ({
@@ -20,6 +22,9 @@ export const FundPerformance = ({
 }: PerformanceProps) => {
 	const t = useTranslations('fundPerformance');
 	const [heatMapOpened, toggleHeatMap] = useState<boolean>(false);
+	const [activeGraphicMode, setActiveGraphicMode] = useState<string>(
+		GRAPHIC_TABS[0].mode
+	);
 
 	const toggleHeatMapCallback = useCallback(() => {
 		toggleHeatMap(!heatMapOpened);
@@ -28,6 +33,12 @@ export const FundPerformance = ({
 	return (
 		<Container className={css.root}>
 			<h2 className={css.title}>{parser(t('title'))}</h2>
+			<GraphicTabs
+				activeMode={activeGraphicMode}
+				onClick={setActiveGraphicMode}
+				tabs={GRAPHIC_TABS}
+				className={css.tabs}
+			/>
 			<Graphic graphics={graphics} />
 			<ProfitTable table={profitTable} />
 			<HideButton

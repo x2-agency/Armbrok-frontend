@@ -19,3 +19,9 @@
 	@mixin responsive margin-block-end, 32, 32, 32;
 	margin-inline: auto;
 }
+
+.tabs {
+	@mixin responsive margin-block-end, 24, 24, 24;
+
+	margin-inline: auto;
+}

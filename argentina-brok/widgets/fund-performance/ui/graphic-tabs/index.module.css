@@ -1,0 +1,35 @@
+.root {
+	@mixin responsive gap, 4, 4, 4;
+	@mixin responsive padding, 4, 4, 4;
+	@mixin responsive border-radius, 10, 10, 10;
+
+	width: fit-content;
+	display: flex;
+	background-color: var(--gray-200-color);
+}
+
+.tab {
+	@mixin transitionOptions;
+	@mixin font-text16;
+	@mixin responsive min-width, 166, 166, 166;
+	@mixin responsive padding-block, 8, 8, 8;
+	@mixin responsive border-radius, 8, 8, 8;
+
+	background-color: transparent;
+	color: var(--gray-600-color);
+	font-weight: 500;
+	transition-property: color background-color;
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--black-color);
+			background-color: var(--gray-100-color);
+		}
+	}
+
+	&.active {
+		color: var(--black-color);
+		background-color: var(--gray-100-color);
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+	}
+}
