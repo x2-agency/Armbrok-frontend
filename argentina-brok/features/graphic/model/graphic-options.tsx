@@ -1,7 +1,12 @@
 import type Highcharts from 'highcharts/highstock';
+import ReactDOMServer from 'react-dom/server';
+
+import { formatDateFromChart } from '@/features/graphic/helpers/format-date-from-chart';
+import type { SeriesSingleData } from '@/features/graphic/helpers/get-series-data';
+import { CustomTooltipContent } from '@/features/graphic/ui/custom-tooltip-content';
 
 export const graphicOptions = (
-	seriesData: Array<Array<number>>
+	seriesData: Array<SeriesSingleData>
 ): Highcharts.Options => {
 	const options: Highcharts.Options = {
 		rangeSelector: {
@@ -19,8 +24,25 @@ export const graphicOptions = (
 			opposite: false,
 		},
 		tooltip: {
-			valueDecimals: 2,
-			valueSuffix: ' USD',
+			shared: false,
+			useHTML: true,
+			formatter: function () {
+				const point = this.point;
+				const date = formatDateFromChart(point.x);
+
+				const jsx = (
+					<CustomTooltipContent
+						date={date}
+						unitPrice={point.y}
+						nav={point.options?.nav}
+						bankDeposit={point.options?.bankDeposit}
+					/>
+				);
+
+				return ReactDOMServer.renderToStaticMarkup(jsx);
+			},
+			borderRadius: 16,
+			borderWidth: 0,
 		},
 		series: [
 			{

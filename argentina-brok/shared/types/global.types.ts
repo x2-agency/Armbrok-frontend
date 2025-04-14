@@ -612,8 +612,10 @@ export type AboutFundProps = {
 
 export type GraphicItem = {
 	date: string;
-	unitPrice: number;
-	nav: number;
+	unitPrice?: number;
+	nav?: number;
+	fundIndex?: number;
+	bankDeposit?: number;
 };
 
 export type GraphicProps = {
