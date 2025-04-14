@@ -7,7 +7,10 @@ import { useCallback, useState } from 'react';
 import { Graphic } from '@/features/graphic';
 import { HeatMap } from '@/features/heat-map';
 import { ProfitTable } from '@/features/profit-table';
-import type { PerformanceProps } from '@/shared/types/global.types';
+import type {
+	GraphicMode,
+	PerformanceProps,
+} from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
@@ -22,7 +25,7 @@ export const FundPerformance = ({
 }: PerformanceProps) => {
 	const t = useTranslations('fundPerformance');
 	const [heatMapOpened, toggleHeatMap] = useState<boolean>(false);
-	const [activeGraphicMode, setActiveGraphicMode] = useState<string>(
+	const [activeGraphicMode, setActiveGraphicMode] = useState<GraphicMode>(
 		GRAPHIC_TABS[0].mode
 	);
 
@@ -39,7 +42,7 @@ export const FundPerformance = ({
 				tabs={GRAPHIC_TABS}
 				className={css.tabs}
 			/>
-			<Graphic graphics={graphics} />
+			<Graphic graphics={graphics} mode={activeGraphicMode} />
 			<ProfitTable table={profitTable} />
 			<HideButton
 				onClick={toggleHeatMapCallback}

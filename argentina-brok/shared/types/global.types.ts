@@ -643,3 +643,5 @@ export type PerformanceProps = {
 	profitTable: Array<ProfitTableItemProps>;
 	heatMap: Array<HeatMapItemProps>;
 };
+
+export type GraphicMode = 'share' | 'nav';

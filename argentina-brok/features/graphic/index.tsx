@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 
-import type { GraphicProps } from '@/shared/types/global.types';
+import type { GraphicMode, GraphicProps } from '@/shared/types/global.types';
 
 import { getSeriesData } from './helpers/get-series-data';
 import { useDateControllers } from './hooks/use-date-controllers';
@@ -11,12 +11,17 @@ import { graphicOptions } from './model/graphic-options';
 import { GraphicDateControllers } from './ui/graphic-date-controllers';
 import { GraphicFilter } from './ui/graphic-filter';
 
-export const Graphic = ({ graphics }: { graphics: GraphicProps }) => {
+type GraphicComponentProps = {
+	graphics: GraphicProps;
+	mode: GraphicMode;
+};
+
+export const Graphic = ({ graphics, mode }: GraphicComponentProps) => {
 	const fundKey: string = Object.keys(graphics)[0];
 	const fundData = graphics[fundKey];
 
-	const seriesData = getSeriesData(fundData);
-	const options = graphicOptions(seriesData);
+	const seriesData = getSeriesData(fundData, mode);
+	const options = graphicOptions(seriesData, mode);
 
 	const { chartRef, setRange } = useDateControllers();
 	const dateControllers = getDateControllersOptions({ setRange });

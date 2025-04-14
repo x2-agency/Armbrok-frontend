@@ -1,17 +1,19 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import type { GraphicMode } from '@/shared/types/global.types';
+
 import css from './index.module.css';
 
 export type GraphicTabProps = {
 	text: string;
-	mode: string;
+	mode: GraphicMode;
 };
 
 export type GraphicTabsProps = {
 	tabs: Array<GraphicTabProps>;
 	activeMode: string;
-	onClick: (mode: string) => void;
+	onClick: (mode: GraphicMode) => void;
 	className?: string;
 };
 

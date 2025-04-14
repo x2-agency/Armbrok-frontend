@@ -4,9 +4,11 @@ import ReactDOMServer from 'react-dom/server';
 import { formatDateFromChart } from '@/features/graphic/helpers/format-date-from-chart';
 import type { SeriesSingleData } from '@/features/graphic/helpers/get-series-data';
 import { CustomTooltipContent } from '@/features/graphic/ui/custom-tooltip-content';
+import type { GraphicMode } from '@/shared/types/global.types';
 
 export const graphicOptions = (
-	seriesData: Array<SeriesSingleData>
+	seriesData: Array<SeriesSingleData>,
+	mode: GraphicMode
 ): Highcharts.Options => {
 	const options: Highcharts.Options = {
 		rangeSelector: {
@@ -18,7 +20,12 @@ export const graphicOptions = (
 		yAxis: {
 			labels: {
 				formatter: function () {
-					return this.value + '%';
+					const transformedValue =
+						typeof this.value === 'string'
+							? parseFloat(this.value)
+							: this.value;
+
+					return transformedValue.toFixed(0);
 				},
 			},
 			opposite: false,
@@ -31,12 +38,7 @@ export const graphicOptions = (
 				const date = formatDateFromChart(point.x);
 
 				const jsx = (
-					<CustomTooltipContent
-						date={date}
-						unitPrice={point.y}
-						nav={point.options?.nav}
-						bankDeposit={point.options?.bankDeposit}
-					/>
+					<CustomTooltipContent date={date} modeData={point.y} mode={mode} />
 				);
 
 				return ReactDOMServer.renderToStaticMarkup(jsx);

@@ -1,38 +1,30 @@
+import {
+	NAV_LABEL,
+	UNIT_PRICE_LABEL,
+} from '@/features/graphic/model/graphic.constants';
+import type { GraphicMode } from '@/shared/types/global.types';
+import { NAV_PER_SHARE_MODE } from '@/widgets/fund-performance/model/fund-performance.constants';
+
 import css from './index.module.css';
 import { Paragraph } from './paragraph';
 
 type TooltipContentProps = {
+	modeData: number;
 	date: string;
-	unitPrice: number;
-	nav?: number | null;
-	bankDeposit?: number | null;
+	mode: GraphicMode;
 };
 
 export const CustomTooltipContent = ({
+	modeData,
 	date,
-	unitPrice,
-	nav,
-	bankDeposit,
+	mode,
 }: TooltipContentProps) => {
 	return (
 		<ul className={css.root}>
-			{bankDeposit && (
-				<li className={css.paragraph}>
-					<Paragraph
-						leftPart="Bank deposit"
-						rightPart={bankDeposit.toFixed(2)}
-					/>
-				</li>
-			)}
-			{nav && (
-				<li className={css.paragraph}>
-					<Paragraph leftPart="NAV" rightPart={nav.toFixed(2)} />
-				</li>
-			)}
 			<li className={css.paragraph}>
 				<Paragraph
-					leftPart="Unit price"
-					rightPart={'$' + unitPrice.toFixed(2)}
+					leftPart={mode === NAV_PER_SHARE_MODE ? UNIT_PRICE_LABEL : NAV_LABEL}
+					rightPart={'$' + modeData.toFixed(2)}
 				/>
 			</li>
 			<li className={css.paragraph}>
