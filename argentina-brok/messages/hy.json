@@ -126,11 +126,11 @@
 		"text": "Ծառայություններ",
 		"links": {
 			"brokerage": {
-				"text": "Բրոքերային ծառայություններ",
+				"text": "Բրոքերային&nbsp;ծառայություններ",
 				"link": "/brokerage"
 			},
 			"assetManagement": {
-				"text": "Ակտիվների կառավարում",
+				"text": "Ակտիվների&nbsp;կառավարում",
 				"link": "/asset-management"
 			},
 			"investmentFunds": {
@@ -138,11 +138,11 @@
 				"link": "/funds"
 			},
 			"investmentBanking": {
-				"text": "Ներդրումային բանկ",
+				"text": "Ներդրումային&nbsp;բանկ",
 				"link": "/investment-banking"
 			},
 			"depositoryRegistrar": {
-				"text": "Դեպոզիտարիա և ռեեստրի վարում",
+				"text": "Դեպոզիտարիա&nbsp;և&nbsp;ռեեստրի&nbsp;վարում",
 				"link": "/depositary-services"
 			}
 		}
@@ -215,5 +215,18 @@
 		"title": "Դուք բաժանորդագրված եք! 🎉",
 		"description": "Շներկայացնում ենք մեր նորությունների բաժանորդագրության համար! �<br /> Մենք Ձեզ կպահենք տեղեկացված ամենավերջին և ամենաարդիական աշխատատեղերի մասին,<br /> ուղարկված ուղղակի Ձեր էլ. փոստի հասցեին։ Հետևեք մեր նորություններին —<br /> Ձեր հաջորդ մեծ կարիերայի քայլը կարող է լինել ընդամենը մեկ նամակի հեռավորության վրա!"
 	},
-	"closeAwardButton": { "text": "Ցույց տալ պակաս" }
+	"closeAwardButton": { "text": "Ցույց տալ պակաս" },
+	"aboutUsLinks": {
+		"text": "Մեր մասին",
+		"links": {
+			"generalInformation": {
+				"text": "Ընդհանուր&nbsp;տեղեկություններ",
+				"link": "/about-us"
+			},
+			"career": {
+				"text": "Կարիերա",
+				"link": "/careers-at-armbrok"
+			}
+		}
+	}
 }
