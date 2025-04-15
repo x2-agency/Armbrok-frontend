@@ -39,7 +39,7 @@ export const LOCALE_KEYS = {
 				},
 				{
 					root: 'regulation',
-					items: ['lawsLegalActs', 'internalRules', 'stockExchangeRules'],
+					items: ['lawsLegalActs', 'internalRules'],
 				},
 				{
 					root: 'contact-us',
