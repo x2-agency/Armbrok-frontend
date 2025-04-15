@@ -17,7 +17,7 @@ export const FileSection = ({ className, documents }: FileSectionProps) => {
 
 	return (
 		<Container className={cx(css.root, className)}>
-			<ul className={css.list} id="exchange-rules">
+			<ul className={css.list} id="internal-rules">
 				{documents.map((document, index) => (
 					<li key={index} className={css.listItem}>
 						<Document
