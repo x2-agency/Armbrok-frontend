@@ -14,13 +14,14 @@ import css from './index.module.css';
 
 type ServicesLinksProps = {
 	className?: string;
+	rootKey: 'servicesLinks' | 'aboutUsLinks';
 };
 
-export const ServicesLinks = ({ className }: ServicesLinksProps) => {
-  const pathname = usePathname();
+export const BurgerLinks = ({ className, rootKey }: ServicesLinksProps) => {
+	const pathname = usePathname();
 	const isHyLocale = pathname.startsWith('/hy');
-	const { servicesLinks } = LOCALE_KEYS;
-	const t = useTranslations(servicesLinks.root);
+	const object = LOCALE_KEYS[rootKey];
+	const t = useTranslations(object?.root ?? 'services');
 	const path = usePathname();
 
 	const { isOpen, toggleDropdown, dropdownRef } = useDropdown();
@@ -30,13 +31,13 @@ export const ServicesLinks = ({ className }: ServicesLinksProps) => {
 			<Button
 				variant="subtle"
 				onClick={toggleDropdown}
-				className={cx(css.mainButton, {[css.hy]: isHyLocale})}
+				className={cx(css.mainButton, { [css.hy]: isHyLocale })}
 			>
 				{t('text')}
 				<TriangleSVG className={cx(css.svg, { [css.open]: isOpen })} />
 			</Button>
 			<ul className={cx(css.list, { [css.open]: isOpen })}>
-				{servicesLinks.items.map((item, index) => (
+				{object?.items.map((item, index) => (
 					<li key={index} className={css.listElement}>
 						<Button
 							variant="subtle"

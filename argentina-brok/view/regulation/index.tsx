@@ -1,7 +1,7 @@
 import parser from 'html-react-parser';
 import type { NextPage } from 'next';
 
-import { TitleSection } from '@/shared/ui/title-section';
+// import { TitleSection } from '@/shared/ui/title-section';
 import { FileSection } from '@/widgets/file-section';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
@@ -21,11 +21,11 @@ export const Regulation: NextPage<RegulationPageData> = ({
 				columns={2}
 				lineClamp={1}
 			/>
-			<TitleSection
+			{/* <TitleSection
 				className={css.titleSection}
 				title={documentsSection?.title ?? ''}
 				description={documentsSection?.description}
-			/>
+			/> */}
 			<FileSection documents={documentsSection?.documents ?? []} />
 		</div>
 	);

@@ -70,7 +70,7 @@ export const FeedbackForm = ({
 				>
 					<Input
 						className={css.input}
-						placeholder="name@mail.com"
+						placeholder="Email"
 						type="email"
 						required
 						{...register('email', {

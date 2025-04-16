@@ -8,7 +8,7 @@ import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
 import type { MenuBodyProps } from '@/widgets/app-layout/types/menu.types';
-import { ServicesLinks } from '@/widgets/app-layout/ui/services-links';
+import { BurgerLinks } from '@/widgets/app-layout/ui/burger-links';
 
 import css from './index.module.css';
 
@@ -21,7 +21,7 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 		<Container className={css.root}>
 			<nav className={css.links}>
 				<div className={cx(css.li)}>
-					<ServicesLinks className={css.services} />
+					<BurgerLinks className={css.services} rootKey="servicesLinks" />
 				</div>
 				{links.map((link, index) => (
 					<Button
