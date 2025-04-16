@@ -1,6 +1,7 @@
 import type Highcharts from 'highcharts/highstock';
 import ReactDOMServer from 'react-dom/server';
 
+import { clearSeriesData } from '@/features/graphic/helpers/clean-series';
 import { formatDateFromChart } from '@/features/graphic/helpers/format-date-from-chart';
 import type { SeriesSingleData } from '@/features/graphic/helpers/get-series-data';
 import { CustomTooltipContent } from '@/features/graphic/ui/custom-tooltip-content';
@@ -10,18 +11,7 @@ export const graphicOptions = (
 	seriesData: Array<SeriesSingleData>,
 	mode: GraphicMode
 ): Highcharts.Options => {
-	const cleanedSeries = seriesData.filter(item => {
-		if (Array.isArray(item)) {
-			return typeof item[0] === 'number' && typeof item[1] === 'number';
-		}
-
-		return (
-			typeof item?.x === 'number' &&
-			typeof item?.y === 'number' &&
-			!isNaN(item.x) &&
-			!isNaN(item.y)
-		);
-	});
+	const cleanedSeries = clearSeriesData(seriesData);
 
 	const options: Highcharts.Options = {
 		rangeSelector: {
