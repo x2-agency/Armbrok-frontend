@@ -12,15 +12,20 @@ type TooltipContentProps = {
 	modeData: number;
 	date: string;
 	mode: GraphicMode;
+	yieldNumber: number;
 };
 
 export const CustomTooltipContent = ({
 	modeData,
 	date,
 	mode,
+	yieldNumber,
 }: TooltipContentProps) => {
 	return (
 		<ul className={css.root}>
+			<li className={css.paragraph}>
+				<Paragraph leftPart="Yield" rightPart={yieldNumber.toFixed(2) + '%'} />
+			</li>
 			<li className={css.paragraph}>
 				<Paragraph
 					leftPart={mode === NAV_PER_SHARE_MODE ? UNIT_PRICE_LABEL : NAV_LABEL}

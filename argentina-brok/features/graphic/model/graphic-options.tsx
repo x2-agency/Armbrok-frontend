@@ -39,9 +39,23 @@ export const graphicOptions = (
 			formatter: function () {
 				const point = this.point;
 				const date = formatDateFromChart(point.x);
+				const first = cleanedSeries[0].y ?? 0;
+				const current = point.y;
+
+				const yieldValue =
+					typeof current === 'number' &&
+					typeof first === 'number' &&
+					first !== 0
+						? ((current - first) / first) * 100
+						: 0;
 
 				const jsx = (
-					<CustomTooltipContent date={date} modeData={point.y} mode={mode} />
+					<CustomTooltipContent
+						date={date}
+						modeData={point.y}
+						mode={mode}
+						yieldNumber={yieldValue}
+					/>
 				);
 
 				return ReactDOMServer.renderToStaticMarkup(jsx);
