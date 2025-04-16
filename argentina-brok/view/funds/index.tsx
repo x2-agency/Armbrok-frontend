@@ -28,7 +28,6 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	} = initialFundsPageData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
-	console.log(experienceSection);
 
 	return (
 		<>
