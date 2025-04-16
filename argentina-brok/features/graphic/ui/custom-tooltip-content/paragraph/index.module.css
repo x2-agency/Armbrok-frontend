@@ -5,6 +5,12 @@
 
 .leftPart {
 	color: var(--gray-600-color);
+
+	@media (max-width: 767px) {
+		&::after {
+			content: ':';
+		}
+	}
 }
 
 .rightPart {
@@ -24,4 +30,8 @@
 		transparent 1px 7px
 	);
 	border-image-slice: 1;
+
+	@media (max-width: 767px) {
+		display: none;
+	}
 }

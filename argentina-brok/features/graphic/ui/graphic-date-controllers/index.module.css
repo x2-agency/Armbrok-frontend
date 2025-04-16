@@ -1,6 +1,10 @@
 .root {
 	@mixin responsive gap, 8, 8, 8;
 	display: flex;
+
+	@media (max-width: 767px) {
+		flex-shrink: 0;
+	}
 }
 
 .button {

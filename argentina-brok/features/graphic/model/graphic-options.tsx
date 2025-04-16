@@ -10,6 +10,19 @@ export const graphicOptions = (
 	seriesData: Array<SeriesSingleData>,
 	mode: GraphicMode
 ): Highcharts.Options => {
+	const cleanedSeries = seriesData.filter(item => {
+		if (Array.isArray(item)) {
+			return typeof item[0] === 'number' && typeof item[1] === 'number';
+		}
+
+		return (
+			typeof item?.x === 'number' &&
+			typeof item?.y === 'number' &&
+			!isNaN(item.x) &&
+			!isNaN(item.y)
+		);
+	});
+
 	const options: Highcharts.Options = {
 		rangeSelector: {
 			enabled: false,
@@ -51,7 +64,7 @@ export const graphicOptions = (
 		series: [
 			{
 				name: 'NAV',
-				data: seriesData,
+				data: cleanedSeries,
 				type: 'line',
 				color: '#df2c29',
 			},
@@ -66,9 +79,52 @@ export const graphicOptions = (
 				height: 20,
 				symbols: ['circle', 'circle'],
 			},
+			xAxis: {
+				labels: {
+					style: {
+						fontSize: '10px',
+					},
+				},
+			},
 		},
 		chart: {
-			reflow: false,
+			reflow: true,
+		},
+		responsive: {
+			rules: [
+				{
+					condition: {
+						maxWidth: 768,
+					},
+					chartOptions: {
+						xAxis: {
+							labels: {
+								style: {
+									fontSize: '10px',
+								},
+							},
+						},
+						yAxis: {
+							labels: {
+								style: {
+									fontSize: '10px',
+								},
+							},
+						},
+						tooltip: {
+							style: {
+								fontSize: '12px',
+							},
+						},
+						navigator: {
+							handles: {
+								width: 20,
+								height: 20,
+							},
+						},
+					},
+				},
+			],
 		},
 	};
 

@@ -9,12 +9,20 @@
 	box-shadow:
 		0px 20px 25px rgba(0, 0, 0, 0.06),
 		0px 4px 14px rgba(0, 0, 0, 0.03);
+
+	@media (max-width: 767px) {
+		min-width: unset;
+	}
 }
 
 .paragraph {
-	@mixin responsive gap, 12, 12, 12;
+	@mixin responsive gap, 5, 12, 12;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media (max-width: 767px) {
+		justify-content: start;
+	}
 }

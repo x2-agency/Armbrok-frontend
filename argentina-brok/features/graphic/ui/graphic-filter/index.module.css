@@ -3,6 +3,10 @@
 
 	display: flex;
 	align-items: center;
+
+	@media (max-width: 767px) {
+		flex-shrink: 0;
+	}
 }
 
 .button {
@@ -33,6 +37,7 @@
 
 	&:disabled {
 		cursor: not-allowed;
+		background-color: var(--gray-300-color)
 	}
 }
 

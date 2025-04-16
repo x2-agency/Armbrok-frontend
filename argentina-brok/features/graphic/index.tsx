@@ -1,3 +1,5 @@
+'use client';
+
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 
@@ -31,14 +33,17 @@ export const Graphic = ({ graphics, mode }: GraphicComponentProps) => {
 		<div className={css.root}>
 			<section className={css.controls}>
 				<GraphicDateControllers buttons={dateControllers} />
-				<GraphicFilter disabled={mode === NAV_MODE} />
+				<GraphicFilter disabled={mode === NAV_MODE} className={css.pcFilter} />
 			</section>
+			<GraphicFilter
+				disabled={mode === NAV_MODE}
+				className={css.mobileFilter}
+			/>
 			<HighchartsReact
 				highcharts={Highcharts}
 				constructorType="stockChart"
 				options={options}
 				ref={chartRef}
-				containerProps={{ style: { height: '400px' } }}
 			/>
 		</div>
 	);

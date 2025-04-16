@@ -20,6 +20,20 @@
 	div {
 		overflow: visible !important;
 	}
+
+	@media (max-width: 767px) {
+		@mixin responsive padding, 0;
+
+		margin-inline: unset;
+		border-radius: 0;
+		border: unset;
+	}
+
+	& > div:last-child {
+		@media (max-width: 767px) {
+			@mixin responsive margin-inline, 10;
+		}
+	}
 }
 
 .controls {
@@ -27,4 +41,31 @@
 
 	display: flex;
 	justify-content: space-between;
+
+	.mobileFilter {
+		display: none !important;
+	}
+
+	@media (max-width: 767px) {
+		@mixin responsive padding-inline, 20;
+
+		.pcFilter {
+			display: none !important;
+		}
+
+	
+		overflow-x: scroll;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}
+
+.mobileFilter {
+	@mixin responsive padding-inline, 20;
+
+	@media (min-width: 767px) {
+		display: none !important;
+	}
+
+	display: block;
 }
