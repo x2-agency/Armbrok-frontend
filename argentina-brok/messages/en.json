@@ -221,5 +221,18 @@
 	"backButton": { "text": "Back" },
 	"fundPerformance": {
 		"title": "Fund Performance"
+	},
+	"aboutUsLinks": {
+		"text": "About Us",
+		"links": {
+			"generalInformation": {
+				"text": "General&nbsp;Information",
+				"link": "/about-us"
+			},
+			"career": {
+				"text": "Career",
+				"link": "/careers-at-armbrok"
+			}
+		}
 	}
 }

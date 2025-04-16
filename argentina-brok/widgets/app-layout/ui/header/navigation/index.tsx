@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 
 import { Button } from '@/shared/ui/button';
 import { useHeaderLinks } from '@/widgets/app-layout/hooks/use-header-links';
-import { ServicesLinks } from '@/widgets/app-layout/ui/services-links';
+import { BurgerLinks } from '@/widgets/app-layout/ui/burger-links';
 
 import css from './index.module.css';
 
@@ -12,14 +12,16 @@ export const Navigation = () => {
 	const pathname = usePathname();
 	const isHyLocale = pathname.startsWith('/hy');
 	const links = useHeaderLinks();
-
 	const normalizedPathname = pathname.replace(/^\/(hy|en|ru)/, '') || '/';
 
 	return (
 		<nav className={cx(css.root)}>
 			<ul className={cx(css.links, { [css.hyLinks]: isHyLocale })}>
 				<li className={cx(css.li)}>
-					<ServicesLinks />
+					<BurgerLinks rootKey="servicesLinks" />
+				</li>
+				<li className={cx(css.li)}>
+					<BurgerLinks rootKey="aboutUsLinks" />
 				</li>
 				{links.map(item => {
 					const normalizedHref = item.href.replace(/^\/(hy|en|ru)/, '') || '/';

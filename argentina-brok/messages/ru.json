@@ -219,5 +219,18 @@
 	"backButton": { "text": "Назад" },
 	"fundPerformance": {
 		"title": "Результативность фонда"
+	},
+	"aboutUsLinks": {
+		"text": "О нас",
+		"links": {
+			"generalInformation": {
+				"text": "Общая&nbsp;информация",
+				"link": "/about-us"
+			},
+			"career": {
+				"text": "Карьера",
+				"link": "/careers-at-armbrok"
+			}
+		}
 	}
 }
