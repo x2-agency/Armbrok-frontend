@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useCallback, useState } from 'react';
 
 import { Graphic } from '@/features/graphic';
+import { ChartProvider } from '@/features/graphic/hooks/use-chart-context';
 import { HeatMap } from '@/features/heat-map';
 import { ProfitTable } from '@/features/profit-table';
 import type {
@@ -42,7 +43,9 @@ export const FundPerformance = ({
 				tabs={GRAPHIC_TABS}
 				className={css.tabs}
 			/>
-			<Graphic graphics={graphics} mode={activeGraphicMode} />
+			<ChartProvider>
+				<Graphic graphics={graphics} mode={activeGraphicMode} />
+			</ChartProvider>
 			<ProfitTable table={profitTable} />
 			<HideButton
 				onClick={toggleHeatMapCallback}

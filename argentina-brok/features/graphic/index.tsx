@@ -33,9 +33,14 @@ export const Graphic = ({ graphics, mode }: GraphicComponentProps) => {
 		<div className={css.root}>
 			<section className={css.controls}>
 				<GraphicDateControllers buttons={dateControllers} />
-				<GraphicFilter disabled={mode === NAV_MODE} className={css.pcFilter} />
+				<GraphicFilter
+					disabled={mode === NAV_MODE}
+					className={css.pcFilter}
+					tabMode={mode}
+				/>
 			</section>
 			<GraphicFilter
+				tabMode={mode}
 				disabled={mode === NAV_MODE}
 				className={css.mobileFilter}
 			/>
