@@ -23,22 +23,22 @@ export const ContactCard = ({
 					{description && (
 						<p className={css.description}>{parser(description)}</p>
 					)}
+					{contacts?.length && (
+						<ul className={css.contacts}>
+							{contacts.map((contact, index) => (
+								<li className={css.contact} key={index}>
+									<Link
+										href={contact.link ? contact.link : `${contact.text}`}
+										target={contact.link ? '_blank' : '_self'}
+									>
+										{parser(contact.text ?? '')}
+									</Link>
+								</li>
+							))}
+						</ul>
+					)}
 				</div>
 			</div>
-			{contacts?.length && (
-				<ul className={css.contacts}>
-					{contacts.map((contact, index) => (
-						<li className={css.contact} key={index}>
-							<Link
-								href={contact.link ? contact.link : `${contact.text}`}
-								target={contact.link ? '_blank' : '_self'}
-							>
-								{parser(contact.text ?? '')}
-							</Link>
-						</li>
-					))}
-				</ul>
-			)}
 		</article>
 	);
 };

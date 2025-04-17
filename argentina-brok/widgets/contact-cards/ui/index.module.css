@@ -49,7 +49,7 @@
 }
 
 .contacts {
-	@mixin responsive padding-block-start, 20, 20, 20;
+	@mixin responsive padding-block-start, 15, 20, 20;
 	@mixin responsive gap, 15, 8, 8;
 
 	display: flex;
