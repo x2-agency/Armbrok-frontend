@@ -11,6 +11,9 @@ import { useChartContext } from '@/features/graphic/hooks/use-chart-context';
 import { CustomTooltipContent } from '@/features/graphic/ui/custom-tooltip-content';
 import type { GraphicMode } from '@/shared/types/global.types';
 
+import { graphicStyle } from './graphic-style';
+import { navigatorOptions } from './navigator-options';
+
 export const graphicOptions = (
 	seriesData: Array<SeriesSingleData>,
 	mode: GraphicMode
@@ -133,62 +136,12 @@ export const graphicOptions = (
 			shadow: false,
 		},
 		series: series,
-		navigator: {
-			enabled: true,
-			maskFill: '#DF2C290D',
-			handles: {
-				backgroundColor: '#df2c29',
-				borderColor: '#df2c29',
-				width: 20,
-				height: 20,
-				symbols: ['circle', 'circle'],
-			},
-			xAxis: {
-				labels: {
-					style: {
-						fontSize: '10px',
-					},
-				},
-			},
-		},
+		navigator: navigatorOptions(),
 		chart: {
 			reflow: true,
 		},
 		responsive: {
-			rules: [
-				{
-					condition: {
-						maxWidth: 768,
-					},
-					chartOptions: {
-						xAxis: {
-							labels: {
-								style: {
-									fontSize: '10px',
-								},
-							},
-						},
-						yAxis: {
-							labels: {
-								style: {
-									fontSize: '10px',
-								},
-							},
-						},
-						tooltip: {
-							style: {
-								fontSize: '12px',
-							},
-						},
-						navigator: {
-							handles: {
-								width: 20,
-								height: 20,
-							},
-						},
-					},
-				},
-			],
+			rules: graphicStyle(),
 		},
 	};
 
