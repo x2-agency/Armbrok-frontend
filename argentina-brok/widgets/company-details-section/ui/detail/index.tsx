@@ -9,7 +9,7 @@ export const Detail = ({ title, description }: CompanyDetailProps) => {
 		<>
 			<p className={css.text}>{parser(title)}</p>
 			<span className={css.dotted} />
-			{description && <p className={css.text}>{parser(description)}</p>}
+			{description && <p className={css.description}>{parser(description)}</p>}
 		</>
 	);
 };

@@ -1,3 +1,4 @@
+.description,
 .text {
 	@mixin font-text16;
 	@mixin responsive max-width, unset, 479, 560;
@@ -6,11 +7,17 @@
 	color: var(--gray-800-color);
 
 	@media (max-width: 767px) {
-		font-size: 6px;
+		font-size: 11px;
 	}
 
 	@media (min-width: 768px) {
 		max-width: 75rem;
+	}
+}
+
+.description {
+	@media (max-width: 767px) {
+		text-align: end;
 	}
 }
 
