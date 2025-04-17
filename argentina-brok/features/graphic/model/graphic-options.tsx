@@ -6,6 +6,7 @@ import ReactDOMServer from 'react-dom/server';
 
 import { clearSeriesData } from '@/features/graphic/helpers/clean-series';
 import { formatDateFromChart } from '@/features/graphic/helpers/format-date-from-chart';
+import { getNormalizedGraphicSeries } from '@/features/graphic/helpers/get-normalized-graphic-series';
 import type { SeriesSingleData } from '@/features/graphic/helpers/get-series-data';
 import { useChartContext } from '@/features/graphic/hooks/use-chart-context';
 import { CustomTooltipContent } from '@/features/graphic/ui/custom-tooltip-content';
@@ -13,6 +14,7 @@ import type { GraphicMode } from '@/shared/types/global.types';
 
 import { graphicStyle } from './graphic-style';
 import { navigatorOptions } from './navigator-options';
+import { tooltipStyle } from './tooltip-style';
 import { yAxisOptions } from './y-axis-options';
 
 export const graphicOptions = (
@@ -21,65 +23,7 @@ export const graphicOptions = (
 ): Highcharts.Options => {
 	const { comparisonMode } = useChartContext();
 	const cleanedSeries = clearSeriesData(seriesData);
-
-	const firstNav = cleanedSeries[0]?.y ?? 0;
-
-	const comparisonSeries = comparisonMode.mode
-		? cleanedSeries.map(point => {
-				const base =
-					comparisonMode.mode === 'bankDeposit'
-						? point.bankDeposit
-						: point.fundIndex;
-
-				const firstValue =
-					comparisonMode.mode === 'bankDeposit'
-						? cleanedSeries[0]?.bankDeposit
-						: cleanedSeries[0]?.fundIndex;
-
-				const percent =
-					firstValue && firstValue !== 0 ? (base / firstValue - 1) * 100 : 0;
-
-				return {
-					x: point.x,
-					y: percent,
-				};
-			})
-		: [];
-
-	const navSeriesPercent = cleanedSeries.map(point => {
-		const percent =
-			firstNav && point.y && firstNav !== 0
-				? (point.y / firstNav - 1) * 100
-				: 0;
-
-		return {
-			x: point.x,
-			y: percent,
-		};
-	});
-
-	const series: Array<Highcharts.SeriesOptionsType> =
-		comparisonMode.mode === null
-			? [
-					{
-						data: cleanedSeries,
-						type: 'line',
-						color: '#df2c29',
-					},
-				]
-			: [
-					{
-						data: navSeriesPercent,
-						type: 'line',
-						color: '#df2c29',
-					},
-					{
-						data: comparisonSeries,
-						type: 'line',
-						color:
-							comparisonMode.mode === 'bankDeposit' ? '#2c7cdf' : '#00a86b',
-					},
-				];
+	const series = getNormalizedGraphicSeries(cleanedSeries, comparisonMode);
 
 	const options: Highcharts.Options = {
 		rangeSelector: {
@@ -90,8 +34,6 @@ export const graphicOptions = (
 		},
 		yAxis: yAxisOptions(),
 		tooltip: {
-			shared: true,
-			useHTML: true,
 			formatter: function () {
 				const point = this.points?.[0]?.point || this.point;
 				const date = formatDateFromChart(point.x);
@@ -117,10 +59,7 @@ export const graphicOptions = (
 
 				return ReactDOMServer.renderToStaticMarkup(jsx);
 			},
-			borderRadius: 16,
-			borderWidth: 0,
-			padding: 0,
-			shadow: false,
+			...tooltipStyle(),
 		},
 		series: series,
 		navigator: navigatorOptions(),
