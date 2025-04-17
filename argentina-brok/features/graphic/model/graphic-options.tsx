@@ -13,6 +13,7 @@ import type { GraphicMode } from '@/shared/types/global.types';
 
 import { graphicStyle } from './graphic-style';
 import { navigatorOptions } from './navigator-options';
+import { yAxisOptions } from './y-axis-options';
 
 export const graphicOptions = (
 	seriesData: Array<SeriesSingleData>,
@@ -87,21 +88,7 @@ export const graphicOptions = (
 		xAxis: {
 			type: 'datetime',
 		},
-		yAxis: {
-			labels: {
-				formatter: function () {
-					const val =
-						typeof this.value === 'string'
-							? parseFloat(this.value)
-							: this.value;
-
-					return comparisonMode.mode === null
-						? val.toFixed(0)
-						: `${val.toFixed(2)}%`;
-				},
-			},
-			opposite: false,
-		},
+		yAxis: yAxisOptions(),
 		tooltip: {
 			shared: true,
 			useHTML: true,
