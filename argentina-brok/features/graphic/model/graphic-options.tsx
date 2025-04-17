@@ -1,9 +1,13 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+'use client';
+
 import type Highcharts from 'highcharts/highstock';
 import ReactDOMServer from 'react-dom/server';
 
 import { clearSeriesData } from '@/features/graphic/helpers/clean-series';
 import { formatDateFromChart } from '@/features/graphic/helpers/format-date-from-chart';
 import type { SeriesSingleData } from '@/features/graphic/helpers/get-series-data';
+import { useChartContext } from '@/features/graphic/hooks/use-chart-context';
 import { CustomTooltipContent } from '@/features/graphic/ui/custom-tooltip-content';
 import type { GraphicMode } from '@/shared/types/global.types';
 
@@ -11,6 +15,7 @@ export const graphicOptions = (
 	seriesData: Array<SeriesSingleData>,
 	mode: GraphicMode
 ): Highcharts.Options => {
+	const { comparisonMode } = useChartContext();
 	const cleanedSeries = clearSeriesData(seriesData);
 
 	const options: Highcharts.Options = {

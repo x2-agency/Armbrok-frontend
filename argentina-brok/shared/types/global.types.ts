@@ -614,8 +614,8 @@ export type GraphicItem = {
 	date: string;
 	unitPrice?: number;
 	nav?: number;
-	fundIndex?: number;
-	bankDeposit?: number;
+	fundIndex: number | null;
+	bankDeposit: number | null;
 };
 
 export type GraphicProps = {
