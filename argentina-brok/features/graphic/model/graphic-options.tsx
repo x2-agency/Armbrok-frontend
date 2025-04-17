@@ -18,6 +18,65 @@ export const graphicOptions = (
 	const { comparisonMode } = useChartContext();
 	const cleanedSeries = clearSeriesData(seriesData);
 
+	const firstNav = cleanedSeries[0]?.y ?? 0;
+
+	const comparisonSeries = comparisonMode.mode
+		? cleanedSeries.map(point => {
+				const base =
+					comparisonMode.mode === 'bankDeposit'
+						? point.bankDeposit
+						: point.fundIndex;
+
+				const firstValue =
+					comparisonMode.mode === 'bankDeposit'
+						? cleanedSeries[0]?.bankDeposit
+						: cleanedSeries[0]?.fundIndex;
+
+				const percent =
+					firstValue && firstValue !== 0 ? (base / firstValue - 1) * 100 : 0;
+
+				return {
+					x: point.x,
+					y: percent,
+				};
+			})
+		: [];
+
+	const navSeriesPercent = cleanedSeries.map(point => {
+		const percent =
+			firstNav && point.y && firstNav !== 0
+				? (point.y / firstNav - 1) * 100
+				: 0;
+
+		return {
+			x: point.x,
+			y: percent,
+		};
+	});
+
+	const series: Array<Highcharts.SeriesOptionsType> =
+		comparisonMode.mode === null
+			? [
+					{
+						data: cleanedSeries,
+						type: 'line',
+						color: '#df2c29',
+					},
+				]
+			: [
+					{
+						data: navSeriesPercent,
+						type: 'line',
+						color: '#df2c29',
+					},
+					{
+						data: comparisonSeries,
+						type: 'line',
+						color:
+							comparisonMode.mode === 'bankDeposit' ? '#2c7cdf' : '#00a86b',
+					},
+				];
+
 	const options: Highcharts.Options = {
 		rangeSelector: {
 			enabled: false,
@@ -28,23 +87,26 @@ export const graphicOptions = (
 		yAxis: {
 			labels: {
 				formatter: function () {
-					const transformedValue =
+					const val =
 						typeof this.value === 'string'
 							? parseFloat(this.value)
 							: this.value;
 
-					return transformedValue.toFixed(0);
+					return comparisonMode.mode === null
+						? val.toFixed(0)
+						: `${val.toFixed(2)}%`;
 				},
 			},
 			opposite: false,
 		},
 		tooltip: {
-			shared: false,
+			shared: true,
 			useHTML: true,
 			formatter: function () {
-				const point = this.point;
+				const point = this.points?.[0]?.point || this.point;
 				const date = formatDateFromChart(point.x);
-				const first = cleanedSeries[0].y ?? 0;
+
+				const first = cleanedSeries[0]?.y ?? 0;
 				const current = point.y;
 
 				const yieldValue =
@@ -70,14 +132,7 @@ export const graphicOptions = (
 			padding: 0,
 			shadow: false,
 		},
-		series: [
-			{
-				name: 'NAV',
-				data: cleanedSeries,
-				type: 'line',
-				color: '#df2c29',
-			},
-		],
+		series: series,
 		navigator: {
 			enabled: true,
 			maskFill: '#DF2C290D',
