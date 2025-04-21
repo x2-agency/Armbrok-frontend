@@ -2,6 +2,7 @@
 'use client';
 
 import type Highcharts from 'highcharts/highstock';
+import { useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 
 import { clearSeriesData } from '@/features/graphic/helpers/clean-series';
@@ -21,9 +22,16 @@ export const graphicOptions = (
 	seriesData: Array<SeriesSingleData>,
 	mode: GraphicMode
 ): Highcharts.Options => {
+	const [startTime, setStartTime] = useState<number>(0);
+	const [endTime, setEndTime] = useState<number>(0);
 	const { comparisonMode } = useChartContext();
 	const cleanedSeries = clearSeriesData(seriesData);
-	const series = getNormalizedGraphicSeries(cleanedSeries, comparisonMode);
+	const series = getNormalizedGraphicSeries(
+		cleanedSeries,
+		comparisonMode,
+		startTime,
+		endTime
+	);
 
 	const options: Highcharts.Options = {
 		rangeSelector: {
@@ -31,6 +39,15 @@ export const graphicOptions = (
 		},
 		xAxis: {
 			type: 'datetime',
+			events: {
+				afterSetExtremes: function (e) {
+					const startTime = e.min;
+					const endTime = e.max;
+
+					setStartTime(startTime);
+					setEndTime(endTime);
+				},
+			},
 		},
 		yAxis: yAxisOptions(),
 		tooltip: {

@@ -612,14 +612,24 @@ export type AboutFundProps = {
 
 export type GraphicItem = {
 	date: string;
-	unitPrice?: number;
-	nav?: number;
-	fundIndex: number | null;
-	bankDeposit: number | null;
+	unitPrice: number | null;
+	nav: number | null;
+	indexes: Array<{
+		name: string;
+		value: null | number;
+	}>;
+};
+
+export type IndexesData = Array<string>;
+
+export type ChartData = {
+	name?: string;
+	metrics: Array<GraphicItem>;
 };
 
 export type GraphicProps = {
-	[key: string]: Array<GraphicItem>;
+	chart: ChartData;
+	indexes: IndexesData;
 };
 
 export type ProfitTableItemProps = {

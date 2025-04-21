@@ -1,71 +1,68 @@
 import type Highcharts from 'highcharts/highstock';
 
-import type { SelectedComparisonModeData } from '@/features/graphic/hooks/use-chart-context';
-
 import type { SeriesSingleData } from './get-series-data';
 
 export const getNormalizedGraphicSeries = (
 	cleanedSeries: Array<SeriesSingleData>,
-	comparisonMode: SelectedComparisonModeData
+	comparisonMode: string | null,
+	startTime?: number,
+	endTime?: number
 ): Array<Highcharts.SeriesOptionsType> => {
-	const firstNav = cleanedSeries[0]?.y ?? 0;
+	if (!comparisonMode) {
+		return [
+			{
+				data: cleanedSeries,
+				type: 'line',
+				color: '#df2c29',
+			},
+		];
+	}
 
-	const comparisonSeries = comparisonMode.mode
-		? cleanedSeries.map(point => {
-				const base =
-					comparisonMode.mode === 'bankDeposit'
-						? point.bankDeposit
-						: point.fundIndex;
+	const filtered = cleanedSeries.filter(point => {
+		return (
+			(startTime === undefined || point.x >= startTime) &&
+			(endTime === undefined || point.x <= endTime)
+		);
+	});
 
-				const firstValue =
-					comparisonMode.mode === 'bankDeposit'
-						? cleanedSeries[0]?.bankDeposit
-						: cleanedSeries[0]?.fundIndex;
+	const basePoint = filtered[0] ?? cleanedSeries[0];
 
-				const percent =
-					firstValue && firstValue !== 0 ? (base / firstValue - 1) * 100 : 0;
-
-				return {
-					x: point.x,
-					y: percent,
-				};
-			})
-		: [];
+	const baseNavValue = basePoint?.y ?? 1;
+	const baseComparisonValue =
+		basePoint?.indexes.find(index => index.name === comparisonMode)?.value ?? 1;
 
 	const navSeriesPercent = cleanedSeries.map(point => {
-		const percent =
-			firstNav && point.y && firstNav !== 0
-				? (point.y / firstNav - 1) * 100
-				: 0;
+		const currentValue = point.y ?? baseNavValue;
+		const percentChange = (currentValue / baseNavValue - 1) * 100;
 
 		return {
 			x: point.x,
-			y: percent,
+			y: percentChange,
 		};
 	});
 
-	const series: Array<Highcharts.SeriesOptionsType> =
-		comparisonMode.mode === null
-			? [
-					{
-						data: cleanedSeries,
-						type: 'line',
-						color: '#df2c29',
-					},
-				]
-			: [
-					{
-						data: navSeriesPercent,
-						type: 'line',
-						color: '#df2c29',
-					},
-					{
-						data: comparisonSeries,
-						type: 'line',
-						color:
-							comparisonMode.mode === 'bankDeposit' ? '#2c7cdf' : '#00a86b',
-					},
-				];
+	const comparisonSeries = cleanedSeries.map(point => {
+		const currentValue =
+			point.indexes.find(index => index.name === comparisonMode)?.value ??
+			baseComparisonValue;
+		const percentChange = (currentValue / baseComparisonValue - 1) * 100;
 
-	return series;
+		return {
+			x: point.x,
+			y: percentChange,
+		};
+	});
+
+	return [
+		{
+			data: navSeriesPercent,
+			type: 'line',
+			color: '#df2c29',
+		},
+		{
+			data: comparisonSeries,
+			type: 'line',
+			color: '#2c7cdf',
+		},
+	];
 };

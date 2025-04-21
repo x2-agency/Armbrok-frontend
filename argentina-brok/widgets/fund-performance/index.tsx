@@ -44,7 +44,7 @@ export const FundPerformance = ({
 				className={css.tabs}
 			/>
 			<ChartProvider>
-				<Graphic graphics={graphics} mode={activeGraphicMode} />
+				<Graphic graphicData={graphics} mode={activeGraphicMode} />
 			</ChartProvider>
 			<ProfitTable table={profitTable} />
 			<HideButton

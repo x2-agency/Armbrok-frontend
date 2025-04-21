@@ -3,9 +3,11 @@ import { NAV_PER_SHARE_MODE } from '@/widgets/fund-performance/model/fund-perfor
 
 export type SeriesSingleData = {
 	x: number;
-	y: number | undefined;
-	bankDeposit: number;
-	fundIndex: number;
+	y: number | null;
+	indexes: Array<{
+		name: string;
+		value: number | null;
+	}>;
 };
 
 export const getSeriesData = (
@@ -19,8 +21,7 @@ export const getSeriesData = (
 		return {
 			x: date,
 			y: mode === NAV_PER_SHARE_MODE ? item.unitPrice : item.nav,
-			bankDeposit: item.bankDeposit ?? 0,
-			fundIndex: item.fundIndex ?? 0,
+			indexes: item.indexes,
 		};
 	});
 };

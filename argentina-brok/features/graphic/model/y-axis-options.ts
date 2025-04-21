@@ -14,9 +14,7 @@ export const yAxisOptions = ():
 				const val =
 					typeof this.value === 'string' ? parseFloat(this.value) : this.value;
 
-				return comparisonMode.mode === null
-					? val.toFixed(0)
-					: `${val.toFixed(2)}%`;
+				return comparisonMode === null ? val.toFixed(0) : `${val.toFixed(2)}%`;
 			},
 		},
 		opposite: false,

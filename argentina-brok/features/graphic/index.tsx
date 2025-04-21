@@ -15,13 +15,12 @@ import { GraphicDateControllers } from './ui/graphic-date-controllers';
 import { GraphicFilter } from './ui/graphic-filter';
 
 type GraphicComponentProps = {
-	graphics: GraphicProps;
+	graphicData: GraphicProps;
 	mode: GraphicMode;
 };
 
-export const Graphic = ({ graphics, mode }: GraphicComponentProps) => {
-	const fundKey: string = Object.keys(graphics)[0];
-	const fundData = graphics[fundKey];
+export const Graphic = ({ graphicData, mode }: GraphicComponentProps) => {
+	const fundData = graphicData.chart.metrics;
 
 	const seriesData = getSeriesData(fundData, mode);
 	const options = graphicOptions(seriesData, mode);
@@ -34,12 +33,14 @@ export const Graphic = ({ graphics, mode }: GraphicComponentProps) => {
 			<section className={css.controls}>
 				<GraphicDateControllers buttons={dateControllers} />
 				<GraphicFilter
+					allFilters={graphicData.indexes}
 					disabled={mode === NAV_MODE}
 					className={css.pcFilter}
 					tabMode={mode}
 				/>
 			</section>
 			<GraphicFilter
+				allFilters={graphicData.indexes}
 				tabMode={mode}
 				disabled={mode === NAV_MODE}
 				className={css.mobileFilter}

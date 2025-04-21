@@ -1,25 +1,15 @@
 import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 import { createContext, useContext, useState } from 'react';
 
-import { FILTER_DATA } from '@/features/graphic/model/graphic.constants';
-
-type ComparisonModeType = 'bankDeposit' | 'fundIndex' | null;
-
-export type SelectedComparisonModeData = {
-	text: string;
-	mode: ComparisonModeType;
-};
-
 type ChartContextType = {
-	comparisonMode: SelectedComparisonModeData;
-	setComparisonMode: Dispatch<SetStateAction<SelectedComparisonModeData>>;
+	comparisonMode: string | null;
+	setComparisonMode: Dispatch<SetStateAction<string | null>>;
 };
 
 const ChartContext = createContext<ChartContextType | null>(null);
 
 export const ChartProvider = ({ children }: PropsWithChildren) => {
-	const [comparisonMode, setComparisonMode] =
-		useState<SelectedComparisonModeData>(FILTER_DATA.values[0]);
+	const [comparisonMode, setComparisonMode] = useState<string | null>(null);
 
 	return (
 		<ChartContext.Provider value={{ comparisonMode, setComparisonMode }}>
