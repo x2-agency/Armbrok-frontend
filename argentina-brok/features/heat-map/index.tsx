@@ -42,7 +42,9 @@ export const HeatMap = ({
 					>
 						{headers.map((value, index) => (
 							<th key={index} className={css.theadValue}>
-								{parser(value)}
+								{parser(
+									value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
+								)}
 							</th>
 						))}
 					</tr>
