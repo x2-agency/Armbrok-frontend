@@ -9,6 +9,7 @@ export const Facts = ({ content }: { content: Array<ItemDetail> }) => {
 			{content.map((value, index) => (
 				<li className={css.paragraph} key={index}>
 					<ListParagraph
+						className={css.element}
 						leftPart={value.title ?? ''}
 						rightPart={value.description ?? ''}
 					/>

@@ -18,7 +18,7 @@ export const ListParagraph = ({
 	link,
 }: ListParagraphProps) => {
 	return (
-		<article className={cx(css.root, className)}>
+		<article className={cx(css.root, className, { [css.withLink]: link })}>
 			<p className={css.leftPart}>
 				{typeof leftPart === 'number' ? leftPart : parser(leftPart)}
 			</p>

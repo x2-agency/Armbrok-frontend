@@ -7,7 +7,12 @@
 	@mixin font-text16;
 }
 
-.sectionTitle > h2 {
+.sectionTitle > h2,
+.sectionTitle > h1,
+.sectionTitle > h3,
+.sectionTitle > h4,
+.sectionTitle > h5,
+.sectionTitle > h6 {
 	@mixin font-h3;
 
 	@mixin responsive padding-block-end, 16, 16, 16;

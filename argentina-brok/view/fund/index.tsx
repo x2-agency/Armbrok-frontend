@@ -61,7 +61,7 @@ export const Fund: NextPage<FundPageData> = ({
 				className={css.accordionSection}
 			/>
 			<TitleSection
-				className={css.accordionSection}
+				className={css.sectionTitle}
 				title={disclaimer?.title ?? ''}
 				description={disclaimer?.description}
 			/>
