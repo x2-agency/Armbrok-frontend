@@ -655,3 +655,19 @@ export type PerformanceProps = {
 };
 
 export type GraphicMode = 'share' | 'nav';
+
+export type ParentFundChartPoint = {
+	date: string;
+	unitPrice: number;
+};
+
+export type ParentFundProps = ItemDetail & {
+	background?: MediaData;
+	infoCard: InfoCard;
+	slug: string;
+	chart: Array<ParentFundChartPoint>;
+};
+
+export type ParentFundResponse = {
+	data: Array<ParentFundProps>;
+};
