@@ -10,7 +10,6 @@
 
 .table {
 	@mixin responsive margin-block-end, 32, 32, 32;
-
 	@mixin responsive border-radius, 16, 16, 16;
 	@mixin responsive --border, 1, 1, 1;
 
@@ -21,7 +20,7 @@
 }
 
 .row {
-	display: flex;
+	display: grid;
 }
 
 .headRow {
@@ -31,7 +30,6 @@
 .theadValue,
 .tbodyValue {
 	@mixin responsive --border, 1, 1, 1;
-	@mixin responsive width, 109, 109, 109;
 	@mixin responsive height, 56, 56, 56;
 
 	border-left: var(--border) solid var(--gray-300-color);

@@ -36,7 +36,10 @@ export const ProfitTable = ({ table }: ProfitTableProps) => {
 		<div className={css.root}>
 			<table className={css.table}>
 				<thead className={css.thead}>
-					<tr className={cx(css.row, css.headRow)}>
+					<tr
+						className={cx(css.row, css.headRow)}
+						style={{ gridTemplateColumns: `repeat(${keys.length}, 1fr)` }}
+					>
 						{keys.map((value, key) => (
 							<th key={key} className={css.theadValue}>
 								<span className={css.value}>{value}</span>
@@ -45,7 +48,7 @@ export const ProfitTable = ({ table }: ProfitTableProps) => {
 					</tr>
 				</thead>
 				<tbody className={css.tbody}>
-					<tr className={css.row}>
+					<tr className={css.row} style={{ gridTemplateColumns: `repeat(${keys.length}, 1fr)` }}>
 						{values.map((value, key) => (
 							<td
 								key={key}
