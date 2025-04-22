@@ -55,7 +55,13 @@ export const graphicOptions = (
 				const point = this.points?.[0]?.point || this.point;
 				const date = formatDateFromChart(point.x);
 
-				const first = cleanedSeries[0]?.y ?? 0;
+				const nearestStartPoint = cleanedSeries?.reduce((prev, curr) =>
+					Math.abs(curr.x - startTime) < Math.abs(prev.x - startTime)
+						? curr
+						: prev
+				);
+
+				const first = nearestStartPoint?.y ?? 0;
 				const current = point.y;
 
 				const yieldValue =
