@@ -82,6 +82,7 @@ export const graphicOptions = (
 		navigator: navigatorOptions(),
 		chart: {
 			reflow: true,
+			animation: false,
 		},
 		responsive: {
 			rules: graphicStyle(),
