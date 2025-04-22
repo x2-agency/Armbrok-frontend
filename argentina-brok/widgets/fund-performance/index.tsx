@@ -15,7 +15,10 @@ import type {
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import { GRAPHIC_TABS } from './model/fund-performance.constants';
+import {
+	FULL_PERFORMANCE_BUTTON,
+	GRAPHIC_TABS,
+} from './model/fund-performance.constants';
 import { GraphicTabs } from './ui/graphic-tabs';
 import { HideButton } from './ui/hide-button';
 
@@ -52,7 +55,7 @@ export const FundPerformance = ({
 				opened={heatMapOpened}
 				className={css.hideButton}
 			>
-				Full performance
+				{parser(FULL_PERFORMANCE_BUTTON)}
 			</HideButton>
 			<HeatMap heatMap={heatMap} opened={heatMapOpened} />
 		</Container>
