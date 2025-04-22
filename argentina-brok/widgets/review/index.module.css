@@ -19,16 +19,18 @@
 }
 
 .image {
-	@mixin responsive height, 457, 456, 456;
+	@mixin responsive width, 0, 348, 348;
 
 	bottom: 0;
 	align-self: end;
 	position: absolute;
 
 	@media (max-width: 767px) {
+		max-width: unset;
 		position: static;
 		align-self: unset;
 		height: auto;
+		width: 100%;
 	}
 }
 
