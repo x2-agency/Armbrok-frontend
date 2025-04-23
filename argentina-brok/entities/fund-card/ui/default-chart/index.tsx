@@ -15,16 +15,22 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 		const categories = chart.map(point => {
 			const [day, month, year] = point.date.split('/');
 			const date = new Date(`${year}-${month}-${day}`);
-			return date.toLocaleString('en-US', {
-				month: 'short',
-				year: '2-digit',
-			});
+			return date
+				.toLocaleString('en-US', {
+					month: 'short',
+					year: '2-digit',
+				})
+				.replace(',', '');
 		});
 
 		const data = chart.map(point => point.unitPrice);
-		const axisMin = 0;
-
-		const hasGrown = data[data.length - 1] > data[0];
+		const startValue = data[0];
+		const endValue = data[data.length - 1];
+		const growthPercent = (
+			((endValue - startValue) / startValue) *
+			100
+		).toFixed(1);
+		const hasGrown = endValue > startValue;
 		const color = hasGrown ? '#34CA2F' : '#DF2C2999';
 
 		return {
@@ -36,13 +42,16 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 			title: { text: undefined },
 			xAxis: {
 				categories,
-				labels: { style: { color: '#666' } },
+				labels: {
+					style: { color: '#666' },
+					align: 'center',
+				},
 				tickLength: 0,
 				lineColor: 'transparent',
 			},
 			yAxis: {
 				visible: false,
-				min: axisMin,
+				min: 0,
 			},
 			legend: {
 				enabled: false,
@@ -55,10 +64,11 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 					fillColor: {
 						linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
 						stops: [
-							[0, color + '60'],
+							[0, color + '40'],
 							[1, color + '00'],
 						],
 					},
+					threshold: 0,
 				},
 				series: {
 					enableMouseTracking: false,
@@ -71,7 +81,6 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 					data,
 					lineWidth: 0,
 					marker: { enabled: false },
-					threshold: axisMin,
 				},
 				{
 					type: 'line',
@@ -83,17 +92,21 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 					dataLabels: [
 						{
 							enabled: true,
-							format: '{y:.2f}',
 							align: 'right',
+							verticalAlign: 'end',
+							x: 320,
+							y: -40,
 							style: {
 								color,
+								fontSize: '14px',
 								fontWeight: 'bold',
 								textOutline: 'none',
 							},
 							formatter: function () {
-								return this.point.index === data.length - 1
-									? this.y.toFixed(2)
-									: null;
+								if (this.point.index === data.length - 1) {
+									return `${hasGrown ? '+' : ''}${growthPercent}%`;
+								}
+								return null;
 							},
 						},
 					],
