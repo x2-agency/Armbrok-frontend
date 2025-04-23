@@ -1,3 +1,5 @@
+import cx from 'clsx';
+
 import type { ItemDetail, ParentFundProps } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
@@ -23,7 +25,7 @@ export const ParentFunds = ({
 	}
 
 	return (
-		<Container className={css.root}>
+		<Container className={cx(css.root, css[mode])}>
 			<ParentFundsHeader mode={mode} data={head} />
 			<ParentFundsBody funds={funds} mode={mode} />
 		</Container>

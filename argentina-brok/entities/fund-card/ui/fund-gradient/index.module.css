@@ -1,0 +1,29 @@
+.leftCircle,
+.rightCircle {
+	position: absolute;
+}
+
+.leftCircle {
+	@mixin responsive width, 375, 375, 375;
+	@mixin responsive height, 375, 375, 375;
+
+	border-radius: 100%;
+	left: 0;
+	top: 0;
+	background: linear-gradient(180deg, #ce2222 0%, #f03358 100%);
+	opacity: 0.3;
+	filter: blur(75px);
+	translate: -50% -50%;
+}
+
+.rightCircle {
+	@mixin responsive width, 548, 548, 548;
+	@mixin responsive height, 548, 548, 548;
+
+	right: 0;
+	top: 50%;
+	background: linear-gradient(140.85deg, #132134 36.36%, #1b4361 90.67%);
+	opacity: 0.5;
+	filter: blur(75px);
+    translate: 30% -50%;
+}

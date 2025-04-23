@@ -1,0 +1,6 @@
+.list {
+	@mixin responsive gap, 24, 24, 24;
+
+	display: flex;
+	flex-direction: column;
+}

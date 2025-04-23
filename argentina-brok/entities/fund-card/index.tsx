@@ -6,6 +6,7 @@ import type { ParentFundProps } from '@/shared/types/global.types';
 import css from './index.module.css';
 import { DefaultChart } from './ui/default-chart';
 import { DefaultLeftPart } from './ui/default-left-part';
+import { FundGradient } from './ui/fund-gradient';
 
 export const FundsCard = ({
 	title,
@@ -20,6 +21,7 @@ export const FundsCard = ({
 		<article className={cx(css.root, css[mode])}>
 			{mode === 'default' && (
 				<>
+					<FundGradient />
 					<DefaultLeftPart
 						background={background}
 						title={title}

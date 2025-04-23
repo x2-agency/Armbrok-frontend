@@ -8,10 +8,12 @@
 		@mixin responsive --first-col, 476, 476, 476;
 		@mixin responsive --second-col, 604, 604, 604;
 
+		position: relative;
 		justify-content: space-between;
 		width: 100%;
 		display: grid;
 		grid-template-columns: var(--first-col) var(--second-col);
+		overflow: hidden;
 
 		background:
 			linear-gradient(0deg, #282828, #282828),

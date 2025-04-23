@@ -1,0 +1,7 @@
+.root.default {
+	@mixin responsive padding-block, 36, 72, 72;
+}
+
+.root.slider {
+	@mixin responsive margin-block 24, 24, 24;
+}
