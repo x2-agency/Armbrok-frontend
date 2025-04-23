@@ -3,7 +3,7 @@ export const MOCK_DEFAULT_BANNER = {
 	description:
 		'Access to&nbsp;global exchanges and financial instruments&nbsp;&mdash;<br /> with high yields and strong protection',
 	button: {
-		text: 'Open account',
+		text: 'Open an account',
 		href: '/account',
 	},
 	poster: {
@@ -20,7 +20,7 @@ export const MOCK_INVESTMENT_BANKING_BANNER = {
 	description:
 		'Expert Solutions for Strategic Growth<br /> and Financial Excellence',
 	button: {
-		text: 'Open account',
+		text: 'Open an account',
 		href: '/account',
 	},
 	poster: {

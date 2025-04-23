@@ -46,7 +46,7 @@ export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 						<Button
 							variant="filled"
 							onClick={() =>
-								handleClick(bodyData.button.text ?? 'Open account')
+								handleClick(bodyData.button.text ?? 'Open an account')
 							}
 							category="big"
 							className={css.button}
