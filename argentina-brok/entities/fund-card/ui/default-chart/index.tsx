@@ -1,4 +1,3 @@
-import { style } from 'framer-motion/client';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useMemo } from 'react';
@@ -23,6 +22,7 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 		});
 
 		const data = chart.map(point => point.unitPrice);
+		const axisMin = 0;
 
 		const hasGrown = data[data.length - 1] > data[0];
 		const color = hasGrown ? '#34CA2F' : '#DF2C2999';
@@ -42,6 +42,7 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 			},
 			yAxis: {
 				visible: false,
+				min: axisMin,
 			},
 			legend: {
 				enabled: false,
@@ -50,6 +51,15 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 				enabled: false,
 			},
 			plotOptions: {
+				area: {
+					fillColor: {
+						linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+						stops: [
+							[0, color + '60'],
+							[1, color + '00'],
+						],
+					},
+				},
 				series: {
 					enableMouseTracking: false,
 					animation: false,
@@ -57,12 +67,19 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 			},
 			series: [
 				{
+					type: 'area',
+					data,
+					lineWidth: 0,
+					marker: { enabled: false },
+					threshold: axisMin,
+				},
+				{
 					type: 'line',
 					data,
 					color,
-					marker: {
-						enabled: false,
-					},
+					lineWidth: 2,
+					marker: { enabled: false },
+					zIndex: 2,
 					dataLabels: [
 						{
 							enabled: true,
