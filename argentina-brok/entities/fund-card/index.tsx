@@ -31,7 +31,7 @@ export const FundsCard = ({
 					<DefaultChart chart={chart} />
 				</>
 			)}
-			<Link className={css.link} href={`/funds/${slug}`} />
+			{/* <Link className={css.link} href={`/funds/${slug}`} /> */}
 		</article>
 	);
 };

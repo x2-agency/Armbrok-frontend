@@ -93,6 +93,7 @@ export const graphicOptions = (
 		responsive: {
 			rules: graphicStyle(),
 		},
+		
 	};
 
 	return options;

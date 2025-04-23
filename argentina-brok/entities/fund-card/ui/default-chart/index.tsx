@@ -1,8 +1,11 @@
+import { style } from 'framer-motion/client';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useMemo } from 'react';
 
 import type { ParentFundChartPoint } from '@/shared/types/global.types';
+
+import css from './index.module.css';
 
 type DefaultChartProps = {
 	chart: Array<ParentFundChartPoint>;
@@ -28,13 +31,14 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 			chart: {
 				backgroundColor: 'transparent',
 				animation: false,
+				reflow: true,
 			},
 			title: { text: undefined },
 			xAxis: {
 				categories,
 				labels: { style: { color: '#666' } },
 				tickLength: 0,
-				lineColor: '#ccc',
+				lineColor: 'transparent',
 			},
 			yAxis: {
 				visible: false,
@@ -69,7 +73,6 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 								fontWeight: 'bold',
 								textOutline: 'none',
 							},
-							// Показать только на последней точке
 							formatter: function () {
 								return this.point.index === data.length - 1
 									? this.y.toFixed(2)
@@ -83,5 +86,9 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 		};
 	}, [chart]);
 
-	return <HighchartsReact highcharts={Highcharts} options={options} />;
+	return (
+		<div className={css.root}>
+			<HighchartsReact highcharts={Highcharts} options={options} />
+		</div>
+	);
 };
