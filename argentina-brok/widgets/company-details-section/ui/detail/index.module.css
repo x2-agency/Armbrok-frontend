@@ -5,6 +5,16 @@
 
 	color: var(--gray-800-color);
 
+	br {
+		display: none;
+	}
+
+	@media (max-width: 767px) {
+		br {
+			display: block;
+		}
+	}
+
 	@media (max-width: 470px) {
 		font-size: 9px;
 	}
