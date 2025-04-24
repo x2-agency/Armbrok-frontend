@@ -26,7 +26,7 @@ export const TextBlock = ({ data }: TextBlockProps) => {
 			<p className={css.description}>{parser(description ?? '')}</p>
 			<div className={css.wrapButton}>
 				<Button
-					onClick={() => handleClick(primaryButton?.text ?? 'Open account')}
+					onClick={() => handleClick(primaryButton?.text ?? 'Open an account')}
 					category="big"
 					variant="filled"
 					className={css.button}

@@ -18,7 +18,7 @@ export const HOME_INTERACTIVE_VIDEO: InteractiveVideoType = {
 		src: '/assets/images/poster_video.jpg',
 	},
 	descriptionVideo: 'Watch Interview with Company Founder',
-	firstButtonText: 'Open account',
+	firstButtonText: 'Open an account',
 	lastButtonText: 'Request a&nbsp;consultation',
 };
 
@@ -28,7 +28,7 @@ export const HOME_APP_SECTION = {
 	description:
 		'For Self-Directed Investing. <br/>Start your investment journey today.',
 	preview: 'Coming soon <br/> 1Q25',
-	button: 'Open account',
+	button: 'Open an account',
 	image: [
 		{
 			src: '/assets/images/iphone/iphone_15.png',

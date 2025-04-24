@@ -37,7 +37,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 	}, [isMobile, poster, mobilePoster, video, mobileVideo]);
 
 	const handleClick = () => {
-		setSubjectForm(button?.text ?? 'Open account');
+		setSubjectForm(button?.text ?? 'Open an account');
 		toggleAccountModalOpen(true);
 	};
 
