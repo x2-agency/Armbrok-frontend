@@ -20,6 +20,15 @@
 			linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
 			linear-gradient(93.77deg, #171717 0%, #1f1f1f 100%), #212121;
 	}
+
+	&.slider {
+		@mixin responsive gap, 64, 64, 64;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background: linear-gradient(180deg, #171717 0%, #333333 100%);
+	}
 }
 
 .link {

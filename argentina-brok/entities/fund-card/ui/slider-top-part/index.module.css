@@ -1,0 +1,24 @@
+.root {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.titleBlock {
+    @mixin responsive gap, 8, 8, 8;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @mixin font-text20;
+
+    font-weight: 600;
+    color: var(--gray-100-color);
+}
+
+.description {
+    @mixin font-text16;
+
+    color: var(--gray-500-color);
+}

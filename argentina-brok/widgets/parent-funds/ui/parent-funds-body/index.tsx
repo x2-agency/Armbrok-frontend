@@ -1,4 +1,5 @@
-import { Swiper } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { FundsCard } from '@/entities/fund-card';
 import type { ParentFundProps } from '@/shared/types/global.types';
@@ -13,7 +14,23 @@ type ParentFundsBodyProps = {
 
 export const ParentFundsBody = ({ funds, mode }: ParentFundsBodyProps) => {
 	if (mode === 'slider') {
-		return <Swiper className={css.slider}></Swiper>;
+		return (
+			<div className={css.wrapper}>
+				<Swiper
+					className={css.slider}
+					modules={[Navigation]}
+					navigation
+					slidesPerView={2.11}
+					spaceBetween={24}
+				>
+					{funds.map((fund, index) => (
+						<SwiperSlide key={index} className={css.slide}>
+							<FundsCard {...fund} mode={mode} className={css.fundCart} />
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
+		);
 	}
 
 	return (

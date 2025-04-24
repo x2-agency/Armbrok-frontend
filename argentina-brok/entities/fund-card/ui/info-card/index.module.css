@@ -7,7 +7,9 @@
 
 .group {
 	@mixin responsive gap, 32, 32, 32;
+
 	display: flex;
+	flex-shrink: 0;
 }
 
 .paragraph {

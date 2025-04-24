@@ -7,6 +7,8 @@ import css from './index.module.css';
 import { DefaultChart } from './ui/default-chart';
 import { DefaultLeftPart } from './ui/default-left-part';
 import { FundGradient } from './ui/fund-gradient';
+import { InfoCard } from './ui/info-card';
+import { SliderTopPart } from './ui/slider-top-part';
 
 export const FundsCard = ({
 	title,
@@ -16,9 +18,10 @@ export const FundsCard = ({
 	infoCard,
 	mode = 'default',
 	slug,
-}: ParentFundProps & { mode?: 'default' | 'slider' }) => {
+	className,
+}: ParentFundProps & { mode?: 'default' | 'slider'; className?: string }) => {
 	return (
-		<article className={cx(css.root, css[mode])}>
+		<article className={cx(css.root, css[mode], className)}>
 			{mode === 'default' && (
 				<>
 					<FundGradient />
@@ -29,6 +32,16 @@ export const FundsCard = ({
 						infoCard={infoCard}
 					/>
 					<DefaultChart chart={chart} />
+				</>
+			)}
+			{mode === 'slider' && (
+				<>
+					<SliderTopPart
+						chart={chart}
+						title={title}
+						description={description}
+					/>
+					<InfoCard {...infoCard} />
 				</>
 			)}
 			{/* <Link className={css.link} href={`/funds/${slug}`} /> */}
