@@ -3,6 +3,7 @@
 	@mixin responsive border-radius, 24, 24, 24;
 
 	position: relative;
+	overflow: hidden;
 
 	&.default {
 		@mixin responsive --first-col, 476, 476, 476;
@@ -13,7 +14,6 @@
 		width: 100%;
 		display: grid;
 		grid-template-columns: var(--first-col) var(--second-col);
-		overflow: hidden;
 
 		background:
 			linear-gradient(0deg, #282828, #282828),
@@ -22,13 +22,34 @@
 	}
 
 	&.slider {
-		@mixin responsive gap, 64, 64, 64;
+		@mixin responsive gap, 8, 64, 64;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		background: linear-gradient(180deg, #171717 0%, #333333 100%);
 	}
+
+	@media (hover: hover) {
+		&:hover {
+			.overlay {
+				opacity: 0.3;
+			}
+		}
+	}
+}
+
+.overlay {
+	@mixin transition opacity;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--gray-500-color);
+	opacity: 0;
+	pointer-events: none;
 }
 
 .link {

@@ -1,4 +1,8 @@
-import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { FundsCard } from '@/entities/fund-card';
@@ -18,10 +22,12 @@ export const ParentFundsBody = ({ funds, mode }: ParentFundsBodyProps) => {
 			<div className={css.wrapper}>
 				<Swiper
 					className={css.slider}
-					modules={[Navigation]}
+					modules={[Navigation, Pagination]}
 					navigation
-					slidesPerView={2.11}
+					pagination
+					slidesPerView={1}
 					spaceBetween={24}
+					breakpoints={{ 768: { slidesPerView: 2.11 } }}
 				>
 					{funds.map((fund, index) => (
 						<SwiperSlide key={index} className={css.slide}>

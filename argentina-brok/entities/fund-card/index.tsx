@@ -44,7 +44,8 @@ export const FundsCard = ({
 					<InfoCard {...infoCard} />
 				</>
 			)}
-			{/* <Link className={css.link} href={`/funds/${slug}`} /> */}
+			<div className={css.overlay} />
+			<Link className={css.link} href={`/funds/${slug}`} />
 		</article>
 	);
 };

@@ -31,6 +31,10 @@
 		left: unset;
 		right: unset;
 
+		@media (max-width: 767px) {
+			display: none;
+		}
+
 		&:after {
 			@mixin responsive width, 20, 20, 20;
 			@mixin responsive height, 16, 16, 16;
@@ -64,5 +68,19 @@
 
 	.fundCart {
 		height: 100%;
+	}
+
+	:global(.swiper-pagination) {
+		@media (min-width: 768px) {
+			display: none;
+		}
+
+		@mixin responsive margin-block-start, 10;
+
+		position: static;
+
+		:global(.swiper-pagination-bullet-active) {
+			background: var(--gray-800-color);
+		}
 	}
 }

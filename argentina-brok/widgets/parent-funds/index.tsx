@@ -25,9 +25,11 @@ export const ParentFunds = ({
 	}
 
 	return (
-		<Container className={cx(css.root, css[mode])}>
-			<ParentFundsHeader mode={mode} data={head} />
-			<ParentFundsBody funds={funds} mode={mode} />
+		<Container>
+			<div className={cx(css.root, css[mode])}>
+				<ParentFundsHeader mode={mode} data={head} />
+				<ParentFundsBody funds={funds} mode={mode} />
+			</div>
 		</Container>
 	);
 };
