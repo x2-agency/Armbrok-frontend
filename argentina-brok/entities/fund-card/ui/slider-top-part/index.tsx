@@ -1,5 +1,6 @@
 import parser from 'html-react-parser';
 
+import { SliderChart } from '@/entities/fund-card/ui/slider-chart';
 import type {
 	ItemDetail,
 	ParentFundChartPoint,
@@ -26,6 +27,7 @@ export const SliderTopPart = ({
 					)}
 				</div>
 			)}
+			<SliderChart chart={chart} />
 		</div>
 	);
 };
