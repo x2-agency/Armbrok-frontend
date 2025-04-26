@@ -1,7 +1,7 @@
 import type { CardType } from '@/widgets/start/types';
 
 export const START_TITLE = 'Start Investing';
-export const START_BUTTON = 'Open account';
+export const START_BUTTON = 'Open an account';
 
 export const START_DATA: Array<CardType> = [
 	{

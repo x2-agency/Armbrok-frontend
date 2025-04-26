@@ -32,7 +32,7 @@ type AccountData = {
 };
 
 export const ACCOUNT: AccountData = {
-	title: 'Open account',
+	title: 'Open an account',
 	nameInput: {
 		label: 'Your name',
 		placeholder: 'First name',

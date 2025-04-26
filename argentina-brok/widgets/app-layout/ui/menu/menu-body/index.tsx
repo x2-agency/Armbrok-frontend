@@ -1,6 +1,5 @@
 'use client';
 
-import cx from 'clsx';
 import { useTranslations } from 'next-intl';
 
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
@@ -20,21 +19,21 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 	return (
 		<Container className={css.root}>
 			<nav className={css.links}>
-				<div className={cx(css.li)}>
+				<li className={css.li}>
 					<BurgerLinks className={css.services} rootKey="servicesLinks" />
-				</div>
+				</li>
+				<li className={css.li}>
+					<BurgerLinks rootKey="aboutUsLinks" />
+				</li>
 				{links.map((link, index) => (
-					<Button
-						variant="subtle"
-						href={link.href}
-						key={index}
-						className={css.button}
-					>
-						{link.label}
-					</Button>
+					<li key={index} className={css.li}>
+						<Button variant="subtle" href={link.href} className={css.button}>
+							{link.label}
+						</Button>
+					</li>
 				))}
 			</nav>
-			<ul className={css.buttons}>
+			<div className={css.buttons}>
 				<Button
 					onClick={() => toggleAccountModalOpen(true)}
 					variant="filled"
@@ -43,7 +42,7 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 				>
 					{t(`${header.openAccountButton.root}.text`)}
 				</Button>
-			</ul>
+			</div>
 		</Container>
 	);
 };

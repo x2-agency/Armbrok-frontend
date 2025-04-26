@@ -8,19 +8,19 @@
 	display: flex;
 	position: relative;
 	overflow: hidden;
-	background:
-		radial-gradient(
-			circle at 92% 7%,
-			#ffffff -29%,
-			#ffffff -7%,
-			transparent 23%
+	background: radial-gradient(
+			circle at 87% 26%,
+			#ffffff -1%,
+			#d42522 -28%,
+			transparent 6%
 		),
 		radial-gradient(
-			circle at 91% center,
-			#d42522 -1%,
-			#9e2e2c 5%,
-			transparent 44%
+			circle at 92% center,
+			#d42522 -4%,
+			#9e2e2c -38%,
+			transparent 38%
 		);
+
 	background-color: var(--red-700-color);
 
 	@media (max-width: 767px) {
@@ -31,19 +31,18 @@
 		border-radius: 4rem;
 		height: 100.333rem; /* 500px */
 
-		background:
-			radial-gradient(
-				circle at 88% 9%,
-				#ffffff 1%,
-				#9e2e2c 22%,
-				#380b00 48%,
-				transparent 59%
+		background: radial-gradient(
+				circle at 83% 12%,
+				#ffffff -9%,
+				#9e2e2c 10%,
+				#380b00 36%,
+				transparent 52%
 			),
 			radial-gradient(
-				circle at 53% center,
-				#380b00 25%,
-				#230302 64%,
-				transparent 68%
+				circle at 74% center,
+				#380b00 22%,
+				#230302 66%,
+				transparent 84%
 			),
 			linear-gradient(to right, #230302 24%, #230302 30%, #230302 50%);
 	}
