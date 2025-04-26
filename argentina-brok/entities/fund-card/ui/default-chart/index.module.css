@@ -1,7 +1,12 @@
 .root {
 	height: 100%;
 
-    & > div {
-        height: 100%;
-    }
+	& > div {
+		height: 100%;
+		overflow: visible !important;
+
+		& > div {
+			overflow: visible !important;
+		}  
+	}
 }

@@ -1,7 +1,10 @@
+'use client';
+
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useMemo } from 'react';
 
+import useMediaQuery from '@/shared/hooks/use-media-query';
 import type { ParentFundChartPoint } from '@/shared/types/global.types';
 
 import css from './index.module.css';
@@ -11,16 +14,13 @@ type DefaultChartProps = {
 };
 
 export const DefaultChart = ({ chart }: DefaultChartProps) => {
+	const isMobile = useMediaQuery('(max-width: 767px)');
+	const isTablet = useMediaQuery('(max-width: 1200px)');
+
 	const options = useMemo(() => {
 		const categories = chart.map(point => {
 			const [day, month, year] = point.date.split('/');
-			const date = new Date(`${year}-${month}-${day}`);
-			return date
-				.toLocaleString('en-US', {
-					month: 'short',
-					year: '2-digit',
-				})
-				.replace(',', '');
+			return `${year}-${month}-${day}`;
 		});
 
 		const data = chart.map(point => point.unitPrice);
@@ -43,15 +43,24 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 			xAxis: {
 				categories,
 				labels: {
-					style: { color: '#666' },
+					style: { color: '#666', fontSize: '14px' },
 					align: 'center',
+					step: isTablet || isMobile ? 25 : 10,
+					formatter: function () {
+						const date = new Date(this.value);
+						return date
+							.toLocaleString('en-US', {
+								month: 'short',
+								year: '2-digit',
+							})
+							.replace(',', '');
+					},
 				},
 				tickLength: 0,
 				lineColor: 'transparent',
 			},
 			yAxis: {
 				visible: false,
-				min: 0,
 			},
 			legend: {
 				enabled: false,
@@ -68,7 +77,7 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 							[1, color + '00'],
 						],
 					},
-					threshold: 0,
+					threshold: -1,
 				},
 				series: {
 					enableMouseTracking: false,

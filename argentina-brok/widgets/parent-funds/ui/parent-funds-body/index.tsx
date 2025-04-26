@@ -1,7 +1,4 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
+import { usePathname } from 'next/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -17,6 +14,8 @@ type ParentFundsBodyProps = {
 };
 
 export const ParentFundsBody = ({ funds, mode }: ParentFundsBodyProps) => {
+	const isHy = usePathname().startsWith('/hy');
+
 	if (mode === 'slider') {
 		return (
 			<div className={css.wrapper}>
@@ -27,7 +26,7 @@ export const ParentFundsBody = ({ funds, mode }: ParentFundsBodyProps) => {
 					pagination
 					slidesPerView={1}
 					spaceBetween={24}
-					breakpoints={{ 768: { slidesPerView: 2.11 } }}
+					breakpoints={{ 768: { slidesPerView: isHy ? 1.7 : 2.11 } }}
 				>
 					{funds.map((fund, index) => (
 						<SwiperSlide key={index} className={css.slide}>

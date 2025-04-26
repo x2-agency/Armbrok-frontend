@@ -32,11 +32,18 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const IndexPage = async () => {
-	const [initialHomePageData, initialAwards, initialFunds] = await Promise.all([
+	const [homePageResult, awardsResult, fundsResult] = await Promise.allSettled([
 		getHomePage(),
 		getAwards({ pageSize: 4 }),
 		getParentFunds(),
 	]);
+
+	const initialHomePageData =
+		homePageResult.status === 'fulfilled' ? homePageResult.value : null;
+	const initialAwards =
+		awardsResult.status === 'fulfilled' ? awardsResult.value : null;
+	const initialFunds =
+		fundsResult.status === 'fulfilled' ? fundsResult.value : { data: [] };
 
 	return (
 		<Home

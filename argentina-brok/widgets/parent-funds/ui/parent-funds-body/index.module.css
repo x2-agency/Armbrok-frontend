@@ -67,7 +67,13 @@
 	}
 
 	.fundCart {
+		/* @mixin responsive max-width, 500, 500, 500; */
+
 		height: 100%;
+
+		@media (max-width: 767px) {
+			max-width: unset;
+		}
 	}
 
 	:global(.swiper-pagination) {
