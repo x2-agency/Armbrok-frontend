@@ -48,11 +48,3 @@
 
 	border-image-slice: 1;
 }
-
-.text {
-	float: right;
-
-	/* min-width: min-content; */
-	/* width: 109px; */
-	white-space: nowrap;
-}
