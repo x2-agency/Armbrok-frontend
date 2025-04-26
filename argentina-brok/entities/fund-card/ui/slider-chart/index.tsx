@@ -60,10 +60,10 @@ export const SliderChart = ({ chart, annualReturnValue }: SliderChartProps) => {
 						hover: { enabled: false },
 					},
 					shadow: {
-						color: lineColor + '80',
+						color: lineColor + '90',
 						offsetX: 0,
 						offsetY: 2,
-						width: 5,
+						width: 20,
 					},
 				},
 			},
