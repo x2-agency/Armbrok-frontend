@@ -15,18 +15,35 @@ export const SliderChart = ({ chart, annualReturnValue }: SliderChartProps) => {
 	const options = useMemo(() => {
 		const data = chart.map(point => point.unitPrice);
 
+		const lineColor = annualReturnValue
+			? annualReturnValue > 0
+				? '#34CA2F'
+				: '#DF2C29'
+			: '#34CA2F';
+
+		const minY = Math.min(...data);
+		const maxY = Math.max(...data);
+
 		return {
 			chart: {
 				backgroundColor: 'transparent',
 				animation: false,
 				reflow: true,
+				margin: [0, 0, 0, 0],
 			},
 			title: { text: undefined },
 			xAxis: {
 				visible: false,
+				startOnTick: false,
+				endOnTick: false,
 			},
 			yAxis: {
 				visible: false,
+				min: minY,
+				max: maxY,
+				startOnTick: false,
+				endOnTick: false,
+				padding: 0,
 			},
 			legend: {
 				enabled: false,
@@ -43,15 +60,10 @@ export const SliderChart = ({ chart, annualReturnValue }: SliderChartProps) => {
 						hover: { enabled: false },
 					},
 					shadow: {
-						color: annualReturnValue
-							? annualReturnValue > 0
-								? '#34CA2F80'
-								: '#DF2C2980'
-							: '#34CA2F80',
+						color: lineColor + '80',
 						offsetX: 0,
-						offsetY: 0,
-						opacity: 0.5,
-						width: 6,
+						offsetY: 2,
+						width: 5,
 					},
 				},
 			},
@@ -59,17 +71,13 @@ export const SliderChart = ({ chart, annualReturnValue }: SliderChartProps) => {
 				{
 					type: 'line',
 					data,
-					color: annualReturnValue
-						? annualReturnValue > 0
-							? '#34CA2F'
-							: '#DF2C29'
-						: '#34CA2F',
+					color: lineColor,
 					lineWidth: 2,
 				},
 			],
 			credits: { enabled: false },
 		};
-	}, [chart]);
+	}, [chart, annualReturnValue]);
 
 	return (
 		<div className={css.root}>
