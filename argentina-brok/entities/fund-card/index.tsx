@@ -31,7 +31,10 @@ export const FundsCard = ({
 						description={description}
 						infoCard={infoCard}
 					/>
-					<DefaultChart chart={chart} />
+					<DefaultChart
+						chart={chart}
+						annualReturnValue={infoCard.annualReturn?.value}
+					/>
 				</>
 			)}
 			{mode === 'slider' && (

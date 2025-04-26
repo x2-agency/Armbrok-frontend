@@ -11,9 +11,13 @@ import css from './index.module.css';
 
 type DefaultChartProps = {
 	chart: Array<ParentFundChartPoint>;
+	annualReturnValue?: number;
 };
 
-export const DefaultChart = ({ chart }: DefaultChartProps) => {
+export const DefaultChart = ({
+	chart,
+	annualReturnValue,
+}: DefaultChartProps) => {
 	const isMobile = useMediaQuery('(max-width: 767px)');
 	const isTablet = useMediaQuery('(max-width: 1200px)');
 
@@ -24,13 +28,7 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 		});
 
 		const data = chart.map(point => point.unitPrice);
-		const startValue = data[0];
-		const endValue = data[data.length - 1];
-		const growthPercent = (
-			((endValue - startValue) / startValue) *
-			100
-		).toFixed(1);
-		const hasGrown = endValue > startValue;
+		const hasGrown = annualReturnValue ? annualReturnValue > 0 : false;
 		const color = hasGrown ? '#34CA2F' : '#DF2C2999';
 
 		return {
@@ -101,19 +99,20 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 					dataLabels: [
 						{
 							enabled: true,
-							align: 'right',
-							verticalAlign: 'end',
-							x: 320,
-							y: -40,
+							align: 'left',
+							verticalAlign: 'middle',
+							backgroundColor: color,
+							borderRadius: 6,
+							padding: 6,
 							style: {
-								color,
-								fontSize: '14px',
+								color: '#fff',
+								fontSize: '12px',
 								fontWeight: 'bold',
 								textOutline: 'none',
 							},
 							formatter: function () {
 								if (this.point.index === data.length - 1) {
-									return `${hasGrown ? '+' : ''}${growthPercent}%`;
+									return `${hasGrown ? '+' : ''}${annualReturnValue}%`;
 								}
 								return null;
 							},
@@ -123,7 +122,7 @@ export const DefaultChart = ({ chart }: DefaultChartProps) => {
 			],
 			credits: { enabled: false },
 		};
-	}, [chart]);
+	}, [chart, annualReturnValue, isMobile, isTablet]);
 
 	return (
 		<div className={css.root}>
