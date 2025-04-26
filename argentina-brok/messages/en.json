@@ -5,7 +5,7 @@
 			"link": "#"
 		},
 		"openAccountButton": {
-			"text": "Open account",
+			"text": "Open an account",
 			"link": "#"
 		},
 		"services": {
@@ -51,7 +51,7 @@
 					"link": "/investment-banking"
 				},
 				"depositoryRegistrar": {
-					"text": "Depositary &amp;&nbsp;Registrar",
+					"text": "Depositary&nbsp;and&nbsp;Registrar",
 					"link": "/depositary-services"
 				}
 			},
@@ -142,13 +142,13 @@
 				"link": "/investment-banking"
 			},
 			"depositoryRegistrar": {
-				"text": "Depositary&nbsp;&amp;&nbsp;Registrar",
+				"text": "Depositary&nbsp;and&nbsp;Registrar",
 				"link": "/depositary-services"
 			}
 		}
 	},
 	"openAccount": {
-		"title": "Open account",
+		"title": "Open an account",
 		"nameInput": {
 			"label": "Name",
 			"placeholder": "First name",
@@ -172,7 +172,7 @@
 			"placeholder": "Subject",
 			"errorMessage": "Please fill this field",
 			"secondErrorMessage": "Subject must be at least 4 characters long",
-			"value": "Open account"
+			"value": "Open an account"
 		},
 		"messageInput": {
 			"label": "Message",

@@ -33,7 +33,7 @@ export const Start = ({ data }: StartProps) => {
 					category="big"
 					variant="filled"
 					className={css.button}
-					onClick={() => handleClick(button.text ?? 'Open account')}
+					onClick={() => handleClick(button.text ?? 'Open an account')}
 				>
 					{button.text}
 				</Button>

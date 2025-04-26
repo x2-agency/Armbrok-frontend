@@ -35,7 +35,7 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 						className={css.button}
 						category="big"
 						variant="filled"
-						onClick={() => handleClick(button?.text ?? 'Open account')}
+						onClick={() => handleClick(button?.text ?? 'Open an account')}
 					>
 						{parser(button?.text ?? '')}
 					</Button>
