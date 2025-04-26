@@ -40,6 +40,7 @@ export const FundsCard = ({
 						chart={chart}
 						title={title}
 						description={description}
+						annualReturnValue={infoCard.annualReturn?.value}
 					/>
 					<InfoCard {...infoCard} />
 				</>

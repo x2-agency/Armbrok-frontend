@@ -8,9 +8,10 @@ import css from './index.module.css';
 
 type SliderChartProps = {
 	chart: Array<ParentFundChartPoint>;
+	annualReturnValue?: number;
 };
 
-export const SliderChart = ({ chart }: SliderChartProps) => {
+export const SliderChart = ({ chart, annualReturnValue }: SliderChartProps) => {
 	const options = useMemo(() => {
 		const data = chart.map(point => point.unitPrice);
 
@@ -41,13 +42,28 @@ export const SliderChart = ({ chart }: SliderChartProps) => {
 					states: {
 						hover: { enabled: false },
 					},
+					shadow: {
+						color: annualReturnValue
+							? annualReturnValue > 0
+								? '#34CA2F80'
+								: '#DF2C2980'
+							: '#34CA2F80',
+						offsetX: 0,
+						offsetY: 0,
+						opacity: 0.5,
+						width: 6,
+					},
 				},
 			},
 			series: [
 				{
 					type: 'line',
 					data,
-					color: '#3B82F6',
+					color: annualReturnValue
+						? annualReturnValue > 0
+							? '#34CA2F'
+							: '#DF2C29'
+						: '#34CA2F',
 					lineWidth: 2,
 				},
 			],

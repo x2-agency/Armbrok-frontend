@@ -10,12 +10,14 @@ import css from './index.module.css';
 
 type SliderTopPartProps = ItemDetail & {
 	chart: Array<ParentFundChartPoint>;
+	annualReturnValue?: number;
 };
 
 export const SliderTopPart = ({
 	chart,
 	title,
 	description,
+	annualReturnValue,
 }: SliderTopPartProps) => {
 	return (
 		<div className={css.root}>
@@ -27,7 +29,7 @@ export const SliderTopPart = ({
 					)}
 				</div>
 			)}
-			<SliderChart chart={chart} />
+			<SliderChart chart={chart} annualReturnValue={annualReturnValue} />
 		</div>
 	);
 };
