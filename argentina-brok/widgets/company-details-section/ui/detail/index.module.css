@@ -1,6 +1,5 @@
 .description,
 .text {
-	@mixin responsive max-width, unset, 479, 560;
 	height: fit-content;
 
 	color: var(--gray-800-color);
@@ -10,21 +9,18 @@
 	}
 
 	@media (max-width: 767px) {
+		font-size: 12px;
 		br {
 			display: block;
 		}
 	}
 
-	@media (max-width: 470px) {
-		font-size: 9px;
-	}
-
 	@media (min-width: 471px) {
-		font-size: 12px;
+		@mixin font-text20;
 	}
 
 	@media (min-width: 690px) {
-		font-size: 15px;
+		@mixin font-h3;
 	}
 
 	@media (min-width: 768px) {
@@ -40,8 +36,7 @@
 }
 
 .dotted {
-	@mixin responsive margin-block-end, 4, 5, 5;
-
+	@mixin responsive margin-block-end, 1, 5, 5;
 	line-height: 0;
 	flex-grow: 1;
 	border-bottom: 1px solid transparent;
@@ -52,4 +47,12 @@
 	);
 
 	border-image-slice: 1;
+}
+
+.text {
+	float: right;
+
+	/* min-width: min-content; */
+	/* width: 109px; */
+	white-space: nowrap;
 }

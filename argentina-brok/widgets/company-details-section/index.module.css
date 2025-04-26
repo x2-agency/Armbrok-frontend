@@ -36,9 +36,9 @@
 }
 
 .detail {
-	@mixin responsive gap, 8, 8, 8;
+	@mixin responsive gap, 1, 1, 1;
 
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: end;
 }

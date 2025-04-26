@@ -4,7 +4,6 @@ import type { CompanyDetailsSection as CompanyDetailsSectionProps } from '@/shar
 
 import css from './index.module.css';
 import { Detail } from './ui/detail';
-
 export const CompanyDetailsSection = ({
 	title,
 	items,
