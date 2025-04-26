@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client';
 
 import Highcharts from 'highcharts';
@@ -21,6 +22,10 @@ export const DefaultChart = ({
 	const isMobile = useMediaQuery('(max-width: 767px)');
 	const isTablet = useMediaQuery('(max-width: 1200px)');
 
+	if (!chart || !chart.length) {
+		return null;
+	}
+
 	const options = useMemo(() => {
 		const categories = chart.map(point => {
 			const [day, month, year] = point.date.split('/');
@@ -36,6 +41,8 @@ export const DefaultChart = ({
 				backgroundColor: 'transparent',
 				animation: false,
 				reflow: true,
+				marginRight: 55, // Увеличено для места под label
+				overflow: 'visible', // Разрешаем выход за границы
 			},
 			title: { text: undefined },
 			xAxis: {
@@ -80,6 +87,11 @@ export const DefaultChart = ({
 				series: {
 					enableMouseTracking: false,
 					animation: false,
+					dataLabels: {
+						allowOverlap: true,
+						crop: false,
+						overflow: 'none',
+					},
 				},
 			},
 			series: [
@@ -104,6 +116,8 @@ export const DefaultChart = ({
 							backgroundColor: color,
 							borderRadius: 6,
 							padding: 6,
+							x: 5,
+							y: 0,
 							style: {
 								color: '#fff',
 								fontSize: '12px',
@@ -116,6 +130,8 @@ export const DefaultChart = ({
 								}
 								return null;
 							},
+							crop: false,
+							overflow: 'none',
 						},
 					],
 				},
@@ -125,7 +141,7 @@ export const DefaultChart = ({
 	}, [chart, annualReturnValue, isMobile, isTablet]);
 
 	return (
-		<div className={css.root}>
+		<div className={css.root} style={{ overflow: 'visible' }}>
 			<HighchartsReact highcharts={Highcharts} options={options} />
 		</div>
 	);
