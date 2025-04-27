@@ -3,7 +3,7 @@
 }
 
 .root.slider {
-	@mixin responsive margin-block 24, 24, 24;
+	@mixin responsive margin-block, 24, 24, 24;
 	@mixin responsive border-radius, 32, 32, 32;
 	@mixin responsive padding, 20, 40, 40;
 

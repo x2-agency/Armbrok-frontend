@@ -1,9 +1,9 @@
 .root {
 	height: 100%;
 
-    @media (max-width: 767px) {
-        height: 260px;
-    }
+	@media (max-width: 767px) {
+		height: 260px;
+	}
 
 	& > div {
 		height: 100%;
