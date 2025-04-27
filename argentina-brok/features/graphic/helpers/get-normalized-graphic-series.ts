@@ -27,7 +27,7 @@ export const getNormalizedGraphicSeries = (
 
 	const basePoint = filtered[0] ?? cleanedSeries[0];
 
-	const baseNavValue = basePoint?.y ?? 1;
+	const baseNavValue = basePoint?.y !== 0 ? (basePoint?.y ?? 1) : 1;
 	const baseComparisonValue =
 		basePoint?.indexes.find(index => index.name === comparisonMode)?.value ?? 1;
 
