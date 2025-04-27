@@ -1,6 +1,7 @@
 'use client';
 
 import type { NextPage } from 'next';
+import { useTranslations } from 'next-intl';
 
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExperienceSection } from '@/shared/ui/experience-section';
@@ -18,6 +19,7 @@ import type { FundsPageResponse } from './types/response';
 export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	initialFundsPageData,
 }) => {
+	const t = useTranslations('parentFundsFundPage');
 	const {
 		publishedAt,
 		heroSection,
@@ -56,7 +58,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				items={investingAdvantages?.factoids}
 				title={investingAdvantages?.title}
 			/>
-			<ParentFunds head={PARENT_FUNDS_HEAD} funds={parentFunds} />
+			<ParentFunds head={{ title: t('text') }} funds={parentFunds} />
 			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
 			<ExpertSolutionSection
 				title={howFundWorksSection?.title}

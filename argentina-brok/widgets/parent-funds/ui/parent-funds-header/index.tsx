@@ -1,9 +1,9 @@
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 
 import type { ItemDetail } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import type { ParentFundsMode } from '@/widgets/parent-funds';
-import { VIEW_ALL_FUNDS_BUTTON } from '@/widgets/parent-funds/model/parent-funds.constants';
 
 import css from './index.module.css';
 
@@ -13,6 +13,8 @@ type ParentFundsHeaderProps = {
 };
 
 export const ParentFundsHeader = ({ data, mode }: ParentFundsHeaderProps) => {
+	const t = useTranslations('viewAllFunds');
+
 	if (mode === 'slider') {
 		return (
 			<div className={css.slider}>
@@ -23,7 +25,7 @@ export const ParentFundsHeader = ({ data, mode }: ParentFundsHeaderProps) => {
 					)}
 				</div>
 				<Button href="/funds#funds" variant="next" iconRotate={180}>
-					{parser(VIEW_ALL_FUNDS_BUTTON)}
+					{parser(t('text'))}
 				</Button>
 			</div>
 		);

@@ -1,6 +1,7 @@
 'use client';
 
 import type { NextPage } from 'next';
+import { useTranslations } from 'next-intl';
 
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import type {
@@ -20,7 +21,6 @@ import { ParentFunds } from '@/widgets/parent-funds';
 import { Start } from '@/widgets/start';
 
 import css from './index.module.css';
-import { HOME_FUNDS_HEAD } from './model/home.constants';
 import type { HomePageData } from './types/response';
 
 export const Home: NextPage<{
@@ -28,6 +28,7 @@ export const Home: NextPage<{
 	initialAwards?: AwardsResponse;
 	parentFunds?: Array<ParentFundProps>;
 }> = ({ initialData, initialAwards, parentFunds }) => {
+	const t = useTranslations('homeParentFunds');
 	const {
 		publishedAt,
 		heroSection,
@@ -56,7 +57,11 @@ export const Home: NextPage<{
 				content={brokerageAppCard}
 				image={brokerageAppCard?.phoneMockups}
 			/>
-			<ParentFunds head={HOME_FUNDS_HEAD} funds={parentFunds} mode="slider" />
+			<ParentFunds
+				head={{ title: t('title'), description: t('description') }}
+				funds={parentFunds}
+				mode="slider"
+			/>
 			<AssetManagment data={assetManagementCard} />
 			<Corporate cards={financialSolutionsSection} />
 			<Start data={investingStepsSection} />

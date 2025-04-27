@@ -232,5 +232,13 @@
 				"link": "/careers-at-armbrok"
 			}
 		}
+	},
+	"homeParentFunds": {
+		"title": "Инвестиционные фонды",
+		"description": "Для самостоятельного инвестирования.<br /> Начните свой инвестиционный путь уже сегодня."
+	},
+	"viewAllFunds": { "text": "Просмотреть все фонды" },
+	"parentFundsFundPage": {
+		"text": "Откройте наши фонды"
 	}
 }
