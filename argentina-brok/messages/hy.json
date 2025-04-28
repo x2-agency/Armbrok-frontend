@@ -13,11 +13,11 @@
 			"link": "/depositary-services"
 		},
 		"investor-relations": {
-			"text": "Ներդրողների հետ հարաբերություններ",
+			"text": "Բաժնետերերին",
 			"link": "/investor-relations"
 		},
 		"media": {
-			"text": "Մեդիա",
+			"text": "Լուրեր և վերլուծություններ",
 			"link": "/media"
 		},
 		"about-us": {
@@ -67,7 +67,7 @@
 				}
 			},
 			"investor-relations": {
-				"text": "Ներդրողների հետ հարաբերություններ"
+				"text": "Բաժնետերերին"
 			},
 			"media": {
 				"text": "Մեդիա",
