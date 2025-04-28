@@ -17,7 +17,7 @@
 			"link": "/investor-relations"
 		},
 		"media": {
-			"text": "Медиа",
+			"text": "Новости и&nbsp;аналитика",
 			"link": "/media"
 		},
 		"about-us": {
@@ -80,14 +80,14 @@
 					"link": "/media?category=invest-ideas"
 				},
 				"companyNews": {
-					"text": "Новости компании",
+					"text": "Новости Компании",
 					"link": "/media?category=company-news"
 				}
 			},
 			"regulation": {
 				"text": "Правовая информация",
 				"lawsLegalActs": {
-					"text": "Законы и правовые акты",
+					"text": "Законы и Правовые акты",
 					"link": "/regulation#laws"
 				},
 				"internalRules": {

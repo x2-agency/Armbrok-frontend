@@ -1,5 +1,11 @@
+.root {
+	display: flex;
+	flex-direction: row;
+}
+
 .description,
 .text {
+	@mixin font-text16;
 	height: fit-content;
 
 	color: var(--gray-800-color);
@@ -9,23 +15,9 @@
 	}
 
 	@media (max-width: 767px) {
-		font-size: 12px;
 		br {
 			display: block;
 		}
-	}
-
-	@media (min-width: 471px) {
-		@mixin font-text20;
-	}
-
-	@media (min-width: 690px) {
-		@mixin font-h3;
-	}
-
-	@media (min-width: 768px) {
-		@mixin font-text16;
-		max-width: 75rem;
 	}
 }
 
@@ -35,11 +27,16 @@
 	}
 }
 
+.text {
+	display: inline-block;
+	position: relative;
+}
+
 .dotted {
 	@mixin responsive margin-block-end, 1, 5, 5;
 	line-height: 0;
 	flex-grow: 1;
-	border-bottom: 1px solid transparent;
+	border-bottom: 1px dotted currentColor;
 	border-image: repeating-linear-gradient(
 		to right,
 		rgba(0, 0, 0, 0.3) 0 5px,
@@ -47,4 +44,13 @@
 	);
 
 	border-image-slice: 1;
+
+	position: absolute;
+	bottom: 0;
+
+	transition: all 0.3s;
+}
+
+.hidden {
+	opacity: 0;
 }
