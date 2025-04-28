@@ -17,7 +17,7 @@
 			"link": "/investor-relations"
 		},
 		"media": {
-			"text": "Медиа",
+			"text": "Новости и&nbsp;аналитика",
 			"link": "/media"
 		},
 		"about-us": {
@@ -87,7 +87,7 @@
 			"regulation": {
 				"text": "Правовая информация",
 				"lawsLegalActs": {
-					"text": "Законы и правовые акты",
+					"text": "Законы и Правовые акты",
 					"link": "/regulation#laws"
 				},
 				"internalRules": {
