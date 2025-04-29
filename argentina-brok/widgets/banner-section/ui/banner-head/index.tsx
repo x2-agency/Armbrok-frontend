@@ -4,6 +4,7 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/shared/ui/button';
 import type { BannerHeadProps } from '@/widgets/banner-section/banner.types';
@@ -12,6 +13,7 @@ import css from './index.module.css';
 
 export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 	const router = useRouter();
+	const t = useTranslations('backButton');
 
 	const handleClick = () => {
 		router.back();
@@ -21,7 +23,7 @@ export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 		<article className={cx(css.root, className, css[type])}>
 			{type === 'profix' && (
 				<Button variant="back" onClick={handleClick} className={css.backButton}>
-					Back
+					{parser(t('text'))}
 				</Button>
 			)}
 			{type === 'about' && headData.established && (

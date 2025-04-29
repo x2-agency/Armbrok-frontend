@@ -1,0 +1,3 @@
+.paragraph:last-of-type .element {
+	margin-block-end: unset;
+}

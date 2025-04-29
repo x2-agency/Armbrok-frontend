@@ -1,0 +1,32 @@
+.root {
+	@mixin responsive gap, 12, 12, 12;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.label {
+	@mixin font-text16;
+}
+
+.dotted {
+	@mixin responsive margin-block-end, 4, 9, 9;
+
+	align-self: end;
+	line-height: 0;
+	flex-grow: 1;
+	border-bottom: 1px solid transparent;
+	border-image: repeating-linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.3) 0 3px,
+		transparent 1px 7px
+	);
+	border-image-slice: 1;
+}
+
+.value {
+	@mixin font-text20;
+
+	font-weight: 500;
+}

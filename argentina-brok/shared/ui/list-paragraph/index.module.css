@@ -1,0 +1,69 @@
+.root {
+	@mixin responsive margin-block-end, 20, 20, 20;
+	@mixin responsive gap, 12, 12, 12;
+
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+
+	&.withLink {
+		@mixin responsive padding-block, 10, 10, 10;
+		@mixin responsive padding-inline, 0, 16, 16;
+		cursor: pointer;
+
+		@media (hover: hover) {
+			&:hover {
+				.overlay {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.overlay,
+.link {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.overlay {
+	@mixin transition opacity;
+
+	opacity: 0;
+	background-color: var(--gray-200-color);
+}
+
+.link,
+.leftPart,
+.rightPart,
+.dotted {
+	z-index: 10;
+}
+
+.rightPart,
+.leftPart {
+	@mixin font-text16;
+}
+
+.rightPart {
+	font-weight: 500;
+}
+
+.dotted {
+	@mixin responsive margin-block-end, 4, 9, 9;
+
+	align-self: end;
+	line-height: 0;
+	flex-grow: 1;
+	border-bottom: 1px solid transparent;
+	border-image: repeating-linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.3) 0 3px,
+		transparent 1px 7px
+	);
+	border-image-slice: 1;
+}

@@ -1,9 +1,13 @@
 'use client';
 
 import type { NextPage } from 'next';
+import { useTranslations } from 'next-intl';
 
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
-import type { AwardsResponse } from '@/shared/types/global.types';
+import type {
+	AwardsResponse,
+	ParentFundProps,
+} from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { AppSection } from '@/widgets/app-section';
@@ -13,6 +17,7 @@ import { Corporate } from '@/widgets/corporate';
 import { HomePreview } from '@/widgets/home-preview/ui';
 import { InteractiveVideo } from '@/widgets/interactive-video';
 import { NewsSectionHome } from '@/widgets/news-section';
+import { ParentFunds } from '@/widgets/parent-funds';
 import { Start } from '@/widgets/start';
 
 import css from './index.module.css';
@@ -21,7 +26,9 @@ import type { HomePageData } from './types/response';
 export const Home: NextPage<{
 	initialData?: HomePageData;
 	initialAwards?: AwardsResponse;
-}> = ({ initialData, initialAwards }) => {
+	parentFunds?: Array<ParentFundProps>;
+}> = ({ initialData, initialAwards, parentFunds }) => {
+	const t = useTranslations('homeParentFunds');
 	const {
 		publishedAt,
 		heroSection,
@@ -49,6 +56,11 @@ export const Home: NextPage<{
 			<AppSection
 				content={brokerageAppCard}
 				image={brokerageAppCard?.phoneMockups}
+			/>
+			<ParentFunds
+				head={{ title: t('title'), description: t('description') }}
+				funds={parentFunds}
+				mode="slider"
 			/>
 			<AssetManagment data={assetManagementCard} />
 			<Corporate cards={financialSolutionsSection} />

@@ -71,8 +71,15 @@
 }
 
 .root.profix {
-	padding-block-start: 7.5rem; /* 120px */
+	@mixin responsive padding-block-start, 80, 120, 120;
 	padding-block-end: 5rem; /* 80px */
+	background:
+		radial-gradient(
+			47.29% 79.37% at 85.35% 76.84%,
+			rgba(223, 44, 41, 0.25) 0%,
+			rgba(223, 44, 41, 0) 100%
+		),
+		linear-gradient(93.77deg, #171717 0%, #1f1f1f 100%), #ffffff;
 }
 
 .content {

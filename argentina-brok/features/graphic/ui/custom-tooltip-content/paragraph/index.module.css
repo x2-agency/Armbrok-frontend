@@ -1,0 +1,37 @@
+.rightPart,
+.leftPart {
+	@mixin font-text14;
+}
+
+.leftPart {
+	color: var(--gray-600-color);
+
+	@media (max-width: 767px) {
+		&::after {
+			content: ':';
+		}
+	}
+}
+
+.rightPart {
+	font-weight: 500;
+}
+
+.dotted {
+	@mixin responsive margin-block-end, 4, 5, 5;
+
+	align-self: end;
+	line-height: 0;
+	flex-grow: 1;
+	border-bottom: 1px solid transparent;
+	border-image: repeating-linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.3) 0 3px,
+		transparent 1px 7px
+	);
+	border-image-slice: 1;
+
+	@media (max-width: 767px) {
+		display: none;
+	}
+}

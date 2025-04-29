@@ -1,0 +1,15 @@
+.root {
+	@mixin responsive width, 219, 219, 219;
+	@mixin responsive height, 140, 118, 118;
+
+	& > div {
+		width: 100%;
+		height: 100%;
+	}
+
+	justify-self: center;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}

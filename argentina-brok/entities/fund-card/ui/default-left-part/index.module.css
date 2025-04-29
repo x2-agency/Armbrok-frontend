@@ -1,0 +1,34 @@
+.root {
+	@mixin responsive gap, 30, 30, 30;
+
+	display: flex;
+	flex-direction: column;
+	z-index: 10;
+}
+
+.icon {
+	@mixin responsive width, 72, 72, 72;
+}
+
+.root,
+.descriptionBlock {
+	display: flex;
+	flex-direction: column;
+}
+
+.descriptionBlock {
+	@mixin responsive gap, 8, 8, 8;
+}
+
+.title {
+	@mixin font-h4;
+
+	font-weight: 600;
+	color: var(--gray-100-color);
+}
+
+.description {
+	@mixin font-text16;
+
+	color: var(--gray-300-color);
+}

@@ -23,7 +23,7 @@ export const defineHeadContent = ({
 			...commonData,
 			headData: {
 				...commonData.headData,
-				icon: banner.icon,
+				icon: banner.icon ?? '',
 			},
 		} as ProfixBannerHeadProps;
 	} else if (type === 'about') {

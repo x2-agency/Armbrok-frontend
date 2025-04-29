@@ -1,6 +1,7 @@
 'use client';
 
 import type { NextPage } from 'next';
+import { useTranslations } from 'next-intl';
 
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExperienceSection } from '@/shared/ui/experience-section';
@@ -9,13 +10,16 @@ import { HeroContainer } from '@/shared/ui/hero-container';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { HowWeAreWorkingSection } from '@/widgets/how-we-are-working-section';
+import { ParentFunds } from '@/widgets/parent-funds';
 
 import css from './index.module.css';
+import { PARENT_FUNDS_HEAD } from './model/funds.constants';
 import type { FundsPageResponse } from './types/response';
 
 export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	initialFundsPageData,
 }) => {
+	const t = useTranslations('parentFundsFundPage');
 	const {
 		publishedAt,
 		heroSection,
@@ -25,6 +29,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 		howWeAreWorkingSection,
 		disclaimerSection,
 		infoSection,
+		parentFunds,
 	} = initialFundsPageData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
@@ -53,13 +58,13 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				items={investingAdvantages?.factoids}
 				title={investingAdvantages?.title}
 			/>
+			<ParentFunds head={{ title: t('text') }} funds={parentFunds} />
 			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
 			<ExpertSolutionSection
 				title={howFundWorksSection?.title}
 				items={howFundWorksSection?.factoids}
 			/>
 			<HelpfulInformation accordionSection={infoSection} />
-
 			<HowWeAreWorkingSection data={disclaimerSection} oneCard />
 		</>
 	);

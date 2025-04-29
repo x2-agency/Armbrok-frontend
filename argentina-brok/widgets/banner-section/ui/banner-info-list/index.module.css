@@ -4,6 +4,15 @@
 	@mixin responsive gap, 6, 6, 6;
 }
 
+.title,
+.description {
+	@media (max-width: 767px) {
+		width: 100%;
+		text-align: center;
+		align-self: center;
+	}
+}
+
 .title {
 	@mixin font-text20;
 	display: flex;
@@ -14,4 +23,5 @@
 .description {
 	@mixin font-text16;
 	color: var(--gray-400-color);
+	width: fit-content;
 }

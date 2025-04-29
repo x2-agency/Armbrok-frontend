@@ -14,6 +14,7 @@ export type ExpertSolutionSectionProps = {
 	withShell?: boolean;
 	backgroundColor?: 'white' | 'gray';
 	gridClass?: string;
+	centered?: boolean;
 };
 
 export const ExpertSolutionSection = ({
@@ -23,6 +24,7 @@ export const ExpertSolutionSection = ({
 	withShell,
 	backgroundColor,
 	gridClass,
+	centered,
 }: ExpertSolutionSectionProps) => {
 	if (!items) {
 		return null;
@@ -53,6 +55,7 @@ export const ExpertSolutionSection = ({
 									title={item.title}
 									description={item.description}
 									media={item.media}
+									centered={centered}
 								/>
 							</li>
 						))}
@@ -71,6 +74,7 @@ export const ExpertSolutionSection = ({
 									title={item.title}
 									description={item.description}
 									media={item.media}
+									centered={centered}
 								/>
 							</li>
 						))}
@@ -95,6 +99,7 @@ export const ExpertSolutionSection = ({
 								title={item.title}
 								description={item.description}
 								media={item.media}
+								centered={centered}
 							/>
 						</li>
 					))}

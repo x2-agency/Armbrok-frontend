@@ -38,6 +38,9 @@
 
 	&.profix {
 		@mixin responsive padding-block-end, 5, 16, 16;
+
+		font-weight: 700;
+		color: var(--gray-100-color);
 	}
 
 	&.about {
@@ -64,7 +67,22 @@
 }
 
 .backButton {
+	@mixin transition color;
 	@mixin responsive margin-block-end, 41, 41, 41;
+
+	svg path {
+		@mixin transition fill;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--gray-400-color);
+
+			svg path {
+				fill: var(--gray-400-color);
+			}
+		}
+	}
 }
 
 .icon {

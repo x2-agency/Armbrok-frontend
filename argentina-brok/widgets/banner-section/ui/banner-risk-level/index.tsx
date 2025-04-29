@@ -1,24 +1,22 @@
 import cx from 'clsx';
+import parser from 'html-react-parser';
+
+import type { RiskLevel } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-type BannerRiskLevelProps = {
-	risk: number;
-	text: string;
-};
-
-export const BannerRiskLevel = ({ risk, text }: BannerRiskLevelProps) => (
+export const BannerRiskLevel = ({ label, level }: RiskLevel) => (
 	<ul className={css.list}>
 		<li className={css.title}>
 			{Array.from({ length: 3 }).map((_, key) => (
 				<div
 					key={key}
 					className={cx(css.circle, {
-						[css.filled]: key < risk,
+						[css.filled]: key < level,
 					})}
 				/>
 			))}
 		</li>
-		<li className={css.description}>{text}</li>
+		<li className={css.description}>{parser(label ?? '')}</li>
 	</ul>
 );

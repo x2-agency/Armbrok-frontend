@@ -1,0 +1,66 @@
+.root {
+	@mixin responsive padding, 24, 32, 32;
+	@mixin responsive border-radius, 24, 24, 24;
+
+	position: relative;
+	overflow: hidden;
+
+	&.default {
+		@mixin responsive gap, 30, 60, 60;
+
+		position: relative;
+		justify-content: space-between;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		background:
+			linear-gradient(0deg, #282828, #282828),
+			linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+			linear-gradient(93.77deg, #171717 0%, #1f1f1f 100%), #212121;
+
+		@media (max-width: 767px) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&.slider {
+		@mixin responsive gap, 20, 64, 64;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background: linear-gradient(180deg, #171717 0%, #333333 100%);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			.overlay {
+				opacity: 0.3;
+			}
+		}
+	}
+}
+
+.overlay {
+	@mixin transition opacity;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--gray-500-color);
+	opacity: 0;
+	pointer-events: none;
+}
+
+.link {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
