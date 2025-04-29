@@ -1,0 +1,73 @@
+.root {
+	@mixin responsive margin-block-end, 0, 24, 24;
+	@mixin responsive margin-inline, 20;
+	@mixin responsive padding, 16, 24, 24;
+	@mixin responsive border-radius, 24, 24, 24;
+	@mixin responsive --border-width, 1, 1, 1;
+	@mixin responsive min-height, 505, 520, 520;
+
+	position: relative;
+	overflow: hidden;
+	border: var(--border-width) solid var(--gray-300-color);
+
+	:global(.highcharts-scrollbar),
+	:global(.highcharts-credits) {
+		display: none;
+	}
+
+	svg {
+		overflow: visible !important;
+	}
+
+	div {
+		overflow: visible !important;
+	}
+
+	@media (max-width: 767px) {
+		@mixin responsive padding, 0;
+
+		margin-inline: unset;
+		border-radius: 0;
+		border: unset;
+	}
+
+	& > div:last-child {
+		@media (max-width: 767px) {
+			@mixin responsive margin-inline, 10;
+		}
+	}
+}
+
+.controls {
+	@mixin responsive padding-block-end, 24, 24, 24;
+
+	display: flex;
+	justify-content: space-between;
+
+	.mobileFilter {
+		display: none !important;
+	}
+
+	@media (max-width: 767px) {
+		@mixin responsive padding-inline, 20;
+
+		.pcFilter {
+			display: none !important;
+		}
+
+		overflow-x: scroll;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}
+
+.mobileFilter {
+	@mixin responsive padding-inline, 20;
+
+	@media (min-width: 767px) {
+		display: none !important;
+	}
+
+	display: block;
+	width: fit-content;
+}

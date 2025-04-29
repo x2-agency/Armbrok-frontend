@@ -1,0 +1,117 @@
+.root {
+	@mixin responsive gap, 12, 12, 12;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	@media (max-width: 767px) {
+		flex-shrink: 0;
+	}
+}
+
+.button {
+	@mixin transition background-color;
+	@mixin font-text14;
+	@mixin responsive padding, 12, 12, 12;
+	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive --border-width, 1.5, 1.5, 1.5;
+	@mixin responsive gap, 8, 8, 8;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	color: var(--gray-500-color);
+	font-weight: 500;
+	border: var(--border-width) solid var(--gray-300-color);
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--gray-200-color);
+		}
+
+		&:disabled:hover {
+			background-color: var(--gray-300-color);
+		}
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		background-color: var(--gray-300-color);
+	}
+}
+
+.arrow {
+	@mixin transition rotate;
+	@mixin responsive width, 14, 14, 14;
+	@mixin responsive height, 14, 14, 14;
+
+	&.opened {
+		rotate: 180deg;
+	}
+}
+
+.label {
+	@mixin font-text14;
+
+	color: var(--gray-500-color);
+	font-weight: 500;
+}
+
+.modeList {
+	@mixin transitionOptions;
+	@mixin responsive gap, 5, 5, 5;
+	@mixin responsive padding-inline, 7, 7, 7;
+	@mixin responsive padding-block, 10, 10, 10;
+	@mixin responsive border-radius, 12, 12, 12;
+
+	display: flex;
+	flex-direction: column;
+
+	z-index: 10;
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	right: 0;
+	top: 100%;
+
+	box-shadow: 0px 4px 50px #0000001a;
+	background-color: var(--gray-100-color);
+
+	translate: 0% -10%;
+
+	transition-property: opacity visibility translate;
+
+	&.visible {
+		translate: 0% 0%;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@media (max-width: 767px) {
+		right: 7%;
+	}
+}
+
+.listButton {
+	@mixin transition background-color;
+
+	@mixin font-text14;
+	@mixin responsive padding-block, 8, 8, 8;
+	@mixin responsive padding-inline, 16, 16, 16;
+	@mixin responsive border-radius, 8, 8, 8;
+
+	width: 100%;
+	font-weight: 500;
+
+	&.selected {
+		background-color: var(--gray-300-color);
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--gray-200-color);
+		}
+	}
+}

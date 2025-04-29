@@ -1,0 +1,90 @@
+.list {
+	@mixin responsive gap, 24, 24, 24;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper {
+	min-height: 0;
+}
+
+.slider {
+	height: auto;
+
+	.slide {
+		height: auto !important;
+	}
+
+	:global(.swiper-button-next),
+	:global(.swiper-button-prev) {
+		@mixin transition background-color;
+		@mixin responsive margin-block-start, 40, 40, 40;
+		@mixin responsive width, 48, 48, 48;
+		@mixin responsive height, 48, 48, 48;
+		@mixin responsive --border-width, 1, 1, 1;
+
+		border: var(--gray-300-color) var(--border-width) solid;
+		border-radius: 100%;
+		position: relative;
+		display: inline-block;
+		left: unset;
+		right: unset;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+
+		&:after {
+			@mixin responsive width, 20, 20, 20;
+			@mixin responsive height, 16, 16, 16;
+
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			background-image: url('/assets/icons/slider-arrow.svg');
+		}
+
+		&:not(:has(:global(.swiper-button-disabled))) {
+			@media (hover: hover) {
+				&:hover {
+					background-color: var(--gray-300-color);
+				}
+			}
+		}
+	}
+
+	:global(.swiper-button-prev) {
+		@mixin responsive margin-inline-end, 8, 8, 8;
+
+		rotate: 180deg;
+	}
+
+	:global(.swiper-button-disabled) {
+		opacity: 0.5;
+	}
+
+	.fundCart {
+		height: 100%;
+
+		@media (max-width: 767px) {
+			max-width: unset;
+		}
+	}
+
+	:global(.swiper-pagination) {
+		@media (min-width: 768px) {
+			display: none;
+		}
+
+		@mixin responsive margin-block-start, 10;
+
+		position: static;
+
+		:global(.swiper-pagination-bullet-active) {
+			background: var(--gray-800-color);
+		}
+	}
+}

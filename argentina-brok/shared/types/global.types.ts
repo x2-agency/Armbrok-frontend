@@ -521,3 +521,153 @@ export type Cords = {
 	latitude: string;
 	longitude: string;
 };
+
+/** PROFIX HEROSECTION */
+
+export type AnnualReturn = {
+	value?: number;
+	label?: string;
+};
+
+export type RiskLevel = {
+	label?: string;
+	level: number;
+};
+
+export type MinInvestment = {
+	title?: string;
+	description?: string;
+};
+
+export type InvestmentPeriod = {
+	title?: string;
+	description?: string;
+};
+
+export type CardButton = {
+	text: string;
+	link: string;
+};
+
+export type InfoCard = {
+	annualReturn?: AnnualReturn;
+	minInvestment?: MinInvestment;
+	riskLevel?: RiskLevel;
+	investmentPeriod?: InvestmentPeriod;
+	button?: CardButton;
+};
+
+export type ProfixHeroSection = {
+	title?: string;
+	description?: string;
+	backButtonText?: string;
+	background: MediaData;
+	infoCard?: InfoCard;
+};
+
+/** Portfolio Structure */
+
+export type AssetTypesItemProps = {
+	label: string;
+	value: number;
+};
+
+export type AssetTypesSectionProps = {
+	title?: string;
+	items: Array<AssetTypesItemProps>;
+};
+
+export type PortfolioStructureProps = {
+	title?: string;
+	assetTypesSection?: AssetTypesSectionProps;
+	industriesSection?: AssetTypesSectionProps;
+	issuersSection?: AssetTypesSectionProps;
+	maturitySection?: AssetTypesSectionProps;
+};
+
+/** Fund Facts */
+
+export type FundFactsProps = {
+	title?: string;
+	fundOverview?: Array<ItemDetail>;
+	portfolioMetrics?: Array<ItemDetail>;
+	financialIndicators?: Array<ItemDetail>;
+	fundDescription?: Array<ItemDetail>;
+};
+
+/** About Fund */
+
+export type AboutFundItemProps = {
+	title?: string;
+	items: Array<ItemDetail>;
+};
+
+export type AboutFundProps = {
+	title?: string;
+	leftInfoBlock?: AboutFundItemProps;
+	rightInfoBlock?: AboutFundItemProps;
+};
+
+/** Performance */
+
+export type GraphicItem = {
+	date: string;
+	unitPrice: number | null;
+	nav: number | null;
+	indexes: Array<{
+		name: string;
+		value: null | number;
+	}>;
+};
+
+export type IndexesData = Array<string>;
+
+export type ChartData = {
+	name?: string;
+	metrics: Array<GraphicItem>;
+};
+
+export type GraphicProps = {
+	chart: ChartData;
+	indexes: IndexesData;
+};
+
+export type ProfitTableItemProps = {
+	[key: string]: string;
+};
+
+export type HeatMapItemData = {
+	value: string;
+	opacity: number;
+};
+
+export type HeatMapItemProps = {
+	[year: string]: {
+		total: string;
+		[month: string]: HeatMapItemData | string;
+	};
+};
+
+export type PerformanceProps = {
+	graphics: GraphicProps;
+	profitTable: Array<ProfitTableItemProps>;
+	heatMap: Array<HeatMapItemProps>;
+};
+
+export type GraphicMode = 'share' | 'nav';
+
+export type ParentFundChartPoint = {
+	date: string;
+	unitPrice: number;
+};
+
+export type ParentFundProps = ItemDetail & {
+	background?: MediaData;
+	infoCard: InfoCard;
+	slug: string;
+	chart: Array<ParentFundChartPoint>;
+};
+
+export type ParentFundResponse = {
+	data: Array<ParentFundProps>;
+};

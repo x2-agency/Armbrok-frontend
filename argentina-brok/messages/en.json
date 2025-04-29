@@ -218,6 +218,10 @@
 		"description": "Thank you for subscribing to&nbsp;our newsletter! 🚀<br /> We&rsquo;ll keep you updated with the latest and most relevant job<br /> opportunities, sent straight to&nbsp;your inbox. Keep an&nbsp;eye out&nbsp;&mdash;<br /> your next big career move could be&nbsp;just one email away!"
 	},
 	"closeAwardButton": { "text": "Show less" },
+	"backButton": { "text": "Back" },
+	"fundPerformance": {
+		"title": "Fund Performance"
+	},
 	"aboutUsLinks": {
 		"text": "About Us",
 		"links": {
@@ -230,5 +234,13 @@
 				"link": "/careers-at-armbrok"
 			}
 		}
+	},
+	"homeParentFunds": {
+		"title": "Investment Funds",
+		"description": "For Self&#8209;Directed Investing.<br /> Start your investment journey today."
+	},
+	"viewAllFunds": { "text": "View all Funds" },
+	"parentFundsFundPage": {
+		"text": "Discover Our Funds"
 	}
 }

@@ -1,15 +1,12 @@
 import parser from 'html-react-parser';
 
+import type { AnnualReturn } from '@/shared/types/global.types';
+
 import css from './index.module.css';
 
-type BannerPercentProps = {
-	percent: number;
-	text: string;
-};
-
-export const BannerPercent = ({ percent, text }: BannerPercentProps) => (
+export const BannerPercent = ({ value, label }: AnnualReturn) => (
 	<p className={css.percentData}>
-		<span className={css.percent}>+{percent}%</span>
-		<span className={css.percentText}>{parser(text)}</span>
+		<span className={css.percent}>+{value}%</span>
+		<span className={css.percentText}>{parser(label ?? '')}</span>
 	</p>
 );

@@ -1,0 +1,57 @@
+.default {
+	@mixin responsive gap, 16, 16, 16;
+	@mixin responsive padding-block-end, 20, 40, 40;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.title {
+		@mixin font-h2;
+
+		font-weight: 600;
+	}
+
+	.description {
+		@mixin font-text20;
+
+		color: var(--gray-700-color);
+	}
+
+	.title,
+	.description {
+		text-align: center;
+	}
+}
+
+.slider {
+	@mixin responsive padding-block-end, 20, 40, 40;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+
+	.headBlock {
+		@mixin responsive gap, 16, 16, 16;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.title {
+		@mixin font-h2;
+
+		font-weight: 600;
+	}
+
+	.description {
+		@mixin font-text20;
+
+		color: var(--gray-600-color);
+	}
+
+	@media (max-width: 767px) {
+		@mixin responsive gap, 20;
+		flex-direction: column;
+	}
+}

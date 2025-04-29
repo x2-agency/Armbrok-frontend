@@ -46,3 +46,8 @@ export const BANNER_DATA = {
 	description:
 		'Access to&nbsp;global exchanges and financial instruments &mdash; with high yields and strong protection',
 };
+
+export const HOME_FUNDS_HEAD = {
+	title: 'Investment Funds',
+	description: 'For Self&#8209;Directed Investing.<br /> Start your investment journey today.',
+};

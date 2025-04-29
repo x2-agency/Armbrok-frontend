@@ -6,6 +6,7 @@ import type {
 	ExperienceSection,
 	Factoid,
 	HeroSection,
+	ParentFundProps,
 } from '@/shared/types/global.types';
 
 export type FundsPageData = {
@@ -18,6 +19,7 @@ export type FundsPageData = {
 	disclaimerSection?: HowWeAreWorkingProps;
 	documentsSection?: DocumentsSectionProps;
 	infoSection?: AccordionSectionProps;
+	parentFunds?: Array<ParentFundProps>;
 };
 
 export type HowWeAreWorkingProps = {
