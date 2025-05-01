@@ -252,6 +252,7 @@ export type HeroSectionAboutUs = ItemDetail & {
 	button?: LinkItem;
 	background?: PosterImageProps;
 	factoids?: Array<HeroFactoid & { itemIndex?: string }>;
+	backgroundVideo?: BackgroundVideoType;
 };
 
 /* VALUES SECTION */
@@ -670,4 +671,11 @@ export type ParentFundProps = ItemDetail & {
 
 export type ParentFundResponse = {
 	data: Array<ParentFundProps>;
+};
+
+export type BackgroundVideoType = {
+	poster?: MediaData;
+	mobilePoster?: MediaData;
+	video?: MediaData;
+	mobileVideo?: MediaData;
 };

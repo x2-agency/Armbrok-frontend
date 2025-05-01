@@ -3,7 +3,7 @@
 import cx from 'clsx';
 
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
-import { FormatImage } from '@/shared/ui/format-image';
+import { BackgroundVideo } from '@/shared/ui/background-video';
 import type { BannerProps } from '@/widgets/banner-section/banner.types';
 import { defineBodyContent } from '@/widgets/banner-section/helpers/define-body-content';
 import { defineHeadContent } from '@/widgets/banner-section/helpers/define-head-content';
@@ -17,7 +17,7 @@ export const BannerSection = (props: BannerProps) => {
 	const headContent = defineHeadContent(props);
 	const bodyContent = defineBodyContent(props);
 	const { ref } = headerScrollObserver.useObserve('white');
-	
+
 	return (
 		<section
 			className={cx(css.root, css[type])}
@@ -28,9 +28,13 @@ export const BannerSection = (props: BannerProps) => {
 				<BannerHead {...headContent} className={css.head} />
 				<BannerBody {...bodyContent} />
 			</div>
-			{props.banner.poster && (
-				<FormatImage poster={banner.poster} className={css.poster} />
-			)}
+			<BackgroundVideo
+				defaultPoster={banner?.poster}
+				poster={props.video?.poster}
+				mobilePoster={props.video?.mobilePoster}
+				video={props.video?.mobileVideo}
+				mobileVideo={props.video?.mobileVideo}
+			/>
 		</section>
 	);
 };
