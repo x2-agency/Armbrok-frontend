@@ -45,6 +45,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					poster: heroSection?.background,
 					awards: heroSection?.factoids,
 				}}
+				video={heroSection?.backgroundVideo}
 			/>
 			<HeroContainer className={css.hero}>
 				<ExpertSolutionSection
