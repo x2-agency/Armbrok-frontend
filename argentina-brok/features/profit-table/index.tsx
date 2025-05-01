@@ -9,6 +9,10 @@ type ProfitTableProps = {
 };
 
 export const ProfitTable = ({ table }: ProfitTableProps) => {
+	if (!(table && table.length)) {
+		return null;
+	}
+
 	const keys: Array<string> = table.map(item => Object.keys(item)[0]);
 	const values: Array<number> = table.map(item =>
 		parseFloat(Object.values(item)[0].replace(',', '.').replace('-', '0%'))
@@ -48,7 +52,10 @@ export const ProfitTable = ({ table }: ProfitTableProps) => {
 					</tr>
 				</thead>
 				<tbody className={css.tbody}>
-					<tr className={css.row} style={{ gridTemplateColumns: `repeat(${keys.length}, 1fr)` }}>
+					<tr
+						className={css.row}
+						style={{ gridTemplateColumns: `repeat(${keys.length}, 1fr)` }}
+					>
 						{values.map((value, key) => (
 							<td
 								key={key}
