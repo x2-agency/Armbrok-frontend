@@ -1,4 +1,5 @@
 import type {
+	BackgroundVideoType,
 	HeroFactoid,
 	InfoCard,
 	LinkItem,
@@ -15,6 +16,7 @@ interface BaseBannerProps {
 	className?: string;
 	type: string;
 	alignContent?: 'start' | 'center' | 'end' | '';
+	video?: BackgroundVideoType;
 	banner: {
 		title: string;
 		description: string;
