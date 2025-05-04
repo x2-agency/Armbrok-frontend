@@ -13,7 +13,6 @@ import { HowWeAreWorkingSection } from '@/widgets/how-we-are-working-section';
 import { ParentFunds } from '@/widgets/parent-funds';
 
 import css from './index.module.css';
-import { PARENT_FUNDS_HEAD } from './model/funds.constants';
 import type { FundsPageResponse } from './types/response';
 
 export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({

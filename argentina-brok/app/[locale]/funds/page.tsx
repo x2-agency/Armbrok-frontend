@@ -30,6 +30,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const revalidate = 10;
 
+// SSG GENERATION
+// export const generateStaticParams = async () => {
+// 	const initialFunds = await getParentFunds();
+
+// 	return initialFunds.data.maps(fund => ({ slug: fund.slug }));
+// };
+
 const FundsPage = async () => {
 	const [initialFundsPageData, parentFunds] = await Promise.all([
 		getFundsPage(),
