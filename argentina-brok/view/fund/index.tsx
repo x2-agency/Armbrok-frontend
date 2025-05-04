@@ -27,7 +27,6 @@ export const Fund: NextPage<FundPageData> = ({
 	aboutFundSection,
 	performanceData,
 }) => {
-	console.log(performanceData);
 	return (
 		<>
 			<BannerSection
