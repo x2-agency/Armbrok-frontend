@@ -92,18 +92,19 @@ export const GraphicFilter = ({
 						{parser(NOT_SELECTED_VALUE)}
 					</button>
 				</li>
-				{allFilters.map((mode, index) => (
-					<li className={css.paragraph} key={index}>
-						<button
-							className={cx(css.listButton, {
-								[css.selected]: comparisonMode === mode,
-							})}
-							onClick={() => handleModeClick(mode)}
-						>
-							{parser(mode)}
-						</button>
-					</li>
-				))}
+				{allFilters?.length &&
+					allFilters.map((mode, index) => (
+						<li className={css.paragraph} key={index}>
+							<button
+								className={cx(css.listButton, {
+									[css.selected]: comparisonMode === mode,
+								})}
+								onClick={() => handleModeClick(mode)}
+							>
+								{parser(mode)}
+							</button>
+						</li>
+					))}
 			</ul>
 		</div>
 	);
