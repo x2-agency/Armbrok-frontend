@@ -89,11 +89,15 @@ export const graphicOptions = (
 		chart: {
 			reflow: true,
 			animation: false,
+			zooming: {
+				mouseWheel: {
+					enabled: false,
+				},
+			},
 		},
 		responsive: {
 			rules: graphicStyle(),
 		},
-		
 	};
 
 	return options;

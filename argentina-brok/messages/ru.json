@@ -240,5 +240,14 @@
 	"viewAllFunds": { "text": "Просмотреть все фонды" },
 	"parentFundsFundPage": {
 		"text": "Откройте наши фонды"
+	},
+	"graphicDateControllers": {
+		"allTime": "Всё время",
+		"threeYears": "3 года",
+		"year": "Год",
+		"yearToDate": "C начала года",
+		"sixMonth": "6 месяцев",
+		"threeMonth": "3 месяца",
+		"month": "Месяц"
 	}
 }

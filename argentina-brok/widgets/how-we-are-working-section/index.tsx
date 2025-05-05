@@ -18,7 +18,6 @@ export const HowWeAreWorkingSection = ({
 	return (
 		<Container className={css.root}>
 			<h2 className={css.title}>{parser(data?.title ?? '')}</h2>
-
 			<div
 				className={cx(
 					css.content,

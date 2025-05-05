@@ -66,6 +66,10 @@ export const GraphicFilter = ({
 		};
 	}, [isModesOpen]);
 
+	if (disabled) {
+		return null;
+	}
+
 	return (
 		<div className={cx(css.root, className)} ref={filterRef}>
 			<label className={css.label}>{parser(FILTER_DATA.text)}</label>

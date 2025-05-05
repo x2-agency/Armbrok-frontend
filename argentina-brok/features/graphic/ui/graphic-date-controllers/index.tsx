@@ -20,7 +20,7 @@ export const GraphicDateControllers = ({
 	className,
 	buttons,
 }: GraphicDateControllersProps) => {
-	const [activeButtonIndex, setActiveButtonIndex] = useState<number>(0);
+	const [activeButtonIndex, setActiveButtonIndex] = useState<number>(buttons.length - 1);
 
 	const toggleButton = (setRange: () => void, index: number) => {
 		setActiveButtonIndex(index);
