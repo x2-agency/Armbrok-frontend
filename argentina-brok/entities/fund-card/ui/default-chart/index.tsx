@@ -34,15 +34,15 @@ export const DefaultChart = ({
 
 		const data = chart.map(point => point.unitPrice);
 		const hasGrown = annualReturnValue ? annualReturnValue > 0 : false;
-		const color = hasGrown ? '#34CA2F' : '#DF2C2999';
+		const color = hasGrown ? '#34CA2F' : '#DF2C29';
 
 		return {
 			chart: {
 				backgroundColor: 'transparent',
 				animation: false,
 				reflow: true,
-				marginRight: 55, // Увеличено для места под label
-				overflow: 'visible', // Разрешаем выход за границы
+				marginRight: 55,
+				overflow: 'visible',
 			},
 			title: { text: undefined },
 			xAxis: {
