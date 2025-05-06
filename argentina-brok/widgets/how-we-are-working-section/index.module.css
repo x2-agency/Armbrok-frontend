@@ -10,6 +10,7 @@
 	@mixin font-h2;
 	font-weight: 600;
 	@mixin responsive padding-block-end, 24, 48, 48;
+	text-align: center;
 }
 
 .content {

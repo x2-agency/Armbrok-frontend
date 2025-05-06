@@ -242,5 +242,14 @@
 	"viewAllFunds": { "text": "View all Funds" },
 	"parentFundsFundPage": {
 		"text": "Discover Our Funds"
+	},
+	"graphicDateControllers": {
+		"allTime": "All time",
+		"threeYears": "3 years",
+		"year": "Year",
+		"yearToDate": "Year to date",
+		"sixMonth": "6 months",
+		"threeMonth": "3 months",
+		"month": "Month"
 	}
 }

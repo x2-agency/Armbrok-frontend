@@ -50,13 +50,15 @@ export const FundPerformance = ({
 				<Graphic graphicData={graphics} mode={activeGraphicMode} />
 			</ChartProvider>
 			<ProfitTable table={profitTable} />
-			<HideButton
-				onClick={toggleHeatMapCallback}
-				opened={heatMapOpened}
-				className={css.hideButton}
-			>
-				{parser(FULL_PERFORMANCE_BUTTON)}
-			</HideButton>
+			{heatMap && (
+				<HideButton
+					onClick={toggleHeatMapCallback}
+					opened={heatMapOpened}
+					className={css.hideButton}
+				>
+					{parser(FULL_PERFORMANCE_BUTTON)}
+				</HideButton>
+			)}
 			<HeatMap heatMap={heatMap} opened={heatMapOpened} />
 		</Container>
 	);

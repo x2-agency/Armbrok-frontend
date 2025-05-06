@@ -21,8 +21,12 @@ export const HeatMap = ({
 	className,
 	opened = true,
 }: HeatMapProps) => {
-	const { headers, rows } = transformHeatMapData(heatMap);
 	const { tableRef, height } = useToggleHeatMap({ opened });
+
+	if (!(heatMap && heatMap.length)) {
+		return null;
+	}
+	const { headers, rows } = transformHeatMapData(heatMap);
 
 	return (
 		<div

@@ -31,11 +31,14 @@
 .tbodyValue {
 	@mixin responsive --border, 1, 1, 1;
 	@mixin responsive height, 56, 56, 56;
+	@mixin responsive min-width, 120, 120, 120;
+
 
 	border-left: var(--border) solid var(--gray-300-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-shrink: 0;
 }
 
 .theadValue:first-of-type,

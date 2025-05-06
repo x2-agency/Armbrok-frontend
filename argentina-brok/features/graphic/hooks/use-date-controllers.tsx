@@ -4,7 +4,7 @@ import { useRef } from 'react';
 export const useDateControllers = () => {
 	const chartRef = useRef<HighchartsReactRefObject | null>(null);
 
-	const setRange = (type: string, count?: number) => {
+	const setRange = (type: string, count?: number, customMin?: number) => {
 		const chart = chartRef.current?.chart;
 
 		if (!chart) return;
@@ -24,6 +24,9 @@ export const useDateControllers = () => {
 			case 'year':
 				now.setFullYear(now.getFullYear() - (count || 1));
 				min = now.getTime();
+				break;
+			case 'custom':
+				min = customMin || extremes.dataMin;
 				break;
 			case 'all':
 			default:

@@ -5,9 +5,14 @@ export const LOGO_HEADER = {
 
 export const HOME_LINK = '/';
 
-export const EXCLUDED_URLS = [
-	'contact-us',
-	'media',
-	'armbrok-search',
-	'regulation',
+export const INCLUDED_URLS = [
+	undefined,
+	'brokerage',
+	'about-us',
+	'asset-management',
+	'careers-at-armbrok',
+	'funds',
+	'investment-banking',
+	'depositary-services',
+	'investor-relations'
 ];

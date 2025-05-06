@@ -26,10 +26,38 @@ export const getNormalizedGraphicSeries = (
 	});
 
 	const basePoint = filtered[0] ?? cleanedSeries[0];
-
 	const baseNavValue = basePoint?.y !== 0 ? (basePoint?.y ?? 1) : 1;
 	const baseComparisonValue =
 		basePoint?.indexes.find(index => index.name === comparisonMode)?.value ?? 1;
+
+	const processSeriesWithNulls = (
+		series: Array<SeriesSingleData>,
+		getValue: (point: SeriesSingleData) => number | null
+	) => {
+		let lastValidValue: number | null = null;
+		return series
+			.map(point => {
+				const currentValue = getValue(point);
+
+				if (currentValue === null) {
+					return {
+						x: point.x,
+						y:
+							lastValidValue !== null
+								? (lastValidValue / baseComparisonValue - 1) * 100
+								: null,
+					};
+				}
+
+				lastValidValue = currentValue;
+
+				return {
+					x: point.x,
+					y: (currentValue / baseComparisonValue - 1) * 100,
+				};
+			})
+			.filter(point => point.y !== null);
+	};
 
 	const navSeriesPercent = cleanedSeries.map(point => {
 		const currentValue = point.y ?? baseNavValue;
@@ -41,17 +69,11 @@ export const getNormalizedGraphicSeries = (
 		};
 	});
 
-	const comparisonSeries = cleanedSeries.map(point => {
-		const currentValue =
-			point.indexes.find(index => index.name === comparisonMode)?.value ??
-			baseComparisonValue;
-		const percentChange = (currentValue / baseComparisonValue - 1) * 100;
-
-		return {
-			x: point.x,
-			y: percentChange,
-		};
-	});
+	const comparisonSeries = processSeriesWithNulls(
+		cleanedSeries,
+		point =>
+			point.indexes.find(index => index.name === comparisonMode)?.value ?? null
+	);
 
 	return [
 		{
@@ -63,6 +85,7 @@ export const getNormalizedGraphicSeries = (
 			data: comparisonSeries,
 			type: 'line',
 			color: '#2c7cdf',
+			connectNulls: true,
 		},
 	];
 };

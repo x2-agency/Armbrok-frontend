@@ -240,5 +240,14 @@
 	"viewAllFunds": { "text": "Դիտել բոլոր հիմնադրամները" },
 	"parentFundsFundPage": {
 		"text": "Բհայտնաբերեք մեր ֆոնդերը"
+	},
+	"graphicDateControllers": {
+		"allTime": "Udpnngn",
+		"threeYears": "3 uuuqph",
+		"year": "Sunph",
+		"yearToDate": "Sunqiu uiqqpq",
+		"sixMonth": "6 uuPiu",
+		"threeMonth": "3 uuPiu",
+		"month": "UdPiu"
 	}
 }
