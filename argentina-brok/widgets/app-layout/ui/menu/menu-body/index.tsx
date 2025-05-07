@@ -14,7 +14,8 @@ import css from './index.module.css';
 export const MenuBody = ({ links }: MenuBodyProps) => {
 	const { header } = LOCALE_KEYS;
 	const t = useTranslations(header.root);
-	const { toggleAccountModalOpen } = useLayoutContext();
+	const { toggleAccountModalOpen, headerFundsDropdownItems } =
+		useLayoutContext();
 
 	return (
 		<Container className={css.root}>
@@ -25,6 +26,11 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 				<li className={css.li}>
 					<BurgerLinks rootKey="aboutUsLinks" />
 				</li>
+				{headerFundsDropdownItems && headerFundsDropdownItems.length > 0 && (
+					<li className={css.li}>
+						<BurgerLinks rootKey="fundsLinks" withLayoutContext />
+					</li>
+				)}
 				{links.map((link, index) => (
 					<li key={index} className={css.li}>
 						<Button variant="subtle" href={link.href} className={css.button}>
