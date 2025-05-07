@@ -26,7 +26,7 @@ export const ExpertSolutionSection = ({
 	gridClass,
 	centered,
 }: ExpertSolutionSectionProps) => {
-	if (!items) {
+	if (!(items && items.length)) {
 		return null;
 	}
 

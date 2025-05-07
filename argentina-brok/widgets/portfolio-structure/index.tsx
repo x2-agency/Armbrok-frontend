@@ -17,6 +17,17 @@ export const PortfolioStructure = ({
 	maturitySection,
 	className,
 }: PortfolioStructureProps & { className?: string }) => {
+	if (
+		!(
+			assetTypesSection ||
+			industriesSection ||
+			issuersSection ||
+			maturitySection
+		)
+	) {
+		return null;
+	}
+
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}

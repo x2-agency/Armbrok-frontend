@@ -14,6 +14,10 @@ export const TitleSection = ({
 	description,
 	className,
 }: TitleSectionProps) => {
+	if (!(title && description)) {
+		return null;
+	}
+
 	return (
 		<div className={cx(css.root, className)}>
 			<h2 className={css.title} id="internal-rules">
