@@ -1,3 +1,5 @@
+'use client';
+
 import parser from 'html-react-parser';
 import type { NextPage } from 'next';
 
