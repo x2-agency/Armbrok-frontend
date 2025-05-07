@@ -4,7 +4,7 @@
 	@mixin responsive padding, 16, 24, 24;
 	@mixin responsive border-radius, 24, 24, 24;
 	@mixin responsive --border-width, 1, 1, 1;
-	@mixin responsive min-height, 490, 520, 520;
+	@mixin responsive min-height, 300, 520, 520;
 
 	position: relative;
 	overflow: hidden;
