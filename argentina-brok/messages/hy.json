@@ -253,5 +253,8 @@
 	"graphicIndex": {
 		"label": "համեմատել հետ",
 		"notSelected": "Չի ընտրվել"
+	},
+	"fundsLinks": {
+		"text": "Ֆոնդեր"
 	}
 }

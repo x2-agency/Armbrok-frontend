@@ -2,6 +2,7 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 import { usePathname } from 'next/navigation';
 
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { useHeaderLinks } from '@/widgets/app-layout/hooks/use-header-links';
 import { BurgerLinks } from '@/widgets/app-layout/ui/burger-links';
@@ -13,6 +14,7 @@ export const Navigation = () => {
 	const isHyLocale = pathname.startsWith('/hy');
 	const links = useHeaderLinks();
 	const normalizedPathname = pathname.replace(/^\/(hy|en|ru)/, '') || '/';
+	const { headerFundsDropdownItems } = useLayoutContext();
 
 	return (
 		<nav className={cx(css.root)}>
@@ -23,6 +25,11 @@ export const Navigation = () => {
 				<li className={cx(css.li)}>
 					<BurgerLinks rootKey="aboutUsLinks" />
 				</li>
+				{headerFundsDropdownItems && headerFundsDropdownItems.length > 0 && (
+					<li className={cx(css.li)}>
+						<BurgerLinks rootKey="fundsLinks" withLayoutContext />
+					</li>
+				)}
 				{links.map(item => {
 					const normalizedHref = item.href.replace(/^\/(hy|en|ru)/, '') || '/';
 					const isActive =

@@ -1,7 +1,7 @@
 import parser from 'html-react-parser';
 import type { NextPage } from 'next';
 
-// import { TitleSection } from '@/shared/ui/title-section';
+import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { FileSection } from '@/widgets/file-section';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
@@ -12,7 +12,10 @@ export const Regulation: NextPage<RegulationPageData> = ({
 	pageTitle,
 	documentsSection,
 	rulesDocumentsSection,
+	parentFunds,
 }) => {
+	useAppendToHeaderFunds({ funds: parentFunds });
+
 	return (
 		<div className={css.root}>
 			{pageTitle && <h1 className={css.title}>{parser(pageTitle)}</h1>}
@@ -21,11 +24,6 @@ export const Regulation: NextPage<RegulationPageData> = ({
 				columns={2}
 				lineClamp={1}
 			/>
-			{/* <TitleSection
-				className={css.titleSection}
-				title={documentsSection?.title ?? ''}
-				description={documentsSection?.description}
-			/> */}
 			<FileSection documents={documentsSection?.documents ?? []} />
 		</div>
 	);

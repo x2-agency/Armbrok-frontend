@@ -4,6 +4,7 @@ import type {
 	ExperienceSection,
 	HeroSectionAboutUs,
 	ItemDetail,
+	ParentFundProps,
 	QuoteSection,
 	SecurityPaperItem,
 } from '@/shared/types/global.types';
@@ -17,6 +18,7 @@ export type InvestmentBankingPageData = {
 	latestSecuritiesPlacementsSection?: ItemDetail;
 	documentsSection?: DocumentsSectionProps;
 	securityPapers?: Array<SecurityPaperItem>;
+	parentFunds?: Array<ParentFundProps>;
 };
 
 export type InvestmentBankingPageResponse =

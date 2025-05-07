@@ -57,7 +57,6 @@ export const LOCALE_KEYS = {
 		items: [
 			'brokerage',
 			'assetManagement',
-			'investmentFunds',
 			'investmentBanking',
 			'depositoryRegistrar',
 		],
@@ -65,5 +64,9 @@ export const LOCALE_KEYS = {
 	aboutUsLinks: {
 		root: 'aboutUsLinks',
 		items: ['generalInformation', 'career'],
+	},
+	fundsLinks: {
+		root: 'fundsLinks',
+		items: [],
 	},
 };

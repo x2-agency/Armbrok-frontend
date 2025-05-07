@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getArmbrokSearchPage } from '@/shared/api/get-armbrok-search';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { ArmbrokSearch } from '@/view/armbrok-search';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,9 +31,17 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const ArmbrokSearchPage = async () => {
-	const initialArmbrokSearchPageData = await getArmbrokSearchPage();
+	const [initialArmbrokSearchPageData, initialFunds] = await Promise.all([
+		getArmbrokSearchPage(),
+		getParentFunds(),
+	]);
 
-	return <ArmbrokSearch {...initialArmbrokSearchPageData.data} />;
+	return (
+		<ArmbrokSearch
+			{...initialArmbrokSearchPageData.data}
+			parentFunds={initialFunds.data}
+		/>
+	);
 };
 
 export default ArmbrokSearchPage;

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { getFundPage } from '@/shared/api/get-fund-page';
 import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { Fund } from '@/view/fund';
 
 export async function generateMetadata({
@@ -40,11 +41,13 @@ const FundPage = async ({ params }: { params: { slug: string } }) => {
 		initialGraphicData,
 		initialHeatMapData,
 		initialProfitTableData,
+		initialFunds,
 	] = await Promise.all([
 		getFundPage({ slug }),
 		getFundPerformanceEntity(slug, 'chart'),
 		getFundPerformanceEntity(slug, 'heatmap'),
 		getFundPerformanceEntity(slug, 'profit-table'),
+		getParentFunds(),
 	]);
 
 	return (
@@ -55,6 +58,7 @@ const FundPage = async ({ params }: { params: { slug: string } }) => {
 				graphics: initialGraphicData,
 				profitTable: initialProfitTableData,
 			}}
+			parentFunds={initialFunds.data}
 		/>
 	);
 };

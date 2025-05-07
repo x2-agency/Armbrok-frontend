@@ -253,5 +253,8 @@
 	"graphicIndex": {
 		"label": "Сравнивать с",
 		"notSelected": "Не выбрано"
+	},
+	"fundsLinks": {
+		"text": "Фонды"
 	}
 }

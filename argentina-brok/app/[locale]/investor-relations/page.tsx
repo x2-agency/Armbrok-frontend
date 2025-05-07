@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getInvestorRelations } from '@/shared/api/get-investor-relations';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { InvestorRelations } from '@/view/investor-relations';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,9 +31,17 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const InvestorRelationsPage = async () => {
-	const initialInvestorRelationsPageData = await getInvestorRelations();
+	const [initialInvestorRelationsPageData, initialFunds] = await Promise.all([
+		getInvestorRelations(),
+		getParentFunds(),
+	]);
 
-	return <InvestorRelations {...initialInvestorRelationsPageData?.data} />;
+	return (
+		<InvestorRelations
+			{...initialInvestorRelationsPageData?.data}
+			parentFunds={initialFunds.data}
+		/>
+	);
 };
 
 export default InvestorRelationsPage;

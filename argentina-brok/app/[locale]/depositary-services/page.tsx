@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getDepositaryServicesPage } from '@/shared/api/get-depositary-services';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { DepositaryServices } from '@/view/depositary-services';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,9 +31,17 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const DepositaryServicesPage = async () => {
-	const initialDepositaryServicesPageData = await getDepositaryServicesPage();
+	const [initialDepositaryServicesPageData, initialFunds] = await Promise.all([
+		getDepositaryServicesPage(),
+		getParentFunds(),
+	]);
 
-	return <DepositaryServices {...initialDepositaryServicesPageData.data} />;
+	return (
+		<DepositaryServices
+			{...initialDepositaryServicesPageData.data}
+			parentFunds={initialFunds.data}
+		/>
+	);
 };
 
 export default DepositaryServicesPage;

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { getRegulation } from '@/shared/api/get-regulation';
 import { Regulation } from '@/view/regulation';
-import type { RegulationPageResponse } from '@/view/regulation/types/response';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const initialRegulationPageData = await getRegulation();
@@ -31,9 +31,14 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const RegulationPage = async () => {
-	const initialRegulation: RegulationPageResponse = await getRegulation();
+	const [initialRegulation, initialFunds] = await Promise.all([
+		getRegulation(),
+		getParentFunds(),
+	]);
 
-	return <Regulation {...initialRegulation.data} />;
+	return (
+		<Regulation {...initialRegulation.data} parentFunds={initialFunds.data} />
+	);
 };
 
 export default RegulationPage;

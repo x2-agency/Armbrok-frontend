@@ -94,7 +94,7 @@ export const GraphicFilter = ({
 						{parser(t('notSelected'))}
 					</button>
 				</li>
-				{allFilters?.length &&
+				{allFilters?.length > 0 &&
 					allFilters.map((mode, index) => (
 						<li className={css.paragraph} key={index}>
 							<button

@@ -2,6 +2,7 @@
 
 import type { NextPage } from 'next';
 
+import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { TitleSection } from '@/shared/ui/title-section';
@@ -28,8 +29,10 @@ export const InvestorRelations: NextPage<
 	remunerationSection,
 	shareholdersSection,
 	documentTabsSection,
+	parentFunds,
 }) => {
 	useUpdateFooterData(publishedAt);
+	useAppendToHeaderFunds({ funds: parentFunds });
 
 	return (
 		<>

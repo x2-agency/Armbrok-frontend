@@ -8,9 +8,15 @@ import type {
 } from 'react';
 import { createContext, useContext, useRef, useState } from 'react';
 
+import type { FundsStateData } from '@/shared/types/funds-state-data';
+
 type LayoutContextType = {
 	isAccountModalOpen: boolean;
 	subjectForm: string;
+	headerFundsDropdownItems: Array<FundsStateData> | null;
+	setHeaderFundsDropDownItems: Dispatch<
+		SetStateAction<Array<FundsStateData> | null>
+	>;
 	setSubjectForm: Dispatch<SetStateAction<string>>;
 	toggleAccountModalOpen: Dispatch<SetStateAction<boolean>>;
 	toggleMenuOpen: Dispatch<SetStateAction<boolean>>;
@@ -32,6 +38,8 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const menuRef = useRef<HTMLDialogElement | null>(null);
 	const [subjectForm, setSubjectForm] = useState<string>('');
 	const [headerPadding, setHeaderPadding] = useState<number>(0);
+	const [headerFundsDropdownItems, setHeaderFundsDropDownItems] =
+		useState<Array<FundsStateData> | null>(null);
 
 	const [footerData, setFooterData] = useState<{ publishedAt: string | null }>({
 		publishedAt: null,
@@ -46,6 +54,8 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 				menuRef,
 				footerData,
 				headerPadding,
+				headerFundsDropdownItems,
+				setHeaderFundsDropDownItems,
 				setHeaderPadding,
 				toggleAccountModalOpen,
 				setSubjectForm,

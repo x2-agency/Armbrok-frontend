@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import { useRef } from 'react';
 
 import { ContactFormSection } from '@/features/contact-form';
+import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 import { TitleSection } from '@/shared/ui/title-section';
@@ -19,8 +20,10 @@ export const ArmbrokContact: NextPage<ArmbrokContactPageData> = ({
 	contactCards,
 	contactForm,
 	mapCoords,
+	parentFunds,
 }) => {
 	useUpdateFooterData(publishedAt);
+	useAppendToHeaderFunds({ funds: parentFunds });
 
 	const ref = useRef<HTMLDivElement>(null);
 	headerScrollObserver.useObserve('dark');

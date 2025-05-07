@@ -255,5 +255,8 @@
 	"graphicIndex": {
 		"label": "Compare with",
 		"notSelected": "Not selected"
+	},
+	"fundsLinks": {
+		"text": "Funds"
 	}
 }

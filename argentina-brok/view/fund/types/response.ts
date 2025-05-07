@@ -9,6 +9,7 @@ import type {
 	FundFactsProps,
 	AboutFundProps,
 	PerformanceProps,
+	ParentFundProps,
 } from '@/shared/types/global.types';
 import type { HowWeAreWorkingProps } from '@/view/funds/types/response';
 
@@ -23,6 +24,7 @@ export type FundPageData = {
 	fundFactsSection?: FundFactsProps;
 	aboutFundSection?: AboutFundProps;
 	performanceData?: PerformanceProps;
+	parentFunds?: Array<ParentFundProps>;
 };
 
 export type FundPageResponse = BaseResponse<FundPageData>;
