@@ -16,7 +16,7 @@
 }
 
 .hideButton {
-	@mixin responsive margin-block-end, 32, 32, 32;
+	@mixin responsive margin-block-end, 24, 32, 32;
 	margin-inline: auto;
 }
 

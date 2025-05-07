@@ -29,6 +29,7 @@
 		margin-inline: unset;
 		border-radius: 0;
 		border: unset;
+		min-height: 0;
 	}
 
 	& > div:last-child {
@@ -39,7 +40,7 @@
 }
 
 .controls {
-	@mixin responsive padding-block-end, 24, 24, 24;
+	@mixin responsive padding-block-end, 10, 24, 24;
 
 	display: flex;
 	justify-content: space-between;

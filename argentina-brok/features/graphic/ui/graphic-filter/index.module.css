@@ -87,10 +87,17 @@
 		translate: 0% 0%;
 		opacity: 1;
 		visibility: visible;
+
+		@media (max-width: 767px) {
+			translate: -25% 0%;
+		}
 	}
 
 	@media (max-width: 767px) {
-		right: 7%;
+		@mixin responsive min-width, 200;
+
+		translate: -25% -10%; 
+		left: 50%;
 	}
 }
 
