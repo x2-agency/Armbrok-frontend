@@ -152,7 +152,7 @@ export const DefaultChart = ({
 			],
 			credits: { enabled: false },
 		};
-	}, [chart, annualReturnValue, isMobile, isTablet]);
+	}, [chart, annualReturnValue]);
 
 	return (
 		<div className={css.root} style={{ overflow: 'visible' }}>
