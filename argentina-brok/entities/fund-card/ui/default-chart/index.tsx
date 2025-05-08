@@ -5,7 +5,6 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useMemo } from 'react';
 
-import useMediaQuery from '@/shared/hooks/use-media-query';
 import type { ParentFundChartPoint } from '@/shared/types/global.types';
 
 import css from './index.module.css';
@@ -19,9 +18,6 @@ export const DefaultChart = ({
 	chart,
 	annualReturnValue,
 }: DefaultChartProps) => {
-	const isMobile = useMediaQuery('(max-width: 767px)');
-	const isTablet = useMediaQuery('(max-width: 1200px)');
-
 	if (!chart || !chart.length) {
 		return null;
 	}
