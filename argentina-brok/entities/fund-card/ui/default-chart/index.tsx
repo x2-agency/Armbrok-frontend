@@ -27,12 +27,11 @@ export const DefaultChart = ({
 	}
 
 	const options = useMemo(() => {
-		const categories = chart.map(point => {
+		const data = chart.map(point => {
 			const [day, month, year] = point.date.split('/');
-			return `${year}-${month}-${day}`;
+			return [Date.UTC(+year, +month - 1, +day), point.unitPrice];
 		});
 
-		const data = chart.map(point => point.unitPrice);
 		const hasGrown = annualReturnValue ? annualReturnValue > 0 : false;
 		const color = hasGrown ? '#34CA2F' : '#DF2C29';
 
@@ -46,24 +45,39 @@ export const DefaultChart = ({
 			},
 			title: { text: undefined },
 			xAxis: {
-				categories,
+				type: 'datetime',
 				labels: {
 					style: { color: '#666', fontSize: '14px' },
-					align: 'center',
-					step: isTablet || isMobile ? 25 : 10,
-					formatter: function () {
-						const date = new Date(this.value);
-						return date
-							.toLocaleString('en-US', {
-								month: 'short',
-								year: '2-digit',
-							})
-							.replace(',', '');
-					},
+					format: '{value:%b %y}', // Jan 24
 				},
 				tickLength: 0,
 				lineColor: 'transparent',
+				tickPositioner: function () {
+					const positions: Array<number> = [];
+					const seen = new Set<string>();
+
+					const data = chart
+						.map(point => {
+							const [day, month, year] = point.date.split('/');
+							return Date.UTC(+year, +month - 1, +day);
+						})
+						.sort((a, b) => a - b);
+
+					for (const timestamp of data) {
+						const date = new Date(timestamp);
+						const key = `${date.getUTCFullYear()}-${date.getUTCMonth()}`;
+						if (!seen.has(key)) {
+							seen.add(key);
+							positions.push(
+								Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), 1)
+							);
+						}
+					}
+
+					return positions;
+				},
 			},
+
 			yAxis: {
 				visible: false,
 			},
