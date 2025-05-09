@@ -37,7 +37,7 @@
 }
 
 .leftBlock {
-	@mixin responsive gap, 80, 80, 80;
+	@mixin responsive gap, 50, 80, 80;
 }
 
 .rightBlock {
@@ -45,9 +45,7 @@
 }
 
 .leftBlockHy {
-	@media (min-width: 818px) and (max-width: 1300px) {
-		gap: 1.7rem;
-	}
+	@mixin responsive gap, 50, 15, 15;
 }
 
 .rightBlockHy {

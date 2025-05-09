@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 import { getContactPage } from '@/shared/api/get-contact-page';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { ArmbrokContact } from '@/view/armbrok-contact';
-import type { ArmbrokContactPageResponse } from '@/view/armbrok-contact/types/response';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const initialContactPageData = await getContactPage();
@@ -31,8 +31,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const ArmbrokContactPage = async () => {
-	const inititalContactPageData: ArmbrokContactPageResponse =
-		await getContactPage();
+	const [inititalContactPageData, initialFunds] = await Promise.all([
+		getContactPage(),
+		getParentFunds(),
+	]);
 
 	return (
 		<ArmbrokContact
@@ -42,6 +44,7 @@ const ArmbrokContactPage = async () => {
 			contactCards={inititalContactPageData.data.contactCards}
 			contactForm={inititalContactPageData.data.contactForm}
 			mapCoords={inititalContactPageData.data.mapCoords}
+			parentFunds={initialFunds.data}
 		/>
 	);
 };

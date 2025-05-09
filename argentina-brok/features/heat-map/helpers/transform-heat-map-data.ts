@@ -30,7 +30,7 @@ export const transformHeatMapData = (
 				'opacity' in entry
 			) {
 				return {
-					value: entry.value === null ? '-' : entry.value,
+					value: entry.value === null ? '' : entry.value,
 					opacity: entry.opacity,
 				};
 			}

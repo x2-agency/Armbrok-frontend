@@ -3,6 +3,7 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
 
+import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { TitleSection } from '@/shared/ui/title-section';
 
@@ -20,11 +21,14 @@ export const ArmbrokSearch: NextPage<ArmbrokSearchPageResponse> = ({
 	description,
 	inputPlaceholder,
 	searchButtonText,
+	parentFunds,
 }) => {
 	const [newsData, setNewsData] = useState<Array<SearchDataItem> | undefined>(
 		undefined
 	);
 	useUpdateFooterData(publishedAt);
+	useAppendToHeaderFunds({ funds: parentFunds });
+
 	return (
 		<div className={css.root}>
 			<TitleSection

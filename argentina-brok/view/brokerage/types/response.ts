@@ -6,6 +6,7 @@ import type {
 	ExchangesSection,
 	Factoid,
 	HeroSection,
+	ParentFundProps,
 	QuoteSection,
 	RunningTextSectionProps,
 } from '@/shared/types/global.types';
@@ -28,6 +29,7 @@ export type BrokeragePageData = {
 	investingStepsSection?: InvestingStepsSectionProps;
 	documentsSection?: DocumentsSectionProps;
 	infoSection: AccordionSectionProps;
+	parentFunds?: Array<ParentFundProps>;
 };
 
 export type MobileAppSectionProps = {

@@ -13,6 +13,17 @@ export const FundFacts = ({
 	fundOverview,
 	portfolioMetrics,
 }: FundFactsProps) => {
+	if (
+		!(
+			financialIndicators &&
+			fundDescription &&
+			fundOverview &&
+			portfolioMetrics
+		)
+	) {
+		return null;
+	}
+
 	return (
 		<Container className={css.root}>
 			{title && <h3 className={css.title}>{parser(title)}</h3>}

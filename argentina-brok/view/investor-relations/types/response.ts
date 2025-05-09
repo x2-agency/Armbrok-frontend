@@ -6,6 +6,7 @@ import type {
 	ResidenceCountriesSectionProps,
 	ShareholdersSection,
 	DocumentTabs,
+	ParentFundProps,
 } from '@/shared/types/global.types';
 
 export type InvestorRelationsPageData = {
@@ -19,6 +20,7 @@ export type InvestorRelationsPageData = {
 	shareholdersSection?: ShareholdersSection;
 	disclaimer?: string;
 	documentTabsSection?: DocumentTabs;
+	parentFunds?: Array<ParentFundProps>;
 };
 
 export type InvestorRelationsPageResponse =

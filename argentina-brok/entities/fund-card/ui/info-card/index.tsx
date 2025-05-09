@@ -54,7 +54,7 @@ export const InfoCard = ({
 						>
 							{annualReturn.value > 0
 								? `+${annualReturn.value}%`
-								: `-${annualReturn.value}`}
+								: `${annualReturn.value}%`}
 						</p>
 					)}
 					{annualReturn.label && (

@@ -26,37 +26,30 @@ export const getNormalizedGraphicSeries = (
 	});
 
 	const basePoint = filtered[0] ?? cleanedSeries[0];
+	const baseComparisonRaw = basePoint?.indexes.find(
+		index => index.name === comparisonMode
+	)?.value;
 	const baseNavValue = basePoint?.y !== 0 ? (basePoint?.y ?? 1) : 1;
 	const baseComparisonValue =
-		basePoint?.indexes.find(index => index.name === comparisonMode)?.value ?? 1;
+		baseComparisonRaw && baseComparisonRaw > 0 ? baseComparisonRaw : 100;
 
 	const processSeriesWithNulls = (
 		series: Array<SeriesSingleData>,
 		getValue: (point: SeriesSingleData) => number | null
 	) => {
-		let lastValidValue: number | null = null;
-		return series
-			.map(point => {
-				const currentValue = getValue(point);
+		let lastValidValue: number = baseComparisonValue;
+		return series.map(point => {
+			const currentValue = getValue(point);
 
-				if (currentValue === null) {
-					return {
-						x: point.x,
-						y:
-							lastValidValue !== null
-								? (lastValidValue / baseComparisonValue - 1) * 100
-								: null,
-					};
-				}
-
+			if (currentValue !== null) {
 				lastValidValue = currentValue;
+			}
 
-				return {
-					x: point.x,
-					y: (currentValue / baseComparisonValue - 1) * 100,
-				};
-			})
-			.filter(point => point.y !== null);
+			return {
+				x: point.x,
+				y: (lastValidValue / baseComparisonValue - 1) * 100,
+			};
+		});
 	};
 
 	const navSeriesPercent = cleanedSeries.map(point => {

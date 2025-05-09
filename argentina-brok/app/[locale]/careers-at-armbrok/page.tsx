@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getCareersAtArmbrokPage } from '@/shared/api/get-careers-at-armbrock';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { getVacancies } from '@/shared/api/get-vacancies';
 import { CareersAtArmbrok } from '@/view/careers-at-armbrok';
 
@@ -31,13 +32,18 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const CareersAtArmbrokPage = async () => {
-	const initialCareersAtArmbrokPageData = await getCareersAtArmbrokPage();
-	const initalVacanciesData = await getVacancies();
+	const [initialCareersAtArmbrokPageData, initialVacanciesData, initialFunds] =
+		await Promise.all([
+			getCareersAtArmbrokPage(),
+			getVacancies(),
+			getParentFunds(),
+		]);
 
 	return (
 		<CareersAtArmbrok
 			{...initialCareersAtArmbrokPageData.data}
-			vacancies={initalVacanciesData}
+			vacancies={initialVacanciesData}
+			parentFunds={initialFunds.data}
 		/>
 	);
 };

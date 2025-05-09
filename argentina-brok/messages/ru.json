@@ -249,5 +249,12 @@
 		"sixMonth": "6 месяцев",
 		"threeMonth": "3 месяца",
 		"month": "Месяц"
+	},
+	"graphicIndex": {
+		"label": "Сравнивать с",
+		"notSelected": "Не выбрано"
+	},
+	"fundsLinks": {
+		"text": "Фонды"
 	}
 }

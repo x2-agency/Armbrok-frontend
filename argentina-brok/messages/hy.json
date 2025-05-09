@@ -249,5 +249,12 @@
 		"sixMonth": "6 uuPiu",
 		"threeMonth": "3 uuPiu",
 		"month": "UdPiu"
+	},
+	"graphicIndex": {
+		"label": "համեմատել հետ",
+		"notSelected": "Չի ընտրվել"
+	},
+	"fundsLinks": {
+		"text": "Ֆոնդեր"
 	}
 }

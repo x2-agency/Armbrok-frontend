@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getBrokeragePage } from '@/shared/api/get-brokerage';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { Brokerage } from '@/view/brokerage';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,7 +31,12 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const BrokeragePage = async () => {
-	const initialBrokeragePageData = await getBrokeragePage();
+	const [initialBrokeragePageData, initialFunds] = await Promise.all([
+		getBrokeragePage(),
+		getParentFunds(),
+	]);
+
+	initialBrokeragePageData.data.parentFunds = initialFunds.data;
 
 	return <Brokerage initialData={initialBrokeragePageData || undefined} />;
 };

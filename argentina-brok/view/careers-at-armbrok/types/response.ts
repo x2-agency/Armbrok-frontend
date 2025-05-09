@@ -5,6 +5,7 @@ import type {
 	HeroSection,
 	ItemDetail,
 	OfficeSliderSection,
+	ParentFundProps,
 	SubscribeEmailForm,
 	Vacancies,
 } from '@/shared/types/global.types';
@@ -20,6 +21,7 @@ export type CareersAtArmbrokPageData = {
 	vacanciesSection?: ItemDetail;
 	subscribeEmailForm?: SubscribeEmailForm;
 	vacancies?: Vacancies;
+	parentFunds?: Array<ParentFundProps>;
 };
 
 export type CareersAtArmbrokPageResponse =

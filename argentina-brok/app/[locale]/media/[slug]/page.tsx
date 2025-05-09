@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getBlogPage } from '@/shared/api/get-blog-page';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { Blog } from '@/view/media/slug';
 
 export const revalidate = 10;
@@ -33,8 +34,13 @@ type BlogPageProps = {
 
 const BlogPage = async ({ params }: BlogPageProps) => {
 	const { slug } = await params;
-	const initialBlogPage = await getBlogPage(slug);
-	return <Blog initialBlogPage={initialBlogPage} />;
+	const [initialBlogPage, initialFunds] = await Promise.all([
+		getBlogPage(slug),
+		getParentFunds(),
+	]);
+	return (
+		<Blog initialBlogPage={initialBlogPage} parentFunds={initialFunds.data} />
+	);
 };
 
 export default BlogPage;

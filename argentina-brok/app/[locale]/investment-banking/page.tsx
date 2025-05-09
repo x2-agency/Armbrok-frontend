@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getInvestmentBankingPage } from '@/shared/api/get-investment-banking';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { getSecurityPapers } from '@/shared/api/security-papers';
 import { InvestmentBanking } from '@/view/investment-banking';
 
@@ -31,13 +32,21 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const InvestmentBankingPage = async () => {
-	const initialInvestmentBankingPageData = await getInvestmentBankingPage();
-	const initialSecurityPapersData = await getSecurityPapers();
+	const [
+		initialInvestmentBankingPageData,
+		initialSecurityPapersData,
+		initialFunds,
+	] = await Promise.all([
+		getInvestmentBankingPage(),
+		getSecurityPapers(),
+		getParentFunds(),
+	]);
 
 	return (
 		<InvestmentBanking
 			securityPapers={initialSecurityPapersData.data}
 			{...initialInvestmentBankingPageData.data}
+			parentFunds={initialFunds.data}
 		/>
 	);
 };

@@ -3,6 +3,7 @@
 import type { NextPage } from 'next';
 import { useTranslations } from 'next-intl';
 
+import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import type {
 	AwardsResponse,
@@ -37,12 +38,14 @@ export const Home: NextPage<{
 		assetManagementCard,
 		financialSolutionsSection,
 		investingStepsSection,
-		// companiesSection,
 		newsSection,
 		interviewSection,
 		awardsSection,
 	} = initialData?.data ?? {};
+
 	useUpdateFooterData(publishedAt);
+	useAppendToHeaderFunds({ funds: parentFunds });
+
 	return (
 		<>
 			<HomePreview heroSection={heroSection} />
@@ -72,7 +75,6 @@ export const Home: NextPage<{
 				buttonLimit={4}
 				awardsTotal={initialAwards?.meta.pagination.total ?? 4}
 			/>
-			{/* <CompaniesGroup homePage data={companiesSection} /> */}
 			<NewsSectionHome data={newsSection} />
 			<InteractiveVideo data={interviewSection} />
 		</>

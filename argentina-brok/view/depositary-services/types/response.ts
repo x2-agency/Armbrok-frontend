@@ -4,6 +4,7 @@ import type {
 	BenefitsSection,
 	DocumentsSectionProps,
 	HeroSection,
+	ParentFundProps,
 	QuoteSection,
 } from '@/shared/types/global.types';
 
@@ -16,6 +17,7 @@ export type DepositaryServicesPageData = {
 	quoteSection?: QuoteSection;
 	documentsSection?: DocumentsSectionProps;
 	infoSection?: AccordionSectionProps;
+	parentFunds?: Array<ParentFundProps>;
 };
 
 export type DepositaryServicesPageResponse =

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { getAboutUsPage } from '@/shared/api/get-about-us';
 import { getAwards } from '@/shared/api/get-awards';
+import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { AboutUs } from '@/view/about-us';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,10 +32,20 @@ export async function generateMetadata(): Promise<Metadata> {
 export const revalidate = 10;
 
 const AboutUsPage = async () => {
-	const initialAboutUsPageData = await getAboutUsPage();
-	const initialAwards = await getAwards({ pageSize: 7 });
+	const [initialAboutUsPageData, initialAwards, initialFunds] =
+		await Promise.all([
+			getAboutUsPage(),
+			getAwards({ pageSize: 7 }),
+			getParentFunds(),
+		]);
 
-	return <AboutUs {...initialAboutUsPageData?.data} awards={initialAwards} />;
+	return (
+		<AboutUs
+			{...initialAboutUsPageData?.data}
+			awards={initialAwards}
+			parentFunds={initialFunds.data}
+		/>
+	);
 };
 
 export default AboutUsPage;

@@ -5,7 +5,6 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useMemo } from 'react';
 
-import useMediaQuery from '@/shared/hooks/use-media-query';
 import type { ParentFundChartPoint } from '@/shared/types/global.types';
 
 import css from './index.module.css';
@@ -19,51 +18,62 @@ export const DefaultChart = ({
 	chart,
 	annualReturnValue,
 }: DefaultChartProps) => {
-	const isMobile = useMediaQuery('(max-width: 767px)');
-	const isTablet = useMediaQuery('(max-width: 1200px)');
-
 	if (!chart || !chart.length) {
 		return null;
 	}
 
 	const options = useMemo(() => {
-		const categories = chart.map(point => {
+		const data = chart.map(point => {
 			const [day, month, year] = point.date.split('/');
-			return `${year}-${month}-${day}`;
+			return [Date.UTC(+year, +month - 1, +day), point.unitPrice];
 		});
 
-		const data = chart.map(point => point.unitPrice);
 		const hasGrown = annualReturnValue ? annualReturnValue > 0 : false;
-		const color = hasGrown ? '#34CA2F' : '#DF2C2999';
+		const color = hasGrown ? '#34CA2F' : '#DF2C29';
 
 		return {
 			chart: {
 				backgroundColor: 'transparent',
 				animation: false,
 				reflow: true,
-				marginRight: 55, // Увеличено для места под label
-				overflow: 'visible', // Разрешаем выход за границы
+				marginRight: 55,
+				overflow: 'visible',
 			},
 			title: { text: undefined },
 			xAxis: {
-				categories,
+				type: 'datetime',
 				labels: {
 					style: { color: '#666', fontSize: '14px' },
-					align: 'center',
-					step: isTablet || isMobile ? 25 : 10,
-					formatter: function () {
-						const date = new Date(this.value);
-						return date
-							.toLocaleString('en-US', {
-								month: 'short',
-								year: '2-digit',
-							})
-							.replace(',', '');
-					},
+					format: '{value:%b %y}', // Jan 24
 				},
 				tickLength: 0,
 				lineColor: 'transparent',
+				tickPositioner: function () {
+					const positions: Array<number> = [];
+					const seen = new Set<string>();
+
+					const data = chart
+						.map(point => {
+							const [day, month, year] = point.date.split('/');
+							return Date.UTC(+year, +month - 1, +day);
+						})
+						.sort((a, b) => a - b);
+
+					for (const timestamp of data) {
+						const date = new Date(timestamp);
+						const key = `${date.getUTCFullYear()}-${date.getUTCMonth()}`;
+						if (!seen.has(key)) {
+							seen.add(key);
+							positions.push(
+								Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), 1)
+							);
+						}
+					}
+
+					return positions;
+				},
 			},
+
 			yAxis: {
 				visible: false,
 			},
@@ -138,7 +148,7 @@ export const DefaultChart = ({
 			],
 			credits: { enabled: false },
 		};
-	}, [chart, annualReturnValue, isMobile, isTablet]);
+	}, [chart, annualReturnValue]);
 
 	return (
 		<div className={css.root} style={{ overflow: 'visible' }}>

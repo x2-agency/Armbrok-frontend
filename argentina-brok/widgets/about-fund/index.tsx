@@ -11,6 +11,10 @@ export const AboutFund = ({
 	leftInfoBlock,
 	rightInfoBlock,
 }: AboutFundProps) => {
+	if (!(leftInfoBlock || rightInfoBlock)) {
+		return null;
+	}
+
 	return (
 		<Container className={css.root}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}

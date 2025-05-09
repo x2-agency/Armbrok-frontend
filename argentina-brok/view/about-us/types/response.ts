@@ -9,6 +9,7 @@ import type {
 	HeroSectionAboutUs,
 	MembershipSection,
 	OfficeSliderSection,
+	ParentFundProps,
 	ProjectsSection,
 	ValuesSection,
 } from '@/shared/types/global.types';
@@ -28,6 +29,7 @@ export type AboutUsPageData = {
 	significantProjectsSection?: OfficeSliderSection;
 	awardsSection?: AwardSection;
 	awards?: AwardsResponse;
+	parentFunds?: Array<ParentFundProps>;
 };
 
 export type AboutUsPageResponse = BaseResponse<AboutUsPageData>;

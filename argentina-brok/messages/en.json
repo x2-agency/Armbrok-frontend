@@ -251,5 +251,12 @@
 		"sixMonth": "6 months",
 		"threeMonth": "3 months",
 		"month": "Month"
+	},
+	"graphicIndex": {
+		"label": "Compare with",
+		"notSelected": "Not selected"
+	},
+	"fundsLinks": {
+		"text": "Funds"
 	}
 }

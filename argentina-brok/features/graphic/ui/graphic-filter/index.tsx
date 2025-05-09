@@ -2,14 +2,11 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
 import { truncateString } from '@/features/graphic/helpers/truncate-word';
 import { useChartContext } from '@/features/graphic/hooks/use-chart-context';
-import {
-	FILTER_DATA,
-	NOT_SELECTED_VALUE,
-} from '@/features/graphic/model/graphic.constants';
 import ArrowSvg from '@/public/assets/icons/arrow-without-stick.svg';
 import CrossSVG from '@/public/assets/icons/cross.svg';
 import type { GraphicMode } from '@/shared/types/global.types';
@@ -32,6 +29,7 @@ export const GraphicFilter = ({
 	const { comparisonMode, setComparisonMode } = useChartContext();
 	const [isModesOpen, toggleModesOpen] = useState<boolean>(false);
 	const filterRef = useRef<HTMLDivElement | null>(null);
+	const t = useTranslations('graphicIndex');
 
 	const handleModeClick = (mode: string | null) => {
 		setComparisonMode(mode);
@@ -72,13 +70,13 @@ export const GraphicFilter = ({
 
 	return (
 		<div className={cx(css.root, className)} ref={filterRef}>
-			<label className={css.label}>{parser(FILTER_DATA.text)}</label>
+			<label className={css.label}>{parser(t('label'))}</label>
 			<button
 				className={css.button}
 				disabled={disabled}
 				onClick={() => toggleModesOpen(!isModesOpen)}
 			>
-				{parser(truncateString(comparisonMode ?? NOT_SELECTED_VALUE))}
+				{parser(truncateString(comparisonMode ?? t('notSelected')))}
 				{disabled ? (
 					<CrossSVG className={css.arrow} />
 				) : (
@@ -93,10 +91,10 @@ export const GraphicFilter = ({
 						})}
 						onClick={() => handleModeClick(null)}
 					>
-						{parser(NOT_SELECTED_VALUE)}
+						{parser(t('notSelected'))}
 					</button>
 				</li>
-				{allFilters?.length &&
+				{allFilters?.length > 0 &&
 					allFilters.map((mode, index) => (
 						<li className={css.paragraph} key={index}>
 							<button

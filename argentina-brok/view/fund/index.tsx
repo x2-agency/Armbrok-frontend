@@ -1,5 +1,8 @@
+'use client';
+
 import type { NextPage } from 'next';
 
+import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import type { Factoid } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { TitleSection } from '@/shared/ui/title-section';
@@ -26,7 +29,10 @@ export const Fund: NextPage<FundPageData> = ({
 	fundFactsSection,
 	aboutFundSection,
 	performanceData,
+	parentFunds,
 }) => {
+	useAppendToHeaderFunds({ funds: parentFunds });
+
 	return (
 		<>
 			<BannerSection
