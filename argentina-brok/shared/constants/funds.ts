@@ -24,3 +24,12 @@ export const PARENT_FUNDS = [
 		link: '/funds/sovereign',
 	},
 ];
+
+export const FUNDS_SLUGS = [
+	'universe',
+	'amd',
+	'usd',
+	'hy-eurobonds',
+	'hg-eurobonds',
+	'sovereign',
+];

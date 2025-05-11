@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { getFundPage } from '@/shared/api/get-fund-page';
 import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
+import { FUNDS_SLUGS } from '@/shared/constants/funds';
 import { Fund } from '@/view/fund';
 
 export async function generateMetadata({
@@ -33,6 +34,12 @@ export async function generateMetadata({
 		},
 	};
 }
+
+export const revalidate = 10;
+
+export const generateStaticParams = () => {
+	return FUNDS_SLUGS.map(slug => ({ slug: slug }));
+};
 
 const FundPage = async ({ params }: { params: { slug: string } }) => {
 	const { slug } = await params;
