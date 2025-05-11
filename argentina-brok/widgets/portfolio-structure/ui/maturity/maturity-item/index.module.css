@@ -9,41 +9,28 @@
 	position: relative;
 }
 
-.label {
-	@mixin font-text16;
-}
-
-.value {
-	@mixin font-text20;
-
-	font-weight: 500;
-}
-
-.dotted {
-	@mixin responsive margin-block-end, 4, 9, 9;
-
-	align-self: end;
-	line-height: 0;
-	flex-grow: 1;
-	border-bottom: 1px solid transparent;
-	border-image: repeating-linear-gradient(
-		to right,
-		rgba(0, 0, 0, 0.3) 0 3px,
-		transparent 1px 7px
-	);
-	border-image-slice: 1;
-}
-
-.dotted,
-.value,
-.label {
-	z-index: 10;
-}
-
 .progress {
 	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	background-color: var(--gray-300-color);
+}
+
+.wrapper {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+
+	p:first-child {
+		@mixin font-text16;
+	}
+
+	p:last-child {
+		@mixin font-text20;
+
+		font-weight: 500;
+	}
 }
