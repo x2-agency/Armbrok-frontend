@@ -22,14 +22,14 @@ export const Navigation = () => {
 				<li className={cx(css.li)}>
 					<BurgerLinks rootKey="servicesLinks" />
 				</li>
-				<li className={cx(css.li)}>
-					<BurgerLinks rootKey="aboutUsLinks" />
-				</li>
 				{headerFundsDropdownItems && headerFundsDropdownItems.length > 0 && (
 					<li className={cx(css.li)}>
 						<BurgerLinks rootKey="fundsLinks" withLayoutContext />
 					</li>
 				)}
+				<li className={cx(css.li)}>
+					<BurgerLinks rootKey="aboutUsLinks" />
+				</li>
 				{links.map(item => {
 					const normalizedHref = item.href.replace(/^\/(hy|en|ru)/, '') || '/';
 					const isActive =

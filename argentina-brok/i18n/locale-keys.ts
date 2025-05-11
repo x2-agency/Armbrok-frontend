@@ -21,9 +21,9 @@ export const LOCALE_KEYS = {
 					items: [
 						'brokerage',
 						'assetManagement',
-						'investmentFunds',
 						'investmentBanking',
 						'depositoryRegistrar',
+						'investmentFunds',
 					],
 				},
 				{

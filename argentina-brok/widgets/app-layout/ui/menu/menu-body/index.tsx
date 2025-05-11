@@ -23,14 +23,14 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 				<li className={css.li}>
 					<BurgerLinks className={css.services} rootKey="servicesLinks" />
 				</li>
-				<li className={css.li}>
-					<BurgerLinks rootKey="aboutUsLinks" />
-				</li>
 				{headerFundsDropdownItems && headerFundsDropdownItems.length > 0 && (
 					<li className={css.li}>
 						<BurgerLinks rootKey="fundsLinks" withLayoutContext />
 					</li>
 				)}
+				<li className={css.li}>
+					<BurgerLinks rootKey="aboutUsLinks" />
+				</li>
 				{links.map((link, index) => (
 					<li key={index} className={css.li}>
 						<Button variant="subtle" href={link.href} className={css.button}>
