@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 import { getFundPage } from '@/shared/api/get-fund-page';
 import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
+import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import { Fund } from '@/view/fund';
 
 export async function generateMetadata({
 	params,
-}: {
-	params: { slug: string };
-}): Promise<Metadata> {
+}: SlugParams): Promise<Metadata> {
 	const { slug } = await params;
 	const initialFundPageData = await getFundPage({ slug });
 	const seo = initialFundPageData?.data?.seo;
@@ -34,8 +34,10 @@ export async function generateMetadata({
 	};
 }
 
-const FundPage = async ({ params }: { params: { slug: string } }) => {
-	const { slug } = await params;
+const FundPage = async ({ params }: SlugParams & LocaleParams) => {
+	const { slug, locale } = await params;
+	setRequestLocale(locale);
+
 	const [
 		initialData,
 		initialGraphicData,

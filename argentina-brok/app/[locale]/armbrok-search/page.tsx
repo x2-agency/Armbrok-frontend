@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 import { getArmbrokSearchPage } from '@/shared/api/get-armbrok-search';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
+import type { LocaleParams } from '@/shared/types/params';
 import { ArmbrokSearch } from '@/view/armbrok-search';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,7 +32,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const revalidate = 10;
 
-const ArmbrokSearchPage = async () => {
+const ArmbrokSearchPage = async ({ params }: LocaleParams) => {
+	const { locale } = await params;
+	setRequestLocale(locale);
+
 	const [initialArmbrokSearchPageData, initialFunds] = await Promise.all([
 		getArmbrokSearchPage(),
 		getParentFunds(),

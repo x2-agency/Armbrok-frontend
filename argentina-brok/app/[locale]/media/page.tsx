@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import { Suspense } from 'react';
 
 import { getArticle } from '@/shared/api/get-article';
 import { getMediaPage } from '@/shared/api/get-media-page';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
+import type { LocaleParams } from '@/shared/types/params';
 import { Media } from '@/view/media';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -32,7 +34,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const revalidate = 60;
 
-const MediaPage = async () => {
+const MediaPage = async ({ params }: LocaleParams) => {
+	const { locale } = await params;
+	setRequestLocale(locale);
+
 	const [initialMediaData, initialArticles, initialFunds] = await Promise.all([
 		getMediaPage(),
 		getArticle({ limit: 0 }),

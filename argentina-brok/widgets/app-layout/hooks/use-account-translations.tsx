@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 export const useAccountTranslations = () => {
-	const t = useTranslations('openAccount'); // Указываем префикс для переводов
+	const t = useTranslations('openAccount');
 
 	const accountTranslations = {
 		titleTranslation: t('title'),
