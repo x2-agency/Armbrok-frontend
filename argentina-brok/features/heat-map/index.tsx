@@ -6,7 +6,6 @@ import parser from 'html-react-parser';
 import type { HeatMapItemProps } from '@/shared/types/global.types';
 
 import { transformHeatMapData } from './helpers/transform-heat-map-data';
-import { useToggleHeatMap } from './hooks/use-toggle-heatmap';
 import css from './index.module.css';
 import { CellValue } from './ui/cell-value';
 
@@ -21,21 +20,13 @@ export const HeatMap = ({
 	className,
 	opened = true,
 }: HeatMapProps) => {
-	const { tableRef, height } = useToggleHeatMap({ opened });
-
 	if (!(heatMap && heatMap.length)) {
 		return null;
 	}
 	const { headers, rows } = transformHeatMapData(heatMap);
 
 	return (
-		<div
-			className={cx(css.root, className, { [css.closed]: !opened })}
-			ref={tableRef}
-			style={{
-				height,
-			}}
-		>
+		<div className={cx(css.root, className, { [css.closed]: !opened })}>
 			<table className={css.table}>
 				<thead className={css.tableHead}>
 					<tr
