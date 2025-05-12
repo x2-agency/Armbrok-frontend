@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import Link from 'next/link';
@@ -6,16 +5,18 @@ import Link from 'next/link';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
+import { FormatImage } from '@/shared/ui/format-image';
 import type { AssetManagementCardProps } from '@/view/home/types/response';
 
 import css from './index.module.css';
+import { ASSET_MANAGEMENT_IMAGES } from './model/asset-management.constants';
 
 export type AssetManagmentProps = {
 	data?: AssetManagementCardProps;
 };
 
 export const AssetManagment = ({ data }: AssetManagmentProps) => {
-	const { title, description, mediaContent, button, link } = data ?? {};
+	const { title, description, button, link } = data ?? {};
 	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 
 	const handleClick = (subject: string) => {
@@ -26,6 +27,10 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 	return (
 		<Container className={css.root}>
 			<article className={cx(css.wrap, 'hybrid')}>
+				<FormatImage
+					poster={ASSET_MANAGEMENT_IMAGES}
+					className={css.background}
+				/>
 				<div className={css.contnet}>
 					<h2 className={css.title}>{parser(title ?? '')}</h2>
 					{description && (
@@ -39,15 +44,6 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 					>
 						{parser(button?.text ?? '')}
 					</Button>
-				</div>
-				<div className={css.imgWrap}>
-					{mediaContent?.url && (
-						<img
-							className={css.image}
-							src={mediaContent?.url ?? ''}
-							alt={mediaContent?.alternativeText ?? ''}
-						/>
-					)}
 				</div>
 			</article>
 			<Link className={css.link} href={link ?? ''} />
