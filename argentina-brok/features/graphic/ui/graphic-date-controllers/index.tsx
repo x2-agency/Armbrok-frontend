@@ -32,7 +32,7 @@ export const GraphicDateControllers = ({
 		if (defaultIndex !== -1) {
 			buttons[defaultIndex].setRange();
 		}
-	}, [defaultIndex, buttons]);
+	}, []);
 
 	const toggleButton = (setRange: () => void, index: number) => {
 		setActiveButtonIndex(index);
