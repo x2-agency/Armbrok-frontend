@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 
 import { getFundPage } from '@/shared/api/get-fund-page';
 import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
+import { getIsrParentFunds } from '@/shared/api/get-isr-parent-funds';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
-import { FUNDS_SLUGS } from '@/shared/constants/funds';
+import type { ParentFundProps } from '@/shared/types/global.types';
 import { Fund } from '@/view/fund';
 
 export async function generateMetadata({
@@ -37,8 +38,16 @@ export async function generateMetadata({
 
 export const revalidate = 10;
 
-export const generateStaticParams = () => {
-	return FUNDS_SLUGS.map(slug => ({ slug: slug }));
+export const generateStaticParams = async () => {
+	const response: { data: Array<ParentFundProps> } = await getIsrParentFunds();
+	const locales = ['en', 'ru', 'hy'];
+
+	return locales.flatMap(locale =>
+		response.data.map(fund => ({
+			slug: fund.slug,
+			locale,
+		}))
+	);
 };
 
 const FundPage = async ({ params }: { params: { slug: string } }) => {
