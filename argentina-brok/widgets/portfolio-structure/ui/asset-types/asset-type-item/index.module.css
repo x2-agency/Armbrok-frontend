@@ -17,6 +17,8 @@
 
 .ring,
 .ring circle {
-	@mixin responsive width, 64, 64, 64;
-	@mixin responsive height, 64, 64, 64;
+	@mixin responsive width, 48, 64, 64;
+	@mixin responsive height, 48, 64, 64;
+
+	flex-shrink: 0;
 }

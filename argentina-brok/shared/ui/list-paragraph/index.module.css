@@ -19,6 +19,14 @@
 			}
 		}
 	}
+
+	p {
+		@mixin font-text16;
+	}
+
+	p:last-of-type {
+		font-weight: 500;
+	}
 }
 
 .overlay,
@@ -35,35 +43,4 @@
 
 	opacity: 0;
 	background-color: var(--gray-200-color);
-}
-
-.link,
-.leftPart,
-.rightPart,
-.dotted {
-	z-index: 10;
-}
-
-.rightPart,
-.leftPart {
-	@mixin font-text16;
-}
-
-.rightPart {
-	font-weight: 500;
-}
-
-.dotted {
-	@mixin responsive margin-block-end, 4, 9, 9;
-
-	align-self: end;
-	line-height: 0;
-	flex-grow: 1;
-	border-bottom: 1px solid transparent;
-	border-image: repeating-linear-gradient(
-		to right,
-		rgba(0, 0, 0, 0.3) 0 3px,
-		transparent 1px 7px
-	);
-	border-image-slice: 1;
 }

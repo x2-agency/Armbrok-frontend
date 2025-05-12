@@ -231,7 +231,8 @@
 	"closeAwardButton": { "text": "Ցույց տալ պակաս" },
 	"backButton": { "text": "ետ" },
 	"fundPerformance": {
-		"title": "Հիմնադրամի արդյունավետություն"
+		"title": "Հիմնադրամի արդյունավետություն",
+		"button": "Ամբողջական տարբերակ"
 	},
 	"homeParentFunds": {
 		"title": "Ներդրումային հիմնադրամներ",

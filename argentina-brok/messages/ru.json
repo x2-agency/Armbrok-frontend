@@ -218,7 +218,8 @@
 	"closeAwardButton": { "text": "Показать меньше" },
 	"backButton": { "text": "Назад" },
 	"fundPerformance": {
-		"title": "Результативность фонда"
+		"title": "Результативность фонда",
+		"button": "Полная версия"
 	},
 	"aboutUsLinks": {
 		"text": "О нас",

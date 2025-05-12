@@ -220,7 +220,8 @@
 	"closeAwardButton": { "text": "Show less" },
 	"backButton": { "text": "Back" },
 	"fundPerformance": {
-		"title": "Fund Performance"
+		"title": "Fund Performance",
+		"button": "Full performance"
 	},
 	"aboutUsLinks": {
 		"text": "About Us",
