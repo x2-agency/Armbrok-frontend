@@ -33,7 +33,7 @@ export const FundsCard = ({
 					/>
 					<DefaultChart
 						chart={chart}
-						annualReturnValue={infoCard.annualReturn?.value}
+						annualReturnValue={infoCard?.annualReturn?.value ?? 0}
 					/>
 				</>
 			)}
@@ -43,7 +43,7 @@ export const FundsCard = ({
 						chart={chart}
 						title={title}
 						description={description}
-						annualReturnValue={infoCard.annualReturn?.value}
+						annualReturnValue={infoCard?.annualReturn?.value ?? 0}
 					/>
 					<InfoCard {...infoCard} />
 				</>
