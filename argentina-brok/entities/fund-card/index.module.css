@@ -6,7 +6,7 @@
 	overflow: hidden;
 
 	&.default {
-		@mixin responsive gap, 30, 60, 60;
+		@mixin responsive gap, 55, 60, 60;
 
 		position: relative;
 		justify-content: space-between;
@@ -20,6 +20,8 @@
 			linear-gradient(93.77deg, #171717 0%, #1f1f1f 100%), #212121;
 
 		@media (max-width: 767px) {
+			@mixin responsive padding, 16;
+
 			display: flex;
 			flex-direction: column;
 		}

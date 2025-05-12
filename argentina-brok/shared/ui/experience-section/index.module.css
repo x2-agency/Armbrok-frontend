@@ -3,4 +3,11 @@
 	justify-content: center;
 	grid-template-columns: repeat(3, 1fr);
 	@mixin responsive padding-block, 60, 80, 80;
+
+	@media (max-width: 767px) {
+		@mixin responsive gap, 16;
+
+		display: flex;
+		flex-wrap: wrap;
+	}
 }

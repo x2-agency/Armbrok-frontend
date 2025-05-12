@@ -13,37 +13,35 @@ export const InfoCard = ({
 }: InfoCardProps & { className?: string }) => {
 	return (
 		<ul className={cx(css.root, className)}>
-			<div className={css.group}>
-				{minInvestment && (
-					<li className={css.paragraph}>
-						{minInvestment.title && (
-							<p className={css.label}>{parser(minInvestment.title)}</p>
-						)}
-						{minInvestment.description && (
-							<p className={css.description}>
-								{parser(minInvestment.description)}
-							</p>
-						)}
-					</li>
-				)}
-				{riskLevel && (
-					<li className={cx(css.paragraph, css.risk)}>
-						<div className={css.risks}>
-							{Array.from({ length: 3 }).map((_, key) => (
-								<div
-									className={cx(css.circle, {
-										[css.painted]: key < riskLevel.level,
-									})}
-									key={key}
-								/>
-							))}
-						</div>
-						{riskLevel.label && (
-							<p className={css.description}>{parser(riskLevel.label)}</p>
-						)}
-					</li>
-				)}
-			</div>
+			{minInvestment && (
+				<li className={css.paragraph}>
+					{minInvestment.title && (
+						<p className={css.label}>{parser(minInvestment.title)}</p>
+					)}
+					{minInvestment.description && (
+						<p className={css.description}>
+							{parser(minInvestment.description)}
+						</p>
+					)}
+				</li>
+			)}
+			{riskLevel && (
+				<li className={cx(css.paragraph, css.risk)}>
+					<div className={css.risks}>
+						{Array.from({ length: 3 }).map((_, key) => (
+							<div
+								className={cx(css.circle, {
+									[css.painted]: key < riskLevel.level,
+								})}
+								key={key}
+							/>
+						))}
+					</div>
+					{riskLevel.label && (
+						<p className={css.description}>{parser(riskLevel.label)}</p>
+					)}
+				</li>
+			)}
 			{annualReturn && (
 				<li className={css.annualReturn}>
 					{annualReturn.value && (

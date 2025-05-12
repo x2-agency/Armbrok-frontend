@@ -3,8 +3,9 @@
 
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
+import useMediaQuery from '@/shared/hooks/use-media-query';
 import type { ParentFundChartPoint } from '@/shared/types/global.types';
 
 import css from './index.module.css';
@@ -18,9 +19,46 @@ export const DefaultChart = ({
 	chart,
 	annualReturnValue,
 }: DefaultChartProps) => {
+	const isMobile = useMediaQuery('(max-width: 767px)');
+
 	if (!chart || !chart.length) {
 		return null;
 	}
+
+	useEffect(() => {
+		Highcharts.setOptions({
+			lang: {
+				months: [
+					'January',
+					'February',
+					'March',
+					'April',
+					'May',
+					'June',
+					'July',
+					'August',
+					'September',
+					'October',
+					'November',
+					'December',
+				],
+				shortMonths: [
+					'Jan',
+					'Feb',
+					'Mar',
+					'Apr',
+					'May',
+					'Jun',
+					'Jul',
+					'Aug',
+					'Sep',
+					'Oct',
+					'Nov',
+					'Dec',
+				],
+			},
+		});
+	}, []);
 
 	const options = useMemo(() => {
 		const data = chart.map(point => {
@@ -36,7 +74,7 @@ export const DefaultChart = ({
 				backgroundColor: 'transparent',
 				animation: false,
 				reflow: true,
-				marginRight: 55,
+				marginRight: isMobile ? 0 : 55,
 				overflow: 'visible',
 			},
 			title: { text: undefined },
@@ -44,7 +82,7 @@ export const DefaultChart = ({
 				type: 'datetime',
 				labels: {
 					style: { color: '#666', fontSize: '14px' },
-					format: '{value:%b %y}', // Jan 24
+					format: '{value:%b %y}',
 				},
 				tickLength: 0,
 				lineColor: 'transparent',
@@ -121,13 +159,13 @@ export const DefaultChart = ({
 					dataLabels: [
 						{
 							enabled: true,
-							align: 'left',
-							verticalAlign: 'middle',
+							align: isMobile ? 'center' : 'left',
+							verticalAlign: isMobile ? 'bottom' : 'middle',
 							backgroundColor: color,
 							borderRadius: 6,
 							padding: 6,
-							x: 5,
-							y: 0,
+							x: isMobile ? -20 : 5,
+							y: isMobile ? -10 : 0,
 							style: {
 								color: '#fff',
 								fontSize: '12px',
@@ -138,6 +176,7 @@ export const DefaultChart = ({
 								if (this.point.index === data.length - 1) {
 									return `${hasGrown ? '+' : ''}${annualReturnValue}%`;
 								}
+
 								return null;
 							},
 							crop: false,
@@ -148,7 +187,7 @@ export const DefaultChart = ({
 			],
 			credits: { enabled: false },
 		};
-	}, [chart, annualReturnValue]);
+	}, [chart, annualReturnValue, isMobile]);
 
 	return (
 		<div className={css.root} style={{ overflow: 'visible' }}>
