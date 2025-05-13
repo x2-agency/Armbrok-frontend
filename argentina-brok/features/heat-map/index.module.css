@@ -11,7 +11,7 @@
 
 		overflow-x: scroll;
 		scrollbar-width: none;
-		-ms-overflow-style: none;
+		grid-template-columns: min-content;
 	}
 
 	&.closed {
@@ -23,7 +23,6 @@
 .table {
 	@mixin responsive border-radius, 16, 16, 16;
 
-	width: 100%;
 	overflow: hidden;
 	border-spacing: 0;
 }
