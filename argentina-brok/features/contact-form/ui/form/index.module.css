@@ -4,10 +4,6 @@
 	flex-direction: column;
 }
 
-.root {
-	@mixin responsive padding-block-start, 0, 72, 72;
-}
-
 .titleBlock {
 	@mixin responsive padding-block-end, 24, 48, 48;
 }

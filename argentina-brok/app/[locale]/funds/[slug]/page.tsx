@@ -3,8 +3,10 @@ import { setRequestLocale } from 'next-intl/server';
 
 import { getFundPage } from '@/shared/api/get-fund-page';
 import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
+import { getIsrParentFunds } from '@/shared/api/get-isr-parent-funds';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams, SlugParams } from '@/shared/types/params';
+import type { ParentFundProps } from '@/shared/types/global.types';
 import { Fund } from '@/view/fund';
 
 export async function generateMetadata({
@@ -34,10 +36,23 @@ export async function generateMetadata({
 	};
 }
 
+export const revalidate = 10;
+
+export const generateStaticParams = async () => {
+	const response: { data: Array<ParentFundProps> } = await getIsrParentFunds();
+	const locales = ['en', 'ru', 'hy'];
+
+	return locales.flatMap(locale =>
+		response.data.map(fund => ({
+			slug: fund.slug,
+			locale,
+		}))
+	);
+};
+
 const FundPage = async ({ params }: SlugParams & LocaleParams) => {
 	const { slug, locale } = await params;
 	setRequestLocale(locale);
-
 	const [
 		initialData,
 		initialGraphicData,

@@ -3,6 +3,8 @@
 
 	overflow: hidden;
 	transition-property: height opacity;
+	display: grid;
+	grid-template-rows: 1fr;
 
 	@media (max-width: 767px) {
 		@mixin responsive padding-inline, 20;
@@ -14,6 +16,7 @@
 
 	&.closed {
 		opacity: 0;
+		grid-template-rows: 0fr;
 	}
 }
 

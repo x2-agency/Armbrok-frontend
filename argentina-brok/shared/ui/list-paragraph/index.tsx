@@ -1,6 +1,7 @@
 import cx from 'clsx';
-import parser from 'html-react-parser';
 import Link from 'next/link';
+
+import { Detail } from '@/widgets/company-details-section/ui/detail';
 
 import css from './index.module.css';
 
@@ -19,13 +20,12 @@ export const ListParagraph = ({
 }: ListParagraphProps) => {
 	return (
 		<article className={cx(css.root, className, { [css.withLink]: link })}>
-			<p className={css.leftPart}>
-				{typeof leftPart === 'number' ? leftPart : parser(leftPart)}
-			</p>
-			<span className={css.dotted} />
-			<p className={css.rightPart}>
-				{typeof rightPart === 'number' ? rightPart : parser(rightPart)}
-			</p>
+			<Detail
+				title={typeof leftPart === 'number' ? leftPart.toString() : leftPart}
+				description={
+					typeof rightPart === 'number' ? rightPart.toString() : rightPart
+				}
+			/>
 			<div className={css.overlay} />
 			{link && <Link href={link} target="_blank" className={css.link} />}
 		</article>

@@ -7,8 +7,8 @@ import { useTranslations } from 'next-intl';
 
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
 import TriangleSVG from '@/public/assets/icons/header/triangle.svg';
+import { PARENT_FUNDS } from '@/shared/constants/funds';
 import { useDropdown } from '@/shared/hooks/use-drop-down';
-import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
@@ -29,7 +29,6 @@ export const BurgerLinks = ({
 	const object = LOCALE_KEYS[rootKey];
 	const t = useTranslations(object?.root ?? 'services');
 	const path = usePathname();
-	const { headerFundsDropdownItems } = useLayoutContext();
 	const { isOpen, toggleDropdown, dropdownRef } = useDropdown();
 
 	return (
@@ -45,25 +44,19 @@ export const BurgerLinks = ({
 			<ul className={cx(css.list, { [css.open]: isOpen })}>
 				{withLayoutContext ? (
 					<>
-						{headerFundsDropdownItems && headerFundsDropdownItems.length > 0 ? (
-							<>
-								{headerFundsDropdownItems.map((item, index) => (
-									<li key={index} className={css.listElement}>
-										<Button
-											variant="subtle"
-											className={cx(css.link, {
-												[css.activeLink]: path.includes(`/funds/${item.slug}`),
-											})}
-											href={`/funds/${item.slug}`}
-										>
-											{parser(item.title)}
-										</Button>
-									</li>
-								))}
-							</>
-						) : (
-							<li className={css.listElement}>No data</li>
-						)}
+						{PARENT_FUNDS.map((item, index) => (
+							<li key={index} className={css.listElement}>
+								<Button
+									variant="subtle"
+									className={cx(css.link, {
+										[css.activeLink]: path.includes(item.link),
+									})}
+									href={item.link}
+								>
+									{parser(item.title)}
+								</Button>
+							</li>
+						))}
 					</>
 				) : (
 					<>

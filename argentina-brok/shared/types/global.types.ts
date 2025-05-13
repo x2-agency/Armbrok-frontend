@@ -28,7 +28,7 @@ export type LinkItem = {
 
 export type MediaData = {
 	name?: string;
-	alternativeText: string;
+	alternativeText?: string;
 	formats?: {
 		large?: ImageFormat;
 		small?: ImageFormat;
