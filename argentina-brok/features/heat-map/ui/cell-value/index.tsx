@@ -5,8 +5,12 @@ import type { HeatMapItemData } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-export const CellValue = ({ value, opacity }: HeatMapItemData) => {
-	const { background, color } = defineCellColor(value, opacity);
+export const CellValue = ({
+	value,
+	opacity,
+	isTotal = false,
+}: HeatMapItemData & { isTotal?: boolean }) => {
+	const { background, color } = defineCellColor(value, isTotal, opacity);
 
 	return (
 		<>

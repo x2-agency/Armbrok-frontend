@@ -41,7 +41,41 @@ const NEGATIVE_SCALE: Array<{
 	{ threshold: 0, color: '#DF2C29', background: '#FEF1E9' },
 ];
 
-export const defineCellColor = (value: string, opacity?: number): CellColor => {
+const POSITIVE_SCALE_PERCENTS: Array<{
+	threshold: number;
+	color: string;
+	background: string;
+}> = [
+	{ threshold: 15, color: '#EEFDE7', background: '#109922' },
+	{ threshold: 12.5, color: '#EEFDE7', background: '#17B31D' },
+	{ threshold: 10, color: '#EEFDE7', background: '#4FD148' },
+	{ threshold: 7.5, color: '#109922', background: '#7FE86E' },
+	{ threshold: 5, color: '#109922', background: '#B4F7A1' },
+	{ threshold: 2.5, color: '#17B31D', background: '#DDFBCF' },
+	{ threshold: 0.5, color: '#17B31D', background: '#EEFDE7' },
+	{ threshold: 0, color: '#17B31D', background: '#F9FFF6' },
+];
+
+const NEGATIVE_SCALE_PERCENTS: Array<{
+	threshold: number;
+	color: string;
+	background: string;
+}> = [
+	{ threshold: -15, color: '#FEF1E9', background: '#BF1D29' },
+	{ threshold: -12.5, color: '#FEF1E9', background: '#DF2C29' },
+	{ threshold: -10, color: '#FEF1E9', background: '#EB6A5B' },
+	{ threshold: -7.5, color: '#DF2C29', background: '#F5937D' },
+	{ threshold: -5, color: '#BF1D29', background: '#FBC0A9' },
+	{ threshold: -2.5, color: '#DF2C29', background: '#FDE2D4' },
+	{ threshold: -0.5, color: '#DF2C29', background: '#FEF1E9' },
+	{ threshold: -0, color: '#DF2C29', background: '#FFFAF8' },
+];
+
+export const defineCellColor = (
+	value: string,
+	isTotal: boolean,
+	opacity?: number
+): CellColor => {
 	const floatValue = parseFloat(value);
 
 	// (Year)
@@ -54,11 +88,27 @@ export const defineCellColor = (value: string, opacity?: number): CellColor => {
 		return hidden;
 	}
 
-	const scale = floatValue > 0 ? POSITIVE_SCALE : NEGATIVE_SCALE;
+	if (isTotal) {
+		const scale = floatValue > 0 ? POSITIVE_SCALE : NEGATIVE_SCALE;
 
-	for (const range of scale) {
-		if (opacity > range.threshold) {
-			return { color: range.color, background: range.background };
+		for (const range of scale) {
+			if (opacity > range.threshold) {
+				return { color: range.color, background: range.background };
+			}
+		}
+	} else {
+		if (floatValue > 0) {
+			for (const range of POSITIVE_SCALE_PERCENTS) {
+				if (floatValue >= range.threshold) {
+					return { color: range.color, background: range.background };
+				}
+			}
+		} else {
+			for (const range of NEGATIVE_SCALE_PERCENTS) {
+				if (floatValue <= range.threshold) {
+					return { color: range.color, background: range.background };
+				}
+			}
 		}
 	}
 
