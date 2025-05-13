@@ -24,8 +24,6 @@
 }
 
 .list {
-	/* @mixin responsive gap, 3, 8, 8; */
-
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -37,5 +35,22 @@
 		flex-shrink: 0;
 		background-color: #ffffff0f;
 		border-radius: 12px;
+	}
+}
+
+html[lang='hy'],
+html[lang='ru'] {
+	.description {
+		@mixin responsive font-size, 16, 16, 16;
+
+		width: max-content;
+
+		@media (max-width: 767px) {
+			font-size: 16px;
+		}
+	}
+
+	.title {
+		@mixin responsive margin-block-end, 10, 5, 5;
 	}
 }

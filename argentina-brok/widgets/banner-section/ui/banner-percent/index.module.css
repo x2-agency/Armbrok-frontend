@@ -5,6 +5,10 @@
 	align-items: end;
 	align-self: end;
 
+	@media (max-width: 1200px) {
+		align-items: center;
+	}
+ 
 	@media (max-width: 767px) {
 		flex-direction: column;
 		align-items: center;
@@ -12,6 +16,22 @@
 
 		br {
 			display: none;
+		}
+	}
+}
+
+html[lang='ru'],
+html[lang='hy'] {
+	.percentData {
+		align-items: center;
+		align-self: center;
+	}
+
+	.percentText {
+		@mixin responsive max-width, 0, 200, 180;
+
+		@media (max-width: 767px) {
+			max-width: unset;
 		}
 	}
 }

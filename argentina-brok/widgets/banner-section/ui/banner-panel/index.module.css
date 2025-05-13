@@ -51,13 +51,24 @@
 }
 
 .linkButton {
-	@mixin responsive width, 250, 140, 140;
+	@mixin responsive min-width, 250, 140, 140;
 
 	justify-content: center;
 
 	@media (max-width: 767px) {
-		/* width: 100%; */
 		margin-block-start: 3rem;
 		display: none;
+	}
+}
+
+html[lang='ru'],
+html[lang='hy'] {
+	.content {
+		@mixin responsive gap, 24, 16, 16;
+	}
+
+	.group {
+		@mixin responsive gap, 10, 44, 24;
+		align-items: center;
 	}
 }

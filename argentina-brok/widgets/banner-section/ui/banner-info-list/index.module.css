@@ -33,3 +33,18 @@
 	color: var(--gray-400-color);
 	width: fit-content;
 }
+
+html[lang='hy'],
+html[lang='ru'] {
+	.title,
+	.description {
+		@mixin responsive font-size, 16, 16, 16;
+		@mixin responsive max-width, 10, 200;
+
+		@media (max-width: 767px) {
+			font-size: 16px;
+
+			max-width: unset;
+		}
+	}
+}
