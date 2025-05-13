@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 import { getBlogPage } from '@/shared/api/get-blog-page';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
+import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import { Blog } from '@/view/media/slug';
 
 export const revalidate = 10;
 
 export async function generateMetadata({
 	params,
-}: {
-	params: {
-		slug: string;
-	};
-}): Promise<Metadata> {
-	const { slug } = await params;
+}: LocaleParams & SlugParams): Promise<Metadata> {
+	const { slug, locale } = await params;
+	setRequestLocale(locale);
+
 	const data = await getBlogPage(slug);
 	return {
 		title: data.title,

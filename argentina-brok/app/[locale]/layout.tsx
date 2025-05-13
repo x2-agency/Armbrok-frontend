@@ -18,7 +18,7 @@ import { AppLayout } from '@/widgets/app-layout';
 import { Providers } from '@/widgets/app-layout/providers';
 
 type RootLayoutProps = PropsWithChildren & {
-	params: { locale: keyof typeof Locales };
+	params: Promise<{ locale: keyof typeof Locales }>;
 };
 
 export async function generateStaticParams() {
