@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 import { getFundsPage } from '@/shared/api/get-funds';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
+import type { LocaleParams } from '@/shared/types/params';
 import { Funds } from '@/view/funds';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -37,7 +39,10 @@ export const revalidate = 10;
 // 	return initialFunds.data.maps(fund => ({ slug: fund.slug }));
 // };
 
-const FundsPage = async () => {
+const FundsPage = async ({ params }: LocaleParams) => {
+	const { locale } = await params;
+	setRequestLocale(locale);
+
 	const [initialFundsPageData, parentFunds] = await Promise.all([
 		getFundsPage(),
 		getParentFunds(),
