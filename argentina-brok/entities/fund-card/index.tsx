@@ -20,6 +20,10 @@ export const FundsCard = ({
 	slug,
 	className,
 }: ParentFundProps & { mode?: 'default' | 'slider'; className?: string }) => {
+	if (!chart || !chart.length) {
+		return null;
+	}
+
 	return (
 		<article className={cx(css.root, css[mode], className)}>
 			{mode === 'default' && (

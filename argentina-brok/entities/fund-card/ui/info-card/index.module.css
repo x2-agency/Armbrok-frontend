@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive gap, 20, 32, 32;
+	@mixin responsive gap, 15, 32, 32;
 
 	display: flex;
 	align-items: center;
@@ -70,5 +70,9 @@
 
 	&.positive {
 		color: var(--green-550-color);
+	}
+
+	@media (max-width: 767px) {
+		font-size: 24px;
 	}
 }
