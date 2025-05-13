@@ -53,7 +53,7 @@ const POSITIVE_SCALE_PERCENTS: Array<{
 	{ threshold: 5, color: '#109922', background: '#B4F7A1' },
 	{ threshold: 2.5, color: '#17B31D', background: '#DDFBCF' },
 	{ threshold: 0.5, color: '#17B31D', background: '#EEFDE7' },
-	{ threshold: 0, color: '#17B31D', background: '#F9FFF6' },
+	{ threshold: 0.001, color: '#17B31D', background: '#F9FFF6' },
 ];
 
 const NEGATIVE_SCALE_PERCENTS: Array<{
@@ -84,12 +84,16 @@ export const defineCellColor = (
 	}
 
 	// empty
-	if (!opacity || floatValue === 0 || isNaN(floatValue)) {
+	if (floatValue === 0 || isNaN(floatValue)) {
 		return hidden;
 	}
 
 	if (isTotal) {
 		const scale = floatValue > 0 ? POSITIVE_SCALE : NEGATIVE_SCALE;
+
+		if (!opacity) {
+			return hidden;
+		}
 
 		for (const range of scale) {
 			if (opacity > range.threshold) {
