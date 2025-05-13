@@ -1,5 +1,7 @@
 'use client';
 
+import cx from 'clsx';
+import parser from 'html-react-parser';
 import { useTranslations } from 'next-intl';
 
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
@@ -15,6 +17,7 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 	const { header } = LOCALE_KEYS;
 	const t = useTranslations(header.root);
 	const { toggleAccountModalOpen } = useLayoutContext();
+	const translation = useTranslations('fundsLinks');
 
 	return (
 		<Container className={css.root}>
@@ -23,7 +26,9 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 					<BurgerLinks className={css.services} rootKey="servicesLinks" />
 				</li>
 				<li className={css.li}>
-					<BurgerLinks rootKey="fundsLinks" withLayoutContext />
+					<Button href={'/funds'} className={cx(css.link)} variant="subtle">
+						{parser(translation('text'))}
+					</Button>
 				</li>
 				<li className={css.li}>
 					<BurgerLinks rootKey="aboutUsLinks" />

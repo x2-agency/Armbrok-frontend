@@ -1,7 +1,15 @@
 .list {
 	display: flex;
 	flex-direction: column;
-	@mixin responsive gap, 6, 6, 6;
+
+	@media (max-width: 767px) {
+		@mixin responsive padding-block, 6;
+		@mixin responsive padding-inline, 12;
+
+		flex-shrink: 0;
+		background-color: #ffffff0f;
+		border-radius: 12px;
+	}
 }
 
 .title,
@@ -24,4 +32,19 @@
 	@mixin font-text16;
 	color: var(--gray-400-color);
 	width: fit-content;
+}
+
+html[lang='hy'],
+html[lang='ru'] {
+	.title,
+	.description {
+		@mixin responsive font-size, 16, 16, 16;
+		@mixin responsive max-width, 10, 200;
+
+		@media (max-width: 767px) {
+			font-size: 16px;
+
+			max-width: unset;
+		}
+	}
 }

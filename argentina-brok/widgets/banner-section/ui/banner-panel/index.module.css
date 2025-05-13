@@ -5,7 +5,7 @@
 
 	@media (max-width: 767px) {
 		flex-direction: column;
-		align-items: start;
+		align-items: center;
 	}
 }
 
@@ -17,18 +17,58 @@
 	width: 100%;
 	justify-content: space-between;
 	background-color: #2c2c2c;
+
+	@media (max-width: 767px) {
+		background-color: inherit;
+		padding: unset;
+		max-width: 100%;
+	}
 }
 
 .content {
-	@mixin responsive gap, 11, 48, 48;
+	@mixin responsive gap, 24, 48, 48;
+
+	@media (max-width: 767px) {
+		max-width: 100%;
+	}
+}
+
+.group {
+	display: flex;
+	@mixin responsive gap, 10, 48, 48;
+
+	@media (max-width: 767px) {
+		@mixin responsive padding-inline, 16;
+
+		overflow-x: scroll;
+		scrollbar-width: unset;
+		max-width: 100%;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
 }
 
 .linkButton {
-	@mixin responsive width, unset, 140, 140;
+	@mixin responsive min-width, 250, 140, 140;
+
 	justify-content: center;
 
 	@media (max-width: 767px) {
-		width: 100%;
 		margin-block-start: 3rem;
+		display: none;
+	}
+}
+
+html[lang='ru'],
+html[lang='hy'] {
+	.content {
+		@mixin responsive gap, 24, 16, 16;
+	}
+
+	.group {
+		@mixin responsive gap, 10, 44, 24;
+		align-items: center;
 	}
 }

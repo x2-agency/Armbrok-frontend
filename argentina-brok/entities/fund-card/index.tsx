@@ -20,6 +20,10 @@ export const FundsCard = ({
 	slug,
 	className,
 }: ParentFundProps & { mode?: 'default' | 'slider'; className?: string }) => {
+	if (!chart || !chart.length) {
+		return null;
+	}
+
 	return (
 		<article className={cx(css.root, css[mode], className)}>
 			{mode === 'default' && (
@@ -33,7 +37,7 @@ export const FundsCard = ({
 					/>
 					<DefaultChart
 						chart={chart}
-						annualReturnValue={infoCard?.annualReturn?.value}
+						annualReturnValue={infoCard?.annualReturn?.value ?? 0}
 					/>
 				</>
 			)}
@@ -43,7 +47,7 @@ export const FundsCard = ({
 						chart={chart}
 						title={title}
 						description={description}
-						annualReturnValue={infoCard?.annualReturn?.value}
+						annualReturnValue={infoCard?.annualReturn?.value ?? 0}
 					/>
 					<InfoCard {...infoCard} />
 				</>

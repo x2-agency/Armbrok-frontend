@@ -1,6 +1,7 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/shared/ui/button';
 import { useHeaderLinks } from '@/widgets/app-layout/hooks/use-header-links';
@@ -12,6 +13,7 @@ export const Navigation = () => {
 	const pathname = usePathname();
 	const isHyLocale = pathname.startsWith('/hy');
 	const links = useHeaderLinks();
+	const t = useTranslations('fundsLinks');
 	const normalizedPathname = pathname.replace(/^\/(hy|en|ru)/, '') || '/';
 
 	return (
@@ -21,7 +23,17 @@ export const Navigation = () => {
 					<BurgerLinks rootKey="servicesLinks" />
 				</li>
 				<li className={cx(css.li)}>
-					<BurgerLinks rootKey="fundsLinks" withLayoutContext />
+					<Button
+						href={'/funds'}
+						className={cx(
+							css.link,
+							{ [css.active]: pathname.includes('/funds') },
+							{ [css.hy]: isHyLocale }
+						)}
+						variant="subtle"
+					>
+						{parser(t('text'))}
+					</Button>
 				</li>
 				<li className={cx(css.li)}>
 					<BurgerLinks rootKey="aboutUsLinks" />

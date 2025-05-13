@@ -80,6 +80,12 @@
 			rgba(223, 44, 41, 0) 100%
 		),
 		linear-gradient(93.77deg, #171717 0%, #1f1f1f 100%), #ffffff;
+
+	.content {
+		@media (max-width: 767px) {
+			padding-inline: unset;
+		}
+	}
 }
 
 .content {

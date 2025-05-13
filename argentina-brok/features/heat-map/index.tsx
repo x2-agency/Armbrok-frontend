@@ -58,6 +58,7 @@ export const HeatMap = ({
 									<CellValue
 										value={typeof value !== 'string' ? value.value : value}
 										opacity={typeof value !== 'string' ? value.opacity : 1}
+										isTotal={valueKey === 0}
 									/>
 								</td>
 							))}

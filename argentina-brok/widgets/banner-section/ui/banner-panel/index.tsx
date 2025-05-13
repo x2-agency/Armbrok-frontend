@@ -25,21 +25,23 @@ export const BannerPanel = ({
 						label={annualReturn.label}
 					/>
 				)}
-				{minInvestment && (
-					<BannerInfoList
-						title={minInvestment.title ?? ''}
-						description={minInvestment.description ?? ''}
-					/>
-				)}
-				{riskLevel && (
-					<BannerRiskLevel level={riskLevel.level} label={riskLevel.label} />
-				)}
-				{investmentPeriod && (
-					<BannerInfoList
-						title={investmentPeriod.title}
-						description={investmentPeriod.description}
-					/>
-				)}
+				<div className={css.group}>
+					{minInvestment && (
+						<BannerInfoList
+							title={minInvestment.title ?? ''}
+							description={minInvestment.description ?? ''}
+						/>
+					)}
+					{riskLevel && (
+						<BannerRiskLevel level={riskLevel.level} label={riskLevel.label} />
+					)}
+					{investmentPeriod && (
+						<BannerInfoList
+							title={investmentPeriod.title}
+							description={investmentPeriod.description}
+						/>
+					)}
+				</div>
 			</div>
 			{button && (
 				<Button

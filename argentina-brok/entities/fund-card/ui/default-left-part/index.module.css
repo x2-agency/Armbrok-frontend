@@ -1,13 +1,18 @@
 .root {
-	@mixin responsive gap, 30, 30, 30;
+	@mixin responsive gap, 24, 30, 30;
 
 	display: flex;
 	flex-direction: column;
 	z-index: 10;
+
+	@media (max-width: 767px) {
+		gap: 0;
+	}
 }
 
 .icon {
 	@mixin responsive width, 72, 72, 72;
+	@mixin responsive margin-block-end, 24;
 }
 
 .root,
@@ -18,6 +23,10 @@
 
 .descriptionBlock {
 	@mixin responsive gap, 8, 8, 8;
+
+	@media (max-width: 767px) {
+		@mixin responsive padding-block-end, 24;
+	}
 }
 
 .title {
@@ -25,10 +34,18 @@
 
 	font-weight: 600;
 	color: var(--gray-100-color);
+
+	@media (max-width: 767px) {
+		font-size: 24px;
+	}
 }
 
 .description {
 	@mixin font-text16;
 
 	color: var(--gray-300-color);
+
+	@media (max-width: 767px) {
+		font-size: 16px;
+	}
 }

@@ -1,23 +1,11 @@
 .root {
-	@mixin responsive gap, 16, 32, 32;
+	@mixin responsive gap, 15, 32, 32;
 
 	display: flex;
 	align-items: center;
 
 	@media (max-width: 767px) {
-		flex-direction: column;
-		align-items: start;
-	}
-}
-
-.group {
-	@mixin responsive gap, 16, 32, 32;
-
-	display: flex;
-	flex-shrink: 0;
-
-	@media (max-width: 767px) {
-		flex-direction: column;
+		flex-wrap: wrap;
 	}
 }
 
@@ -48,6 +36,7 @@
 
 .risks {
 	@mixin responsive margin-block-start, 5, 5, 5;
+	@mixin responsive margin-block-end, -2, 12, 12;
 	@mixin responsive gap, 8, 8, 8;
 
 	display: flex;
@@ -74,12 +63,16 @@
 }
 
 .value {
-	@mixin responsive font-size, 42, 42, 42;
+	@mixin responsive font-size, 24, 42, 42;
 
 	color: var(--red-500-color);
 	font-weight: 700;
 
 	&.positive {
 		color: var(--green-550-color);
+	}
+
+	@media (max-width: 767px) {
+		font-size: 24px;
 	}
 }

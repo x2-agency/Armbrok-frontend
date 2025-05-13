@@ -32,13 +32,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const revalidate = 10;
 
-// SSG GENERATION
-// export const generateStaticParams = async () => {
-// 	const initialFunds = await getParentFunds();
-
-// 	return initialFunds.data.maps(fund => ({ slug: fund.slug }));
-// };
-
 const FundsPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
