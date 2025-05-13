@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
-/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import { useRouter } from 'next/navigation';
@@ -26,6 +26,9 @@ export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 					{parser(t('text'))}
 				</Button>
 			)}
+			{type === 'profix' && headData.icon && (
+				<img src={headData.icon} alt="Icon" className={css.icon} />
+			)}
 			{type === 'about' && headData.established && (
 				<div className={css.established}>{parser(headData.established)}</div>
 			)}
@@ -33,9 +36,6 @@ export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 			<div className={cx(css.description, css[type])}>
 				{parser(headData.description)}
 			</div>
-			{type === 'profix' && headData.icon && (
-				<img src={headData.icon} alt="Icon" className={css.icon} />
-			)}
 		</article>
 	);
 };

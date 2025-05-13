@@ -1,7 +1,7 @@
 .circle {
-	@mixin responsive width, 12, 12, 12;
-	@mixin responsive height, 12, 12, 12;
-	@mixin responsive margin-block, 7, 7, 7;
+	@mixin responsive width, 8, 12, 12;
+	@mixin responsive height, 8, 12, 12;
+	@mixin responsive margin-block-start, 7, 7, 7;
 
 	border-radius: 100%;
 	background-color: var(--gray-400-color);
@@ -12,7 +12,7 @@
 }
 
 .title {
-	@mixin responsive gap, 8, 8, 8;
+	@mixin responsive gap, 5, 8, 8;
 
 	display: flex;
 }
@@ -24,8 +24,18 @@
 }
 
 .list {
-	@mixin responsive gap, 8, 8, 8;
+	/* @mixin responsive gap, 3, 8, 8; */
 
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+
+	@media (max-width: 767px) {
+		@mixin responsive padding-block, 6;
+		@mixin responsive padding-inline, 12;
+
+		flex-shrink: 0;
+		background-color: #ffffff0f;
+		border-radius: 12px;
+	}
 }

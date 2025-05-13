@@ -1,7 +1,15 @@
 .list {
 	display: flex;
 	flex-direction: column;
-	@mixin responsive gap, 6, 6, 6;
+
+	@media (max-width: 767px) {
+		@mixin responsive padding-block, 6;
+		@mixin responsive padding-inline, 12;
+
+		flex-shrink: 0;
+		background-color: #ffffff0f;
+		border-radius: 12px;
+	}
 }
 
 .title,
