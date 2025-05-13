@@ -155,6 +155,15 @@ export const DefaultChart = ({
 					color,
 					lineWidth: 2,
 					marker: { enabled: false },
+					zones: [
+						{
+							value: 0,
+							color: '#DF2C29',
+						},
+						{
+							color: '#34CA2F',
+						},
+					],
 					zIndex: 2,
 					dataLabels: [
 						{
