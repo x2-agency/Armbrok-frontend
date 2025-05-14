@@ -1,3 +1,4 @@
+import cx from 'clsx';
 import { useTranslations } from 'next-intl';
 
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
@@ -6,7 +7,7 @@ import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
 
-export const LogIn = () => {
+export const LogIn = ({ className }: { className?: string }) => {
 	const { header } = LOCALE_KEYS;
 	const t = useTranslations(header.root);
 	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
@@ -17,7 +18,7 @@ export const LogIn = () => {
 	};
 
 	return (
-		<div className={css.root}>
+		<div className={cx(css.root, className)}>
 			<Button
 				className={css.button}
 				variant="filled"

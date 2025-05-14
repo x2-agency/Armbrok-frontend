@@ -41,7 +41,7 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 				{links.map((link, index) => (
 					<li key={index} className={css.li}>
 						<Button variant="subtle" href={link.href} className={css.button}>
-							{link.label}
+							{parser(link.label)}
 						</Button>
 					</li>
 				))}
@@ -55,7 +55,7 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 					category="big"
 					className={css.account}
 				>
-					{t(`${header.openAccountButton.root}.text`)}
+					{parser(t(`${header.openAccountButton.root}.text`))}
 				</Button>
 			</div>
 		</Container>

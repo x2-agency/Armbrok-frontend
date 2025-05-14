@@ -29,7 +29,7 @@ export const SliderChart = ({ chart, annualReturnValue }: SliderChartProps) => {
 				backgroundColor: 'transparent',
 				animation: false,
 				reflow: true,
-				margin: [0, 0, 0, 0],
+				overflow: 'visible',
 			},
 			title: { text: undefined },
 			xAxis: {
@@ -53,6 +53,7 @@ export const SliderChart = ({ chart, annualReturnValue }: SliderChartProps) => {
 			},
 			plotOptions: {
 				series: {
+					clip: false,
 					enableMouseTracking: false,
 					animation: false,
 					marker: { enabled: false },
