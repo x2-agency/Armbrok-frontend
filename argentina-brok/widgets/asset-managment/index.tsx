@@ -30,6 +30,7 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 				<FormatImage
 					poster={ASSET_MANAGEMENT_IMAGES}
 					className={css.background}
+					isLazy={false}
 				/>
 				<div className={css.contnet}>
 					<h2 className={css.title}>{parser(title ?? '')}</h2>
