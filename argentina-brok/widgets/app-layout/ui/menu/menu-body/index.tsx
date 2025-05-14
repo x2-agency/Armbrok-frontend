@@ -16,8 +16,13 @@ import css from './index.module.css';
 export const MenuBody = ({ links }: MenuBodyProps) => {
 	const { header } = LOCALE_KEYS;
 	const t = useTranslations(header.root);
-	const { toggleAccountModalOpen } = useLayoutContext();
+	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 	const translation = useTranslations('fundsLinks');
+
+	const handleButtonClick = (text: string) => {
+		setSubjectForm(text);
+		toggleAccountModalOpen(true);
+	};
 
 	return (
 		<Container className={css.root}>
@@ -43,7 +48,9 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 			</nav>
 			<div className={css.buttons}>
 				<Button
-					onClick={() => toggleAccountModalOpen(true)}
+					onClick={() =>
+						handleButtonClick(t(`${header.openAccountButton.root}.text`))
+					}
 					variant="filled"
 					category="big"
 					className={css.account}
