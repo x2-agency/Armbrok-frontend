@@ -60,3 +60,17 @@
 		display: none;
 	}
 }
+
+@media (min-width: 768px) {
+	.mobileBurger {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.pcSearch,
+	.pcLang,
+	.login {
+		display: none;
+	}
+}

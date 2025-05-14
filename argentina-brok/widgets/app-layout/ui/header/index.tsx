@@ -2,7 +2,6 @@
 import cx from 'clsx';
 import { usePathname } from 'next/navigation';
 
-import useMediaQuery from '@/shared/hooks/use-media-query';
 import {
 	HOME_LINK,
 	LOGO_HEADER,
@@ -19,7 +18,6 @@ import { Navigation } from './navigation';
 export const Header = () => {
 	const pathname = usePathname();
 	const isHyLocale = pathname.startsWith('/hy');
-	const isMobile = useMediaQuery('(max-width: 767px)');
 
 	return (
 		<header className={css.root}>
@@ -30,14 +28,11 @@ export const Header = () => {
 				</div>
 
 				<div className={cx(css.rightBlock, { [css.rightBlockHy]: isHyLocale })}>
-					{isMobile && <BurgerButton />}
-					{!isMobile && (
-						<>
-							<Search href="/armbrok-search" />
-							<LanguageSelection />
-							<LogIn />
-						</>
-					)}
+					<BurgerButton className={css.mobileBurger} />
+
+					<Search href="/armbrok-search" className={css.pcSearch} />
+					<LanguageSelection className={css.pcLang} />
+					<LogIn className={css.login} />
 				</div>
 			</div>
 		</header>
