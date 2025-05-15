@@ -55,32 +55,47 @@ export const graphicOptions = (
 				const point = this.points?.[0]?.point || this.point;
 				const date = formatDateFromChart(point.x);
 
-				const nearestStartPoint = cleanedSeries?.reduce((prev, curr) =>
-					Math.abs(curr.x - startTime) < Math.abs(prev.x - startTime)
-						? curr
-						: prev
-				);
+				if (!comparisonMode) {
+					const nearestStartPoint = cleanedSeries?.reduce((prev, curr) =>
+						Math.abs(curr.x - startTime) < Math.abs(prev.x - startTime)
+							? curr
+							: prev
+					);
 
-				const first = nearestStartPoint?.y ?? 0;
-				const current = point.y;
+					const first = nearestStartPoint?.y ?? 0;
+					const current = point.y;
 
-				const yieldValue =
-					typeof current === 'number' &&
-					typeof first === 'number' &&
-					first !== 0
-						? ((current - first) / first) * 100
-						: 0;
+					const yieldValue =
+						typeof current === 'number' &&
+						typeof first === 'number' &&
+						first !== 0
+							? ((current - first) / first) * 100
+							: 0;
 
-				const jsx = (
-					<CustomTooltipContent
-						date={date}
-						modeData={point.y}
-						mode={mode}
-						yieldNumber={yieldValue}
-					/>
-				);
+					const jsx = (
+						<CustomTooltipContent
+							date={date}
+							modeData={point.y}
+							mode={mode}
+							yieldNumber={yieldValue}
+						/>
+					);
 
-				return ReactDOMServer.renderToStaticMarkup(jsx);
+					return ReactDOMServer.renderToStaticMarkup(jsx);
+				} else {
+					const jsx = (
+						<CustomTooltipContent
+							date={date}
+							mode={mode}
+							comparisonPoints={this.points?.map(p => ({
+								name: p.series.name,
+								y: p.y,
+							}))}
+						/>
+					);
+
+					return ReactDOMServer.renderToStaticMarkup(jsx);
+				}
 			},
 			...tooltipStyle(),
 		},

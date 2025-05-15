@@ -1,3 +1,5 @@
+import cx from 'clsx';
+
 import {
 	NAV_LABEL,
 	UNIT_PRICE_LABEL,
@@ -9,10 +11,14 @@ import css from './index.module.css';
 import { Paragraph } from './paragraph';
 
 type TooltipContentProps = {
-	modeData: number;
+	modeData?: number;
 	date: string;
-	mode: GraphicMode;
-	yieldNumber: number;
+	mode?: GraphicMode;
+	yieldNumber?: number;
+	comparisonPoints?: Array<{
+		name: string;
+		y?: number;
+	}>;
 };
 
 export const CustomTooltipContent = ({
@@ -20,20 +26,49 @@ export const CustomTooltipContent = ({
 	date,
 	mode,
 	yieldNumber,
+	comparisonPoints,
 }: TooltipContentProps) => {
 	return (
 		<ul className={css.root}>
+			{yieldNumber && (
+				<li className={css.paragraph}>
+					<Paragraph title="Yield" description={yieldNumber.toFixed(2) + '%'} />
+				</li>
+			)}
+			{modeData && (
+				<li className={css.paragraph}>
+					<Paragraph
+						title={mode === NAV_PER_SHARE_MODE ? UNIT_PRICE_LABEL : NAV_LABEL}
+						description={'$' + modeData.toFixed(2)}
+					/>
+				</li>
+			)}
+			{comparisonPoints && comparisonPoints.length && (
+				<>
+					{comparisonPoints.map((point, index) => (
+						<li
+							key={index}
+							className={cx(css.paragraph, {
+								[css.fundChart]: index === 0,
+								[css.benchmarkChart]: index !== 0,
+							})}
+						>
+							{
+								<Paragraph
+									title={index === 0 ? 'Fund' : 'Benchmark'}
+									description={
+										point.y
+											? `${point.y > 0 ? '+' : ''}` + point.y?.toFixed(2) + '%'
+											: '0%'
+									}
+								/>
+							}
+						</li>
+					))}
+				</>
+			)}
 			<li className={css.paragraph}>
-				<Paragraph leftPart="Yield" rightPart={yieldNumber.toFixed(2) + '%'} />
-			</li>
-			<li className={css.paragraph}>
-				<Paragraph
-					leftPart={mode === NAV_PER_SHARE_MODE ? UNIT_PRICE_LABEL : NAV_LABEL}
-					rightPart={'$' + modeData.toFixed(2)}
-				/>
-			</li>
-			<li className={css.paragraph}>
-				<Paragraph leftPart="Date" rightPart={date} />
+				<Paragraph title="Date" description={date} />
 			</li>
 		</ul>
 	);

@@ -1,16 +1,16 @@
 import css from './index.module.css';
 
 type ParagraphProps = {
-	leftPart: string;
-	rightPart: string | number;
+	title: string;
+	description: string | number;
 };
 
-export const Paragraph = ({ leftPart, rightPart }: ParagraphProps) => {
+export const Paragraph = ({ title, description }: ParagraphProps) => {
 	return (
 		<>
-			<p className={css.leftPart}>{leftPart}</p>
+			<p className={css.leftPart}>{title}</p>
 			<span className={css.dotted} />
-			<p className={css.rightPart}>{rightPart}</p>
+			<p className={css.rightPart}>{description}</p>
 		</>
 	);
 };
