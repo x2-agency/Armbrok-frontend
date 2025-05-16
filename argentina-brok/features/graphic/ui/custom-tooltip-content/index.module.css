@@ -1,14 +1,18 @@
 .root {
 	@mixin responsive min-width, 170, 240, 240;
 	@mixin responsive gap, 8, 8, 8;
-	@mixin responsive padding, 16, 16, 16;
 	@mixin responsive border-radius, 16, 16, 16;
 
+	padding: 16px;
 	display: flex;
 	flex-direction: column;
 	box-shadow:
 		0px 20px 25px rgba(0, 0, 0, 0.06),
 		0px 4px 14px rgba(0, 0, 0, 0.03);
+
+	&.withPadding {
+		padding-inline-start: 18px;
+	}
 }
 
 .paragraph {

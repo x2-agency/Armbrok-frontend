@@ -11,6 +11,20 @@
 			text-align: center;
 		}
 	}
+
+	@media (max-width: 767px) {
+		&.bigIcon {
+			.icon {
+				@mixin responsive width, 48;
+				@mixin responsive height, 48;
+				@mixin responsive margin-block-end, 16;
+			}
+
+			.title:has(+ p) {
+				@mixin responsive padding-block-end, 12;
+			}
+		}
+	}
 }
 
 .icon {

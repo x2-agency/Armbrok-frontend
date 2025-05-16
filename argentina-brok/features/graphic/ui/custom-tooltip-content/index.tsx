@@ -29,7 +29,7 @@ export const CustomTooltipContent = ({
 	comparisonPoints,
 }: TooltipContentProps) => {
 	return (
-		<ul className={css.root}>
+		<ul className={cx(css.root, { [css.withPadding]: comparisonPoints })}>
 			{yieldNumber && (
 				<li className={css.paragraph}>
 					<Paragraph title="Yield" description={yieldNumber.toFixed(2) + '%'} />

@@ -64,6 +64,8 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 			<ExpertSolutionSection
 				title={howFundWorksSection?.title}
 				items={howFundWorksSection?.factoids}
+				centered
+				bigFormatIcon
 			/>
 			<HelpfulInformation accordionSection={infoSection} />
 			<HowWeAreWorkingSection data={disclaimerSection} oneCard />
