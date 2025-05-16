@@ -15,6 +15,7 @@ export type ExpertSolutionSectionProps = {
 	backgroundColor?: 'white' | 'gray';
 	gridClass?: string;
 	centered?: boolean;
+	bigFormatIcon?: boolean;
 };
 
 export const ExpertSolutionSection = ({
@@ -25,6 +26,7 @@ export const ExpertSolutionSection = ({
 	backgroundColor,
 	gridClass,
 	centered,
+	bigFormatIcon
 }: ExpertSolutionSectionProps) => {
 	if (!(items && items.length)) {
 		return null;
@@ -56,6 +58,7 @@ export const ExpertSolutionSection = ({
 									description={item.description}
 									media={item.media}
 									centered={centered}
+									bigFormatIcon={bigFormatIcon}
 								/>
 							</li>
 						))}
@@ -75,6 +78,7 @@ export const ExpertSolutionSection = ({
 									description={item.description}
 									media={item.media}
 									centered={centered}
+									bigFormatIcon={bigFormatIcon}
 								/>
 							</li>
 						))}
@@ -100,6 +104,7 @@ export const ExpertSolutionSection = ({
 								description={item.description}
 								media={item.media}
 								centered={centered}
+								bigFormatIcon={bigFormatIcon}
 							/>
 						</li>
 					))}

@@ -11,6 +11,7 @@ export type ExpertSolutionCardProps = Factoid & {
 	withShell?: boolean;
 	backgroundColor?: 'white' | 'gray';
 	centered?: boolean;
+	bigFormatIcon?: boolean;
 };
 
 export const ExpertSolutionCard = ({
@@ -22,6 +23,7 @@ export const ExpertSolutionCard = ({
 	backgroundColor,
 	media,
 	centered,
+	bigFormatIcon,
 }: ExpertSolutionCardProps) => {
 	const cardBackgroundColor = withShell
 		? backgroundColor === 'white'
@@ -35,6 +37,7 @@ export const ExpertSolutionCard = ({
 				[css.withShell]: withShell,
 				['p-32']: withShell,
 				[css.centered]: centered,
+				[css.bigIcon]: bigFormatIcon,
 			})}
 		>
 			{media?.url && <img src={media?.url} alt="icon" className={css.icon} />}
