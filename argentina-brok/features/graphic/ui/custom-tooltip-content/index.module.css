@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive min-width, 240, 240, 240;
+	@mixin responsive min-width, 170, 240, 240;
 	@mixin responsive gap, 8, 8, 8;
 	@mixin responsive padding, 16, 16, 16;
 	@mixin responsive border-radius, 16, 16, 16;
@@ -9,20 +9,43 @@
 	box-shadow:
 		0px 20px 25px rgba(0, 0, 0, 0.06),
 		0px 4px 14px rgba(0, 0, 0, 0.03);
-
-	@media (max-width: 767px) {
-		min-width: unset;
-	}
 }
 
 .paragraph {
-	@mixin responsive gap, 5, 12, 12;
-
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 
-	@media (max-width: 767px) {
-		justify-content: start;
+	p:first-child {
+		position: relative;
+		@mixin font-text14;
+
+		width: min-content;
+		color: var(--gray-600-color);
+	}
+
+	p:last-child {
+		@mixin font-text14;
+
+		font-weight: 500;
+		width: min-content;
+	}
+
+	&.fundChart p:first-child::after,
+	&.benchmarkChart p:first-child::after {
+		content: '';
+		width: 6px;
+		height: 6px;
+		position: absolute;
+		background-color: #2c7cdf;
+		left: 0;
+		top: 50%;
+		translate: -150% -50%;
+	}
+
+	&.fundChart p:first-child::after {
+		background-color: #df2c29;
+		border-radius: 100%;
 	}
 }

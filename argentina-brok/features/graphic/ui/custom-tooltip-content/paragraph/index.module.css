@@ -30,8 +30,4 @@
 		transparent 1px 7px
 	);
 	border-image-slice: 1;
-
-	@media (max-width: 767px) {
-		display: none;
-	}
 }
