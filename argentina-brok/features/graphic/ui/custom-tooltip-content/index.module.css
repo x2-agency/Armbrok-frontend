@@ -46,10 +46,10 @@
 		left: 0;
 		top: 50%;
 		translate: -150% -50%;
+		border-radius: 100%;
 	}
 
 	&.fundChart p:first-child::after {
 		background-color: #df2c29;
-		border-radius: 100%;
 	}
 }

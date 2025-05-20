@@ -103,12 +103,12 @@
 
 .listButton {
 	@mixin transition background-color;
-
 	@mixin font-text14;
 	@mixin responsive padding-block, 8, 8, 8;
 	@mixin responsive padding-inline, 16, 16, 16;
 	@mixin responsive border-radius, 8, 8, 8;
 
+	text-align: start;
 	width: 100%;
 	font-weight: 500;
 	color: inherit;
