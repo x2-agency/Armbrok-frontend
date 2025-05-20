@@ -28,7 +28,7 @@ export const InfoCard = ({
 			{riskLevel && (
 				<li className={cx(css.paragraph, css.risk)}>
 					<div className={css.risks}>
-						{Array.from({ length: 3 }).map((_, key) => (
+						{Array.from({ length: 5 }).map((_, key) => (
 							<div
 								className={cx(css.circle, {
 									[css.painted]: key < riskLevel.level,

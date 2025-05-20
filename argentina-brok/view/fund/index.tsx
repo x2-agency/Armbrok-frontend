@@ -53,9 +53,8 @@ export const Fund: NextPage<FundPageData> = ({
 					}}
 				/>
 			)}
-			<PortfolioStructure {...portfolioStructureSection} />
 			<FundFacts {...fundFactsSection} />
-			<AboutFund {...aboutFundSection} />
+			<PortfolioStructure {...portfolioStructureSection} />
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}
 				items={investReasonsSection?.factoids}

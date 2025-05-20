@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive margin-block-end, 20, 20, 20;
+	@mixin responsive margin-block-end, 10;
 	@mixin responsive gap, 12, 12, 12;
 
 	display: flex;
@@ -18,6 +18,15 @@
 				}
 			}
 		}
+	}
+
+	p,
+	span {
+		z-index: 10;
+	}
+
+	span {
+		bottom: 15%;
 	}
 
 	p {
