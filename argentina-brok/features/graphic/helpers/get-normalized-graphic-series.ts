@@ -73,12 +73,18 @@ export const getNormalizedGraphicSeries = (
 			data: navSeriesPercent,
 			type: 'line',
 			color: '#df2c29',
+			marker: {
+				symbol: 'circle',
+			},
 		},
 		{
 			data: comparisonSeries,
 			type: 'line',
 			color: '#2c7cdf',
 			connectNulls: true,
+			marker: {
+				symbol: 'circle',
+			},
 		},
 	];
 };
