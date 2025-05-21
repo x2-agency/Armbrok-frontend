@@ -9,7 +9,6 @@
 	&.withLink {
 		@mixin responsive padding-block, 10, 10, 10;
 		@mixin responsive padding-inline, 0, 16, 16;
-		cursor: pointer;
 
 		@media (hover: hover) {
 			&:hover {

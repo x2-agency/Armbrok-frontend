@@ -20,7 +20,7 @@
 			linear-gradient(93.77deg, #171717 0%, #1f1f1f 100%), #212121;
 
 		@media (max-width: 767px) {
-			@mixin responsive padding, 16;
+			@mixin responsive padding, 13;
 
 			display: flex;
 			flex-direction: column;

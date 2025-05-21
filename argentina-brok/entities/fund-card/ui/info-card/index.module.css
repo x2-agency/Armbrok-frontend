@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive gap, 15, 32, 32;
+	@mixin responsive gap, 12, 32, 32;
 
 	display: flex;
 	align-items: center;
@@ -37,15 +37,15 @@
 .risks {
 	@mixin responsive margin-block-start, 5, 5, 5;
 	@mixin responsive margin-block-end, -2, 12, 12;
-	@mixin responsive gap, 8, 8, 8;
+	@mixin responsive gap, 5, 8, 8;
 
 	display: flex;
 	align-items: center;
 }
 
 .circle {
-	@mixin responsive width, 8, 8, 8;
-	@mixin responsive height, 8, 8, 8;
+	@mixin responsive width, 6, 8, 8;
+	@mixin responsive height, 6, 8, 8;
 
 	border-radius: 100%;
 	background-color: var(--gray-400-color);
@@ -56,7 +56,7 @@
 }
 
 .annualReturn {
-	@mixin responsive gap, 8, 8, 8;
+	@mixin responsive gap, 5, 8, 8;
 
 	display: flex;
 	align-items: center;
