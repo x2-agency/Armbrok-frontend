@@ -1,3 +1,11 @@
 .paragraph:last-of-type .element {
 	margin-block-end: unset;
 }
+
+.title {
+	@mixin font-h4;
+	@mixin responsive padding-inline, 0, 16, 16;
+	@mixin responsive padding-block-end, 12, 24, 24;
+
+	font-weight: 600;
+}
