@@ -5,7 +5,10 @@ import type { PortfolioStructureProps } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import { MOCK_GEOGRAPHY } from './model/portfolio-structure.constants';
+import {
+	MOCK_GEOGRAPHY,
+	MOCK_CREDIT_RATING,
+} from './model/portfolio-structure.constants';
 import { AssetTypes } from './ui/asset-types';
 import { ItemDetailSection } from './ui/item-detail-section';
 import { Maturity } from './ui/maturity';
@@ -49,7 +52,10 @@ export const PortfolioStructure = ({
 					{assetTypesSection && <AssetTypes {...MOCK_GEOGRAPHY} />}
 				</div>
 				<div className={css.rightPart}>
-					{maturitySection && <Maturity {...maturitySection} />}
+					{maturitySection && (
+						<Maturity {...maturitySection} className={css.assetTypes} />
+					)}
+					{maturitySection && <Maturity {...MOCK_CREDIT_RATING} />}
 				</div>
 			</div>
 		</Container>

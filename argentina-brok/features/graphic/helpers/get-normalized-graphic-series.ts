@@ -25,52 +25,26 @@ export const getNormalizedGraphicSeries = (
 		);
 	});
 
-	const basePoint = filtered[0] ?? cleanedSeries[0];
+	const validPoints = filtered.filter(point => {
+		const navValid = typeof point.y === 'number';
+		const indexValue = point.indexes.find(
+			index => index.name === comparisonMode
+		)?.value;
+		const indexValid = typeof indexValue === 'number';
+		return navValid && indexValid;
+	});
+
+	const basePoint = validPoints[0] ?? filtered[0] ?? cleanedSeries[0];
+
+	const baseNavValue = basePoint?.y !== 0 ? (basePoint?.y ?? 1) : 1;
 	const baseComparisonRaw = basePoint?.indexes.find(
 		index => index.name === comparisonMode
 	)?.value;
-	const baseNavValue = basePoint?.y !== 0 ? (basePoint?.y ?? 1) : 1;
 	const baseComparisonValue =
 		baseComparisonRaw && baseComparisonRaw > 0 ? baseComparisonRaw : 100;
 
-	const processSeriesWithNulls = (
-		series: Array<SeriesSingleData>,
-		getValue: (point: SeriesSingleData) => number | null
-	) => {
-		let firstValidIndex = -1;
-		let lastValidValue: number | null = null;
-
-		const data = series.map((point, index) => {
-			const currentValue = getValue(point);
-
-			if (currentValue !== null) {
-				if (firstValidIndex === -1) {
-					firstValidIndex = index;
-				}
-				lastValidValue = currentValue;
-				return {
-					x: point.x,
-					y: (lastValidValue / baseComparisonValue - 1) * 100,
-				};
-			} else {
-				return {
-					x: point.x,
-					y: null,
-				};
-			}
-		});
-
-		// Trim all leading nulls before the first valid point
-		return data.map((point, index) => {
-			if (index < firstValidIndex) {
-				return { ...point, y: null };
-			}
-			return point;
-		});
-	};
-
-	const navSeriesPercent = cleanedSeries.map(point => {
-		const currentValue = point.y ?? baseNavValue;
+	const navSeriesPercent = validPoints.map(point => {
+		const currentValue = point.y!;
 		const percentChange = (currentValue / baseNavValue - 1) * 100;
 
 		return {
@@ -79,11 +53,15 @@ export const getNormalizedGraphicSeries = (
 		};
 	});
 
-	const comparisonSeries = processSeriesWithNulls(
-		cleanedSeries,
-		point =>
-			point.indexes.find(index => index.name === comparisonMode)?.value ?? null
-	);
+	const comparisonSeries = validPoints.map(point => {
+		const comparisonValue = point.indexes.find(
+			index => index.name === comparisonMode
+		)!.value!;
+		return {
+			x: point.x,
+			y: (comparisonValue / baseComparisonValue - 1) * 100,
+		};
+	});
 
 	return [
 		{
@@ -98,7 +76,7 @@ export const getNormalizedGraphicSeries = (
 			data: comparisonSeries,
 			type: 'line',
 			color: '#2c7cdf',
-			connectNulls: true,
+			connectNulls: false,
 			marker: {
 				symbol: 'circle',
 			},
