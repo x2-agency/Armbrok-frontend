@@ -2,7 +2,7 @@
 	height: 100%;
 
 	@media (max-width: 767px) {
-		height: 244px;
+		height: 195px;
 	}
 
 	& > div {

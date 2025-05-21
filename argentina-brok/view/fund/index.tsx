@@ -6,7 +6,6 @@ import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-fund
 import type { Factoid } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { TitleSection } from '@/shared/ui/title-section';
-import { AboutFund } from '@/widgets/about-fund';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { FundFacts } from '@/widgets/fund-facts';
 import { FundPerformance } from '@/widgets/fund-performance';
@@ -16,6 +15,7 @@ import { PortfolioStructure } from '@/widgets/portfolio-structure';
 import { Review } from '@/widgets/review';
 
 import css from './index.module.css';
+import { MOCK_FUND_FACTS } from './model/fund.constants';
 import type { FundPageData } from './types/response';
 
 export const Fund: NextPage<FundPageData> = ({
@@ -26,8 +26,6 @@ export const Fund: NextPage<FundPageData> = ({
 	investReasonsSection,
 	profixDescription,
 	portfolioStructureSection,
-	fundFactsSection,
-	aboutFundSection,
 	performanceData,
 	parentFunds,
 }) => {
@@ -53,9 +51,8 @@ export const Fund: NextPage<FundPageData> = ({
 					}}
 				/>
 			)}
+			<FundFacts {...MOCK_FUND_FACTS} />
 			<PortfolioStructure {...portfolioStructureSection} />
-			<FundFacts {...fundFactsSection} />
-			<AboutFund {...aboutFundSection} />
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}
 				items={investReasonsSection?.factoids}

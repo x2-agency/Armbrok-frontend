@@ -37,18 +37,35 @@ export const getNormalizedGraphicSeries = (
 		series: Array<SeriesSingleData>,
 		getValue: (point: SeriesSingleData) => number | null
 	) => {
-		let lastValidValue: number = baseComparisonValue;
-		return series.map(point => {
+		let firstValidIndex = -1;
+		let lastValidValue: number | null = null;
+
+		const data = series.map((point, index) => {
 			const currentValue = getValue(point);
 
 			if (currentValue !== null) {
+				if (firstValidIndex === -1) {
+					firstValidIndex = index;
+				}
 				lastValidValue = currentValue;
+				return {
+					x: point.x,
+					y: (lastValidValue / baseComparisonValue - 1) * 100,
+				};
+			} else {
+				return {
+					x: point.x,
+					y: null,
+				};
 			}
+		});
 
-			return {
-				x: point.x,
-				y: (lastValidValue / baseComparisonValue - 1) * 100,
-			};
+		// Trim all leading nulls before the first valid point
+		return data.map((point, index) => {
+			if (index < firstValidIndex) {
+				return { ...point, y: null };
+			}
+			return point;
 		});
 	};
 
@@ -73,12 +90,18 @@ export const getNormalizedGraphicSeries = (
 			data: navSeriesPercent,
 			type: 'line',
 			color: '#df2c29',
+			marker: {
+				symbol: 'circle',
+			},
 		},
 		{
 			data: comparisonSeries,
 			type: 'line',
 			color: '#2c7cdf',
 			connectNulls: true,
+			marker: {
+				symbol: 'circle',
+			},
 		},
 	];
 };

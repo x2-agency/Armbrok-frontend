@@ -19,7 +19,7 @@ export const ListParagraph = ({
 	link,
 }: ListParagraphProps) => {
 	return (
-		<article className={cx(css.root, className, { [css.withLink]: link })}>
+		<article className={cx(css.root, className, css.withLink)}>
 			<Detail
 				title={typeof leftPart === 'number' ? leftPart.toString() : leftPart}
 				description={

@@ -5,8 +5,8 @@ import { getFundPage } from '@/shared/api/get-fund-page';
 import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
 import { getIsrParentFunds } from '@/shared/api/get-isr-parent-funds';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
-import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import type { ParentFundProps } from '@/shared/types/global.types';
+import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import { Fund } from '@/view/fund';
 
 export async function generateMetadata({

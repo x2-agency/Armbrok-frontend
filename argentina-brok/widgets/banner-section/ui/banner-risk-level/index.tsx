@@ -8,7 +8,7 @@ import css from './index.module.css';
 export const BannerRiskLevel = ({ label, level }: RiskLevel) => (
 	<ul className={css.list}>
 		<li className={css.title}>
-			{Array.from({ length: 3 }).map((_, key) => (
+			{Array.from({ length: 5 }).map((_, key) => (
 				<div
 					key={key}
 					className={cx(css.circle, {

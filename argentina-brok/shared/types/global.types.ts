@@ -596,6 +596,21 @@ export type FundFactsProps = {
 	fundDescription?: Array<ItemDetail>;
 };
 
+export type FundFactSectionProps = {
+	title?: string;
+	items?: Array<ItemDetail>;
+};
+
+export type FundFactsActualProps = {
+	title?: string;
+	highlights?: FundFactSectionProps;
+	keyEntities?: FundFactSectionProps;
+	fundDetails?: FundFactSectionProps;
+	keyFigures?: FundFactSectionProps;
+	investmentTerms?: FundFactSectionProps;
+	financialIndicators?: FundFactSectionProps;
+};
+
 /** About Fund */
 
 export type AboutFundItemProps = {
