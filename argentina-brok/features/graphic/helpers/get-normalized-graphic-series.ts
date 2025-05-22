@@ -26,46 +26,42 @@ export const getNormalizedGraphicSeries = (
 	});
 
 	const basePoint = filtered[0] ?? cleanedSeries[0];
-	const baseComparisonRaw = basePoint?.indexes.find(
-		index => index.name === comparisonMode
-	)?.value;
 	const baseNavValue = basePoint?.y !== 0 ? (basePoint?.y ?? 1) : 1;
-	const baseComparisonValue =
-		baseComparisonRaw && baseComparisonRaw > 0 ? baseComparisonRaw : 100;
 
 	const processSeriesWithNulls = (
 		series: Array<SeriesSingleData>,
-		getValue: (point: SeriesSingleData) => number | null
+		getValue: (point: SeriesSingleData) => number | null,
+		startTime?: number
 	) => {
-		let firstValidIndex = -1;
-		let lastValidValue: number | null = null;
+		let baseValue: number | null = null;
+		let needReset = true;
+		let periodStarted = startTime === undefined;
 
-		const data = series.map((point, index) => {
-			const currentValue = getValue(point);
+		return series.map(point => {
+			const rawValue = getValue(point);
 
-			if (currentValue !== null) {
-				if (firstValidIndex === -1) {
-					firstValidIndex = index;
-				}
-				lastValidValue = currentValue;
-				return {
-					x: point.x,
-					y: (lastValidValue / baseComparisonValue - 1) * 100,
-				};
-			} else {
-				return {
-					x: point.x,
-					y: null,
-				};
+			if (!periodStarted && startTime !== undefined && point.x >= startTime) {
+				periodStarted = true;
+				needReset = true;
 			}
-		});
 
-		// Trim all leading nulls before the first valid point
-		return data.map((point, index) => {
-			if (index < firstValidIndex) {
-				return { ...point, y: null };
+			if (!periodStarted) {
+				return { x: point.x, y: null };
 			}
-			return point;
+
+			if (rawValue === null) {
+				needReset = true;
+				return { x: point.x, y: null };
+			}
+
+			if (needReset || baseValue === null) {
+				baseValue = rawValue;
+				needReset = false;
+				return { x: point.x, y: 0 };
+			}
+
+			const percent = (rawValue / baseValue - 1) * 100;
+			return { x: point.x, y: percent };
 		});
 	};
 
@@ -82,7 +78,8 @@ export const getNormalizedGraphicSeries = (
 	const comparisonSeries = processSeriesWithNulls(
 		cleanedSeries,
 		point =>
-			point.indexes.find(index => index.name === comparisonMode)?.value ?? null
+			point.indexes.find(index => index.name === comparisonMode)?.value ?? null,
+		startTime
 	);
 
 	return [
@@ -98,7 +95,7 @@ export const getNormalizedGraphicSeries = (
 			data: comparisonSeries,
 			type: 'line',
 			color: '#2c7cdf',
-			connectNulls: true,
+			connectNulls: false,
 			marker: {
 				symbol: 'circle',
 			},

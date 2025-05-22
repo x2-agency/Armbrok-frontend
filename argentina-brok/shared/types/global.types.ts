@@ -665,7 +665,7 @@ export type HeatMapItemProps = {
 };
 
 export type PerformanceProps = {
-	graphics: GraphicProps;
+	graphics?: GraphicProps;
 	profitTable: Array<ProfitTableItemProps>;
 	heatMap: Array<HeatMapItemProps>;
 };
