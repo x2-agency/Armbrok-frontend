@@ -37,15 +37,19 @@ export const FundPerformance = ({
 	return (
 		<Container className={css.root}>
 			<h2 className={css.title}>{parser(t('title'))}</h2>
-			<GraphicTabs
-				activeMode={activeGraphicMode}
-				onClick={setActiveGraphicMode}
-				tabs={GRAPHIC_TABS}
-				className={css.tabs}
-			/>
-			<ChartProvider>
-				<Graphic graphicData={graphics} mode={activeGraphicMode} />
-			</ChartProvider>
+			{graphics && (
+				<>
+					<GraphicTabs
+						activeMode={activeGraphicMode}
+						onClick={setActiveGraphicMode}
+						tabs={GRAPHIC_TABS}
+						className={css.tabs}
+					/>
+					<ChartProvider>
+						<Graphic graphicData={graphics} mode={activeGraphicMode} />
+					</ChartProvider>
+				</>
+			)}
 			<ProfitTable table={profitTable} />
 			{heatMap && (
 				<HideButton
