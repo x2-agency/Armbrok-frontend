@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
+import { getIsrArticles } from '@/shared/api/get-article';
 import { getBlogPage } from '@/shared/api/get-blog-page';
 import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams, SlugParams } from '@/shared/types/params';
@@ -30,6 +31,28 @@ type BlogPageProps = {
 	params: {
 		slug: string;
 	};
+};
+
+export const generateStaticParams = async () => {
+	try {
+		const response = await getIsrArticles({ limit: 25 });
+		const locales = ['en', 'ru', 'hy'];
+
+		if (!response?.data?.length) {
+			return [];
+		}
+
+		return locales.flatMap(locale =>
+			response.data.map(article => ({
+				slug: article.slug,
+				locale,
+			}))
+		);
+	} catch (error) {
+		console.error(error);
+
+		return [];
+	}
 };
 
 const BlogPage = async ({ params }: BlogPageProps) => {
