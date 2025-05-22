@@ -25,26 +25,37 @@ export const getNormalizedGraphicSeries = (
 		);
 	});
 
-	const validPoints = filtered.filter(point => {
-		const navValid = typeof point.y === 'number';
-		const indexValue = point.indexes.find(
-			index => index.name === comparisonMode
-		)?.value;
-		const indexValid = typeof indexValue === 'number';
-		return navValid && indexValid;
-	});
-
-	const basePoint = validPoints[0] ?? filtered[0] ?? cleanedSeries[0];
-
+	const basePoint = filtered[0] ?? cleanedSeries[0];
 	const baseNavValue = basePoint?.y !== 0 ? (basePoint?.y ?? 1) : 1;
-	const baseComparisonRaw = basePoint?.indexes.find(
-		index => index.name === comparisonMode
-	)?.value;
-	const baseComparisonValue =
-		baseComparisonRaw && baseComparisonRaw > 0 ? baseComparisonRaw : 100;
 
-	const navSeriesPercent = validPoints.map(point => {
-		const currentValue = point.y!;
+	const processSeriesWithNulls = (
+		series: Array<SeriesSingleData>,
+		getValue: (point: SeriesSingleData) => number | null
+	) => {
+		let baseValue: number | null = null;
+		let needReset = true;
+
+		return series.map(point => {
+			const rawValue = getValue(point);
+
+			if (rawValue === null) {
+				needReset = true;
+				return { x: point.x, y: null };
+			}
+
+			if (needReset || baseValue === null) {
+				baseValue = rawValue;
+				needReset = false;
+				return { x: point.x, y: 0 };
+			}
+
+			const percent = (rawValue / baseValue - 1) * 100;
+			return { x: point.x, y: percent };
+		});
+	};
+
+	const navSeriesPercent = cleanedSeries.map(point => {
+		const currentValue = point.y ?? baseNavValue;
 		const percentChange = (currentValue / baseNavValue - 1) * 100;
 
 		return {
@@ -53,15 +64,11 @@ export const getNormalizedGraphicSeries = (
 		};
 	});
 
-	const comparisonSeries = validPoints.map(point => {
-		const comparisonValue = point.indexes.find(
-			index => index.name === comparisonMode
-		)!.value!;
-		return {
-			x: point.x,
-			y: (comparisonValue / baseComparisonValue - 1) * 100,
-		};
-	});
+	const comparisonSeries = processSeriesWithNulls(
+		cleanedSeries,
+		point =>
+			point.indexes.find(index => index.name === comparisonMode)?.value ?? null
+	);
 
 	return [
 		{
