@@ -95,7 +95,7 @@ export const getNormalizedGraphicSeries = (
 			data: comparisonSeries,
 			type: 'line',
 			color: '#2c7cdf',
-			connectNulls: false,
+			connectNulls: true,
 			marker: {
 				symbol: 'circle',
 			},
