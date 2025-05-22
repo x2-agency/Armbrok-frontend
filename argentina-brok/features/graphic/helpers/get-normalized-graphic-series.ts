@@ -30,13 +30,24 @@ export const getNormalizedGraphicSeries = (
 
 	const processSeriesWithNulls = (
 		series: Array<SeriesSingleData>,
-		getValue: (point: SeriesSingleData) => number | null
+		getValue: (point: SeriesSingleData) => number | null,
+		startTime?: number
 	) => {
 		let baseValue: number | null = null;
 		let needReset = true;
+		let periodStarted = startTime === undefined;
 
 		return series.map(point => {
 			const rawValue = getValue(point);
+
+			if (!periodStarted && startTime !== undefined && point.x >= startTime) {
+				periodStarted = true;
+				needReset = true;
+			}
+
+			if (!periodStarted) {
+				return { x: point.x, y: null };
+			}
 
 			if (rawValue === null) {
 				needReset = true;
@@ -67,7 +78,8 @@ export const getNormalizedGraphicSeries = (
 	const comparisonSeries = processSeriesWithNulls(
 		cleanedSeries,
 		point =>
-			point.indexes.find(index => index.name === comparisonMode)?.value ?? null
+			point.indexes.find(index => index.name === comparisonMode)?.value ?? null,
+		startTime
 	);
 
 	return [
