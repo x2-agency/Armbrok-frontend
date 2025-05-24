@@ -5,10 +5,6 @@ import type { PortfolioStructureProps } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import {
-	MOCK_GEOGRAPHY,
-	MOCK_CREDIT_RATING,
-} from './model/portfolio-structure.constants';
 import { AssetTypes } from './ui/asset-types';
 import { ItemDetailSection } from './ui/item-detail-section';
 import { Maturity } from './ui/maturity';
@@ -19,6 +15,8 @@ export const PortfolioStructure = ({
 	industriesSection,
 	issuersSection,
 	maturitySection,
+	geography,
+	creditRating,
 	className,
 }: PortfolioStructureProps & { className?: string }) => {
 	if (
@@ -49,13 +47,13 @@ export const PortfolioStructure = ({
 					{issuersSection && (
 						<ItemDetailSection {...issuersSection} className={css.assetTypes} />
 					)}
-					{assetTypesSection && <AssetTypes {...MOCK_GEOGRAPHY} />}
+					{geography && <AssetTypes {...geography} />}
 				</div>
 				<div className={css.rightPart}>
 					{maturitySection && (
 						<Maturity {...maturitySection} className={css.assetTypes} />
 					)}
-					{maturitySection && <Maturity {...MOCK_CREDIT_RATING} />}
+					{creditRating && <Maturity {...creditRating} />}
 				</div>
 			</div>
 		</Container>

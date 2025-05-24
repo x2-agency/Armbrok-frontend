@@ -6,7 +6,7 @@ import type {
 	ProfixHeroSection,
 	QuoteSection,
 	PortfolioStructureProps,
-	FundFactsProps,
+	FundFactsActualProps,
 	AboutFundProps,
 	PerformanceProps,
 	ParentFundProps,
@@ -21,7 +21,7 @@ export type FundPageData = {
 	investReasonsSection?: BenefitsSection;
 	profixDescription?: HowWeAreWorkingProps;
 	portfolioStructureSection?: PortfolioStructureProps;
-	fundFactsSection?: FundFactsProps;
+	fundFactsSection?: FundFactsActualProps;
 	aboutFundSection?: AboutFundProps;
 	performanceData?: PerformanceProps;
 	parentFunds?: Array<ParentFundProps>;

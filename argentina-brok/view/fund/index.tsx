@@ -15,7 +15,6 @@ import { PortfolioStructure } from '@/widgets/portfolio-structure';
 import { Review } from '@/widgets/review';
 
 import css from './index.module.css';
-import { MOCK_FUND_FACTS } from './model/fund.constants';
 import type { FundPageData } from './types/response';
 
 export const Fund: NextPage<FundPageData> = ({
@@ -24,6 +23,7 @@ export const Fund: NextPage<FundPageData> = ({
 	infoSection,
 	disclaimer,
 	investReasonsSection,
+	fundFactsSection,
 	profixDescription,
 	portfolioStructureSection,
 	performanceData,
@@ -51,7 +51,7 @@ export const Fund: NextPage<FundPageData> = ({
 					}}
 				/>
 			)}
-			<FundFacts {...MOCK_FUND_FACTS} />
+			<FundFacts {...fundFactsSection} />
 			<PortfolioStructure {...portfolioStructureSection} />
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}
