@@ -20,12 +20,14 @@ export const ListParagraph = ({
 }: ListParagraphProps) => {
 	return (
 		<article className={cx(css.root, className, css.withLink)}>
-			<Detail
-				title={typeof leftPart === 'number' ? leftPart.toString() : leftPart}
-				description={
-					typeof rightPart === 'number' ? rightPart.toString() : rightPart
-				}
-			/>
+			<div className={css.wrap}>
+				<Detail
+					title={typeof leftPart === 'number' ? leftPart.toString() : leftPart}
+					description={
+						typeof rightPart === 'number' ? rightPart.toString() : rightPart
+					}
+				/>
+			</div>
 			<div className={css.overlay} />
 			{link && <Link href={link} target="_blank" className={css.link} />}
 		</article>

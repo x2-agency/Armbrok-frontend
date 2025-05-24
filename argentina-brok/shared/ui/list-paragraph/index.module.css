@@ -2,8 +2,6 @@
 	@mixin responsive margin-block-end, 10;
 	@mixin responsive gap, 12, 12, 12;
 
-	display: flex;
-	justify-content: space-between;
 	position: relative;
 
 	&.withLink {
@@ -24,17 +22,21 @@
 		z-index: 10;
 	}
 
-	span {
-		bottom: 15%;
-	}
-
-	p {
+	p,
+	p:has(+ span) {
 		@mixin font-text16;
 	}
 
 	p:last-of-type {
 		font-weight: 500;
 	}
+}
+
+.wrap {
+	position: relative;
+
+	display: flex;
+	justify-content: space-between;
 }
 
 .overlay,
