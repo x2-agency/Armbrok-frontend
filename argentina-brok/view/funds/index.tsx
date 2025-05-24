@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import { useTranslations } from 'next-intl';
 
 import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
+import useMediaQuery from '@/shared/hooks/use-media-query';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
@@ -19,6 +20,7 @@ import type { FundsPageResponse } from './types/response';
 export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	initialFundsPageData,
 }) => {
+	const isMobile = useMediaQuery('(max-width: 767px)');
 	const t = useTranslations('parentFundsFundPage');
 	const {
 		publishedAt,
@@ -58,6 +60,8 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 			<ExpertSolutionSection
 				items={investingAdvantages?.factoids}
 				title={investingAdvantages?.title}
+				centered={isMobile}
+				bigFormatIcon={isMobile}
 			/>
 			<ParentFunds head={{ title: t('text') }} funds={parentFunds} />
 			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
