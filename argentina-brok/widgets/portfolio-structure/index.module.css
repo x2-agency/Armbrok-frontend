@@ -11,7 +11,7 @@
 }
 
 .content {
-	@mixin responsive gap, 32, 64, 64;
+	@mixin responsive gap, 40, 64, 64;
 	@mixin responsive --col-width, 568, 568, 568;
 
 	display: grid;
@@ -24,9 +24,17 @@
 }
 
 .assetTypes {
-	@mixin responsive padding-block-end, 32, 48, 48;
+	@mixin responsive padding-block-end, 0, 48, 48;
 }
 
 .industries {
-	@mixin responsive padding-block-end, 16, 24, 24;
+	@mixin responsive padding-block-end, 0, 24, 24;
+}
+
+.leftPart,
+.rightPart {
+	@mixin responsive gap, 40;
+
+	display: flex;
+	flex-direction: column;
 }

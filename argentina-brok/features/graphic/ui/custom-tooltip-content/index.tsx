@@ -19,6 +19,7 @@ type TooltipContentProps = {
 		name: string;
 		y?: number;
 	}>;
+	isAmd?: boolean;
 };
 
 export const CustomTooltipContent = ({
@@ -27,19 +28,22 @@ export const CustomTooltipContent = ({
 	mode,
 	yieldNumber,
 	comparisonPoints,
+	isAmd,
 }: TooltipContentProps) => {
 	return (
 		<ul className={cx(css.root, { [css.withPadding]: comparisonPoints })}>
-			{yieldNumber && (
+			{typeof yieldNumber !== 'undefined' && (
 				<li className={css.paragraph}>
 					<Paragraph title="Yield" description={yieldNumber.toFixed(2) + '%'} />
 				</li>
 			)}
-			{modeData && (
+			{typeof modeData !== 'undefined' && (
 				<li className={css.paragraph}>
 					<Paragraph
 						title={mode === NAV_PER_SHARE_MODE ? UNIT_PRICE_LABEL : NAV_LABEL}
-						description={'$' + modeData.toFixed(2)}
+						description={
+							(isAmd && mode === NAV_PER_SHARE_MODE ? '֏' : '$') + modeData
+						}
 					/>
 				</li>
 			)}

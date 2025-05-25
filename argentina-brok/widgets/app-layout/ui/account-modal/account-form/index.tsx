@@ -3,6 +3,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -42,6 +43,7 @@ export const AccountForm = () => {
 		checkboxTranslation,
 		captchaTranslation,
 	} = useAccountTranslations();
+	const t = useTranslations('investButton');
 
 	const {
 		formState: { isValid, errors },
@@ -152,7 +154,9 @@ export const AccountForm = () => {
 						category="big"
 						className={cx(css.button, { [css.loading]: mutation.isPending })}
 					>
-						<span>{parser(subjectForm)}</span>
+						<span>
+							{parser(subjectForm === t('text') ? t('button') : subjectForm)}
+						</span>
 						<LoaderSVG className={css.loader} />
 					</Button>
 				</form>

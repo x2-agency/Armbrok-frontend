@@ -1,5 +1,6 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useCallback } from 'react';
 
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
@@ -12,16 +13,23 @@ import css from './index.module.css';
 export const BannerBody = ({ type, bodyData, className }: BannerBodyProps) => {
 	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 
-	const handleClick = (subject: string) => {
-		setSubjectForm(subject);
-		toggleAccountModalOpen(true);
-	};
+	const handleClick = useCallback(
+		(subject: string) => {
+			setSubjectForm(subject);
+			toggleAccountModalOpen(true);
+		},
+		[setSubjectForm, toggleAccountModalOpen]
+	);
 
 	switch (type) {
 		case 'profix':
 			return (
 				<div className={cx(css.root, className)}>
-					<BannerPanel className={css.panel} {...bodyData.panel} />
+					<BannerPanel
+						className={css.panel}
+						{...bodyData.panel}
+						handleClick={handleClick}
+					/>
 				</div>
 			);
 		case 'about':

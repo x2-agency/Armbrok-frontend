@@ -15,7 +15,8 @@ export const BannerPanel = ({
 	className,
 	minInvestment,
 	investmentPeriod,
-}: InfoCard & { className?: string }) => {
+	handleClick,
+}: InfoCard & { className?: string; handleClick: (arg: string) => void }) => {
 	return (
 		<article className={cx(css.root, className)}>
 			<div className={css.content}>
@@ -47,9 +48,8 @@ export const BannerPanel = ({
 				<Button
 					category="big"
 					variant="filled"
-					href={button.link}
-					target="_blank"
 					className={css.linkButton}
+					onClick={() => handleClick(button.text ?? '')}
 				>
 					{button.text}
 				</Button>
