@@ -259,5 +259,9 @@
 	},
 	"fundsLinks": {
 		"text": "Funds"
+	},
+	"investButton": {
+		"text": "Invest",
+		"button": "Request a consultation"
 	}
 }

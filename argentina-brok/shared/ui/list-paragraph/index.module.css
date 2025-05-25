@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive margin-block-end, 10;
+	@mixin responsive margin-block-end, 2;
 	@mixin responsive gap, 12, 12, 12;
 
 	position: relative;

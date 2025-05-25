@@ -39,7 +39,7 @@ export const CustomTooltipContent = ({
 				<li className={css.paragraph}>
 					<Paragraph
 						title={mode === NAV_PER_SHARE_MODE ? UNIT_PRICE_LABEL : NAV_LABEL}
-						description={'$' + modeData.toFixed(2)}
+						description={'$' + modeData}
 					/>
 				</li>
 			)}
