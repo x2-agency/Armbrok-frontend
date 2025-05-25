@@ -20,7 +20,8 @@ import { yAxisOptions } from './y-axis-options';
 
 export const graphicOptions = (
 	seriesData: Array<SeriesSingleData>,
-	mode: GraphicMode
+	mode: GraphicMode,
+	isAmd?: boolean
 ): Highcharts.Options => {
 	const [startTime, setStartTime] = useState<number>(0);
 	const [endTime, setEndTime] = useState<number>(0);
@@ -78,6 +79,7 @@ export const graphicOptions = (
 							modeData={point.y}
 							mode={mode}
 							yieldNumber={yieldValue}
+							isAmd={isAmd}
 						/>
 					);
 
