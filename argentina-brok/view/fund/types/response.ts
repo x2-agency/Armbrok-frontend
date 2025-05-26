@@ -10,11 +10,13 @@ import type {
 	AboutFundProps,
 	PerformanceProps,
 	ParentFundProps,
+	CurrencyType,
 } from '@/shared/types/global.types';
 import type { HowWeAreWorkingProps } from '@/view/funds/types/response';
 
 export type FundPageData = {
 	heroSection?: ProfixHeroSection;
+	currency?: CurrencyType;
 	quoteSection?: QuoteSection;
 	infoSection?: AccordionSectionProps;
 	disclaimer?: ItemDetail;

@@ -47,11 +47,48 @@
 		color: var(--gray-600-color);
 	}
 
+	img,
+	video {
+		width: 100%;
+		height: auto;
+		@mixin responsive border-radius, 24, 24, 24;
+	}
+
 	figure {
 		@mixin responsive padding-block, 20, 48, 48;
-		img {
-			width: 100%;
-			height: 100%;
+		@mixin responsive gap, 8, 16, 16;
+
+		display: flex;
+		flex-direction: column;
+
+		figcaption {
+			@mixin font-text14;
+
+			color: var(--gray-600-color);
+
+			a {
+				@mixin transition opacity;
+
+				text-decoration: underline;
+
+				@media (hover: hover) {
+					&:hover {
+						opacity: 0.85;
+					}
+				}
+			}
+		}
+
+		figcaption:has(a)::before {
+			@mixin responsive width, 16, 16, 16;
+			@mixin responsive height, 16, 16, 16;
+			@mixin responsive margin-inline-end, 6, 6, 6;
+
+			content: '';
+			display: inline-block;
+			background-image: url('/assets/icons/link.svg');
+			background-repeat: no-repeat;
+			background-size: 100%;
 		}
 	}
 

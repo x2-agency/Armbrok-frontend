@@ -611,6 +611,7 @@ export type FundFactsActualProps = {
 	keyFigures?: FundFactSectionProps;
 	investmentTerms?: FundFactSectionProps;
 	financialIndicators?: FundFactSectionProps;
+	currency: CurrencyType;
 };
 
 /** About Fund */
@@ -696,3 +697,5 @@ export type BackgroundVideoType = {
 	video?: MediaData;
 	mobileVideo?: MediaData;
 };
+
+export type CurrencyType = 'amd' | 'usd';
