@@ -5,9 +5,11 @@
 
 	border-radius: 100%;
 	background-color: var(--gray-400-color);
+	opacity: 0.5;
 
 	&.filled {
 		background-color: var(--gray-100-color);
+		opacity: 1;
 	}
 }
 
