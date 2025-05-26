@@ -33,7 +33,7 @@
 
 .leftPart,
 .rightPart {
-	@mixin responsive gap, 40;
+	@mixin responsive gap, 32;
 
 	display: flex;
 	flex-direction: column;

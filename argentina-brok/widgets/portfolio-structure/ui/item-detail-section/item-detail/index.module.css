@@ -10,6 +10,10 @@
 		@mixin font-text20;
 
 		font-weight: 500;
+
+		@media (max-width: 767px) {
+			@mixin font-text16;
+		}
 	}
 
 	p:first-child {
