@@ -28,6 +28,7 @@ export const Fund: NextPage<FundPageData> = ({
 	portfolioStructureSection,
 	performanceData,
 	parentFunds,
+	currency,
 }) => {
 	useAppendToHeaderFunds({ funds: parentFunds });
 
@@ -51,7 +52,7 @@ export const Fund: NextPage<FundPageData> = ({
 					}}
 				/>
 			)}
-			<FundFacts {...fundFactsSection} />
+			<FundFacts {...fundFactsSection} currency={currency ?? 'usd'} />
 			<PortfolioStructure {...portfolioStructureSection} />
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}
