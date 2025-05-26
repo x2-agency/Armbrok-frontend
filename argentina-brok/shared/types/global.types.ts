@@ -611,7 +611,6 @@ export type FundFactsActualProps = {
 	keyFigures?: FundFactSectionProps;
 	investmentTerms?: FundFactSectionProps;
 	financialIndicators?: FundFactSectionProps;
-	currency: CurrencyType;
 };
 
 /** About Fund */
@@ -671,6 +670,7 @@ export type PerformanceProps = {
 	graphics?: GraphicProps;
 	profitTable: Array<ProfitTableItemProps>;
 	heatMap: Array<HeatMapItemProps>;
+	fundCurrency: CurrencyType;
 };
 
 export type GraphicMode = 'share' | 'nav';

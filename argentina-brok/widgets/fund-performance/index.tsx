@@ -23,6 +23,7 @@ export const FundPerformance = ({
 	graphics,
 	profitTable,
 	heatMap,
+	fundCurrency,
 }: PerformanceProps) => {
 	const t = useTranslations('fundPerformance');
 	const [heatMapOpened, toggleHeatMap] = useState<boolean>(false);
@@ -45,7 +46,7 @@ export const FundPerformance = ({
 						tabs={GRAPHIC_TABS}
 						className={css.tabs}
 					/>
-					<ChartProvider>
+					<ChartProvider fundCurrency={fundCurrency}>
 						<Graphic graphicData={graphics} mode={activeGraphicMode} />
 					</ChartProvider>
 				</>
