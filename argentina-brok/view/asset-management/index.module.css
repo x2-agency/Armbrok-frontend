@@ -17,11 +17,11 @@
 	@mixin responsive padding-block, 30, 72, 72;
 }
 
-.management {
+.management:has(li) {
 	grid-template-columns: repeat(3, 1fr) !important;
 
 	@media (max-width: 767px) {
-		display: flex;
+		display: flex  !important;
 		flex-direction: column;
 	}
 }
