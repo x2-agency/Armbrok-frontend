@@ -14,9 +14,27 @@ export const ProfitTable = ({ table }: ProfitTableProps) => {
 	}
 
 	const keys: Array<string> = table.map(item => Object.keys(item)[0]);
-	const values: Array<number> = table.map(item =>
-		parseFloat(Object.values(item)[0].replace(',', '.').replace('-', '0%'))
-	);
+	const values: Array<number> = table.map(item => {
+		try {
+			if (!item || typeof item !== 'object') return 0;
+
+			const itemValues = Object.values(item);
+			if (itemValues.length === 0) return 0;
+
+			const value = itemValues[0];
+			if (value === null || value === undefined) return 0;
+
+			const stringValue = String(value).replace(',', '.').replace(/-/g, '0');
+
+			const cleanedValue = stringValue.replace(/[^\d.-]/g, '');
+
+			const parsed = parseFloat(cleanedValue);
+			return isNaN(parsed) ? 0 : parsed;
+		} catch (error) {
+			console.error('Error parsing value:', error);
+			return 0;
+		}
+	});
 	const filtered = values.slice(0, -1).filter(v => v !== 0);
 
 	const maxValue = filtered.length ? Math.max(...filtered) : 0;
