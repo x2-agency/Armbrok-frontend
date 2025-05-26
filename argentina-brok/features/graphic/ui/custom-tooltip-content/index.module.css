@@ -10,7 +10,13 @@
 		0px 20px 25px rgba(0, 0, 0, 0.06),
 		0px 4px 14px rgba(0, 0, 0, 0.03);
 
+	@media (max-width: 767px) {
+		min-width: unset;
+	}
+
 	&.withPadding {
+		@mixin responsive min-width, 170;
+
 		padding-inline-start: 18px;
 	}
 }
