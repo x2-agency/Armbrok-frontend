@@ -27,6 +27,7 @@ export type FundPageData = {
 	aboutFundSection?: AboutFundProps;
 	performanceData?: PerformanceProps;
 	parentFunds?: Array<ParentFundProps>;
+	updatedAt: string;
 };
 
 export type FundPageResponse = BaseResponse<FundPageData>;
