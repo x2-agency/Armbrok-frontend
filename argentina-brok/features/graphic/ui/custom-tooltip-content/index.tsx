@@ -31,6 +31,7 @@ export const CustomTooltipContent = ({
 	comparisonPoints,
 	currency,
 }: TooltipContentProps) => {
+	console.log(modeData);
 	return (
 		<ul className={cx(css.root, { [css.withPadding]: comparisonPoints })}>
 			{typeof yieldNumber !== 'undefined' && (
@@ -43,7 +44,8 @@ export const CustomTooltipContent = ({
 					<Paragraph
 						title={mode === NAV_PER_SHARE_MODE ? UNIT_PRICE_LABEL : NAV_LABEL}
 						description={
-							(currency === 'amd' ? '֏' : '$') + transformNumber(modeData)
+							(currency === 'amd' ? '֏' : '$') +
+							transformNumber(Number(modeData.toFixed(2)))
 						}
 					/>
 				</li>
