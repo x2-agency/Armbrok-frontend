@@ -51,7 +51,7 @@
 	video {
 		width: 100%;
 		height: auto;
-		@mixin responsive border-radius, 24, 24, 24;
+		@mixin responsive border-radius, 16, 24, 24;
 	}
 
 	figure {
