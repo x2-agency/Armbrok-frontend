@@ -268,6 +268,11 @@ h6 {
 	font-weight: 400;
 }
 
+html,
+body {
+	scrollbar-gutter: stable;
+}
+
 .body {
 	overscroll-behavior: none;
 }
