@@ -31,7 +31,6 @@ export const CustomTooltipContent = ({
 	comparisonPoints,
 	currency,
 }: TooltipContentProps) => {
-	console.log(modeData);
 	return (
 		<ul className={cx(css.root, { [css.withPadding]: comparisonPoints })}>
 			{typeof yieldNumber !== 'undefined' && (
