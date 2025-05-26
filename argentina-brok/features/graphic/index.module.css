@@ -37,7 +37,7 @@
 		}
 	}
 
-	:global(.highcharts-navigator-handle) {
+	:global(.highcharts-navigator-mask-inside) {
 		cursor: grab !important;
 
 		&:active {
