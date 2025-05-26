@@ -4,7 +4,8 @@ import {
 	NAV_LABEL,
 	UNIT_PRICE_LABEL,
 } from '@/features/graphic/model/graphic.constants';
-import type { GraphicMode } from '@/shared/types/global.types';
+import { transformNumber } from '@/features/graphic/model/transform-number';
+import type { CurrencyType, GraphicMode } from '@/shared/types/global.types';
 import { NAV_PER_SHARE_MODE } from '@/widgets/fund-performance/model/fund-performance.constants';
 
 import css from './index.module.css';
@@ -19,7 +20,7 @@ type TooltipContentProps = {
 		name: string;
 		y?: number;
 	}>;
-	isAmd?: boolean;
+	currency: CurrencyType;
 };
 
 export const CustomTooltipContent = ({
@@ -28,7 +29,7 @@ export const CustomTooltipContent = ({
 	mode,
 	yieldNumber,
 	comparisonPoints,
-	isAmd,
+	currency,
 }: TooltipContentProps) => {
 	return (
 		<ul className={cx(css.root, { [css.withPadding]: comparisonPoints })}>
@@ -42,7 +43,7 @@ export const CustomTooltipContent = ({
 					<Paragraph
 						title={mode === NAV_PER_SHARE_MODE ? UNIT_PRICE_LABEL : NAV_LABEL}
 						description={
-							(isAmd && mode === NAV_PER_SHARE_MODE ? '֏' : '$') + modeData
+							(currency === 'amd' ? '֏' : '$') + transformNumber(modeData)
 						}
 					/>
 				</li>

@@ -20,9 +20,9 @@ import { yAxisOptions } from './y-axis-options';
 
 export const graphicOptions = (
 	seriesData: Array<SeriesSingleData>,
-	mode: GraphicMode,
-	isAmd?: boolean
+	mode: GraphicMode
 ): Highcharts.Options => {
+	const { fundCurrency } = useChartContext();
 	const [startTime, setStartTime] = useState<number>(0);
 	const [endTime, setEndTime] = useState<number>(0);
 	const { comparisonMode } = useChartContext();
@@ -79,7 +79,7 @@ export const graphicOptions = (
 							modeData={point.y}
 							mode={mode}
 							yieldNumber={yieldValue}
-							isAmd={isAmd}
+							currency={fundCurrency}
 						/>
 					);
 
@@ -93,6 +93,7 @@ export const graphicOptions = (
 								name: p.series.name,
 								y: p.y,
 							}))}
+							currency={fundCurrency}
 						/>
 					);
 

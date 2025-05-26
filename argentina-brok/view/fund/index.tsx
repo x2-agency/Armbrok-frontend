@@ -43,7 +43,12 @@ export const Fund: NextPage<FundPageData> = ({
 					icon: heroSection?.background.url ?? '',
 				}}
 			/>
-			{performanceData && <FundPerformance {...performanceData} />}
+			{performanceData && (
+				<FundPerformance
+					{...performanceData}
+					fundCurrency={currency ?? 'usd'}
+				/>
+			)}
 			{profixDescription?.items && (
 				<HowWeAreWorkingSection
 					data={{
@@ -52,7 +57,7 @@ export const Fund: NextPage<FundPageData> = ({
 					}}
 				/>
 			)}
-			<FundFacts {...fundFactsSection} currency={currency ?? 'usd'} />
+			<FundFacts {...fundFactsSection} />
 			<PortfolioStructure {...portfolioStructureSection} />
 			<ExpertSolutionSection
 				title={investReasonsSection?.title}

@@ -2,7 +2,6 @@
 
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
-import { usePathname } from 'next/navigation';
 
 import type { GraphicMode, GraphicProps } from '@/shared/types/global.types';
 import { NAV_MODE } from '@/widgets/fund-performance/model/fund-performance.constants';
@@ -22,10 +21,9 @@ type GraphicComponentProps = {
 
 export const Graphic = ({ graphicData, mode }: GraphicComponentProps) => {
 	const fundData = graphicData.chart.metrics;
-	const isAmd = usePathname().split('/').includes('amd');
 
 	const seriesData = getSeriesData(fundData, mode);
-	const options = graphicOptions(seriesData, mode, isAmd);
+	const options = graphicOptions(seriesData, mode);
 
 	const { chartRef, setRange } = useDateControllers();
 	const dateControllers = getDateControllersOptions({ setRange });
