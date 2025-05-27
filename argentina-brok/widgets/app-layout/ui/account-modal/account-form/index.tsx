@@ -3,6 +3,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -29,9 +30,11 @@ export type AccountFormValuesData = {
 	phoneNumber: string;
 	formSubject: string;
 	checkbox: boolean;
+	fundLink?: string;
 };
 
 export const AccountForm = () => {
+	const pathname = usePathname();
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const [isError, toggleError] = useState<boolean>(false);
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
@@ -58,14 +61,17 @@ export const AccountForm = () => {
 		if (subjectForm) {
 			setValue('formSubject', subjectForm);
 		}
-	}, [subjectForm, setValue]);
+
+		if (pathname.includes('funds')) {
+			setValue('fundLink', `${process.env.NEXT_PUBLIC_WEBSITE_DOMAIN}${pathname.slice(1)}`);
+		}
+	}, [subjectForm, setValue, pathname]);
 
 	const handleSubmitForm = async (formData: AccountFormValuesData) => {
 		const { checkbox, ...restData } = formData;
 		mutation.mutate({ data: { ...restData } });
 	};
-	const { nameInput, telInput, emailInput, messageTextArea, subjectInput } =
-		ACCOUNT;
+	const { nameInput, telInput, emailInput } = ACCOUNT;
 
 	return (
 		<div className={css.root}>
