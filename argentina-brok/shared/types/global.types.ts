@@ -685,6 +685,7 @@ export type ParentFundProps = ItemDetail & {
 	infoCard: InfoCard;
 	slug: string;
 	chart: Array<ParentFundChartPoint>;
+	shortDescription?: string;
 };
 
 export type ParentFundResponse = {

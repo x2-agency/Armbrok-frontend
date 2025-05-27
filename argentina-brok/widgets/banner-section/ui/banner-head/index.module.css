@@ -66,6 +66,7 @@
 	&.profix {
 		@mixin font-text18;
 		@mixin responsive padding-block-end, 64, 64, 64;
+		max-width: 70%;
 
 		color: var(--gray-400-color);
 
