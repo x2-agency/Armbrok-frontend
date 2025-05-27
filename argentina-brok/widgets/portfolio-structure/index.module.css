@@ -23,17 +23,13 @@
 	}
 }
 
-.assetTypes {
-	@mixin responsive padding-block-end, 0, 48, 48;
-}
-
 .industries {
 	@mixin responsive padding-block-end, 0, 24, 24;
 }
 
 .leftPart,
 .rightPart {
-	@mixin responsive gap, 32;
+	@mixin responsive gap, 32, 48, 48;
 
 	display: flex;
 	flex-direction: column;

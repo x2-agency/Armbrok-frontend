@@ -41,7 +41,7 @@ export const PortfolioStructure = ({
 					{industriesSection && (
 						<ItemDetailSection
 							{...industriesSection}
-							className={css.industries}
+							className={css.assetTypes}
 						/>
 					)}
 					{issuersSection && (

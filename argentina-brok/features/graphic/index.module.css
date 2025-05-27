@@ -36,6 +36,14 @@
 			@mixin responsive margin-inline, 10;
 		}
 	}
+
+	:global(.highcharts-navigator-mask-inside) {
+		cursor: grab !important;
+
+		&:active {
+			cursor: grabbing !important;
+		}
+	}
 }
 
 .controls {
