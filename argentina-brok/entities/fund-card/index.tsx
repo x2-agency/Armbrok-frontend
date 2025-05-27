@@ -19,7 +19,6 @@ export const FundsCard = ({
 	mode = 'default',
 	slug,
 	className,
-	shortDescription,
 }: ParentFundProps & { mode?: 'default' | 'slider'; className?: string }) => {
 	if (!chart || !chart.length) {
 		return null;
@@ -33,7 +32,7 @@ export const FundsCard = ({
 					<DefaultLeftPart
 						background={background}
 						title={title}
-						description={shortDescription}
+						description={description}
 						infoCard={infoCard}
 					/>
 					<DefaultChart
@@ -47,7 +46,7 @@ export const FundsCard = ({
 					<SliderTopPart
 						chart={chart}
 						title={title}
-						description={shortDescription}
+						description={description}
 						annualReturnValue={infoCard?.annualReturn?.value ?? 0}
 					/>
 					<InfoCard {...infoCard} />
