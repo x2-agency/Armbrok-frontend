@@ -1,6 +1,7 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
+import { defineFundRiskLevel } from '@/shared/helpers/define-fund-risk-color';
 import type { InfoCard as InfoCardProps } from '@/shared/types/global.types';
 
 import css from './index.module.css';
@@ -30,6 +31,12 @@ export const InfoCard = ({
 					<div className={css.risks}>
 						{Array.from({ length: 5 }).map((_, key) => (
 							<div
+								style={{
+									backgroundColor:
+										key < riskLevel.level
+											? defineFundRiskLevel(riskLevel.level)
+											: '',
+								}}
 								className={cx(css.circle, {
 									[css.painted]: key < riskLevel.level,
 								})}
