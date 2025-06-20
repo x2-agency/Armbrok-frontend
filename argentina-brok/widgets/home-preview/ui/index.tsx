@@ -70,14 +70,18 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 			<Container className={css.textWrap}>
 				{parser(title ?? '')}
 				<p className={css.description}>{parser(description ?? '')}</p>
-				<Button
-					variant="filled"
-					category="big"
-					className={css.button}
-					onClick={handleClick}
-				>
-					{button?.text ?? ''}
-				</Button>
+				{button && (
+					<Button
+						variant="filled"
+						category="big"
+						className={css.button}
+						{...(button?.link
+							? { href: button.link }
+							: { onClick: handleClick })}
+					>
+						{button?.text ?? ''}
+					</Button>
+				)}
 			</Container>
 		</div>
 	);

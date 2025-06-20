@@ -25,24 +25,38 @@ export const TextBlock = ({ data }: TextBlockProps) => {
 			<h2 className={css.title}>{parser(title ?? '')}</h2>
 			<p className={css.description}>{parser(description ?? '')}</p>
 			<div className={css.wrapButton}>
-				<Button
-					onClick={() => handleClick(primaryButton?.text ?? 'Open an account')}
-					category="big"
-					variant="filled"
-					className={css.button}
-				>
-					{parser(primaryButton?.text ?? '')}
-				</Button>
-				<Button
-					className={css.buttonRed}
-					onClick={() =>
-						handleClick(secondaryButton?.text ?? 'Request a consultation')
-					}
-					category="big"
-					variant="outline"
-				>
-					{parser(secondaryButton?.text ?? '')}
-				</Button>
+				{primaryButton && (
+					<Button
+						category="big"
+						variant="filled"
+						className={css.button}
+						{...(primaryButton.link
+							? { href: primaryButton.link }
+							: {
+									onClick: () =>
+										handleClick(primaryButton?.text ?? 'Open an account'),
+								})}
+					>
+						{parser(primaryButton?.text ?? '')}
+					</Button>
+				)}
+				{secondaryButton && (
+					<Button
+						className={css.buttonRed}
+						category="big"
+						variant="outline"
+						{...(secondaryButton.link
+							? { href: secondaryButton.link }
+							: {
+									onClick: () =>
+										handleClick(
+											secondaryButton?.text ?? 'Request a consultation'
+										),
+								})}
+					>
+						{parser(secondaryButton?.text ?? '')}
+					</Button>
+				)}
 			</div>
 		</article>
 	);

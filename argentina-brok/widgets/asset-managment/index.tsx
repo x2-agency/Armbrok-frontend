@@ -37,14 +37,21 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 					{description && (
 						<p className={css.description}>{parser(description ?? '')}</p>
 					)}
-					<Button
-						className={css.button}
-						category="big"
-						variant="filled"
-						onClick={() => handleClick(button?.text ?? 'Open an account')}
-					>
-						{parser(button?.text ?? '')}
-					</Button>
+					{button && (
+						<Button
+							className={css.button}
+							category="big"
+							variant="filled"
+							{...(button.link
+								? { href: button.link }
+								: {
+										onClick: () =>
+											handleClick(button?.text ?? 'Open an account'),
+									})}
+						>
+							{parser(button?.text ?? '')}
+						</Button>
+					)}
 				</div>
 			</article>
 			<Link className={css.link} href={link ?? ''} />

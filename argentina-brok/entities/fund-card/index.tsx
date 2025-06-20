@@ -1,6 +1,6 @@
 import cx from 'clsx';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import type { ParentFundProps } from '@/shared/types/global.types';
 
 import css from './index.module.css';

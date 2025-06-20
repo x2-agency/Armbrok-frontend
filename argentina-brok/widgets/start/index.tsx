@@ -33,7 +33,9 @@ export const Start = ({ data }: StartProps) => {
 					category="big"
 					variant="filled"
 					className={css.button}
-					onClick={() => handleClick(button.text ?? 'Open an account')}
+					{...(button.link
+						? { href: button.link }
+						: { onClick: () => handleClick(button.text ?? 'Open an account') })}
 				>
 					{button.text}
 				</Button>
