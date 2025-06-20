@@ -19,12 +19,14 @@ type AppSectionProp = {
 export const AppSection = ({ image = [], content }: AppSectionProp) => {
 	const [firstIphone, secondIphone] = image || [];
 
+	if (!content) return null;
+
 	return (
 		<Container className={cx(css.root, 'hybrid')}>
 			<Iphone image={firstIphone} wrapperClass={css.firstIphone} />
 			<Iphone image={secondIphone} wrapperClass={css.secondIphone} />
 			<ContentBlock data={content} />
-			<Link href={content?.link ?? ''} className={css.link} />
+			{content.link && <Link href={content.link} className={css.link} />}
 		</Container>
 	);
 };

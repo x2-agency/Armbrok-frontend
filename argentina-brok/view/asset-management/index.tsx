@@ -47,7 +47,7 @@ export const AssetManagement: NextPage<{
 				banner={{
 					title: heroSection?.title ?? '',
 					description: heroSection?.description ?? '',
-					button: { ...heroSection?.button, isLoginButton: true },
+					button: { ...heroSection?.button },
 					poster: heroSection?.background,
 				}}
 				alignContent="center"
