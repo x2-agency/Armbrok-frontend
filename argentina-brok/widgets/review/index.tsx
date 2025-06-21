@@ -23,7 +23,7 @@ export const Review = ({ quote, className }: ReviewProps) => {
 			<article className={css.card}>
 				<img
 					src={quote.authorPhoto?.url}
-					alt="company member"
+					loading="lazy"
 					className={css.image}
 				/>
 				<div className={css.review}>

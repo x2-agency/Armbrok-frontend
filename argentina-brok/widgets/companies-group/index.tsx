@@ -37,9 +37,11 @@ export const CompaniesGroup = ({
 							src={value.logo.url}
 							className={css.companyIcon}
 							draggable={false}
+							loading="lazy"
 						/>
 						{value.colorLogo?.url && (
 							<img
+								loading="lazy"
 								src={value.colorLogo.url}
 								className={css.hoverIcon}
 								draggable={false}

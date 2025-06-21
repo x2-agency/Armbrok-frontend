@@ -16,11 +16,7 @@ export const Card = ({ card }: CardType) => {
 	return (
 		<article className={cx(css.root, 'p-32')}>
 			{media?.url && (
-				<img
-					className={css.icon}
-					src={media?.url}
-					alt={media?.alternativeText}
-				/>
+				<img className={css.icon} src={media?.url} loading="lazy" />
 			)}
 			{title && <p className={css.description}>{parser(title)}</p>}
 			<Link className={css.link} href={card?.link ?? ''} />

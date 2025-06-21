@@ -16,10 +16,10 @@
 	pointer-events: all;
 
 	@mixin responsive width, unset, 1392, 1392;
+	@mixin responsive padding-inline, 20;
+
 
 	@media (max-width: 767px) {
-		@mixin responsive padding-inline, 20;
-
 		width: 100%;
 	}
 }

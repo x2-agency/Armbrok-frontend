@@ -21,7 +21,7 @@ export const AppStore = ({ data, className }: AppStoreProps) => {
 					target="_blank"
 					href={link.url || '#'}
 				>
-					<img className={css.svg} src={link.media?.url} />
+					<img loading="lazy" className={css.svg} src={link.media?.url} />
 				</Link>
 			))}
 		</div>

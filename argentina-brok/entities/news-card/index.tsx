@@ -55,9 +55,9 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 		>
 			{poster && isArmbrokMedia && (
 				<img
+					loading="lazy"
 					src={poster.url}
 					className={css.poster}
-					alt={poster.alternativeText}
 				/>
 			)}
 			<div className={css.textWrap}>
@@ -93,9 +93,9 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 					<div className={cx(css.imgWrap)}>
 						{author?.avatar?.url && (
 							<img
+								loading="lazy"
 								className={css.avatar}
 								src={author?.avatar?.url ?? ''}
-								alt={author?.avatar?.alternativeText ?? ''}
 							/>
 						)}
 					</div>

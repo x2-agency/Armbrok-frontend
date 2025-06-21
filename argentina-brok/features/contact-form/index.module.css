@@ -1,11 +1,11 @@
 .root {
 	@mixin responsive padding-block-end, 36, 72, 72;
+	@mixin responsive gap, 30;
 
 	display: grid;
 	grid-template-columns: repeat(2, 50%);
 
 	@media (max-width: 767px) {
-		@mixin responsive gap, 30;
 		display: flex;
 		flex-direction: column-reverse;
 	}

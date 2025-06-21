@@ -50,7 +50,7 @@ export const Slider = ({
 				slider?.files.map((value, index) => (
 					<SwiperSlide key={index} className={css.slide}>
 						<div className={css.imageWrapper}>
-							<img src={value.url} alt="image" className={css.image} />
+							<img src={value.url} loading="lazy" className={css.image} />
 						</div>
 					</SwiperSlide>
 				))}
@@ -58,7 +58,11 @@ export const Slider = ({
 				slider?.map((value, index) => (
 					<SwiperSlide key={index} className={css.slide}>
 						<div className={css.imageWrapper}>
-							<img src={value.media?.url} alt="image" className={css.image} />
+							<img
+								src={value.media?.url}
+								loading="lazy"
+								className={css.image}
+							/>
 						</div>
 						{value.title && (
 							<h4 className={css.title}>{parser(value.title)}</h4>

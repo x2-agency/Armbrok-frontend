@@ -16,7 +16,7 @@ export const ContactCard = ({
 		<article className={css.root}>
 			<div className={css.contentWrap}>
 				<div className={css.iconWrapper}>
-					{icon && <img src={icon?.url} className={css.icon} />}
+					{icon && <img src={icon?.url} loading="lazy" className={css.icon} />}
 				</div>
 				<div className={css.textWrap}>
 					{title && <h4 className={css.title}>{parser(title)}</h4>}

@@ -36,7 +36,11 @@ export const Document = ({
 	return (
 		<article className={cx(css.root, css[direction])}>
 			<div className={css.leftPart}>
-				<img src={defineIcon()} alt="file" className={css.icon} />
+				<img
+					loading="lazy"
+					src={defineIcon()}
+					className={css.icon}
+				/>
 				<div className={css.header}>
 					{name && (
 						<h3

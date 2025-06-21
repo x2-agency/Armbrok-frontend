@@ -3,7 +3,7 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { lazy, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { usePostContactUsForm } from '@/features/contact-form/hooks/use-post-contact-us-form';
@@ -11,12 +11,13 @@ import { SuccessfulModal } from '@/features/contact-form/ui/successful-modal';
 import LoaderSVG from '@/public/assets/icons/loader.svg';
 import type { ContactForm } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
-import { Captcha } from '@/shared/ui/captcha';
 import { ErrorModal } from '@/shared/ui/error-modal';
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
 
 import css from './index.module.css';
+
+const Captcha = lazy(() => import('@/shared/ui/captcha'));
 
 export type FormValues = {
 	email: string;
