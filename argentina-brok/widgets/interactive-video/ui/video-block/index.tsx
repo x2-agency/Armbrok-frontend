@@ -34,6 +34,7 @@ export const VideoBlock = ({ data }: VideoBlockProps) => {
 					src={video?.url}
 					poster={videoPoster?.url}
 					controls={isPlaying}
+					preload="none"
 				/>
 				{!isPlaying && (
 					<div className={css.wrapButton}>
