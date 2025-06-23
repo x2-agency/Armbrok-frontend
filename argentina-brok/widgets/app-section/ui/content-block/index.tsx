@@ -31,11 +31,7 @@ export const ContentBlock = ({ data }: ContentProp) => {
 	return (
 		<div className={css.root}>
 			{armbrokLogo && (
-				<img
-					src={armbrokLogo.url}
-					alt={armbrokLogo.alternativeText ?? ''}
-					className={css.icon}
-				/>
+				<img loading="lazy" src={armbrokLogo.url} className={css.icon} />
 			)}
 			{title && <h2 className={css.title}>{parser(title ?? '')}</h2>}
 			{description && <p className={css.description}>{parser(description)}</p>}

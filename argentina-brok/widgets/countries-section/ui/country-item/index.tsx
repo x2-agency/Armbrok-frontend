@@ -8,7 +8,7 @@ import css from './index.module.css';
 export const CountryItem = ({ name, flag }: FlagType) => {
 	return (
 		<article className={css.root}>
-			{flag && <img src={flag?.url} alt="country" className={css.image} />}
+			{flag && <img src={flag?.url} loading="lazy" className={css.image} />}
 			{name && <h4 className={css.title}>{parser(name)}</h4>}
 		</article>
 	);

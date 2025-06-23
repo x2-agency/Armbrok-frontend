@@ -22,7 +22,7 @@ export const EmployeeItem = ({
 					<img
 						className={css.avatar}
 						src={employee.avatar?.url}
-						alt="employee avatar"
+						loading="lazy"
 					/>
 				</div>
 				<div className={css.aboutEmployee}>

@@ -16,7 +16,7 @@ export const GuaranteesItem = ({
 }: GuaranteesItemProps) => {
 	return (
 		<article className={css.article}>
-			{icon && <img src={icon} alt="icon" className={css.icon} />}
+			{icon && <img src={icon} className={css.icon} loading="lazy" />}
 			{title && <h3 className={css.title}>{parser(title)}</h3>}
 			{description && <p className={css.description}>{parser(description)}</p>}
 		</article>

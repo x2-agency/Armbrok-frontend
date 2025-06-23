@@ -14,7 +14,7 @@ export const Iphone = ({
 
 	return (
 		<div className={wrapperClass}>
-			<img src={image.url} className={css.img} alt="iPhone" />
+			<img src={image.url} className={css.img} loading="lazy" />
 		</div>
 	);
 };

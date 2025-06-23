@@ -17,11 +17,7 @@ export const Social = ({ social, className }: SocialProps) => {
 		<div className={cx(css.root, className)}>
 			{social?.map((item, index) => (
 				<div key={index} className={css.wrap}>
-					<img
-						className={css.img}
-						src={item.icon?.url ?? ''}
-						alt={item.icon?.alternativeText}
-					/>
+					<img loading="lazy" className={css.img} src={item.icon?.url ?? ''} />
 					<Link className={css.link} href={item.link ?? ''} />
 				</div>
 			))}

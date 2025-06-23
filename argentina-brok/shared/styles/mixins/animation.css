@@ -1,8 +1,3 @@
-@define-mixin translate $scale {
-	transform: scale($scale);
-	will-change: transform;
-}
-
 @define-mixin animation $keyframe {
 	animation: $keyframe 1.25s cubic-bezier(0.75, 0, 0.25, 1.01) infinite;
 }
@@ -16,13 +11,6 @@
 	transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
 }
 
-/* easeOutCubic */
-@define-mixin transitionMenuCloseOptions $duration: 0.467s {
-	transition-duration: $duration;
-	transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-}
-
-/* easeOutExpo */
 @define-mixin transitionMenuOpenOptions $duration: 0.467s {
 	transition-duration: $duration;
 	transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);

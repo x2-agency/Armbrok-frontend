@@ -17,9 +17,7 @@ export const ModalHeader = ({
 	return (
 		<header className={css.root}>
 			<div className={css.imageWrap}>
-				{image && (
-					<img src={image} alt="company member image" className={css.image} />
-				)}
+				{image && <img src={image} loading="lazy" className={css.image} />}
 			</div>
 			<div className={css.about}>
 				{fullName && <h2 className={css.name}>{parser(fullName)}</h2>}

@@ -52,11 +52,7 @@ export const Blog: NextPage<{
 			</div>
 			{poster?.url && (
 				<div className={css.imageWrap}>
-					<img
-						className={css.img}
-						src={poster?.url}
-						alt={poster?.alternativeText ?? ''}
-					/>
+					<img loading="lazy" className={css.img} src={poster?.url} />
 				</div>
 			)}
 

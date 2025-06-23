@@ -14,7 +14,7 @@ export const PlacementHead = ({
 }: SecurityPaperItem) => {
 	return (
 		<header className={css.header}>
-			<img src={logo?.url} alt="icon" className={css.icon} />
+			<img src={logo?.url} loading="lazy" className={css.icon} />
 			<div className={css.titleBlock}>
 				{name && <h2 className={css.title}>{parser(name)}</h2>}
 				{launchDate && launchDateLabel && (
