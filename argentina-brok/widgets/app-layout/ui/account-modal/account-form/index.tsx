@@ -5,13 +5,12 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import LoaderSVG from '@/public/assets/icons/loader.svg';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
-import { Captcha } from '@/shared/ui/captcha';
 import { Checkbox } from '@/shared/ui/checkbox';
 import { ErrorModal } from '@/shared/ui/error-modal';
 import { Input } from '@/shared/ui/input';
@@ -21,6 +20,8 @@ import { ACCOUNT } from '@/widgets/app-layout/model/account-form.constants';
 import { SuccessForm } from '@/widgets/app-layout/ui/account-modal/success-form';
 
 import css from './index.module.css';
+
+const Captcha = lazy(() => import('@/shared/ui/captcha'));
 
 export type AccountFormValuesData = {
 	email: string;
@@ -63,7 +64,10 @@ export const AccountForm = () => {
 		}
 
 		if (pathname.includes('funds')) {
-			setValue('fundLink', `${process.env.NEXT_PUBLIC_WEBSITE_DOMAIN}${pathname.slice(1)}`);
+			setValue(
+				'fundLink',
+				`${process.env.NEXT_PUBLIC_WEBSITE_DOMAIN}${pathname.slice(1)}`
+			);
 		}
 	}, [subjectForm, setValue, pathname]);
 
@@ -148,11 +152,13 @@ export const AccountForm = () => {
 						className={css.checkbox}
 						{...register('checkbox', { required: true })}
 					/>
-					<Captcha
-						subtitle={captchaTranslation}
-						onChange={() => toggleCaptcha(true)}
-						className={css.captcha}
-					/>
+					<Suspense>
+						<Captcha
+							subtitle={captchaTranslation}
+							onChange={() => toggleCaptcha(true)}
+							className={css.captcha}
+						/>
+					</Suspense>
 					<Button
 						type="submit"
 						disabled={!isValid || !isCaptchaChecked}

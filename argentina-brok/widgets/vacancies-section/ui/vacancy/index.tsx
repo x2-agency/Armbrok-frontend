@@ -20,7 +20,7 @@ export const Vacancy = ({ data, className }: VacancyProps) => {
 			<div className={css.content}>
 				{icon && icon?.url && (
 					<div className={css.iconWrap}>
-						<img className={css.icon} src={icon?.url ?? ''} alt="icon" />
+						<img className={css.icon} src={icon?.url ?? ''} loading="lazy" />
 					</div>
 				)}
 				<div className={css.wrap}>

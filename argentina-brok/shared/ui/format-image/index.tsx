@@ -28,7 +28,6 @@ export const FormatImage = ({
 			{poster.desktop && <source srcSet={poster.desktop?.url} />}
 			<img
 				src={poster.desktop?.url ?? poster.tablet?.url ?? poster.mobile?.url}
-				alt="block"
 				loading={isLazy ? 'lazy' : 'eager'}
 				draggable="false"
 			/>

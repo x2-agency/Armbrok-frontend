@@ -15,7 +15,6 @@ export const Logo = ({ className, href, logo, isDark }: LogoProps) => {
 		>
 			<LogoSVG
 				src={logo.src}
-				alt={logo.alt}
 				className={cx(css.icon, { [css.dark]: isDark })}
 			/>
 		</Link>

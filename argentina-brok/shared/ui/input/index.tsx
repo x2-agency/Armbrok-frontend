@@ -54,7 +54,9 @@ const InputComponent = (
 					onInput={handleInput}
 					{...props}
 				/>
-				{leftIcon && <img className={css.leftIcon} src={leftIcon} />}
+				{leftIcon && (
+					<img className={css.leftIcon} src={leftIcon} loading="lazy" />
+				)}
 
 				<span className={css.placeholder}>{placeholder}</span>
 			</div>

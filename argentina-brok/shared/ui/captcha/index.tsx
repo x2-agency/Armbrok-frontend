@@ -11,7 +11,7 @@ type CaptchaProps = {
 	subtitle?: string;
 };
 
-export const Captcha = ({ onChange, className, subtitle }: CaptchaProps) => {
+const Captcha = ({ onChange, className, subtitle }: CaptchaProps) => {
 	const siteKey = process.env.NEXT_PUBLIC_CAPTCHA_KEY ?? '';
 
 	if (!siteKey) {
@@ -25,3 +25,5 @@ export const Captcha = ({ onChange, className, subtitle }: CaptchaProps) => {
 		</article>
 	);
 };
+
+export default Captcha;

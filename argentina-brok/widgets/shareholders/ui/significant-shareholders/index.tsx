@@ -30,7 +30,11 @@ export const SignificantShareholders = ({
 						<li className={css.listItem}>
 							<div className={css.leftPart}>
 								<div className={css.imageWrap}>
-									<img src={shareholder.photo.url} className={css.icon} />
+									<img
+										src={shareholder.photo.url}
+										className={css.icon}
+										loading="lazy"
+									/>
 								</div>
 								<p className={css.name}>{parser(shareholder.name)}</p>
 							</div>

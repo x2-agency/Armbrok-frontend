@@ -263,5 +263,9 @@
 	"investButton": {
 		"text": "Invest",
 		"button": "Request a consultation"
+	},
+	"heatMapHeaders": {
+		"total": "Annual change",
+		"year": "Year"
 	}
 }

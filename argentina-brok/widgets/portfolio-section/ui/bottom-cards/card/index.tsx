@@ -20,7 +20,7 @@ export const Card = ({ data, className }: CardType) => {
 				<img
 					className={css.image}
 					src={data.mediaContent?.url ?? ''}
-					alt="image"
+					loading="lazy"
 				/>
 			</div>
 		</article>

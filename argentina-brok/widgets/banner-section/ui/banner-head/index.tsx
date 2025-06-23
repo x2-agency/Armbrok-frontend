@@ -27,7 +27,7 @@ export const BannerHead = ({ type, headData, className }: BannerHeadProps) => {
 				</Button>
 			)}
 			{type === 'profix' && headData.icon && (
-				<img src={headData.icon} alt="Icon" className={css.icon} />
+				<img src={headData.icon} loading="lazy" className={css.icon} />
 			)}
 			{type === 'about' && headData.established && (
 				<div className={css.established}>{parser(headData.established)}</div>

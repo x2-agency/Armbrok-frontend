@@ -26,7 +26,7 @@ export const Member = ({
 				onClick={() => toggleModalOpen(true)}
 			>
 				<div className={css.imageWrapper}>
-					<img src={avatar?.url} alt="company member" className={css.image} />
+					<img src={avatar?.url} className={css.image} loading="lazy" />
 				</div>
 				<div>
 					{fullName && <h3 className={css.name}>{parser(fullName)}</h3>}

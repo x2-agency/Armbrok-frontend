@@ -40,8 +40,8 @@ export const ExpertSolutionCard = ({
 				[css.bigIcon]: bigFormatIcon,
 			})}
 		>
-			{media?.url && <img src={media?.url} alt="icon" className={css.icon} />}
-			{icon?.url && <img src={icon?.url} alt="icon" className={css.icon} />}
+			{media?.url && <img src={media?.url} className={css.icon} />}
+			{icon?.url && <img src={icon?.url} className={css.icon} />}
 			{title && <h4 className={css.title}>{parser(title)}</h4>}
 			{description && <p className={css.description}>{parser(description)}</p>}
 		</article>

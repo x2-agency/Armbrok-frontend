@@ -29,11 +29,7 @@ export const Author = ({
 		>
 			<div className={css.avatarWrap}>
 				<div className={css.avatar}>
-					<img
-						className={css.img}
-						src={avatar?.url ?? ''}
-						alt={avatar?.alternativeText ?? ''}
-					/>
+					<img loading="lazy" className={css.img} src={avatar?.url ?? ''} />
 				</div>
 				<NameAndPosition data={data} />
 			</div>
