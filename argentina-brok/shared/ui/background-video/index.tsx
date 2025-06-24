@@ -30,7 +30,7 @@ export const BackgroundVideo = ({
 		<div className={css.root}>
 			{video || mobileVideo ? (
 				<video
-					preload="auto"
+					preload="none"
 					ref={videoRef}
 					autoPlay
 					loop

@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import parser from 'html-react-parser';
-import { useEffect, useRef, useState } from 'react';
 
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import useMediaQuery from '@/shared/hooks/use-media-query';
@@ -8,6 +7,7 @@ import { headerScrollObserver } from '@/shared/lib/header-scroll-observer';
 import type { HeroSection } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
+import { useVideoBackground } from '@/widgets/app-layout/hooks/use-video-background';
 
 import css from './index.module.css';
 
@@ -21,20 +21,18 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 	const { title, description, button } = heroSection ?? {};
 	const isMobile = useMediaQuery('(max-width: 767px)');
 	const { ref: relationsRef } = headerScrollObserver.useObserve('white');
-	const [videoError, setVideoError] = useState(false);
-	const videoRef = useRef<HTMLVideoElement>(null);
 	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 
-	useEffect(() => {
-		if (videoRef.current) {
-			videoRef.current.poster = isMobile
-				? (mobilePoster?.url ?? '')
-				: (poster?.url ?? '');
-			videoRef.current.src = isMobile
-				? (mobileVideo?.url ?? '')
-				: (video?.url ?? '');
-		}
-	}, [isMobile, poster, mobilePoster, video, mobileVideo]);
+	const { videoRef, videoError, handleVideoLoaded, setVideoError } =
+		useVideoBackground(
+			{
+				video: video?.url,
+				poster: poster?.url,
+				mobileVideo: mobileVideo?.url,
+				mobilePoster: mobilePoster?.url,
+			},
+			isMobile
+		);
 
 	const handleClick = () => {
 		setSubjectForm(button?.text ?? 'Open an account');
@@ -54,8 +52,10 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 						loop
 						playsInline
 						muted
+						preload="none"
 						className={css.video}
 						onError={() => setVideoError(true)}
+						onLoadedData={handleVideoLoaded}
 					/>
 				) : (
 					<img
