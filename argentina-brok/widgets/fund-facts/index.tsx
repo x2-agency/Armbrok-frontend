@@ -11,7 +11,7 @@ export const FundFacts = ({
 	financialIndicators,
 	fundDetails,
 	keyEntities,
-	// highlights,
+	highlights,
 	investmentTerms,
 	keyFigures,
 }: FundFactsActualProps) => {
@@ -20,7 +20,7 @@ export const FundFacts = ({
 			{title && <h3 className={css.title}>{parser(title)}</h3>}
 			<div className={css.net}>
 				<div className={css.rightPart}>
-					{/* {highlights && <Facts {...highlights} />} */}
+					{highlights && <Facts {...highlights} />}
 					{fundDetails && <Facts {...fundDetails} />}
 					{investmentTerms && <Facts {...investmentTerms} />}
 				</div>

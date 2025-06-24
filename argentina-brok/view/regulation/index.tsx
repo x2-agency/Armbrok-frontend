@@ -26,7 +26,12 @@ export const Regulation: NextPage<RegulationPageData> = ({
 				columns={2}
 				lineClamp={1}
 			/>
-			<FileSection documents={documentsSection?.documents ?? []} />
+			<FileSection
+				title={documentsSection?.title}
+				description={documentsSection?.description}
+				documents={documentsSection?.documents ?? []}
+				enabled={documentsSection?.enabled}
+			/>
 		</div>
 	);
 };
