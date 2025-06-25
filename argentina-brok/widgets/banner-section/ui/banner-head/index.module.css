@@ -36,6 +36,13 @@
 		font-weight: 700;
 	}
 
+	h1,
+	p {
+		@media ((max-width: 1201px) and (min-width: 768px)) {
+			font-size: 50px;
+		}
+	}
+
 	&.profix {
 		@mixin responsive padding-block-end, 14, 16, 16;
 

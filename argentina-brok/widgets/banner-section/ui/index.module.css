@@ -27,7 +27,15 @@
 }
 
 .root.default {
-	min-height: 100svh;
+	@mixin responsive min-height, 700, 700, 900;
+
+	@media (max-width: 1000px) {
+		min-height: 425px;
+	}
+
+	@media (max-width: 767px) {
+		min-height: 100svh;
+	}
 
 	.head {
 		@mixin responsive width, 335, 863, 863;
