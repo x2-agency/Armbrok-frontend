@@ -49,7 +49,9 @@ export const BannerPanel = ({
 					category="big"
 					variant="filled"
 					className={css.linkButton}
-					onClick={() => handleClick(button.text ?? '')}
+					{...(button.link
+						? { href: button.link }
+						: { onClick: () => handleClick(button.text ?? '') })}
 				>
 					{button.text}
 				</Button>

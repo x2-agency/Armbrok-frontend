@@ -5,6 +5,7 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import type { Dispatch, SetStateAction } from 'react';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -23,6 +24,10 @@ import css from './index.module.css';
 
 const Captcha = lazy(() => import('@/shared/ui/captcha'));
 
+type FormProps = {
+	isModalOpen: boolean;
+};
+
 export type AccountFormValuesData = {
 	email: string;
 	name: string;
@@ -31,10 +36,10 @@ export type AccountFormValuesData = {
 	phoneNumber: string;
 	formSubject: string;
 	checkbox: boolean;
-	fundLink?: string;
+	referralLink?: string;
 };
 
-export const AccountForm = () => {
+export const AccountForm = ({ isModalOpen }: FormProps) => {
 	const pathname = usePathname();
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const [isError, toggleError] = useState<boolean>(false);
@@ -63,13 +68,21 @@ export const AccountForm = () => {
 			setValue('formSubject', subjectForm);
 		}
 
-		if (pathname.includes('funds')) {
-			setValue(
-				'fundLink',
-				`${process.env.NEXT_PUBLIC_WEBSITE_DOMAIN}${pathname.slice(1)}`
-			);
+		if (!isModalOpen) {
+			reset();
 		}
-	}, [subjectForm, setValue, pathname]);
+
+		setValue(
+			'referralLink',
+			`${process.env.NEXT_PUBLIC_WEBSITE_DOMAIN ?? ''}${pathname.substring(1)}`
+		);
+
+		return () => {
+			setTimeout(() => {
+				toggleSuccess(false);
+			}, 300);
+		};
+	}, [subjectForm, setValue, pathname, isModalOpen, reset]);
 
 	const handleSubmitForm = async (formData: AccountFormValuesData) => {
 		const { checkbox, ...restData } = formData;

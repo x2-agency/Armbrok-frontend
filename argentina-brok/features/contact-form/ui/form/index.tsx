@@ -2,6 +2,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { lazy, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -24,6 +25,7 @@ export type FormValues = {
 	name: string;
 	subject: string;
 	message: string;
+	referralLink: string;
 };
 
 export const Form = ({
@@ -37,17 +39,24 @@ export const Form = ({
 	description,
 	className,
 }: ContactForm & { className?: string }) => {
+	const pathname = usePathname();
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const [isError, toggleError] = useState<boolean>(false);
 	const t = useTranslations('openAccount');
+
+	const hostPath =
+		(process.env.NEXT_PUBLIC_WEBSITE_DOMAIN ?? '') + pathname.substring(1);
 
 	const {
 		formState: { isValid, errors },
 		register,
 		reset,
 		handleSubmit,
-	} = useForm<FormValues>({ mode: 'onChange' });
+	} = useForm<FormValues>({
+		mode: 'onChange',
+		defaultValues: { referralLink: hostPath },
+	});
 	const mutation = usePostContactUsForm({ toggleSuccess, toggleError, reset });
 
 	const handleSubmitForm = async (formData: FormValues) => {

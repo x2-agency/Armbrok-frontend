@@ -5,8 +5,6 @@ import css from './index.module.css';
 
 type GMapProps = {
 	className?: string;
-	// lat: number;
-	// lng: number;
 };
 
 export const GMap = ({ className }: GMapProps) => {
@@ -14,11 +12,6 @@ export const GMap = ({ className }: GMapProps) => {
 		width: '100%',
 		height: '100%',
 	};
-
-	// const center = {
-	// 	lat: lat,
-	// 	lng: lng,
-	// };
 
 	return (
 		<address className={cx(css.root, className)}>
