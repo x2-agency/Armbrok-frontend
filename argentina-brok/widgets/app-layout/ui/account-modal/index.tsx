@@ -9,7 +9,8 @@ import { AccountForm } from './account-form';
 import css from './index.module.css';
 
 export const AccountModal = () => {
-	const { modalRef, isVisible, toggleAccountModalOpen } = useAccountModal();
+	const { modalRef, isVisible, isAccountModalOpen, toggleAccountModalOpen } =
+		useAccountModal();
 
 	return (
 		<dialog
@@ -22,7 +23,7 @@ export const AccountModal = () => {
 			>
 				<CrossSVG className={css.cross} />
 			</button>
-			<AccountForm />
+			<AccountForm isModalOpen={isAccountModalOpen} />
 		</dialog>
 	);
 };
