@@ -1,10 +1,39 @@
-.root {
-	@mixin transition;
+.details[open] + .accordionContent {
+	grid-template-rows: 1fr;
+	opacity: 1;
+}
+
+.details[open] .icon {
+	rotate: 0deg;
+}
+
+.accordionContentBody {
+	@mixin responsive padding-block-start, 16, 32, 32;
 
 	overflow: hidden;
-	transition-property: height opacity;
+}
+
+.icon {
+	@mixin transition rotate;
+	@mixin responsive width, 18, 24, 24;
+	@mixin responsive height, 18, 24, 24;
+	@mixin responsive margin-inline-start, 4, 8, 8;
+
+	rotate: 180deg;
+
+	path {
+		fill: var(--red-500-color);
+	}
+}
+
+.accordionContent {
+	@mixin transition;
+
 	display: grid;
-	grid-template-rows: 1fr;
+	grid-template-rows: 0fr;
+	opacity: 0;
+	transition-property: grid-template-rows opacity;
+	padding-block-start: unset !important;
 
 	@media (max-width: 767px) {
 		@mixin responsive padding-inline, 20;
@@ -13,10 +42,40 @@
 		scrollbar-width: none;
 		grid-template-columns: min-content;
 	}
+}
 
-	&.closed {
-		opacity: 0;
-		grid-template-rows: 0fr;
+.summaryText {
+	@mixin font-text16;
+
+	color: var(--red-500-color);
+	font-weight: 500;
+	width: max-content;
+	flex-shrink: 0;
+}
+
+.details {
+	width: fit-content;
+	margin-inline: auto;
+}
+
+.summary {
+	@mixin transition opacity;
+
+	width: fit-content;
+	all: unset;
+	cursor: pointer;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: center;
+
+	@media (hover: hover) {
+		&:hover {
+			opacity: 0.85;
+		}
 	}
 }
 

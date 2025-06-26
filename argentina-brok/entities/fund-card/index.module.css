@@ -29,6 +29,7 @@
 
 	&.slider {
 		@mixin responsive gap, 20, 64, 64;
+		@mixin responsive padding, 14;
 
 		display: flex;
 		flex-direction: column;

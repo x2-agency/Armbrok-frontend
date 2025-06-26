@@ -39,6 +39,11 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 					content="0Wlr8IRw0xt8JY1dLmgtju5ROZXCWNqoJI7L2RqxwUA"
 				/>
 				<Favicons />
+				<meta
+					name="viewport"
+					content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+					key="viewport"
+				/>
 			</head>
 			<body className={cx(RobotoFonts.variable, ArmenianFonts.variable)}>
 				<NextIntlClientProvider locale={locale} messages={messages}>

@@ -13,7 +13,7 @@
 	@mixin responsive border-radius, 16, 16, 16;
 	@mixin responsive --border, 1, 1, 1;
 
-	outline: var(--border) solid var(--gray-300-color);
+	border: var(--border) solid var(--gray-300-color);
 	width: 100%;
 	overflow: hidden;
 	border-spacing: 0;
@@ -32,7 +32,6 @@
 	@mixin responsive --border, 1, 1, 1;
 	@mixin responsive height, 56, 56, 56;
 	@mixin responsive min-width, 85, 120, 120;
-
 
 	border-left: var(--border) solid var(--gray-300-color);
 	display: flex;

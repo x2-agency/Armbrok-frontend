@@ -81,9 +81,11 @@
 	translate: 0% -50%;
 }
 
-.input:where(:focus, :not(:placeholder-shown)) + .leftIcon + .placeholder,
 .input:where(:focus, :not(:placeholder-shown)) + .placeholder,
-label:has([data-lastpass-icon-root]) .placeholder {
+label:has([data-lastpass-icon-root]):has(
+		.input:where(:focus, :not(:placeholder-shown))
+	)
+	.placeholder {
 	transform-origin: 0 0;
 	transform: translateY(-1rem) scale(0.75);
 

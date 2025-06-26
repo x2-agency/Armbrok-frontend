@@ -243,17 +243,17 @@
 		"text": "Բհայտնաբերեք մեր ֆոնդերը"
 	},
 	"graphicDateControllers": {
-		"allTime": "Ստեղծման օրից",
-		"threeYears": "3 uuuqph",
-		"year": "Sunph",
-		"yearToDate": "Sunqiu uiqqpq",
-		"sixMonth": "6 uuPiu",
-		"threeMonth": "3 uuPiu",
-		"month": "UdPiu"
+		"allTime": "Տարվա փոփոխ",
+		"threeYears": "3 տարի",
+		"year": "Տարի",
+		"yearToDate": "Տարվա սկզբից",
+		"sixMonth": "6 ամիս",
+		"threeMonth": "3 ամիս",
+		"month": "Ամիս"
 	},
 	"graphicIndex": {
-		"label": "համեմատել հետ",
-		"notSelected": "Չի ընտրվել"
+		"label": "Համեմատելտ",
+		"notSelected": "Չի ընտրված"
 	},
 	"fundsLinks": {
 		"text": "Ֆոնդեր"
@@ -263,7 +263,7 @@
 		"button": "Հայցել խորհրդատվություն"
 	},
 	"heatMapHeaders": {
-		"total": "Տարելվան",
+		"total": "Տարվա փոփոխ",
 		"year": "Տարի"
 	}
 }
