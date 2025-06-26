@@ -6,6 +6,7 @@
 
 	@media (max-width: 767px) {
 		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 }
 
@@ -19,6 +20,10 @@
 
 	color: var(--gray-200-color);
 	opacity: 0.7;
+
+	@media (max-width: 767px) {
+		@mixin font-text12;
+	}
 }
 
 .label {
@@ -65,7 +70,7 @@
 }
 
 .value {
-	@mixin responsive font-size, 24, 42, 42;
+	@mixin responsive font-size, 22, 42, 42;
 
 	color: var(--red-500-color);
 	font-weight: 700;
@@ -75,6 +80,6 @@
 	}
 
 	@media (max-width: 767px) {
-		font-size: 24px;
+		font-size: 22px;
 	}
 }
