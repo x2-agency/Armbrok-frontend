@@ -20,6 +20,7 @@ export type FundsPageData = {
 	documentsSection?: DocumentsSectionProps;
 	infoSection?: AccordionSectionProps;
 	parentFunds?: Array<ParentFundProps>;
+	fundListTitle?: string;
 };
 
 export type HowWeAreWorkingProps = {

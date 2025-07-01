@@ -35,7 +35,7 @@ export const SearchForm = ({
 			console.error('API Key or Search Engine ID is missing.');
 			return;
 		}
-		const siteSearch = 'argentina-brok.vercel.app';
+		const siteSearch = process.env.NEXT_PUBLIC_WEBSITE_DOMAIN;
 		const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&key=${apiKey}&cx=${searchEngineId}&siteSearch=${siteSearch}`;
 
 		try {

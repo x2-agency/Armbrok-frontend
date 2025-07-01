@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
 	}
 
 	return {
-		metadataBase: process.env.NEXT_PUBLIC_WEBSITE_DOMAIN
-			? new URL(process.env.NEXT_PUBLIC_WEBSITE_DOMAIN)
+		metadataBase: process.env.NEXT_PUBLIC_WEBSITE_URL
+			? new URL(process.env.NEXT_PUBLIC_WEBSITE_URL)
 			: undefined,
 		title: seo.metaTitle,
 		description: seo.metaDescription,

@@ -1,7 +1,6 @@
 'use client';
 
 import type { NextPage } from 'next';
-import { useTranslations } from 'next-intl';
 
 import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import useMediaQuery from '@/shared/hooks/use-media-query';
@@ -21,7 +20,6 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	initialFundsPageData,
 }) => {
 	const isMobile = useMediaQuery('(max-width: 767px)');
-	const t = useTranslations('parentFundsFundPage');
 	const {
 		publishedAt,
 		heroSection,
@@ -32,6 +30,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 		disclaimerSection,
 		infoSection,
 		parentFunds,
+		fundListTitle,
 	} = initialFundsPageData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
@@ -63,7 +62,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				centered={isMobile}
 				bigFormatIcon={isMobile}
 			/>
-			<ParentFunds head={{ title: t('text') }} funds={parentFunds} />
+			<ParentFunds head={{ title: fundListTitle }} funds={parentFunds} />
 			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
 			<ExpertSolutionSection
 				title={howFundWorksSection?.title}

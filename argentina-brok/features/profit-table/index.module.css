@@ -67,3 +67,7 @@
 		color: var(--red-500-color);
 	}
 }
+
+.theadValue:not(:last-child) .value {
+	text-transform: uppercase;
+}

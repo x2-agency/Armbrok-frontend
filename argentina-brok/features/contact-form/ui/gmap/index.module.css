@@ -4,3 +4,8 @@
 	position: relative;
 	background-color: var(--gray-300-color);
 }
+
+.map {
+	filter: grayscale(85%);
+	-webkit-filter: grayscale(85%);
+}

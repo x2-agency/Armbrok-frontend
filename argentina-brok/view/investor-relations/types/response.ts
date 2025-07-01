@@ -1,12 +1,12 @@
 import type {
 	BaseResponse,
 	DocumentsSectionProps,
+	DocumentTabs,
 	HeroSection,
 	ItemDetail,
+	ParentFundProps,
 	ResidenceCountriesSectionProps,
 	ShareholdersSection,
-	DocumentTabs,
-	ParentFundProps,
 } from '@/shared/types/global.types';
 
 export type InvestorRelationsPageData = {
@@ -18,7 +18,7 @@ export type InvestorRelationsPageData = {
 	dividendPolicySection?: ItemDetail;
 	remunerationSection?: DocumentsSectionProps;
 	shareholdersSection?: ShareholdersSection;
-	disclaimer?: string;
+	disclaimer?: { title?: string; description?: string };
 	documentTabsSection?: DocumentTabs;
 	parentFunds?: Array<ParentFundProps>;
 };

@@ -32,7 +32,7 @@
 }
 
 .poster {
-	@mixin responsive height, 200, 400, 400;
+	@mixin responsive height, 200, 340, 340;
 	width: 100%;
 
 	img {
