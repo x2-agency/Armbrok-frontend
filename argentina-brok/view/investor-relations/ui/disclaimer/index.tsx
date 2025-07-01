@@ -3,13 +3,18 @@ import parser from 'html-react-parser';
 import css from './index.module.css';
 
 type DisclaimerProps = {
-	disclaimerMarkup?: string;
+	title?: string;
+	description?: string;
 };
 
-export const Disclaimer = ({ disclaimerMarkup }: DisclaimerProps) => {
-	if (!disclaimerMarkup) {
+export const Disclaimer = ({ title, description }: DisclaimerProps) => {
+	if (!(title && description)) {
 		return null;
 	}
-
-	return <section className={css.root}>{parser(disclaimerMarkup)}</section>;
+	return (
+		<section className={css.root}>
+			<h3 className={css.title}>{title ?? ''}</h3>
+			{parser(description)}
+		</section>
+	);
 };

@@ -66,7 +66,10 @@ export const InvestorRelations: NextPage<
 				description={dividendPolicySection?.description}
 			/>
 			<StatutoryDocuments columns={2} documentsSection={remunerationSection} />
-			<Disclaimer disclaimerMarkup={disclaimer} />
+			<Disclaimer
+				title={disclaimer?.title}
+				description={disclaimer?.description}
+			/>
 		</>
 	);
 };
