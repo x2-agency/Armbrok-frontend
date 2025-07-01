@@ -2,8 +2,8 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { lazy, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -46,7 +46,7 @@ export const Form = ({
 	const t = useTranslations('openAccount');
 
 	const hostPath =
-		(process.env.NEXT_PUBLIC_WEBSITE_DOMAIN ?? '') + pathname.substring(1);
+		(process.env.NEXT_PUBLIC_WEBSITE_URL ?? '') + pathname.substring(1);
 
 	const {
 		formState: { isValid, errors },
