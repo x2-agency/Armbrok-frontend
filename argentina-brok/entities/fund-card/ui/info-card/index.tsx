@@ -62,9 +62,6 @@ export const InfoCard = ({
 								: `${annualReturn.value}%`}
 						</p>
 					)}
-					{annualReturn.label && (
-						<p className={css.description}>{parser(annualReturn.label)}</p>
-					)}
 				</li>
 			)}
 		</ul>
