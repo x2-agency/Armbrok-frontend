@@ -21,6 +21,7 @@ export const GMap = ({ className }: GMapProps) => {
 				<iframe
 					width={containerStyle.width}
 					height={containerStyle.height}
+					className={css.map}
 					loading="lazy"
 					allowFullScreen
 					referrerPolicy="no-referrer-when-downgrade"
