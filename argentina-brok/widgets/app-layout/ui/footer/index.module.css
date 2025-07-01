@@ -1,6 +1,6 @@
 .root {
 	background-color: var(--gray-200-color);
 
-	padding-block-start: 6.181rem; /* 89px */
+	@mixin responsive padding-block-start, 30, 48, 48;
 	padding-block-end: 2.222rem; /* 32px */
 }
