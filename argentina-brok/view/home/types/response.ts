@@ -21,6 +21,7 @@ export type HomePageData = {
 		newsSection?: NewsProps;
 		interviewSection?: InterviewProps;
 		awards?: AwardsResponse;
+		fundListSection?: { title?: string; description?: string };
 	};
 };
 

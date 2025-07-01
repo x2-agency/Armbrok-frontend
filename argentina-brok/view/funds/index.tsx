@@ -1,7 +1,6 @@
 'use client';
 
 import type { NextPage } from 'next';
-import { useTranslations } from 'next-intl';
 
 import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import useMediaQuery from '@/shared/hooks/use-media-query';
@@ -21,7 +20,6 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	initialFundsPageData,
 }) => {
 	const isMobile = useMediaQuery('(max-width: 767px)');
-	const t = useTranslations('parentFundsFundPage');
 	const {
 		publishedAt,
 		heroSection,

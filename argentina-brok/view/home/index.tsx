@@ -1,7 +1,6 @@
 'use client';
 
 import type { NextPage } from 'next';
-import { useTranslations } from 'next-intl';
 
 import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
@@ -29,7 +28,6 @@ export const Home: NextPage<{
 	initialAwards?: AwardsResponse;
 	parentFunds?: Array<ParentFundProps>;
 }> = ({ initialData, initialAwards, parentFunds }) => {
-	const t = useTranslations('homeParentFunds');
 	const {
 		publishedAt,
 		heroSection,
@@ -41,10 +39,13 @@ export const Home: NextPage<{
 		newsSection,
 		interviewSection,
 		awardsSection,
+		fundListSection,
 	} = initialData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
 	useAppendToHeaderFunds({ funds: parentFunds });
+
+	console.log(fundListSection);
 
 	return (
 		<>
@@ -61,7 +62,10 @@ export const Home: NextPage<{
 				image={brokerageAppCard?.phoneMockups}
 			/>
 			<ParentFunds
-				head={{ title: t('title'), description: t('description') }}
+				head={{
+					title: fundListSection?.title,
+					description: fundListSection?.description,
+				}}
 				funds={parentFunds}
 				mode="slider"
 			/>
