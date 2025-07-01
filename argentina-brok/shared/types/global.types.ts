@@ -686,6 +686,7 @@ export type ParentFundProps = ItemDetail & {
 	slug: string;
 	chart: Array<ParentFundChartPoint>;
 	shortDescription?: string;
+	fundListTitle?: string;
 };
 
 export type ParentFundResponse = {

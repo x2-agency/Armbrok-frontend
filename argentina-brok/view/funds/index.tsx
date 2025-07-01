@@ -32,6 +32,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 		disclaimerSection,
 		infoSection,
 		parentFunds,
+		fundListTitle,
 	} = initialFundsPageData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
@@ -63,7 +64,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				centered={isMobile}
 				bigFormatIcon={isMobile}
 			/>
-			<ParentFunds head={{ title: t('text') }} funds={parentFunds} />
+			<ParentFunds head={{ title: fundListTitle }} funds={parentFunds} />
 			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
 			<ExpertSolutionSection
 				title={howFundWorksSection?.title}
