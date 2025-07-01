@@ -4,8 +4,8 @@
 	flex-direction: column;
 
 	@mixin responsive border-radius, 20, 32, 32;
-	@mixin responsive margin-block-start, 40, 72, 72;
-	@mixin responsive margin-block-end, unset, 120, 120;
+	@mixin responsive margin-block-start, 40, 24, 24;
+	@mixin responsive margin-block-end, unset, 48, 48;
 }
 
 .videoWrapper {

@@ -2,8 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
-	@mixin responsive padding-block-start, unset, 118, 118;
-	@mixin responsive padding-block-end, 80, 166, 166;
+	@mixin responsive padding-block-start, unset, 25, 25;
 }
 
 .title {
