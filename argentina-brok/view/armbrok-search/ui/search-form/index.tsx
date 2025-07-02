@@ -2,10 +2,10 @@
 
 import parser from 'html-react-parser';
 import type { Dispatch, SetStateAction } from 'react';
-import { useState } from 'react';
 
 import { Button } from '@/shared/ui/button';
 import { Input } from '@/shared/ui/input';
+import { useSearch } from '@/view/armbrok-search/hooks/use-search';
 import { SEARCH_FORM_NULL_DATA } from '@/view/armbrok-search/models/form.constants';
 import type { SearchDataItem } from '@/view/armbrok-search/types/armbrok-search.types';
 
@@ -22,33 +22,7 @@ export const SearchForm = ({
 	setNewsData,
 	searchButtonText,
 }: SearchFormProps) => {
-	const [query, setQuery] = useState<string>('');
-
-	const handleSearch = async (e: React.FormEvent) => {
-		e.preventDefault();
-
-		const apiKey = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_API_KEY ?? '';
-		const searchEngineId =
-			process.env.NEXT_PUBLIC_GOOGLE_SEARCH_ENGINE_ID ?? '';
-
-		if (!apiKey || !searchEngineId) {
-			console.error('API Key or Search Engine ID is missing.');
-			return;
-		}
-		const siteSearch = process.env.NEXT_PUBLIC_WEBSITE_DOMAIN;
-		const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&key=${apiKey}&cx=${searchEngineId}&siteSearch=${siteSearch}`;
-
-		try {
-			const response = await fetch(url);
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-			const data = await response.json();
-			setNewsData(data.items);
-		} catch (error) {
-			console.error('Error fetching search results:', error);
-		}
-	};
+	const { query, setQuery, handleSearch } = useSearch(setNewsData);
 
 	return (
 		<form className={css.root} onSubmit={handleSearch}>
