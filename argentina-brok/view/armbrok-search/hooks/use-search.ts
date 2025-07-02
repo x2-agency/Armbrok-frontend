@@ -52,15 +52,16 @@ const buildSearchUrl = (query: string) => {
 	const apiKey = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_API_KEY;
 	const searchEngineId = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_ENGINE_ID;
 	const apiUrl = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_API_URL;
+	const siteDomain = process.env.NEXT_PUBLIC_WEBSITE_DOMAIN;
 
-	if (!(apiKey && searchEngineId && apiUrl)) {
-		throw new Error('API Key or Search Engine ID is missing.');
+	if (!(apiKey && searchEngineId && apiUrl && siteDomain)) {
+		throw new Error('One or more required environment variables are missing');
 	}
 
 	const encodedURI = encodeURIComponent(query);
 	const keyString = `key=${apiKey}`;
 	const cxString = `cx=${searchEngineId}`;
-	const siteSearch = `siteSearch=${process.env.NEXT_PUBLIC_WEBSITE_DOMAIN ?? ''}`;
+	const siteSearch = `siteSearch=${siteDomain}`;
 
 	return `${apiUrl}?q=${encodedURI}&${keyString}&${cxString}&${siteSearch}`;
 };
