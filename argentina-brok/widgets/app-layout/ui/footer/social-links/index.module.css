@@ -1,13 +1,14 @@
 .root {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: center;
 	@mixin responsive padding-block-end, 25, 40, 40;
 	border-bottom: 1px solid var(--gray-300-color);
 
 	@media (max-width: 767px) {
 		flex-direction: column;
+		justify-content: space-between;
+
 		align-items: baseline;
 		width: 100%;
 		gap: 0.938rem; /* 15px */
