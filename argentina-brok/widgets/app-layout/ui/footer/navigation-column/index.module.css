@@ -1,6 +1,7 @@
 .root {
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+
 	@mixin responsive gap, unset, 54, 54;
 	@mixin responsive padding-block-end, 32, 40, 40;
 
@@ -52,5 +53,23 @@
 @media (max-width: 767px) {
 	.column:nth-child(3) {
 		order: 1;
+	}
+}
+
+.socialDesctop {
+	display: block;
+	grid-column: 6;
+
+	@media (max-width: 767px) {
+		display: none;
+		grid-column: unset;
+	}
+}
+
+.socialMobile {
+	display: none;
+
+	@media (max-width: 767px) {
+		display: block;
 	}
 }
