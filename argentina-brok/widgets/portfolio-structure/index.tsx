@@ -18,6 +18,7 @@ export const PortfolioStructure = ({
 	geography,
 	creditRating,
 	className,
+	assetCurrencies,
 }: PortfolioStructureProps & { className?: string }) => {
 	if (
 		!(
@@ -48,6 +49,7 @@ export const PortfolioStructure = ({
 						<ItemDetailSection {...issuersSection} className={css.assetTypes} />
 					)}
 					{geography && <AssetTypes {...geography} />}
+					{assetCurrencies && <AssetTypes {...assetCurrencies} />}
 				</div>
 				<div className={css.rightPart}>
 					{maturitySection && (
