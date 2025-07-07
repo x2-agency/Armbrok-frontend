@@ -586,6 +586,7 @@ export type PortfolioStructureProps = {
 	maturitySection?: AssetTypesSectionProps;
 	geography?: AssetTypesSectionProps;
 	creditRating?: AssetTypesSectionProps;
+	assetCurrencies?: AssetTypesSectionProps;
 };
 
 /** Fund Facts */

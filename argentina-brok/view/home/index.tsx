@@ -45,8 +45,6 @@ export const Home: NextPage<{
 	useUpdateFooterData(publishedAt);
 	useAppendToHeaderFunds({ funds: parentFunds });
 
-	console.log(fundListSection);
-
 	return (
 		<>
 			<HomePreview heroSection={heroSection} />
