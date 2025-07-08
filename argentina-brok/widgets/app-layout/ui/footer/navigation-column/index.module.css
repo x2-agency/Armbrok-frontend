@@ -3,7 +3,7 @@
 	grid-template-columns: repeat(6, 1fr);
 
 	@mixin responsive gap, unset, 54, 54;
-	@mixin responsive padding-block-end, 32, 40, 40;
+	@mixin responsive padding-block-end, 32, 24, 24;
 	border-bottom: 1px solid var(--gray-300-color);
 
 	@media (max-width: 767px) {
