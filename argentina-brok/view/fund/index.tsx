@@ -66,6 +66,7 @@ export const Fund: NextPage<FundPageData> = ({
 				title={investReasonsSection?.title}
 				items={investReasonsSection?.factoids}
 				centered
+				className={css.experts}
 			/>
 			<Review quote={quoteSection} />
 			<HelpfulInformation

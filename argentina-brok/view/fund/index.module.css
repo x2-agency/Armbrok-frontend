@@ -23,3 +23,7 @@
 
 	padding-block-end: var(--pb) !important;
 }
+
+.experts:has(h2) {
+	@mixin responsive padding-block-start, 30, 36, 36;
+}
