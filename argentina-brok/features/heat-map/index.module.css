@@ -8,8 +8,6 @@
 }
 
 .accordionContentBody {
-	@mixin responsive padding-block-start, 16, 32, 32;
-
 	overflow: hidden;
 }
 
@@ -81,6 +79,7 @@
 
 .table {
 	@mixin responsive border-radius, 16, 16, 16;
+	@mixin responsive padding-block-start, 16, 32, 32;
 
 	overflow: hidden;
 	border-spacing: 0;
