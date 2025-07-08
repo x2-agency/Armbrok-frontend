@@ -6,7 +6,7 @@
 
 .titleBlock {
 	@mixin responsive width, unset, 1200, 1200;
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 
 	margin-inline: auto;
 

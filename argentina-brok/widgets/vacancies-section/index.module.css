@@ -17,7 +17,7 @@
 
 .description {
 	@mixin font-text20;
-	@mixin responsive padding-block-end, 40, 40, 40;
+	@mixin responsive padding-block-end, 40, 48, 48;
 }
 
 .vacancies {
