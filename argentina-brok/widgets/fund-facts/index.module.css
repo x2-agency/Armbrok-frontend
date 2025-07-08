@@ -1,6 +1,6 @@
 .root {
-	@mixin responsive gap, 16, 40, 40;
-	@mixin responsive padding-block, 36, 72, 72;
+	@mixin responsive gap, 16, 48, 48;
+	@mixin responsive padding-block, 36, 36, 36;
 
 	display: flex;
 	flex-direction: column;
@@ -10,7 +10,6 @@
 	@mixin font-h2;
 
 	align-self: center;
-
 	font-weight: 600;
 }
 
@@ -28,7 +27,7 @@
 
 .leftPart,
 .rightPart {
-	@mixin responsive gap, 32, 40, 40;
+	@mixin responsive gap, 32, 48, 48;
 
 	display: flex;
 	flex-direction: column;

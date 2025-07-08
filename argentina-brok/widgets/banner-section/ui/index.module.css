@@ -80,7 +80,7 @@
 
 .root.profix {
 	@mixin responsive padding-block-start, 80, 120, 120;
-	padding-block-end: 5rem; /* 80px */
+	@mixin responsive padding-block-end, 18, 48, 48;
 	background:
 		radial-gradient(
 			47.29% 79.37% at 85.35% 76.84%,

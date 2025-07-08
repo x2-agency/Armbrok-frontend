@@ -1,10 +1,10 @@
 .root {
-	@mixin responsive padding-block-start, 36, 72, 72;
-	@mixin responsive padding-block-end, 60, 120, 120;
+	@mixin responsive padding-block-start, 36, 36, 36;
+	@mixin responsive padding-block-end, 60, 36, 36;
 }
 
 .title {
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 	@mixin font-h2;
 
 	font-weight: 600;
