@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive margin-block, 30, 72, 72;
+	@mixin responsive margin-block, 30, 36, 36;
 }
 
 .title,
@@ -23,7 +23,7 @@
 }
 
 .titleBlock {
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 	@mixin responsive gap, 8, 16, 16;
 
 	display: flex;

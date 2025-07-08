@@ -8,6 +8,6 @@
 	@mixin responsive margin-block-end, 152, 152, 152;
 }
 
-.companies {
-	@mixin responsive margin-block-end, 72, 72, 72;
+.expertSolutions:has(h2) {
+	@mixin responsive padding-block, 30, 48, 48;
 }
