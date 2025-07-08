@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	@mixin responsive padding-block, 30, 48, 48;
+	@mixin responsive padding-block, 30, 36, 36;
 
 	@media (max-width: 767px) {
 		align-items: normal;
