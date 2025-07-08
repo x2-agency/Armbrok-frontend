@@ -90,7 +90,10 @@ export const AssetManagement: NextPage<{
 				columns={2}
 				fileDirection="column"
 			/>
-			<HelpfulInformation accordionSection={infoSection} />
+			<HelpfulInformation
+				accordionSection={infoSection}
+				className={css.accorion}
+			/>
 		</>
 	);
 };
