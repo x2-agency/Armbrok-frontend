@@ -57,6 +57,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					title={valuesSection?.title}
 					withShell
 					backgroundColor="white"
+					className={css.expertSolutions}
 				/>
 			</HeroContainer>
 			<AwardsSection
@@ -65,6 +66,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 				awards={awards?.data}
 				buttonLimit={7}
 				awardsTotal={awards?.meta.pagination.total ?? 7}
+				className={css.awards}
 			/>
 			<MembershipSection
 				title={membershipSection?.title}

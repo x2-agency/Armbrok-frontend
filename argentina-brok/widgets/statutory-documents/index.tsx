@@ -38,7 +38,7 @@ export const StatutoryDocuments = ({
 					)}
 				</div>
 			)}
-			{documents && (
+			{documents && documents.length > 0 && (
 				<ul
 					className={cx(css.documents, {
 						[css.centered]: documents?.length === 1,

@@ -1,6 +1,6 @@
 .root {
-	@mixin responsive padding-block-start, 40, 80, 80;
-	@mixin responsive padding-block-end, 36, 72, 72;
+	@mixin responsive padding-block-start, 40, 48, 48;
+	@mixin responsive padding-block-end, 36, 36, 36;
 
 	@media (max-width: 767px) {
 		padding-inline: unset;
@@ -8,7 +8,7 @@
 }
 
 .title {
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 	@mixin font-h2;
 
 	text-align: center;

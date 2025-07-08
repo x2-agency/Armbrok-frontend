@@ -63,15 +63,23 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				bigFormatIcon={isMobile}
 			/>
 			<ParentFunds head={{ title: fundListTitle }} funds={parentFunds} />
-			<HowWeAreWorkingSection data={howWeAreWorkingSection} />
+			<HowWeAreWorkingSection
+				data={howWeAreWorkingSection}
+				className={css.howFundWorks}
+			/>
 			<ExpertSolutionSection
 				title={howFundWorksSection?.title}
 				items={howFundWorksSection?.factoids}
 				centered
 				bigFormatIcon
+				className={css.howFundWorks}
 			/>
 			<HelpfulInformation accordionSection={infoSection} />
-			<HowWeAreWorkingSection data={disclaimerSection} oneCard />
+			<HowWeAreWorkingSection
+				data={disclaimerSection}
+				oneCard
+				className={css.howWeWorking}
+			/>
 		</>
 	);
 };

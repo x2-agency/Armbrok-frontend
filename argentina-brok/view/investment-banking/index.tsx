@@ -65,6 +65,7 @@ export const InvestmentBanking: NextPage<
 				documentsSection={documentsSection}
 				fileDirection="column"
 				columns={2}
+				className={css.documents}
 			/>
 		</>
 	);

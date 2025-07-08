@@ -5,8 +5,9 @@
 	flex-direction: column;
 }
 
-.experts {
-	@mixin responsive padding-block, 40, 80, 80;
+.experts:has(h2) {
+	@mixin responsive padding-block-start, 40, 48, 48;
+	@mixin responsive padding-block-end, 40, 36, 36;
 }
 
 .experience {
@@ -14,14 +15,26 @@
 }
 
 .managementSection {
-	@mixin responsive padding-block, 30, 72, 72;
+	@mixin responsive padding-block, 30, 36, 36;
 }
 
 .management:has(li) {
 	grid-template-columns: repeat(3, 1fr) !important;
 
 	@media (max-width: 767px) {
-		display: flex  !important;
+		display: flex !important;
 		flex-direction: column;
 	}
+}
+
+.accorion {
+	margin-block-end: 12px;
+}
+
+.review:has(article) {
+	@mixin responsive margin-block-end, 30, 72, 72;
+}
+
+.documents:has(h2) {
+	@mixin responsive padding-block-start, 30, 36, 36;
 }

@@ -1,6 +1,6 @@
 .sectionTitle {
-	@mixin responsive padding-block-start, 36, 72, 72;
-	@mixin responsive padding-block-end, 60, 120, 120;
+	@mixin responsive padding-block-start, 36, 36, 36;
+	@mixin responsive padding-block-end, 60, 48, 48;
 }
 
 .sectionTitle div > p {
@@ -19,7 +19,11 @@
 }
 
 .accordionSection {
-	@mixin responsive --pb, 36, 72, 72;
+	@mixin responsive --pb, 36, 36, 36;
 
 	padding-block-end: var(--pb) !important;
+}
+
+.experts:has(h2) {
+	@mixin responsive padding-block-start, 30, 36, 36;
 }

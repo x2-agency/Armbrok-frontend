@@ -1,9 +1,9 @@
 .root {
-	@mixin responsive padding-block, 30, 72, 72;
+	@mixin responsive padding-block, 30, 36, 36;
 }
 
 .title {
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 	@mixin font-h2;
 	letter-spacing: -1%;
 

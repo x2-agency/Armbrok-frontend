@@ -1,11 +1,12 @@
 .root {
-	@mixin responsive padding-block, 40, 80, 80;
+	@mixin responsive padding-block-start, 40, 48, 48;
+	@mixin responsive padding-block-end, 40, 36, 36;
 	position: relative;
 }
 
 .titleBlock {
 	@mixin responsive width, unset, 1200, 1200;
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 
 	margin-inline: auto;
 

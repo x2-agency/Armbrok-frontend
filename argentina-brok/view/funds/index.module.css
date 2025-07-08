@@ -1,3 +1,15 @@
-.hero {
-	padding-block: unset;
+.hero:has(section) {
+	@mixin responsive padding-block, 60, 48, 48;
+
+	& > section {
+		padding-block: unset;
+	}
+}
+
+.howWeWorking:has(h2) {
+	@mixin responsive padding-block-end, 30, 48, 48;
+}
+
+.howFundWorks:has(h2) {
+	@mixin responsive padding-block-start, 30, 36, 36;
 }

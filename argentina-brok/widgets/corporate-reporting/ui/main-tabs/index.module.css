@@ -4,7 +4,7 @@
 }
 
 .tabs {
-	@mixin responsive margin-block-end, 20, 40, 40;
+	@mixin responsive margin-block-end, 20, 48, 48;
 	@mixin responsive padding, 4, 4, 4;
 	@mixin responsive border-radius, 8, 8, 8;
 	@mixin responsive gap, 4, 4, 4;
@@ -50,5 +50,5 @@
 }
 
 .files {
-	@mixin responsive padding-block-start, 55, 55, 55;
+	padding-block: unset;
 }

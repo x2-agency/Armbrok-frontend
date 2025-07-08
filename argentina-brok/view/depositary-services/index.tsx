@@ -38,7 +38,7 @@ export const DepositaryServices: NextPage<
 				banner={{
 					title: heroSection?.title ?? '',
 					description: heroSection?.description ?? '',
-					button: { ...heroSection?.button, isLoginButton: true },
+					button: { ...heroSection?.button },
 					poster: heroSection?.background,
 				}}
 				alignContent="center"
@@ -56,6 +56,7 @@ export const DepositaryServices: NextPage<
 					withShell
 					backgroundColor="white"
 					gridClass={css.experts}
+					className={css.expertsSolutions}
 				/>
 			</HeroContainer>
 			<GuaranteesSection
@@ -68,8 +69,12 @@ export const DepositaryServices: NextPage<
 				documentsSection={documentsSection}
 				columns={2}
 				fileDirection="column"
+				className={css.documents}
 			/>
-			<HelpfulInformation accordionSection={infoSection} />
+			<HelpfulInformation
+				accordionSection={infoSection}
+				className={css.helpful}
+			/>
 		</>
 	);
 };

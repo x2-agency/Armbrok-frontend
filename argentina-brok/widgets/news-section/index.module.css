@@ -3,8 +3,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@mixin responsive padding-block-start, 30, 24, 24;
-	@mixin responsive padding-block-end, 30, 72, 72;
+	@mixin responsive padding-block-start, 30, 36, 36;
+	@mixin responsive padding-block-end, 30, 48, 48;
 	position: relative;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .title:has(+ .slider) {
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 }
 
 .title {
@@ -25,7 +25,7 @@
 .description {
 	@mixin font-text20;
 	color: var(--gray-700-color);
-	@mixin responsive padding-block-end, 30, 64, 64;
+	@mixin responsive padding-block-end, 30, 48, 48;
 	text-align: center;
 
 	@media (max-width: 767px) {

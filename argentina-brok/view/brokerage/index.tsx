@@ -62,10 +62,10 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 					<ExpertSolutionSection items={advantages} className={css.solution} />
 				</HeroContainer>
 			)}
-
 			<MembershipSection
 				title={exchangesSection?.title}
 				items={exchangesSection?.exchanges}
+				className={css.members}
 			/>
 			<InstrumentsSection instrumentsSection={instrumentsSection} />
 			<AppMobileSection data={mobileAppSection} />
@@ -83,7 +83,10 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				columns={2}
 				fileDirection="column"
 			/>
-			<HelpfulInformation accordionSection={infoSection} />
+			<HelpfulInformation
+				accordionSection={infoSection}
+				className={css.accordion}
+			/>
 		</>
 	);
 };
