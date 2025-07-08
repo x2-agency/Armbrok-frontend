@@ -1,5 +1,6 @@
 .root {
-	@mixin responsive padding-block-end, 60, 120, 120;
+	@mixin responsive padding-block-start, 30, 36, 36;
+	@mixin responsive padding-block-end, 30, 48, 48;
 }
 
 .list {
@@ -12,7 +13,7 @@
 
 .titleBlock {
 	@mixin responsive gap, 10, 16, 16;
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 	@mixin responsive padding-block-start, 40, 70, 70;
 
 	display: flex;
