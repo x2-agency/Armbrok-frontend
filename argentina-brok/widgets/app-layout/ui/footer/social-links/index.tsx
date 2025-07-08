@@ -8,8 +8,8 @@ import { Social } from './social';
 export const SocialLinks = ({ className }: { className?: string }) => {
 	return (
 		<div className={cx(css.root, className)}>
-			<div className={css.appStore}>
-				{/* <Link
+			{/* <div className={css.appStore}> */}
+			{/* <Link
 					href="https://apps.apple.com"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -23,7 +23,7 @@ export const SocialLinks = ({ className }: { className?: string }) => {
 				>
 					<GooglePlaySvg className={css.svg} />
 				</Link> */}
-			</div>
+			{/* </div> */}
 			<Social className={css.media} items={SOCIAL_MEDIA_LINKS} />
 		</div>
 	);

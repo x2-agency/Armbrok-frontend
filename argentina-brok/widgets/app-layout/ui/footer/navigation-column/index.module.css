@@ -4,12 +4,14 @@
 
 	@mixin responsive gap, unset, 54, 54;
 	@mixin responsive padding-block-end, 32, 40, 40;
+	border-bottom: 1px solid var(--gray-300-color);
 
 	@media (max-width: 767px) {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 2.6rem;
 		row-gap: 8.533rem; /* 32px */
+		border-bottom: unset;
 	}
 
 	@media (min-width: 768px) and (max-width: 1023px) {
