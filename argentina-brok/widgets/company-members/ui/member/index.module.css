@@ -1,5 +1,5 @@
 .card {
-	@mixin responsive gap, 20, 40, 40;
+	@mixin responsive gap, 20, 24, 24;
 	@mixin transition;
 
 	width: 100%;
@@ -23,8 +23,8 @@
 }
 
 .imageWrapper {
-	@mixin responsive width, 123, 100, 100;
-	@mixin responsive height, 123, 100, 100;
+	@mixin responsive width, 123, 130, 130;
+	@mixin responsive height, 123, 130, 130;
 	@mixin responsive border-radius, 10, 24, 24;
 
 	position: relative;
