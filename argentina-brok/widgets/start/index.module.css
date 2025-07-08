@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	@mixin responsive padding-block, 30, 72, 72;
+	@mixin responsive padding-block, 30, 48, 48;
 
 	@media (max-width: 767px) {
 		align-items: normal;
@@ -13,7 +13,7 @@
 .title {
 	@mixin font-h2;
 	font-weight: 600;
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 
 	@media (max-width: 767px) {
 		text-align: center;
