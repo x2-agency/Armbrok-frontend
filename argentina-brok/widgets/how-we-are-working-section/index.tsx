@@ -9,14 +9,16 @@ import css from './index.module.css';
 export type HowWeAreWorkingSectionProps = {
 	data?: HowWeAreWorkingProps;
 	oneCard?: boolean;
+	className?: string;
 };
 
 export const HowWeAreWorkingSection = ({
 	data,
 	oneCard = false,
+	className,
 }: HowWeAreWorkingSectionProps) => {
 	return (
-		<Container className={css.root}>
+		<Container className={cx(css.root, className)}>
 			<h2 className={css.title}>{parser(data?.title ?? '')}</h2>
 			<div
 				className={cx(

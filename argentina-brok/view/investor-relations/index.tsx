@@ -41,12 +41,12 @@ export const InvestorRelations: NextPage<
 				banner={{
 					title: heroSection?.title ?? '',
 					description: heroSection?.description ?? '',
-					button: { ...heroSection?.button, isLoginButton: true },
+					button: { ...heroSection?.button },
 					poster: heroSection?.background,
 				}}
 				alignContent="center"
 			/>
-			<HeroContainer>
+			<HeroContainer className={css.hero}>
 				<TitleSection
 					title={transparencySection?.title ?? ''}
 					description={transparencySection?.description}
