@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@mixin responsive padding-block-start, 30, 24, 24;
+	@mixin responsive padding-block-start, 30, 36, 36;
 	@mixin responsive padding-block-end, 30, 48, 48;
 	position: relative;
 }
