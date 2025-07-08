@@ -3,7 +3,7 @@
 	flex-direction: column;
 	margin-inline: auto;
 	@mixin responsive max-width, unset, 960, 960;
-	@mixin responsive padding-block-start, 140, 160, 160;
+	@mixin responsive padding-block-start, 140, 152, 152;
 	text-align: center;
 
 	@media (max-width: 767px) {
@@ -31,13 +31,13 @@
 }
 
 .description {
-	@mixin responsive padding-block-end, 50, 40, 40;
+	@mixin responsive padding-block-end, 50, 48, 48;
 	@mixin font-h6;
 	color: var(--gray-600-color);
 }
 
 .wrap:has(+ .imageWrap) {
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 }
 
 .wrap:has(+ .root) {
@@ -64,7 +64,11 @@
 	padding-inline: unset;
 }
 
+.authorBottom {
+	@mixin responsive padding-block-end, 20, 36, 36;
+}
+
 .news {
-	@mixin responsive padding-block-end, 50, 120, 120;
+	@mixin responsive padding-block-end, 30, 8, 8;
 	@mixin responsive padding-block-start, 60, unset, unset;
 }

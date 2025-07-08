@@ -25,7 +25,7 @@
 .description {
 	@mixin font-text20;
 	color: var(--gray-700-color);
-	@mixin responsive padding-block-end, 30, 64, 64;
+	@mixin responsive padding-block-end, 30, 48, 48;
 	text-align: center;
 
 	@media (max-width: 767px) {
