@@ -65,6 +65,7 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 			<MembershipSection
 				title={exchangesSection?.title}
 				items={exchangesSection?.exchanges}
+				className={css.members}
 			/>
 			<InstrumentsSection instrumentsSection={instrumentsSection} />
 			<AppMobileSection data={mobileAppSection} />

@@ -1,3 +1,9 @@
 .factoids {
-	@mixin responsive padding-block, 40, 80, 80;
+	@mixin responsive padding-block-start, 40, 48, 48;
+	@mixin responsive padding-block-end, 40, 36, 36;
+}
+
+.documents:has(h2) {
+	@mixin responsive padding-block-start, 30, 36, 36;
+	@mixin responsive padding-block-end, 30, 48, 48;
 }

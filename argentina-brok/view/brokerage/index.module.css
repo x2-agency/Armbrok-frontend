@@ -9,3 +9,7 @@
 .accordion {
 	margin-block-end: 12px;
 }
+
+.members:has(h2) {
+	@mixin responsive padding-block-start, 30, 48, 48;
+}

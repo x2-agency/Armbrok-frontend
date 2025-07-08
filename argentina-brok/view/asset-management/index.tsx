@@ -69,7 +69,7 @@ export const AssetManagement: NextPage<{
 				title={benefitsSection?.title}
 				className={css.experts}
 			/>
-			<Review quote={quoteSection} />
+			<Review quote={quoteSection} className={css.review} />
 			<AssetManagment data={assetManagementCard} />
 			<ExpertSolutionSection
 				className={css.managementSection}
@@ -88,6 +88,7 @@ export const AssetManagement: NextPage<{
 			<StatutoryDocuments
 				documentsSection={documentsSection}
 				columns={2}
+				className={css.documents}
 				fileDirection="column"
 			/>
 			<HelpfulInformation

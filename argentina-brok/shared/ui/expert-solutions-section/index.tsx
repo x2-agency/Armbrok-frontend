@@ -26,7 +26,7 @@ export const ExpertSolutionSection = ({
 	backgroundColor,
 	gridClass,
 	centered,
-	bigFormatIcon
+	bigFormatIcon,
 }: ExpertSolutionSectionProps) => {
 	if (!(items && items.length)) {
 		return null;
