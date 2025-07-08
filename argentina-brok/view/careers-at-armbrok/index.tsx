@@ -69,11 +69,13 @@ export const CareersAtArmbrok: NextPage<
 				title={eventsSlider?.title}
 				description={eventsSlider?.description}
 				slider={eventsSlider?.slider as SliderItem}
+				className={css.corpSlider}
 			/>
 			<SliderSection
 				title={hobbyClubsSlider?.title}
 				description={hobbyClubsSlider?.description}
 				slider={hobbyClubsSlider?.slider as SliderItem}
+				className={css.corpSlider}
 			/>
 			<VacanciesSection
 				title={vacanciesSection?.title ?? ''}

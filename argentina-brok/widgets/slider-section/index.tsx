@@ -1,3 +1,4 @@
+import cx from 'clsx';
 import parser from 'html-react-parser';
 
 import css from './index.module.css';
@@ -8,13 +9,14 @@ export const SliderSection = ({
 	title,
 	description,
 	slider,
-}: SliderSectionProps) => {
+	className,
+}: SliderSectionProps & { className?: string }) => {
 	if (!slider) {
 		return null;
 	}
 
 	return (
-		<section className={css.root}>
+		<section className={cx(css.root, className)}>
 			{title && description && (
 				<div className={css.titleBlock}>
 					{title && <h2 className={css.title}>{parser(title)}</h2>}
