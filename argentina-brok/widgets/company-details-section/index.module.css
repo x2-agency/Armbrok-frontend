@@ -1,6 +1,6 @@
 .root {
-	@mixin responsive padding-block-end, 60, 120, 120;
-	@mixin responsive padding-block-start, 36, 72, 72;
+	@mixin responsive padding-block-end, 60, 48, 48;
+	@mixin responsive padding-block-start, 36, 36, 36;
 
 	display: flex;
 	flex-direction: column;
@@ -12,7 +12,7 @@
 }
 
 .title {
-	@mixin responsive padding-block-end, 20, 40, 40;
+	@mixin responsive padding-block-end, 20, 48, 48;
 	@mixin font-h2;
 
 	text-align: center;

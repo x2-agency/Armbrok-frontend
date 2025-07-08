@@ -57,6 +57,7 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					title={valuesSection?.title}
 					withShell
 					backgroundColor="white"
+					className={css.expertSolutions}
 				/>
 			</HeroContainer>
 			<AwardsSection
