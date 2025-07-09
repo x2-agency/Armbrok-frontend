@@ -79,7 +79,7 @@ export const AssetManagement: NextPage<{
 				items={wealthManagementSection?.factoids}
 			/>
 			<ExpertSolutionSection
-				className={css.managementSection}
+				className={css.expertsSection}
 				gridClass={css.management}
 				withShell
 				title={howWeAreWorking?.title}
@@ -91,10 +91,7 @@ export const AssetManagement: NextPage<{
 				className={css.documents}
 				fileDirection="column"
 			/>
-			<HelpfulInformation
-				accordionSection={infoSection}
-				className={css.accorion}
-			/>
+			<HelpfulInformation accordionSection={infoSection} />
 		</>
 	);
 };
