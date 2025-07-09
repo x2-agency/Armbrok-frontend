@@ -1,12 +1,12 @@
 .hero {
-	@mixin responsive gap, 32, 64, 64;
+	@mixin responsive gap, 32, 48, 48;
 
 	display: flex;
 	flex-direction: column;
 }
 
 .experts:has(h2) {
-	@mixin responsive padding-block-start, 40, 48, 48;
+	@mixin responsive padding-block-start, 40, 96, 96;
 	@mixin responsive padding-block-end, 40, 48, 48;
 }
 
@@ -14,7 +14,12 @@
 	padding-block: unset;
 }
 
-.managementSection {
+.managementSection:has(h2) {
+	@mixin responsive padding-block-start, 30, 72, 72;
+	@mixin responsive padding-block-end, 30, 48, 48;
+}
+
+.expertsSection:has(h2) {
 	@mixin responsive padding-block, 30, 48, 48;
 }
 
@@ -27,12 +32,8 @@
 	}
 }
 
-.accorion {
-	margin-block-end: 12px;
-}
-
 .review:has(article) {
-	@mixin responsive margin-block-end, 30, 72, 72;
+	@mixin responsive margin-block-end, 30, 96, 96;
 }
 
 .documents:has(h2) {
