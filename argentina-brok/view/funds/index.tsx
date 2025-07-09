@@ -57,6 +57,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				</HeroContainer>
 			)}
 			<ExpertSolutionSection
+				className={css.expert}
 				items={investingAdvantages?.factoids}
 				title={investingAdvantages?.title}
 				centered={isMobile}
