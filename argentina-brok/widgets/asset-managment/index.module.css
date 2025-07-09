@@ -1,6 +1,7 @@
 .root {
 	@mixin responsive padding-block, 20, unset, unset;
-	@mixin responsive padding-block-end, 20, 48, 48;
+	@mixin responsive padding-block-end, 20, 24, 24;
+	@mixin responsive margin-block-start, 20, 48, 48;
 
 	position: relative;
 }
