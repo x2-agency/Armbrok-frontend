@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive padding-block, 36, 36, 36;
+	@mixin responsive padding-block, 36, 48, 48;
 }
 
 .title {

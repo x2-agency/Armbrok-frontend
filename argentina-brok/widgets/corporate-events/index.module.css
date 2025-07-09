@@ -4,7 +4,7 @@
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	@mixin responsive padding-block, 30, 36, 36;
+	@mixin responsive padding-block, 30, 48, 48;
 }
 
 .title {

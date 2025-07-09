@@ -5,7 +5,7 @@
 	@mixin responsive padding-block, 40, 40, 40;
 	@mixin responsive padding-inline, 20, 40, 40;
 	@mixin responsive border-radius, 20, 32, 32;
-	@mixin responsive margin-block, 20, 36, 36;
+	@mixin responsive margin-block, 20, 48, 48;
 }
 
 .title {
