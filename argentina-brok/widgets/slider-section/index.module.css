@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive margin-block, 30, 36, 36;
+	@mixin responsive margin-block, 30, 48, 48;
 }
 
 .title,

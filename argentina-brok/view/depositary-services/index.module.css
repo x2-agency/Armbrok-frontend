@@ -1,6 +1,6 @@
-.benefits {
-	@mixin responsive padding-block-start, 40, 48, 48;
-	@mixin responsive padding-block-end, 40, 36, 36;
+.benefits:has(h2) {
+	@mixin responsive padding-block-start, 40, 96, 96;
+	@mixin responsive padding-block-end, 40, 48, 48;
 
 	ul {
 		justify-content: space-between;
@@ -29,12 +29,12 @@
 }
 
 .expertsSolutions:has(h2) {
-	@mixin responsive padding-block-start, 30, 36, 36;
+	@mixin responsive padding-block-start, 30, 48, 48;
 	@mixin responsive padding-block-end, 30, 48, 48;
 }
 
 .documents:has(h2) {
-	@mixin responsive padding-block-start, 30, 36, 36;
+	@mixin responsive padding-block-start, 30, 48, 48;
 }
 
 .helpful:has(h2) {

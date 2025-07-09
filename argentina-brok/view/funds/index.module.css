@@ -11,5 +11,5 @@
 }
 
 .howFundWorks:has(h2) {
-	@mixin responsive padding-block-start, 30, 36, 36;
+	@mixin responsive padding-block-start, 30, 48, 48;
 }

@@ -3,13 +3,9 @@
 }
 
 .quote {
-	@mixin responsive padding-block-start, 20, 36, 36;
-}
-
-.accordion {
-	margin-block-end: 12px;
+	@mixin responsive padding-block-start, 20, 48, 48;
 }
 
 .members:has(h2) {
-	@mixin responsive padding-block-start, 30, 48, 48;
+	@mixin responsive padding-block-start, 30, 96, 96;
 }
