@@ -81,6 +81,7 @@ export const CareersAtArmbrok: NextPage<
 				title={vacanciesSection?.title ?? ''}
 				description={vacanciesSection?.description ?? ''}
 				vacancies={vacancies?.data}
+				className={css.vacancies}
 			/>
 			<FeedbackForm
 				endpoint={ENDPOINTS.jobSubscription}
