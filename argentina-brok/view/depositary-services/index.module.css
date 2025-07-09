@@ -1,5 +1,5 @@
-.benefits {
-	@mixin responsive padding-block-start, 40, 48, 48;
+.benefits:has(h2) {
+	@mixin responsive padding-block-start, 40, 96, 96;
 	@mixin responsive padding-block-end, 40, 48, 48;
 
 	ul {
