@@ -75,7 +75,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				bigFormatIcon
 				className={css.howFundWorks}
 			/>
-			<HelpfulInformation accordionSection={infoSection} />
+			<HelpfulInformation accordionSection={infoSection} className={css.help} />
 			<HowWeAreWorkingSection
 				data={disclaimerSection}
 				oneCard

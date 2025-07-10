@@ -1,3 +1,9 @@
 .hero {
 	padding-block: unset;
+	@mixin responsive margin-block-end, 30, 48, 48;
+
+}
+
+.solution {
+	@mixin responsive padding-block, 30, 48, 48;
 }
