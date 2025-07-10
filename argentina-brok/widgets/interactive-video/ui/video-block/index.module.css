@@ -4,7 +4,6 @@
 	flex-direction: column;
 
 	@mixin responsive border-radius, 20, 32, 32;
-	@mixin responsive margin-block-start, 40, 48, 48;
 	@mixin responsive margin-block-end, unset, 48, 48;
 }
 

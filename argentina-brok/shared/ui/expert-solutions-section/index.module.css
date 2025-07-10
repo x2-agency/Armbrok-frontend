@@ -1,6 +1,7 @@
 .root {
 	@mixin responsive padding-block-start, 30, 48, 48;
 	@mixin responsive padding-block-end, 30, 48, 48;
+	@mixin responsive margin-block-end, 30, 48, 48;
 }
 
 .sectionTitle {
