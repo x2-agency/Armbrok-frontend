@@ -3,7 +3,7 @@
 	flex-direction: column;
 	margin-inline: auto;
 	@mixin responsive max-width, unset, 960, 960;
-	@mixin responsive padding-block-start, 140, 152, 152;
+	@mixin responsive padding-block-start, 140, 205, 205;
 	text-align: center;
 
 	@media (max-width: 767px) {
@@ -65,7 +65,7 @@
 }
 
 .authorBottom {
-	@mixin responsive padding-block-end, 20, 48, 48;
+	@mixin responsive padding-block-end, 60, 120, 120;
 }
 
 .news {

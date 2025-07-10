@@ -13,9 +13,10 @@ import { ASSET_MANAGEMENT_IMAGES } from './model/asset-management.constants';
 
 export type AssetManagmentProps = {
 	data?: AssetManagementCardProps;
+	className?: string;
 };
 
-export const AssetManagment = ({ data }: AssetManagmentProps) => {
+export const AssetManagment = ({ data, className }: AssetManagmentProps) => {
 	const { title, description, button, link } = data ?? {};
 	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 
@@ -25,7 +26,7 @@ export const AssetManagment = ({ data }: AssetManagmentProps) => {
 	};
 
 	return (
-		<Container className={css.root}>
+		<Container className={cx(css.root, className)}>
 			<article className={cx(css.wrap, 'hybrid')}>
 				<FormatImage
 					poster={ASSET_MANAGEMENT_IMAGES}

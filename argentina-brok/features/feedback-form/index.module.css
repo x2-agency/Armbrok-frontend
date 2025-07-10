@@ -40,7 +40,7 @@
 
 .description {
 	@mixin font-text16;
-	@mixin responsive padding-block-end, 22, 32, 32;
+	@mixin responsive padding-block-end, 22, 48, 48;
 
 	@media (max-width: 767px) {
 		br {

@@ -5,7 +5,7 @@
 .title {
 	@mixin font-h4;
 	@mixin responsive padding-inline, 0, 16, 16;
-	@mixin responsive padding-block-end, 6, 24, 24;
+	@mixin responsive padding-block-end, 6, 10, 10;
 
 	font-weight: 600;
 }

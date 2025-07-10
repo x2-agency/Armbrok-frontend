@@ -9,7 +9,6 @@
 			transparent 70%
 		),
 		linear-gradient(to right, #230302 0%, #230302 20%, #230302 50%);
-	@mixin responsive margin-block-start, 40, 48, 48;
 	@mixin responsive margin-block-end, 20, 48, 48;
 
 	@media (max-width: 767px) {

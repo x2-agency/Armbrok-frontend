@@ -53,7 +53,10 @@ export const CareersAtArmbrok: NextPage<
 					title={workAdvantagesSection?.title ?? ''}
 					description={workAdvantagesSection?.description ?? ''}
 				/>
-				<GuaranteesSection items={workAdvantagesSection?.factoids} />
+				<GuaranteesSection
+					items={workAdvantagesSection?.factoids}
+					className={css.teens}
+				/>
 			</HeroContainer>
 			<OurPeopleSection
 				title={employeeStorySection?.title}
