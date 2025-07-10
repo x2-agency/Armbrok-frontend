@@ -6,21 +6,12 @@
 }
 
 .experts:has(h2) {
-	@mixin responsive padding-block-start, 40, 96, 96;
-	@mixin responsive padding-block-end, 40, 48, 48;
+	@mixin responsive padding-block-end, 60, 120, 120;
 }
 
+.experts,
 .experience {
 	padding-block: unset;
-}
-
-.managementSection:has(h2) {
-	@mixin responsive padding-block-start, 30, 72, 72;
-	@mixin responsive padding-block-end, 30, 48, 48;
-}
-
-.expertsSection:has(h2) {
-	@mixin responsive padding-block, 30, 48, 48;
 }
 
 .management:has(li) {
@@ -32,10 +23,6 @@
 	}
 }
 
-.review:has(article) {
-	@mixin responsive margin-block-end, 30, 96, 96;
-}
-
-.documents:has(h2) {
-	@mixin responsive padding-block-start, 30, 48, 48;
+.asset {
+	@mixin responsive padding-block-end, 60, 120, 120;
 }

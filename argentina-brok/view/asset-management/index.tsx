@@ -70,7 +70,7 @@ export const AssetManagement: NextPage<{
 				className={css.experts}
 			/>
 			<Review quote={quoteSection} className={css.review} />
-			<AssetManagment data={assetManagementCard} />
+			<AssetManagment data={assetManagementCard} className={css.asset}/>
 			<ExpertSolutionSection
 				className={css.managementSection}
 				gridClass={css.management}
