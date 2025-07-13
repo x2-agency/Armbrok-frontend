@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive padding-block-end, 60, 96, 96;
+	@mixin responsive padding-block-end, 60, 120, 120;
 }
 
 .list {

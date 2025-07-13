@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive padding-block-end, 36, 48, 48;
+	@mixin responsive padding-block-end, 60, 120, 120;
 
 	@media (max-width: 767px) {
 		padding-inline: unset;

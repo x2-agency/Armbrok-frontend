@@ -1,5 +1,5 @@
 .root {
-	@mixin responsive padding-block-start, 100, 96, 96;
+	@mixin responsive padding-block-start, 100, 205, 205;
 }
 
 .titleSection h2 {
