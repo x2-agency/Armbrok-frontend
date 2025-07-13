@@ -18,6 +18,23 @@ pnpm install
 pnpm dev
 ```
 
+## Переменные окружения проекта
+
+```
+NEXT_PUBLIC_API_URL=Базовый url бэкенда
+
+NEXT_PUBLIC_WEBSITE_DOMAIN=Домен сайта - указывается вместе со схемой 
+(Например: https://exmaple.com)
+
+NEXT_PUBLIC_GOOGLE_SEARCH_ENGINE_ID=Ключ Google API для поисковой системы
+
+NEXT_PUBLIC_GOOGLE_SEARCH_API_KEY=Ключ Google API аккаунта Google Console
+
+NEXT_PUBLIC_CAPTCHA_KEY=Ключ Google API от Google Recaptcha
+```
+
+Скопируйте содержимое файла `.env.example` в `.env.local` и заполните соответствующие данные 
+
 ## Зависимости проекта
 
 ### Основные зависимости (dependencies)
@@ -86,11 +103,6 @@ pnpm dev
 - `autoprefixer` - автоматические префиксы
 - `postcss-nested` - вложенные стили
 - `postcss-mixins` - CSS-миксины
-
-### TypeScript
-- Строгая типизация (`strict: true`)
-- Path aliases для FSD слоев
-- Генерация типов для GraphQL (если используется)
 
 ## Обновление зависимостей
 Для обновления зависимостей используйте:
@@ -165,22 +177,6 @@ public/               # Статические активы
 
 6) `i18n/` — Локализация.
     Все файлы интернационализации и настройки.
-### Переменные окружения проекта
-
-```
-NEXT_PUBLIC_API_URL=Базовый url бэкенда
-
-NEXT_PUBLIC_WEBSITE_DOMAIN=Домен сайта - указывается вместе со схемой 
-(Например: https://exmaple.com)
-
-NEXT_PUBLIC_GOOGLE_SEARCH_ENGINE_ID=Ключ Google API для поисковой системы
-
-NEXT_PUBLIC_GOOGLE_SEARCH_API_KEY=Ключ Google API аккаунта Google Console
-
-NEXT_PUBLIC_CAPTCHA_KEY=Ключ Google API от Google Recaptcha
-```
-
-Скопируйте содержимое файла `.env.example` в `.env.local` и заполните соответствующие данные 
 
 # Правила верстки
 
