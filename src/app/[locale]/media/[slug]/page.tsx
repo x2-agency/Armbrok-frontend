@@ -43,7 +43,7 @@ export const generateStaticParams = async () => {
 		}
 
 		return locales.flatMap(locale =>
-			response.data.map(article => ({
+			(response?.data ?? []).map(article => ({
 				slug: article.slug,
 				locale,
 			}))

@@ -23,6 +23,7 @@ export type HeroSection = ItemDetail & {
 export type LinkItem = {
 	text?: string;
 	link?: string;
+	isLoginButton?: boolean;
 };
 
 export type MediaData = {

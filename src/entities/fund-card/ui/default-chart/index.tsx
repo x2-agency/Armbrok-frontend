@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+
 'use client';
 
 import Highcharts from 'highcharts';
@@ -181,8 +182,8 @@ export const DefaultChart = ({
 								fontWeight: 'bold',
 								textOutline: 'none',
 							},
-							formatter: function () {
-								if (this.point.index === data.length - 1) {
+							formatter: function (this: Highcharts.Point) {
+								if (this.index === data.length - 1) {
 									return `${hasGrown ? '+' : ''}${annualReturnValue}%`;
 								}
 

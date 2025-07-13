@@ -31,9 +31,7 @@ export const QUERY_KEYS = {
 };
 
 export const useGetArticles = (
-	params?: GetArticlesParams,
-	initialData?: ArticlesData
-): UseInfiniteQueryResult<InfiniteQueryPage<ArticlesData>, Error> => {
+params?: GetArticlesParams, initialArticles?: ArticlesData | undefined): UseInfiniteQueryResult<InfiniteQueryPage<ArticlesData>, Error> => {
 	const searchParams = useSearchParams();
 	const category = searchParams.get('category') || 'all';
 

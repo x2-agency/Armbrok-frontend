@@ -3,6 +3,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import type { Key } from 'react';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -47,13 +48,18 @@ export const Slider = ({
 			navigation={true}
 		>
 			{slider.files &&
-				slider?.files.map((value, index) => (
-					<SwiperSlide key={index} className={css.slide}>
-						<div className={css.imageWrapper}>
-							<img src={value.url} loading="lazy" className={css.image} />
-						</div>
-					</SwiperSlide>
-				))}
+				slider?.files.map(
+					(
+						value: { url: string | undefined },
+						index: Key | null | undefined
+					) => (
+						<SwiperSlide key={index} className={css.slide}>
+							<div className={css.imageWrapper}>
+								<img src={value.url} loading="lazy" className={css.image} />
+							</div>
+						</SwiperSlide>
+					)
+				)}
 			{Array.isArray(slider) &&
 				slider?.map((value, index) => (
 					<SwiperSlide key={index} className={css.slide}>

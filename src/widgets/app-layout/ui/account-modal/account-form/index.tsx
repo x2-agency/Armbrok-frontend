@@ -3,8 +3,8 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 

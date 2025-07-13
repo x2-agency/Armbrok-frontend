@@ -10,14 +10,24 @@ import { FOOTER_DISCLAIMER_LINKS } from '@/widgets/app-layout/model/footer-links
 
 import css from './index.module.css';
 
+type FooterLinkKey = keyof typeof FOOTER_DISCLAIMER_LINKS;
+
+function isFooterLinkKey(key: string): key is FooterLinkKey {
+	return key in FOOTER_DISCLAIMER_LINKS;
+}
+
 export const Disclaimer = () => {
 	const { footer } = LOCALE_KEYS;
 	const t = useTranslations(footer.root);
 
 	const disclaimerContent = t.markup(footer.disclaimer, {
 		p: chunks => `<p class="${css.text}">${chunks}</p>`,
-		a: (chunks: string) =>
-			`<a class="${css.link}" target="_blank" href="${FOOTER_DISCLAIMER_LINKS[chunks] ?? '#'}">${chunks}</a>`,
+		a: (chunks: string) => {
+			const href = isFooterLinkKey(chunks)
+				? FOOTER_DISCLAIMER_LINKS[chunks]
+				: '#';
+			return `<a class="${css.link}" target="_blank" href="${href}">${chunks}</a>`;
+		},
 	});
 
 	const lastUpdateLabel = t(footer.updateLabel);

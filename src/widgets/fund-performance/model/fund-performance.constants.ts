@@ -13,5 +13,3 @@ export const GRAPHIC_TABS: Array<GraphicTabProps> = [
 		mode: NAV_MODE,
 	},
 ];
-
-export const FULL_PERFORMANCE_BUTTON = 'Full performance';
