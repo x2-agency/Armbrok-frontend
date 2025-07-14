@@ -1,8 +1,0 @@
-.root {
-	text-align: center;
-}
-
-.roundButton:disabled {
-	opacity: 1;
-	cursor: default;
-}
