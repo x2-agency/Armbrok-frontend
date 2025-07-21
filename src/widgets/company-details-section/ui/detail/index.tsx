@@ -18,7 +18,7 @@ export const Detail = ({ title, description }: CompanyDetailProps) => {
 	return (
 		<>
 			<p ref={titleRef} className={css.text}>
-				{parser(title)}
+				{parser(title ?? "")}
 			</p>
 			<span
 				className={css.dotted}
