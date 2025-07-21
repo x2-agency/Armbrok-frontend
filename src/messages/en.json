@@ -222,7 +222,9 @@
 	"fundPerformance": {
 		"title": "Fund Performance",
 		"button": "Full performance",
-		"months": {
+		"tableHead": {
+			"total": "Annual change",
+			"year": "Year",
 			"JAN": "Jan",
 			"FEB": "Feb",
 			"MAR": "Mar",

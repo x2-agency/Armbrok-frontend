@@ -1,6 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { useTranslations } from 'next-intl';
-
 import { monthOrder } from '@/features/heat-map/model/heat-map.constants';
 import type {
 	HeatMapItemData,
@@ -15,8 +12,7 @@ type TransformedHeatMap = {
 export const transformHeatMapData = (
 	heatMap: Array<HeatMapItemProps>
 ): TransformedHeatMap => {
-	const t = useTranslations('heatMapHeaders');
-	const headers = [t('total'), t('year'), ...monthOrder];
+	const headers = ['total', 'year', ...monthOrder];
 	const rows: Array<Array<HeatMapItemData | string>> = [];
 
 	for (const yearEntry of heatMap) {

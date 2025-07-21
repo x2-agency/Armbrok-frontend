@@ -22,6 +22,7 @@ export const HeatMap = ({ heatMap, className }: HeatMapProps) => {
 	if (!(heatMap && heatMap.length)) {
 		return null;
 	}
+
 	const { headers, rows } = transformHeatMapData(heatMap);
 
 	return (
@@ -44,12 +45,7 @@ export const HeatMap = ({ heatMap, className }: HeatMapProps) => {
 							>
 								{headers.map((value, index) => (
 									<th key={index} className={css.theadValue}>
-										{index < 2
-											? parser(
-													value.charAt(0).toUpperCase() +
-														value.slice(1).toLowerCase()
-												)
-											: t(`months.${value}`)}
+										{t(`tableHead.${value}`)}
 									</th>
 								))}
 							</tr>
