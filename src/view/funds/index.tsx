@@ -52,7 +52,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				<HeroContainer className={css.hero}>
 					<ExperienceSection
 						className={css.experience}
-						experience={experienceSection?.factoids || []}
+						experience={experienceSection || []}
 					/>
 				</HeroContainer>
 			)}

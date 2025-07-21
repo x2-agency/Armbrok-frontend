@@ -35,23 +35,17 @@ export const ProfitTable = ({ table }: ProfitTableProps) => {
 			return 0;
 		}
 	});
-	const filtered = values.slice(0, -1).filter(v => v !== 0);
 
-	const maxValue = filtered.length ? Math.max(...filtered) : 0;
-	const minValue = filtered.length ? Math.min(...filtered) : 0;
-
-	const defineColor = (value: number, key: number) => {
-		if (key === values.length - 1) {
-			return value !== 0 ? (value > 0 ? 'green' : 'red') : '';
-		}
-
-		if (value === maxValue) {
+	const defineColor = (value: number) => {
+		if (value > 0) {
 			return 'green';
 		}
 
-		if (value === minValue) {
+		if (value < 0) {
 			return 'red';
 		}
+
+		return undefined;
 	};
 
 	return (
@@ -77,10 +71,7 @@ export const ProfitTable = ({ table }: ProfitTableProps) => {
 						{values.map((value, key) => (
 							<td
 								key={key}
-								className={cx(
-									css.tbodyValue,
-									css[defineColor(value, key) ?? '']
-								)}
+								className={cx(css.tbodyValue, css[defineColor(value) ?? ''])}
 							>
 								<span className={css.value}>
 									{value > 0 && '+'}

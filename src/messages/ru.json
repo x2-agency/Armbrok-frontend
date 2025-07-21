@@ -219,7 +219,23 @@
 	"backButton": { "text": "Назад" },
 	"fundPerformance": {
 		"title": "Результативность фонда",
-		"button": "Полная версия"
+		"button": "Полная версия",
+		"tableHead": {
+			"Year Change": "За год",
+			"year": "Год",
+			"JAN": "Янв",
+			"FEB": "Фев",
+			"MAR": "Мар",
+			"APR": "Апр",
+			"MAY": "Май",
+			"JUN": "Июн",
+			"JUL": "Июл",
+			"AUG": "Авг",
+			"SEP": "Сен",
+			"OCT": "Окт",
+			"NOV": "Ноя",
+			"DEC": "Дек"
+		}
 	},
 	"aboutUsLinks": {
 		"text": "О нас",

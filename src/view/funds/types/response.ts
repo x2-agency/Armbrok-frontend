@@ -3,7 +3,6 @@ import type {
 	BaseResponse,
 	BenefitsSection,
 	DocumentsSectionProps,
-	ExperienceSection,
 	Factoid,
 	HeroSection,
 	ParentFundProps,
@@ -12,7 +11,7 @@ import type {
 export type FundsPageData = {
 	publishedAt?: string;
 	heroSection?: HeroSection;
-	experienceSection?: ExperienceSection;
+	experienceSection?: Array<Factoid>;
 	investingAdvantages?: BenefitsSection;
 	howFundWorksSection?: BenefitsSection;
 	howWeAreWorkingSection?: HowWeAreWorkingProps;

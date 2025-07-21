@@ -663,7 +663,7 @@ export type HeatMapItemData = {
 
 export type HeatMapItemProps = {
 	[year: string]: {
-		total: string;
+		"Year Change": string;
 		[month: string]: HeatMapItemData | string;
 	};
 };
