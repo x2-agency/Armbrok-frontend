@@ -12,13 +12,13 @@ type TransformedHeatMap = {
 export const transformHeatMapData = (
 	heatMap: Array<HeatMapItemProps>
 ): TransformedHeatMap => {
-	const headers = ['total', 'year', ...monthOrder];
+	const headers = ['Year Change', 'year', ...monthOrder];
 	const rows: Array<Array<HeatMapItemData | string>> = [];
 
 	for (const yearEntry of heatMap) {
 		const [year, monthsData] = Object.entries(yearEntry)[0];
 
-		const total = monthsData.total ?? '-';
+		const total = monthsData['Year Change'] ?? '-';
 
 		const monthCells: Array<HeatMapItemData> = monthOrder.map(month => {
 			const entry = monthsData[month];

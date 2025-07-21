@@ -223,7 +223,7 @@
 		"title": "Fund Performance",
 		"button": "Full performance",
 		"tableHead": {
-			"total": "Annual change",
+			"Year Change": "Annual change",
 			"year": "Year",
 			"JAN": "Jan",
 			"FEB": "Feb",
