@@ -2,7 +2,7 @@
 ![](https://img.shields.io/badge/react-18.2-red)
 ![](https://img.shields.io/badge/pnpm-10.12.1-red)
 
-# Разворачивание проекта
+# Развертыванию проекта
 
 ## Предварительные требования
 
