@@ -44,10 +44,14 @@ export const HeatMap = ({ heatMap, className }: HeatMapProps) => {
 							>
 								{headers.map((value, index) => (
 									<th key={index} className={css.theadValue}>
-										{parser(
-											value.charAt(0).toUpperCase() +
-												value.slice(1).toLowerCase()
-										)}
+										{
+											index < 2
+												? parser(
+														value.charAt(0).toUpperCase() +
+															value.slice(1).toLowerCase()
+													)
+												: t(`months.${value}`) // Для месяцев используем перевод
+										}
 									</th>
 								))}
 							</tr>
