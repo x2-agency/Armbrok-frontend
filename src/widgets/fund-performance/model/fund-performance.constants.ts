@@ -5,11 +5,11 @@ export const NAV_MODE = 'nav';
 
 export const GRAPHIC_TABS: Array<GraphicTabProps> = [
 	{
-		text: 'NAV per Share',
+		text: 'navPerShare',
 		mode: NAV_PER_SHARE_MODE,
 	},
 	{
-		text: 'NAV',
+		text: 'nav',
 		mode: NAV_MODE,
 	},
 ];

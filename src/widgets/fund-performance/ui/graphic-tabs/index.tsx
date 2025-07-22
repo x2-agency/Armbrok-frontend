@@ -1,5 +1,6 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 
 import type { GraphicMode } from '@/shared/types/global.types';
 
@@ -23,6 +24,8 @@ export const GraphicTabs = ({
 	activeMode,
 	onClick,
 }: GraphicTabsProps) => {
+	const t = useTranslations("fundPerformanceTabs");
+
 	return (
 		<div className={cx(css.root, className)}>
 			{tabs.map((tab, index) => (
@@ -31,7 +34,7 @@ export const GraphicTabs = ({
 					className={cx(css.tab, { [css.active]: tab.mode === activeMode })}
 					onClick={() => onClick(tab.mode)}
 				>
-					{parser(tab.text)}
+					{parser(t(tab.text))}
 				</button>
 			))}
 		</div>
