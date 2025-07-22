@@ -268,7 +268,7 @@
 		"month": "Месяц"
 	},
 	"graphicIndex": {
-		"label": "Сравнивать с",
+		"label": "Сравнить с",
 		"notSelected": "Не выбрано"
 	},
 	"fundsLinks": {
@@ -281,5 +281,9 @@
 	"heatMapHeaders": {
 		"total": "За год",
 		"year": "Год"
+	},
+	"fundPerformanceTabs": {
+		"navPerShare": "Цена пая",
+		"nav": "СЧА"
 	}
 }

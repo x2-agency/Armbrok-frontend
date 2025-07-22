@@ -268,7 +268,7 @@
 		"month": "Ամիս"
 	},
 	"graphicIndex": {
-		"label": "Համեմատելտ",
+		"label": "Համեմատել",
 		"notSelected": "Չի ընտրված"
 	},
 	"fundsLinks": {
@@ -281,5 +281,9 @@
 	"heatMapHeaders": {
 		"total": "Տարվա փոփոխ",
 		"year": "Տարի"
+	},
+	"fundPerformanceTabs": {
+		"navPerShare": "Փայի գին",
+		"nav": "Զուտ ակտիվներ"
 	}
 }

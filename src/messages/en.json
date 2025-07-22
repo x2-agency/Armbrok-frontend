@@ -283,5 +283,9 @@
 	"heatMapHeaders": {
 		"total": "Annual change",
 		"year": "Year"
+	},
+	"fundPerformanceTabs": {
+		"navPerShare": "Unit Price",
+		"nav": "NAV"
 	}
 }
