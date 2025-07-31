@@ -63,6 +63,7 @@ export const Home: NextPage<{
 				head={{
 					title: fundListSection?.title,
 					description: fundListSection?.description,
+					viewAllFundsButton: fundListSection?.viewAllFundsButton,
 				}}
 				funds={parentFunds}
 				mode="slider"
