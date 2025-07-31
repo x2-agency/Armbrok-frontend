@@ -1,5 +1,4 @@
 import parser from 'html-react-parser';
-import { useTranslations } from 'next-intl';
 
 import type { ItemDetail } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
@@ -8,13 +7,11 @@ import type { ParentFundsMode } from '@/widgets/parent-funds';
 import css from './index.module.css';
 
 type ParentFundsHeaderProps = {
-	data: ItemDetail;
+	data: ItemDetail & { viewAllFundsButton?: string };
 	mode: ParentFundsMode;
 };
 
 export const ParentFundsHeader = ({ data, mode }: ParentFundsHeaderProps) => {
-	const t = useTranslations('viewAllFunds');
-
 	if (mode === 'slider') {
 		return (
 			<div className={css.slider}>
@@ -24,9 +21,16 @@ export const ParentFundsHeader = ({ data, mode }: ParentFundsHeaderProps) => {
 						<p className={css.description}>{parser(data.description)}</p>
 					)}
 				</div>
-				<Button href="/funds#funds" variant="next" iconRotate={180}>
-					{parser(t('text'))}
-				</Button>
+				{data.viewAllFundsButton && (
+					<Button
+						href="/funds#funds"
+						variant="next"
+						iconRotate={180}
+						className={css.headButton}
+					>
+						{parser(data.viewAllFundsButton)}
+					</Button>
+				)}
 			</div>
 		);
 	}
