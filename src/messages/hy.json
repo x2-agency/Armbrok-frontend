@@ -150,19 +150,19 @@
 	"openAccount": {
 		"title": "Բացել հաշիվ",
 		"nameInput": {
-			"label": "անունը",
+			"label": "Անունը",
 			"placeholder": "Անուն",
 			"errorMessage": "Խնդրում ենք լրացնել այս դաշտը",
 			"secondErrorMessage": "Անունը պետք է պարունակի առնվազն 4 նիշ"
 		},
 		"phoneInput": {
-			"label": "հեռախոսահամարը",
+			"label": "Հեռախոսահամարը",
 			"placeholder": "Հեռախոսահամար",
 			"errorMessage": "Խնդրում ենք լրացնել այս դաշտը",
 			"secondErrorMessage": "Խնդրում ենք մուտքագրել վավեր հեռախոսահամար"
 		},
 		"emailInput": {
-			"label": "էլեկտրոնային հասցեն",
+			"label": "Էլեկտրոնային հասցեն",
 			"placeholder": "Էլեկտրոնային հասցե",
 			"errorMessage": "Խնդրում ենք լրացնել այս դաշտը",
 			"secondErrorMessage": "Խնդրում ենք մուտքագրել վավեր էլեկտրոնային հասցե"
