@@ -12,7 +12,8 @@ export type ParentFundsMode = 'default' | 'slider';
 type ParentFundsProps = {
 	funds?: Array<ParentFundProps>;
 	mode?: ParentFundsMode;
-	head: ItemDetail;
+	head: ItemDetail & { viewAllFundsButton?: string };
+	linkText?: string;
 };
 
 export const ParentFunds = ({
