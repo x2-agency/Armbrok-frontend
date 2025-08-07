@@ -21,4 +21,12 @@ module.exports = {
 				};
 			})
 		),
+	robotsTxtOptions: {
+		policies: [
+			{
+				userAgent: '*',
+				disallow: '/',
+			},
+		],
+	},
 };
