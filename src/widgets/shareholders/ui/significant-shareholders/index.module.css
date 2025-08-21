@@ -24,10 +24,12 @@
 
 	display: grid;
 	grid-template-columns: var(--leftPartWidth) auto;
+	align-items: center;
 
 	@media (max-width: 767px) {
 		display: flex;
 		flex-direction: column;
+		align-items: baseline;
 	}
 }
 
@@ -70,14 +72,14 @@
 }
 
 .percent {
-	@mixin responsive height, 40, 58, 58;
+	@mixin responsive height, 27, 30, 30;
 	background-color: var(--red-500-color);
 	position: relative;
 }
 
 .percentLabel {
 	@mixin responsive padding-inline-start, 16, 20, 20;
-	@mixin font-text20;
+	@mixin font-text16;
 
 	font-weight: 500;
 	position: absolute;
