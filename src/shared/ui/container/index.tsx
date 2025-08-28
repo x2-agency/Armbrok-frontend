@@ -20,7 +20,7 @@ export const Container = ({
 	return (
 		<section
 			id={id}
-			className={cx(css.root, className, fullWidth && css.full)}
+			className={cx(css.root, className, {[css.full]: fullWidth})}
 			style={style}
 		>
 			{children}
