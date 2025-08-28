@@ -8,8 +8,10 @@
 	@mixin responsive margin-block-end, 152, 152, 152;
 }
 
-.expertSolutions:has(h2) {
+.hero {
 	@mixin responsive padding-block, 30, 48, 48;
+
 }
-
-
+.expertSolutions:has(h2) {
+	@mixin responsive padding-block, 60, 120, 120;
+}

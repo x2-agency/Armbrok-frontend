@@ -6,6 +6,7 @@ import type {
 	CompanyStructureSection,
 	CorporateEventsSection,
 	DocumentsSectionProps,
+	ExperienceSection,
 	HeroSectionAboutUs,
 	MembershipSection,
 	OfficeSliderSection,
@@ -18,6 +19,7 @@ import type { CompaniesSectionProps } from '@/view/home/types/response';
 export type AboutUsPageData = {
 	publishedAt?: string;
 	heroSection?: HeroSectionAboutUs;
+	experienceSection?: ExperienceSection;
 	valuesSection?: ValuesSection;
 	companiesSection?: CompaniesSectionProps;
 	corporateEventsSection?: CorporateEventsSection;
