@@ -8,6 +8,7 @@ import type { SliderItemWithText } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { MembershipSection } from '@/shared/ui/membership-section';
+import { TitleSection } from '@/shared/ui/title-section';
 import { AwardsSection } from '@/widgets/awards';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { CompaniesGroup } from '@/widgets/companies-group';
@@ -23,6 +24,7 @@ import type { AboutUsPageResponse } from './types/response';
 export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 	publishedAt,
 	heroSection,
+	experienceSection,
 	valuesSection,
 	membershipSection,
 	companiesSection,
@@ -51,7 +53,12 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 				}}
 				video={heroSection?.backgroundVideo}
 			/>
+
 			<HeroContainer className={css.hero}>
+				<TitleSection
+					title={experienceSection?.title ?? ''}
+					description={experienceSection?.description}
+				/>
 				<ExpertSolutionSection
 					items={valuesSection?.factoids}
 					title={valuesSection?.title}
