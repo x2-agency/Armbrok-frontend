@@ -67,7 +67,11 @@
 				}
 			},
 			"investor-relations": {
-				"text": "Investor Relations"
+				"text": "Investor Relations",
+				"corporate-reporting": {
+					"text": "Corporate Reporting",
+					"link": "/investor-relations#corporate-reporting"
+				}
 			},
 			"media": {
 				"text": "Media",
