@@ -32,6 +32,7 @@ export const LOCALE_KEYS = {
 				},
 				{
 					root: 'investor-relations',
+					items: ['corporate-reporting'],
 				},
 				{
 					root: 'media',
