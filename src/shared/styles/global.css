@@ -236,6 +236,7 @@ html {
 	-moz-font-smoothing: antialiased;
 	-o-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	@mixin responsive scroll-padding-top, 60, 120, 120;
 
 	@media (max-width: 1440px) {
 		font-size: 1vw;

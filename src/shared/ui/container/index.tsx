@@ -7,6 +7,7 @@ type ContainerProps = PropsWithChildren & {
 	className?: string;
 	fullWidth?: boolean;
 	style?: React.CSSProperties;
+	id?: string;
 };
 
 export const Container = ({
@@ -14,10 +15,12 @@ export const Container = ({
 	className = '',
 	style,
 	fullWidth = false,
+	id,
 }: ContainerProps) => {
 	return (
 		<section
-			className={cx(css.root, className, fullWidth && css.full)}
+			id={id}
+			className={cx(css.root, className, {[css.full]: fullWidth})}
 			style={style}
 		>
 			{children}

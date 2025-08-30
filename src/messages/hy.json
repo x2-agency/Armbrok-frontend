@@ -67,7 +67,11 @@
 				}
 			},
 			"investor-relations": {
-				"text": "Բաժնետերերին"
+				"text": "Բաժնետերերին",
+				"corporate-reporting": {
+					"text": "Ընկերության հաշվետվություններ",
+					"link": "/investor-relations#corporate-reporting"
+				}
 			},
 			"media": {
 				"text": "Մեդիա",
