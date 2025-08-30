@@ -253,7 +253,7 @@ html[lang='HY'] body {
 
 html[lang='RU'] body,
 html[lang='EN'] body {
-	font-family: var(--font-roboto);
+	font-family: var(--font-inter);
 }
 
 body,

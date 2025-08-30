@@ -11,7 +11,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import type { PropsWithChildren } from 'react';
 
 import { Locales } from '@/i18n/routing';
-import { RobotoFonts, ArmenianFonts } from '@/shared/config/localFont';
+import { InterFonts, ArmenianFonts } from '@/shared/config/localFont';
 import { LayoutProvider } from '@/shared/hooks/use-layout-context';
 import { Favicons } from '@/view/documents/ui/favicons';
 import { AppLayout } from '@/widgets/app-layout';
@@ -46,7 +46,7 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 					key="viewport"
 				/>
 			</head>
-			<body className={cx(RobotoFonts.variable, ArmenianFonts.variable)}>
+			<body className={cx(InterFonts.variable, ArmenianFonts.variable)}>
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<LayoutProvider>
 						<Providers>
