@@ -67,7 +67,11 @@
 				}
 			},
 			"investor-relations": {
-				"text": "Инвесторам"
+				"text": "Инвесторам",
+				"corporate-reporting": {
+					"text": "Корпоративная отчетность",
+					"link": "/investor-relations#corporate-reporting"
+				}
 			},
 			"media": {
 				"text": "Медиа",
