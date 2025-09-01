@@ -36,7 +36,12 @@ export const SignificantShareholders = ({
 										loading="lazy"
 									/>
 								</div>
-								<p className={css.name}>{parser(shareholder.name)}</p>
+								<div className={css.wrap}>
+									<p className={css.name}>{parser(shareholder.name)}</p>
+									<p className={css.desc}>
+										{parser(shareholder.description ?? '')}
+									</p>
+								</div>
 							</div>
 							<div
 								className={css.percent}
