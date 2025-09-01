@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export const revalidate = 10;
+export const revalidate = 1;
 
 const IndexPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;

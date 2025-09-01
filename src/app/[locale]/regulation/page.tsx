@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export const revalidate = 10;
+export const revalidate = 1;
 
 const RegulationPage = async () => {
 	const [initialRegulation, initialFunds] = await Promise.all([
