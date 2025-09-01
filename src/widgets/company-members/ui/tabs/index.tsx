@@ -1,6 +1,7 @@
 'use client';
 
 import cx from 'clsx';
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { Button } from '@/shared/ui/button';
@@ -8,8 +9,8 @@ import { Button } from '@/shared/ui/button';
 import css from './index.module.css';
 
 type Tab = {
-	label: string;
-	content: React.ReactNode;
+	label?: string;
+	content?: ReactNode;
 };
 
 type TabsProps = {

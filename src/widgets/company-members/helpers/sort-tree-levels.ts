@@ -1,8 +1,10 @@
 import type { TreeItem } from '@/shared/types/global.types';
 
 export const sortTreeLevels = (
-	departments: Array<TreeItem>
+	departments?: Array<TreeItem>
 ): Record<number, Array<TreeItem>> => {
+	if (!departments) return {};
+
 	return departments.reduce(
 		(acc, department) => {
 			const { level } = department;

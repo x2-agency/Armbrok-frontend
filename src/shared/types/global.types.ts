@@ -321,6 +321,10 @@ export interface EmployeeList {
 	employees: Array<Employee>;
 }
 
+export interface TabEmployee {
+	employee: Employee;
+}
+
 export interface TreeItem {
 	id: number;
 	level: number;
@@ -336,9 +340,15 @@ export interface TextItemList {
 	list: Array<TextItem>;
 }
 
+export type CompanyStructureTabId =
+	| 'management'
+	| 'company-structure'
+	| 'shareholders';
+
 export interface Tab {
 	tabName: string;
-	content: Array<EmployeeList | TreeItem>;
+	tabId: CompanyStructureTabId;
+	content: Array<TabEmployee | TreeItem>;
 }
 
 export type CompanyStructureSection = {
@@ -663,7 +673,7 @@ export type HeatMapItemData = {
 
 export type HeatMapItemProps = {
 	[year: string]: {
-		"Year Change": string;
+		'Year Change': string;
 		[month: string]: HeatMapItemData | string;
 	};
 };
