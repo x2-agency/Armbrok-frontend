@@ -78,7 +78,7 @@
 
 .desc {
 	@mixin font-text14;
-  color: var(--gray-500-color)
+	color: var(--gray-500-color);
 }
 
 .percent {
