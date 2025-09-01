@@ -7,7 +7,7 @@ import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import { Blog } from '@/view/media/slug';
 
-export const revalidate = 10;
+export const revalidate = 1;
 
 export async function generateMetadata({
 	params,
