@@ -371,3 +371,7 @@ input,
 label {
 	-webkit-tap-highlight-color: transparent;
 }
+
+strong {
+	font-weight: 700;
+}
