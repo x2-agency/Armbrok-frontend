@@ -404,6 +404,7 @@ export type StockInfoType = {
 
 export type ShareholdersItemType = {
 	name: string;
+	description?: string;
 	share: number;
 	photo: MediaData;
 };
@@ -663,7 +664,7 @@ export type HeatMapItemData = {
 
 export type HeatMapItemProps = {
 	[year: string]: {
-		"Year Change": string;
+		'Year Change': string;
 		[month: string]: HeatMapItemData | string;
 	};
 };
