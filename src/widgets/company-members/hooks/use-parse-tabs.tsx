@@ -8,13 +8,14 @@ import type {
 } from '@/shared/types/global.types';
 import { sortTreeLevels } from '@/widgets/company-members/helpers/sort-tree-levels';
 import { CompanyMembersSection } from '@/widgets/company-members/ui/members-section';
-import { TreeDesktop } from '@/widgets/company-members/ui/tree-desktop';
-import { TreeMobile } from '@/widgets/company-members/ui/tree-mobile';
+import { ShareholdersGraph } from '@/widgets/company-members/ui/shareholders-graph';
+import { StructureTreeDesktop } from '@/widgets/company-members/ui/structure-tree-desktop';
+import { StructureTreeMobile } from '@/widgets/company-members/ui/structure-tree-mobile';
 
 export const useParseTabs = (tabs: CompanyStructureSection['tabs']) => {
 	const isMobile = useMediaQuery('(max-width: 767px)');
 
-	const TreeComponent = isMobile ? TreeMobile : TreeDesktop;
+	const TreeComponent = isMobile ? StructureTreeMobile : StructureTreeDesktop;
 
 	const employeesData = useMemo(
 		() => tabs?.find(tab => tab.tabId === 'management'),
@@ -52,11 +53,7 @@ export const useParseTabs = (tabs: CompanyStructureSection['tabs']) => {
 		},
 		{
 			label: shareholdersItems?.tabName,
-			content: (
-				<TreeComponent
-					{...sortTreeLevels(shareholdersItems?.content as Array<TreeItem>)}
-				/>
-			),
+			content: <ShareholdersGraph />,
 		},
 	];
 };

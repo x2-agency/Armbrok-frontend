@@ -8,7 +8,9 @@ import type { TreeItem } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-export const TreeMobile = (content: Record<number, Array<TreeItem>>) => {
+export const StructureTreeMobile = (
+	content: Record<number, Array<TreeItem>>
+) => {
 	const locale = usePathname().split('/')[1];
 
 	return (

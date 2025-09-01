@@ -8,7 +8,9 @@ import type { TreeItem } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-export const TreeDesktop = (content: Record<number, Array<TreeItem>>) => {
+export const StructureTreeDesktop = (
+	content: Record<number, Array<TreeItem>>
+) => {
 	const locale = usePathname().split('/')[1];
 
 	if (!Object.keys(content).length) return null;
