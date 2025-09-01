@@ -414,6 +414,7 @@ export type StockInfoType = {
 
 export type ShareholdersItemType = {
 	name: string;
+	description?: string;
 	share: number;
 	photo: MediaData;
 };

@@ -36,7 +36,7 @@ export async function generateMetadata({
 	};
 }
 
-export const revalidate = 10;
+export const revalidate = 1;
 
 export const generateStaticParams = async () => {
 	const response: { data: Array<ParentFundProps> } = await getIsrParentFunds();

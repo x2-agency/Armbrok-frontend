@@ -236,6 +236,7 @@ html {
 	-moz-font-smoothing: antialiased;
 	-o-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	@mixin responsive scroll-padding-top, 60, 120, 120;
 
 	@media (max-width: 1440px) {
 		font-size: 1vw;
@@ -252,7 +253,7 @@ html[lang='HY'] body {
 
 html[lang='RU'] body,
 html[lang='EN'] body {
-	font-family: var(--font-roboto);
+	font-family: var(--font-inter);
 }
 
 body,
@@ -369,4 +370,8 @@ button,
 input,
 label {
 	-webkit-tap-highlight-color: transparent;
+}
+
+strong {
+	font-weight: 700;
 }

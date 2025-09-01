@@ -20,7 +20,7 @@
 
 .listItem {
 	@mixin responsive gap, 12, 12, 12;
-	@mixin responsive --leftPartWidth, 320, 284, 284;
+	@mixin responsive --leftPartWidth, 320, 323, 323;
 
 	display: grid;
 	grid-template-columns: var(--leftPartWidth) auto;
@@ -65,10 +65,20 @@
 	object-fit: cover;
 }
 
+.wrap {
+	display: flex;
+	flex-direction: column;
+	@mixin responsive gap, 2, 2, 2;
+}
 .name {
 	@mixin font-text16;
 
 	align-self: center;
+}
+
+.desc {
+	@mixin font-text14;
+	color: var(--gray-500-color);
 }
 
 .percent {

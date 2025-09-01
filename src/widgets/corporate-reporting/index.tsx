@@ -12,7 +12,7 @@ export const CorporateReporting = ({ title, tabs }: DocumentTabsProps) => {
 	}
 
 	return (
-		<Container className={css.root}>
+		<Container id="corporate-reporting" className={css.root}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<MainTabs tabs={tabs} />
 		</Container>
