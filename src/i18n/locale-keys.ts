@@ -43,6 +43,7 @@ export const LOCALE_KEYS = {
 				},
 				{
 					root: 'contact-us',
+					items: ['links', 'email'],
 				},
 			],
 		},

@@ -11,6 +11,7 @@ export const NavigationColumn = () => {
 	const { footer } = LOCALE_KEYS;
 	const t = useTranslations(`${footer.root}.${footer.links.root}`);
 
+	console.log(footer);
 	return (
 		<>
 			<nav className={css.root}>
