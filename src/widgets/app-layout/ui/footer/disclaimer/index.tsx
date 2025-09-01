@@ -22,6 +22,7 @@ export const Disclaimer = () => {
 
 	const disclaimerContent = t.markup(footer.disclaimer, {
 		p: chunks => `<p class="${css.text}">${chunks}</p>`,
+		strong: (chunks: string) => `<strong>${chunks}</strong>`,
 		a: (chunks: string) => {
 			const href = isFooterLinkKey(chunks)
 				? FOOTER_DISCLAIMER_LINKS[chunks]

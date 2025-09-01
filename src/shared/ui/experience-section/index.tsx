@@ -8,13 +8,15 @@ import css from './index.module.css';
 
 export type ExperienceSectionProps = {
 	className?: string;
-	experience: Array<Factoid>;
+	experience?: Array<Factoid>;
 };
 
 export const ExperienceSection = ({
 	className,
 	experience,
 }: ExperienceSectionProps) => {
+	if (!experience?.length) return null;
+
 	return (
 		<Container className={cx(css.root, className)}>
 			{experience.map((value, index) => (
