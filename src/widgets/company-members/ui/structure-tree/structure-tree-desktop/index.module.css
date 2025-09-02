@@ -1,0 +1,25 @@
+.root {
+	position: relative;
+	width: 100%;
+}
+
+.svg {
+	width: 100%;
+	height: auto;
+}
+
+.graphCustomContent {
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	word-break: break-word;
+	color: var(--gray-100-color);
+	text-align: center;
+	font-weight: 500;
+
+	&.accent {
+		font-size: 18px;
+	}
+}

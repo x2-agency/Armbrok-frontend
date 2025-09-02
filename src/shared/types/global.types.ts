@@ -332,6 +332,13 @@ export interface TreeItem {
 	__component: string;
 }
 
+export interface DepartmentProps {
+	id: number;
+	documentId: string;
+	name: string;
+	children: Array<DepartmentProps>;
+}
+
 export interface TreeProps {
 	content: Array<TreeItem>;
 }
@@ -348,7 +355,7 @@ export type CompanyStructureTabId =
 export interface Tab {
 	tabName: string;
 	tabId: CompanyStructureTabId;
-	content: Array<TabEmployee | TreeItem>;
+	content: Array<TabEmployee | DepartmentProps>;
 }
 
 export type CompanyStructureSection = {
