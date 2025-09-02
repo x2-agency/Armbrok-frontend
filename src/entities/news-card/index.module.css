@@ -14,6 +14,8 @@
 	flex-direction: column;
 	@mixin responsive padding-inline, 22, 32, 32;
 	@mixin responsive padding-block-start, 22, 32, 32;
+	@mixin responsive border-top-left-radius, 24, 24, 24;
+	@mixin responsive border-top-right-radius, 24, 24, 24;
 
 	@media (min-width: 768px) and (max-width: 899px) {
 		padding-inline: 1.3rem;
@@ -33,6 +35,10 @@
 
 .poster {
 	@mixin responsive height, 200, 340, 340;
+}
+
+.homePoster,
+.poster {
 	width: 100%;
 	object-fit: cover;
 
@@ -40,6 +46,12 @@
 		width: 100%;
 		height: 100%;
 	}
+}
+
+.homePoster {
+	@mixin responsive border-radius, 24, 24, 24;
+	height: 30%;
+
 }
 
 .time {
