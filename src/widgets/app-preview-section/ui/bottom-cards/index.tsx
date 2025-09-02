@@ -24,12 +24,12 @@ export const BottomCards = ({ cards }: BottomCardsProps) => {
 					modules={[Pagination]}
 					spaceBetween={20}
 					centeredSlides
-					autoHeight={false} 
+					autoHeight={false}
 					slidesPerView={1}
-					style={{ height: '100%' }} 
+					style={{ height: '100%' }}
 					className={css.swiper}
 				>
-					{cards.map(card => (
+					{cards?.map(card => (
 						<SwiperSlide key={card.id} className={css.slide}>
 							<Card
 								className={css.card}
