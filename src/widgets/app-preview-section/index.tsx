@@ -11,7 +11,7 @@ export type PortfolioSectionProps = {
 	caption?: string;
 };
 
-export const PortfolioSection = ({ cards, caption }: PortfolioSectionProps) => {
+export const AppPreviewSection = ({ cards, caption }: PortfolioSectionProps) => {
 	return (
 		<Container className={css.root}>
 			<BottomCards cards={cards} />
