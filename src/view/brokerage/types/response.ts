@@ -22,7 +22,6 @@ export type BrokeragePageData = {
 	exchangesSection?: ExchangesSection;
 	instrumentsSection?: InstrumentsProps;
 	mobileAppSection: MobileAppSectionProps;
-	portfolioSection: Array<PortfolioSectionType>;
 	quoteSection?: QuoteSection;
 	runningTextSection?: RunningTextSectionProps;
 	countriesSection?: CountriesSection;
@@ -34,8 +33,10 @@ export type BrokeragePageData = {
 
 export type MobileAppSectionProps = {
 	title: string;
+	caption?: string;
 	description: string;
 	cards: Array<CardType>;
+	otherPages: Array<PortfolioSectionType>;
 };
 
 export type CardType = {

@@ -7,11 +7,11 @@ import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { MembershipSection } from '@/shared/ui/membership-section';
 import { AppMobileSection } from '@/widgets/app-mobile-section';
+import { AppPreviewSection } from '@/widgets/app-preview-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { CountriesSection } from '@/widgets/countries-section';
 import { HelpfulInformation } from '@/widgets/helpful-information';
 import { InstrumentsSection } from '@/widgets/instruments-section';
-import { PortfolioSection } from '@/widgets/portfolio-section';
 import { Review } from '@/widgets/review';
 import RunningTextSection from '@/widgets/running-text-section';
 import { Start } from '@/widgets/start';
@@ -34,7 +34,6 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 		exchangesSection,
 		instrumentsSection,
 		mobileAppSection,
-		portfolioSection,
 		quoteSection,
 		runningTextSection,
 		countriesSection,
@@ -44,7 +43,6 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	} = initialData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
-
 	return (
 		<>
 			<BannerSection
@@ -69,7 +67,10 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 			/>
 			<InstrumentsSection instrumentsSection={instrumentsSection} />
 			<AppMobileSection data={mobileAppSection} />
-			<PortfolioSection cards={portfolioSection} />
+			<AppPreviewSection
+				cards={mobileAppSection.otherPages}
+				caption={mobileAppSection.caption}
+			/>
 
 			<Review quote={quoteSection} className={css.quote} />
 			<RunningTextSection
