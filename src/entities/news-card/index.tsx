@@ -53,11 +53,11 @@ export const NewsCard = ({ data, className, animationKey }: NewsCardProps) => {
 			animate={visible}
 			transition={transition}
 		>
-			{poster && isArmbrokMedia && (
+			{poster && (
 				<img
 					loading="lazy"
 					src={poster.url}
-					className={css.poster}
+					className={cx(isArmbrokMedia ? css.poster : css.homePoster)}
 				/>
 			)}
 			<div className={css.textWrap}>
