@@ -34,7 +34,6 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 		exchangesSection,
 		instrumentsSection,
 		mobileAppSection,
-		portfolioSection,
 		quoteSection,
 		runningTextSection,
 		countriesSection,
@@ -44,7 +43,6 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 	} = initialData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
-
 	return (
 		<>
 			<BannerSection
@@ -69,7 +67,10 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 			/>
 			<InstrumentsSection instrumentsSection={instrumentsSection} />
 			<AppMobileSection data={mobileAppSection} />
-			<PortfolioSection cards={portfolioSection} />
+			<PortfolioSection
+				cards={mobileAppSection.otherPages}
+				caption={mobileAppSection.caption}
+			/>
 
 			<Review quote={quoteSection} className={css.quote} />
 			<RunningTextSection

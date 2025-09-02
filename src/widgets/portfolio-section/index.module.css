@@ -5,3 +5,10 @@
 		padding-inline: unset;
 	}
 }
+
+.caption {
+	@mixin font-h4;
+	align-items: center;
+	text-align: center;
+	@mixin responsive padding-block-start, 15, 20, 20;
+}
