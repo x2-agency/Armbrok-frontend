@@ -51,7 +51,6 @@
 .homePoster {
 	@mixin responsive border-radius, 24, 24, 24;
 	height: 30%;
-
 }
 
 .time {
