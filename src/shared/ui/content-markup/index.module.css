@@ -156,6 +156,8 @@
 		@mixin responsive padding-block-end, 30, 32, 32;
 	}
 
+	ul:has(+ p),
+	ol:has(+ p),
 	ol:has(+ h2),
 	ul:has(+ h2),
 	p:has(+ h2) {

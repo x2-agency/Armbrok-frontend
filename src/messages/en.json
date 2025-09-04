@@ -101,6 +101,10 @@
 				"stockExchangeRules": {
 					"text": "Stock Exchange and Central Depositary Rules",
 					"link": "/regulation#exchange-rules"
+				},
+				"clientRightsPage": {
+					"text": "Client Rights",
+					"link": "/client-rights"
 				}
 			},
 			"contact-us": {

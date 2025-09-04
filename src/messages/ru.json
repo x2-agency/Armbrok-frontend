@@ -101,6 +101,10 @@
 				"stockExchangeRules": {
 					"text": "Регламенты Биржи и&nbsp;Центрального депозитария",
 					"link": "/regulation#exchange-rules"
+				},
+				"clientRightsPage": {
+					"text": "Права клиента",
+					"link": "/client-rights"
 				}
 			},
 			"contact-us": {
