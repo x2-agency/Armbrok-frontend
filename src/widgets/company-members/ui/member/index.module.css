@@ -48,3 +48,8 @@
 .position {
 	@mixin font-text14;
 }
+
+.name,
+.position {
+	word-break: break-word;
+}
