@@ -1,7 +1,7 @@
 .root {
 	@mixin transition;
 
-	transition-property: opacity, visibility, translate;
+	transition-property: opacity, visibility, translate, transform;
 
 	display: block;
 	outline: none;

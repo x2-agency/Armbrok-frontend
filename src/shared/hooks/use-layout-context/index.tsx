@@ -1,12 +1,7 @@
 'use client';
 
-import type {
-	Dispatch,
-	MutableRefObject,
-	PropsWithChildren,
-	SetStateAction,
-} from 'react';
-import { createContext, useContext, useRef, useState } from 'react';
+import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 import type { FundsStateData } from '@/shared/types/funds-state-data';
 
@@ -20,10 +15,7 @@ type LayoutContextType = {
 	setSubjectForm: Dispatch<SetStateAction<string>>;
 	toggleAccountModalOpen: Dispatch<SetStateAction<boolean>>;
 	toggleMenuOpen: Dispatch<SetStateAction<boolean>>;
-	headerPadding: number;
-	setHeaderPadding: Dispatch<SetStateAction<number>>;
 	isMenuOpen: boolean;
-	menuRef: MutableRefObject<HTMLDialogElement | null>;
 	footerData: {
 		publishedAt: string | null;
 	};
@@ -35,12 +27,9 @@ const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
 export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const [isMenuOpen, toggleMenuOpen] = useState<boolean>(false);
 	const [isAccountModalOpen, toggleAccountModalOpen] = useState<boolean>(false);
-	const menuRef = useRef<HTMLDialogElement | null>(null);
 	const [subjectForm, setSubjectForm] = useState<string>('');
-	const [headerPadding, setHeaderPadding] = useState<number>(0);
 	const [headerFundsDropdownItems, setHeaderFundsDropDownItems] =
 		useState<Array<FundsStateData> | null>(null);
-
 	const [footerData, setFooterData] = useState<{ publishedAt: string | null }>({
 		publishedAt: null,
 	});
@@ -51,12 +40,9 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 				subjectForm,
 				isAccountModalOpen,
 				isMenuOpen,
-				menuRef,
 				footerData,
-				headerPadding,
 				headerFundsDropdownItems,
 				setHeaderFundsDropDownItems,
-				setHeaderPadding,
 				toggleAccountModalOpen,
 				setSubjectForm,
 				toggleMenuOpen,

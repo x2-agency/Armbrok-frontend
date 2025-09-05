@@ -3,22 +3,25 @@
 import cx from 'clsx';
 
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
+import { Modal } from '@/shared/ui/modal';
 import { useHeaderLinks } from '@/widgets/app-layout/hooks/use-header-links';
-import { useToggleMenu } from '@/widgets/app-layout/hooks/use-toggle-menu';
 
 import css from './index.module.css';
 import { MenuBody } from './menu-body';
 import { MenuHead } from './menu-head';
 
 export const Menu = () => {
-	const { menuRef } = useLayoutContext();
-	const { isVisible } = useToggleMenu();
+	const { isMenuOpen, toggleMenuOpen } = useLayoutContext();
 	const links = useHeaderLinks();
 
 	return (
-		<dialog className={cx(css.root, { [css.open]: isVisible })} ref={menuRef}>
+		<Modal
+			isModalOpen={isMenuOpen}
+			toggleModalOpen={toggleMenuOpen}
+			className={cx(css.root, { [css.open]: isMenuOpen })}
+		>
 			<MenuHead />
 			<MenuBody links={links} />
-		</dialog>
+		</Modal>
 	);
 };
