@@ -1,0 +1,28 @@
+.root {
+	@mixin transition;
+
+	transition-property: opacity, visibility, translate;
+
+	display: block;
+	outline: none;
+	max-width: unset;
+	opacity: 0;
+	visibility: hidden;
+
+	&.open,
+	&.open::backdrop {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.root::backdrop {
+	@mixin transition opacity;
+
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.3);
+}

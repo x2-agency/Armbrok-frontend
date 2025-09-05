@@ -5,22 +5,16 @@
 	@mixin responsive border-radius, 12, 24, 24;
 	@mixin responsive padding-block, 25, 32, 32;
 
-	max-width: unset;
 	max-height: unset;
-	position: fixed;
 	left: 50%;
 	top: 50%;
 	translate: -50% -45%;
-	outline: none;
 
 	max-height: 98vh;
 
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-
-	opacity: 0;
-	visibility: hidden;
-	transition-property: opacity visibility;
+	&.visible {
+		translate: -50% -50%;
+	}
 
 	@media (max-width: 767px) {
 		width: 100%;
@@ -28,25 +22,6 @@
 		border-radius: unset;
 		max-height: unset;
 	}
-}
-
-.root::backdrop {
-	@mixin transition;
-
-	opacity: 0;
-	visibility: hidden;
-	transition-property: opacity visibility background;
-	background: rgba(0, 0, 0, 0.3);
-}
-
-.root.visible::backdrop,
-.root.visible {
-	opacity: 1;
-	visibility: visible;
-}
-
-.root.visible {
-	translate: -50% -50%;
 }
 
 .cross {
