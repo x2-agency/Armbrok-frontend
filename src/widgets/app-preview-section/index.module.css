@@ -1,0 +1,14 @@
+.root {
+	@mixin responsive padding-block-end, 60, 120, 120;
+
+	@media (max-width: 767px) {
+		padding-inline: unset;
+	}
+}
+
+.caption {
+	@mixin font-h4;
+	align-items: center;
+	text-align: center;
+	@mixin responsive padding-block-start, 15, 20, 20;
+}
