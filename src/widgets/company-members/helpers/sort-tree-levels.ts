@@ -1,8 +1,8 @@
-import type { TreeItem } from '@/shared/types/global.types';
+import type { StructureTreeProps } from '@/shared/types/global.types';
 
 export const sortTreeLevels = (
-	departments?: Array<TreeItem>
-): Record<number, Array<TreeItem>> => {
+	departments?: Array<StructureTreeProps>
+): Record<number, Array<StructureTreeProps>> => {
 	if (!departments) return {};
 
 	return departments.reduce(
@@ -14,6 +14,6 @@ export const sortTreeLevels = (
 			acc[level].push(department);
 			return acc;
 		},
-		{} as Record<number, Array<TreeItem>>
+		{} as Record<number, Array<StructureTreeProps>>
 	);
 };

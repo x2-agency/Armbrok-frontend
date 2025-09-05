@@ -8,6 +8,7 @@
 }
 
 .graphCustomContent {
+	padding-inline: 4px;
 	font-size: 16px;
 	display: flex;
 	align-items: center;
@@ -16,7 +17,6 @@
 	word-break: break-word;
 	color: var(--gray-100-color);
 	text-align: center;
-
 	font-weight: 500;
 
 	&.accent {

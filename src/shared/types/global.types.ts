@@ -325,22 +325,37 @@ export interface TabEmployee {
 	employee: Employee;
 }
 
-export interface TreeItem {
-	id: number;
-	level: number;
-	value: string;
-	__component: string;
-}
-
-export interface DepartmentProps {
-	id: number;
-	documentId: string;
-	name: string;
-	children: Array<DepartmentProps>;
+export interface StructureTreeProps {
+	shareholdersMeeting?: string;
+	internalAudit?: string;
+	chiefExecutiveOfficer?: string;
+	internationalMarkets?: string;
+	brokerage?: string;
+	assetManagement?: string;
+	propTrading?: string;
+	research?: string;
+	localMarkets?: string;
+	investmentBanking?: string;
+	advisory?: string;
+	operations?: string;
+	backOffice?: string;
+	middleOffice?: string;
+	depository?: string;
+	custody?: string;
+	settlements?: string;
+	registrar?: string;
+	treasury?: string;
+	finance?: string;
+	onboarding?: string;
+	it?: string;
+	digitalProducts?: string;
+	marketing?: string;
+	hr?: string;
+	accounting?: string;
 }
 
 export interface TreeProps {
-	content: Array<TreeItem>;
+	content: Array<StructureTreeProps>;
 }
 
 export interface TextItemList {
@@ -355,7 +370,7 @@ export type CompanyStructureTabId =
 export interface Tab {
 	tabName: string;
 	tabId: CompanyStructureTabId;
-	content: Array<TabEmployee | DepartmentProps>;
+	content: Array<TabEmployee | TreeProps>;
 }
 
 export type CompanyStructureSection = {

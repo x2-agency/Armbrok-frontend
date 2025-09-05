@@ -1,8 +1,38 @@
 import cx from 'clsx';
+import parser from 'html-react-parser';
+
+import type { StructureTreeProps } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-export const ShareholdersMobile = () => {
+export const StructureMobile = ({
+	shareholdersMeeting = '',
+	settlements = '',
+	internalAudit = '',
+	internationalMarkets = '',
+	investmentBanking = '',
+	it = '',
+	backOffice = '',
+	brokerage = '',
+	registrar = '',
+	research = '',
+	localMarkets = '',
+	chiefExecutiveOfficer = '',
+	custody = '',
+	accounting = '',
+	advisory = '',
+	assetManagement = '',
+	finance = '',
+	depository = '',
+	digitalProducts = '',
+	marketing = '',
+	middleOffice = '',
+	hr = '',
+	onboarding = '',
+	operations = '',
+	propTrading = '',
+	treasury = '',
+}: StructureTreeProps) => {
 	return (
 		<div className={css.root}>
 			<svg
@@ -22,7 +52,9 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint0_linear_361_3314)"
 				/>
 				<foreignObject x="26" width="259" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_1</div>
+					<div className={css.graphCustomContent}>
+						{parser(shareholdersMeeting)}
+					</div>
 				</foreignObject>
 				<rect
 					x="189"
@@ -33,7 +65,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint1_linear_361_3314)"
 				/>
 				<foreignObject x="189" y="69" width="168" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_2</div>
+					<div className={css.graphCustomContent}>{parser(internalAudit)}</div>
 				</foreignObject>
 				<rect
 					x="28"
@@ -44,7 +76,9 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint2_linear_361_3314)"
 				/>
 				<foreignObject x="28" y="137" width="259" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_3</div>
+					<div className={css.graphCustomContent}>
+						{parser(chiefExecutiveOfficer)}
+					</div>
 				</foreignObject>
 				<path
 					d="M164 137C164 138.591 163.368 140.117 162.243 141.243C161.117 142.368 159.591 143 158 143C156.409 143 154.883 142.368 153.757 141.243C152.632 140.117 152 138.591 152 137L158 137H164Z"
@@ -130,7 +164,9 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint3_linear_361_3314)"
 				/>
 				<foreignObject y="252" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_4</div>
+					<div className={css.graphCustomContent}>
+						{parser(internationalMarkets)}
+					</div>
 				</foreignObject>
 				<path
 					d="M80 252C80 253.591 79.3679 255.117 78.2426 256.243C77.1174 257.368 75.5913 258 74 258C72.4087 258 70.8826 257.368 69.7574 256.243C68.6321 255.117 68 253.591 68 252L74 252H80Z"
@@ -154,7 +190,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint4_linear_361_3314)"
 				/>
 				<foreignObject y="940" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_5</div>
+					<div className={css.graphCustomContent}>{parser(operations)}</div>
 				</foreignObject>
 				<rect
 					y="1308"
@@ -172,7 +208,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint6_linear_361_3314)"
 				/>
 				<foreignObject y="1308" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_6</div>
+					<div className={css.graphCustomContent}>{parser(finance)}</div>
 				</foreignObject>
 				<rect
 					x="209"
@@ -183,7 +219,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint7_linear_361_3314)"
 				/>
 				<foreignObject x="209" y="1308" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_8</div>
+					<div className={css.graphCustomContent}>{parser(it)}</div>
 				</foreignObject>
 				<rect
 					x="209"
@@ -194,7 +230,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint8_linear_361_3314)"
 				/>
 				<foreignObject x="209" y="1470" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_9</div>
+					<div className={css.graphCustomContent}>{parser(marketing)}</div>
 				</foreignObject>
 				<rect
 					x="209"
@@ -205,7 +241,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint9_linear_361_3314)"
 				/>
 				<foreignObject x="209" y="1538" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_10</div>
+					<div className={css.graphCustomContent}>{parser(hr)}</div>
 				</foreignObject>
 				<rect
 					x="209"
@@ -216,7 +252,9 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint10_linear_361_3314)"
 				/>
 				<foreignObject x="209" y="1376" width="147" height="84">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_11</div>
+					<div className={css.graphCustomContent}>
+						{parser(digitalProducts)}
+					</div>
 				</foreignObject>
 				<rect
 					y="1386"
@@ -226,7 +264,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint11_linear_361_3314)"
 				/>
 				<foreignObject y="1386" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_12</div>
+					<div className={css.graphCustomContent}>{parser(treasury)}</div>
 				</foreignObject>
 				<rect
 					y="1464"
@@ -236,7 +274,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint12_linear_361_3314)"
 				/>
 				<foreignObject y="1464" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_13</div>
+					<div className={css.graphCustomContent}>{parser(accounting)}</div>
 				</foreignObject>
 				<rect
 					y="1542"
@@ -246,7 +284,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint13_linear_361_3314)"
 				/>
 				<foreignObject y="1542" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_14</div>
+					<div className={css.graphCustomContent}>{parser(onboarding)}</div>
 				</foreignObject>
 				<rect
 					y="1018"
@@ -256,7 +294,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint14_linear_361_3314)"
 				/>
 				<foreignObject y="1018" width="147" height="84">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_15</div>
+					<div className={css.graphCustomContent}>{parser(backOffice)}</div>
 				</foreignObject>
 				<rect
 					y="1123"
@@ -266,7 +304,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint15_linear_361_3314)"
 				/>
 				<foreignObject y="1123" width="147" height="84">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_16</div>
+					<div className={css.graphCustomContent}>{parser(middleOffice)}</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -277,7 +315,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint16_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="1018" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_18</div>
+					<div className={css.graphCustomContent}>{parser(custody)}</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -288,7 +326,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint17_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="1096" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_19</div>
+					<div className={css.graphCustomContent}>{parser(settlements)}</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -299,7 +337,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint18_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="1174" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_20</div>
+					<div className={css.graphCustomContent}>{parser(registrar)}</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -310,7 +348,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint19_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="940" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_21</div>
+					<div className={css.graphCustomContent}>{parser(depository)}</div>
 				</foreignObject>
 				<rect
 					x="172"
@@ -321,7 +359,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint20_linear_361_3314)"
 				/>
 				<foreignObject x="172" y="252" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_22</div>
+					<div className={css.graphCustomContent}>{parser(localMarkets)}</div>
 				</foreignObject>
 				<rect
 					y="330"
@@ -331,7 +369,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint21_linear_361_3314)"
 				/>
 				<foreignObject y="330" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_23</div>
+					<div className={css.graphCustomContent}>{parser(brokerage)}</div>
 				</foreignObject>
 				<rect
 					y="408"
@@ -341,7 +379,9 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint22_linear_361_3314)"
 				/>
 				<foreignObject y="408" width="147" height="84">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_24</div>
+					<div className={css.graphCustomContent}>
+						{parser(assetManagement)}
+					</div>
 				</foreignObject>
 				<rect
 					y="512"
@@ -351,7 +391,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint23_linear_361_3314)"
 				/>
 				<foreignObject y="512" width="147" height="84">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_25</div>
+					<div className={css.graphCustomContent}>{parser(propTrading)}</div>
 				</foreignObject>
 				<rect
 					y="616"
@@ -361,7 +401,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint24_linear_361_3314)"
 				/>
 				<foreignObject y="616" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_26</div>
+					<div className={css.graphCustomContent}>{parser(research)}</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -372,7 +412,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint25_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="616" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_27</div>
+					<div className={css.graphCustomContent}>{parser(research)}</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -383,7 +423,9 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint26_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="694" width="147" height="84">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_28</div>
+					<div className={css.graphCustomContent}>
+						{parser(investmentBanking)}
+					</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -394,7 +436,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint27_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="798" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_29</div>
+					<div className={css.graphCustomContent}>{parser(advisory)}</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -405,7 +447,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint28_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="512" width="147" height="84">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_30</div>
+					<div className={css.graphCustomContent}>{parser(propTrading)}</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -416,7 +458,9 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint29_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="408" width="147" height="84">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_31</div>
+					<div className={css.graphCustomContent}>
+						{parser(assetManagement)}
+					</div>
 				</foreignObject>
 				<rect
 					x="168"
@@ -427,7 +471,7 @@ export const ShareholdersMobile = () => {
 					fill="url(#paint30_linear_361_3314)"
 				/>
 				<foreignObject x="168" y="330" width="147" height="58">
-					<div className={cx(css.graphCustomContent, css.accent)}>Content_32</div>
+					<div className={css.graphCustomContent}>{parser(brokerage)}</div>
 				</foreignObject>
 				<path
 					d="M152 195C152 193.409 152.632 191.883 153.757 190.757C154.883 189.632 156.409 189 158 189C159.591 189 161.117 189.632 162.243 190.757C163.368 191.883 164 193.409 164 195L158 195H152Z"
