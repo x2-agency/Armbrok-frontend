@@ -18,8 +18,4 @@
 	color: var(--gray-100-color);
 	text-align: center;
 	font-weight: 500;
-
-	&.accent {
-		font-size: 18px;
-	}
 }
