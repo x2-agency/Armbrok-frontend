@@ -736,3 +736,5 @@ export type BackgroundVideoType = {
 };
 
 export type CurrencyType = 'amd' | 'usd';
+
+export type PropsWithClassname = { className?: string };

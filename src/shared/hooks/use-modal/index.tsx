@@ -1,14 +1,13 @@
 import { useEffect, useRef, useCallback } from 'react';
 
+import type { ModalProps } from '@/shared/ui/modal';
+
 const ANIMATION_DURATION = 300;
 
 export const useModal = ({
 	isModalOpen,
 	toggleModalOpen,
-}: {
-	isModalOpen: boolean;
-	toggleModalOpen: (open: boolean) => void;
-}) => {
+}: Omit<ModalProps, 'className' | 'children'>) => {
 	const ref = useRef<HTMLDialogElement>(null);
 	const timeoutRef = useRef<number>();
 
