@@ -1,22 +1,22 @@
 import cx from 'clsx';
 
-import { Link } from '@/i18n/navigation';
 import SearchSvg from '@/public/assets/icons/header/search.svg';
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
+import type { PropsWithClassname } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-export const Search = ({
-	href,
-	className,
-	isDark,
-}: {
-	href: string;
-	className?: string;
-	isDark?: boolean;
-}) => {
+export type SearchProps = PropsWithClassname & { isDark?: boolean };
+
+export const Search = ({ className, isDark }: SearchProps) => {
+	const { toggleSearchModalOpen } = useLayoutContext();
+
 	return (
-		<Link className={cx(css.root, className)} href={href}>
+		<button
+			className={cx(css.root, className)}
+			onClick={() => toggleSearchModalOpen(true)}
+		>
 			<SearchSvg className={cx(css.svg, { [css.dark]: isDark })} />
-		</Link>
+		</button>
 	);
 };

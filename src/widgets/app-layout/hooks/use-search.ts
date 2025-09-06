@@ -4,7 +4,7 @@ import type { Dispatch, FormEvent, SetStateAction } from 'react';
 import { useCallback } from 'react';
 import { useState } from 'react';
 
-import type { SearchDataItem } from '@/view/armbrok-search/types/armbrok-search.types';
+import type { SearchDataItem } from '@/widgets/app-layout/types/armbrok-search.types';
 
 export const useSearch = (
 	setNewsData: Dispatch<SetStateAction<Array<SearchDataItem> | undefined>>

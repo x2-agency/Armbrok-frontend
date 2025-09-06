@@ -10,10 +10,11 @@ import { CookiePanel } from './ui/cookie-panel';
 import { Footer } from './ui/footer';
 import { Header } from './ui/header';
 import { Menu } from './ui/menu';
+import { SearchModal } from './ui/search-modal';
 
 export const AppLayout = ({ children }: Readonly<PropsWithChildren>) => {
 	useHeaderColor();
-	
+
 	return (
 		<>
 			<Head>
@@ -26,6 +27,7 @@ export const AppLayout = ({ children }: Readonly<PropsWithChildren>) => {
 			<Header />
 			<span className={css.divider} />
 			<Menu />
+			<SearchModal />
 			<AccountModal />
 			<CookiePanel />
 			<main>{children}</main>
