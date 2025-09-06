@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Input } from '@/shared/ui/input';
-import { SEARCH_FORM_NULL_DATA } from '@/view/armbrok-search/models/form.constants';
+import { SEARCH_FORM_NULL_DATA } from '@/widgets/app-layout/model/form.constants';
 
 import css from './index.module.css';
 

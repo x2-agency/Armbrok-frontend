@@ -1,7 +1,7 @@
 import parser from 'html-react-parser';
 
 import { Link } from '@/i18n/navigation';
-import type { SearchDataItem } from '@/view/armbrok-search/types/armbrok-search.types';
+import type { SearchDataItem } from '@/widgets/app-layout/types/armbrok-search.types';
 
 import css from './index.module.css';
 
@@ -13,7 +13,7 @@ export const NewsItem = ({ link, htmlSnippet, htmlTitle }: SearchDataItem) => {
 					{parser(htmlTitle)}
 				</Link>
 			</h4>
-			<p>{parser(htmlSnippet)}</p>
+			<p className={css.snippet}>{parser(htmlSnippet)}</p>
 		</article>
 	);
 };

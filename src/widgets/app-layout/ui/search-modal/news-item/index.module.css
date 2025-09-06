@@ -23,7 +23,7 @@
 	position: absolute;
 }
 
-.displayedLink {
+.snippet {
 	@mixin font-text14;
 
 	color: var(--gray-500-color);

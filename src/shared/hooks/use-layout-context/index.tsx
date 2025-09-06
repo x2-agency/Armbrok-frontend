@@ -20,12 +20,15 @@ type LayoutContextType = {
 		publishedAt: string | null;
 	};
 	setFooterData: (data: { publishedAt: string | null }) => void;
+	isSearchModalOpen: boolean;
+	toggleSearchModalOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
 
 export const LayoutProvider = ({ children }: PropsWithChildren) => {
 	const [isMenuOpen, toggleMenuOpen] = useState<boolean>(false);
+	const [isSearchModalOpen, toggleSearchModalOpen] = useState<boolean>(false);
 	const [isAccountModalOpen, toggleAccountModalOpen] = useState<boolean>(false);
 	const [subjectForm, setSubjectForm] = useState<string>('');
 	const [headerFundsDropdownItems, setHeaderFundsDropDownItems] =
@@ -42,6 +45,8 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 				isMenuOpen,
 				footerData,
 				headerFundsDropdownItems,
+				isSearchModalOpen,
+				toggleSearchModalOpen,
 				setHeaderFundsDropDownItems,
 				toggleAccountModalOpen,
 				setSubjectForm,

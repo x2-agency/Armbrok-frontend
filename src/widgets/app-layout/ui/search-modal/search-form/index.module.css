@@ -1,0 +1,44 @@
+.root {
+	@mixin responsive gap, 10, 16, 16;
+
+	display: grid;
+	align-items: center;
+	grid-template-columns: 85% auto auto;
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media (max-width: 767px) {
+		grid-template-columns: 60% auto auto;
+	}
+}
+
+.input {
+	width: 100%;
+
+	input {
+		width: 100%;
+	}
+}
+
+.button {
+	@mixin responsive height, 57, 57, 57;
+
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+}
+
+.close {
+	@media (hover:hover) {
+		&:hover .cross path { 
+			stroke: var(--gray-500-color);
+		}
+	}
+}
+
+.cross path {
+	@mixin transition stroke;
+}

@@ -30,7 +30,7 @@ export const Header = () => {
 				<div className={cx(css.rightBlock, { [css.rightBlockHy]: isHyLocale })}>
 					<BurgerButton className={css.mobileBurger} />
 
-					<Search href="/armbrok-search" className={css.pcSearch} />
+					<Search className={css.pcSearch} />
 					<LanguageSelection className={css.pcLang} />
 					<LogIn className={css.login} />
 				</div>
