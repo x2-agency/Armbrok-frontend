@@ -1,5 +1,3 @@
-import type { SearchDataItem } from '@/widgets/app-layout/types/armbrok-search.types';
-
 export const SEARCH_FORM_NULL_DATA = {
 	placeholder: "I'm looking for...",
 	buttonText: 'Search',
