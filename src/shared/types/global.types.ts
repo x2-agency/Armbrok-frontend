@@ -370,7 +370,7 @@ export type CompanyStructureTabId =
 export interface Tab {
 	tabName: string;
 	tabId: CompanyStructureTabId;
-	content: Array<TabEmployee | TreeProps>;
+	content: Array<TabEmployee | TreeProps | ShareholdersItemType>;
 }
 
 export type CompanyStructureSection = {
@@ -441,11 +441,12 @@ export type ShareholdersItemType = {
 	photo: MediaData;
 };
 
-export type ShareholdersSection = {
+export type ShareholdersSection = PropsWithClassname & {
 	stockInfoTitle?: string;
 	shareholdersTitle?: string;
 	stockInfo?: Array<StockInfoType>;
 	shareholders?: Array<ShareholdersItemType>;
+	withoutStockInfo?: boolean;
 };
 
 /* Vacancies */
