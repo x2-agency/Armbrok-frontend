@@ -5,6 +5,17 @@
 	display: grid;
 	grid-template-columns: 32.92% auto;
 
+	&.onlyShareholders {
+		@mixin responsive padding-inline, 20, 150, 150;
+
+		display: flex;
+		padding-block: unset;
+
+		.shareholders {
+			width: 100%;
+		}
+	}
+
 	@media (max-width: 767px) {
 		display: flex;
 		flex-direction: column;

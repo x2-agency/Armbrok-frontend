@@ -1,3 +1,5 @@
+import cx from 'clsx';
+
 import type { ShareholdersSection } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
@@ -10,13 +12,22 @@ export const Shareholders = ({
 	shareholders,
 	shareholdersTitle,
 	stockInfo,
+	withoutStockInfo,
+	className,
 }: ShareholdersSection) => {
 	return (
-		<Container className={css.root}>
-			<StockInformation title={stockInfoTitle} stockInfo={stockInfo} />
+		<Container
+			className={cx(css.root, className, {
+				[css.onlyShareholders]: withoutStockInfo,
+			})}
+		>
+			{!withoutStockInfo && (
+				<StockInformation title={stockInfoTitle} stockInfo={stockInfo} />
+			)}
 			<SignificantShareholders
 				shareholders={shareholders}
 				title={shareholdersTitle}
+				className={css.shareholders}
 			/>
 		</Container>
 	);

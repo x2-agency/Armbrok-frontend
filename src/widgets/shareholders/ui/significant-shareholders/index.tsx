@@ -1,12 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
+
+import cx from 'clsx';
 import parser from 'html-react-parser';
 import { Fragment } from 'react';
 
-import type { ShareholdersItemType } from '@/shared/types/global.types';
+import type {
+	PropsWithClassname,
+	ShareholdersItemType,
+} from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-type SignificantShareholdersProps = {
+type SignificantShareholdersProps = PropsWithClassname & {
 	title?: string;
 	shareholders?: Array<ShareholdersItemType>;
 };
@@ -14,6 +19,7 @@ type SignificantShareholdersProps = {
 export const SignificantShareholders = ({
 	title,
 	shareholders,
+	className,
 }: SignificantShareholdersProps) => {
 	if (!shareholders || shareholders.length === 0) {
 		return null;
@@ -22,7 +28,7 @@ export const SignificantShareholders = ({
 	const sortedShareholders = shareholders.sort((a, b) => b.share - a.share);
 
 	return (
-		<article className={css.root}>
+		<article className={cx(css.root, className)}>
 			{title && <h4 className={css.title}>{parser(title)}</h4>}
 			<ul className={css.list}>
 				{sortedShareholders.map((shareholder, index) => (

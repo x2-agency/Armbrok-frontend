@@ -3,12 +3,14 @@ import { useMemo } from 'react';
 import useMediaQuery from '@/shared/hooks/use-media-query';
 import type {
 	CompanyStructureSection,
+	ShareholdersItemType,
 	StructureTreeProps,
 	TabEmployee,
 } from '@/shared/types/global.types';
 import { CompanyMembersSection } from '@/widgets/company-members/ui/members-section';
 import { StructureDesktop } from '@/widgets/company-members/ui/structure/structure-desktop';
 import { StructureMobile } from '@/widgets/company-members/ui/structure/structure-mobile';
+import { Shareholders } from '@/widgets/shareholders';
 
 export const useParseTabs = (tabs: CompanyStructureSection['tabs']) => {
 	const isMobile = useMediaQuery('(max-width: 767px)');
@@ -51,7 +53,14 @@ export const useParseTabs = (tabs: CompanyStructureSection['tabs']) => {
 		},
 		{
 			label: shareholdersItems?.tabName,
-			content: <></>,
+			content: (
+				<Shareholders
+					withoutStockInfo
+					shareholders={
+						shareholdersItems?.content as Array<ShareholdersItemType>
+					}
+				/>
+			),
 		},
 	];
 };
