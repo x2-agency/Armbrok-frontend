@@ -6,6 +6,6 @@ export const getClientRightsPage = async () => {
 
 		return response.data;
 	} catch (error) {
-		console.error('Ошибка при получении страницы', error);
+		console.error(error);
 	}
 };
