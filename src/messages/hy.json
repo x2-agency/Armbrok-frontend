@@ -101,6 +101,10 @@
 				"stockExchangeRules": {
 					"text": "Բորսայի և դեպոզիտարիայի կանոններ",
 					"link": "/regulation#exchange-rules"
+				},
+        "clientRightsPage": {
+					"text": "Հաճախորդի իրավունքներ",
+					"link": "/client-rights"
 				}
 			},
 			"contact-us": {
