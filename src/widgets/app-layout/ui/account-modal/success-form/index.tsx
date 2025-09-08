@@ -1,16 +1,20 @@
 import parser from 'html-react-parser';
 
-import { useSuccessAccountTranslations } from '@/widgets/app-layout/hooks/use-success-account-translations';
+import type { PostFormSuccessResponseType } from '@/shared/types/global.types';
 
 import css from './index.module.css';
 
-export const SuccessForm = () => {
-	const { title, description } = useSuccessAccountTranslations();
+export const SuccessForm = ({ message }: PostFormSuccessResponseType) => {
+	if (!message) return null;
 
 	return (
 		<div className={css.success}>
-			<h4 className={css.successTitle}>{parser(title)}</h4>
-			<p className={css.successDescription}>{parser(description)}</p>
+			{message.title && (
+				<h4 className={css.successTitle}>{parser(message.title)}</h4>
+			)}
+			{message.description && (
+				<p className={css.successDescription}>{parser(message.description)}</p>
+			)}
 		</div>
 	);
 };
