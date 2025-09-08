@@ -1,0 +1,13 @@
+.root {
+	@mixin responsive padding-block, 20, 20, 20;
+	@mixin responsive padding-inline, 10, 40, 40;
+
+	width: 100%;
+	background-color: white;
+	translate: 0 -40%;
+	max-height: 100%;
+
+	&.open {
+		translate: 0 0%;
+	}
+}

@@ -321,24 +321,56 @@ export interface EmployeeList {
 	employees: Array<Employee>;
 }
 
-export interface TreeItem {
-	id: number;
-	level: number;
-	value: string;
-	__component: string;
+export interface TabEmployee {
+	employee: Employee;
+}
+
+export interface StructureTreeProps {
+	shareholdersMeeting?: string;
+	internalAudit?: string;
+	chiefExecutiveOfficer?: string;
+	internationalMarkets?: string;
+	brokerage?: string;
+	assetManagement?: string;
+	propTrading?: string;
+	research?: string;
+	localMarkets?: string;
+	investmentBanking?: string;
+	advisory?: string;
+	operations?: string;
+	backOffice?: string;
+	middleOffice?: string;
+	depository?: string;
+	custody?: string;
+	settlements?: string;
+	registrar?: string;
+	treasury?: string;
+	finance?: string;
+	onboarding?: string;
+	it?: string;
+	digitalProducts?: string;
+	marketing?: string;
+	hr?: string;
+	accounting?: string;
 }
 
 export interface TreeProps {
-	content: Array<TreeItem>;
+	content: Array<StructureTreeProps>;
 }
 
 export interface TextItemList {
 	list: Array<TextItem>;
 }
 
+export type CompanyStructureTabId =
+	| 'management'
+	| 'company-structure'
+	| 'shareholders';
+
 export interface Tab {
 	tabName: string;
-	content: Array<EmployeeList | TreeItem>;
+	tabId: CompanyStructureTabId;
+	content: Array<TabEmployee | TreeProps | ShareholdersItemType>;
 }
 
 export type CompanyStructureSection = {
@@ -409,11 +441,12 @@ export type ShareholdersItemType = {
 	photo: MediaData;
 };
 
-export type ShareholdersSection = {
+export type ShareholdersSection = PropsWithClassname & {
 	stockInfoTitle?: string;
 	shareholdersTitle?: string;
 	stockInfo?: Array<StockInfoType>;
 	shareholders?: Array<ShareholdersItemType>;
+	withoutStockInfo?: boolean;
 };
 
 /* Vacancies */
@@ -704,3 +737,5 @@ export type BackgroundVideoType = {
 };
 
 export type CurrencyType = 'amd' | 'usd';
+
+export type PropsWithClassname = { className?: string };

@@ -1,0 +1,21 @@
+.root {
+	position: relative;
+	width: 100%;
+}
+
+.svg {
+	width: 100%;
+}
+
+.graphCustomContent {
+	padding-inline: 4px;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	word-break: break-word;
+	color: var(--gray-100-color);
+	text-align: center;
+	font-weight: 500;
+}

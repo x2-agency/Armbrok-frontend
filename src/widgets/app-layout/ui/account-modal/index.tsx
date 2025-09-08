@@ -3,19 +3,20 @@
 import cx from 'clsx';
 
 import CrossSVG from '@/public/assets/icons/cross.svg';
-import { useAccountModal } from '@/widgets/app-layout/hooks/use-account-modal';
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
+import { Modal } from '@/shared/ui/modal';
 
 import { AccountForm } from './account-form';
 import css from './index.module.css';
 
 export const AccountModal = () => {
-	const { modalRef, isVisible, isAccountModalOpen, toggleAccountModalOpen } =
-		useAccountModal();
+	const { isAccountModalOpen, toggleAccountModalOpen } = useLayoutContext();
 
 	return (
-		<dialog
-			className={cx(css.root, { [css.visible]: isVisible })}
-			ref={modalRef}
+		<Modal
+			isModalOpen={isAccountModalOpen}
+			toggleModalOpen={toggleAccountModalOpen}
+			className={cx(css.root, { [css.visible]: isAccountModalOpen })}
 		>
 			<button
 				className={css.close}
@@ -24,6 +25,6 @@ export const AccountModal = () => {
 				<CrossSVG className={css.cross} />
 			</button>
 			<AccountForm isModalOpen={isAccountModalOpen} />
-		</dialog>
+		</Modal>
 	);
 };

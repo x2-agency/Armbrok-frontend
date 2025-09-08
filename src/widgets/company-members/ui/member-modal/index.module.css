@@ -4,23 +4,10 @@
 	@mixin responsive padding, 10, 32, 32;
 	@mixin responsive border-radius, 24, 24, 24;
 
-	transition-property: all;
 	left: 50%;
 	top: 50%;
 	translate: -50% -45%;
-	outline: none;
 	max-height: calc(100% - 2em - 6px);
-	max-width: unset;
-	overflow: -moz-scrollbars-none;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	opacity: 0;
-	visibility: hidden;
-
-	&.open,
-	&.open::backdrop {
-		opacity: 1;
-	}
 
 	@media (max-width: 767px) {
 		height: 100%;
@@ -30,17 +17,7 @@
 	}
 }
 
-.modal::backdrop {
-	@mixin transition;
-
-	transition-property: all;
-	opacity: 0;
-	background: rgba(0, 0, 0, 0.3);
-}
-
 .modal.open {
-	opacity: 1;
-	visibility: visible;
 	translate: -50% -50%;
 }
 
@@ -49,10 +26,6 @@
 
 	transition-property: opacity;
 	opacity: 0;
-}
-
-.modal.open::backdrop {
-	opacity: 1;
 }
 
 .button {

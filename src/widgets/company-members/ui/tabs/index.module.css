@@ -9,13 +9,17 @@
 	@mixin responsive border-radius, 10, 10, 10;
 	@mixin responsive gap, 4, 4, 4;
 	@mixin responsive margin-block-end, 24, 24, 24;
-	@mixin responsive --grid, 144, 144, 144;
 	@mixin responsive --border, 1, 1, 1;
 
+	max-width: 100%;
 	border: var(--border) solid var(--gray-300-color);
-	display: grid;
-	grid-template-columns: repeat(2, var(--grid));
+	display: flex;
 	background-color: var(--gray-200-color);
+	overflow-x: auto;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 .tabButton {
@@ -25,6 +29,7 @@
 	display: flex;
 	justify-content: center;
 	color: var(--gray-500-color);
+	outline: none;
 
 	&.active {
 		color: var(--gray-800-color);
@@ -39,4 +44,8 @@
 			border-color: var(--gray-200-color) !important;
 		}
 	}
+}
+
+.tabContent {
+	width: 100%;
 }
