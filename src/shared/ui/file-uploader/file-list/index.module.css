@@ -18,6 +18,12 @@
 	}
 }
 
+.name {
+	@mixin font-text14;
+
+	word-break: break-word;
+}
+
 .paragraph {
 	@mixin responsive gap, 10, 10, 10;
 

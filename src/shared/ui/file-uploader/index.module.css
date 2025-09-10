@@ -8,11 +8,7 @@
 	@mixin responsive gap, 10, 10, 10;
 }
 
-.name {
-	@mixin font-text14;
 
-	word-break: break-word;
-}
 
 .mainButton,
 .error {
