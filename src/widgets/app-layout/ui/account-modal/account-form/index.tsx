@@ -9,11 +9,13 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import LoaderSVG from '@/public/assets/icons/loader.svg';
+import type { PostContactUsFormProps } from '@/shared/api/post-contact-us-form';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import type { PostFormSuccessResponseType } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Checkbox } from '@/shared/ui/checkbox';
 import { ErrorModal } from '@/shared/ui/error-modal';
+import { FileUploader } from '@/shared/ui/file-uploader';
 import { Input } from '@/shared/ui/input';
 import { useAccountTranslations } from '@/widgets/app-layout/hooks/use-account-translations';
 import { usePostAccountForm } from '@/widgets/app-layout/hooks/use-post-account-form';
@@ -28,15 +30,9 @@ type FormProps = {
 	isModalOpen: boolean;
 };
 
-export type AccountFormValuesData = {
-	email: string;
-	name: string;
-	subject: string;
-	message: string;
+export type AccountFormValuesData = PostContactUsFormProps['data'] & {
 	phoneNumber: string;
-	formSubject: string;
 	checkbox: boolean;
-	referralLink?: string;
 };
 
 export const AccountForm = ({ isModalOpen }: FormProps) => {
@@ -61,6 +57,7 @@ export const AccountForm = ({ isModalOpen }: FormProps) => {
 		reset,
 		handleSubmit,
 		setValue,
+		control,
 	} = useForm<AccountFormValuesData>({ mode: 'onChange' });
 	const mutation = usePostAccountForm({
 		setSuccessMessage,
@@ -164,6 +161,11 @@ export const AccountForm = ({ isModalOpen }: FormProps) => {
 							}
 						/>
 					</div>
+					<FileUploader
+						control={control}
+						name="file"
+						className={css.fileUploader}
+					/>
 					<Checkbox
 						label={privacyPolicyText}
 						required={true}

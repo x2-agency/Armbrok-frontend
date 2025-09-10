@@ -298,5 +298,9 @@
 	"fundPerformanceTabs": {
 		"navPerShare": "Unit Price",
 		"nav": "NAV"
+	},
+	"fileUploader": {
+		"text": "Attach file",
+		"sizeError": "File size must not exceed"
 	}
 }

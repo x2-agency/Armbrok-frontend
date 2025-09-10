@@ -102,7 +102,7 @@
 					"text": "Բորսայի և դեպոզիտարիայի կանոններ",
 					"link": "/regulation#exchange-rules"
 				},
-        "clientRightsPage": {
+				"clientRightsPage": {
 					"text": "Հաճախորդի իրավունքներ",
 					"link": "/client-rights"
 				}
@@ -296,5 +296,9 @@
 	"fundPerformanceTabs": {
 		"navPerShare": "Փայի գին",
 		"nav": "Զուտ ակտիվներ"
+	},
+	"fileUploader": {
+		"text": "Կցել ֆայլեր",
+		"sizeError": "Ֆայլի չափը չպետք է գերազանցի"
 	}
 }

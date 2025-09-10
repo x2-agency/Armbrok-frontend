@@ -1,0 +1,32 @@
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.crossIcon {
+	@mixin responsive width, 16, 16, 16;
+}
+
+.removeButton {
+	@mixin transition opacity;
+	@mixin responsive padding, 6, 6, 6;
+
+	@media (hover: hover) {
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+}
+
+.name {
+	@mixin font-text14;
+
+	word-break: break-word;
+}
+
+.paragraph {
+	@mixin responsive gap, 10, 10, 10;
+
+	display: flex;
+	align-items: center;
+}

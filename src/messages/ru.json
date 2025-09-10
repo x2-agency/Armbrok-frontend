@@ -296,5 +296,9 @@
 	"fundPerformanceTabs": {
 		"navPerShare": "Цена пая",
 		"nav": "СЧА"
+	},
+	"fileUploader": {
+		"text": "Прикрепить файл",
+		"sizeError": "Размер файла&nbsp;не должен превышать"
 	}
 }
