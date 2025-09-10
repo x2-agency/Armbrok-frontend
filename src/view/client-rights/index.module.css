@@ -1,0 +1,21 @@
+.markup {
+	@mixin responsive padding-block-end, 20, 48, 48;
+
+	ul,
+	ol,
+	p {
+		color: var(--gray-800-color);
+	}
+
+	a {
+		color: var(--red-800-color);
+	}
+}
+
+.title {
+	@mixin font-h1;
+	font-weight: 700;
+	text-align: center;
+	@mixin responsive padding-block-start, 140, 205, 205;
+	@mixin responsive padding-block-end, 24, 48, 48;
+}

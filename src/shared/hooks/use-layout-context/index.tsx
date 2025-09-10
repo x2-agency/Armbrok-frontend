@@ -1,32 +1,20 @@
 'use client';
 
-import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 import { createContext, useContext, useState } from 'react';
 
 import type { FundsStateData } from '@/shared/types/funds-state-data';
 
-type LayoutContextType = {
-	isAccountModalOpen: boolean;
-	subjectForm: string;
-	headerFundsDropdownItems: Array<FundsStateData> | null;
-	setHeaderFundsDropDownItems: Dispatch<
-		SetStateAction<Array<FundsStateData> | null>
-	>;
-	setSubjectForm: Dispatch<SetStateAction<string>>;
-	toggleAccountModalOpen: Dispatch<SetStateAction<boolean>>;
-	toggleMenuOpen: Dispatch<SetStateAction<boolean>>;
-	isMenuOpen: boolean;
-	footerData: {
-		publishedAt: string | null;
-	};
-	setFooterData: (data: { publishedAt: string | null }) => void;
-	isSearchModalOpen: boolean;
-	toggleSearchModalOpen: Dispatch<SetStateAction<boolean>>;
-};
+import type {
+	LayoutContextType,
+	LayoutProviderProps,
+} from './layout-context.types';
 
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
 
-export const LayoutProvider = ({ children }: PropsWithChildren) => {
+export const LayoutProvider = ({
+	children,
+	contactUsFormFields,
+}: LayoutProviderProps) => {
 	const [isMenuOpen, toggleMenuOpen] = useState<boolean>(false);
 	const [isSearchModalOpen, toggleSearchModalOpen] = useState<boolean>(false);
 	const [isAccountModalOpen, toggleAccountModalOpen] = useState<boolean>(false);
@@ -46,6 +34,7 @@ export const LayoutProvider = ({ children }: PropsWithChildren) => {
 				footerData,
 				headerFundsDropdownItems,
 				isSearchModalOpen,
+				privacyPolicyText: contactUsFormFields?.data.privacyPolicyText,
 				toggleSearchModalOpen,
 				setHeaderFundsDropDownItems,
 				toggleAccountModalOpen,
