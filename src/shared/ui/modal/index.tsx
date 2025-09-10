@@ -18,14 +18,20 @@ export const Modal = ({
 	isModalOpen,
 	toggleModalOpen,
 }: ModalProps) => {
-	const { ref } = useModal({ isModalOpen, toggleModalOpen });
+	const { ref, handleBackdropClick,  } = useModal({
+		isModalOpen,
+		toggleModalOpen,
+	});
 
 	return (
-		<dialog
-			ref={ref}
-			className={cx(css.root, className, { [css.open]: isModalOpen })}
-		>
-			{children}
-		</dialog>
+		<div className={css.root}>
+			<dialog
+				ref={ref}
+				className={cx(css.modal, className, { [css.open]: isModalOpen })}
+			>
+				{children}
+			</dialog>
+			<div onClick={handleBackdropClick} className={css.backdrop} />
+		</div>
 	);
 };

@@ -17,13 +17,23 @@ export const useModal = ({
 		};
 	}, []);
 
+	const handleKeyDown = useCallback(
+		(event: KeyboardEvent) => {
+			if (event.key === 'Escape') {
+				toggleModalOpen(false);
+			}
+		},
+		[toggleModalOpen]
+	);
+
 	useEffect(() => {
 		const modal = ref.current;
 		if (!modal) return;
 
 		if (isModalOpen) {
-			modal.showModal();
+			modal.show();
 			document.body.style.overflow = 'hidden';
+			document.addEventListener('keydown', handleKeyDown);
 		} else {
 			timeoutRef.current = Number(
 				setTimeout(() => {
@@ -32,34 +42,15 @@ export const useModal = ({
 				}, ANIMATION_DURATION)
 			);
 		}
-	}, [isModalOpen]);
-
-	const handleBackdropClick = useCallback(
-		(event: MouseEvent) => {
-			if (event.target === ref.current) {
-				toggleModalOpen(false);
-			}
-		},
-		[toggleModalOpen]
-	);
-
-	const handleClose = useCallback(() => {
-		toggleModalOpen(false);
-		document.body.style.overflow = '';
-	}, [toggleModalOpen]);
-
-	useEffect(() => {
-		const modal = ref.current;
-		if (!modal) return;
-
-		modal.addEventListener('click', handleBackdropClick);
-		modal.addEventListener('close', handleClose);
 
 		return () => {
-			modal.removeEventListener('click', handleBackdropClick);
-			modal.removeEventListener('close', handleClose);
+			document.removeEventListener('keydown', handleKeyDown);
 		};
-	}, [handleBackdropClick, handleClose]);
+	}, [isModalOpen, handleKeyDown]);
 
-	return { ref };
+	const handleBackdropClick = useCallback(() => {
+		toggleModalOpen(false);
+	}, [toggleModalOpen]);
+
+	return { ref, handleBackdropClick, handleKeyDown };
 };
