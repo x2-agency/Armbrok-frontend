@@ -36,7 +36,6 @@ export const useAccountTranslations = () => {
 			errorMessage: t('messageInput.errorMessage'),
 			secondErrorMessage: t('messageInput.secondErrorMessage'),
 		},
-		checkboxTranslation: t('checkbox'),
 		captchaTranslation: t('captcha'),
 		buttonTranslation: t('button'),
 	};

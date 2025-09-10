@@ -11,6 +11,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import type { PropsWithChildren } from 'react';
 
 import { Locales } from '@/i18n/routing';
+import { getContactFormFields } from '@/shared/api/get-contact-form-fields';
 import { InterFonts, ArmenianFonts } from '@/shared/config/localFont';
 import { LayoutProvider } from '@/shared/hooks/use-layout-context';
 import { Favicons } from '@/view/documents/ui/favicons';
@@ -31,6 +32,8 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 
 	const messages = await getMessages({ locale });
 
+	const initialContactFormFields = await getContactFormFields();
+
 	return (
 		<html lang={locale}>
 			<head>
@@ -48,7 +51,7 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 			</head>
 			<body className={cx(InterFonts.variable, ArmenianFonts.variable)}>
 				<NextIntlClientProvider locale={locale} messages={messages}>
-					<LayoutProvider>
+					<LayoutProvider contactUsFormFields={initialContactFormFields}>
 						<Providers>
 							<AppLayout>{children}</AppLayout>
 						</Providers>

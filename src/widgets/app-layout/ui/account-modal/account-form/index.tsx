@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form';
 
 import LoaderSVG from '@/public/assets/icons/loader.svg';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
+import type { PostFormSuccessResponseType } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { Checkbox } from '@/shared/ui/checkbox';
 import { ErrorModal } from '@/shared/ui/error-modal';
@@ -40,15 +41,16 @@ export type AccountFormValuesData = {
 
 export const AccountForm = ({ isModalOpen }: FormProps) => {
 	const pathname = usePathname();
-	const [isSuccess, toggleSuccess] = useState<boolean>(false);
+	const [successMessage, setSuccessMessage] = useState<
+		PostFormSuccessResponseType | undefined
+	>({});
 	const [isError, toggleError] = useState<boolean>(false);
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
-	const { subjectForm } = useLayoutContext();
+	const { subjectForm, privacyPolicyText } = useLayoutContext();
 	const {
 		nameInputTranslation,
 		phoneInputTranslation,
 		emailInputTranslation,
-		checkboxTranslation,
 		captchaTranslation,
 	} = useAccountTranslations();
 	const t = useTranslations('investButton');
@@ -60,7 +62,11 @@ export const AccountForm = ({ isModalOpen }: FormProps) => {
 		handleSubmit,
 		setValue,
 	} = useForm<AccountFormValuesData>({ mode: 'onChange' });
-	const mutation = usePostAccountForm({ toggleSuccess, toggleError, reset });
+	const mutation = usePostAccountForm({
+		setSuccessMessage,
+		toggleError,
+		reset,
+	});
 
 	useEffect(() => {
 		if (subjectForm) {
@@ -78,7 +84,7 @@ export const AccountForm = ({ isModalOpen }: FormProps) => {
 
 		return () => {
 			setTimeout(() => {
-				toggleSuccess(false);
+				setSuccessMessage(undefined);
 			}, 300);
 		};
 	}, [subjectForm, setValue, pathname, isModalOpen, reset]);
@@ -93,8 +99,8 @@ export const AccountForm = ({ isModalOpen }: FormProps) => {
 		<div className={css.root}>
 			<h3 className={css.title}>{parser(subjectForm)}</h3>
 			<ErrorModal isOpen={isError} toggleOpen={toggleError} />
-			{isSuccess ? (
-				<SuccessForm />
+			{successMessage ? (
+				<SuccessForm message={successMessage.message} />
 			) : (
 				<form
 					className={css.form}
@@ -159,7 +165,7 @@ export const AccountForm = ({ isModalOpen }: FormProps) => {
 						/>
 					</div>
 					<Checkbox
-						label={checkboxTranslation}
+						label={privacyPolicyText}
 						required={true}
 						className={css.checkbox}
 						{...register('checkbox', { required: true })}
