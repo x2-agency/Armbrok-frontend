@@ -3,7 +3,7 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import { useTranslations } from 'next-intl';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import type { Control } from 'react-hook-form';
 import { useController } from 'react-hook-form';
 
@@ -11,7 +11,10 @@ import AttachmentSVG from '@/public/assets/icons/attachment.svg';
 import CrossSVG from '@/public/assets/icons/cross.svg';
 import type { PropsWithClassname } from '@/shared/types/global.types';
 
-import { MAX_FILES_TOTAL_SIZE } from './file-uploader.constants';
+import {
+	LABEL_MAX_SIZE,
+	MAX_FILES_TOTAL_SIZE,
+} from './file-uploader.constants';
 import css from './index.module.css';
 
 type FileUploaderProps = PropsWithClassname & {
@@ -27,6 +30,7 @@ export const FileUploader = ({
 	multiplyFile,
 }: FileUploaderProps) => {
 	const inputRef = useRef<HTMLInputElement | null>(null);
+	const [isError, setError] = useState<boolean>(false);
 	const t = useTranslations('fileUploader');
 
 	const {
@@ -47,6 +51,8 @@ export const FileUploader = ({
 			);
 
 			if (newTotalSize > MAX_FILES_TOTAL_SIZE) {
+				setError(true);
+
 				return;
 			}
 
@@ -55,11 +61,15 @@ export const FileUploader = ({
 			const singleFileToAdd = newFiles[0];
 
 			if (singleFileToAdd.size > MAX_FILES_TOTAL_SIZE) {
+				setError(true);
+
 				return;
 			}
 
 			onChange([singleFileToAdd]);
 		}
+
+		setError(false);
 	};
 
 	const removeFile = (index: number) => {
@@ -86,7 +96,11 @@ export const FileUploader = ({
 				onChange={e => handleFiles(e.target.files)}
 				accept="image/*,application/pdf,.doc,.docx"
 			/>
-
+			{isError && (
+				<span className={css.error}>
+					{parser(t('sizeError') + ` ${LABEL_MAX_SIZE}MB`)}
+				</span>
+			)}
 			{value.length > 0 && (
 				<ul className={css.files}>
 					{value.map((file: File, index: number) => (

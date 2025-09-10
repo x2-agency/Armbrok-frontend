@@ -102,7 +102,7 @@
 					"text": "Բորսայի և դեպոզիտարիայի կանոններ",
 					"link": "/regulation#exchange-rules"
 				},
-        "clientRightsPage": {
+				"clientRightsPage": {
 					"text": "Հաճախորդի իրավունքներ",
 					"link": "/client-rights"
 				}
@@ -298,6 +298,7 @@
 		"nav": "Զուտ ակտիվներ"
 	},
 	"fileUploader": {
-		"text": "Կցել ֆայլեր"
+		"text": "Կցել ֆայլեր",
+		"sizeError": "Ֆայլի չափը չպետք է գերազանցի"
 	}
 }

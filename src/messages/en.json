@@ -300,6 +300,7 @@
 		"nav": "NAV"
 	},
 	"fileUploader": {
-		"text": "Attach files"
+		"text": "Attach file",
+		"sizeError": "File size must not exceed"
 	}
 }

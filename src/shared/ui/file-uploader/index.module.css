@@ -15,15 +15,21 @@
 	word-break: break-word;
 }
 
+.mainButton,
+.error {
+	@mixin font-text16;
+
+	color: var(--red-500-color);
+}
+
 .mainButton {
 	@mixin transition color;
 	@mixin responsive border-radius, 12, 12, 12;
-	@mixin font-text16;
 
 	width: fit-content;
 	display: flex;
 	align-items: center;
-	color: var(--red-500-color);
+
 	font-weight: 500;
 
 	@media (hover: hover) {
