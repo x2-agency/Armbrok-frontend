@@ -8,10 +8,11 @@ import type { Control } from 'react-hook-form';
 import { useController } from 'react-hook-form';
 
 import AttachmentSVG from '@/public/assets/icons/attachment.svg';
-import CrossSVG from '@/public/assets/icons/cross.svg';
 import type { PropsWithClassname } from '@/shared/types/global.types';
 
+import { FileList } from './file-list';
 import {
+	ACCEPTED_FILES,
 	LABEL_MAX_SIZE,
 	MAX_FILES_TOTAL_SIZE,
 } from './file-uploader.constants';
@@ -41,34 +42,21 @@ export const FileUploader = ({
 		if (!files) return;
 
 		const newFiles = Array.from(files);
+		const combinedFiles = multiplyFile
+			? [...value, ...newFiles]
+			: [newFiles[0]];
 
-		if (multiplyFile) {
-			const combinedFiles = [...value, ...newFiles];
+		const newTotalSize = combinedFiles.reduce(
+			(acc, file) => acc + file.size,
+			0
+		);
 
-			const newTotalSize = combinedFiles.reduce(
-				(acc, file) => acc + file.size,
-				0
-			);
-
-			if (newTotalSize > MAX_FILES_TOTAL_SIZE) {
-				setError(true);
-
-				return;
-			}
-
-			onChange(combinedFiles);
-		} else {
-			const singleFileToAdd = newFiles[0];
-
-			if (singleFileToAdd.size > MAX_FILES_TOTAL_SIZE) {
-				setError(true);
-
-				return;
-			}
-
-			onChange([singleFileToAdd]);
+		if (newTotalSize > MAX_FILES_TOTAL_SIZE) {
+			setError(true);
+			return;
 		}
 
+		onChange(combinedFiles);
 		setError(false);
 	};
 
@@ -94,29 +82,14 @@ export const FileUploader = ({
 				aria-hidden="true"
 				className={css.fileInput}
 				onChange={e => handleFiles(e.target.files)}
-				accept="image/*,application/pdf,.doc,.docx"
+				accept={ACCEPTED_FILES}
 			/>
 			{isError && (
 				<span className={css.error}>
 					{parser(t('sizeError') + ` ${LABEL_MAX_SIZE}MB`)}
 				</span>
 			)}
-			{value.length > 0 && (
-				<ul className={css.files}>
-					{value.map((file: File, index: number) => (
-						<li key={index} className={css.paragraph}>
-							<span className={css.name}>{file.name}</span>
-							<button
-								type="button"
-								onClick={() => removeFile(index)}
-								className={css.removeButton}
-							>
-								<CrossSVG className={css.crossIcon} />
-							</button>
-						</li>
-					))}
-				</ul>
-			)}
+			<FileList files={value} removeFile={removeFile} />
 		</div>
 	);
 };

@@ -1,7 +1,7 @@
 .root {
 	@mixin responsive height, 55, 85, 85;
 	position: fixed;
-	z-index: 10000;
+	z-index: 1000;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -17,7 +17,6 @@
 
 	@mixin responsive width, unset, 1392, 1392;
 	@mixin responsive padding-inline, 20;
-
 
 	@media (max-width: 767px) {
 		width: 100%;

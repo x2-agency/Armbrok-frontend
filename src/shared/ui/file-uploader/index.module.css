@@ -1,5 +1,4 @@
-.root,
-.files {
+.root {
 	display: flex;
 	flex-direction: column;
 }
@@ -47,7 +46,6 @@
 	display: none;
 }
 
-.crossIcon,
 .iconAttachment {
 	@mixin responsive width, 16, 16, 16;
 }
@@ -58,20 +56,3 @@
 	fill: var(--red-500-color);
 }
 
-.removeButton {
-	@mixin transition opacity;
-	@mixin responsive padding, 6, 6, 6;
-
-	@media (hover: hover) {
-		&:hover {
-			opacity: 0.6;
-		}
-	}
-}
-
-.paragraph {
-	@mixin responsive gap, 10, 10, 10;
-
-	display: flex;
-	align-items: center;
-}
