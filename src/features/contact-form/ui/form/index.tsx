@@ -64,7 +64,6 @@ export const Form = ({
 	const mutation = usePostContactUsForm({ toggleSuccess, toggleError, reset });
 
 	const handleSubmitForm = async (formData: FormValues) => {
-		console.log(formData);
 		mutation.mutate({ data: { ...formData, formSubject: 'Contact Us' } });
 	};
 
