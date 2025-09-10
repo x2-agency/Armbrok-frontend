@@ -11,6 +11,8 @@
 
 .name {
 	@mixin font-text14;
+
+	word-break: break-word;
 }
 
 .mainButton {
