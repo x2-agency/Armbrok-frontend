@@ -12,9 +12,13 @@
 	font-weight: 600;
 }
 
+.fileUploader,
+.inputGroup {
+	@mixin responsive padding-block-end, 16, 24, 24;
+}
+
 .inputGroup {
 	@mixin responsive gap, 20, 20, 20;
-	@mixin responsive padding-block-end, 16, 24, 24;
 
 	display: flex;
 	flex-direction: column;

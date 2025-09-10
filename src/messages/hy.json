@@ -297,5 +297,8 @@
 	"fundPerformanceTabs": {
 		"navPerShare": "Փայի գին",
 		"nav": "Զուտ ակտիվներ"
+	},
+	"fileUploader": {
+		"text": "Կցել ֆայլեր"
 	}
 }

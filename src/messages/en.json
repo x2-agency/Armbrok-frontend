@@ -299,5 +299,8 @@
 	"fundPerformanceTabs": {
 		"navPerShare": "Unit Price",
 		"nav": "NAV"
+	},
+	"fileUploader": {
+		"text": "Attach files"
 	}
 }

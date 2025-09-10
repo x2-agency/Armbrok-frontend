@@ -65,3 +65,7 @@
 	visibility: hidden;
 	opacity: 0;
 }
+
+.uploader {
+	@mixin responsive padding-block-end, 16, 32, 32;
+}

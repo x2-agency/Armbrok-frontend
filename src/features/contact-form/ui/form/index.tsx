@@ -13,6 +13,7 @@ import LoaderSVG from '@/public/assets/icons/loader.svg';
 import type { ContactForm } from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { ErrorModal } from '@/shared/ui/error-modal';
+import { FileUploader } from '@/shared/ui/file-uploader';
 import { Input } from '@/shared/ui/input';
 import { Textarea } from '@/shared/ui/textarea';
 
@@ -26,6 +27,8 @@ export type FormValues = {
 	subject: string;
 	message: string;
 	referralLink: string;
+	file?: Array<File>;
+	formSubject: string;
 };
 
 export const Form = ({
@@ -52,6 +55,7 @@ export const Form = ({
 		formState: { isValid, errors },
 		register,
 		reset,
+		control,
 		handleSubmit,
 	} = useForm<FormValues>({
 		mode: 'onChange',
@@ -60,6 +64,7 @@ export const Form = ({
 	const mutation = usePostContactUsForm({ toggleSuccess, toggleError, reset });
 
 	const handleSubmitForm = async (formData: FormValues) => {
+		console.log(formData);
 		mutation.mutate({ data: { ...formData, formSubject: 'Contact Us' } });
 	};
 
@@ -140,6 +145,7 @@ export const Form = ({
 						}
 					/>
 				</div>
+				<FileUploader className={css.uploader} name="file" control={control} />
 				<Captcha
 					onChange={() => toggleCaptcha(true)}
 					subtitle={captchaCaption}
