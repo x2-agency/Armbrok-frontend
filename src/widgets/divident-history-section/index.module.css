@@ -1,0 +1,23 @@
+.root {
+	@mixin responsive padding-block-end, 60, 120, 120;
+	@mixin responsive max-width, unset, 900, 900;
+
+	@media (max-width: 767px) {
+		@mixin responsive padding-inline, 20;
+
+		overflow-x: scroll;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+}
+
+.table {
+	@mixin responsive border-radius, 16, 16, 16;
+	@mixin responsive --border, 1, 1, 1;
+
+	border: var(--border) solid var(--gray-300-color);
+	width: 100%;
+	overflow: hidden;
+	border-spacing: 0;
+}
+
