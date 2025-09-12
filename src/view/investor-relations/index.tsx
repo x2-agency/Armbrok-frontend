@@ -26,7 +26,7 @@ export const InvestorRelations: NextPage<
 	residenceCountries,
 	shareholdersMeetingsSection,
 	dividendPolicySection,
-  dividendHistorySection,
+	dividendHistorySection,
 	disclaimer,
 	remunerationSection,
 	shareholdersSection,
@@ -56,7 +56,7 @@ export const InvestorRelations: NextPage<
 			</HeroContainer>
 			<Shareholders {...shareholdersSection} />
 
-      <DividentHistorySection data={dividendHistorySection } />
+			<DividentHistorySection data={dividendHistorySection} />
 
 			<CountriesSection residenceCountriesSection={residenceCountries} />
 			{documentTabsSection && <CorporateReporting {...documentTabsSection} />}
