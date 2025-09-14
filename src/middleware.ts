@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
 import { routing } from '@/i18n/routing';
@@ -6,18 +9,45 @@ import { routing } from '@/i18n/routing';
 const LANGUAGE_HEADER = 'Accept-Language';
 const CURRENT_PATH_HEADER = 'x-current-path';
 
+const PUBLIC_LOCALES = ['ru', 'en', 'hy'] as const;
+const countryToLocale: Record<string, string> = {
+	RU: 'ru',
+	AM: 'hy',
+};
+
 export function middleware(request: NextRequest) {
+	const { pathname } = request.nextUrl;
+	const hasLocale = PUBLIC_LOCALES.some(locale =>
+		pathname.startsWith(`/${locale}`)
+	);
+
+	if (!hasLocale) {
+		const cookieLang = request.cookies.get(LANGUAGE_HEADER)?.value;
+
+		let autoLocale: string | undefined;
+
+		if (cookieLang && PUBLIC_LOCALES.includes(cookieLang as any)) {
+			autoLocale = cookieLang;
+		} else {
+			const country = request.headers.get('x-vercel-ip-country');
+			autoLocale =
+				country && countryToLocale[country] ? countryToLocale[country] : 'en';
+		}
+
+		const redirectUrl = new URL(`/${autoLocale}${pathname}`, request.url);
+
+		return NextResponse.redirect(redirectUrl);
+	}
+
 	const handleI18nRouting = createMiddleware(routing);
 	const response = handleI18nRouting(request);
 
 	if (
-		!request.nextUrl.pathname.startsWith('/sitemap.xml') ||
-		!request.nextUrl.pathname.startsWith('/robots.txt')
+		!(pathname.startsWith('/sitemap.xml') && pathname.startsWith('/robots.txt'))
 	) {
-		response.headers.set(CURRENT_PATH_HEADER, request.nextUrl.pathname);
+		response.headers.set(CURRENT_PATH_HEADER, pathname);
 
 		const language = request.cookies.get(LANGUAGE_HEADER);
-
 		if (language) response.headers.set(LANGUAGE_HEADER, language.value);
 	}
 
