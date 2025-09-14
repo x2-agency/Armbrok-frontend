@@ -4,15 +4,16 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
+import { Locales } from '@/i18n/routing';
 import { routing } from '@/i18n/routing';
 
 const LANGUAGE_HEADER = 'Accept-Language';
 const CURRENT_PATH_HEADER = 'x-current-path';
 
-const PUBLIC_LOCALES = ['ru', 'en', 'hy'] as const;
+const PUBLIC_LOCALES = Object.values(Locales);
 const countryToLocale: Record<string, string> = {
-	RU: 'ru',
-	AM: 'hy',
+	RU: Locales.RU,
+	AM: Locales.AM,
 };
 
 export function middleware(request: NextRequest) {
@@ -31,7 +32,9 @@ export function middleware(request: NextRequest) {
 		} else {
 			const country = request.headers.get('x-vercel-ip-country');
 			autoLocale =
-				country && countryToLocale[country] ? countryToLocale[country] : 'en';
+				country && countryToLocale[country]
+					? countryToLocale[country]
+					: Locales.EN;
 		}
 
 		const redirectUrl = new URL(`/${autoLocale}${pathname}`, request.url);
