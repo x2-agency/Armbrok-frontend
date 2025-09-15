@@ -1,0 +1,47 @@
+.headRow {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	background-color: var(--gray-200-color);
+}
+
+.theadValue {
+	@mixin responsive --border, 1, 1, 1;
+	@mixin responsive height, 56, 56, 56;
+	@mixin responsive min-width, 105, 120, 120;
+	border-left: var(--border) solid var(--gray-300-color);
+	display: flex;
+	align-items: center;
+	@mixin responsive padding-inline, 5, 40, 40;
+	flex-shrink: 0;
+}
+
+.theadValue:first-of-type {
+	border: none;
+}
+
+.theadValue {
+	@mixin font-text14;
+
+	color: var(--gray-700-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text12;
+	}
+}
+
+.theadValue .value {
+	text-transform: uppercase;
+}
+
+.value {
+	color: var(--gray-700-color);
+	font-weight: 700;
+}
+
+.leftAlign {
+	justify-content: flex-start;
+}
+
+.rightAlign {
+	justify-content: flex-end;
+}

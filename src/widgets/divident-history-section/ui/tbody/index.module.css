@@ -1,0 +1,58 @@
+.row {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	position: relative;
+	@mixin responsive --border, 1, 1, 1;
+
+	border-bottom: var(--border) solid var(--gray-300-color);
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--gray-200-color);
+		}
+	}
+}
+
+.tbodyValue {
+	@mixin responsive --border, 1, 1, 1;
+	@mixin responsive height, 53, 53, 53;
+
+	@mixin responsive min-width, 85, 120, 120;
+	border-left: var(--border) solid var(--gray-300-color);
+	@mixin responsive padding-inline, 5, 40, 40;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.tbody td:nth-child(1) {
+	justify-content: flex-start;
+}
+
+.tbody td:nth-child(2),
+.tbody td:nth-child(3) {
+	justify-content: end;
+}
+
+.link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.tbodyValue {
+	@mixin font-text16;
+
+	font-weight: 500;
+	color: var(--gray-800-color);
+}
+
+.leftAlign {
+  justify-content: left;
+}
+
+.rightAlign {
+  justify-content: right;
+}
