@@ -15,8 +15,14 @@ export const Thead = ({ list }: THeadProps) => {
 	return (
 		<thead className={css.thead}>
 			<tr className={cx(css.row, css.headRow)}>
-				{list.map(item => (
-					<th key={item.id} className={css.theadValue}>
+				{list.map((item, index) => (
+					<th
+						key={item.id}
+						className={cx(
+							css.theadValue,
+							index === 0 ? css.leftAlign : css.rightAlign
+						)}
+					>
 						<span className={css.value}>{item.value}</span>
 					</th>
 				))}
