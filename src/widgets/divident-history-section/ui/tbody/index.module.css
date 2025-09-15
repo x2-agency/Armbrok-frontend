@@ -19,9 +19,8 @@
 
 	@mixin responsive min-width, 85, 120, 120;
 	border-left: var(--border) solid var(--gray-300-color);
-	@mixin responsive padding-inline, 20, 40, 40;
+	@mixin responsive padding-inline, 5, 40, 40;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
 }
@@ -48,4 +47,12 @@
 
 	font-weight: 500;
 	color: var(--gray-800-color);
+}
+
+.leftAlign {
+  justify-content: left;
+}
+
+.rightAlign {
+  justify-content: right;
 }

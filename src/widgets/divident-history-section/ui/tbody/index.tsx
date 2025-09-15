@@ -28,11 +28,11 @@ export const Tbody = ({ list }: TBodyProps) => {
 		<tbody className={css.tbody}>
 			{list.map(item => (
 				<tr key={item.id} className={cx(css.row, css.bodyRow)}>
-					<td className={css.tbodyValue}>{formatDate(item.date)}</td>
-					<td className={css.tbodyValue}>{item.financialYear}</td>
+					<td className={cx(css.tbodyValue, css.leftAlign)}>{formatDate(item.date)}</td>
+					<td className={cx(css.tbodyValue, css.rightAlign)}>{item.financialYear}</td>
 
-					<td className={css.tbodyValue}>{item.dividendSize}</td>
-					<td className={css.tbodyValue}>{formatFileExt(item.file)}</td>
+					<td className={cx(css.tbodyValue, css.rightAlign)}>{item.dividendSize}</td>
+					<td className={cx(css.tbodyValue, css.rightAlign)}>{formatFileExt(item.file)}</td>
 					<Link
 						href={item?.file?.url ?? '#'}
 						className={css.link}
