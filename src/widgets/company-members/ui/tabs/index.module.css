@@ -24,12 +24,12 @@
 
 .tabButton {
 	@mixin responsive padding-block, 8, 8, 8;
-
 	border-color: var(--gray-200-color) !important;
 	display: flex;
 	justify-content: center;
 	color: var(--gray-500-color);
 	outline: none;
+	@mixin responsive width, unset, 210, 210;
 
 	&.active {
 		color: var(--gray-800-color);
