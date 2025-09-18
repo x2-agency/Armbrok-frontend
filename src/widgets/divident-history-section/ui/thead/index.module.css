@@ -7,7 +7,7 @@
 .theadValue {
 	@mixin responsive --border, 1, 1, 1;
 	@mixin responsive height, 56, 56, 56;
-	@mixin responsive min-width, 105, 120, 120;
+	@mixin responsive min-width, 130, 120, 120;
 	border-left: var(--border) solid var(--gray-300-color);
 	display: flex;
 	align-items: center;

@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 
-	@mixin responsive column-gap, unset, 54, 54;
+	@mixin responsive column-gap, unset, 10, 10;
 	@mixin responsive row-gap, unset, 24, 24;
 
 	@mixin responsive padding-block-end, 32, 24, 24;

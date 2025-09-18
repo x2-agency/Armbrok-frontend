@@ -17,7 +17,7 @@
 	@mixin responsive --border, 1, 1, 1;
 	@mixin responsive height, 53, 53, 53;
 
-	@mixin responsive min-width, 85, 120, 120;
+	@mixin responsive min-width, 110, 120, 120;
 	border-left: var(--border) solid var(--gray-300-color);
 	@mixin responsive padding-inline, 5, 40, 40;
 	display: flex;
@@ -50,9 +50,18 @@
 }
 
 .leftAlign {
-  justify-content: left;
+	justify-content: left;
 }
 
 .rightAlign {
-  justify-content: right;
+	justify-content: right;
+}
+
+.icon {
+	@mixin responsive --size, 15, 30, 30;
+
+	width: var(--size);
+	height: var(--size);
+
+	@mixin responsive margin-inline-end, 5, 10, 10;
 }
