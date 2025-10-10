@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
@@ -14,6 +15,7 @@ export const Document = ({
 	direction,
 	file,
 	name,
+	label,
 	columns,
 	lineClamp,
 }: MediaData & {
@@ -33,36 +35,44 @@ export const Document = ({
 		}
 	};
 
+	const removeFileExtension = (filename: string) => {
+		return filename.replace(/\.[^/.]+$/, '');
+	};
+
+	const comesName = name ? name : removeFileExtension(file.name ?? '');
+	const hasLabel = label ? label : file.ext && file.size;
+
 	return (
-		<article className={cx(css.root, css[direction])}>
+		<article className={cx(css.root, css[direction], { [css.file]: label })}>
 			<div className={css.leftPart}>
-				<img
-					loading="lazy"
-					src={defineIcon()}
-					className={css.icon}
-				/>
+				<img loading="lazy" src={defineIcon()} className={css.icon} />
 				<div className={css.header}>
-					{name && (
+					{comesName && (
 						<h3
-							className={cx(css.name, {
-								[css.bigWidth]: columns && columns < 3,
-							})}
+							className={cx(
+								css.name,
+								{ [css.newName]: file.name },
+								{
+									[css.bigWidth]: columns && columns < 3,
+								}
+							)}
 							style={{ WebkitLineClamp: lineClamp }}
 						>
-							{parser(name)}
+							{parser(comesName)}
 						</h3>
 					)}
-					{file.ext && file.size && (
+					{hasLabel && (
 						<div className={css.info}>
 							{file.ext && (
 								<p className={css.type}>
 									{parser(file.ext.slice(1).toUpperCase())}
 								</p>
 							)}
-							<div className={css.circle} />
+							{!label && <div className={css.circle} />}
 							{file.size && (
 								<p className={css.size}>{Math.floor(file.size)}KB</p>
 							)}
+							{label && <p className={css.size}>{parser(label)}</p>}
 						</div>
 					)}
 				</div>
@@ -73,7 +83,7 @@ export const Document = ({
 				className={css.button}
 				onClick={() => downloadFile(file.url ?? '', name || 'file')}
 			>
-				Download
+				{!label && 'Download'}
 			</Button>
 			<Link
 				href={file.url ?? '#'}

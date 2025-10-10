@@ -20,22 +20,20 @@ const PlacementSlider: React.FC<PlacementSliderProps> = ({
 		<Swiper
 			grabCursor
 			className={cx(css.root, className)}
-			slidesPerView={3}
+			slidesPerView={1.2}
 			navigation
-			spaceBetween={20}
+			spaceBetween={24}
 			pagination={{ clickable: true }}
 			modules={[Navigation, Pagination]}
 			resizeObserver
 			onResize={swiper => swiper.update()}
 			breakpoints={{
 				320: {
-					slidesPerView: 1,
+					slidesPerView: 1.11,
 				},
-				768: {
-					slidesPerView: 3,
-				},
+
 				1440: {
-					slidesPerView: 3,
+					slidesPerView: 1.2,
 				},
 			}}
 		>

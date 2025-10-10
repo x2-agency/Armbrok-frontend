@@ -17,7 +17,7 @@
 			display: none;
 		}
 		@media (max-width: 767px) {
-			display: block;
+			display: none;
 			width: 100%;
 			margin-inline-start: unset;
 			bottom: 2% !important; /* 48px */
@@ -41,6 +41,5 @@
 
 .card {
 	box-sizing: border-box;
-	@mixin responsive width, 330, 384, 384;
-	@mixin responsive height, 600, 602, 602;
+	@mixin responsive width, 310, 1000, 1000;
 }

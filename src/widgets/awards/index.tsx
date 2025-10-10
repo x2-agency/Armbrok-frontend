@@ -48,6 +48,7 @@ export const AwardsSection = ({
 
 	useEffect(() => {
 		if (isOpen && !isFetched) {
+
 			const fetchData = async () => {
 				try {
 					toggleLoading(true);

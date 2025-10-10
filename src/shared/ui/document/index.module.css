@@ -3,6 +3,7 @@
 	@mixin responsive border-radius, 15, 24, 24;
 	@mixin responsive padding-inline, 10, 32, 32;
 	@mixin responsive padding-block, 10, 19, 19;
+	@mixin responsive gap, 16, 16, 16;
 
 	transition-property: background-color;
 	position: relative;
@@ -17,6 +18,27 @@
 		align-items: start;
 		gap: 6rem; /* 23px */
 	}
+}
+
+.file {
+	@mixin responsive padding-inline, 16, 16, 16;
+	@mixin responsive padding-block, 16, 16, 16;
+	@mixin responsive border-radius, 24, 24, 24;
+	@mixin responsive min-height, 96, 104, 104;
+
+	background-color: var(--gray-100-color);
+
+	@media (max-width: 767px) {
+		flex-direction: row;
+		align-items: center;
+		gap: 4rem; /* 23px */
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .leftPart {
@@ -38,6 +60,13 @@
 	@mixin responsive padding-block-end, 4, 4, 4;
 
 	font-weight: 600;
+}
+
+.newName {
+	@mixin font-text16;
+	@mixin responsive padding-block-end, 4, 4, 4;
+
+	font-weight: 500;
 }
 
 .info {
@@ -67,7 +96,7 @@
 	z-index: 100;
 
 	@media (max-width: 767px) {
-		width: 100%;
+		width: fit-content;
 		justify-content: end;
 	}
 }
@@ -126,7 +155,6 @@
 		}
 	}
 }
-
 
 .root {
 	@media (hover: hover) {
