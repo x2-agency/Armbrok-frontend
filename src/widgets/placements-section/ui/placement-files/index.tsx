@@ -67,40 +67,39 @@ export const PlacementFiles = ({
 			</ul>
 
 			{shouldShowButton && (
-				<ul
-					className={cx(css.filesWrap, css.additionalFiles, {
-						[css.open]: isOpen,
-					})}
-					ref={contentRef}
-					style={{
-						maxHeight: isOpen ? `${contentHeight}px` : '0',
-					}}
-				>
-					{additionalFiles.map((file, key) => (
-						<li key={key}>
-							<Document
-								columns={columns}
-								name={file.name}
-								file={file.file}
-								label={file.label}
-								alternativeText={file.alternativeText}
-								direction={fileDirection}
-								lineClamp={lineClamp}
-							/>
-						</li>
-					))}
-				</ul>
-			)}
-
-			{shouldShowButton && (
-				<Button
-					variant="subtle"
-					className={css.button}
-					onClick={handleToggle}
-					aria-expanded={isOpen}
-				>
-					{buttonLabel}
-				</Button>
+				<>
+					<ul
+						className={cx(css.filesWrap, css.additionalFiles, {
+							[css.open]: isOpen,
+						})}
+						ref={contentRef}
+						style={{
+							maxHeight: isOpen ? `${contentHeight}px` : '0',
+						}}
+					>
+						{additionalFiles.map((file, key) => (
+							<li key={key}>
+								<Document
+									columns={columns}
+									name={file.name}
+									file={file.file}
+									label={file.label}
+									alternativeText={file.alternativeText}
+									direction={fileDirection}
+									lineClamp={lineClamp}
+								/>
+							</li>
+						))}
+					</ul>
+					<Button
+						variant="subtle"
+						className={css.button}
+						onClick={handleToggle}
+						aria-expanded={isOpen}
+					>
+						{buttonLabel}
+					</Button>
+				</>
 			)}
 		</>
 	);

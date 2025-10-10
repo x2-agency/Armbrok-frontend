@@ -39,15 +39,15 @@ export const Document = ({
 		return filename.replace(/\.[^/.]+$/, '');
 	};
 
-	const isName = name ? name : removeFileExtension(file.name ?? '');
-	const isLabel = label ? label : file.ext && file.size;
+	const comesName = name ? name : removeFileExtension(file.name ?? '');
+	const hasLabel = label ? label : file.ext && file.size;
 
 	return (
 		<article className={cx(css.root, css[direction], { [css.file]: label })}>
 			<div className={css.leftPart}>
 				<img loading="lazy" src={defineIcon()} className={css.icon} />
 				<div className={css.header}>
-					{isName && (
+					{comesName && (
 						<h3
 							className={cx(
 								css.name,
@@ -58,10 +58,10 @@ export const Document = ({
 							)}
 							style={{ WebkitLineClamp: lineClamp }}
 						>
-							{parser(isName)}
+							{parser(comesName)}
 						</h3>
 					)}
-					{isLabel && (
+					{hasLabel && (
 						<div className={css.info}>
 							{file.ext && (
 								<p className={css.type}>

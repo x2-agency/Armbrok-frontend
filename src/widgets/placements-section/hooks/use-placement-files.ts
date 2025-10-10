@@ -22,7 +22,7 @@ export const usePlacementFiles = (
 		toggleOpen(!isOpen);
 	};
 
-	if (!files || files.length === 0) {
+	if (!files?.length) {
 		return {
 			shouldRender: false,
 		};
