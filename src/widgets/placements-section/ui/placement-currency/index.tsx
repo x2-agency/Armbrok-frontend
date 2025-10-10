@@ -11,24 +11,6 @@ export type PlacementCurrencyProps = {
 	data: Array<PlacementCurrencyType>;
 };
 
-export const DATA: Array<PlacementCurrencyType> = [
-	{
-		amount: 1540000,
-		currency: 'amd',
-		label: 'IPO VOLUME',
-	},
-	{
-		amount: 1500,
-		currency: 'amd',
-		label: 'SHARE PRICE',
-	},
-	{
-		amount: 990000,
-		currency: 'amd',
-		label: 'DAILY LIMIT',
-	},
-];
-
 export const PlacementCurrency = ({ data }: PlacementCurrencyProps) => {
 	const currencyIcons: Record<'usd' | 'amd', string> = {
 		usd: '/assets/icon/currency/usd.svg',
