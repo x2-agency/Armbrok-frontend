@@ -1,43 +1,55 @@
+/* eslint-disable @next/next/no-img-element */
 import cx from 'clsx';
 
 import type { SecurityPaperItem } from '@/shared/types/global.types';
-import { PlacementBody } from '@/widgets/placements-section/ui/placement-body';
+import type { PlacementCurrencyType } from '@/widgets/placements-section/ui/placement-currency';
+import { PlacementCurrency } from '@/widgets/placements-section/ui/placement-currency';
+import { PlacementFiles } from '@/widgets/placements-section/ui/placement-files';
 import { PlacementHead } from '@/widgets/placements-section/ui/placement-head';
-import { PlacementSubtitle } from '@/widgets/placements-section/ui/placement-subtitle';
 
 import css from './index.module.css';
 
 export const PlacementItem = ({
 	name,
-	launchDate,
-	launchDateLabel,
-	ipoVolumeLabel,
-	ipoVolumeValue,
-	sharePriceLabel,
-	sharePriceValue,
+	validityDate,
+	primaryDescription,
+	secondaryDescription,
 	logo,
-	infoBlock,
 	className,
-	shareIssuesNumberLabel,
-	shareIssuesNumberValue,
+	files,
+	columns = 3,
+	fileDirection,
+	lineClamp = 3,
+	showLessButton,
+	showMoreButton,
+	prices,
 }: SecurityPaperItem) => {
 	return (
 		<article className={cx(css.root, 'p-32', className)}>
-			<PlacementHead
-				logo={logo}
-				name={name}
-				launchDateLabel={launchDateLabel}
-				launchDate={launchDate}
-			/>
-			<PlacementSubtitle
-				ipoVolumeLabel={ipoVolumeLabel}
-				ipoVolumeValue={ipoVolumeValue}
-				sharePriceLabel={sharePriceLabel}
-				sharePriceValue={sharePriceValue}
-				shareIssuesNumberValue={shareIssuesNumberValue}
-				shareIssuesNumberLabel={shareIssuesNumberLabel}
-			/>
-			<PlacementBody infoBlock={infoBlock} />
+			<img src={logo?.url} loading="lazy" className={css.icon} />
+			<div className={css.wrap}>
+				<PlacementHead
+					data={{
+						logo,
+						name,
+						validityDate,
+						primaryDescription,
+						secondaryDescription,
+					}}
+				/>
+				{prices && prices.length > 0 && (
+					<PlacementCurrency data={prices as Array<PlacementCurrencyType>} />
+				)}
+
+				<PlacementFiles
+					files={files ?? []}
+					columns={columns}
+					fileDirection={fileDirection}
+					lineClamp={lineClamp}
+					showLessButton={showLessButton}
+					showMoreButton={showMoreButton}
+				/>
+			</div>
 		</article>
 	);
 };

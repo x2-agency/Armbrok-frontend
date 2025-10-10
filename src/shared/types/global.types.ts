@@ -1,3 +1,5 @@
+import type { PlacementCurrencyType } from '@/widgets/placements-section/ui/placement-currency';
+
 import type { PosterImageProps, VideoProps } from './poster';
 
 export type BaseResponse<T> = {
@@ -27,6 +29,7 @@ export type LinkItem = {
 };
 
 export type MediaData = {
+	label?: string;
 	name?: string;
 	alternativeText?: string;
 	formats?: {
@@ -465,8 +468,9 @@ export type Vacancies = {
 
 export type SecurityPaperItem = {
 	name?: string;
-	launchDate?: string;
-	launchDateLabel?: string;
+	validityDate?: { label: string; value: string };
+	primaryDescription?: string;
+	secondaryDescription?: string;
 	ipoVolumeLabel?: string;
 	ipoVolumeValue?: number;
 	sharePriceLabel?: string;
@@ -476,6 +480,13 @@ export type SecurityPaperItem = {
 	logo?: MediaData;
 	infoBlock?: Array<ItemDetail>;
 	className?: string;
+	files?: Array<MediaData>;
+	columns?: number;
+	fileDirection?: 'row' | 'column';
+	lineClamp?: number;
+	showMoreButton?: string;
+	showLessButton?: string;
+	prices?: Array<PlacementCurrencyType>;
 };
 
 export type SecurityPapers = {

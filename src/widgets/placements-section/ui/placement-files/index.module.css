@@ -1,0 +1,37 @@
+.filesWrap {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	@mixin responsive column-gap, 16, 16, 16;
+	@mixin responsive row-gap, 16, 24, 24;
+	@mixin responsive padding-block-end, 16, 16, 16;
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.filesWrap.additionalFiles {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	transition-property: max-height, opacity;
+	padding-block-end: 0;
+
+	&.open {
+		opacity: 1;
+		@mixin responsive padding-block-end, 16, 16, 16;
+	}
+}
+
+.button.button {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding: 0 5%;
+	color: var(--red-500-color);
+}
+
+.loading {
+	transition: opacity 0.2s ease;
+}

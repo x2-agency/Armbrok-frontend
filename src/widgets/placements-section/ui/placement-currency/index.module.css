@@ -1,0 +1,51 @@
+.root {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	@mixin responsive column-gap, 20, 40, 40;
+	align-items: center;
+	justify-content: baseline;
+	@mixin responsive padding-block-end, 24, 24, 24;
+}
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	@mixin responsive gap, 3, 8, 8;
+}
+
+.amountWrap {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	@mixin responsive gap, 4, 4, 4;
+}
+
+.amount {
+	@mixin font-h4;
+	letter-spacing: -1%;
+	font-weight: 600;
+	color: var(--gray-800-color);
+
+	@media (max-width: 767px) {
+		@mixin font-text14;
+		font-weight: 500;
+	}
+}
+
+.currencySvg {
+	object-fit: cover;
+	@mixin responsive width, 14, 19, 19;
+	@mixin responsive height, 24, 30, 30;
+}
+
+.label {
+	@mixin font-text14;
+	letter-spacing: -1%;
+
+	color: var(--gray-600-color);
+	text-transform: uppercase;
+
+	@media (max-width: 767px) {
+		@mixin font-text12;
+	}
+}
