@@ -26,7 +26,6 @@ export const PlacementItem = ({
 }: SecurityPaperItem) => {
 	return (
 		<article className={cx(css.root, 'p-32', className)}>
-			<img src={logo?.url} loading="lazy" className={css.icon} />
 			<div className={css.wrap}>
 				<PlacementHead
 					data={{

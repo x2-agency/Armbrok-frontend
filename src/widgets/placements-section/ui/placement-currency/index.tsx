@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import css from './index.module.css';
+import cx from 'clsx';
 
+import css from './index.module.css';
 export type PlacementCurrencyType = {
 	amount?: number;
 	currency?: 'usd' | 'amd';
@@ -21,7 +22,7 @@ export const PlacementCurrency = ({ data }: PlacementCurrencyProps) => {
 		num !== undefined ? num.toLocaleString('en-US') : '';
 
 	return (
-		<ul className={css.root}>
+		<ul className={cx(css.root, { [css.newRoot]: data.length === 1 })}>
 			{data.map((item, index) => {
 				const { amount, currency, label } = item;
 				const currencySvg = currency ? currencyIcons[currency] : undefined;

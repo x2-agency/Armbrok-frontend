@@ -31,7 +31,9 @@ const PlacementSlider: React.FC<PlacementSliderProps> = ({
 				320: {
 					slidesPerView: 1.11,
 				},
-
+				768: {
+					slidesPerView: 1.2,
+				},
 				1440: {
 					slidesPerView: 1.2,
 				},

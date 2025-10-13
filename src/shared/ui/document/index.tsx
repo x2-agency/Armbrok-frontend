@@ -42,6 +42,14 @@ export const Document = ({
 	const comesName = name ? name : removeFileExtension(file.name ?? '');
 	const hasLabel = label ? label : file.ext && file.size;
 
+	// Форматируем имя: обрезаем до 45 символов и добавляем ... только если нужно
+	const formatName = (text: string) => {
+		if (text.length <= 45) {
+			return parser(text);
+		}
+		return parser(text.slice(0, 45) + '...');
+	};
+
 	return (
 		<article className={cx(css.root, css[direction], { [css.file]: label })}>
 			<div className={css.leftPart}>
@@ -58,7 +66,7 @@ export const Document = ({
 							)}
 							style={{ WebkitLineClamp: lineClamp }}
 						>
-							{parser(comesName)}
+							{formatName(comesName)}
 						</h3>
 					)}
 					{hasLabel && (
