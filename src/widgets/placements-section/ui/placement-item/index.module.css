@@ -12,14 +12,6 @@
 	}
 }
 
-.icon {
-	@mixin responsive --size, 72, 134, 134;
-	@mixin responsive border-radius, 12, 12, 12;
-
-	width: var(--size);
-	height: var(--size);
-}
-
 .wrap {
 	width: 100%;
 }
