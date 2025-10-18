@@ -21,3 +21,12 @@
 	border-spacing: 0;
 }
 
+.title {
+	@mixin font-h2;
+	@mixin responsive padding-block-end, 30, 48, 48;
+
+	text-align: center;
+	max-width: 80%;
+	margin-inline: auto;
+	font-weight: 600;
+}

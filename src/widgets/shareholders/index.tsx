@@ -14,21 +14,25 @@ export const Shareholders = ({
 	stockInfo,
 	withoutStockInfo,
 	className,
+	title,
 }: ShareholdersSection) => {
 	return (
-		<Container
-			className={cx(css.root, className, {
-				[css.onlyShareholders]: withoutStockInfo,
-			})}
-		>
-			{!withoutStockInfo && (
-				<StockInformation title={stockInfoTitle} stockInfo={stockInfo} />
-			)}
-			<SignificantShareholders
-				shareholders={shareholders}
-				title={shareholdersTitle}
-				className={css.shareholders}
-			/>
+		<Container className={cx(css.root, className)}>
+			{title && <h2 className={css.title}>{title}</h2>}
+			<div
+				className={cx(css.wrapper, {
+					[css.onlyShareholders]: withoutStockInfo,
+				})}
+			>
+				{!withoutStockInfo && (
+					<StockInformation title={stockInfoTitle} stockInfo={stockInfo} />
+				)}
+				<SignificantShareholders
+					shareholders={shareholders}
+					title={shareholdersTitle}
+					className={css.shareholders}
+				/>
+			</div>
 		</Container>
 	);
 };

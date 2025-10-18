@@ -444,13 +444,14 @@ export type ShareholdersItemType = {
 	photo: MediaData;
 };
 
-export type ShareholdersSection = PropsWithClassname & {
-	stockInfoTitle?: string;
-	shareholdersTitle?: string;
-	stockInfo?: Array<StockInfoType>;
-	shareholders?: Array<ShareholdersItemType>;
-	withoutStockInfo?: boolean;
-};
+export type ShareholdersSection = ItemDetail &
+	PropsWithClassname & {
+		stockInfoTitle?: string;
+		shareholdersTitle?: string;
+		stockInfo?: Array<StockInfoType>;
+		shareholders?: Array<ShareholdersItemType>;
+		withoutStockInfo?: boolean;
+	};
 
 /* Vacancies */
 

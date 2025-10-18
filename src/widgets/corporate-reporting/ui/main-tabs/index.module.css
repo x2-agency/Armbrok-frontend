@@ -11,7 +11,13 @@
 
 	display: flex;
 	margin-inline: auto;
+	max-width: 100%;
+	overflow-x: scroll;
 	background-color: var(--gray-200-color);
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 .button {
