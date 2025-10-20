@@ -24,6 +24,9 @@ export const PlacementItem = ({
 	showMoreButton,
 	prices,
 }: SecurityPaperItem) => {
+
+
+	
 	return (
 		<article className={cx(css.root, 'p-32', className)}>
 			<div className={css.wrap}>

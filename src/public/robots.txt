@@ -3,7 +3,7 @@ User-agent: *
 Disallow: /
 
 # Host
-Host: https://argentina-brok.vercel.app
+Host: https://armbrok-preprod.vercel.app
 
 # Sitemaps
-Sitemap: https://argentina-brok.vercel.app/sitemap.xml
+Sitemap: https://armbrok-preprod.vercel.app/sitemap.xml

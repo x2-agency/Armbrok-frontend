@@ -59,14 +59,13 @@ export const AboutUs: NextPage<AboutUsPageResponse['data']> = ({
 					title={experienceSection?.title ?? ''}
 					description={experienceSection?.description}
 				/>
-				<ExpertSolutionSection
-					items={valuesSection?.factoids}
-					title={valuesSection?.title}
-					withShell
-					backgroundColor="white"
-					className={css.expertSolutions}
-				/>
 			</HeroContainer>
+			<ExpertSolutionSection
+				items={valuesSection?.factoids}
+				title={valuesSection?.title}
+				backgroundColor="white"
+				className={css.expertSolutions}
+			/>
 			<AwardsSection
 				title={awardsSection?.title}
 				buttonText={awardsSection?.buttonText}

@@ -9,7 +9,7 @@ import { TitleSection } from '@/shared/ui/title-section';
 import { BannerSection } from '@/widgets/banner-section/ui';
 import { CorporateReporting } from '@/widgets/corporate-reporting';
 import { CountriesSection } from '@/widgets/countries-section';
-import { DividentHistorySection } from '@/widgets/divident-history-section';
+import { DividendHistorySection } from '@/widgets/divident-history-section';
 import { Shareholders } from '@/widgets/shareholders';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
@@ -56,7 +56,7 @@ export const InvestorRelations: NextPage<
 			</HeroContainer>
 			<Shareholders {...shareholdersSection} />
 
-			<DividentHistorySection data={dividendHistorySection} />
+			<DividendHistorySection data={dividendHistorySection} />
 
 			<CountriesSection residenceCountriesSection={residenceCountries} />
 			{documentTabsSection && <CorporateReporting {...documentTabsSection} />}

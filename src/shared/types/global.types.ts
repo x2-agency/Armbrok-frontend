@@ -445,6 +445,7 @@ export type ShareholdersItemType = {
 };
 
 export type ShareholdersSection = PropsWithClassname & {
+	title?: string;
 	stockInfoTitle?: string;
 	shareholdersTitle?: string;
 	stockInfo?: Array<StockInfoType>;

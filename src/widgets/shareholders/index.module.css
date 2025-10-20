@@ -21,3 +21,11 @@
 		flex-direction: column;
 	}
 }
+
+.title {
+	@mixin font-h2;
+	@mixin responsive padding-block-end, 30, 48, 48;
+
+	text-align: center;
+	font-weight: 600;
+}
