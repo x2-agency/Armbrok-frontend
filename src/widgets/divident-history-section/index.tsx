@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import parser from 'html-react-parser';
 
 import { Container } from '@/shared/ui/container';
 
@@ -11,21 +12,23 @@ import { Thead } from './ui/thead';
 export type DividendHistorySectionType = {
 	headers: { list: Array<TheadType> };
 	list: Array<TbodyType>;
+	title?: string;
 };
 
 export type DividendHistorySectionProps = {
 	data?: DividendHistorySectionType;
 };
 
-export const DividentHistorySection = ({
+export const DividendHistorySection = ({
 	data,
 }: DividendHistorySectionProps) => {
 	if (!data) return null;
 
-	const { headers, list } = data;
+	const { headers, list, title } = data;
 
 	return (
 		<Container className={cx(css.root)}>
+			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<table className={css.table}>
 				<Thead list={headers.list} />
 				<Tbody list={list} />
