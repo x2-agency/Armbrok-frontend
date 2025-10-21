@@ -31,7 +31,7 @@
 
 .company {
 	@mixin responsive width, 282, 282, 282;
-	@mixin responsive height, 125, 125, 125;
+	@mixin responsive height, 53, 53, 53;
 
 	position: relative;
 	cursor: pointer;
