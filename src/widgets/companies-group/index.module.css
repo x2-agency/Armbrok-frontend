@@ -11,6 +11,8 @@
 }
 
 .companies {
+	@mixin responsive gap, 20;
+
 	display: flex;
 	justify-content: space-between;
 
