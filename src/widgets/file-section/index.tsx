@@ -25,6 +25,8 @@ export const FileSection = ({
 
 	return (
 		<Container className={cx(css.root, className)}>
+			<h2 className={css.title}>{parser(title ?? '')}</h2>
+
 			<ul className={css.list} id="internal-rules">
 				{(title || description) && enabled && (
 					<div className={css.titleBlock}>

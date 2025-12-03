@@ -1,4 +1,7 @@
 .root {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
 	@mixin responsive padding-block-end, 30, 48, 48;
 }
 
@@ -40,8 +43,8 @@
 
 .title {
 	@mixin font-h2;
-	@mixin responsive max-width, 0, 640, 640;
 
+	@mixin responsive padding-block-end, 20, 48, 48;
 	font-weight: 600;
 
 	@media (max-width: 767px) {
