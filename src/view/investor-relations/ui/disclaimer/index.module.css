@@ -1,6 +1,5 @@
 .root {
 	@mixin responsive padding-block-end, 60, 48, 48;
-	@mixin responsive max-width, 320, 700, 700;
 
 	margin-inline: auto;
 
@@ -63,6 +62,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	@mixin responsive max-width, 320, 700, 700;
+	margin-inline: auto;
 
 	ul {
 		padding-inline-start: 1.5rem;
@@ -101,6 +102,8 @@
 
 .accordionInnerContent {
 	@mixin font-text16;
+	@mixin responsive max-width, 350, 700, 700;
+	margin-inline: auto;
 
 	ul,
 	ol {
@@ -110,6 +113,10 @@
 		list-style-position: outside;
 		display: flex;
 		flex-direction: column;
+
+		@media (max-width: 767px) {
+			padding-inline-start: 5.5rem;
+		}
 	}
 }
 

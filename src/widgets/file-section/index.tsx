@@ -31,8 +31,6 @@ export const FileSection = ({
 		return null;
 	}
 
-	console.log(documents);
-
 	return (
 		<Container className={cx(css.root, className)}>
 			<div className={css.wrap}>
