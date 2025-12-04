@@ -18,10 +18,12 @@ export const Document = ({
 	label,
 	columns,
 	lineClamp,
+	className,
 }: MediaData & {
-	direction: string;
+	direction?: string;
 	columns?: number;
-	lineClamp: number;
+	lineClamp?: number;
+	className?: string;
 }) => {
 	if (!file) {
 		return null;
@@ -51,7 +53,11 @@ export const Document = ({
 	};
 
 	return (
-		<article className={cx(css.root, css[direction], { [css.file]: label })}>
+		<article
+			className={cx(css.root, className, css[direction ?? ''], {
+				[css.file]: label,
+			})}
+		>
 			<div className={css.leftPart}>
 				<img loading="lazy" src={defineIcon()} className={css.icon} />
 				<div className={css.header}>

@@ -1,6 +1,5 @@
 .root {
 	@mixin responsive padding-block-end, 60, 48, 48;
-	@mixin responsive max-width, 320, 700, 700;
 
 	margin-inline: auto;
 
@@ -22,7 +21,6 @@
 
 	ul,
 	ol {
-		@mixin responsive padding-inline-start, 15, 25, 25;
 		@mixin responsive gap, 10, 15, 15;
 
 		list-style: disc;
@@ -36,4 +34,107 @@
 	font-weight: 600;
 	text-align: center;
 	@mixin responsive padding-block-end, 20, 48, 48;
+}
+
+.details[open] + .accordionContent {
+	@mixin responsive padding-block-end, 15, 32, 32;
+	grid-template-rows: 1fr;
+	opacity: 1;
+}
+
+.details[open] .icon {
+	rotate: 180deg;
+}
+
+.accordionContentBody {
+	overflow: hidden;
+}
+
+.summary {
+	all: unset;
+	cursor: pointer;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	@mixin responsive max-width, 320, 700, 700;
+	margin-inline: auto;
+
+	ul {
+		padding-inline-start: 1.5rem;
+	}
+
+	@mixin responsive padding-block-end, 15, 32, 32;
+
+	&:active {
+		background: none;
+		outline: none;
+		box-shadow: none;
+		transform: none;
+	}
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+	&::-moz-list-bullet {
+		list-style-type: none;
+	}
+
+	@media (max-width: 767px) {
+		gap: 6rem;
+	}
+}
+
+.accordionContent {
+	@mixin transition;
+
+	display: grid;
+	grid-template-rows: 0fr;
+	opacity: 0;
+	transition-property: grid-template-rows opacity;
+	padding-block-start: unset !important;
+}
+
+.accordionInnerContent {
+	@mixin font-text16;
+	@mixin responsive max-width, 350, 700, 700;
+	margin-inline: auto;
+
+	ul,
+	ol {
+		@mixin responsive gap, 10, 15, 15;
+		padding-inline-start: 1.5rem;
+		list-style: disc;
+		list-style-position: outside;
+		display: flex;
+		flex-direction: column;
+
+		@media (max-width: 767px) {
+			padding-inline-start: 5.5rem;
+		}
+	}
+}
+
+.button {
+	@mixin responsive padding-block-start, 15, 20, 20;
+}
+
+.button {
+	@mixin transition;
+
+	display: flex;
+	position: relative;
+	width: fit-content;
+	outline: none;
+	margin-inline: auto;
+	z-index: 100;
+
+	svg path {
+		@mixin transition;
+	}
 }

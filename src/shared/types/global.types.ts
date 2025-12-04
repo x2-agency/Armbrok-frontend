@@ -44,6 +44,8 @@ export type MediaData = {
 		size?: number;
 		ext?: '.pdf' | '.xlsx';
 	};
+	size?: number;
+	ext?: '.pdf' | '.xlsx';
 	url?: string;
 };
 

@@ -15,8 +15,6 @@
 }
 
 .countries {
-	@mixin responsive padding-block-end, 30, 40, 40;
-
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -31,6 +29,10 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}
+}
+
+.countries:has(+ p) {
+	@mixin responsive padding-block-end, 30, 40, 40;
 }
 
 .others {

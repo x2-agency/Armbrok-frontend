@@ -34,7 +34,7 @@ export const StatutoryDocuments = ({
 						</h2>
 					)}
 					{description && (
-						<p className={css.description}>{parser(description)}</p>
+						<p className={css.description}>{parser(description ?? '')}</p>
 					)}
 				</div>
 			)}

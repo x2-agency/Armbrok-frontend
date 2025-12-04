@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 'use client';
 
+import cx from 'clsx';
 import type { NextPage } from 'next';
 import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
@@ -72,15 +73,17 @@ export const Media: NextPage<{
 	}, [searchQuery]);
 
 	const isNoNews = !isLoading && filteredBySearch.length === 0;
+	const tags = initialArticles?.categories ?? [];
+	const isFewTabs = tags.length < 3;
 
 	return (
 		<section className={css.root}>
 			<TitleSlugSection title={title} description={description} />
 			{/* <SearchNews onSearchChange={setSearchQuery} /> */}
 
-			<div className={css['tabs-container']}>
+			<div className={cx(css['tabs-container'], { [css.few]: isFewTabs })}>
 				<Tabs
-					className={css.tabs}
+					className={cx(css.tabs)}
 					onChangeTab={onChangeTab}
 					currentTag={currentTag}
 					tags={initialArticles?.categories ?? []}

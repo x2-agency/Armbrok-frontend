@@ -9,12 +9,12 @@ import { Button } from '@/shared/ui/button';
 
 import css from './index.module.css';
 
-type DocumentProps = {
+type DocumentFileProps = {
 	name: string;
 	url: string;
 };
 
-export const Document = ({ name, url }: DocumentProps) => {
+export const DocumentFile = ({ name, url }: DocumentFileProps) => {
 	return (
 		<article className={cx(css.root, 'p-32')}>
 			<p className={css.title}>{parser(name)}</p>

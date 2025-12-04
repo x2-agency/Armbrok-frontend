@@ -1,15 +1,20 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 
-import type { DocumentsSectionProps } from '@/shared/types/global.types';
+import type {
+	DocumentsSectionProps,
+	MediaData,
+} from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
+import { Document } from '@/shared/ui/document';
 
 import css from './index.module.css';
-import { Document } from './ui/document';
+import { DocumentFile } from './ui/document-file';
 
 type FileSectionProps = DocumentsSectionProps & {
 	className?: string;
 	enabled?: boolean;
+	regulationsFile?: MediaData;
 };
 
 export const FileSection = ({
@@ -18,6 +23,7 @@ export const FileSection = ({
 	className,
 	documents,
 	enabled,
+	regulationsFile,
 }: FileSectionProps) => {
 	if (!documents || documents.length === 0) {
 		return null;
@@ -25,16 +31,32 @@ export const FileSection = ({
 
 	return (
 		<Container className={cx(css.root, className)}>
+			<div className={css.wrap}>
+				<h2 className={css.title}>{parser(title ?? '')}</h2>
+				<Document
+					className={css.regulationFile}
+					file={
+						regulationsFile?.url
+							? {
+									url: regulationsFile.url,
+									size: regulationsFile.size,
+									ext: regulationsFile.ext,
+								}
+							: undefined
+					}
+					alternativeText={regulationsFile?.alternativeText}
+				/>
+			</div>
+
 			<ul className={css.list} id="internal-rules">
-				{(title || description) && enabled && (
+				{description && enabled && (
 					<div className={css.titleBlock}>
-						{title && <h3 className={css.title}>{parser(title)}</h3>}
 						{description && parser(description)}
 					</div>
 				)}
 				{documents.map((document, index) => (
 					<li key={index} className={css.listItem}>
-						<Document
+						<DocumentFile
 							name={document.name ?? ''}
 							url={document.file?.url ?? ''}
 						/>

@@ -46,6 +46,10 @@
 	}
 }
 
+.few {
+	width: unset;
+}
+
 .tabs {
 	@media (max-width: 767px) {
 		overflow-x: visible;
