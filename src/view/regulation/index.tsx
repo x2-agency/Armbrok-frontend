@@ -15,9 +15,9 @@ export const Regulation: NextPage<RegulationPageData> = ({
 	documentsSection,
 	rulesDocumentsSection,
 	parentFunds,
+	regulationsFile,
 }) => {
 	useAppendToHeaderFunds({ funds: parentFunds });
-
 	return (
 		<div className={css.root}>
 			{pageTitle && <h1 className={css.title}>{parser(pageTitle)}</h1>}
@@ -31,6 +31,7 @@ export const Regulation: NextPage<RegulationPageData> = ({
 				description={documentsSection?.description}
 				documents={documentsSection?.documents ?? []}
 				enabled={documentsSection?.enabled}
+				regulationsFile={regulationsFile}
 			/>
 		</div>
 	);

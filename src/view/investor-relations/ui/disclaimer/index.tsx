@@ -32,7 +32,7 @@ export const Disclaimer = ({ title, description }: DisclaimerProps) => {
 					{isOpen ? (
 						<Button
 							variant="next"
-							iconRotate={180}
+							iconRotate={90}
 							className={cx(css.button, css.close)}
 							onClick={() => toggleOpen(false)}
 						>
@@ -41,7 +41,7 @@ export const Disclaimer = ({ title, description }: DisclaimerProps) => {
 					) : (
 						<Button
 							variant="next"
-							iconRotate={180}
+							iconRotate={-90}
 							className={css.button}
 							onClick={() => toggleOpen(true)}
 						>
