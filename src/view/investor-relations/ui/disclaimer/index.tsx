@@ -2,6 +2,7 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { splitDescriptionByLi } from '@/shared/helpers/split-description-by-li';
@@ -16,7 +17,7 @@ type DisclaimerProps = {
 
 export const Disclaimer = ({ title, description }: DisclaimerProps) => {
 	const [isOpen, toggleOpen] = useState(false);
-
+	const t = useTranslations('closeAwardButton');
 	if (!(title && description)) return null;
 
 	const { firstPart, restPart } = splitDescriptionByLi(description, 3);
@@ -36,7 +37,7 @@ export const Disclaimer = ({ title, description }: DisclaimerProps) => {
 							className={cx(css.button, css.close)}
 							onClick={() => toggleOpen(false)}
 						>
-							Collapse
+							{t('text')}
 						</Button>
 					) : (
 						<Button
@@ -45,7 +46,7 @@ export const Disclaimer = ({ title, description }: DisclaimerProps) => {
 							className={css.button}
 							onClick={() => toggleOpen(true)}
 						>
-							Show more
+							{t('openText')}
 						</Button>
 					)}
 				</summary>
