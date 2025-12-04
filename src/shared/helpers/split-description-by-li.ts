@@ -1,4 +1,3 @@
-// split-description-by-li.ts
 export const splitDescriptionByLi = (html: string, visibleCount = 3) => {
 	if (!html) {
 		return { firstPart: '', restPart: '' };
