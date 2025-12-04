@@ -23,13 +23,16 @@ export const Author = ({
 	visivleSocial = false,
 }: AuthorData) => {
 	const { avatar, socialMedias } = data ?? {};
+
 	return (
 		<Container
 			className={cx(css.root, className, { [css.extraRoot]: visivleSocial })}
 		>
 			<div className={css.avatarWrap}>
 				<div className={css.avatar}>
-					<img loading="lazy" className={css.img} src={avatar?.url ?? ''} />
+					{avatar?.url && (
+						<img loading="lazy" className={css.img} src={avatar?.url ?? ''} />
+					)}
 				</div>
 				<NameAndPosition data={data} />
 			</div>
