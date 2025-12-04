@@ -104,11 +104,6 @@
 	}
 }
 
-.title,
-.titleBlock p {
-	/* text-align: center; */
-}
-
 .title {
 	@mixin font-h2;
 	text-align: center;

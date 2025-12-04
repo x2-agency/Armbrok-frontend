@@ -11,8 +11,6 @@ import { Document } from '@/shared/ui/document';
 import css from './index.module.css';
 import { DocumentFile } from './ui/document-file';
 
-// import { Document } from './ui/document';
-
 type FileSectionProps = DocumentsSectionProps & {
 	className?: string;
 	enabled?: boolean;
