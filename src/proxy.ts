@@ -16,7 +16,7 @@ const countryToLocale: Record<string, string> = {
 	AM: Locales.AM,
 };
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 	const hasLocale = PUBLIC_LOCALES.some(locale =>
 		pathname.startsWith(`/${locale}`)
