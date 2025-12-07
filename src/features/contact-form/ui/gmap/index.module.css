@@ -5,7 +5,7 @@
 	background-color: var(--gray-300-color);
 }
 
-/* .map {
-	filter: grayscale(85%);
-	-webkit-filter: grayscale(85%);
-} */
+.map {
+	filter: grayscale(53%);
+	-webkit-filter: grayscale(53%);
+}
