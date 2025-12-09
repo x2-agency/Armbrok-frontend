@@ -29,26 +29,6 @@ export const Disclaimer = ({ title, description }: DisclaimerProps) => {
 			<details className={css.details} open={isOpen}>
 				<summary className={css.summary} onClick={e => e.preventDefault()}>
 					{parser(firstPart)}
-
-					{isOpen ? (
-						<Button
-							variant="next"
-							iconRotate={90}
-							className={cx(css.button, css.close)}
-							onClick={() => toggleOpen(false)}
-						>
-							{t('text')}
-						</Button>
-					) : (
-						<Button
-							variant="next"
-							iconRotate={-90}
-							className={css.button}
-							onClick={() => toggleOpen(true)}
-						>
-							{t('openText')}
-						</Button>
-					)}
 				</summary>
 			</details>
 
@@ -59,6 +39,25 @@ export const Disclaimer = ({ title, description }: DisclaimerProps) => {
 					</div>
 				</div>
 			</div>
+			{isOpen ? (
+				<Button
+					variant="next"
+					iconRotate={90}
+					className={cx(css.button, css.close)}
+					onClick={() => toggleOpen(false)}
+				>
+					{t('text')}
+				</Button>
+			) : (
+				<Button
+					variant="next"
+					iconRotate={-90}
+					className={css.button}
+					onClick={() => toggleOpen(true)}
+				>
+					{t('openText')}
+				</Button>
+			)}
 		</section>
 	);
 };

@@ -69,7 +69,7 @@
 		padding-inline-start: 1.5rem;
 	}
 
-	@mixin responsive padding-block-end, 15, 32, 32;
+	@mixin responsive padding-block-end, 10, 15, 15;
 
 	&:active {
 		background: none;

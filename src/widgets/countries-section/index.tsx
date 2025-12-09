@@ -29,6 +29,10 @@ export const CountriesSection = ({
 		countryGroups.push(countries.slice(i, i + chunkSize));
 	}
 
+	console.log(countryGroups);
+
+	const isCountryCount = countryGroups.length >= 2;
+
 	return (
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
@@ -38,10 +42,12 @@ export const CountriesSection = ({
 					key={groupIndex}
 					className={cx(css.countries, {
 						[css.centeredGroup]: group.length < chunkSize,
+
+						[css.itemCentered]: isCountryCount,
 					})}
 				>
 					{group.map((country, index) => (
-						<li key={`${groupIndex}-${index}`} className={css.countryItem}>
+						<li key={`${groupIndex}-${index}`} className={cx(css.countryItem)}>
 							<CountryItem name={country.name} flag={country.flag} />
 						</li>
 					))}
