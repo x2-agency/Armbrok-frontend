@@ -75,13 +75,9 @@
 			},
 			"media": {
 				"text": "Медиа",
-				"articles": {
-					"text": "Статьи",
-					"link": "/media?category=articles"
-				},
-				"investmentIdeas": {
-					"text": "Инвест идеи",
-					"link": "/media?category=invest-ideas"
+				"newsAndInsights": {
+					"text": "Новости и инсайты",
+					"link": "/media?category=news-and-insights"
 				},
 				"companyNews": {
 					"text": "Новости Компании",

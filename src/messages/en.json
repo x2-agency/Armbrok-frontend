@@ -75,13 +75,9 @@
 			},
 			"media": {
 				"text": "Media",
-				"articles": {
-					"text": "Articles",
-					"link": "/media?category=articles"
-				},
-				"investmentIdeas": {
-					"text": "Investment Ideas",
-					"link": "/media?category=invest-ideas"
+				"newsAndInsights": {
+					"text": "News and insights",
+					"link": "/media?category=news-and-insights"
 				},
 				"companyNews": {
 					"text": "Company News",
