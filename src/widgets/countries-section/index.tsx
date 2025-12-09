@@ -13,9 +13,9 @@ export type CountriesSectionProps = {
 };
 
 export const CountriesSection = ({
-																	 residenceCountriesSection,
-																	 className,
-																 }: CountriesSectionProps) => {
+	residenceCountriesSection,
+	className,
+}: CountriesSectionProps) => {
 	const { title, additionalText, countries } = residenceCountriesSection ?? {};
 
 	if (!countries || countries.length === 0) {
