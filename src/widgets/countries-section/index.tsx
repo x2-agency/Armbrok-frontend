@@ -7,7 +7,7 @@ import { Container } from '@/shared/ui/container';
 import css from './index.module.css';
 import { CountryItem } from './ui/country-item';
 
-export type CountriesSectionprops = {
+export type CountriesSectionProps = {
 	residenceCountriesSection?: ResidenceCountriesSectionProps;
 	className?: string;
 };
@@ -15,7 +15,7 @@ export type CountriesSectionprops = {
 export const CountriesSection = ({
 	residenceCountriesSection,
 	className,
-}: CountriesSectionprops) => {
+}: CountriesSectionProps) => {
 	const { title, additionalText, countries } = residenceCountriesSection ?? {};
 
 	if (!countries || countries.length === 0) {
@@ -24,6 +24,7 @@ export const CountriesSection = ({
 
 	const chunkSize = 8;
 	const countryGroups = [];
+
 	for (let i = 0; i < countries.length; i += chunkSize) {
 		countryGroups.push(countries.slice(i, i + chunkSize));
 	}

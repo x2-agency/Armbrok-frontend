@@ -25,7 +25,7 @@ export const Blog: NextPage<{
 		description,
 		poster,
 		markup,
-		latestNewsSection,
+		latestNewsSection = null,
 		author,
 		publishDate,
 		category,
@@ -36,7 +36,7 @@ export const Blog: NextPage<{
 
 	const formattedDate = useFormattedDate(publishDate ?? '', true, true);
 
-	const abbreviatedText = title.slice(0, 24) + `...`;
+	const abbreviatedText = title?.slice(0, 24) + `...`;
 
 	return (
 		<>
@@ -50,24 +50,30 @@ export const Blog: NextPage<{
 
 				<Author data={author} publishDate={formattedDate ?? ''} />
 			</div>
+
 			{poster?.url && (
 				<div className={css.imageWrap}>
-					<img loading="lazy" className={css.img} src={poster?.url} />
+					<img loading="lazy" className={css.img} src={poster?.url} alt={poster?.alternativeText ?? ''} />
 				</div>
 			)}
 
 			<article className={css.root}>
 				<ContentMarkup extraClass={css.markup} html={markup} />
 			</article>
+
 			<Author className={css.authorBottom} data={author} visivleSocial />
-			<NewsSectionHome
-				className={css.news}
-				data={{
-					news: latestNewsSection.articles,
-					title: latestNewsSection.title,
-					description: latestNewsSection.description,
-				}}
-			/>
+			
+			{
+				latestNewsSection &&
+				<NewsSectionHome
+					className={css.news}
+					data={{
+						news: latestNewsSection.articles,
+						title: latestNewsSection.title,
+						description: latestNewsSection.description,
+					}}
+				/>
+			}
 		</>
 	);
 };

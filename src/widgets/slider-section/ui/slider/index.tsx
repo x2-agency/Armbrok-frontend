@@ -3,10 +3,10 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import type { Key } from 'react';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import type { SliderItem } from '@/shared/types/global.types';
 import type { SliderSectionProps } from '@/widgets/slider-section/slider-section.types';
 
 import css from './index.module.css';
@@ -27,7 +27,7 @@ export const Slider = ({
 			slidesPerView="auto"
 			className={cx(css.swiper, {
 				[css.withSummary]: Array.isArray(slider),
-				[css.withoutSummary]: slider.files,
+				[css.withoutSummary]: (slider as SliderItem).files,
 			})}
 			centeredSlides={true}
 			spaceBetween={50}
@@ -47,19 +47,13 @@ export const Slider = ({
 			}}
 			navigation={true}
 		>
-			{slider.files &&
-				slider?.files.map(
-					(
-						value: { url: string | undefined },
-						index: Key | null | undefined
-					) => (
-						<SwiperSlide key={index} className={css.slide}>
-							<div className={css.imageWrapper}>
-								<img src={value.url} loading="lazy" className={css.image} />
-							</div>
-						</SwiperSlide>
-					)
-				)}
+			{(slider as SliderItem)?.files?.map((value, index) => (
+				<SwiperSlide key={index} className={css.slide}>
+					<div className={css.imageWrapper}>
+						<img src={value.url} loading="lazy" className={css.image} />
+					</div>
+				</SwiperSlide>
+			))}
 			{Array.isArray(slider) &&
 				slider?.map((value, index) => (
 					<SwiperSlide key={index} className={css.slide}>

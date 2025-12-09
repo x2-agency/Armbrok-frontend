@@ -14,7 +14,7 @@
 	background-color: var(--gray-200-color);
 }
 
-.button {
+.button[class] {
 	@mixin font-text16;
 	@mixin responsive width, 160, 200, 200;
 	@mixin responsive border-radius, 4, 4, 4;

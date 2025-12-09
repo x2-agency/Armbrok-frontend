@@ -37,7 +37,7 @@
 			left: 50%;
 			top: 50%;
 			translate: -50% -50%;
-			background-image: url('./arrow.svg');
+			background-image: url('/assets/icons/arrow.svg');
 			background-size: 100%;
 		}
 
