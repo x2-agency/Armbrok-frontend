@@ -6,7 +6,6 @@ import type {
 	MediaData,
 } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
-import { Document } from '@/shared/ui/document';
 
 import css from './index.module.css';
 import { DocumentFile } from './ui/document-file';
@@ -23,7 +22,7 @@ export const FileSection = ({
 	className,
 	documents,
 	enabled,
-	regulationsFile,
+	// regulationsFile,
 }: FileSectionProps) => {
 	if (!documents || documents.length === 0) {
 		return null;
@@ -33,7 +32,7 @@ export const FileSection = ({
 		<Container className={cx(css.root, className)}>
 			<div className={css.wrap}>
 				<h2 className={css.title}>{parser(title ?? '')}</h2>
-				<Document
+				{/* <Document
 					className={css.regulationFile}
 					file={
 						regulationsFile?.url
@@ -45,7 +44,7 @@ export const FileSection = ({
 							: undefined
 					}
 					alternativeText={regulationsFile?.alternativeText}
-				/>
+				/> */}
 			</div>
 
 			<ul className={css.list} id="internal-rules">
