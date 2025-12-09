@@ -36,7 +36,7 @@ export const LOCALE_KEYS = {
 				},
 				{
 					root: 'media',
-					items: ['articles', 'investmentIdeas', 'companyNews'],
+					items: ['newsAndInsights', 'companyNews'],
 				},
 				{
 					root: 'regulation',

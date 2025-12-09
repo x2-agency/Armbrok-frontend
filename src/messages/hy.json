@@ -75,13 +75,9 @@
 			},
 			"media": {
 				"text": "Մեդիա",
-				"articles": {
-					"text": "Հոդվածներ",
-					"link": "/media?category=articles"
-				},
-				"investmentIdeas": {
-					"text": "Ներդրումային իդեաներ",
-					"link": "/media?category=invest-ideas"
+				"newsAndInsights": {
+					"text": "Նորություններ և Խորաթափանցություն",
+					"link": "/media?category=news-and-insights"
 				},
 				"companyNews": {
 					"text": "Ընկերության լուրեր",
