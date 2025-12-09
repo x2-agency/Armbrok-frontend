@@ -5,7 +5,7 @@
 	display: flex;
 }
 
-.button {
+.button[class] {
 	@mixin font-text14;
 	@mixin responsive padding-inline, 16, 16, 16;
 	@mixin responsive padding-block, 8, 8, 8;
