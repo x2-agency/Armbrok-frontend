@@ -7,5 +7,6 @@ export const getBlogPage = async (slug: string) => {
 		return response.data;
 	} catch (error) {
 		console.error(error);
+		return null;
 	}
 };
