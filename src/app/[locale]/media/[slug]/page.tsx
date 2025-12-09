@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 
 import { LANGUAGES } from '@/i18n/routing';
@@ -69,6 +70,10 @@ const BlogPage = async ({ params }: BlogPageProps) => {
 		getBlogPage(slug),
 		getParentFunds(),
 	]);
+
+	if (!initialBlogPage) {
+		notFound();
+	}
 
 	return (
 		<Blog initialBlogPage={initialBlogPage} parentFunds={initialFunds.data} />
