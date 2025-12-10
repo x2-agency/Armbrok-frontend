@@ -44,3 +44,7 @@
 .countryItem {
 	@mixin responsive width, 150, 150, 150;
 }
+
+.itemCentered:first-of-type {
+	@mixin responsive padding-block-end, 30, 40, 40;
+}
