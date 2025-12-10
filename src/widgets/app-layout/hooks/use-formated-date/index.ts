@@ -1,42 +1,39 @@
-import { useMemo } from 'react';
+import { useTranslations } from 'next-intl';
+import { useCallback, useMemo } from 'react';
 
-const getTimeAgo = (timeDifferenceInMs: number) => {
-	const timeDifferenceInMinutes = Math.floor(timeDifferenceInMs / (1000 * 60));
-	const timeDifferenceInHours = Math.floor(timeDifferenceInMinutes / 60);
-	const timeDifferenceInDays = Math.floor(timeDifferenceInHours / 24);
-
-	if (timeDifferenceInMinutes < 60) {
-		return `${timeDifferenceInMinutes} min`;
-	} else if (timeDifferenceInHours < 24) {
-		return `${timeDifferenceInHours}h`;
-	} else if (timeDifferenceInDays < 7) {
-		return `${timeDifferenceInDays} day${timeDifferenceInDays > 1 ? 's' : ''}`;
-	} else if (timeDifferenceInDays < 30) {
-		const weeks = Math.floor(timeDifferenceInDays / 7);
-		return `${weeks} week${weeks > 1 ? 's' : ''}`;
-	} else if (timeDifferenceInDays < 365) {
-		const months = Math.floor(timeDifferenceInDays / 30);
-		return `${months} month${months > 1 ? 's' : ''}`;
-	} else {
-		const years = Math.floor(timeDifferenceInDays / 365);
-		return `${years} year${years > 1 ? 's' : ''}`;
-	}
-};
 
 export const useFormattedDate = (
 	dateString: string | undefined,
-	useAlternateFormat: boolean = false,
-	includeTimeAgo: boolean = false
+	options: {
+		readTimeInMinutes?: number | null,
+		useAlternateFormat?: boolean,
+	} = { useAlternateFormat: false }
 ) => {
+	const t = useTranslations('words');
+
+	const getReadTime = useCallback((readTime: number) => {
+		if (readTime >= 60) {
+			const hours = readTime / 60;
+
+			let word = t('hour');
+
+			if (hours > 1) {
+				word = t('hours');
+			}
+
+			return `${hours} ${word}`
+		}
+
+		return `${readTime} ${t('minShort')}`;
+	}, [t]);
+
 	return useMemo(() => {
 		if (!dateString) return null;
 
 		const publicationDate = new Date(dateString);
-		const currentDate = new Date();
-
 		let formattedDate;
 
-		if (useAlternateFormat) {
+		if (options.useAlternateFormat) {
 			formattedDate = publicationDate.toLocaleString('en-GB', {
 				day: '2-digit',
 				month: 'short',
@@ -55,13 +52,10 @@ export const useFormattedDate = (
 				.replace(',', '');
 		}
 
-		if (includeTimeAgo) {
-			const timeDifferenceInMs =
-				currentDate.getTime() - publicationDate.getTime();
-			const timeAgo = getTimeAgo(timeDifferenceInMs);
-			return `${formattedDate} • ${timeAgo} read`;
+		if (options.readTimeInMinutes) {
+			return `${formattedDate} • ${getReadTime(options.readTimeInMinutes)} ${t('read')}`;
 		}
 
 		return formattedDate;
-	}, [dateString, useAlternateFormat, includeTimeAgo]);
+	}, [dateString, getReadTime, options.readTimeInMinutes, options.useAlternateFormat, t]);
 };

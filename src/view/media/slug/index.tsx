@@ -29,12 +29,16 @@ export const Blog: NextPage<{
 		author,
 		publishDate,
 		category,
+		readTimeInMinutes
 	} = initialBlogPage ?? {};
 
 	const isMobile = useMediaQuery('(max-width: 767px)');
 	useAppendToHeaderFunds({ funds: parentFunds });
 
-	const formattedDate = useFormattedDate(publishDate ?? '', true, true);
+	const formattedDate = useFormattedDate(publishDate ?? '', {
+		readTimeInMinutes,
+		useAlternateFormat: true,
+	});
 
 	const abbreviatedText = title?.slice(0, 24) + `...`;
 
@@ -61,7 +65,7 @@ export const Blog: NextPage<{
 				<ContentMarkup extraClass={css.markup} html={markup} />
 			</article>
 
-			<Author className={css.authorBottom} data={author} visivleSocial />
+			<Author className={css.authorBottom} data={author} visibleSocial />
 			
 			{
 				latestNewsSection &&

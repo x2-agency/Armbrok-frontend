@@ -1,4 +1,10 @@
 {
+	"words": {
+		"minShort": "мин",
+		"hour": "час",
+		"hours": "часов",
+		"read": "чтения"
+	},
 	"header": {
 		"loginButton": {
 			"text": "Войти",
