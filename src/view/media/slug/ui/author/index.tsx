@@ -13,31 +13,31 @@ export type AuthorData = {
 	data?: AuthorType;
 	publishDate?: string;
 	className?: string;
-	visivleSocial?: boolean;
+	visibleSocial?: boolean;
 };
 
 export const Author = ({
 	data,
 	publishDate,
 	className,
-	visivleSocial = false,
+	visibleSocial = false,
 }: AuthorData) => {
 	const { avatar, socialMedias } = data ?? {};
 
 	return (
 		<Container
-			className={cx(css.root, className, { [css.extraRoot]: visivleSocial })}
+			className={cx(css.root, className, { [css.extraRoot]: visibleSocial })}
 		>
 			<div className={css.avatarWrap}>
 				<div className={css.avatar}>
 					{avatar?.url && (
-						<img loading="lazy" className={css.img} src={avatar?.url ?? ''} />
+						<img loading="lazy" className={css.img} src={avatar?.url ?? ''} alt={avatar?.alternativeText ?? ''} />
 					)}
 				</div>
 				<NameAndPosition data={data} />
 			</div>
 			<time className={css.date}>{parser(publishDate ?? '')} </time>
-			{visivleSocial && <Social className={css.social} social={socialMedias} />}
+			{visibleSocial && <Social className={css.social} social={socialMedias} />}
 		</Container>
 	);
 };

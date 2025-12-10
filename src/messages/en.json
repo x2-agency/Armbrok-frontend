@@ -1,4 +1,10 @@
 {
+	"words": {
+		"minShort": "min",
+		"hour": "hour",
+		"hours": "hours",
+		"read": "read"
+	},
 	"header": {
 		"loginButton": {
 			"text": "Log in",

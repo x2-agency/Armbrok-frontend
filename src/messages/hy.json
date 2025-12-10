@@ -1,4 +1,10 @@
 {
+	"words": {
+		"minShort": "րոպե",
+		"hour": "ժամ",
+		"hours": "ժամ",
+		"read": "կարդալու"
+	},
 	"header": {
 		"loginButton": {
 			"text": "Մտնել",
