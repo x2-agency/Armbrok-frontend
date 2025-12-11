@@ -22,7 +22,6 @@ export const FileSection = ({
 	className,
 	documents,
 	enabled,
-	// regulationsFile,
 }: FileSectionProps) => {
 	if (!documents || documents.length === 0) {
 		return null;
@@ -32,19 +31,6 @@ export const FileSection = ({
 		<Container className={cx(css.root, className)}>
 			<div className={css.wrap}>
 				<h2 className={css.title}>{parser(title ?? '')}</h2>
-				{/* <Document
-					className={css.regulationFile}
-					file={
-						regulationsFile?.url
-							? {
-									url: regulationsFile.url,
-									size: regulationsFile.size,
-									ext: regulationsFile.ext,
-								}
-							: undefined
-					}
-					alternativeText={regulationsFile?.alternativeText}
-				/> */}
 			</div>
 
 			<ul className={css.list} id="internal-rules">
