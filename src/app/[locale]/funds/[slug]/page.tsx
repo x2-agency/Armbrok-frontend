@@ -5,6 +5,7 @@ import { Locales } from '@/i18n/routing';
 import { getFundPage } from '@/shared/api/get-fund-page';
 import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
 import { getIsrParentFunds } from '@/shared/api/get-isr-parent-funds';
+import { generateTemplateMetadata } from '@/shared/helpers/generate-template-metadata';
 import type { ParentFundProps } from '@/shared/types/global.types';
 import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import { Fund } from '@/view/fund';
@@ -14,26 +15,8 @@ export async function generateMetadata({
 }: SlugParams): Promise<Metadata> {
 	const { slug } = await params;
 	const initialFundPageData = await getFundPage({ slug });
-	const seo = initialFundPageData?.data?.seo;
 
-	if (!seo) {
-		return {
-			title: 'Fund',
-		};
-	}
-
-	return {
-		metadataBase: process.env.NEXT_PUBLIC_WEBSITE_URL
-			? new URL(process.env.NEXT_PUBLIC_WEBSITE_URL)
-			: undefined,
-		title: seo.metaTitle,
-		description: seo.metaDescription,
-		openGraph: {
-			title: seo.metaTitle,
-			description: seo.metaDescription,
-			images: seo.shareImage ? [seo.shareImage.url] : [],
-		},
-	};
+	return generateTemplateMetadata({ seo: initialFundPageData?.data?.seo });
 }
 
 export const revalidate = 1;

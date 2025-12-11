@@ -5,7 +5,6 @@ import { setRequestLocale } from 'next-intl/server';
 import { LANGUAGES } from '@/i18n/routing';
 import { getIsrArticles } from '@/shared/api/get-article';
 import { getBlogPage } from '@/shared/api/get-blog-page';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import { Blog } from '@/view/media/slug';
 
@@ -54,7 +53,7 @@ export const generateStaticParams = async () => {
 			(response?.data ?? []).map(article => ({
 				slug: article.slug,
 				locale,
-			})),
+			}))
 		);
 	} catch (error) {
 		console.error(error);
@@ -66,18 +65,13 @@ export const generateStaticParams = async () => {
 const BlogPage = async ({ params }: BlogPageProps) => {
 	const { slug } = await params;
 
-	const [initialBlogPage, initialFunds] = await Promise.all([
-		getBlogPage(slug),
-		getParentFunds(),
-	]);
+	const [initialBlogPage] = await Promise.all([getBlogPage(slug)]);
 
 	if (!initialBlogPage) {
 		notFound();
 	}
 
-	return (
-		<Blog initialBlogPage={initialBlogPage} parentFunds={initialFunds.data} />
-	);
+	return <Blog initialBlogPage={initialBlogPage} />;
 };
 
 export default BlogPage;

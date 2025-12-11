@@ -2,31 +2,16 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getContactPage } from '@/shared/api/get-contact-page';
+import { generateTemplateMetadata } from '@/shared/helpers/generate-template-metadata';
 import type { LocaleParams } from '@/shared/types/params';
 import { ArmbrokContact } from '@/view/armbrok-contact';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const initialContactPageData = await getContactPage();
-	const seo = initialContactPageData?.data?.seo;
 
-	if (!seo) {
-		return {
-			title: 'Contact us',
-		};
-	}
-
-	return {
-		metadataBase: process.env.NEXT_PUBLIC_WEBSITE_URL
-			? new URL(process.env.NEXT_PUBLIC_WEBSITE_URL)
-			: undefined,
-		title: seo.metaTitle,
-		description: seo.metaDescription,
-		openGraph: {
-			title: seo.metaTitle,
-			description: seo.metaDescription,
-			images: seo.shareImage ? [seo.shareImage.url] : [],
-		},
-	};
+	return generateTemplateMetadata({
+		seo: initialContactPageData?.data?.seo,
+	});
 }
 
 export const revalidate = 1;

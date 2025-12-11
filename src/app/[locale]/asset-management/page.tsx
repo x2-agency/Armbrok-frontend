@@ -2,31 +2,16 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getAssetManagementPage } from '@/shared/api/get-asset-management';
+import { generateTemplateMetadata } from '@/shared/helpers/generate-template-metadata';
 import type { LocaleParams } from '@/shared/types/params';
 import { AssetManagement } from '@/view/asset-management';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const initialAssetManagementPageData = await getAssetManagementPage();
-	const seo = initialAssetManagementPageData?.data?.seo;
 
-	if (!seo) {
-		return {
-			title: 'Asset Management',
-		};
-	}
-
-	return {
-		metadataBase: process.env.NEXT_PUBLIC_WEBSITE_URL
-			? new URL(process.env.NEXT_PUBLIC_WEBSITE_URL)
-			: undefined,
-		title: seo.metaTitle,
-		description: seo.metaDescription,
-		openGraph: {
-			title: seo.metaTitle,
-			description: seo.metaDescription,
-			images: seo.shareImage ? [seo.shareImage.url] : [],
-		},
-	};
+	return generateTemplateMetadata({
+		seo: initialAssetManagementPageData?.data?.seo,
+	});
 }
 
 export const revalidate = 1;

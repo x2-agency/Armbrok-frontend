@@ -2,31 +2,16 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getClientRightsPage } from '@/shared/api/get-client-rights';
+import { generateTemplateMetadata } from '@/shared/helpers/generate-template-metadata';
 import type { LocaleParams } from '@/shared/types/params';
 import { ClientRights } from '@/view/client-rights';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const initialClientRightsPageData = await getClientRightsPage();
-	const seo = initialClientRightsPageData?.data?.seo;
 
-	if (!seo) {
-		return {
-			title: 'Client Rights',
-		};
-	}
-
-	return {
-		metadataBase: process.env.NEXT_PUBLIC_WEBSITE_URL
-			? new URL(process.env.NEXT_PUBLIC_WEBSITE_URL)
-			: undefined,
-		title: seo.metaTitle,
-		description: seo.metaDescription,
-		openGraph: {
-			title: seo.metaTitle,
-			description: seo.metaDescription,
-			images: seo.shareImage ? [seo.shareImage.url] : [],
-		},
-	};
+	return generateTemplateMetadata({
+		seo: initialClientRightsPageData?.data?.seo,
+	});
 }
 
 export const revalidate = 1;
