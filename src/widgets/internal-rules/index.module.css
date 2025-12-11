@@ -1,0 +1,17 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	@mixin responsive gap, 24, 42, 42;
+
+	@mixin responsive padding-block-end, 60, 120, 120;
+}
+
+.title {
+	@mixin font-h2;
+	text-align: center;
+	font-weight: 600;
+
+	@media (max-width: 767px) {
+		max-width: unset;
+	}
+}

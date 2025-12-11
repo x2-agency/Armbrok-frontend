@@ -4,13 +4,15 @@ import type {
 	MediaData,
 	ParentFundProps,
 } from '@/shared/types/global.types';
+import type { InternalRulesType } from '@/widgets/internal-rules';
 
 export type RegulationPageData = {
-	pageTitle?: string;
+	title?: string;
 	regulationsFile?: MediaData;
-	documentsSection?: DocumentsSectionProps;
-	rulesDocumentsSection?: DocumentsSectionProps;
+	stockExchangeRules?: DocumentsSectionProps;
+	laws?: DocumentsSectionProps;
 	parentFunds?: Array<ParentFundProps>;
+	internalRules?: InternalRulesType;
 };
 
 export type RegulationPageResponse = BaseResponse<RegulationPageData>;
