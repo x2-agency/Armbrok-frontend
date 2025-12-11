@@ -91,13 +91,13 @@
 				}
 			},
 			"regulation": {
-				"text": "Կարգավորում",
+				"text": "Ներքին կանոնակարգեր",
 				"lawsLegalActs": {
 					"text": "Օրենքներ և իրավական ակտեր",
 					"link": "/regulation#laws"
 				},
 				"internalRules": {
-					"text": "Ներքին կանոնակարգեր",
+					"text": "Կարգավորում",
 					"link": "/regulation#internal-rules"
 				},
 				"stockExchangeRules": {
@@ -240,7 +240,7 @@
 				"text": "Կարիերա",
 				"link": "/careers-at-armbrok"
 			}
-		}
+		}	
 	},
 	"closeAwardButton": {
 		"text": "Ցույց տալ պակաս",

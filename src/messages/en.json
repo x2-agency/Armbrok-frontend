@@ -91,13 +91,13 @@
 				}
 			},
 			"regulation": {
-				"text": "Regulation",
+				"text": "Internal Rules",
 				"lawsLegalActs": {
 					"text": "Laws &amp;&nbsp;Legal Acts",
 					"link": "/regulation#laws"
 				},
 				"internalRules": {
-					"text": "Internal Rules",
+					"text": "Regulation",
 					"link": "/regulation#internal-rules"
 				},
 				"stockExchangeRules": {
