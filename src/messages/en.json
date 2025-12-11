@@ -305,5 +305,6 @@
 		"text": "Attach file",
 		"sizeError": "File size must not exceed"
 	},
-	"buttonText": "Show more"
+	"buttonText": "Show more",
+	"openInGoogleMaps": { "title": "Open in&nbsp;Google Maps" }
 }
