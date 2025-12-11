@@ -1,5 +1,4 @@
-import axios from 'axios';
-
+import apiClient from '@/shared/api/api-client';
 import type { RegulationInternalsType } from '@/shared/types/regulations';
 
 type GetAllRegulationInternalsResponse = {
@@ -9,9 +8,7 @@ type GetAllRegulationInternalsResponse = {
 export const getAllRegulationInternals =
 	async (): Promise<GetAllRegulationInternalsResponse | null> => {
 		try {
-			const response = await axios.get(
-				`${process.env.NEXT_PUBLIC_API_URL}/regulation-internals`
-			);
+			const response = await apiClient.get(`/regulation-internals`);
 
 			return response.data;
 		} catch (error) {
