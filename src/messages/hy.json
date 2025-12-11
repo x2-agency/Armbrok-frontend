@@ -307,5 +307,6 @@
 		"text": "Կցել ֆայլեր",
 		"sizeError": "Ֆայլի չափը չպետք է գերազանցի"
 	},
-	"buttonText": "Ցույց տալ բոլորը"
+	"buttonText": "Ցույց տալ բոլորը",
+	"openInGoogleMaps": { "title": "Բացել Google Maps-ում" }
 }

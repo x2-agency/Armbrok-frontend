@@ -1,5 +1,22 @@
-import { LoadScript } from '@react-google-maps/api';
+import {
+	GoogleMap,
+	LoadScript,
+	Marker,
+	InfoWindow,
+} from '@react-google-maps/api';
 import cx from 'clsx';
+import HTMLReactParser from 'html-react-parser/lib/index';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+
+import {
+	GOOGLE_MAP_CONTAINER_STYLE,
+	GOOGLE_MAP_MARKER_POSITION,
+	GOOGLE_MAP_STYLES_SETTING,
+	GOOGLE_MAPS_LINK,
+	INFO_WINDOW_DATA,
+} from '@/features/contact-form/model/google-map.constants';
 
 import css from './index.module.css';
 
@@ -8,25 +25,48 @@ type GMapProps = {
 };
 
 export const GMap = ({ className }: GMapProps) => {
-	const containerStyle = {
-		width: '100%',
-		height: '100%',
-	};
+	const [isOpen, setIsOpen] = useState(false);
+	const t = useTranslations('openInGoogleMaps');
 
 	return (
 		<address className={cx(css.root, className)}>
 			<LoadScript
-				googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY ?? ''}
+				googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY ?? ''}
 			>
-				<iframe
-					width={containerStyle.width}
-					height={containerStyle.height}
-					className={css.map}
-					loading="lazy"
-					allowFullScreen
-					referrerPolicy="no-referrer-when-downgrade"
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.6789012345!2d44.512541615!3d40.1761851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abc5d8d688661%3A0xfabbc06d3f1d219e!2sArmbrok%20Investment%20Company!5e0!3m2!1sen!2sge!4v1698765432100"
-				></iframe>
+				<GoogleMap
+					mapContainerStyle={GOOGLE_MAP_CONTAINER_STYLE}
+					center={GOOGLE_MAP_MARKER_POSITION}
+					zoom={19}
+					options={{
+						styles: GOOGLE_MAP_STYLES_SETTING,
+						disableDefaultUI: true,
+					}}
+				>
+					<Marker
+						position={GOOGLE_MAP_MARKER_POSITION}
+						onClick={() => setIsOpen(true)}
+					>
+						{isOpen && (
+							<InfoWindow
+								onCloseClick={() => setIsOpen(false)}
+								options={{ headerContent: 'Armbrok Investment Company' }}
+							>
+								<div className={css.infoWindow}>
+									<div>{HTMLReactParser(INFO_WINDOW_DATA.company)}</div>
+									<div>{HTMLReactParser(INFO_WINDOW_DATA.address)}</div>
+									<Link
+										href={GOOGLE_MAPS_LINK}
+										target="_blank"
+										rel="noreferrer"
+										className={css.link}
+									>
+										{HTMLReactParser(t('title'))}
+									</Link>
+								</div>
+							</InfoWindow>
+						)}
+					</Marker>
+				</GoogleMap>
 			</LoadScript>
 		</address>
 	);
