@@ -3,7 +3,6 @@
 import parser from 'html-react-parser';
 import type { NextPage } from 'next';
 
-import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { FileSection } from '@/widgets/file-section';
 import { StatutoryDocuments } from '@/widgets/statutory-documents';
 
@@ -14,10 +13,8 @@ export const Regulation: NextPage<RegulationPageData> = ({
 	pageTitle,
 	documentsSection,
 	rulesDocumentsSection,
-	parentFunds,
 	regulationsFile,
 }) => {
-	useAppendToHeaderFunds({ funds: parentFunds });
 	return (
 		<div className={css.root}>
 			{pageTitle && <h1 className={css.title}>{parser(pageTitle)}</h1>}

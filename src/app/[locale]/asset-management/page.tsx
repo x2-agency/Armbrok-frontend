@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getAssetManagementPage } from '@/shared/api/get-asset-management';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams } from '@/shared/types/params';
 import { AssetManagement } from '@/view/asset-management';
 
@@ -37,12 +36,9 @@ const AssetManagementPage = async ({ params }: LocaleParams) => {
 	setRequestLocale(locale);
 
 	try {
-		const [initialAssetManagementPageData, initialFunds] = await Promise.all([
+		const [initialAssetManagementPageData] = await Promise.all([
 			getAssetManagementPage(),
-			getParentFunds(),
 		]);
-
-		initialAssetManagementPageData.data.parentFunds = initialFunds.data;
 
 		return <AssetManagement initialData={initialAssetManagementPageData} />;
 	} catch {

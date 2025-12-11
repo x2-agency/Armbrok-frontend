@@ -2,7 +2,6 @@ import type {
 	BaseResponse,
 	DocumentsSectionProps,
 	MediaData,
-	ParentFundProps,
 } from '@/shared/types/global.types';
 
 export type RegulationPageData = {
@@ -10,7 +9,6 @@ export type RegulationPageData = {
 	regulationsFile?: MediaData;
 	documentsSection?: DocumentsSectionProps;
 	rulesDocumentsSection?: DocumentsSectionProps;
-	parentFunds?: Array<ParentFundProps>;
 };
 
 export type RegulationPageResponse = BaseResponse<RegulationPageData>;

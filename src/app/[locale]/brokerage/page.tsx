@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getBrokeragePage } from '@/shared/api/get-brokerage';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams } from '@/shared/types/params';
 import { Brokerage } from '@/view/brokerage';
 
@@ -36,12 +35,7 @@ const BrokeragePage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [initialBrokeragePageData, initialFunds] = await Promise.all([
-		getBrokeragePage(),
-		getParentFunds(),
-	]);
-
-	initialBrokeragePageData.data.parentFunds = initialFunds.data;
+	const [initialBrokeragePageData] = await Promise.all([getBrokeragePage()]);
 
 	return <Brokerage initialData={initialBrokeragePageData || undefined} />;
 };

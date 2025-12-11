@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getClientRightsPage } from '@/shared/api/get-client-rights';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams } from '@/shared/types/params';
 import { ClientRights } from '@/view/client-rights';
 
@@ -36,12 +35,9 @@ const ClientRightsPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [initialClientRightsPageData, initialFunds] = await Promise.all([
+	const [initialClientRightsPageData] = await Promise.all([
 		getClientRightsPage(),
-		getParentFunds(),
 	]);
-
-	initialClientRightsPageData.data.parentFunds = initialFunds.data;
 
 	return (
 		<ClientRights initialData={initialClientRightsPageData || undefined} />

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getDepositaryServicesPage } from '@/shared/api/get-depositary-services';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams } from '@/shared/types/params';
 import { DepositaryServices } from '@/view/depositary-services';
 
@@ -36,17 +35,11 @@ const DepositaryServicesPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [initialDepositaryServicesPageData, initialFunds] = await Promise.all([
+	const [initialDepositaryServicesPageData] = await Promise.all([
 		getDepositaryServicesPage(),
-		getParentFunds(),
 	]);
 
-	return (
-		<DepositaryServices
-			{...initialDepositaryServicesPageData.data}
-			parentFunds={initialFunds.data}
-		/>
-	);
+	return <DepositaryServices {...initialDepositaryServicesPageData.data} />;
 };
 
 export default DepositaryServicesPage;

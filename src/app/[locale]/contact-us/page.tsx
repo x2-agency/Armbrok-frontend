@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getContactPage } from '@/shared/api/get-contact-page';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams } from '@/shared/types/params';
 import { ArmbrokContact } from '@/view/armbrok-contact';
 
@@ -36,10 +35,7 @@ const ArmbrokContactPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [inititalContactPageData, initialFunds] = await Promise.all([
-		getContactPage(),
-		getParentFunds(),
-	]);
+	const [inititalContactPageData] = await Promise.all([getContactPage()]);
 
 	return (
 		<ArmbrokContact
@@ -49,7 +45,6 @@ const ArmbrokContactPage = async ({ params }: LocaleParams) => {
 			contactCards={inititalContactPageData.data.contactCards}
 			contactForm={inititalContactPageData.data.contactForm}
 			mapCoords={inititalContactPageData.data.mapCoords}
-			parentFunds={initialFunds.data}
 		/>
 	);
 };

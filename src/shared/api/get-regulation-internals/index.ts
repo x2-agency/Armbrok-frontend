@@ -1,6 +1,6 @@
 import apiClient from '@/shared/api/api-client';
 
-export const getRegulationInternals = async (slug: string) => {
+export const getRegulationInternalsPage = async (slug: string) => {
 	try {
 		const response = await apiClient.get(`/regulation-internals/${slug}`);
 

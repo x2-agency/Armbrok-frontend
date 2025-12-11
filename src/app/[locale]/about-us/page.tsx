@@ -3,7 +3,6 @@ import { setRequestLocale } from 'next-intl/server';
 
 import { getAboutUsPage } from '@/shared/api/get-about-us';
 import { getAwards } from '@/shared/api/get-awards';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { LocaleParams } from '@/shared/types/params';
 import { AboutUs } from '@/view/about-us';
 
@@ -37,20 +36,12 @@ const AboutUsPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [initialAboutUsPageData, initialAwards, initialFunds] =
-		await Promise.all([
-			getAboutUsPage(),
-			getAwards({ pageSize: 7 }),
-			getParentFunds(),
-		]);
+	const [initialAboutUsPageData, initialAwards] = await Promise.all([
+		getAboutUsPage(),
+		getAwards({ pageSize: 7 }),
+	]);
 
-	return (
-		<AboutUs
-			{...initialAboutUsPageData?.data}
-			awards={initialAwards}
-			parentFunds={initialFunds.data}
-		/>
-	);
+	return <AboutUs {...initialAboutUsPageData?.data} awards={initialAwards} />;
 };
 
 export default AboutUsPage;

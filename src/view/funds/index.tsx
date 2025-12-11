@@ -2,7 +2,6 @@
 
 import type { NextPage } from 'next';
 
-import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import useMediaQuery from '@/shared/hooks/use-media-query';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExperienceSection } from '@/shared/ui/experience-section';
@@ -34,7 +33,6 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	} = initialFundsPageData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
-	useAppendToHeaderFunds({ funds: parentFunds });
 
 	return (
 		<>

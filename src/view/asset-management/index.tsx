@@ -2,7 +2,6 @@
 
 import type { NextPage } from 'next';
 
-import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExperienceSection } from '@/shared/ui/experience-section';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
@@ -35,10 +34,8 @@ export const AssetManagement: NextPage<{
 		howWeAreWorking,
 		documentsSection,
 		infoSection,
-		parentFunds,
 	} = initialData?.data ?? {};
 	useUpdateFooterData(publishedAt);
-	useAppendToHeaderFunds({ funds: parentFunds });
 
 	return (
 		<>
@@ -70,7 +67,7 @@ export const AssetManagement: NextPage<{
 				className={css.experts}
 			/>
 			<Review quote={quoteSection} className={css.review} />
-			<AssetManagment data={assetManagementCard} className={css.asset}/>
+			<AssetManagment data={assetManagementCard} className={css.asset} />
 			<ExpertSolutionSection
 				className={css.managementSection}
 				gridClass={css.management}

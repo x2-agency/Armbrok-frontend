@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
+import { Locales } from '@/i18n/routing';
 import { getFundPage } from '@/shared/api/get-fund-page';
 import { getFundPerformanceEntity } from '@/shared/api/get-graphic';
 import { getIsrParentFunds } from '@/shared/api/get-isr-parent-funds';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import type { ParentFundProps } from '@/shared/types/global.types';
 import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import { Fund } from '@/view/fund';
@@ -40,9 +40,8 @@ export const revalidate = 1;
 
 export const generateStaticParams = async () => {
 	const response: { data: Array<ParentFundProps> } = await getIsrParentFunds();
-	const locales = ['en', 'ru', 'hy'];
 
-	return locales.flatMap(locale =>
+	return Object.values(Locales).flatMap(locale =>
 		response.data.map(fund => ({
 			slug: fund.slug,
 			locale,
@@ -58,13 +57,11 @@ const FundPage = async ({ params }: SlugParams & LocaleParams) => {
 		initialGraphicData,
 		initialHeatMapData,
 		initialProfitTableData,
-		initialFunds,
 	] = await Promise.all([
 		getFundPage({ slug }),
 		getFundPerformanceEntity(slug, 'chart'),
 		getFundPerformanceEntity(slug, 'heatmap'),
 		getFundPerformanceEntity(slug, 'profit-table'),
-		getParentFunds(),
 	]);
 
 	return (
@@ -75,7 +72,6 @@ const FundPage = async ({ params }: SlugParams & LocaleParams) => {
 				graphics: initialGraphicData,
 				profitTable: initialProfitTableData,
 			}}
-			parentFunds={initialFunds.data}
 		/>
 	);
 };

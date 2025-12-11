@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getInvestmentBankingPage } from '@/shared/api/get-investment-banking';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { getSecurityPapers } from '@/shared/api/security-papers';
 import type { LocaleParams } from '@/shared/types/params';
 import { InvestmentBanking } from '@/view/investment-banking';
@@ -37,21 +36,13 @@ const InvestmentBankingPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [
-		initialInvestmentBankingPageData,
-		initialSecurityPapersData,
-		initialFunds,
-	] = await Promise.all([
-		getInvestmentBankingPage(),
-		getSecurityPapers(),
-		getParentFunds(),
-	]);
+	const [initialInvestmentBankingPageData, initialSecurityPapersData] =
+		await Promise.all([getInvestmentBankingPage(), getSecurityPapers()]);
 
 	return (
 		<InvestmentBanking
 			securityPapers={initialSecurityPapersData.data}
 			{...initialInvestmentBankingPageData.data}
-			parentFunds={initialFunds.data}
 		/>
 	);
 };

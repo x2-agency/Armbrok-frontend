@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
 import { getCareersAtArmbrokPage } from '@/shared/api/get-careers-at-armbrock';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { getVacancies } from '@/shared/api/get-vacancies';
 import type { LocaleParams } from '@/shared/types/params';
 import { CareersAtArmbrok } from '@/view/careers-at-armbrok';
@@ -37,18 +36,13 @@ const CareersAtArmbrokPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [initialCareersAtArmbrokPageData, initialVacanciesData, initialFunds] =
-		await Promise.all([
-			getCareersAtArmbrokPage(),
-			getVacancies(),
-			getParentFunds(),
-		]);
+	const [initialCareersAtArmbrokPageData, initialVacanciesData] =
+		await Promise.all([getCareersAtArmbrokPage(), getVacancies()]);
 
 	return (
 		<CareersAtArmbrok
 			{...initialCareersAtArmbrokPageData.data}
 			vacancies={initialVacanciesData}
-			parentFunds={initialFunds.data}
 		/>
 	);
 };

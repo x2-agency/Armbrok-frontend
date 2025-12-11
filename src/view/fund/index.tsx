@@ -2,7 +2,6 @@
 
 import type { NextPage } from 'next';
 
-import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import type { Factoid } from '@/shared/types/global.types';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
@@ -28,11 +27,9 @@ export const Fund: NextPage<FundPageData> = ({
 	profixDescription,
 	portfolioStructureSection,
 	performanceData,
-	parentFunds,
 	currency,
 	updatedAt,
 }) => {
-	useAppendToHeaderFunds({ funds: parentFunds });
 	useUpdateFooterData(updatedAt);
 
 	return (
