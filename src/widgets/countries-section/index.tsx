@@ -29,8 +29,6 @@ export const CountriesSection = ({
 		countryGroups.push(countries.slice(i, i + chunkSize));
 	}
 
-	console.log(countryGroups);
-
 	const isCountryCount = countryGroups.length >= 2;
 
 	return (
