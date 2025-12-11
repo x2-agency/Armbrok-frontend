@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { getLocale } from 'next-intl/server';
 
 import { DEFAULT_LOCALE } from '@/i18n/routing';
 
@@ -15,7 +16,7 @@ apiClient.interceptors.request.use(
 		let locale: string;
 
 		if (isServer) {
-			locale = DEFAULT_LOCALE;
+			locale = await getLocale();
 		} else {
 			locale = Cookies.get(LOCALE_COOKIE) ?? DEFAULT_LOCALE;
 		}
