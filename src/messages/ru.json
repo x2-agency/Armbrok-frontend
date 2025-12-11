@@ -306,6 +306,6 @@
 		"text": "Прикрепить файл",
 		"sizeError": "Размер файла&nbsp;не должен превышать"
 	},
-
-	"buttonText": "Показать все"
+	"buttonText": "Показать все",
+	"openInGoogleMaps": { "title": "Открыть в&nbsp;Google Картах" }
 }
