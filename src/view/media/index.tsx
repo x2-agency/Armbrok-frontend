@@ -11,10 +11,8 @@ import { FeedbackForm } from '@/features/feedback-form';
 import { ENDPOINTS } from '@/features/feedback-form/model/feedback-form.constants';
 import { useGetArticles } from '@/features/get-articles/api/use-get-articles';
 import { usePathname, useRouter } from '@/i18n/navigation';
-import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import type { ArticlesData } from '@/shared/types/article';
-import type { ParentFundProps } from '@/shared/types/global.types';
 import type { MediaPageProps } from '@/shared/types/media-page';
 import { Preloader } from '@/shared/ui/preloader';
 import { TitleSlugSection } from '@/shared/ui/title-slug-section';
@@ -26,11 +24,9 @@ import css from './index.module.css';
 export const Media: NextPage<{
 	initialMediaData?: MediaPageProps;
 	initialArticles?: ArticlesData;
-	parentFunds?: Array<ParentFundProps>;
-}> = ({ initialMediaData, initialArticles, parentFunds }) => {
+}> = ({ initialMediaData, initialArticles }) => {
 	const [searchQuery, setSearchQuery] = useState('');
 	const [searchAnimationKey, setSearchAnimationKey] = useState('');
-	useAppendToHeaderFunds({ funds: parentFunds });
 
 	const { emailForm, title, description, publishedAt } =
 		initialMediaData?.data ?? {};

@@ -91,14 +91,14 @@
 				}
 			},
 			"regulation": {
-				"text": "Правовая информация",
+				"text": "Внутренние регламенты",
 				"lawsLegalActs": {
 					"text": "Законы и Правовые акты",
 					"link": "/regulation#laws"
 				},
 				"internalRules": {
-					"text": "Внутренние&nbsp;регламенты",
-					"link": "/regulation#internal-rules"
+					"text": "Правовая информация",
+					"link": "/regulation#regulation"
 				},
 				"stockExchangeRules": {
 					"text": "Регламенты Биржи и&nbsp;Центрального депозитария",

@@ -3,32 +3,16 @@ import { setRequestLocale } from 'next-intl/server';
 
 import { getAboutUsPage } from '@/shared/api/get-about-us';
 import { getAwards } from '@/shared/api/get-awards';
-import { getParentFunds } from '@/shared/api/get-parent-funds';
+import { generateTemplateMetadata } from '@/shared/helpers/generate-template-metadata';
 import type { LocaleParams } from '@/shared/types/params';
 import { AboutUs } from '@/view/about-us';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const initialAboutUsPageData = await getAboutUsPage();
-	const seo = initialAboutUsPageData?.data?.seo;
 
-	if (!seo) {
-		return {
-			title: 'About us',
-		};
-	}
-
-	return {
-		metadataBase: process.env.NEXT_PUBLIC_WEBSITE_URL
-			? new URL(process.env.NEXT_PUBLIC_WEBSITE_URL)
-			: undefined,
-		title: seo.metaTitle,
-		description: seo.metaDescription,
-		openGraph: {
-			title: seo.metaTitle,
-			description: seo.metaDescription,
-			images: seo.shareImage ? [seo.shareImage.url] : [],
-		},
-	};
+	return generateTemplateMetadata({
+		seo: initialAboutUsPageData?.data?.seo,
+	});
 }
 
 export const revalidate = 1;
@@ -37,20 +21,12 @@ const AboutUsPage = async ({ params }: LocaleParams) => {
 	const { locale } = await params;
 	setRequestLocale(locale);
 
-	const [initialAboutUsPageData, initialAwards, initialFunds] =
-		await Promise.all([
-			getAboutUsPage(),
-			getAwards({ pageSize: 7 }),
-			getParentFunds(),
-		]);
+	const [initialAboutUsPageData, initialAwards] = await Promise.all([
+		getAboutUsPage(),
+		getAwards({ pageSize: 7 }),
+	]);
 
-	return (
-		<AboutUs
-			{...initialAboutUsPageData?.data}
-			awards={initialAwards}
-			parentFunds={initialFunds.data}
-		/>
-	);
+	return <AboutUs {...initialAboutUsPageData?.data} awards={initialAwards} />;
 };
 
 export default AboutUsPage;

@@ -4,7 +4,6 @@ import type {
 	DocumentTabs,
 	HeroSection,
 	ItemDetail,
-	ParentFundProps,
 	ResidenceCountriesSectionProps,
 	ShareholdersSection,
 } from '@/shared/types/global.types';
@@ -22,7 +21,6 @@ export type InvestorRelationsPageData = {
 	shareholdersSection?: ShareholdersSection;
 	disclaimer?: { title?: string; description?: string };
 	documentTabsSection?: DocumentTabs;
-	parentFunds?: Array<ParentFundProps>;
 };
 
 export type InvestorRelationsPageResponse =

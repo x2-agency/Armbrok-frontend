@@ -2,7 +2,6 @@
 
 import type { NextPage } from 'next';
 
-import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
@@ -29,7 +28,6 @@ export const InvestmentBanking: NextPage<
 	parentFunds,
 }) => {
 	useUpdateFooterData(publishedAt);
-	useAppendToHeaderFunds({funds: parentFunds});
 
 	return (
 		<>

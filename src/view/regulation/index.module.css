@@ -4,11 +4,10 @@
 
 .title {
 	@mixin font-h1;
-	@mixin responsive max-width, 320, 600, 600;
-
-	text-align: center;
-	margin-inline: auto;
 	font-weight: 700;
+	text-align: center;
+
+	@mixin responsive padding-block-end, 24, 48, 48;
 }
 
 .titleSection h2 {

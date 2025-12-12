@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 
-import { getRegulationInternals } from '@/shared/api/get-regulation-internals';
+import { Locales } from '@/i18n/routing';
+import { getAllRegulationInternals } from '@/shared/api/get-all-regulation-internals';
+import { getRegulationInternalsPage } from '@/shared/api/get-regulation-internals';
 import type { LocaleParams, SlugParams } from '@/shared/types/params';
 import { RegulationInternals } from '@/view/regulation/[slug]';
 
@@ -12,7 +14,7 @@ export async function generateMetadata({
 	const { slug, locale } = await params;
 	setRequestLocale(locale);
 
-	const data = await getRegulationInternals(slug);
+	const data = await getRegulationInternalsPage(slug);
 
 	if (!data) {
 		return {
@@ -30,6 +32,23 @@ export async function generateMetadata({
 		},
 	};
 }
+
+export const revalidate = 1;
+
+export const generateStaticParams = async () => {
+	const initialData = await getAllRegulationInternals();
+	const slugs = initialData?.data?.map(item => item.slug) ?? [];
+
+	const result = slugs.flatMap(slug =>
+		Object.values(Locales).map(locale => ({
+			slug,
+			locale,
+		}))
+	);
+
+	return result;
+};
+
 const RegulationSlugPage = async ({
 	params,
 }: {
@@ -37,7 +56,7 @@ const RegulationSlugPage = async ({
 }) => {
 	const { slug } = await params;
 
-	const regulationData = await getRegulationInternals(slug);
+	const regulationData = await getRegulationInternalsPage(slug);
 
 	if (!regulationData) {
 		notFound();

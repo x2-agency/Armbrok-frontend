@@ -1,44 +1,23 @@
 import type { Metadata } from 'next';
 
-import { getParentFunds } from '@/shared/api/get-parent-funds';
 import { getRegulation } from '@/shared/api/get-regulation';
+import { generateTemplateMetadata } from '@/shared/helpers/generate-template-metadata';
 import { Regulation } from '@/view/regulation';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const initialRegulationPageData = await getRegulation();
-	const seo = initialRegulationPageData?.data?.seo;
 
-	if (!seo) {
-		return {
-			title: 'Regulation',
-		};
-	}
-
-	return {
-		metadataBase: process.env.NEXT_PUBLIC_WEBSITE_URL
-			? new URL(process.env.NEXT_PUBLIC_WEBSITE_URL)
-			: undefined,
-		title: seo.metaTitle,
-		description: seo.metaDescription,
-		openGraph: {
-			title: seo.metaTitle,
-			description: seo.metaDescription,
-			images: seo.shareImage ? [seo.shareImage.url] : [],
-		},
-	};
+	return generateTemplateMetadata({
+		seo: initialRegulationPageData?.data?.seo,
+	});
 }
 
 export const revalidate = 1;
 
 const RegulationPage = async () => {
-	const [initialRegulation, initialFunds] = await Promise.all([
-		getRegulation(),
-		getParentFunds(),
-	]);
+	const [initialRegulation] = await Promise.all([getRegulation()]);
 
-	return (
-		<Regulation {...initialRegulation.data} parentFunds={initialFunds.data} />
-	);
+	return <Regulation {...initialRegulation.data} />;
 };
 
 export default RegulationPage;

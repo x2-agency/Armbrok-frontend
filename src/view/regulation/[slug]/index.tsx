@@ -1,18 +1,10 @@
 import parser from 'html-react-parser';
 
+import type { RegulationInternalsType } from '@/shared/types/regulations';
 import { Container } from '@/shared/ui/container';
 import { Document } from '@/shared/ui/document';
 
 import css from './index.module.css';
-
-export type RegulationInternalsType = {
-	title: string;
-	content: string;
-	file?: {
-		url: string;
-		name: string;
-	};
-};
 
 export type RegulationInternalsProps = {
 	data: RegulationInternalsType;
