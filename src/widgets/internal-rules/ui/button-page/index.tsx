@@ -2,8 +2,8 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
-import Link from 'next/link';
 
+import { Link } from '@/i18n/navigation';
 import type { InternalLinkType } from '@/widgets/internal-rules';
 
 import css from './index.module.css';
