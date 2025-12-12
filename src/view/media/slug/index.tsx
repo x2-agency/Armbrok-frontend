@@ -4,10 +4,8 @@
 import parser from 'html-react-parser';
 import type { NextPage } from 'next';
 
-import { useAppendToHeaderFunds } from '@/shared/hooks/use-append-to-header-funds';
 import useMediaQuery from '@/shared/hooks/use-media-query';
 import type { Data } from '@/shared/types/blog';
-import type { ParentFundProps } from '@/shared/types/global.types';
 import ContentMarkup from '@/shared/ui/content-markup';
 import { useFormattedDate } from '@/widgets/app-layout/hooks/use-formated-date';
 import { NewsSectionHome } from '@/widgets/news-section';
@@ -18,8 +16,7 @@ import { Breadcrumbs } from './ui/author/bread-crumbs';
 
 export const Blog: NextPage<{
 	initialBlogPage: Data;
-	parentFunds?: Array<ParentFundProps>;
-}> = ({ initialBlogPage, parentFunds }) => {
+}> = ({ initialBlogPage }) => {
 	const {
 		title,
 		description,
@@ -29,11 +26,10 @@ export const Blog: NextPage<{
 		author,
 		publishDate,
 		category,
-		readTimeInMinutes
+		readTimeInMinutes,
 	} = initialBlogPage ?? {};
 
 	const isMobile = useMediaQuery('(max-width: 767px)');
-	useAppendToHeaderFunds({ funds: parentFunds });
 
 	const formattedDate = useFormattedDate(publishDate ?? '', {
 		readTimeInMinutes,
@@ -57,7 +53,12 @@ export const Blog: NextPage<{
 
 			{poster?.url && (
 				<div className={css.imageWrap}>
-					<img loading="lazy" className={css.img} src={poster?.url} alt={poster?.alternativeText ?? ''} />
+					<img
+						loading="lazy"
+						className={css.img}
+						src={poster?.url}
+						alt={poster?.alternativeText ?? ''}
+					/>
 				</div>
 			)}
 
@@ -66,9 +67,8 @@ export const Blog: NextPage<{
 			</article>
 
 			<Author className={css.authorBottom} data={author} visibleSocial />
-			
-			{
-				latestNewsSection &&
+
+			{latestNewsSection && (
 				<NewsSectionHome
 					className={css.news}
 					data={{
@@ -77,7 +77,7 @@ export const Blog: NextPage<{
 						description: latestNewsSection.description,
 					}}
 				/>
-			}
+			)}
 		</>
 	);
 };

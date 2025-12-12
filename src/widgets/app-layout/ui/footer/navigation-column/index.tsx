@@ -18,11 +18,11 @@ export const NavigationColumn = () => {
 					<div key={index} className={css.column}>
 						<Button
 							variant="subtle"
-							href={
+							href={`/${
 								item.root === 'products-and-services'
 									? 'depositary-services'
 									: item.root
-							}
+							}`}
 							className={css.title}
 						>
 							{parser(t(`${item.root}.text`))}
