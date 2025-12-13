@@ -20,7 +20,7 @@ export const InternalRules = ({ internalRules }: InternalRulesProps) => {
 	const { title, links } = internalRules || {};
 	return (
 		<Container className={cx(css.root)}>
-			<h3 className={css.title}>{parser(title ?? '')}</h3>
+			<h3 className={css.title} id="internal-rules">{parser(title ?? '')}</h3>
 			<ButtonPage links={links} />
 		</Container>
 	);
