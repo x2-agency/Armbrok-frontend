@@ -91,14 +91,14 @@
 				}
 			},
 			"regulation": {
-				"text": "Ներքին կանոնակարգեր",
+				"text": "Կարգավորում",
 				"lawsLegalActs": {
-					"text": "Օրենքներ և իրավական ակտեր",
-					"link": "/regulation#laws"
+					"text": "Ներքին կանոնակարգեր",
+					"link": "/regulation#internal-rules"
 				},
 				"internalRules": {
-					"text": "Կարգավորում",
-					"link": "/regulation#regulation"
+					"text": "Օրենքներ և իրավական ակտեր",
+					"link": "/regulation#laws"
 				},
 				"stockExchangeRules": {
 					"text": "Բորսայի և դեպոզիտարիայի կանոններ",

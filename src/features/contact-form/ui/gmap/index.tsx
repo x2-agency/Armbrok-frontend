@@ -36,7 +36,7 @@ export const GMap = ({ className }: GMapProps) => {
 				<GoogleMap
 					mapContainerStyle={GOOGLE_MAP_CONTAINER_STYLE}
 					center={GOOGLE_MAP_MARKER_POSITION}
-					zoom={19}
+					zoom={14}
 					options={{
 						styles: GOOGLE_MAP_STYLES_SETTING,
 						disableDefaultUI: true,
