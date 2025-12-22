@@ -44,7 +44,6 @@ export const Document = ({
 	const comesName = name ? name : removeFileExtension(file.name ?? '');
 	const hasLabel = label ? label : file.ext && file.size;
 
-	// Форматируем имя: обрезаем до 45 символов и добавляем ... только если нужно
 	const formatName = (text: string) => {
 		if (text.length <= 45) {
 			return parser(text);
