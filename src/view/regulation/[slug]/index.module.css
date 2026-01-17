@@ -134,15 +134,36 @@
 
 					&::before {
 						content: counter(parent) '.' counter(child) '. ';
+						text-align: end;
+						display: inline-flex;
+						justify-content: flex-end;
 					}
 				}
 			}
 		}
+		@media (max-width: 767px) {
+			padding-inline: 20px;
+		}
 	}
 
-	ol > li > ol > li {
-		display: grid;
-		grid-template-columns: 7% auto;
+	ol > li > ol {
+		& > li {
+			display: grid;
+			grid-template-columns: 6% auto;
+			gap: 3px;
+
+			& > div {
+				padding: unset;
+			}
+
+			@media (max-width: 767px) {
+				grid-template-columns: 15% auto;
+			}
+		}
+
+		@media (max-width: 767px) {
+			padding: 0;
+		}
 	}
 }
 
