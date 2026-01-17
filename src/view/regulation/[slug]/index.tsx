@@ -1,4 +1,6 @@
-import parser from 'html-react-parser';
+import type { DOMNode, Element } from 'html-react-parser';
+import type { HTMLReactParserOptions } from 'html-react-parser';
+import parser, { domToReact } from 'html-react-parser';
 
 import type { RegulationInternalsType } from '@/shared/types/regulations';
 import { Container } from '@/shared/ui/container';
@@ -8,6 +10,27 @@ import css from './index.module.css';
 
 export type RegulationInternalsProps = {
 	data: RegulationInternalsType;
+};
+
+const options: HTMLReactParserOptions = {
+	replace(node) {
+		if (node.type === 'tag' && node.name === 'li') {
+			const parent = node.parent as Element | undefined;
+			const grandParent = parent?.parent as Element | undefined;
+
+			const isNestedOl = parent?.name === 'ol' && grandParent?.name === 'li';
+
+			if (isNestedOl) {
+				return (
+					<li>
+						<div className="nested-li-content">
+							{domToReact(node.children as Array<DOMNode>, options)}
+						</div>
+					</li>
+				);
+			}
+		}
+	},
 };
 
 export const RegulationInternals = ({ data }: RegulationInternalsProps) => {
@@ -29,7 +52,7 @@ export const RegulationInternals = ({ data }: RegulationInternalsProps) => {
 				/>
 			</div>
 			{content && (
-				<div className={css.titleBlock}>{content && parser(content)}</div>
+				<div className={css.titleBlock}>{parser(content, options)}</div>
 			)}
 		</Container>
 	);
