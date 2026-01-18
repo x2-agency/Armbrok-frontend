@@ -102,12 +102,9 @@
 	}
 
 	ol {
-		list-style: decimal;
-	}
-
-	ol {
+		@mixin responsive padding-inline, 20;
 		counter-reset: parent;
-		list-style: none !important;
+		list-style: none;
 		position: relative;
 
 		& > li {
@@ -119,13 +116,13 @@
 				unicode-bidi: isolate;
 				font-variant-numeric: tabular-nums;
 				text-transform: none;
-				text-indent: 0px !important;
-				text-align: start !important;
-				text-align-last: auto !important;
+				text-indent: 0px;
+				text-align: start;
+				text-align-last: auto;
 			}
 
 			& > ol {
-				list-style: none !important;
+				list-style: none;
 				counter-reset: child;
 				position: static;
 
@@ -140,9 +137,6 @@
 					}
 				}
 			}
-		}
-		@media (max-width: 767px) {
-			padding-inline: 20px;
 		}
 	}
 

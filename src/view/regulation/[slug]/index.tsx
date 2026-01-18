@@ -14,22 +14,20 @@ export type RegulationInternalsProps = {
 
 const options: HTMLReactParserOptions = {
 	replace(node) {
-		if (node.type === 'tag' && node.name === 'li') {
-			const parent = node.parent as Element | undefined;
-			const grandParent = parent?.parent as Element | undefined;
+		if (node.type !== 'tag' || node.name !== 'li') return;
 
-			const isNestedOl = parent?.name === 'ol' && grandParent?.name === 'li';
+		const parent = node.parent as Element | undefined;
+		const grandParent = parent?.parent as Element | undefined;
 
-			if (isNestedOl) {
-				return (
-					<li>
-						<div className="nested-li-content">
-							{domToReact(node.children as Array<DOMNode>, options)}
-						</div>
-					</li>
-				);
-			}
-		}
+		if (parent?.name !== 'ol' || grandParent?.name !== 'li') return;
+
+		return (
+			<li>
+				<div className="nested-li-content">
+					{domToReact(node.children as Array<DOMNode>, options)}
+				</div>
+			</li>
+		);
 	},
 };
 
