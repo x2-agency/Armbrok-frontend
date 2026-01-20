@@ -102,7 +102,62 @@
 	}
 
 	ol {
-		list-style: decimal;
+		@mixin responsive padding-inline, 20;
+		counter-reset: parent;
+		list-style: none;
+		position: relative;
+
+		& > li {
+			counter-increment: parent;
+
+			&::before {
+				content: counter(parent) '. ';
+
+				unicode-bidi: isolate;
+				font-variant-numeric: tabular-nums;
+				text-transform: none;
+				text-indent: 0px;
+				text-align: start;
+				text-align-last: auto;
+			}
+
+			& > ol {
+				list-style: none;
+				counter-reset: child;
+				position: static;
+
+				& > li {
+					counter-increment: child;
+
+					&::before {
+						content: counter(parent) '.' counter(child) '. ';
+						text-align: end;
+						display: inline-flex;
+						justify-content: flex-end;
+					}
+				}
+			}
+		}
+	}
+
+	ol > li > ol {
+		& > li {
+			display: grid;
+			grid-template-columns: 6% auto;
+			gap: 3px;
+
+			& > div {
+				padding: unset;
+			}
+
+			@media (max-width: 767px) {
+				grid-template-columns: 15% auto;
+			}
+		}
+
+		@media (max-width: 767px) {
+			padding: 0;
+		}
 	}
 }
 
