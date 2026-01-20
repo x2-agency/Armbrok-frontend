@@ -1,5 +1,4 @@
-import type { DOMNode, Element } from 'html-react-parser';
-import type { HTMLReactParserOptions } from 'html-react-parser';
+import type { DOMNode, Element, HTMLReactParserOptions } from 'html-react-parser';
 import parser, { domToReact } from 'html-react-parser';
 
 import type { RegulationInternalsType } from '@/shared/types/regulations';
@@ -17,9 +16,14 @@ const options: HTMLReactParserOptions = {
 		if (node.type !== 'tag' || node.name !== 'li') return;
 
 		const parent = node.parent as Element | undefined;
-		const grandParent = parent?.parent as Element | undefined;
+		if (parent?.name !== 'ol') return;
 
-		if (parent?.name !== 'ol' || grandParent?.name !== 'li') return;
+		const hasNestedOl = node.children?.some(
+			(child) =>
+				child.type === 'tag' && child.name === 'ol'
+		);
+
+		if (hasNestedOl) return;
 
 		return (
 			<li>

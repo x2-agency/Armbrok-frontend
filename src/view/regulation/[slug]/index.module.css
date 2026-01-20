@@ -50,10 +50,6 @@
 		}
 	}
 
-	li {
-		@mixin responsive padding-block-end, 5, 5, 5;
-	}
-
 	a {
 		color: var(--red-500-color);
 	}
@@ -84,12 +80,42 @@
 	ol,
 	ul {
 		@mixin font-text18;
-		@mixin responsive padding-inline-start, 50, 30, 30;
 		color: var(--gray-600-color);
 	}
 
 	li {
+		list-style: none;
+
 		@mixin responsive padding-block-end, 5, 5, 5;
+		display: grid;
+		grid-template-columns: 10% 1fr;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: 15% 1fr;
+		}
+
+		@media (max-width: 767px) {
+			@mixin responsive --item-number, 70, 70;
+			grid-template-columns: var(--item-number) auto;
+
+			ol {
+				grid-column: 1 / -1;
+			}
+
+			&:has(> div:only-child) {
+				display: flex;
+			}
+
+			ol {
+				padding: 0;
+			}
+		}
+	}
+
+	:global(.nested-li-content) {
+		@media (max-width: 767px) {
+			padding: 0;
+		}
 	}
 
 	ul li:last-child,
@@ -103,63 +129,40 @@
 
 	ol {
 		@mixin responsive padding-inline, 20;
-		counter-reset: parent;
 		list-style: none;
+		counter-reset: item;
 		position: relative;
 
-		& > li {
-			counter-increment: parent;
+		ol {
+			counter-reset: item;
+			padding-inline-start: 0;
+		}
+
+		li {
+			counter-increment: item;
+			position: relative;
 
 			&::before {
-				content: counter(parent) '. ';
+				content: counters(item, ".") ". ";
+				font-weight: 700;
 
+				@mixin responsive min-width, 70, 70;
+				display: inline-block;
 				unicode-bidi: isolate;
 				font-variant-numeric: tabular-nums;
 				text-transform: none;
-				text-indent: 0px;
+				text-indent: 0;
 				text-align: start;
 				text-align-last: auto;
 			}
 
-			& > ol {
-				list-style: none;
-				counter-reset: child;
-				position: static;
-
-				& > li {
-					counter-increment: child;
-
-					&::before {
-						content: counter(parent) '.' counter(child) '. ';
-						text-align: end;
-						display: inline-flex;
-						justify-content: flex-end;
-					}
-				}
+			li::before {
+				font-weight: unset;
 			}
-		}
-	}
-
-	ol > li > ol {
-		& > li {
-			display: grid;
-			grid-template-columns: 6% auto;
-			gap: 3px;
-
-			& > div {
-				padding: unset;
-			}
-
-			@media (max-width: 767px) {
-				grid-template-columns: 15% auto;
-			}
-		}
-
-		@media (max-width: 767px) {
-			padding: 0;
 		}
 	}
 }
+
 
 .title {
 	@mixin font-h2;
