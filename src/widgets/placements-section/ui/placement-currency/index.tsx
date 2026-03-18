@@ -2,8 +2,9 @@
 import cx from 'clsx';
 
 import css from './index.module.css';
+
 export type PlacementCurrencyType = {
-	amount?: number;
+	amount?: string;
 	currency?: 'usd' | 'amd';
 	label?: string;
 };
@@ -30,7 +31,7 @@ export const PlacementCurrency = ({ data }: PlacementCurrencyProps) => {
 				return (
 					<li key={index} className={css.wrap}>
 						<div className={css.amountWrap}>
-							<h4 className={css.amount}>{formatNumber(amount)}</h4>
+							<h4 className={css.amount}>{formatNumber(Number(amount))}</h4>
 							{currencySvg && (
 								<img
 									className={css.currencySvg}
