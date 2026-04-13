@@ -5,6 +5,7 @@
 	overflow: hidden;
 	background-color: var(--gray-200-color);
 	@mixin responsive width, 336, 384, 384;
+	@mixin responsive max-height, 440, 520, 540;
 
 	@mixin responsive border-radius, 24, 24, 24;
 }
@@ -50,7 +51,7 @@
 
 .homePoster {
 	@mixin responsive border-radius, 24, 24, 24;
-	height: 30%;
+	height: 35%;
 }
 
 .time {
@@ -69,6 +70,10 @@
 	font-weight: 600;
 
 	color: var(--gray-800-color);
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .description {
@@ -216,4 +221,6 @@
 	cursor: pointer;
 	@mixin responsive width, 336, 760, 760;
 	padding: unset;
+
+	@mixin responsive max-height, 454, 665, 666;
 }
