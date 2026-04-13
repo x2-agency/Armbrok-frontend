@@ -5,7 +5,6 @@
 	overflow: hidden;
 	background-color: var(--gray-200-color);
 	@mixin responsive width, 336, 384, 384;
-	@mixin responsive max-height, 440, 520, 540;
 
 	@mixin responsive border-radius, 24, 24, 24;
 }
@@ -51,7 +50,7 @@
 
 .homePoster {
 	@mixin responsive border-radius, 24, 24, 24;
-	height: 35%;
+	@mixin responsive height, 160, 180, 180;
 }
 
 .time {
@@ -80,6 +79,10 @@
 	@mixin font-text16;
 	color: var(--gray-700-color);
 	@mixin responsive margin-block-end, 20, 24, 24;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 
 	@media (min-width: 768px) and (max-width: 899px) {
 		margin-block-end: 2rem;
