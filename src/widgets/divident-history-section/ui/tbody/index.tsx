@@ -63,11 +63,13 @@ export const Tbody = ({ list }: TBodyProps) => {
 							Download
 						</Button>
 					</td>
-					<Link
-						href={item?.file?.url ?? '#'}
-						className={css.link}
-						target="_blank"
-					/>
+					<td className={css.linkCell}>
+						<Link
+							href={item?.file?.url ?? '#'}
+							className={css.link}
+							target="_blank"
+						/>
+					</td>
 				</tr>
 			))}
 		</tbody>
