@@ -13,7 +13,7 @@ const CURRENT_PATH_HEADER = 'x-current-path';
 const PUBLIC_LOCALES = Object.values(Locales);
 const countryToLocale: Record<string, string> = {
 	RU: Locales.RU,
-	AM: Locales.AM,
+	AM: Locales.HY,
 };
 
 export function proxy(request: NextRequest) {
