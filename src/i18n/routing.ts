@@ -2,7 +2,7 @@
 import { defineRouting } from 'next-intl/routing';
 
 export enum Locales {
-	AM = 'hy',
+	HY = 'hy',
 	EN = 'en',
 	RU = 'ru',
 }
