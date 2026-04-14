@@ -30,7 +30,12 @@ export const MembershipSection = ({
 		<Container className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			{description && <p className={css.description}>{parser(description)}</p>}
-			<ul className={css.items}>
+			<ul
+				className={cx(css.items, {
+					[css.items4cols]: items.length > 6,
+					[css.items5cols]: items.length === 5,
+				})}
+			>
 				{items.map((item, key) => (
 					<li key={key}>
 						<MembershipCard {...item} withGreyTitle={withGreyTitles} />
