@@ -14,7 +14,7 @@
 
 ```bash
 # Клонирование репозитория
-git clone <your-repository-url>  // Если проект развернут в репозитории GitHub
+git clone <your-repository-url>  // Если  проект развернут в репозитории GitHub
 cd src
 
 # Установка зависимостей
