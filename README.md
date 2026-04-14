@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/next-15.2.3-yellowgreen)
-![](https://img.shields.io/badge/react-18.2-red)
+![](https://img.shields.io/badge/react-19.2-red)
 ![](https://img.shields.io/badge/pnpm-10.12.1-red)
 
 # Развертыванию проекта
