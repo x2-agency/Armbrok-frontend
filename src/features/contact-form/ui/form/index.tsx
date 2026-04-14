@@ -10,7 +10,10 @@ import { useForm } from 'react-hook-form';
 import { usePostContactUsForm } from '@/features/contact-form/hooks/use-post-contact-us-form';
 import { SuccessfulModal } from '@/features/contact-form/ui/successful-modal';
 import LoaderSVG from '@/public/assets/icons/loader.svg';
-import type { ContactForm } from '@/shared/types/global.types';
+import type {
+	ContactForm,
+	PostFormSuccessResponseType,
+} from '@/shared/types/global.types';
 import { Button } from '@/shared/ui/button';
 import { ErrorModal } from '@/shared/ui/error-modal';
 import { FileUploader } from '@/shared/ui/file-uploader';
@@ -46,6 +49,8 @@ export const Form = ({
 	const [isCaptchaChecked, toggleCaptcha] = useState<boolean>(false);
 	const [isSuccess, toggleSuccess] = useState<boolean>(false);
 	const [isError, toggleError] = useState<boolean>(false);
+	const [successMessage, setSuccessMessage] =
+		useState<PostFormSuccessResponseType['message']>();
 	const t = useTranslations('openAccount');
 
 	const hostPath =
@@ -61,7 +66,12 @@ export const Form = ({
 		mode: 'onChange',
 		defaultValues: { referralLink: hostPath },
 	});
-	const mutation = usePostContactUsForm({ toggleSuccess, toggleError, reset });
+	const mutation = usePostContactUsForm({
+		toggleSuccess,
+		toggleError,
+		reset,
+		onSuccessData: data => setSuccessMessage(data?.message),
+	});
 
 	const handleSubmitForm = async (formData: FormValues) => {
 		mutation.mutate({ data: { ...formData, formSubject: 'Contact Us' } });
@@ -162,7 +172,11 @@ export const Form = ({
 				</Button>
 			</form>
 			<ErrorModal toggleOpen={toggleError} isOpen={isError} withHidden />
-			<SuccessfulModal isOpened={isSuccess} toggleOpen={toggleSuccess} />
+			<SuccessfulModal
+				isOpened={isSuccess}
+				toggleOpen={toggleSuccess}
+				message={successMessage}
+			/>
 		</>
 	);
 };
