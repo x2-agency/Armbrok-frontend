@@ -14,7 +14,7 @@
 	left: 50%;
 	translate: -50% 0%;
 	display: flex;
-	max-width: unset;
+	width: fit-content;
 	max-height: unset;
 	align-items: center;
 	box-shadow: 0 0 var(--shadow) -12px #101828;
@@ -44,10 +44,20 @@
 	}
 }
 
+.content {
+	display: flex;
+	flex-direction: column;
+	@mixin responsive gap, 4, 4, 4;
+	white-space: nowrap;
+}
+
 .successfulIconWrapper,
-.description,
 .close {
 	flex-shrink: 0;
+}
+
+.content {
+	min-width: 0;
 }
 
 .icon {
