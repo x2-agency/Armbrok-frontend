@@ -23,13 +23,45 @@
 	@mixin responsive gap, 10, 24, 24;
 
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 
 	@media (max-width: 767px) {
 		@media (max-width: 767px) {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 		}
+	}
+}
+
+.items4cols {
+	grid-template-columns: repeat(4, 1fr);
+
+	@media (max-width: 767px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.items5cols {
+	grid-template-columns: repeat(6, 1fr);
+
+	@media (max-width: 767px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.items5cols > li {
+	grid-column: span 2;
+
+	@media (max-width: 767px) {
+		grid-column: span 1;
+	}
+}
+
+.items5cols > li:nth-child(4) {
+	grid-column: 2 / span 2;
+
+	@media (max-width: 767px) {
+		grid-column: span 1;
 	}
 }
 
