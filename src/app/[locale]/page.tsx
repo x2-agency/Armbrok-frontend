@@ -22,7 +22,7 @@ const IndexPage = async ({ params }: LocaleParams) => {
 
 	const [homePageResult, awardsResult, fundsResult] = await Promise.allSettled([
 		getHomePage(),
-		getAwards({ pageSize: 4 }),
+		getAwards({}),
 		getParentFunds(),
 	]);
 

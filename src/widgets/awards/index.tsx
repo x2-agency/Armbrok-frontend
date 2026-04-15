@@ -33,12 +33,15 @@ export const AwardsSection = ({
 				modules={[Navigation, Pagination]}
 				resizeObserver
 				onResize={swiper => swiper.update()}
+				centeredSlides={false}
 				breakpoints={{
 					320: {
-						slidesPerView: 1,
+						slidesPerView: 1.2,
+						centeredSlides: true,
 					},
 					768: {
 						slidesPerView: 4,
+						centeredSlides: false,
 					},
 				}}
 			>
