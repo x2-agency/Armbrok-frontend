@@ -1,21 +1,16 @@
 .root {
-	@mixin responsive gap, 4, 4, 4;
+	@mixin responsive gap, 8, 8, 8;
+
 	position: relative;
 	display: flex;
-	@mixin responsive height, unset, 120, 120;
-
-	@media (min-width: 900px) and (max-width: 1023px) {
-		max-width: 40rem;
-	}
+	flex-direction: column;
+	align-items: center;
 }
 
-.wreath {
-	height: 100%;
-	align-self: end;
-
-	@media (max-width: 767px) {
-		height: 30rem;
-	}
+.cup {
+	@mixin responsive width, 27, 27, 27;
+	@mixin responsive height, 29, 29, 29;
+	@mixin responsive margin-block-end, 10, 16, 16;
 }
 
 .content {
