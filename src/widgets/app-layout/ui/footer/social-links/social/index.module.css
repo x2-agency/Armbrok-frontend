@@ -6,6 +6,10 @@
 	color: var(--gray-400-color);
 }
 
+.svg path {
+	fill: var(--gray-1000-color);
+}
+
 @media (hover: hover) {
 	.link:hover rect {
 		color: var(--gray-500-color);

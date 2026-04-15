@@ -54,7 +54,7 @@
 
 .subtle {
 	background-color: transparent;
-	color: var(--gray-700-color);
+	color: var(--gray-100-color);
 	&:not(:disabled) {
 		opacity: 1;
 		cursor: pointer;
