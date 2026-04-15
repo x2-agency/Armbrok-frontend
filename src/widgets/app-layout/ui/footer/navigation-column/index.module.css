@@ -25,11 +25,12 @@
 	}
 }
 
-.title {
+.title.title {
 	@mixin font-h6;
 	font-weight: 600 !important;
 	justify-content: flex-start;
 	@mixin responsive margin-block-end, 24, 24, 24;
+	color: var(--gray-100-color);
 }
 
 .list {
