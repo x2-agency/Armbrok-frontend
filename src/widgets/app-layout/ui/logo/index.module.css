@@ -28,3 +28,13 @@ html[data-header-top-color='white'] .icon path {
 	fill: var(--gray-100-color) !important;
 }
 
+@media (hover: hover) {
+	html[data-header-top-color='white'] .icon:hover path {
+		fill: var(--red-600-color) !important;
+	}
+
+	html[data-header-top-color='dark'] .icon:hover path {
+		fill: var(--black-color) !important;
+	}
+}
+
