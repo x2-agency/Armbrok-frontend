@@ -24,8 +24,12 @@
 	fill: var(--black-color) !important;
 }
 
-html[data-header-top-color='white'] .icon path {
-	fill: var(--gray-100-color) !important;
+html[data-header-top-color='white'] .icon path:not([class]) {
+	fill: var(--gray-1000-color) !important;
+}
+
+html[data-header-top-color='white'] .icon path[class] {
+	fill: var(--red-600-color) !important;
 }
 
 @media (hover: hover) {
