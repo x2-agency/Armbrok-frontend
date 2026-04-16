@@ -28,25 +28,48 @@ export const InterFonts = localFont({
 	preload: true,
 });
 
-export const ArmenianFonts = localFont({
+export const NeuePlakFonts = localFont({
 	src: [
 		{
-			path: '../../../public/fonts/NotoSansArmenian-Regular.woff2',
+			path: '../../../public/fonts/Neue-Plak-Regular.ttf',
 			weight: '400',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/NotoSansArmenian-Medium.woff2',
-			weight: '500',
-			style: 'normal',
-		},
-		{
-			path: '../../../public/fonts/NotoSansArmenian-SemiBold.woff2',
+			path: '../../../public/fonts/Neue-Plak-SemiBold.ttf',
 			weight: '600',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/NotoSansArmenian-Bold.woff2',
+			path: '../../../public/fonts/Neue-Plak-Bold.ttf',
+			weight: '700',
+			style: 'normal',
+		},
+	],
+	display: 'swap',
+	variable: '--font-neue-plak',
+	preload: true,
+});
+
+export const MontserratArmFonts = localFont({
+	src: [
+		{
+			path: '../../../public/fonts/Montserratarm-Regular.otf',
+			weight: '400',
+			style: 'normal',
+		},
+		{
+			path: '../../../public/fonts/Montserratarm-Medium.otf',
+			weight: '500',
+			style: 'normal',
+		},
+		{
+			path: '../../../public/fonts/Montserratarm-SemiBold.otf',
+			weight: '600',
+			style: 'normal',
+		},
+		{
+			path: '../../../public/fonts/Montserratarm-Bold.otf',
 			weight: '700',
 			style: 'normal',
 		},

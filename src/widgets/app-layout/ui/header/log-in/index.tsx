@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { LOCALE_KEYS } from '@/i18n/locale-keys';
@@ -11,6 +12,8 @@ export const LogIn = ({ className }: { className?: string }) => {
 	const { header } = LOCALE_KEYS;
 	const t = useTranslations(header.root);
 	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
+	const pathname = usePathname();
+	const isHyLocale = pathname.startsWith('/hy');
 
 	const handleClick = (subject: string) => {
 		setSubjectForm(subject);
@@ -20,7 +23,7 @@ export const LogIn = ({ className }: { className?: string }) => {
 	return (
 		<div className={cx(css.root, className)}>
 			<Button
-				className={css.button}
+				className={cx(css.button, { [css.hy]: isHyLocale })}
 				variant="filled"
 				onClick={() => handleClick(t(`${header.openAccountButton.root}.text`))}
 			>

@@ -47,6 +47,10 @@
 	}
 }
 
+.link.hy {
+	@mixin font-text14;
+}
+
 html[data-header-top-color='white'] .link {
 	color: var(--gray-100-color);
 }

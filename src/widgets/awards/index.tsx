@@ -34,7 +34,7 @@ export const AwardsSection = ({
 	};
 
 	return (
-		<Container className={cx(css.root, className)}>
+		<Container fullWidth className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title ?? '')}</h2>}
 			<Swiper
 				grabCursor

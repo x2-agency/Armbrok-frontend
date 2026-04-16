@@ -54,19 +54,8 @@
 .slider {
 	width: 100%;
 	overflow: visible;
-
-	@media (max-width: 767px) {
-		margin-inline: -5.333rem;
-		width: calc(100% + 10.666rem);
-		padding-inline: 5.333rem;
-		overflow-x: hidden;
-	}
-
-	@media (min-width: 768px) {
-		margin-inline: calc((100vw - 100%) / -2);
-		width: 100vw;
-		@mixin responsive padding-inline, unset, 120, 120;
-	}
+	position: relative;
+	@mixin responsive padding-inline, 20, 120, unset;
 
 	@media (min-width: 1441px) {
 		padding-inline: calc(8.333rem + (100vw - 1440px) / 2);
