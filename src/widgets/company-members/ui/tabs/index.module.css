@@ -6,7 +6,7 @@
 
 .tabButtons {
 	@mixin responsive padding, 4, 4, 4;
-	@mixin responsive border-radius, 10, 10, 10;
+	@mixin responsive border-radius, 9999, 9999, 9999;
 	@mixin responsive gap, 4, 4, 4;
 	@mixin responsive margin-block-end, 24, 24, 24;
 	@mixin responsive --border, 1, 1, 1;

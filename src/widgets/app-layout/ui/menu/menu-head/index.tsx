@@ -10,7 +10,7 @@ import { Search } from '@/widgets/app-layout/ui/search';
 import css from './index.module.css';
 
 export const MenuHead = () => {
-	const { ref } = headerScrollObserver.useObserve('white');
+	const { ref } = headerScrollObserver.useObserve('dark');
 
 	return (
 		<header className={css.root} ref={ref}>

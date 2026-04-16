@@ -20,7 +20,7 @@ export const HomePreview = ({ heroSection }: HomePreviewProps) => {
 		heroSection?.backgroundVideo ?? {};
 	const { title, description, button } = heroSection ?? {};
 	const isMobile = useMediaQuery('(max-width: 767px)');
-	const { ref: relationsRef } = headerScrollObserver.useObserve('white');
+	const { ref: relationsRef } = headerScrollObserver.useObserve('dark');
 	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
 
 	const { videoRef, videoError, handleVideoLoaded, setVideoError } =
