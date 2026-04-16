@@ -2,16 +2,18 @@
 .position {
 	@mixin font-text16;
 
-	color: var(--gray-700-color);
+	color: var(--gray-100-color);
 	opacity: 0.7;
 }
 
 .position {
-	@mixin responsive padding-block-end, 10, 16, 16;
+	@mixin responsive padding-block-end, 10, 4, 4;
 }
 
 .fullName {
 	@mixin responsive padding-block-end, 4, 4, 4;
 	@mixin font-text18;
+
+	color: var(--gray-100-color);
 	font-weight: 600;
 }

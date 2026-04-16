@@ -1,20 +1,22 @@
 .root {
-	@mixin responsive gap, 10, 10, 10;
+	@mixin responsive gap, 20, 40, 40;
 
 	display: flex;
 	flex-direction: column;
 }
 
-.figure {
-	@mixin responsive width, 24, 30, 30;
-	@mixin responsive height, 24, 24, 24;
+.title {
+	@mixin responsive font-size, 40, 80, 90;
+	@mixin responsive max-width, 665, 665, 665;
+	line-height: 76px;
+	font-weight: 400;
 
-	&.rotated {
-		transform: scaleX(-1);
-		align-self: end;
-	}
+	color: var(--gray-100-color);
 }
 
 .text {
 	@mixin font-text20;
+	@mixin responsive max-width, 665, 665, 665;
+
+	color: var(--gray-100-color);
 }

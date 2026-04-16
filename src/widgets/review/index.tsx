@@ -5,6 +5,7 @@ import type { QuoteSection } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
+import { REVIEW_TITLE_FALLBACK } from './review.constants';
 import { ReviewFooter } from './ui/review-footer';
 import { ReviewHead } from './ui/review-head';
 
@@ -19,7 +20,7 @@ export const Review = ({ quote, className }: ReviewProps) => {
 	}
 
 	return (
-		<Container className={cx(css.root, className)}>
+		<Container fullWidth className={cx(css.root, className)}>
 			<article className={css.card}>
 				<img
 					src={quote.authorPhoto?.url}
@@ -27,7 +28,10 @@ export const Review = ({ quote, className }: ReviewProps) => {
 					className={css.image}
 				/>
 				<div className={css.review}>
-					<ReviewHead review={quote.content} />
+					<ReviewHead
+						title={quote.title ?? REVIEW_TITLE_FALLBACK}
+						review={quote.content}
+					/>
 					<ReviewFooter
 						fullName={quote.authorFullName}
 						position={quote.authorPosition}
