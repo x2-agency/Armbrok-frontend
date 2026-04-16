@@ -16,7 +16,7 @@ export const BannerSection = (props: BannerProps) => {
 	const { type, banner, alignContent } = props;
 	const headContent = defineHeadContent(props);
 	const bodyContent = defineBodyContent(props);
-	const { ref } = headerScrollObserver.useObserve('white');
+	const { ref } = headerScrollObserver.useObserve('dark');
 
 	return (
 		<section
