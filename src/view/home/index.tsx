@@ -72,9 +72,6 @@ export const Home: NextPage<{
 			<AwardsSection
 				title={awardsSection?.title}
 				awards={initialAwards?.data}
-				buttonText={awardsSection?.buttonText}
-				buttonLimit={4}
-				awardsTotal={initialAwards?.meta.pagination.total ?? 4}
 			/>
 			<NewsSectionHome data={newsSection} />
 			<InteractiveVideo data={interviewSection} />

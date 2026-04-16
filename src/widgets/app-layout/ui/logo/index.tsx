@@ -1,7 +1,7 @@
 import cx from 'clsx';
 
 import { Link } from '@/i18n/navigation';
-import LogoSVG from '@/public/assets/icons/header/logo_armbrok.svg';
+import LogoSVG from '@/public/assets/icons/header/Logo_Roq_capital.svg';
 import type { LogoProps } from '@/widgets/app-layout/types/logo-types';
 
 import css from './index.module.css';

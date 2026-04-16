@@ -23,7 +23,7 @@ const AboutUsPage = async ({ params }: LocaleParams) => {
 
 	const [initialAboutUsPageData, initialAwards] = await Promise.all([
 		getAboutUsPage(),
-		getAwards({ pageSize: 7 }),
+		getAwards({}),
 	]);
 
 	return <AboutUs {...initialAboutUsPageData?.data} awards={initialAwards} />;

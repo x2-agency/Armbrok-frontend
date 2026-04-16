@@ -2,10 +2,10 @@
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 
-	@mixin responsive column-gap, unset, 10, 10;
-	@mixin responsive row-gap, unset, 24, 24;
+	@mixin responsive column-gap, unset, 40, 40;
+	@mixin responsive row-gap, unset, 40, 40;
 
-	@mixin responsive padding-block-end, 32, 24, 24;
+	@mixin responsive padding-block-end, 32, 40, 40;
 	border-bottom: 1px solid var(--gray-300-color);
 
 	@media (max-width: 767px) {
@@ -25,11 +25,12 @@
 	}
 }
 
-.title {
+.title.title {
 	@mixin font-h6;
 	font-weight: 600 !important;
 	justify-content: flex-start;
 	@mixin responsive margin-block-end, 24, 24, 24;
+	color: var(--gray-100-color);
 }
 
 .list {
@@ -42,7 +43,7 @@
 }
 
 .listItem {
-	color: var(--gray-700-color) !important;
+	color: var(--gray-100-color) !important;
 	font-weight: 400 !important;
 	transition-property: background-color color;
 
