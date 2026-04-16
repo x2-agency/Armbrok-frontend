@@ -5,7 +5,6 @@ import type { QuoteSection } from '@/shared/types/global.types';
 import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
-import { REVIEW_TITLE_FALLBACK } from './review.constants';
 import { ReviewFooter } from './ui/review-footer';
 import { ReviewHead } from './ui/review-head';
 
@@ -29,7 +28,7 @@ export const Review = ({ quote, className }: ReviewProps) => {
 				/>
 				<div className={css.review}>
 					<ReviewHead
-						title={quote.title ?? REVIEW_TITLE_FALLBACK}
+						title={quote.title ?? ''}
 						review={quote.content}
 					/>
 					<ReviewFooter
