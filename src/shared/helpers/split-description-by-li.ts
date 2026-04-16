@@ -3,34 +3,27 @@ export const splitDescriptionByLi = (html: string, visibleCount = 3) => {
 		return { firstPart: '', restPart: '' };
 	}
 
-	if (typeof window === 'undefined') {
+	const ulMatch = html.match(/<ul\b[^>]*>([\s\S]*?)<\/ul>/i);
+
+	if (!ulMatch || ulMatch.index === undefined) {
 		return { firstPart: html, restPart: '' };
 	}
 
-	const domParser = new DOMParser();
-	const doc = domParser.parseFromString(html, 'text/html');
+	const ulOpenTag = ulMatch[0].match(/^<ul\b[^>]*>/i)?.[0] ?? '<ul>';
+	const innerContent = ulMatch[1];
+	const liMatches = innerContent.match(/<li\b[^>]*>[\s\S]*?<\/li>/gi) ?? [];
 
-	const p = doc.querySelector('p');
-	const ul = doc.querySelector('ul');
+	const firstLis = liMatches.slice(0, visibleCount);
+	const restLis = liMatches.slice(visibleCount);
 
-	if (!ul) {
-		return { firstPart: html, restPart: '' };
-	}
-
-	const lis = Array.from(ul.querySelectorAll('li'));
-
-	const firstLis = lis.slice(0, visibleCount);
-	const restLis = lis.slice(visibleCount);
-
-	const firstUl = ul.cloneNode(false) as HTMLUListElement;
-	firstLis.forEach(li => firstUl.appendChild(li.cloneNode(true)));
-
-	const restUl = ul.cloneNode(false) as HTMLUListElement;
-	restLis.forEach(li => restUl.appendChild(li.cloneNode(true)));
+	const beforeUl = html.slice(0, ulMatch.index);
 
 	const firstPart =
-		(p ? p.outerHTML : '') + (firstLis.length ? firstUl.outerHTML : '');
-	const restPart = restLis.length ? restUl.outerHTML : '';
+		beforeUl +
+		(firstLis.length ? `${ulOpenTag}${firstLis.join('')}</ul>` : '');
+	const restPart = restLis.length
+		? `${ulOpenTag}${restLis.join('')}</ul>`
+		: '';
 
 	return { firstPart, restPart };
 };

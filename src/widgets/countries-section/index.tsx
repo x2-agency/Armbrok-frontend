@@ -32,7 +32,10 @@ export const CountriesSection = ({
 	const isCountryCount = countryGroups.length >= 2;
 
 	return (
-		<Container className={cx(css.root, className)}>
+		<Container
+			id="geography-of-roq-capital-shareholders"
+			className={cx(css.root, className)}
+		>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 
 			{countryGroups.map((group, groupIndex) => (

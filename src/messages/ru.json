@@ -77,6 +77,14 @@
 				"corporate-reporting": {
 					"text": "Корпоративная отчетность",
 					"link": "/investor-relations#corporate-reporting"
+				},
+				"geography-of-roq-capital-shareholders": {
+					"text": "География акционеров ROQ Capital",
+					"link": "/investor-relations#geography-of-roq-capital-shareholders"
+				},
+				"dividend-history": {
+					"text": "История дивидендов",
+					"link": "/investor-relations#dividend-history"
 				}
 			},
 			"media": {

@@ -27,7 +27,7 @@ export const DividendHistorySection = ({
 	const { headers, list, title } = data;
 
 	return (
-		<Container className={cx(css.root)}>
+		<Container id="dividend-history" className={cx(css.root)}>
 			{title && <h2 className={css.title}>{parser(title)}</h2>}
 			<table className={css.table}>
 				<Thead list={headers.list} />
