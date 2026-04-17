@@ -186,6 +186,7 @@ export type MobileAppSection = ItemDetail & {
 /* QUOTE SECTION */
 
 export type QuoteSection = {
+	title?: string;
 	content: string;
 	authorFullName: string;
 	authorPosition: string;

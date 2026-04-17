@@ -77,16 +77,24 @@
 				"corporate-reporting": {
 					"text": "Ընկերության հաշվետվություններ",
 					"link": "/investor-relations#corporate-reporting"
+				},
+				"geography-of-roq-capital-shareholders": {
+					"text": "Բաժնետերերի աշխարհագրությունը",
+					"link": "/investor-relations#geography-of-roq-capital-shareholders"
+				},
+				"dividend-history": {
+					"text": "Շահաբաժինների վճարման պատմություն",
+					"link": "/investor-relations#dividend-history"
 				}
 			},
 			"media": {
-				"text": "Մեդիա",
+				"text": "Լուրեր և վերլուծություններ",
 				"newsAndInsights": {
-					"text": "Լուրեր և վերլուծություններ",
+					"text": "Ընկերության լուրեր",
 					"link": "/media?category=news-and-insights"
 				},
 				"companyNews": {
-					"text": "Ընկերության լուրեր",
+					"text": "Վերլուծություններ",
 					"link": "/media?category=company-news"
 				}
 			},

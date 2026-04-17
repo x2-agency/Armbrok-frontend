@@ -1,4 +1,5 @@
 export type ReviewHeadProps = {
+	title: string;
 	review: string;
 };
 

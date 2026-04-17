@@ -2,8 +2,10 @@
 
 import cx from 'clsx';
 import parser from 'html-react-parser';
+import { useRef, useState } from 'react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { SwiperClass } from 'swiper/react';
 
 import { Container } from '@/shared/ui/container';
 
@@ -16,22 +18,37 @@ export const AwardsSection = ({
 	awards,
 	className,
 }: AwardSectionProps) => {
+	const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
+		null
+	);
+	const [isBeginning, setIsBeginning] = useState(true);
+	const [isEnd, setIsEnd] = useState(false);
+
 	if (!awards || awards.length === 0) {
 		return null;
 	}
 
+	const handleSlideChange = (swiper: SwiperClass) => {
+		setIsBeginning(swiper.isBeginning);
+		setIsEnd(swiper.isEnd);
+	};
+
 	return (
-		<Container className={cx(css.root, className)}>
+		<Container fullWidth className={cx(css.root, className)}>
 			{title && <h2 className={css.title}>{parser(title ?? '')}</h2>}
 			<Swiper
 				grabCursor
 				className={css.slider}
 				slidesPerView={4}
-				navigation
 				spaceBetween={24}
 				pagination={{ clickable: true }}
 				modules={[Navigation, Pagination]}
 				resizeObserver
+				onSwiper={swiper => {
+					setSwiperInstance(swiper);
+					handleSlideChange(swiper);
+				}}
+				onSlideChange={handleSlideChange}
 				onResize={swiper => swiper.update()}
 				centeredSlides={false}
 				breakpoints={{
@@ -51,6 +68,22 @@ export const AwardsSection = ({
 					</SwiperSlide>
 				))}
 			</Swiper>
+			<div className={css.navigation}>
+				<button
+					className={cx(css.navBtn, css.navBtnPrev, {
+						[css.navBtnDisabled]: isBeginning,
+					})}
+					aria-label="Previous"
+					onClick={() => swiperInstance?.slidePrev()}
+				/>
+				<button
+					className={cx(css.navBtn, css.navBtnNext, {
+						[css.navBtnDisabled]: isEnd,
+					})}
+					aria-label="Next"
+					onClick={() => swiperInstance?.slideNext()}
+				/>
+			</div>
 		</Container>
 	);
 };

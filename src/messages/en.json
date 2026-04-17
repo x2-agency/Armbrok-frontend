@@ -74,6 +74,15 @@
 			},
 			"investor-relations": {
 				"text": "Investor Relations",
+
+				"dividend-history": {
+					"text": "Dividend History",
+					"link": "/investor-relations#dividend-history"
+				},
+				"geography-of-roq-capital-shareholders": {
+					"text": "Geography of ROQ Capital Shareholders",
+					"link": "/investor-relations#geography-of-roq-capital-shareholders"
+				},
 				"corporate-reporting": {
 					"text": "Corporate Reporting",
 					"link": "/investor-relations#corporate-reporting"

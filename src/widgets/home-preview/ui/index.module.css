@@ -64,7 +64,7 @@
 	h1 {
 		@mixin font-h1;
 		@mixin responsive padding-block-end, 10, 24, 24;
-		@mixin responsive max-width, unset, 680, 680;
+		/* @mixin responsive max-width, unset, 680, 680; */
 
 		color: var(--gray-100-color);
 		font-weight: 700;

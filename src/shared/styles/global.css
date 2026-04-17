@@ -254,9 +254,12 @@ html[lang='HY'] body {
 	font-family: var(--font-armenian);
 }
 
-html[lang='RU'] body,
-html[lang='EN'] body {
+html[lang='RU'] body {
 	font-family: var(--font-inter);
+}
+
+html[lang='EN'] body {
+	font-family: var(--font-neue-plak);
 }
 
 body,

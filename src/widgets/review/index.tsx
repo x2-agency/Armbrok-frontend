@@ -19,7 +19,7 @@ export const Review = ({ quote, className }: ReviewProps) => {
 	}
 
 	return (
-		<Container className={cx(css.root, className)}>
+		<Container fullWidth className={cx(css.root, className)}>
 			<article className={css.card}>
 				<img
 					src={quote.authorPhoto?.url}
@@ -27,7 +27,10 @@ export const Review = ({ quote, className }: ReviewProps) => {
 					className={css.image}
 				/>
 				<div className={css.review}>
-					<ReviewHead review={quote.content} />
+					<ReviewHead
+						title={quote.title ?? ''}
+						review={quote.content}
+					/>
 					<ReviewFooter
 						fullName={quote.authorFullName}
 						position={quote.authorPosition}

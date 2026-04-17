@@ -12,7 +12,11 @@ import type { PropsWithChildren } from 'react';
 
 import { Locales } from '@/i18n/routing';
 import { getContactFormFields } from '@/shared/api/get-contact-form-fields';
-import { InterFonts, ArmenianFonts } from '@/shared/config/localFont';
+import {
+	InterFonts,
+	MontserratArmFonts,
+	NeuePlakFonts,
+} from '@/shared/config/localFont';
 import { LayoutProvider } from '@/shared/hooks/use-layout-context';
 import { Favicons } from '@/view/documents/ui/favicons';
 import { AppLayout } from '@/widgets/app-layout';
@@ -49,7 +53,13 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 					key="viewport"
 				/>
 			</head>
-			<body className={cx(InterFonts.variable, ArmenianFonts.variable)}>
+			<body
+				className={cx(
+					InterFonts.variable,
+					MontserratArmFonts.variable,
+					NeuePlakFonts.variable
+				)}
+			>
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<LayoutProvider contactUsFormFields={initialContactFormFields}>
 						<Providers>

@@ -8,6 +8,10 @@
 	}
 }
 
+.hy {
+	@mixin font-text14;
+}
+
 html[data-header-top-color='white'] {
 	.login {
 		color: var(--gray-100-color);
