@@ -65,7 +65,7 @@
 		}
 	}
 	.head {
-		/* @mixin responsive width, 680, 750, 750; */
+		@mixin responsive width, 680, 750, 750;
 		@mixin responsive padding-block-end, 30, 70, 70;
 
 		@media (max-width: 767px) {
