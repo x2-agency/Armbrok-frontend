@@ -3,7 +3,7 @@
 	overflow: hidden;
 
 	background: radial-gradient(
-			circle at 70% center,
+			circle at 75% center,
 			#d42522 0%,
 			#9e2e2c 5%,
 			transparent 70%
@@ -24,7 +24,7 @@
 .firstIphone {
 	position: absolute;
 	@mixin responsive width, unset, 290, 290;
-	@mixin responsive right, unset, 327, 327;
+	@mixin responsive right, unset, 287, 287;
 	@mixin responsive top, unset, 72, 72;
 
 	@media (max-width: 767px) {
@@ -38,7 +38,7 @@
 .secondIphone {
 	position: absolute;
 	@mixin responsive width, unset, 290, 290;
-	@mixin responsive right, unset, 82, 82;
+	@mixin responsive right, unset, 42, 42;
 	@mixin responsive top, unset, 98, 98;
 
 	@media (max-width: 767px) {
