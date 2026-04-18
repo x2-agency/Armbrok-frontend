@@ -10,6 +10,7 @@
 .links {
 	display: flex;
 	flex-direction: row;
+	align-items: baseline;
 	@mixin responsive gap, unset, 30, 30;
 
 	@media (min-width: 768px) and (max-width: 960px) {
