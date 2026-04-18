@@ -21,11 +21,13 @@ export const Review = ({ quote, className }: ReviewProps) => {
 	return (
 		<Container fullWidth className={cx(css.root, className)}>
 			<article className={css.card}>
-				<img
-					src={quote.authorPhoto?.url}
-					loading="lazy"
-					className={css.image}
-				/>
+				<div className={css.imageWrapper}>
+					<img
+						src={quote.authorPhoto?.url}
+						loading="lazy"
+						className={css.image}
+					/>
+				</div>
 				<div className={css.review}>
 					<ReviewHead
 						title={quote.title ?? ''}
