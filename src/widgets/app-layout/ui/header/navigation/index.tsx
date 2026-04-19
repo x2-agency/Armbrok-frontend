@@ -19,10 +19,11 @@ export const Navigation = () => {
 		<nav className={cx(css.root)}>
 			<ul className={cx(css.links, { [css.hyLinks]: isHyLocale })}>
 				{headerLinks.map(item => {
-					if (item.innerLinks.length > 0) {
+					const inner = item.innerLinks ?? [];
+					if (inner.length > 0) {
 						return (
 							<li className={cx(css.li)} key={item.id}>
-								<BurgerLinks label={item.text} items={item.innerLinks} />
+								<BurgerLinks label={item.text ?? ''} items={inner} />
 							</li>
 						);
 					}
@@ -44,7 +45,7 @@ export const Navigation = () => {
 								)}
 								variant="subtle"
 							>
-								{parser(item.text)}
+								{parser(item.text ?? '')}
 							</Button>
 						</li>
 					);

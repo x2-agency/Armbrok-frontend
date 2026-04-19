@@ -28,13 +28,14 @@ export const MenuBody = () => {
 		<Container className={css.root}>
 			<nav className={css.links}>
 				{headerLinks.map(item => {
-					if (item.innerLinks.length > 0) {
+					const inner = item.innerLinks ?? [];
+					if (inner.length > 0) {
 						return (
 							<li key={item.id} className={css.li}>
 								<BurgerLinks
 									className={css.services}
-									label={item.text}
-									items={item.innerLinks}
+									label={item.text ?? ''}
+									items={inner}
 								/>
 							</li>
 						);
@@ -44,7 +45,7 @@ export const MenuBody = () => {
 					return (
 						<li key={item.id} className={css.li}>
 							<Button variant="subtle" href={href} className={css.button}>
-								{parser(item.text)}
+								{parser(item.text ?? '')}
 							</Button>
 						</li>
 					);

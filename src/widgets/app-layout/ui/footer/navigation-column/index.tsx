@@ -30,10 +30,10 @@ export const NavigationColumn = () => {
 							href={group.slug ? `/${group.slug}` : undefined}
 							className={css.title}
 						>
-							{parser(group.text)}
+							{parser(group.text ?? '')}
 						</Button>
 						<ul className={css.list}>
-							{group.innerLinks.map(link => {
+							{(group.innerLinks ?? []).map(link => {
 								const href =
 									resolveInnerHref(link.slug) ??
 									resolveInnerHref(link.text);
@@ -44,7 +44,7 @@ export const NavigationColumn = () => {
 											href={href}
 											className={css.listItem}
 										>
-											{parser(link.text)}
+											{parser(link.text ?? '')}
 										</Button>
 									</li>
 								);

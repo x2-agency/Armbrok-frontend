@@ -63,7 +63,7 @@ export const BurgerLinks = ({
 										})}
 										href={href}
 									>
-										{parser(item.text)}
+										{parser(item.text ?? '')}
 									</Button>
 								</li>
 							);
