@@ -1,10 +1,9 @@
 import cx from 'clsx';
 import parser from 'html-react-parser';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
-import { useHeaderLinks } from '@/widgets/app-layout/hooks/use-header-links';
 import { BurgerLinks } from '@/widgets/app-layout/ui/burger-links';
 
 import css from './index.module.css';
@@ -12,42 +11,33 @@ import css from './index.module.css';
 export const Navigation = () => {
 	const pathname = usePathname();
 	const isHyLocale = pathname.startsWith('/hy');
-	const links = useHeaderLinks();
-	const t = useTranslations('fundsLinks');
+	const { siteLinks } = useLayoutContext();
+	const headerLinks = siteLinks?.header ?? [];
 	const normalizedPathname = pathname.replace(/^\/(hy|en|ru)/, '') || '/';
 
 	return (
 		<nav className={cx(css.root)}>
 			<ul className={cx(css.links, { [css.hyLinks]: isHyLocale })}>
-				<li className={cx(css.li)}>
-					<BurgerLinks rootKey="servicesLinks" />
-				</li>
-				<li className={cx(css.li)}>
-					<Button
-						href={'/funds'}
-						className={cx(
-							css.link,
-							{ [css.active]: pathname.includes('/funds') },
-							{ [css.hy]: isHyLocale }
-						)}
-						variant="subtle"
-					>
-						{parser(t('text'))}
-					</Button>
-				</li>
-				<li className={cx(css.li)}>
-					<BurgerLinks rootKey="aboutUsLinks" />
-				</li>
-				{links.map(item => {
-					const normalizedHref = item.href.replace(/^\/(hy|en|ru)/, '') || '/';
+				{headerLinks.map(item => {
+					const inner = item.innerLinks ?? [];
+					if (inner.length > 0) {
+						return (
+							<li className={cx(css.li)} key={item.id}>
+								<BurgerLinks label={item.text ?? ''} items={inner} />
+							</li>
+						);
+					}
+
+					const href = item.slug ? `/${item.slug}` : '#';
+					const normalizedHref = `/${item.slug ?? ''}`;
 					const isActive =
 						normalizedPathname === normalizedHref ||
 						normalizedPathname.startsWith(normalizedHref + '/');
 
 					return (
-						<li className={cx(css.li)} key={item.href}>
+						<li className={cx(css.li)} key={item.id}>
 							<Button
-								href={item.href}
+								href={href}
 								className={cx(
 									css.link,
 									{ [css.active]: isActive },
@@ -55,7 +45,7 @@ export const Navigation = () => {
 								)}
 								variant="subtle"
 							>
-								{parser(item.label)}
+								{parser(item.text ?? '')}
 							</Button>
 						</li>
 					);
