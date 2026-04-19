@@ -1,44 +1,54 @@
-import parser from 'html-react-parser';
-import { useTranslations } from 'next-intl';
+'use client';
 
-import { LOCALE_KEYS } from '@/i18n/locale-keys';
+import parser from 'html-react-parser';
+
+import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { SocialLinks } from '@/widgets/app-layout/ui/footer/social-links';
 
 import css from './index.module.css';
 
+const resolveInnerHref = (slug: string | null) => {
+	if (!slug) return undefined;
+	if (slug.includes('@')) return `mailto:${slug}`;
+	if (/^\+?[\d\s()-]+$/.test(slug) || slug.startsWith('+'))
+		return `tel:${slug.replace(/\s+/g, '')}`;
+	return `/${slug}`;
+};
+
 export const NavigationColumn = () => {
-	const { footer } = LOCALE_KEYS;
-	const t = useTranslations(`${footer.root}.${footer.links.root}`);
+	const { siteLinks } = useLayoutContext();
+	const footerGroups = siteLinks?.footer ?? [];
 
 	return (
 		<>
 			<nav className={css.root}>
-				{footer.links.items.map((item, index) => (
-					<div key={index} className={css.column}>
+				{footerGroups.map(group => (
+					<div key={group.id} className={css.column}>
 						<Button
 							variant="subtle"
-							href={`/${
-								item.root === 'products-and-services'
-									? 'depositary-services'
-									: item.root
-							}`}
+							href={group.slug ? `/${group.slug}` : undefined}
 							className={css.title}
 						>
-							{parser(t(`${item.root}.text`))}
+							{parser(group.text)}
 						</Button>
 						<ul className={css.list}>
-							{item.items?.map((link, index) => (
-								<li key={index}>
-									<Button
-										variant="subtle"
-										href={t(`${item.root}.${link}.link`)}
-										className={css.listItem}
-									>
-										{parser(t(`${item.root}.${link}.text`))}
-									</Button>
-								</li>
-							))}
+							{group.innerLinks.map(link => {
+								const href =
+									resolveInnerHref(link.slug) ??
+									resolveInnerHref(link.text);
+								return (
+									<li key={link.id}>
+										<Button
+											variant="subtle"
+											href={href}
+											className={css.listItem}
+										>
+											{parser(link.text)}
+										</Button>
+									</li>
+								);
+							})}
 						</ul>
 					</div>
 				))}

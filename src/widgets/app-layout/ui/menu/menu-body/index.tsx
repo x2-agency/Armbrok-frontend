@@ -8,16 +8,16 @@ import { LOCALE_KEYS } from '@/i18n/locale-keys';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
 import { Container } from '@/shared/ui/container';
-import type { MenuBodyProps } from '@/widgets/app-layout/types/menu.types';
 import { BurgerLinks } from '@/widgets/app-layout/ui/burger-links';
 
 import css from './index.module.css';
 
-export const MenuBody = ({ links }: MenuBodyProps) => {
+export const MenuBody = () => {
 	const { header } = LOCALE_KEYS;
 	const t = useTranslations(header.root);
-	const { toggleAccountModalOpen, setSubjectForm } = useLayoutContext();
-	const translation = useTranslations('fundsLinks');
+	const { toggleAccountModalOpen, setSubjectForm, siteLinks } =
+		useLayoutContext();
+	const headerLinks = siteLinks?.header ?? [];
 
 	const handleButtonClick = (text: string) => {
 		setSubjectForm(text);
@@ -27,24 +27,28 @@ export const MenuBody = ({ links }: MenuBodyProps) => {
 	return (
 		<Container className={css.root}>
 			<nav className={css.links}>
-				<li className={css.li}>
-					<BurgerLinks className={css.services} rootKey="servicesLinks" />
-				</li>
-				<li className={css.li}>
-					<Button href={'/funds'} className={cx(css.link)} variant="subtle">
-						{parser(translation('text'))}
-					</Button>
-				</li>
-				<li className={css.li}>
-					<BurgerLinks rootKey="aboutUsLinks" />
-				</li>
-				{links.map((link, index) => (
-					<li key={index} className={css.li}>
-						<Button variant="subtle" href={link.href} className={css.button}>
-							{parser(link.label)}
-						</Button>
-					</li>
-				))}
+				{headerLinks.map(item => {
+					if (item.innerLinks.length > 0) {
+						return (
+							<li key={item.id} className={css.li}>
+								<BurgerLinks
+									className={css.services}
+									label={item.text}
+									items={item.innerLinks}
+								/>
+							</li>
+						);
+					}
+
+					const href = item.slug ? `/${item.slug}` : '#';
+					return (
+						<li key={item.id} className={css.li}>
+							<Button variant="subtle" href={href} className={css.button}>
+								{parser(item.text)}
+							</Button>
+						</li>
+					);
+				})}
 			</nav>
 			<div className={css.buttons}>
 				<Button

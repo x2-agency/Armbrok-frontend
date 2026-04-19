@@ -1,6 +1,7 @@
 import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 
 import type { GetContactFormFieldsType } from '@/shared/api/get-contact-form-fields';
+import type { SiteLinksData } from '@/shared/api/get-site-links';
 
 export type LayoutContextType = {
 	isAccountModalOpen: boolean;
@@ -17,8 +18,10 @@ export type LayoutContextType = {
 	isSearchModalOpen: boolean;
 	toggleSearchModalOpen: Dispatch<SetStateAction<boolean>>;
 	privacyPolicyText?: string;
+	siteLinks?: SiteLinksData;
 };
 
 export type LayoutProviderProps = PropsWithChildren & {
 	contactUsFormFields?: GetContactFormFieldsType;
+	siteLinks?: SiteLinksData;
 };

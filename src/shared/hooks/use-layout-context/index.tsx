@@ -12,6 +12,7 @@ const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
 export const LayoutProvider = ({
 	children,
 	contactUsFormFields,
+	siteLinks,
 }: LayoutProviderProps) => {
 	const [isMenuOpen, toggleMenuOpen] = useState<boolean>(false);
 	const [isSearchModalOpen, toggleSearchModalOpen] = useState<boolean>(false);
@@ -30,6 +31,7 @@ export const LayoutProvider = ({
 				footerData,
 				isSearchModalOpen,
 				privacyPolicyText: contactUsFormFields?.data.privacyPolicyText,
+				siteLinks,
 				toggleSearchModalOpen,
 				toggleAccountModalOpen,
 				setSubjectForm,

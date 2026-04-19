@@ -12,6 +12,7 @@ import type { PropsWithChildren } from 'react';
 
 import { Locales } from '@/i18n/routing';
 import { getContactFormFields } from '@/shared/api/get-contact-form-fields';
+import { getSiteLinks } from '@/shared/api/get-site-links';
 import {
 	InterFonts,
 	MontserratArmFonts,
@@ -37,6 +38,7 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 	const messages = await getMessages({ locale });
 
 	const initialContactFormFields = await getContactFormFields();
+	const siteLinks = await getSiteLinks();
 
 	return (
 		<html lang={locale}>
@@ -69,7 +71,10 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 				}}
 			>
 				<NextIntlClientProvider locale={locale} messages={messages}>
-					<LayoutProvider contactUsFormFields={initialContactFormFields}>
+					<LayoutProvider
+						contactUsFormFields={initialContactFormFields}
+						siteLinks={siteLinks?.data}
+					>
 						<Providers>
 							<AppLayout>{children}</AppLayout>
 						</Providers>
