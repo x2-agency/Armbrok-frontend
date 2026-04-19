@@ -223,15 +223,51 @@ html {
 	}
 }
 
-html[lang='HY'] body {
-	font-family: var(--font-armenian);
+@font-face {
+	font-family: 'InterLatin';
+	src: url('/fonts/Inter-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0000-052F, U+0590-FB12, U+FB18-10FFFF;
 }
 
-html[lang='RU'] body {
+@font-face {
+	font-family: 'InterLatin';
+	src: url('/fonts/Inter-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0000-052F, U+0590-FB12, U+FB18-10FFFF;
+}
+
+@font-face {
+	font-family: 'InterLatin';
+	src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0000-052F, U+0590-FB12, U+FB18-10FFFF;
+}
+
+@font-face {
+	font-family: 'InterLatin';
+	src: url('/fonts/Inter-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0000-052F, U+0590-FB12, U+FB18-10FFFF;
+}
+
+html:lang(hy) body {
+	font-family: var(--font-armenian), var(--font-inter);
+}
+
+html:lang(ru) body {
 	font-family: var(--font-inter);
 }
 
-html[lang='EN'] body {
+html:lang(en) body {
 	font-family: var(--font-neue-plak);
 }
 
