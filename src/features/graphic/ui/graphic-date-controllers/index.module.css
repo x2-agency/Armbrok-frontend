@@ -12,7 +12,7 @@
 	@mixin transition;
 	@mixin responsive padding-inline, 16, 16, 16;
 	@mixin responsive padding-block, 8, 8, 8;
-	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive border-radius, 9999, 9999, 9999;
 
 	color: var(--gray-500-color);
 	background-color: var(--gray-200-color);
