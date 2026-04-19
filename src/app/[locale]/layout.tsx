@@ -59,6 +59,14 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 					MontserratArmFonts.variable,
 					NeuePlakFonts.variable
 				)}
+				style={{
+					fontFamily:
+						locale === 'hy'
+							? `'InterLatin', ${MontserratArmFonts.style.fontFamily}`
+							: locale === 'en'
+								? NeuePlakFonts.style.fontFamily
+								: InterFonts.style.fontFamily,
+				}}
 			>
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<LayoutProvider contactUsFormFields={initialContactFormFields}>

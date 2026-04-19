@@ -1,7 +1,7 @@
 .root {
 	@mixin responsive gap, 4, 4, 4;
 	@mixin responsive padding, 4, 4, 4;
-	@mixin responsive border-radius, 10, 10, 10;
+	@mixin responsive border-radius, 9999, 9999, 9999;
 
 	width: fit-content;
 	display: flex;
@@ -13,7 +13,7 @@
 	@mixin font-text16;
 	@mixin responsive min-width, 120, 166, 166;
 	@mixin responsive padding-block, 8, 8, 8;
-	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive border-radius, 9999, 9999, 9999;
 
 	background-color: transparent;
 	color: var(--gray-600-color);

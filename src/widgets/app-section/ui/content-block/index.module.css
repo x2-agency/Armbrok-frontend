@@ -75,7 +75,7 @@
 	@mixin responsive gap, 4, 12, 12;
 	@mixin responsive padding-inline, 4, 12, 12;
 	@mixin responsive padding-block, 4, 8, 8;
-	@mixin responsive border-radius, 12, 12, 12;
+	@mixin responsive border-radius, 9999, 9999, 9999;
 	@mixin responsive border-width, 1, 1, 1;
 	background-color: #ffffff26;
 	border-color: #ffffff33;

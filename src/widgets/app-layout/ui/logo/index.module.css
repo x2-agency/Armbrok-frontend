@@ -3,7 +3,7 @@
 	position: relative;
 	outline: none;
 
-	@mixin responsive width, 85, 128, 128;
+	@mixin responsive width, 85, 99, 99;
 	@mixin responsive height, 55, 57, 57;
 }
 

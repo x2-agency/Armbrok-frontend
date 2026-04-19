@@ -61,6 +61,6 @@ export const config = {
 	matcher: [
 		'/',
 		'/(ru|hy|en)/:path*',
-		'/((?!api|_next/static|_next/image|favicon.ico|images|assets|sitemap.xml|robots.txt).*)',
+		'/((?!api|_next/static|_next/image|favicon.ico|fonts|images|assets|sitemap.xml|robots.txt).*)',
 	],
 };

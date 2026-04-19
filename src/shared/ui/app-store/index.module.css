@@ -5,6 +5,9 @@
 
 .link {
 	@mixin responsive height, 38, 38, 38;
+
+	@mixin responsive border-radius, 9999, 9999, 9999;
+	overflow: hidden;
 }
 
 .svg {

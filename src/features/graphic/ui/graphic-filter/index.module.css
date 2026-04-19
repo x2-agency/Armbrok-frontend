@@ -14,7 +14,7 @@
 	@mixin transition background-color;
 	@mixin font-text14;
 	@mixin responsive padding, 12, 12, 12;
-	@mixin responsive border-radius, 8, 8, 8;
+	@mixin responsive border-radius, 9999, 9999, 9999;
 	@mixin responsive --border-width, 1.5, 1.5, 1.5;
 	@mixin responsive gap, 8, 8, 8;
 

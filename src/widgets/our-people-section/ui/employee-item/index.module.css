@@ -24,6 +24,7 @@
 	border-radius: 100%;
 	overflow: hidden;
 	position: relative;
+	flex-shrink: 0;
 }
 
 .avatar {
