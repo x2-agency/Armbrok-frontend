@@ -27,6 +27,10 @@
 	}
 }
 
+.mainButton.hy {
+	@mixin font-text14;
+}
+
 .list {
 	@mixin transition;
 	@mixin responsive padding-block, 8, 8, 8;

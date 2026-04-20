@@ -100,73 +100,73 @@
 
 :root:lang(hy) {
 	@media (max-width: 767px) {
-		--h1: 31px;
-		--h2: 23px;
-		--h3: 19px;
-		--h4: 17px;
-		--h5: 15px;
-		--h6: 15px;
-		--text20: 15px;
-		--text18: 15px;
-		--text16: 13px;
-		--text14: 13px;
-		--text12: 11px;
+		--h1: 30px;
+		--h2: 22px;
+		--h3: 18px;
+		--h4: 16px;
+		--h5: 14px;
+		--h6: 14px;
+		--text20: 14px;
+		--text18: 14px;
+		--text16: 12px;
+		--text14: 12px;
+		--text12: 10px;
 	}
 
 	@media (min-width: 768px) and (max-width: 899px) {
-		--h1: 63px;
-		--h2: 29px;
-		--h3: 24px;
-		--h4: 18px;
-		--h5: 15px;
-		--h6: 14px;
-		--text20: 15px;
-		--text18: 14px;
-		--text16: 12px;
-		--text14: 10px;
-		--text12: 9px;
+		--h1: 62px;
+		--h2: 28px;
+		--h3: 23px;
+		--h4: 17px;
+		--h5: 14px;
+		--h6: 13px;
+		--text20: 14px;
+		--text18: 13px;
+		--text16: 11px;
+		--text14: 9px;
+		--text12: 8px;
 	}
 
 	@media (min-width: 900px) and (max-width: 1023px) {
-		--h1: 63px;
-		--h2: 32px;
-		--h3: 24px;
-		--h4: 18px;
-		--h5: 17px;
-		--h6: 14px;
-		--text20: 16px;
-		--text18: 14px;
-		--text16: 13px;
-		--text14: 10px;
-		--text12: 9px;
+		--h1: 62px;
+		--h2: 31px;
+		--h3: 23px;
+		--h4: 17px;
+		--h5: 16px;
+		--h6: 13px;
+		--text20: 15px;
+		--text18: 13px;
+		--text16: 12px;
+		--text14: 9px;
+		--text12: 8px;
 	}
 
 	@media (min-width: 1024px) {
-		--h1: 63px;
-		--h2: 34px;
-		--h3: 24px;
-		--h4: 19px;
-		--h5: 17px;
-		--h6: 14px;
-		--text20: 17px;
-		--text18: 15px;
-		--text16: 13px;
-		--text14: 11px;
-		--text12: 9px;
+		--h1: 62px;
+		--h2: 33px;
+		--h3: 23px;
+		--h4: 18px;
+		--h5: 16px;
+		--h6: 13px;
+		--text20: 16px;
+		--text18: 14px;
+		--text16: 12px;
+		--text14: 10px;
+		--text12: 8px;
 	}
 
 	@media (min-width: 1440px) {
-		--h1: 63px;
-		--h2: 39px;
-		--h3: 31px;
-		--h4: 23px;
-		--h5: 19px;
-		--h6: 17px;
-		--text20: 19px;
-		--text18: 17px;
-		--text16: 15px;
-		--text14: 13px;
-		--text12: 11px;
+		--h1: 62px;
+		--h2: 38px;
+		--h3: 30px;
+		--h4: 22px;
+		--h5: 18px;
+		--h6: 16px;
+		--text20: 18px;
+		--text18: 16px;
+		--text16: 14px;
+		--text14: 12px;
+		--text12: 10px;
 	}
 }
 

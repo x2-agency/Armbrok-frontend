@@ -31,12 +31,18 @@
 	justify-content: flex-start;
 	@mixin responsive margin-block-end, 24, 24, 24;
 	color: var(--gray-100-color);
+	max-width: 100%;
+	text-align: left;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .list {
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
+	width: 100%;
 	@mixin responsive max-width, 175, 175, 175;
 
 	@mixin responsive gap, 16, 16, 16;
@@ -46,6 +52,11 @@
 	color: var(--gray-100-color) !important;
 	font-weight: 400 !important;
 	transition-property: background-color color;
+	max-width: 100%;
+	text-align: left;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 
 	@media (hover: hover) {
 		&:hover {
@@ -54,6 +65,7 @@
 		}
 	}
 }
+
 
 @media (max-width: 767px) {
 	.column:nth-child(3) {
