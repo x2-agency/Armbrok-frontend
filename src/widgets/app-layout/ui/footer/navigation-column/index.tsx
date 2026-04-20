@@ -52,7 +52,7 @@ export const NavigationColumn = () => {
 						</ul>
 					</div>
 				))}
-				<SocialLinks className={css.socialDesctop} />
+				<SocialLinks className={css.socialDesktop} />
 			</nav>
 			<SocialLinks className={css.socialMobile} />
 		</>
