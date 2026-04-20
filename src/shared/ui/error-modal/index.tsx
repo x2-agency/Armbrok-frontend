@@ -115,8 +115,8 @@ export const ErrorModal = ({
 				</li>
 				<li className={css.paragraph}>
 					<p className={css.label}>{parser(t('emailLabel'))}:</p>
-					<a href="mailto:armbrok@armbrok.am" className={css.link}>
-						armbrok@armbrok.am
+					<a href="mailto:info@roqcapital.am" className={css.link}>
+						info@roqcapital.am
 					</a>
 				</li>
 			</ul>
