@@ -19,15 +19,19 @@ export const Document = ({
 	columns,
 	lineClamp,
 	className,
+	variant = 'file',
 }: MediaData & {
 	direction?: string;
 	columns?: number;
 	lineClamp?: number;
 	className?: string;
+	variant?: 'file' | 'link';
 }) => {
 	if (!file) {
 		return null;
 	}
+
+	const isLink = variant === 'link';
 
 	const defineIcon = () => {
 		if (file.ext === '.xlsx') {
@@ -55,10 +59,13 @@ export const Document = ({
 		<article
 			className={cx(css.root, className, css[direction ?? ''], {
 				[css.file]: label,
+				[css.link]: isLink,
 			})}
 		>
 			<div className={css.leftPart}>
-				<img loading="lazy" src={defineIcon()} className={css.icon} />
+				{!isLink && (
+					<img loading="lazy" src={defineIcon()} className={css.icon} />
+				)}
 				<div className={css.header}>
 					{comesName && (
 						<h3
@@ -66,15 +73,15 @@ export const Document = ({
 								css.name,
 								{ [css.newName]: file.name },
 								{
-									[css.bigWidth]: columns && columns < 3,
+									[css.bigWidth]: !isLink && columns && columns < 3,
 								}
 							)}
 							style={{ WebkitLineClamp: lineClamp }}
 						>
-							{formatName(comesName)}
+							{isLink ? parser(comesName) : formatName(comesName)}
 						</h3>
 					)}
-					{hasLabel && (
+					{!isLink && hasLabel && (
 						<div className={css.info}>
 							{file.ext && (
 								<p className={css.type}>
@@ -90,14 +97,20 @@ export const Document = ({
 					)}
 				</div>
 			</div>
-			<Button
-				variant="next"
-				iconRotate={270}
-				className={css.button}
-				onClick={() => downloadFile(file.url ?? '', name || 'file')}
-			>
-				{!label && 'Download'}
-			</Button>
+			{isLink ? (
+				<Button variant="next" iconRotate={180} className={css.button}>
+					Link
+				</Button>
+			) : (
+				<Button
+					variant="next"
+					iconRotate={270}
+					className={css.button}
+					onClick={() => downloadFile(file.url ?? '', name || 'file')}
+				>
+					{!label && 'Download'}
+				</Button>
+			)}
 			<Link
 				href={file.url ?? '#'}
 				className={css.downloadLink}

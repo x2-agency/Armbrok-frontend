@@ -17,6 +17,10 @@ export const revalidate = 1;
 const RegulationPage = async () => {
 	const [initialRegulation] = await Promise.all([getRegulation()]);
 
+	if (!initialRegulation?.data) {
+		throw new Error();
+	}
+
 	return <Regulation {...initialRegulation.data} />;
 };
 

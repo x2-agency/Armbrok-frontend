@@ -13,6 +13,7 @@ export type StatutoryDocumentsProps = {
 	columns?: number;
 	fileDirection?: 'row' | 'column';
 	lineClamp?: number;
+	variant?: 'file' | 'link';
 };
 
 export const StatutoryDocuments = ({
@@ -21,6 +22,7 @@ export const StatutoryDocuments = ({
 	columns = 3,
 	fileDirection = 'row',
 	lineClamp = 3,
+	variant = 'file',
 }: StatutoryDocumentsProps) => {
 	const { title, documents, description } = documentsSection ?? {};
 
@@ -60,6 +62,7 @@ export const StatutoryDocuments = ({
 								alternativeText={document.alternativeText}
 								direction={fileDirection}
 								lineClamp={lineClamp}
+								variant={variant}
 							/>
 						</li>
 					))}
