@@ -1,3 +1,11 @@
 .solution {
 	padding-block: unset;
 }
+
+.quote.quote {
+	margin-block-end: unset;
+}
+
+.countries {
+	@mixin responsive margin-block-start, 60, 120, 120;
+}
