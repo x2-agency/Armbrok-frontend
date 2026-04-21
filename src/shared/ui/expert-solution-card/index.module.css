@@ -45,6 +45,13 @@
 
 	font-weight: 600;
 	color: var(--black-color);
+
+	@media (min-width: 768px) and (max-width: 1250px) {
+		:lang(hy) & {
+			@mixin font-text16;
+			@mixin responsive font-size, unset, 18;
+		}
+	}
 }
 
 .title:has(+ .description) {
