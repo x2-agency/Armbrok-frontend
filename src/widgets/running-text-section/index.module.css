@@ -1,36 +1,21 @@
 .root {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	@mixin responsive padding-block-end, 60, 120, 120;
-
-	@media (max-width: 767px) {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		min-height: 3rem;
-	}
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #CD001E;
+	color: #fff;
+	@mixin responsive padding-block-start, 65, 65, 65;
+	@mixin responsive padding-block-end, 84, 84, 84;
 }
 
 .serve {
-	display: flex;
-	width: 100%;
-	justify-content: end;
+	display: inline-flex;
 	align-items: center;
 	@mixin font-h2;
 	font-weight: 600;
-
-	@media (max-width: 767px) {
-		justify-content: center;
-	}
-
-	@media (min-width: 768px) and (max-width: 899px) {
-		font-size: 23px !important;
-	}
+	color: #fff;
 }
 
 .animationText {
-	@media (max-width: 767px) {
-		min-height: 11rem;
-	}
 }

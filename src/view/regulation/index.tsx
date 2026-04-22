@@ -22,7 +22,12 @@ export const Regulation: NextPage<RegulationPageData> = ({
 			{title && <h1 className={css.title}>{parser(title)}</h1>}
 			<InternalRules internalRules={internalRules} />
 
-			<StatutoryDocuments documentsSection={laws} columns={2} lineClamp={1} />
+			<StatutoryDocuments
+				documentsSection={laws}
+				columns={2}
+				lineClamp={1}
+				variant="link"
+			/>
 			<FileSection
 				title={stockExchangeRules?.title}
 				description={stockExchangeRules?.description}

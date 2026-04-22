@@ -77,7 +77,10 @@ export const Brokerage: NextPage<{ initialData?: BrokeragePageResponse }> = ({
 				interval={60}
 				runningTextSection={runningTextSection}
 			/>
-			<CountriesSection residenceCountriesSection={countriesSection} />
+			<CountriesSection
+				className={css.countries}
+				residenceCountriesSection={countriesSection}
+			/>
 			<Start data={investingStepsSection} />
 			<StatutoryDocuments
 				documentsSection={documentsSection}

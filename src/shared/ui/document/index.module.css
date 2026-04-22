@@ -34,6 +34,19 @@
 	}
 }
 
+.link {
+	@media (max-width: 767px) {
+		flex-direction: row;
+		align-items: center;
+		gap: 4rem;
+	}
+}
+
+.root.link.row .name,
+.root.link .name {
+	max-width: unset;
+}
+
 .header {
 	display: flex;
 	flex-direction: column;

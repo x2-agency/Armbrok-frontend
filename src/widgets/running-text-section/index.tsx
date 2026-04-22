@@ -3,7 +3,6 @@
 import parser from 'html-react-parser';
 
 import type { RunningTextSectionProps } from '@/shared/types/global.types';
-import { Container } from '@/shared/ui/container';
 
 import css from './index.module.css';
 import { AnimatedText } from './ui/animation-text';
@@ -18,7 +17,7 @@ const RunningTextSection = ({
 	interval,
 }: AnimationTextProps) => {
 	return (
-		<Container className={css.root}>
+		<section className={css.root}>
 			<h2 className={css.serve}>
 				{parser(runningTextSection?.staticText ?? '')}&nbsp;
 			</h2>
@@ -27,7 +26,7 @@ const RunningTextSection = ({
 				textArray={runningTextSection?.textArray || []}
 				interval={interval}
 			/>
-		</Container>
+		</section>
 	);
 };
 

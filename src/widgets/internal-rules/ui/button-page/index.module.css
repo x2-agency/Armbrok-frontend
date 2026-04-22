@@ -1,7 +1,7 @@
 .root {
 	display: flex;
 	flex-direction: column;
-	@mixin responsive gap, 24, 24, 42;
+	@mixin responsive gap, 24, 24, 24;
 }
 
 .listItem {
