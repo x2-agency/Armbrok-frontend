@@ -31,17 +31,17 @@ export const InterFonts = localFont({
 export const NeuePlakFonts = localFont({
 	src: [
 		{
-			path: '../../../public/fonts/Neue-Plak-Regular.ttf',
+			path: '../../../public/fonts/Neue-Plak-new-Regular.woff2',
 			weight: '400',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/Neue-Plak-SemiBold.ttf',
+			path: '../../../public/fonts/Neue-Plak-new-SemiBold.woff2',
 			weight: '600',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/Neue-Plak-Bold.ttf',
+			path: '../../../public/fonts/Neue-Plak-new-Bold.woff2',
 			weight: '700',
 			style: 'normal',
 		},
@@ -54,22 +54,22 @@ export const NeuePlakFonts = localFont({
 export const MontserratArmFonts = localFont({
 	src: [
 		{
-			path: '../../../public/fonts/Montserratarm-Regular.otf',
+			path: '../../../public/fonts/Montserratarm-new-Regular.woff2',
 			weight: '400',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/Montserratarm-Medium.otf',
+			path: '../../../public/fonts/Montserratarm-new-Medium.woff2',
 			weight: '500',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/Montserratarm-SemiBold.otf',
+			path: '../../../public/fonts/Montserratarm-new-SemiBold.woff2',
 			weight: '600',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/Montserratarm-Bold.otf',
+			path: '../../../public/fonts/Montserratarm-new-Bold.woff2',
 			weight: '700',
 			style: 'normal',
 		},
