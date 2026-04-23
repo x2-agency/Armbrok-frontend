@@ -101,7 +101,7 @@ export const Document = ({
 			{isLink ? (
 				<Button
 					variant="next"
-					iconRotate={isExternalLink ? 45 : 180}
+					iconRotate={isExternalLink ? 135 : 180}
 					className={css.button}
 				>
 					Link
