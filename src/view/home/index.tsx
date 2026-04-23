@@ -52,6 +52,7 @@ export const Home: NextPage<{
 					backgroundColor="gray"
 					items={advantages}
 				/>
+				
 			</HeroContainer>
 			<AppSection
 				content={brokerageAppCard}
