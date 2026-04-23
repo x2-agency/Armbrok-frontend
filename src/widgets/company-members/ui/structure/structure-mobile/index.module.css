@@ -8,8 +8,10 @@
 }
 
 .graphCustomContent {
+	@mixin responsive font-size, 8, 10, 10;
+
 	padding-inline: 4px;
-	font-size: 14px;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;

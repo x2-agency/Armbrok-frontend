@@ -38,7 +38,7 @@
 
 .description {
 	@mixin font-text20;
-	@mixin responsive max-width, 0, 700, 700;
+	@mixin responsive max-width, 0, 1200, 1200;
 
 	@media (max-width: 767px) {
 		max-width: 100%;

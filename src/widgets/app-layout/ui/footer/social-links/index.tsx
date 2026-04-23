@@ -1,5 +1,8 @@
 import cx from 'clsx';
+import Link from 'next/link';
 
+import AppSvg from '@/public/assets/app.svg';
+import GooglePlaySvg from '@/public/assets/google-play.svg';
 import { SOCIAL_MEDIA_LINKS } from '@/widgets/app-layout/model/social.constants';
 
 import css from './index.module.css';
@@ -8,8 +11,8 @@ import { Social } from './social';
 export const SocialLinks = ({ className }: { className?: string }) => {
 	return (
 		<div className={cx(css.root, className)}>
-			{/* <div className={css.appStore}> */}
-			{/* <Link
+			<div className={css.appStore}>
+				<Link
 					href="https://apps.apple.com"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -22,8 +25,8 @@ export const SocialLinks = ({ className }: { className?: string }) => {
 					rel="noopener noreferrer"
 				>
 					<GooglePlaySvg className={css.svg} />
-				</Link> */}
-			{/* </div> */}
+				</Link>
+			</div>
 			<Social className={css.media} items={SOCIAL_MEDIA_LINKS} />
 		</div>
 	);
