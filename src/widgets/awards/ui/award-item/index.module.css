@@ -54,13 +54,9 @@
 	}
 }
 
-.age {
+.age.age {
 	@mixin font-text18;
 	@mixin responsive padding-block-end, 1, 4, 4;
 
 	font-weight: 600;
-
-	:lang(hy) & {
-		font-weight: 400;
-	}
 }

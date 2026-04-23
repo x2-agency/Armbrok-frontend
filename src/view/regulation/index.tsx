@@ -27,6 +27,7 @@ export const Regulation: NextPage<RegulationPageData> = ({
 				columns={2}
 				lineClamp={1}
 				variant="link"
+			
 			/>
 			<FileSection
 				title={stockExchangeRules?.title}
