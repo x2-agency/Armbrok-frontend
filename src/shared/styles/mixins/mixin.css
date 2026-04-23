@@ -11,3 +11,9 @@
 		$(property): calc($(desktop-size)rem / 14.4);
 	}
 }
+
+@define-mixin hy-font-size $mobile-size, $tablet-size, $desktop-size {
+	:lang(hy) & {
+		@mixin responsive font-size, $(mobile-size), $(tablet-size), $(desktop-size);
+	}
+}

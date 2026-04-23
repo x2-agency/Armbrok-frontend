@@ -1,3 +1,12 @@
+.wrapper {
+	@mixin responsive padding-block-end, 32, 40, 40;
+	border-bottom: 1px solid var(--gray-300-color);
+
+	@media (max-width: 767px) {
+		border-bottom: unset;
+	}
+}
+
 .root {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
@@ -5,15 +14,11 @@
 	@mixin responsive column-gap, unset, 40, 40;
 	@mixin responsive row-gap, unset, 40, 40;
 
-	@mixin responsive padding-block-end, 32, 40, 40;
-	border-bottom: 1px solid var(--gray-300-color);
-
 	@media (max-width: 767px) {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 2.6rem;
 		row-gap: 8.533rem; /* 32px */
-		border-bottom: unset;
 	}
 
 	@media (min-width: 768px) and (max-width: 1199px) {
@@ -80,20 +85,18 @@
 	}
 }
 
-.socialDesktop {
-	display: block;
-	grid-column: 6;
+.bottomRow {
+	@mixin responsive margin-block-start, 24, 32, 32;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
 
 	@media (max-width: 767px) {
-		display: none;
-		grid-column: unset;
-	}
-}
-
-.socialMobile {
-	display: none;
-
-	@media (max-width: 767px) {
-		display: block;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.5rem;
 	}
 }

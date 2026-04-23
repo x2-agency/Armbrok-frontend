@@ -43,14 +43,6 @@
 	@mixin responsive gap, 40, 40, 40;
 }
 
-.leftBlockHy {
-	@mixin responsive gap, 50, 15, 15;
-}
-
-.rightBlockHy {
-	@mixin responsive gap, 40, 40, 40;
-}
-
 .burger {
 	display: inline-block;
 	cursor: pointer;

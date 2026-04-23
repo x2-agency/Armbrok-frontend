@@ -1,7 +1,7 @@
 'use client';
 
 import parser from 'html-react-parser';
-import type { Dispatch, SetStateAction } from 'react';
+import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react';
 
 import CrossSVG from '@/public/assets/icons/cross.svg';
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
@@ -24,12 +24,22 @@ export const SearchForm = ({
 	setNewsData,
 	searchButtonText,
 }: SearchFormProps) => {
-	const { toggleSearchModalOpen } = useLayoutContext();
+	const { isSearchModalOpen, toggleSearchModalOpen } = useLayoutContext();
 	const { query, setQuery, handleSearch } = useSearch(setNewsData);
+	const inputRef = useRef<HTMLInputElement>(null);
+
+	useEffect(() => {
+		if (!isSearchModalOpen) return;
+		const timer = window.setTimeout(() => {
+			inputRef.current?.focus();
+		}, 50);
+		return () => window.clearTimeout(timer);
+	}, [isSearchModalOpen]);
 
 	return (
 		<form className={css.root} onSubmit={handleSearch}>
 			<Input
+				ref={inputRef}
 				className={css.input}
 				placeholder={inputPlaceholder ?? SEARCH_FORM_NULL_DATA.placeholder}
 				type="text"
