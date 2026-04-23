@@ -4,6 +4,7 @@ import parser from 'html-react-parser';
 
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
+import { AppStoreLinks } from '@/widgets/app-layout/ui/footer/app-store-links';
 import { SocialLinks } from '@/widgets/app-layout/ui/footer/social-links';
 
 import css from './index.module.css';
@@ -21,7 +22,7 @@ export const NavigationColumn = () => {
 	const footerGroups = siteLinks?.footer ?? [];
 
 	return (
-		<>
+		<div className={css.wrapper}>
 			<nav className={css.root}>
 				{footerGroups.map(group => (
 					<div key={group.id} className={css.column}>
@@ -52,9 +53,11 @@ export const NavigationColumn = () => {
 						</ul>
 					</div>
 				))}
-				<SocialLinks className={css.socialDesktop} />
 			</nav>
-			<SocialLinks className={css.socialMobile} />
-		</>
+			<div className={css.bottomRow}>
+				<AppStoreLinks />
+				<SocialLinks />
+			</div>
+		</div>
 	);
 };

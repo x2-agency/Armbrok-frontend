@@ -1,7 +1,3 @@
-'use client';
-import cx from 'clsx';
-import { usePathname } from 'next/navigation';
-
 import {
 	HOME_LINK,
 	LOGO_HEADER,
@@ -16,18 +12,15 @@ import { LogIn } from './log-in';
 import { Navigation } from './navigation';
 
 export const Header = () => {
-	const pathname = usePathname();
-	const isHyLocale = pathname.startsWith('/hy');
-
 	return (
 		<header className={css.root}>
 			<div className={css.jumpedContainer}>
-				<div className={cx(css.leftBlock, { [css.leftBlockHy]: isHyLocale })}>
+				<div className={css.leftBlock}>
 					<Logo logo={LOGO_HEADER} href={HOME_LINK} className={css.logo} />
 					<Navigation />
 				</div>
 
-				<div className={cx(css.rightBlock, { [css.rightBlockHy]: isHyLocale })}>
+				<div className={css.rightBlock}>
 					<BurgerButton className={css.mobileBurger} />
 
 					<Search className={css.pcSearch} />

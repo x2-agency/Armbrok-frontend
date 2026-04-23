@@ -1,0 +1,10 @@
+.root {
+	display: flex;
+	flex-direction: row;
+	@mixin responsive gap, 8, 12, 12;
+	@mixin responsive height, 38, 48, 48;
+}
+
+.svg {
+	height: 100%;
+}
