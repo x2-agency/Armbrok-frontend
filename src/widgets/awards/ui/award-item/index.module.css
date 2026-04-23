@@ -18,7 +18,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	@mixin responsive width, 170, 170, 170;
+	@mixin responsive width, 170, 250, 250;
 
 	@media (min-width: 1441px) {
 		br {
@@ -31,12 +31,20 @@
 .about {
 	font-weight: 500;
 	text-align: center;
+
+	:lang(hy) & {
+		font-weight: 400;
+	}
 }
 
 .about {
 	@mixin font-text16;
 
 	font-weight: 500;
+
+	:lang(hy) & {
+		font-weight: 400;
+	}
 
 	@media (max-width: 1200px) {
 		@mixin font-text14;
@@ -51,4 +59,8 @@
 	@mixin responsive padding-block-end, 1, 4, 4;
 
 	font-weight: 600;
+
+	:lang(hy) & {
+		font-weight: 400;
+	}
 }
