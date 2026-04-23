@@ -2,15 +2,15 @@
 
 import type { NextPage } from 'next';
 
-import useMediaQuery from '@/shared/hooks/use-media-query';
+// import useMediaQuery from '@/shared/hooks/use-media-query';
 import { useUpdateFooterData } from '@/shared/hooks/use-update-footer-data';
 import { ExperienceSection } from '@/shared/ui/experience-section';
-import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
+// import { ExpertSolutionSection } from '@/shared/ui/expert-solutions-section';
 import { HeroContainer } from '@/shared/ui/hero-container';
 import { BannerSection } from '@/widgets/banner-section/ui';
-import { HelpfulInformation } from '@/widgets/helpful-information';
+// import { HelpfulInformation } from '@/widgets/helpful-information';
 import { HowWeAreWorkingSection } from '@/widgets/how-we-are-working-section';
-import { ParentFunds } from '@/widgets/parent-funds';
+// import { ParentFunds } from '@/widgets/parent-funds';
 
 import css from './index.module.css';
 import type { FundsPageResponse } from './types/response';
@@ -18,18 +18,18 @@ import type { FundsPageResponse } from './types/response';
 export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 	initialFundsPageData,
 }) => {
-	const isMobile = useMediaQuery('(max-width: 767px)');
+	// const isMobile = useMediaQuery('(max-width: 767px)');
 	const {
 		publishedAt,
 		heroSection,
 		experienceSection,
-		investingAdvantages,
-		howFundWorksSection,
-		howWeAreWorkingSection,
+		// investingAdvantages,
+		// howFundWorksSection,
+		// howWeAreWorkingSection,
 		disclaimerSection,
-		infoSection,
-		parentFunds,
-		fundListTitle,
+		// infoSection,
+		// parentFunds,
+		// fundListTitle,
 	} = initialFundsPageData?.data ?? {};
 
 	useUpdateFooterData(publishedAt);
@@ -54,7 +54,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 					/>
 				</HeroContainer>
 			)}
-			<ExpertSolutionSection
+			{/* <ExpertSolutionSection
 				className={css.expert}
 				items={investingAdvantages?.factoids}
 				title={investingAdvantages?.title}
@@ -73,7 +73,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				bigFormatIcon
 				className={css.howFundWorks}
 			/>
-			<HelpfulInformation accordionSection={infoSection} className={css.help} />
+			<HelpfulInformation accordionSection={infoSection} className={css.help} /> */}
 			<HowWeAreWorkingSection
 				data={disclaimerSection}
 				oneCard
