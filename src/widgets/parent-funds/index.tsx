@@ -29,7 +29,7 @@ export const ParentFunds = ({
 		<Container>
 			<div className={cx(css.root, css[mode])}>
 				<ParentFundsHeader mode={mode} data={head} />
-				<ParentFundsBody funds={funds} mode={mode} />
+				{/* <ParentFundsBody funds={funds} mode={mode} /> */}
 			</div>
 		</Container>
 	);
