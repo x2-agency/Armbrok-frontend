@@ -7,9 +7,12 @@
 	@mixin responsive height, 38, 38, 38;
 
 	@mixin responsive border-radius, 9999, 9999, 9999;
+	flex-shrink: 0;
 	overflow: hidden;
 }
 
 .svg {
+	display: block;
 	height: 100%;
+	width: auto;
 }

@@ -32,6 +32,7 @@ export const Document = ({
 	}
 
 	const isLink = variant === 'link';
+	const isExternalLink = isLink && !file.ext;
 
 	const defineIcon = () => {
 		if (file.ext === '.xlsx') {
@@ -98,7 +99,11 @@ export const Document = ({
 				</div>
 			</div>
 			{isLink ? (
-				<Button variant="next" iconRotate={180} className={css.button}>
+				<Button
+					variant="next"
+					iconRotate={isExternalLink ? 45 : 180}
+					className={css.button}
+				>
 					Link
 				</Button>
 			) : (
