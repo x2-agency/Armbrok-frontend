@@ -5,7 +5,7 @@ import css from './index.module.css';
 
 export type PlacementCurrencyType = {
 	amount?: string;
-	currency?: 'usd' | 'amd';
+	currency?: 'usd' | 'amd' | 'none' | null;
 	label?: string;
 };
 
@@ -26,7 +26,10 @@ export const PlacementCurrency = ({ data }: PlacementCurrencyProps) => {
 		<ul className={cx(css.root, { [css.newRoot]: data.length === 1 })}>
 			{data.map((item, index) => {
 				const { amount, currency, label } = item;
-				const currencySvg = currency ? currencyIcons[currency] : undefined;
+				const currencySvg =
+					currency === 'usd' || currency === 'amd'
+						? currencyIcons[currency]
+						: undefined;
 
 				return (
 					<li key={index} className={css.wrap}>

@@ -7,4 +7,11 @@
 
 .teens {
 	padding-block-end: unset;
+
+	ul:has(> :nth-child(5)) {
+		@mixin responsive max-width, 768, 768, 768;
+
+		flex-wrap: wrap;
+		margin-inline: auto;
+	}
 }

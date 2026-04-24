@@ -40,6 +40,12 @@
 		align-items: center;
 		gap: 4rem;
 	}
+
+	.name {
+		@mixin font-text16;
+
+		font-weight: 500;
+	}
 }
 
 .root.link.row .name,

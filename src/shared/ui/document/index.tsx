@@ -14,6 +14,7 @@ import css from './index.module.css';
 export const Document = ({
 	direction,
 	file,
+	link,
 	name,
 	label,
 	columns,
@@ -27,27 +28,27 @@ export const Document = ({
 	className?: string;
 	variant?: 'file' | 'link';
 }) => {
-	if (!file) {
+	if (!file && !link) {
 		return null;
 	}
 
-	const isLink = variant === 'link';
-	const isExternalLink = isLink && !file.ext;
+	const isLink = !file;
+	const href = file?.url ?? link ?? '#';
+	const isExternalLink = isLink && !file?.ext;
 
 	const defineIcon = () => {
-		if (file.ext === '.xlsx') {
+		if (file?.ext === '.xlsx') {
 			return '/assets/icon/file/excel.svg';
-		} else {
-			return '/assets/icon/file/file.svg';
 		}
+		return '/assets/icon/file/file.svg';
 	};
 
 	const removeFileExtension = (filename: string) => {
 		return filename.replace(/\.[^/.]+$/, '');
 	};
 
-	const comesName = name ? name : removeFileExtension(file.name ?? '');
-	const hasLabel = label ? label : file.ext && file.size;
+	const comesName = name ? name : removeFileExtension(file?.name ?? '');
+	const hasLabel = label ? label : file?.ext && file?.size;
 
 	const formatName = (text: string) => {
 		if (text.length <= 45) {
@@ -72,7 +73,7 @@ export const Document = ({
 						<h3
 							className={cx(
 								css.name,
-								{ [css.newName]: file.name },
+								{ [css.newName]: file?.name },
 								{
 									[css.bigWidth]: !isLink && columns && columns < 3,
 								}
@@ -84,13 +85,13 @@ export const Document = ({
 					)}
 					{!isLink && hasLabel && (
 						<div className={css.info}>
-							{file.ext && (
+							{file?.ext && (
 								<p className={css.type}>
 									{parser(file.ext.slice(1).toUpperCase())}
 								</p>
 							)}
 							{!label && <div className={css.circle} />}
-							{file.size && (
+							{file?.size && (
 								<p className={css.size}>{Math.floor(file.size)}KB</p>
 							)}
 							{label && <p className={css.size}>{parser(label)}</p>}
@@ -111,16 +112,12 @@ export const Document = ({
 					variant="next"
 					iconRotate={270}
 					className={css.button}
-					onClick={() => downloadFile(file.url ?? '', name || 'file')}
+					onClick={() => downloadFile(href, name || 'file')}
 				>
 					{!label && 'Download'}
 				</Button>
 			)}
-			<Link
-				href={file.url ?? '#'}
-				className={css.downloadLink}
-				target="_blank"
-			/>
+			<Link href={href} className={css.downloadLink} target="_blank" />
 		</article>
 	);
 };

@@ -31,17 +31,17 @@ export const InterFonts = localFont({
 export const NeuePlakFonts = localFont({
 	src: [
 		{
-			path: '../../../public/fonts/Neue-Plak-new-Regular.woff2',
+			path: '../../../public/fonts/Neue-Plak-Text-Regular.woff2',
 			weight: '400',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/Neue-Plak-new-SemiBold.woff2',
+			path: '../../../public/fonts/Neue-Plak-Text-SemiBold.woff2',
 			weight: '600',
 			style: 'normal',
 		},
 		{
-			path: '../../../public/fonts/Neue-Plak-new-Bold.woff2',
+			path: '../../../public/fonts/Neue-Plak-Text-Bold.woff2',
 			weight: '700',
 			style: 'normal',
 		},
