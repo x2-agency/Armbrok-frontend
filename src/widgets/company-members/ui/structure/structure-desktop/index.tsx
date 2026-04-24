@@ -9,7 +9,7 @@ const HEADER_H = 96;
 const HEADER_W = 220;
 const CHILD_H = 58;
 const CHILD_W = 180;
-const ROW_GAP = 6;
+const ROW_GAP = 12;
 const ROW_HEIGHT = CHILD_H + ROW_GAP;
 const FIRST_ROW_Y = HEADER_Y + HEADER_H + ROW_GAP;
 const HEADER_X = [30, 260, 490, 720];
@@ -20,7 +20,7 @@ const COLUMN_CENTERS = HEADER_X.map(x => x + HEADER_W / 2);
 const RAIL_Y = 228;
 
 const COMPLIANCE_ITEM_X = 970;
-const COMPLIANCE_GAP = 6;
+const COMPLIANCE_GAP = 12;
 const COMPLIANCE_SPINE_X = COMPLIANCE_ITEM_X - 20;
 
 export const StructureDesktop = ({
@@ -117,7 +117,7 @@ export const StructureDesktop = ({
 		<div className={css.root}>
 			<svg
 				className={css.svg}
-				viewBox="0 0 1200 740"
+				viewBox="0 0 1200 790"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
