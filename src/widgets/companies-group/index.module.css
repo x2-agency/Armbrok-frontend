@@ -13,12 +13,13 @@
 .companies {
 	@mixin responsive gap, 20, 20, 20;
 
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	display: flex;
+	flex-direction: row;
 	align-items: center;
-	justify-items: center;
+	justify-content: space-between;
 
 	@media (max-width: 767px) {
+		display: grid;
 		grid-template-columns: 1fr;
 	}
 }

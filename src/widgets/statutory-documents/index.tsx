@@ -59,6 +59,7 @@ export const StatutoryDocuments = ({
 								columns={columns}
 								name={document.name}
 								file={document.file}
+								link={document.link}
 								alternativeText={document.alternativeText}
 								direction={fileDirection}
 								lineClamp={lineClamp}

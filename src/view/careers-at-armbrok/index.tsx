@@ -51,7 +51,14 @@ export const CareersAtArmbrok: NextPage<
 					description={workAdvantagesSection?.description ?? ''}
 				/>
 				<GuaranteesSection
-					items={workAdvantagesSection?.factoids}
+					items={[
+						...(workAdvantagesSection?.factoids ?? []),
+						{
+							id: 9999,
+							title: 'Fake card',
+							media: workAdvantagesSection?.factoids?.[0]?.media,
+						},
+					]}
 					className={css.teens}
 				/>
 			</HeroContainer>

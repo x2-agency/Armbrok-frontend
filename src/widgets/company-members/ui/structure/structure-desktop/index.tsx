@@ -9,14 +9,19 @@ const HEADER_H = 96;
 const HEADER_W = 220;
 const CHILD_H = 58;
 const CHILD_W = 180;
-const ROW_GAP = 6;
+const ROW_GAP = 12;
 const ROW_HEIGHT = CHILD_H + ROW_GAP;
 const FIRST_ROW_Y = HEADER_Y + HEADER_H + ROW_GAP;
-const HEADER_X = [30, 260, 490, 720, 950];
+const HEADER_X = [30, 260, 490, 720];
 const CHILD_X = HEADER_X.map(x => x + (HEADER_W - CHILD_W));
 const SPINE_INSET = 15;
 const SPINE_X = HEADER_X.map(x => x + SPINE_INSET);
 const COLUMN_CENTERS = HEADER_X.map(x => x + HEADER_W / 2);
+const RAIL_Y = 228;
+
+const COMPLIANCE_ITEM_X = 970;
+const COMPLIANCE_GAP = 12;
+const COMPLIANCE_SPINE_X = COMPLIANCE_ITEM_X - 20;
 
 export const StructureDesktop = ({
 	shareholdersMeeting = '',
@@ -86,23 +91,33 @@ export const StructureDesktop = ({
 			header: finance,
 			children: [treasury, accounting, reportingBudgeting],
 		},
-		{
-			header: compliance,
-			children: [
-				humanResources,
-				marketingCorporateCommunications,
-				digitalProducts,
-				itSupport,
-				technicalSupport,
-			],
-		},
 	];
+
+	const complianceChildren = [
+		humanResources,
+		marketingCorporateCommunications,
+		digitalProducts,
+		itSupport,
+		technicalSupport,
+	];
+
+	const complianceHeaderMidY = HEADER_Y + HEADER_H / 2;
+	const complianceFirstChildY = HEADER_Y + HEADER_H + COMPLIANCE_GAP;
+	const complianceChildPositions = complianceChildren.map((label, idx) => {
+		const y = complianceFirstChildY + idx * (CHILD_H + COMPLIANCE_GAP);
+		return { label, y, midY: y + CHILD_H / 2 };
+	});
+	const complianceLastMidY =
+		complianceChildPositions.length > 0
+			? complianceChildPositions[complianceChildPositions.length - 1]
+					.midY
+			: complianceHeaderMidY;
 
 	return (
 		<div className={css.root}>
 			<svg
 				className={css.svg}
-				viewBox="0 0 1200 740"
+				viewBox="0 0 1200 790"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
@@ -130,19 +145,43 @@ export const StructureDesktop = ({
 					strokeLinecap="round"
 				/>
 				<path
-					d="M600 208L600 228"
+					d={`M600 208L600 ${RAIL_Y}`}
 					stroke="#B9B9B9"
 					strokeLinecap="round"
 				/>
 				<path
-					d="M140 228L1060 228"
+					d={`M${COLUMN_CENTERS[0]} ${RAIL_Y}L${COLUMN_CENTERS[COLUMN_CENTERS.length - 1]} ${RAIL_Y}`}
 					stroke="#B9B9B9"
 					strokeLinecap="round"
 				/>
 				{COLUMN_CENTERS.map(cx => (
 					<path
 						key={`drop-${cx}`}
-						d={`M${cx} 228L${cx} ${HEADER_Y}`}
+						d={`M${cx} ${RAIL_Y}L${cx} ${HEADER_Y}`}
+						stroke="#B9B9B9"
+						strokeLinecap="round"
+					/>
+				))}
+
+				<path
+					d={`M600 ${RAIL_Y}L${COMPLIANCE_SPINE_X} ${RAIL_Y}`}
+					stroke="#B9B9B9"
+					strokeLinecap="round"
+				/>
+				<path
+					d={`M${COMPLIANCE_SPINE_X} ${RAIL_Y}L${COMPLIANCE_SPINE_X} ${complianceLastMidY}`}
+					stroke="#B9B9B9"
+					strokeLinecap="round"
+				/>
+				<path
+					d={`M${COMPLIANCE_SPINE_X} ${complianceHeaderMidY}L${COMPLIANCE_ITEM_X} ${complianceHeaderMidY}`}
+					stroke="#B9B9B9"
+					strokeLinecap="round"
+				/>
+				{complianceChildPositions.map(item => (
+					<path
+						key={`compliance-stub-${item.y}`}
+						d={`M${COMPLIANCE_SPINE_X} ${item.midY}L${COMPLIANCE_ITEM_X} ${item.midY}`}
 						stroke="#B9B9B9"
 						strokeLinecap="round"
 					/>
@@ -250,9 +289,7 @@ export const StructureDesktop = ({
 											width={CHILD_W}
 											height={CHILD_H}
 										>
-											<div
-												className={css.graphCustomContent}
-											>
+											<div className={css.graphCustomContent}>
 												{parser(child)}
 											</div>
 										</foreignObject>
@@ -262,6 +299,48 @@ export const StructureDesktop = ({
 						</g>
 					);
 				})}
+
+				<rect
+					x={COMPLIANCE_ITEM_X}
+					y={HEADER_Y}
+					width={HEADER_W}
+					height={HEADER_H}
+					rx="0"
+					fill="url(#structureBoxGradient)"
+				/>
+				<foreignObject
+					x={COMPLIANCE_ITEM_X}
+					y={HEADER_Y}
+					width={HEADER_W}
+					height={HEADER_H}
+				>
+					<div className={css.graphCustomContent}>
+						{parser(compliance)}
+					</div>
+				</foreignObject>
+
+				{complianceChildPositions.map(item => (
+					<g key={`compliance-${item.y}`}>
+						<rect
+							x={COMPLIANCE_ITEM_X}
+							y={item.y}
+							width={CHILD_W}
+							height={CHILD_H}
+							rx="0"
+							fill="url(#structureBoxGradient)"
+						/>
+						<foreignObject
+							x={COMPLIANCE_ITEM_X}
+							y={item.y}
+							width={CHILD_W}
+							height={CHILD_H}
+						>
+							<div className={css.graphCustomContent}>
+								{parser(item.label)}
+							</div>
+						</foreignObject>
+					</g>
+				))}
 			</svg>
 		</div>
 	);
