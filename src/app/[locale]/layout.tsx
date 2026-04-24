@@ -16,6 +16,7 @@ import { getSiteLinks } from '@/shared/api/get-site-links';
 import {
 	InterFonts,
 	MontserratArmFonts,
+	NeuePlakCondensedFonts,
 	NeuePlakFonts,
 } from '@/shared/config/localFont';
 import { LayoutProvider } from '@/shared/hooks/use-layout-context';
@@ -59,7 +60,8 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 				className={cx(
 					InterFonts.variable,
 					MontserratArmFonts.variable,
-					NeuePlakFonts.variable
+					NeuePlakFonts.variable,
+					NeuePlakCondensedFonts.variable
 				)}
 				style={{
 					fontFamily:
