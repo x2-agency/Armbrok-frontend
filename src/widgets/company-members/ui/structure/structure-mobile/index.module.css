@@ -8,7 +8,7 @@
 }
 
 .graphCustomContent {
-	@mixin responsive font-size, 8, 10, 10;
+	@mixin responsive font-size, 11, 10, 10;
 
 	padding-inline: 4px;
 
