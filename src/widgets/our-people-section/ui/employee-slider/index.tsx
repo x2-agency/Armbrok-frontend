@@ -34,9 +34,11 @@ const EmployeeSlider: React.FC<EmployeeSliderProps> = ({
 			breakpoints={{
 				320: {
 					slidesPerView: 1,
+					autoHeight: true,
 				},
 				768: {
 					slidesPerView: 2,
+					autoHeight: false,
 				},
 			}}
 		>
