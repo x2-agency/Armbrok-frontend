@@ -50,6 +50,10 @@
 
 .link.hy {
 	@mixin font-text14;
+
+	@media (min-width: 768px) and (max-width: 899px) {
+		font-size: 4px !important;
+	}
 }
 
 html[data-header-top-color='white'] .link {

@@ -19,7 +19,14 @@ export const MembershipCard = ({
 }: MembershipCardProps) => {
 	return (
 		<article className={cx(css.root, 'p-32')}>
-			<img src={logo?.url} className={css.icon} loading="lazy" />
+			{logo?.url && (
+				<img
+					src={logo.url}
+					alt=""
+					className={css.icon}
+					loading="lazy"
+				/>
+			)}
 			<div className={css.header}>
 				<h3 className={cx(css.title, { [css.greyTitle]: withGreyTitle })}>
 					{parser(name ?? '')}
@@ -29,11 +36,14 @@ export const MembershipCard = ({
 				)}
 				{country && (
 					<div className={css.flag}>
-						<img
-							src={country.flag?.url}
-							className={css.flagIcon}
-							loading="lazy"
-						/>
+						{country.flag?.url && (
+							<img
+								src={country.flag.url}
+								alt=""
+								className={css.flagIcon}
+								loading="lazy"
+							/>
+						)}
 						<p className={css.countryName}>{parser(country.name)}</p>
 					</div>
 				)}

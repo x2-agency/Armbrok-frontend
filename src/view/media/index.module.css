@@ -43,21 +43,46 @@
 
 	@media (max-width: 767px) {
 		width: 100%;
+		touch-action: pan-x;
+		overscroll-behavior: none;
+		scroll-snap-type: x proximity;
+		scroll-padding-inline-start: 5px;
+		scroll-padding-inline-end: 5px;
+		scroll-behavior: smooth;
+		padding-inline: 5px;
 	}
 }
 
 .few {
 	width: unset;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
 }
 
 .tabs {
 	@media (max-width: 767px) {
+		flex-shrink: 0;
+		min-width: max-content;
+		width: 100%;
 		overflow-x: visible;
 		flex-wrap: nowrap;
 		white-space: nowrap;
 		scrollbar-width: none;
 		&::-webkit-scrollbar {
 			display: none;
+		}
+
+		& > * {
+			flex: 1 1 0;
+			scroll-snap-align: start;
+			white-space: nowrap;
+		}
+
+		& > *:first-child {
+			scroll-snap-align: start;
+			scroll-snap-stop: always;
 		}
 	}
 }
