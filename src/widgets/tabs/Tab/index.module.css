@@ -19,6 +19,11 @@
 	@media (max-width: 767px) {
 		@mixin responsive padding-inline, 20, 31, 31;
 	}
+
+	:lang(en) & {
+		@mixin responsive padding-block-start, 6, 6, 6;
+		@mixin responsive padding-block-end, 10, 10, 10;
+	}
 }
 
 .hyTab {
