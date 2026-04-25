@@ -15,6 +15,7 @@
 
 	@media (max-width: 767px) {
 		flex-direction: column;
+		align-items: flex-start;
 		gap: 6rem; /* 23px */
 	}
 }
@@ -116,6 +117,7 @@
 	@media (max-width: 767px) {
 		width: fit-content;
 		justify-content: end;
+		align-self: center;
 	}
 }
 

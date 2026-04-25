@@ -1,3 +1,5 @@
+'use client';
+
 import cx from 'clsx';
 import { useTranslations } from 'next-intl';
 import type { MouseEvent } from 'react';
@@ -43,6 +45,11 @@ export const Tabs = ({
 		const { value } = event.currentTarget.dataset;
 		if (value) {
 			onChangeTab(value);
+			event.currentTarget.scrollIntoView({
+				behavior: 'smooth',
+				inline: 'nearest',
+				block: 'nearest',
+			});
 		}
 	};
 

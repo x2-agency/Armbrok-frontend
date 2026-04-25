@@ -2,6 +2,11 @@
 	display: flex;
 	@mixin responsive gap, 4, 4, 4;
 	@mixin responsive margin-inline, 4, 4, 4;
+
+	@media (max-width: 767px) {
+		flex-shrink: 0;
+		min-width: max-content;
+	}
 }
 
 .white {

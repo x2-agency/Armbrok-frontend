@@ -10,6 +10,10 @@
 	@mixin responsive padding-inline, 12, 28, 28;
 	background-color: var(--gray-100-color);
 	@mixin responsive border-radius, 10, 24, 24;
+
+	@media (max-width: 767px) {
+		align-items: baseline;
+	}
 }
 
 .newRoot {
@@ -29,6 +33,10 @@
 	flex-direction: row;
 	align-items: flex-start;
 	@mixin responsive gap, 4, 4, 4;
+
+	@media (max-width: 767px) {
+		align-items: baseline;
+	}
 }
 
 .amount {
@@ -45,8 +53,8 @@
 
 .currencySvg {
 	object-fit: cover;
-	@mixin responsive width, 14, 15, 15;
-	@mixin responsive height, 24, 25, 25;
+	@mixin responsive width, 7, 15, 15;
+	@mixin responsive height, 12, 25, 25;
 }
 
 .label {

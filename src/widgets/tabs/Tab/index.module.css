@@ -9,6 +9,8 @@
 	border: transparent;
 	cursor: pointer;
 	color: var(--gray-500-color);
+	white-space: nowrap;
+	flex-shrink: 0;
 
 	&:hover {
 		background-color: var(--gray-100-color);
@@ -16,6 +18,11 @@
 
 	@media (max-width: 767px) {
 		@mixin responsive padding-inline, 20, 31, 31;
+	}
+
+	:lang(en) & {
+		@mixin responsive padding-block-start, 6, 6, 6;
+		@mixin responsive padding-block-end, 10, 10, 10;
 	}
 }
 

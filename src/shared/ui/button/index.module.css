@@ -19,6 +19,11 @@
 	@mixin responsive padding-block, 4, 8, 8;
 	@mixin responsive padding-inline, 15, 24, 24;
 	@mixin responsive border-radius, 1000, 1000, 1000;
+
+	:lang(en) & {
+		@mixin responsive padding-block-start, 2, 6, 6;
+		@mixin responsive padding-block-end, 6, 10, 10;
+	}
 }
 
 .filled {
@@ -111,4 +116,9 @@
 .root.big {
 	@mixin responsive padding-block, 12, 16, 16;
 	@mixin responsive padding-inline, 16, 24, 24;
+
+	:lang(en) & {
+		@mixin responsive padding-block-start, 10, 14, 14;
+		@mixin responsive padding-block-end, 14, 18, 18;
+	}
 }
