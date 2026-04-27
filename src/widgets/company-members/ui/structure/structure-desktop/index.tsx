@@ -5,7 +5,7 @@ import type { StructureTreeProps } from '@/shared/types/global.types';
 import css from './index.module.css';
 
 const HEADER_Y = 250;
-const HEADER_H = 96;
+const HEADER_H = 58;
 const HEADER_W = 220;
 const CHILD_H = 58;
 const CHILD_W = 180;
