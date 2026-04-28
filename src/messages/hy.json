@@ -5,6 +5,10 @@
 		"hours": "ժամ",
 		"read": "կարդալու"
 	},
+	"search": {
+		"placeholder": "Ես փնտրում եմ...",
+		"buttonText": "Որոնել"
+	},
 	"header": {
 		"loginButton": {
 			"text": "Մտնել",

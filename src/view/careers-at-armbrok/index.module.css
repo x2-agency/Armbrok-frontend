@@ -10,6 +10,7 @@
 
 	ul:has(> :nth-child(5)) {
 		@mixin responsive max-width, 820, 820, 820;
+		@mixin responsive row-gap, 20, 48, 48;
 
 		flex-wrap: wrap;
 		margin-inline: auto;
