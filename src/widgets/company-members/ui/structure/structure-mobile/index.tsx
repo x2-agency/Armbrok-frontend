@@ -33,8 +33,6 @@ const SOLO_X = CENTRAL_SPINE_X - COL_W / 2;
 const SOLO_CHILD_X = SOLO_X + CHILD_INDENT;
 const SOLO_SPINE_X = SOLO_X + SPINE_INSET;
 
-const GRADIENT_ID = 'structureMobileBoxGradient';
-
 type LaidOutChild = { label: string; y: number; midY: number };
 type LaidOutCol = {
 	header: string;
@@ -205,7 +203,7 @@ export const StructureMobile = ({
 					width={COL_W}
 					height={HEADER_H}
 					rx="0"
-					fill={`url(#${GRADIENT_ID})`}
+					fill="#000000"
 				/>
 				<foreignObject
 					x={headerX}
@@ -225,7 +223,7 @@ export const StructureMobile = ({
 							width={CHILD_W}
 							height={CHILD_H}
 							rx="0"
-							fill={`url(#${GRADIENT_ID})`}
+							fill="#000000"
 						/>
 						<foreignObject
 							x={childX}
@@ -251,19 +249,6 @@ export const StructureMobile = ({
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<defs>
-					<linearGradient
-						id={GRADIENT_ID}
-						x1="0"
-						y1="0"
-						x2="1"
-						y2="0"
-					>
-						<stop offset="0" stopColor="#212121" />
-						<stop offset="1" stopColor="#444444" />
-					</linearGradient>
-				</defs>
-
 				<path
 					d={`M${CENTRAL_SPINE_X} 58L${CENTRAL_SPINE_X} 137`}
 					stroke="#B9B9B9"
@@ -306,7 +291,7 @@ export const StructureMobile = ({
 					width={TOP_CARD_W}
 					height={TOP_CARD_H}
 					rx="0"
-					fill={`url(#${GRADIENT_ID})`}
+					fill="#000000"
 				/>
 				<foreignObject
 					x={TOP_CARD_X}
@@ -325,7 +310,7 @@ export const StructureMobile = ({
 					width="140"
 					height={TOP_CARD_H}
 					rx="0"
-					fill={`url(#${GRADIENT_ID})`}
+					fill="#000000"
 				/>
 				<foreignObject
 					x="210"
@@ -344,7 +329,7 @@ export const StructureMobile = ({
 					width={TOP_CARD_W}
 					height={TOP_CARD_H}
 					rx="0"
-					fill={`url(#${GRADIENT_ID})`}
+					fill="#000000"
 				/>
 				<foreignObject
 					x={TOP_CARD_X}
