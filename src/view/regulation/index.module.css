@@ -21,3 +21,15 @@
 .titleSection {
 	@mixin responsive padding-block-end, 20, 48, 48;
 }
+
+.laws ul {
+	@mixin responsive width, unset, 760, 760;
+
+	margin-inline: auto;
+}
+
+.internalRules ul {
+	@mixin responsive width, unset, 760, 760;
+
+	margin-inline: auto;
+}

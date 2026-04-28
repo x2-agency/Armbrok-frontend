@@ -220,6 +220,7 @@ export type CountriesSection = {
 export type DocumentsSectionProps = ItemDetail & {
 	documents?: Array<MediaData>;
 	enabled?: boolean;
+	linkLabel?: string;
 };
 
 /* ACCORDION SECTION */

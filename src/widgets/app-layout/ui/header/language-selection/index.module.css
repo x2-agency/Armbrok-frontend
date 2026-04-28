@@ -51,6 +51,10 @@
 	transition-property: rotate;
 	rotate: 0deg;
 
+	:lang(en) & {
+		@mixin responsive margin-block-start, 3, 3, 3;
+	}
+
 	&.open {
 		rotate: 180deg;
 	}

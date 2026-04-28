@@ -4,6 +4,7 @@
 	@mixin responsive padding-inline, 10, 32, 32;
 	@mixin responsive padding-block, 10, 19, 19;
 	@mixin responsive gap, 16, 16, 16;
+	
 
 	transition-property: background-color;
 	position: relative;

@@ -20,14 +20,17 @@ export const Regulation: NextPage<RegulationPageData> = ({
 	return (
 		<div className={css.root}>
 			{title && <h1 className={css.title}>{parser(title)}</h1>}
-			<InternalRules internalRules={internalRules} />
+			<InternalRules
+				internalRules={internalRules}
+				className={css.internalRules}
+			/>
 
 			<StatutoryDocuments
+				className={css.laws}
 				documentsSection={laws}
-				columns={2}
+				columns={1}
 				lineClamp={1}
 				variant="link"
-			
 			/>
 			<FileSection
 				title={stockExchangeRules?.title}
@@ -35,6 +38,8 @@ export const Regulation: NextPage<RegulationPageData> = ({
 				documents={stockExchangeRules?.documents ?? []}
 				enabled={stockExchangeRules?.enabled}
 				regulationsFile={regulationsFile}
+				variant="link"
+				linkLabel={stockExchangeRules?.linkLabel}
 			/>
 		</div>
 	);
