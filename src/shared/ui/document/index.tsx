@@ -21,12 +21,14 @@ export const Document = ({
 	lineClamp,
 	className,
 	variant = 'file',
+	linkLabel,
 }: MediaData & {
 	direction?: string;
 	columns?: number;
 	lineClamp?: number;
 	className?: string;
 	variant?: 'file' | 'link';
+	linkLabel?: string;
 }) => {
 	if (!file && !link) {
 		return null;
@@ -105,7 +107,7 @@ export const Document = ({
 					iconRotate={isExternalLink ? 135 : 180}
 					className={css.button}
 				>
-					Link
+					{linkLabel ?? 'Link'}
 				</Button>
 			) : (
 				<Button

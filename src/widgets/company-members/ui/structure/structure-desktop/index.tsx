@@ -7,8 +7,8 @@ import css from './index.module.css';
 const HEADER_Y = 250;
 const HEADER_H = 58;
 const HEADER_W = 220;
-const CHILD_H = 58;
-const CHILD_W = 180;
+const CHILD_H = 56;
+const CHILD_W = 164;
 const ROW_GAP = 12;
 const ROW_HEIGHT = CHILD_H + ROW_GAP;
 const FIRST_ROW_Y = HEADER_Y + HEADER_H + ROW_GAP;
@@ -121,19 +121,6 @@ export const StructureDesktop = ({
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<defs>
-					<linearGradient
-						id="structureBoxGradient"
-						x1="0"
-						y1="0"
-						x2="1"
-						y2="0"
-					>
-						<stop offset="0" stopColor="#212121" />
-						<stop offset="1" stopColor="#444444" />
-					</linearGradient>
-				</defs>
-
 				<path
 					d="M600 58L600 150"
 					stroke="#B9B9B9"
@@ -193,7 +180,7 @@ export const StructureDesktop = ({
 					width="300"
 					height="58"
 					rx="0"
-					fill="url(#structureBoxGradient)"
+					fill="#000000"
 				/>
 				<foreignObject x="450" y="0" width="300" height="58">
 					<div className={css.graphCustomContent}>
@@ -207,7 +194,7 @@ export const StructureDesktop = ({
 					width="195"
 					height="58"
 					rx="0"
-					fill="url(#structureBoxGradient)"
+					fill="#000000"
 				/>
 				<foreignObject x="310" y="77" width="195" height="58">
 					<div className={css.graphCustomContent}>
@@ -221,7 +208,7 @@ export const StructureDesktop = ({
 					width="240"
 					height="58"
 					rx="0"
-					fill="url(#structureBoxGradient)"
+					fill="#000000"
 				/>
 				<foreignObject x="480" y="150" width="240" height="58">
 					<div className={css.graphCustomContent}>
@@ -252,7 +239,7 @@ export const StructureDesktop = ({
 								width={HEADER_W}
 								height={HEADER_H}
 								rx="0"
-								fill="url(#structureBoxGradient)"
+								fill="#000000"
 							/>
 							<foreignObject
 								x={headerX}
@@ -281,7 +268,7 @@ export const StructureDesktop = ({
 											width={CHILD_W}
 											height={CHILD_H}
 											rx="0"
-											fill="url(#structureBoxGradient)"
+											fill="#000000"
 										/>
 										<foreignObject
 											x={childX}
@@ -306,7 +293,7 @@ export const StructureDesktop = ({
 					width={HEADER_W}
 					height={HEADER_H}
 					rx="0"
-					fill="url(#structureBoxGradient)"
+					fill="#000000"
 				/>
 				<foreignObject
 					x={COMPLIANCE_ITEM_X}
@@ -327,7 +314,7 @@ export const StructureDesktop = ({
 							width={CHILD_W}
 							height={CHILD_H}
 							rx="0"
-							fill="url(#structureBoxGradient)"
+							fill="#000000"
 						/>
 						<foreignObject
 							x={COMPLIANCE_ITEM_X}

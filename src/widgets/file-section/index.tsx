@@ -14,6 +14,7 @@ type FileSectionProps = DocumentsSectionProps & {
 	className?: string;
 	enabled?: boolean;
 	regulationsFile?: MediaData;
+	variant?: 'file' | 'link';
 };
 
 export const FileSection = ({
@@ -22,10 +23,14 @@ export const FileSection = ({
 	className,
 	documents,
 	enabled,
+	variant = 'file',
+	linkLabel,
 }: FileSectionProps) => {
 	if (!documents || documents.length === 0) {
 		return null;
 	}
+
+	const isLink = variant === 'link';
 
 	return (
 		<Container className={cx(css.root, className)}>
@@ -43,7 +48,13 @@ export const FileSection = ({
 					<li key={index} className={css.listItem}>
 						<DocumentFile
 							name={document.name ?? ''}
-							url={document.file?.url ?? ''}
+							url={
+								isLink
+									? (document.link ?? '')
+									: (document.file?.url ?? '')
+							}
+							variant={variant}
+							linkLabel={linkLabel}
 						/>
 					</li>
 				))}

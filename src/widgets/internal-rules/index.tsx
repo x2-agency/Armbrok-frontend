@@ -15,12 +15,18 @@ export type InternalRulesType = {
 
 export type InternalRulesProps = {
 	internalRules?: InternalRulesType;
+	className?: string;
 };
-export const InternalRules = ({ internalRules }: InternalRulesProps) => {
+export const InternalRules = ({
+	internalRules,
+	className,
+}: InternalRulesProps) => {
 	const { title, links } = internalRules || {};
 	return (
-		<Container className={cx(css.root)}>
-			<h3 className={css.title} id="internal-rules">{parser(title ?? '')}</h3>
+		<Container className={cx(css.root, className)}>
+			<h3 className={css.title} id="internal-rules">
+				{parser(title ?? '')}
+			</h3>
 			<ButtonPage links={links} />
 		</Container>
 	);

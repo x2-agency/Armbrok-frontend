@@ -5,6 +5,10 @@
 		"hours": "часов",
 		"read": "чтения"
 	},
+	"search": {
+		"placeholder": "Я ищу...",
+		"buttonText": "Поиск"
+	},
 	"header": {
 		"loginButton": {
 			"text": "Войти",

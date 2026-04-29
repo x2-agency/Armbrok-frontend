@@ -1,24 +1,20 @@
 .root {
 	@mixin responsive padding-block-end, 60, 120, 120;
 	@mixin responsive gap, 32, 64, 64;
+	@mixin responsive width, unset, 760, 760;
 
-	display: grid;
-	grid-template-columns: 32.92% auto;
+	display: flex;
+	flex-direction: column-reverse;
+	margin-inline: auto;
 
 	&.onlyShareholders {
 		@mixin responsive padding-inline, 20, 150, 150;
 
-		display: flex;
 		padding-block: unset;
 
 		.shareholders {
 			width: 100%;
 		}
-	}
-
-	@media (max-width: 767px) {
-		display: flex;
-		flex-direction: column;
 	}
 }
 

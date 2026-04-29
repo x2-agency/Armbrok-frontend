@@ -1,4 +1,5 @@
 import cx from 'clsx';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
@@ -12,6 +13,7 @@ import { SearchForm } from './search-form';
 export const SearchModal = () => {
 	const [newsData, setNewsData] = useState<Array<SearchDataItem> | undefined>();
 	const { isSearchModalOpen, toggleSearchModalOpen } = useLayoutContext();
+	const t = useTranslations('search');
 
 	return (
 		<Modal
@@ -19,7 +21,11 @@ export const SearchModal = () => {
 			toggleModalOpen={toggleSearchModalOpen}
 			className={cx(css.root, { [css.open]: isSearchModalOpen })}
 		>
-			<SearchForm setNewsData={setNewsData} />
+			<SearchForm
+				setNewsData={setNewsData}
+				inputPlaceholder={t('placeholder')}
+				searchButtonText={t('buttonText')}
+			/>
 			<SearchedNews news={newsData} />
 		</Modal>
 	);

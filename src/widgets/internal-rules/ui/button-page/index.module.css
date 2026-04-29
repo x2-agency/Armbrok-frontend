@@ -1,11 +1,15 @@
 .root {
+	@mixin responsive gap, 24, 24, 24;
+
 	display: flex;
 	flex-direction: column;
-	@mixin responsive gap, 24, 24, 24;
 }
 
 .listItem {
-	@mixin responsive gap, 24, 24, 42;
+	@mixin responsive border-radius, 15, 24, 24;
+	@mixin responsive padding-inline, 10, 32, 32;
+	@mixin responsive padding-block, 10, 19, 19;
+	@mixin responsive gap, 16, 16, 16;
 	@mixin transition;
 
 	transition-property: background-color;
@@ -33,10 +37,11 @@
 
 .button {
 	z-index: 100;
+	height: fit-content;
 }
 
 .title {
-	@mixin font-text20;
+	@mixin font-text16;
 
 	font-weight: 500;
 }

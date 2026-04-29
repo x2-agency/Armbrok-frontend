@@ -5,6 +5,10 @@
 		"hours": "hours",
 		"read": "read"
 	},
+	"search": {
+		"placeholder": "I'm looking for...",
+		"buttonText": "Search"
+	},
 	"header": {
 		"loginButton": {
 			"text": "Log in",

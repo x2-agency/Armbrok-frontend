@@ -24,7 +24,7 @@ export const StatutoryDocuments = ({
 	lineClamp = 3,
 	variant = 'file',
 }: StatutoryDocumentsProps) => {
-	const { title, documents, description } = documentsSection ?? {};
+	const { title, documents, description, linkLabel } = documentsSection ?? {};
 
 	return (
 		<Container className={cx(css.root, className)}>
@@ -64,6 +64,7 @@ export const StatutoryDocuments = ({
 								direction={fileDirection}
 								lineClamp={lineClamp}
 								variant={variant}
+								linkLabel={linkLabel}
 							/>
 						</li>
 					))}
