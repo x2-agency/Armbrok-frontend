@@ -33,6 +33,7 @@ export const Regulation: NextPage<RegulationPageData> = ({
 				variant="link"
 			/>
 			<FileSection
+				className={css.stockExchangeRules}
 				title={stockExchangeRules?.title}
 				description={stockExchangeRules?.description}
 				documents={stockExchangeRules?.documents ?? []}

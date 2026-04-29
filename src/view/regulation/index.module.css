@@ -33,3 +33,9 @@
 
 	margin-inline: auto;
 }
+
+.stockExchangeRules ul {
+	@mixin responsive width, unset, 760, 760;
+
+	margin-inline: auto;
+}
