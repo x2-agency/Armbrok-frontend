@@ -73,11 +73,7 @@
 .name {
 	@mixin font-text16;
 
-	align-self: center;
-
-	:lang(hy) & {
-		align-self: start;
-	}
+	align-self: start;
 }
 
 .desc {
