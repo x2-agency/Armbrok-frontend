@@ -54,7 +54,7 @@ export const FileSection = ({
 									: (document.file?.url ?? '')
 							}
 							variant={variant}
-							linkLabel={linkLabel}
+							linkLabel={document.linkLabel ?? linkLabel}
 						/>
 					</li>
 				))}

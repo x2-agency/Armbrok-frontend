@@ -48,8 +48,7 @@ const RootLayout = async ({ children, params }: Readonly<RootLayoutProps>) => {
 					name="google-site-verification"
 					content="0Wlr8IRw0xt8JY1dLmgtju5ROZXCWNqoJI7L2RqxwUA"
 				/>
-				<meta name="robots" content="noindex, nofollow"></meta>
-				<Favicons />
+<Favicons />
 				<meta
 					name="viewport"
 					content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"

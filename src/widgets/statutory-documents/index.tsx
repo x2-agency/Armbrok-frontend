@@ -64,7 +64,7 @@ export const StatutoryDocuments = ({
 								direction={fileDirection}
 								lineClamp={lineClamp}
 								variant={variant}
-								linkLabel={linkLabel}
+								linkLabel={document.linkLabel ?? linkLabel}
 							/>
 						</li>
 					))}
