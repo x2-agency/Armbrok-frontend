@@ -42,7 +42,7 @@ export const Funds: NextPage<{ initialFundsPageData?: FundsPageResponse }> = ({
 				banner={{
 					title: heroSection?.title ?? '',
 					description: heroSection?.description ?? '',
-					button: { ...heroSection?.button },
+					// button: { ...heroSection?.button },
 					poster: heroSection?.background,
 				}}
 			/>
