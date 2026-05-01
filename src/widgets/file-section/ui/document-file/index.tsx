@@ -25,7 +25,7 @@ export const DocumentFile = ({
 	const isLink = variant === 'link';
 
 	return (
-		<article className={cx(css.root, 'p-32')}>
+		<article className={css.root}>
 			<p className={css.title}>{parser(name)}</p>
 			{isLink ? (
 				<Button variant="next" iconRotate={135} className={css.button}>
