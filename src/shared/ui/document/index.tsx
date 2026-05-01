@@ -53,10 +53,10 @@ export const Document = ({
 	const hasLabel = label ? label : file?.ext && file?.size;
 
 	const formatName = (text: string) => {
-		if (text.length <= 45) {
+		if (text.length <= 100) {
 			return parser(text);
 		}
-		return parser(text.slice(0, 45) + '...');
+		return parser(text.slice(0, 100) + '...');
 	};
 
 	return (
