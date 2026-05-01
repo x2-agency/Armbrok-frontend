@@ -48,6 +48,7 @@ export type MediaData = {
 	ext?: '.pdf' | '.xlsx';
 	url?: string;
 	link?: string | null;
+	linkLabel?: string | null;
 };
 
 export type ImageFormat = {
@@ -469,6 +470,7 @@ export type Vacancy = {
 	name?: string;
 	link?: string;
 	opened?: boolean;
+	linkLabel?: string;
 };
 
 export type Vacancies = {

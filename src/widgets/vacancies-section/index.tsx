@@ -27,7 +27,7 @@ export const VacanciesSection = ({
 						<Vacancy
 							data={{
 								title: vacancy.name,
-								link: { link: vacancy.link, text: 'Read more' },
+								link: { link: vacancy.link, text: vacancy.linkLabel ?? 'Read more' },
 							}}
 						/>
 					</li>
