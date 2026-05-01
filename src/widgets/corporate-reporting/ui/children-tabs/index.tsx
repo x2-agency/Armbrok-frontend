@@ -29,7 +29,7 @@ export const ChildrenTabs = ({ tabs }: ChildrenTabsProps) => {
 					</Button>
 				))}
 			</div>
-			<Files files={tabs[tabIndex].files} />
+			<Files files={tabs[tabIndex].files ?? []} />
 		</div>
 	);
 };

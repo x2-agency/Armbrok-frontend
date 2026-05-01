@@ -13,9 +13,15 @@ export const Files = ({
 	files,
 	className,
 }: FilesProps & { className?: string }) => {
+	const validFiles = files?.filter(f => f.file || f.link) ?? [];
+
+	if (validFiles.length === 0) {
+		return null;
+	}
+
 	return (
 		<ul className={cx(css.root, className)}>
-			{files.map((file, index) => (
+			{validFiles.map((file, index) => (
 				<li key={index}>
 					<Document
 						columns={2}
@@ -23,7 +29,7 @@ export const Files = ({
 						file={file.file}
 						alternativeText={file.alternativeText}
 						direction="row"
-						lineClamp={1}
+						lineClamp={2}
 					/>
 				</li>
 			))}
