@@ -66,7 +66,13 @@ export const Blog: NextPage<{
 				<ContentMarkup extraClass={css.markup} html={markup} />
 			</article>
 
-			<Author className={css.authorBottom} data={author} visibleSocial />
+			{
+				author && <Author
+					className={css.authorBottom}
+					data={author}
+					visibleSocial
+				/>
+			}
 
 			{latestNewsSection && (
 				<NewsSectionHome
