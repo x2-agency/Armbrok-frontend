@@ -1,6 +1,7 @@
-import parser from 'html-react-parser';
+import { useLocale } from 'next-intl';
 
 import type { StructureTreeProps } from '@/shared/types/global.types';
+import { SvgTextNode } from '@/widgets/company-members/ui/structure/svg-text-node';
 
 import css from './index.module.css';
 
@@ -56,6 +57,11 @@ export const StructureDesktop = ({
 	itSupport = '',
 	technicalSupport = '',
 }: StructureTreeProps) => {
+	const locale = useLocale();
+	const isHy = locale === 'hy';
+	const fontSize = isHy ? 11 : 14;
+	const charWidthMultiplier = isHy ? 0.70 : 0.55;
+
 	const columns = [
 		{
 			header: globalMarketsInvestment,
@@ -174,47 +180,14 @@ export const StructureDesktop = ({
 					/>
 				))}
 
-				<rect
-					x="450"
-					y="0"
-					width="300"
-					height="58"
-					rx="0"
-					fill="#000000"
-				/>
-				<foreignObject x="450" y="0" width="300" height="58">
-					<div className={css.graphCustomContent}>
-						{parser(shareholdersMeeting)}
-					</div>
-				</foreignObject>
+				<rect x="450" y="0" width="300" height="58" rx="0" fill="#000000" />
+				<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier} html={shareholdersMeeting} x={450} y={0} width={300} height={58} />
 
-				<rect
-					x="310"
-					y="77"
-					width="195"
-					height="58"
-					rx="0"
-					fill="#000000"
-				/>
-				<foreignObject x="310" y="77" width="195" height="58">
-					<div className={css.graphCustomContent}>
-						{parser(internalAudit)}
-					</div>
-				</foreignObject>
+				<rect x="310" y="77" width="195" height="58" rx="0" fill="#000000" />
+				<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier} html={internalAudit} x={310} y={77} width={195} height={58} />
 
-				<rect
-					x="480"
-					y="150"
-					width="240"
-					height="58"
-					rx="0"
-					fill="#000000"
-				/>
-				<foreignObject x="480" y="150" width="240" height="58">
-					<div className={css.graphCustomContent}>
-						{parser(chiefExecutiveOfficer)}
-					</div>
-				</foreignObject>
+				<rect x="480" y="150" width="240" height="58" rx="0" fill="#000000" />
+				<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier} html={chiefExecutiveOfficer} x={480} y={150} width={240} height={58} />
 
 				{columns.map((col, i) => {
 					const headerX = HEADER_X[i];
@@ -241,16 +214,13 @@ export const StructureDesktop = ({
 								rx="0"
 								fill="#000000"
 							/>
-							<foreignObject
+							<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+								html={col.header}
 								x={headerX}
 								y={HEADER_Y}
 								width={HEADER_W}
 								height={HEADER_H}
-							>
-								<div className={css.graphCustomContent}>
-									{parser(col.header)}
-								</div>
-							</foreignObject>
+							/>
 
 							{col.children.map((child, j) => {
 								const childY = FIRST_ROW_Y + j * ROW_HEIGHT;
@@ -270,16 +240,13 @@ export const StructureDesktop = ({
 											rx="0"
 											fill="#000000"
 										/>
-										<foreignObject
+										<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+											html={child}
 											x={childX}
 											y={childY}
 											width={CHILD_W}
 											height={CHILD_H}
-										>
-											<div className={css.graphCustomContent}>
-												{parser(child)}
-											</div>
-										</foreignObject>
+										/>
 									</g>
 								);
 							})}
@@ -295,16 +262,13 @@ export const StructureDesktop = ({
 					rx="0"
 					fill="#000000"
 				/>
-				<foreignObject
+				<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+					html={compliance}
 					x={COMPLIANCE_ITEM_X}
 					y={HEADER_Y}
 					width={HEADER_W}
 					height={HEADER_H}
-				>
-					<div className={css.graphCustomContent}>
-						{parser(compliance)}
-					</div>
-				</foreignObject>
+				/>
 
 				{complianceChildPositions.map(item => (
 					<g key={`compliance-${item.y}`}>
@@ -316,16 +280,13 @@ export const StructureDesktop = ({
 							rx="0"
 							fill="#000000"
 						/>
-						<foreignObject
+						<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+							html={item.label}
 							x={COMPLIANCE_ITEM_X}
 							y={item.y}
 							width={CHILD_W}
 							height={CHILD_H}
-						>
-							<div className={css.graphCustomContent}>
-								{parser(item.label)}
-							</div>
-						</foreignObject>
+						/>
 					</g>
 				))}
 			</svg>

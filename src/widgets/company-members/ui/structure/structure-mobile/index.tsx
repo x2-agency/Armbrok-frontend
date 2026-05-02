@@ -1,6 +1,7 @@
-import parser from 'html-react-parser';
+import { useLocale } from 'next-intl';
 
 import type { StructureTreeProps } from '@/shared/types/global.types';
+import { SvgTextNode } from '@/widgets/company-members/ui/structure/svg-text-node';
 
 import css from './index.module.css';
 
@@ -32,6 +33,7 @@ const COL_B_CENTER = COL_B_X + COL_W / 2;
 const SOLO_X = CENTRAL_SPINE_X - COL_W / 2;
 const SOLO_CHILD_X = SOLO_X + CHILD_INDENT;
 const SOLO_SPINE_X = SOLO_X + SPINE_INSET;
+
 
 type LaidOutChild = { label: string; y: number; midY: number };
 type LaidOutCol = {
@@ -89,6 +91,11 @@ export const StructureMobile = ({
 	itSupport = '',
 	technicalSupport = '',
 }: StructureTreeProps) => {
+	const locale = useLocale();
+	const isHy = locale === 'hy';
+	const fontSize = isHy ? 11 : 14;
+	const charWidthMultiplier = isHy ? 0.70 : 0.55;
+
 	const pairRows = [
 		{
 			left: {
@@ -205,16 +212,14 @@ export const StructureMobile = ({
 					rx="0"
 					fill="#000000"
 				/>
-				<foreignObject
+				<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+					html={col.header}
 					x={headerX}
 					y={headerY}
 					width={COL_W}
 					height={HEADER_H}
-				>
-					<div className={css.graphCustomContent}>
-						{parser(col.header)}
-					</div>
-				</foreignObject>
+					
+				/>
 				{col.children.map((child, j) => (
 					<g key={`${keyPrefix}-child-${j}`}>
 						<rect
@@ -225,16 +230,14 @@ export const StructureMobile = ({
 							rx="0"
 							fill="#000000"
 						/>
-						<foreignObject
+						<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+							html={child.label}
 							x={childX}
 							y={child.y}
 							width={CHILD_W}
 							height={CHILD_H}
-						>
-							<div className={css.graphCustomContent}>
-								{parser(child.label)}
-							</div>
-						</foreignObject>
+							
+						/>
 					</g>
 				))}
 			</g>
@@ -293,35 +296,24 @@ export const StructureMobile = ({
 					rx="0"
 					fill="#000000"
 				/>
-				<foreignObject
+				<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+					html={shareholdersMeeting}
 					x={TOP_CARD_X}
-					y="0"
+					y={0}
 					width={TOP_CARD_W}
 					height={TOP_CARD_H}
-				>
-					<div className={css.graphCustomContent}>
-						{parser(shareholdersMeeting)}
-					</div>
-				</foreignObject>
-
-				<rect
-					x="210"
-					y="69"
-					width="140"
-					height={TOP_CARD_H}
-					rx="0"
-					fill="#000000"
+					
 				/>
-				<foreignObject
-					x="210"
-					y="69"
-					width="140"
+
+				<rect x="210" y="69" width="140" height={TOP_CARD_H} rx="0" fill="#000000" />
+				<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+					html={internalAudit}
+					x={210}
+					y={69}
+					width={140}
 					height={TOP_CARD_H}
-				>
-					<div className={css.graphCustomContent}>
-						{parser(internalAudit)}
-					</div>
-				</foreignObject>
+					
+				/>
 
 				<rect
 					x={TOP_CARD_X}
@@ -331,16 +323,14 @@ export const StructureMobile = ({
 					rx="0"
 					fill="#000000"
 				/>
-				<foreignObject
+				<SvgTextNode fontSize={fontSize} charWidthMultiplier={charWidthMultiplier}
+					html={chiefExecutiveOfficer}
 					x={TOP_CARD_X}
-					y="137"
+					y={137}
 					width={TOP_CARD_W}
 					height={TOP_CARD_H}
-				>
-					<div className={css.graphCustomContent}>
-						{parser(chiefExecutiveOfficer)}
-					</div>
-				</foreignObject>
+					
+				/>
 
 				{pairLayout.map((row, i) => (
 					<g key={`row-${i}`}>
