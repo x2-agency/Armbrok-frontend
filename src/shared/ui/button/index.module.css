@@ -116,9 +116,4 @@
 .root.big {
 	@mixin responsive padding-block, 12, 16, 16;
 	@mixin responsive padding-inline, 16, 24, 24;
-
-	:lang(en) & {
-		@mixin responsive padding-block-start, 10, 14, 14;
-		@mixin responsive padding-block-end, 14, 18, 18;
-	}
 }

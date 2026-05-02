@@ -4,7 +4,6 @@ import parser from 'html-react-parser';
 
 import { useLayoutContext } from '@/shared/hooks/use-layout-context';
 import { Button } from '@/shared/ui/button';
-import { AppStoreLinks } from '@/widgets/app-layout/ui/footer/app-store-links';
 import { SocialLinks } from '@/widgets/app-layout/ui/footer/social-links';
 
 import css from './index.module.css';
@@ -55,7 +54,9 @@ export const NavigationColumn = () => {
 				))}
 			</nav>
 			<div className={css.bottomRow}>
-				<AppStoreLinks />
+				{/*TODO: отобразить ссылки на приложение*/}
+				<div aria-hidden></div>
+				{/*<AppStoreLinks />*/}
 				<SocialLinks />
 			</div>
 		</div>
