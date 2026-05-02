@@ -43,10 +43,10 @@ export const StatutoryDocuments = ({
 			{documents && documents.length > 0 && (
 				<ul
 					className={cx(css.documents, {
-						[css.centered]: documents?.length === 1,
+						[css.centered]: documents?.length === 1 && columns !== 1,
 					})}
 					style={
-						documents?.length !== 1
+						documents?.length !== 1 || columns === 1
 							? {
 									gridTemplateColumns: `repeat(${columns}, 1fr)`,
 								}
