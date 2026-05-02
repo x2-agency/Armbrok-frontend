@@ -2,6 +2,8 @@ import cx from 'clsx';
 import parser from 'html-react-parser';
 import type { FC } from 'react';
 
+import { parserOptions } from '@/shared/ui/content-markup/lib/parser-options';
+
 import css from './index.module.css';
 
 type ContentMarkupProps = {
@@ -12,7 +14,7 @@ type ContentMarkupProps = {
 const ContentMarkup: FC<ContentMarkupProps> = ({ html, extraClass = '' }) => {
 	return (
 		<section className={cx(css.markup, extraClass)}>
-			{parser(html ?? '')}
+			{parser(html ?? '', parserOptions)}
 		</section>
 	);
 };
