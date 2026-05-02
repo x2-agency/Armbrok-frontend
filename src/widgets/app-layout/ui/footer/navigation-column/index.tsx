@@ -54,7 +54,7 @@ export const NavigationColumn = () => {
 				))}
 			</nav>
 			<div className={css.bottomRow}>
-				{/*TODO: отобразить ссылки на приложение*/}
+				{/*TODO: отобразить ссылки на приложение, проверить наложение кнопок друг на друга на мобилке*/}
 				<div aria-hidden></div>
 				{/*<AppStoreLinks />*/}
 				<SocialLinks />
